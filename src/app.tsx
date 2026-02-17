@@ -1,5 +1,12 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
-import { Upload, FileJson, Play, CheckCircle, XCircle, ChevronRight, RotateCcw, Award, AlertCircle, Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard, Globe, Shield, X, BarChart2, TrendingUp, TrendingDown, Download } from 'lucide-react';
+import Sidebar from './components/Sidebar';
+import { 
+  Upload, FileJson, Play, CheckCircle, XCircle, ChevronRight, RotateCcw, Award, AlertCircle, 
+  Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard, 
+  Globe, Shield, X, BarChart2, TrendingUp, TrendingDown, Download, Menu, GraduationCap, 
+  Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor, 
+  HardDrive, Layout, Box, Layers, FileText, BookOpen 
+} from 'lucide-react';
 
 // --- FIREBASE IMPORTS ---
 import { initializeApp } from 'firebase/app';
@@ -23,7 +30,8 @@ import {
   increment,
   updateDoc,
   query,
-  getDocs
+  getDocs,
+  deleteDoc
 } from 'firebase/firestore';
 
 // --- FIREBASE SETUP ---
@@ -40,6 +48,18 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const appId = import.meta.env.VITE_APP_ID || 'default-app-id';
+
+const ICON_KEYS = [
+  "Cpu", "Cloud", "Code", "Database", "Terminal", "Shield", "Globe", "Lock", 
+  "Server", "Wifi", "Smartphone", "Monitor", "HardDrive", "Layout", "Box", 
+  "Layers", "FileText", "BookOpen", "GraduationCap", "Timer"
+];
+
+const ICON_MAP: any = {
+  Cpu, Cloud, Code, Database, Terminal, Shield, Globe, Lock, 
+  Server, Wifi, Smartphone, Monitor, HardDrive, Layout, Box, 
+  Layers, FileText, BookOpen, GraduationCap, Timer
+};
 
 // --- UTILS ---
 // Helper for multi-select validation
@@ -114,6 +134,9 @@ export default function App() {
   const [pendingUpload, setPendingUpload] = useState(null);
   const [pendingFileName, setPendingFileName] = useState("");
   const [showSaveModal, setShowSaveModal] = useState(false);
+  const [editingQuiz, setEditingQuiz] = useState(null); // Track quiz being edited
+  const [selectedIcon, setSelectedIcon] = useState("BookOpen"); // Default icon
+  const [editTitle, setEditTitle] = useState("");
 
   // Gameplay State
   const [userAnswers, setUserAnswers] = useState({});
@@ -141,6 +164,11 @@ export default function App() {
   const [adminUsers, setAdminUsers] = useState([]);
   const [selectedAdminUser, setSelectedAdminUser] = useState(null);
   const [selectedAdminUserData, setSelectedAdminUserData] = useState(null);
+
+  // Sidebar State
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
+
 
   // --- FIREBASE AUTH INIT ---
   useEffect(() => {
@@ -282,11 +310,23 @@ export default function App() {
       }
 
       try {
-        await setDoc(statRef, {
+        // Always update global stats
+        const globalStatRef = doc(db, 'artifacts', appId, 'users', user.uid, 'stats', currentQ.id);
+        await setDoc(globalStatRef, {
           correct: increment(isCorrect ? 1 : 0),
           wrong: increment(isCorrect ? 0 : 1),
           lastPlayed: new Date().toISOString()
         }, { merge: true });
+
+        // If playing a specific quiz, also update quiz-specific stats
+        if (currentQuizId) {
+          const quizStatRef = doc(db, 'artifacts', appId, 'users', user.uid, 'quiz_stats', currentQuizId, 'stats', currentQ.id);
+          await setDoc(quizStatRef, {
+            correct: increment(isCorrect ? 1 : 0),
+            wrong: increment(isCorrect ? 0 : 1),
+            lastPlayed: new Date().toISOString()
+          }, { merge: true });
+        }
 
         // 2. Update Category Stats (If category exists)
         if (currentQ.category) {
@@ -502,9 +542,11 @@ export default function App() {
 
     const quizData = {
       title: pendingFileName,
+      icon: selectedIcon,
       questions: processed,
       createdAt: new Date().toISOString(),
-      author: appUser.username
+      author: appUser.username,
+      authorId: user.uid
     };
 
     try {
@@ -517,8 +559,58 @@ export default function App() {
       generateSmartSession(processed, docRef.id);
       setShowSaveModal(false);
       setPendingUpload(null);
+      setSelectedIcon("BookOpen");
     } catch (e) {
       setError("Failed to save quiz: " + e.message);
+    }
+  };
+
+  const handleUpdateQuiz = async (e) => {
+    e.preventDefault();
+    if (!editingQuiz) return;
+
+    try {
+      const quizRef = editingQuiz.type === 'private' 
+        ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', editingQuiz.id)
+        : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', editingQuiz.id);
+
+      await updateDoc(quizRef, {
+        title: editTitle,
+        icon: selectedIcon
+      });
+
+      // Update local state to reflect changes immediately
+      if (editingQuiz.type === 'private') {
+        setPrivateQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon } : q));
+      } else {
+        setPublicQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon } : q));
+      }
+
+      setEditingQuiz(null);
+      setSelectedIcon("BookOpen");
+      setEditTitle("");
+    } catch (e) {
+      setError("Failed to update quiz: " + e.message);
+    }
+  };
+
+  const handleDeleteQuiz = async (quiz) => {
+    if (!window.confirm(`Are you sure you want to delete "${quiz.title}"?`)) return;
+    try {
+       const quizRef = quiz.type === 'private'
+         ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', quiz.id)
+         : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', quiz.id);
+       
+       await deleteDoc(quizRef);
+       
+       // Update local state
+       if (quiz.type === 'private') {
+         setPrivateQuizzes(prev => prev.filter(q => q.id !== quiz.id));
+       } else {
+         setPublicQuizzes(prev => prev.filter(q => q.id !== quiz.id));
+       }
+    } catch (e) {
+       setError("Delete failed: " + e.message);
     }
   };
 
@@ -908,33 +1000,54 @@ export default function App() {
 
   return (
     <div className={theme}>
-      <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans">
+      <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex">
+        
+        {/* Sidebar */}
+        <Sidebar 
+          view={view} 
+          setView={setView} 
+          theme={theme} 
+          setTheme={setTheme} 
+          user={user} 
+          appUser={appUser} 
+          categoryStats={categoryStats}
+          privateQuizzes={privateQuizzes}
+          publicQuizzes={publicQuizzes}
+          onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
+          onLogout={() => auth.signOut()}
+          isOpen={isSidebarOpen}
+          toggleSidebar={toggleSidebar}
+        />
 
-        {/* --- VIEW: DASHBOARD (UPLOAD & SELECT) --- */}
-        {view === 'dashboard' && (
-          <div className="min-h-screen p-4 md:p-8 max-w-6xl mx-auto">
-            <div className="flex justify-between items-center mb-8">
-              <div>
-                <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Welcome, {appUser?.username}</h1>
-                <p className="text-zinc-500 dark:text-[#9D99A8]">Manage your quizzes and track progress.</p>
-              </div>
-              <div className="flex gap-2">
-                {appUser?.username === 'liforra' && (
-                  <button onClick={() => setView('admin')} className="p-3 bg-red-100 dark:bg-red-900/20 rounded-xl shadow-sm hover:scale-105 transition-all text-red-600 dark:text-red-400" title="Admin Dashboard"><Shield size={20} /></button>
-                )}
-                <button onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')} className="p-3 bg-white dark:bg-[#18161F] rounded-xl shadow-sm hover:scale-105 transition-all text-zinc-600 dark:text-[#9D99A8]"><Sun size={20} /></button>
-                <button onClick={() => setView('auth')} className="p-3 bg-white dark:bg-[#18161F] rounded-xl shadow-sm hover:scale-105 transition-all text-red-500"><User size={20} /></button>
-              </div>
-            </div>
+        {/* Main Content Area */}
+        <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
+          
+          {/* Mobile Header */}
+          <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
+            <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
+              <Menu size={20} />
+            </button>
+            <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
+          </div>
 
-            {/* STATS OVERVIEW */}
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold text-zinc-800 dark:text-white">Performance Stats</h2>
-              <button onClick={downloadStats} className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:underline bg-purple-50 dark:bg-purple-900/10 px-3 py-1.5 rounded-lg border border-purple-100 dark:border-purple-800/30 transition-all">
-                <Download size={16} /> Export Data
-              </button>
-            </div>
-            <StatsOverview />
+          {/* --- VIEW: DASHBOARD (UPLOAD & SELECT) --- */}
+          {view === 'dashboard' && (
+            <div className="p-4 md:p-8 max-w-6xl mx-auto w-full">
+              <div className="flex justify-between items-center mb-8">
+                <div>
+                  <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Welcome, {appUser?.username}</h1>
+                  <p className="text-zinc-500 dark:text-[#9D99A8]">Manage your quizzes and track progress.</p>
+                </div>
+              </div>
+
+              {/* STATS OVERVIEW */}
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold text-zinc-800 dark:text-white">Performance Stats</h2>
+                <button onClick={downloadStats} className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:underline bg-purple-50 dark:bg-purple-900/10 px-3 py-1.5 rounded-lg border border-purple-100 dark:border-purple-800/30 transition-all">
+                  <Download size={16} /> Export Data
+                </button>
+              </div>
+              <StatsOverview />
 
             {/* Upload Area */}
             <div
@@ -986,9 +1099,16 @@ export default function App() {
                     <div key={q.id} className="bg-white dark:bg-[#18161F] p-4 rounded-xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-500 transition-all flex justify-between items-center group">
                       <div>
                         <h3 className="font-bold text-zinc-800 dark:text-white">{q.title}</h3>
-                        <p className="text-xs text-zinc-400 dark:text-[#9D99A8]">By {q.author} • {q.questions.length} Questions</p>
-                      </div>
-                      <div className="flex gap-2">
+                        {(appUser?.username === 'liforra' || q.author === appUser?.username) && (
+                          <>
+                            <button onClick={() => { setEditingQuiz(q); setEditTitle(q.title); setSelectedIcon(q.icon || "BookOpen"); }} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Edit Quiz">
+                              <Edit2 size={16} />
+                            </button>
+                            <button onClick={() => handleDeleteQuiz(q)} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-red-600 dark:hover:text-red-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Delete Quiz">
+                              <Trash2 size={16} />
+                            </button>
+                          </>
+                        )}
                         <button onClick={() => downloadQuiz(q)} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Download JSON">
                           <Download size={16} />
                         </button>
@@ -1022,7 +1142,23 @@ export default function App() {
 
               <div className="bg-zinc-50 dark:bg-[#23202B] p-4 rounded-xl mb-6">
                 <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] truncate"><span className="font-bold">File:</span> {pendingFileName}</p>
-                <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8]"><span className="font-bold">Questions:</span> {pendingUpload?.length}</p>
+                <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] mb-4"><span className="font-bold">Questions:</span> {pendingUpload?.length}</p>
+                
+                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Select Icon</p>
+                <div className="grid grid-cols-5 gap-2 max-h-[120px] overflow-y-auto pr-1">
+                  {ICON_KEYS.map(key => {
+                    const Icon = ICON_MAP[key];
+                    return (
+                      <button
+                        key={key}
+                        onClick={() => setSelectedIcon(key)}
+                        className={`p-2 rounded-lg flex items-center justify-center transition-colors ${selectedIcon === key ? 'bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 ring-2 ring-purple-500' : 'bg-white dark:bg-[#18161F] text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#2A2633]'}`}
+                      >
+                        <Icon size={20} />
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
 
               <div className="space-y-3">
@@ -1295,7 +1431,61 @@ export default function App() {
             </div>
           </div>
         )}
+        </div>
       </div>
+
+      {/* --- MODAL: EDIT QUIZ --- */}
+      {editingQuiz && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold dark:text-white">Edit Quiz</h2>
+              <button onClick={() => setEditingQuiz(null)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+            </div>
+
+            <form onSubmit={handleUpdateQuiz} className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">Title</label>
+                <input
+                  type="text"
+                  value={editTitle}
+                  onChange={(e) => setEditTitle(e.target.value)}
+                  className="w-full px-4 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                  placeholder="Enter quiz title"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-2">Icon</label>
+                <div className="grid grid-cols-5 gap-2 max-h-[120px] overflow-y-auto pr-1">
+                  {ICON_KEYS.map(key => {
+                    const Icon = ICON_MAP[key];
+                    return (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => setSelectedIcon(key)}
+                        className={`p-2 rounded-lg flex items-center justify-center transition-colors ${selectedIcon === key ? 'bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 ring-2 ring-purple-500' : 'bg-white dark:bg-[#18161F] text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#2A2633]'}`}
+                      >
+                        <Icon size={20} />
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
+              <div className="flex gap-2 pt-2">
+                <button type="button" onClick={() => setEditingQuiz(null)} className="flex-1 py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
+                  Cancel
+                </button>
+                <button type="submit" className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
