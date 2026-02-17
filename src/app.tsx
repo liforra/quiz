@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
-import { 
-  Upload, FileJson, Play, CheckCircle, XCircle, ChevronRight, RotateCcw, Award, AlertCircle, 
-  Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard, 
-  Globe, Shield, X, BarChart2, TrendingUp, TrendingDown, Download, Menu, GraduationCap, 
-  Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor, 
-  HardDrive, Layout, Box, Layers, FileText, BookOpen 
+import {
+  Upload, FileJson, Play, CheckCircle, XCircle, ChevronRight, RotateCcw, Award, AlertCircle,
+  Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard,
+  Globe, Shield, X, BarChart2, TrendingUp, TrendingDown, Download, Menu, GraduationCap,
+  Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
+  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap
 } from 'lucide-react';
 
 // --- FIREBASE IMPORTS ---
@@ -50,14 +50,14 @@ const db = getFirestore(app);
 const appId = import.meta.env.VITE_APP_ID || 'default-app-id';
 
 const ICON_KEYS = [
-  "Cpu", "Cloud", "Code", "Database", "Terminal", "Shield", "Globe", "Lock", 
-  "Server", "Wifi", "Smartphone", "Monitor", "HardDrive", "Layout", "Box", 
+  "Cpu", "Cloud", "Code", "Database", "Terminal", "Shield", "Globe", "Lock",
+  "Server", "Wifi", "Smartphone", "Monitor", "HardDrive", "Layout", "Box",
   "Layers", "FileText", "BookOpen", "GraduationCap", "Timer"
 ];
 
 const ICON_MAP: any = {
-  Cpu, Cloud, Code, Database, Terminal, Shield, Globe, Lock, 
-  Server, Wifi, Smartphone, Monitor, HardDrive, Layout, Box, 
+  Cpu, Cloud, Code, Database, Terminal, Shield, Globe, Lock,
+  Server, Wifi, Smartphone, Monitor, HardDrive, Layout, Box,
   Layers, FileText, BookOpen, GraduationCap, Timer
 };
 
@@ -111,6 +111,11 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [appUser, setAppUser] = useState(null);
 
+  // Scroll to top on view change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
+
   // Library Data
   const [privateQuizzes, setPrivateQuizzes] = useState([]);
   const [publicQuizzes, setPublicQuizzes] = useState([]);
@@ -145,6 +150,7 @@ export default function App() {
   const [feedbackType, setFeedbackType] = useState(null);
   const [countdown, setCountdown] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const processingRef = useRef(false);
 
   // Inputs
   const [error, setError] = useState('');
@@ -185,15 +191,15 @@ export default function App() {
         const username = u.displayName || u.email;
         setAppUser({ username });
         setView('dashboard');
-        
+
         // Ensure user doc exists for Admin listing (and self-repair)
         try {
-            setDoc(doc(db, 'artifacts', appId, 'users', u.uid), {
-                username: username,
-                lastLogin: new Date().toISOString()
-            }, { merge: true });
+          setDoc(doc(db, 'artifacts', appId, 'users', u.uid), {
+            username: username,
+            lastLogin: new Date().toISOString()
+          }, { merge: true });
         } catch (e) {
-            console.error("Failed to update user doc", e);
+          console.error("Failed to update user doc", e);
         }
       } else {
         setAppUser(null);
@@ -286,7 +292,8 @@ export default function App() {
   }, [showFeedback]);
 
   const submitAnswer = useCallback(async (isCorrect, answerValue) => {
-    if (showFeedback) return;
+    if (showFeedback || processingRef.current) return;
+    processingRef.current = true;
 
     // Update Session State
     const currentQ = sessionQueue[currentQuestionIndex];
@@ -358,7 +365,9 @@ export default function App() {
       setShowFeedback(false);
       setTextInputReveal(false);
       setMultiSelection([]);
+      setMultiSelection([]);
       setIsPaused(false);
+      processingRef.current = false;
     } else {
       setView('results');
     }
@@ -570,7 +579,7 @@ export default function App() {
     if (!editingQuiz) return;
 
     try {
-      const quizRef = editingQuiz.type === 'private' 
+      const quizRef = editingQuiz.type === 'private'
         ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', editingQuiz.id)
         : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', editingQuiz.id);
 
@@ -597,20 +606,20 @@ export default function App() {
   const handleDeleteQuiz = async (quiz) => {
     if (!window.confirm(`Are you sure you want to delete "${quiz.title}"?`)) return;
     try {
-       const quizRef = quiz.type === 'private'
-         ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', quiz.id)
-         : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', quiz.id);
-       
-       await deleteDoc(quizRef);
-       
-       // Update local state
-       if (quiz.type === 'private') {
-         setPrivateQuizzes(prev => prev.filter(q => q.id !== quiz.id));
-       } else {
-         setPublicQuizzes(prev => prev.filter(q => q.id !== quiz.id));
-       }
+      const quizRef = quiz.type === 'private'
+        ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', quiz.id)
+        : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', quiz.id);
+
+      await deleteDoc(quizRef);
+
+      // Update local state
+      if (quiz.type === 'private') {
+        setPrivateQuizzes(prev => prev.filter(q => q.id !== quiz.id));
+      } else {
+        setPublicQuizzes(prev => prev.filter(q => q.id !== quiz.id));
+      }
     } catch (e) {
-       setError("Delete failed: " + e.message);
+      setError("Delete failed: " + e.message);
     }
   };
 
@@ -700,6 +709,32 @@ export default function App() {
     setIsPaused(false);
   };
 
+  const handleQuickTest = () => {
+    const allQuestions = [
+      ...privateQuizzes.flatMap(q => q.questions || []),
+      ...publicQuizzes.flatMap(q => q.questions || [])
+    ];
+
+    if (allQuestions.length === 0) {
+      setError("No questions available for a quick test! Upload or find some quizzes first.");
+      return;
+    }
+
+    // Shuffle and pick 20
+    const shuffled = allQuestions.sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 20);
+
+    generateSmartSession(selected, null);
+  };
+
+  const handleQuickQuizSession = (quiz) => {
+    const questions = quiz.questions || [];
+    if (questions.length === 0) return;
+    const shuffled = [...questions].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 20);
+    generateSmartSession(selected, quiz.id);
+  };
+
   // --- ADMIN LOGIC ---
   useEffect(() => {
     if (view === 'admin' && appUser?.username === 'liforra') {
@@ -717,20 +752,20 @@ export default function App() {
   }, [view, appUser]);
 
   const handleAdminUserSelect = async (u) => {
-      setSelectedAdminUser(u);
-      setSelectedAdminUserData(null);
-      try {
-          const statsSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'stats'));
-          const s = {};
-          statsSnap.forEach(d => s[d.id] = d.data());
-          
-          const quizzesSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'quizzes'));
-          const q = quizzesSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-          
-          setSelectedAdminUserData({ stats: s, quizzes: q });
-      } catch (e) {
-          console.error("Failed to fetch user details", e);
-      }
+    setSelectedAdminUser(u);
+    setSelectedAdminUserData(null);
+    try {
+      const statsSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'stats'));
+      const s = {};
+      statsSnap.forEach(d => s[d.id] = d.data());
+
+      const quizzesSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'quizzes'));
+      const q = quizzesSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+      setSelectedAdminUserData({ stats: s, quizzes: q });
+    } catch (e) {
+      console.error("Failed to fetch user details", e);
+    }
   };
 
   // --- COMPONENT: STATS DASHBOARD ---
@@ -808,7 +843,7 @@ export default function App() {
           >
             <div className="flex items-center gap-3">
               <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
-                  'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
+                'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
                 }`}>
                 {idx + 1}
               </span>
@@ -856,7 +891,7 @@ export default function App() {
               >
                 <div className="flex items-center gap-3 w-full">
                   <span className={`w-6 h-6 flex flex-shrink-0 items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
-                      'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
+                    'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
                     }`}>
                     {idx + 1}
                   </span>
@@ -1001,19 +1036,20 @@ export default function App() {
   return (
     <div className={theme}>
       <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex">
-        
+
         {/* Sidebar */}
-        <Sidebar 
-          view={view} 
-          setView={setView} 
-          theme={theme} 
-          setTheme={setTheme} 
-          user={user} 
-          appUser={appUser} 
+        <Sidebar
+          view={view}
+          setView={setView}
+          theme={theme}
+          setTheme={setTheme}
+          user={user}
+          appUser={appUser}
           categoryStats={categoryStats}
           privateQuizzes={privateQuizzes}
           publicQuizzes={publicQuizzes}
           onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
+          onSelectQuickQuiz={handleQuickQuizSession}
           onLogout={() => auth.signOut()}
           isOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
@@ -1021,7 +1057,7 @@ export default function App() {
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
-          
+
           {/* Mobile Header */}
           <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
             <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
@@ -1033,12 +1069,21 @@ export default function App() {
           {/* --- VIEW: DASHBOARD (UPLOAD & SELECT) --- */}
           {view === 'dashboard' && (
             <div className="p-4 md:p-8 max-w-6xl mx-auto w-full">
-              <div className="flex justify-between items-center mb-8">
-                <div>
-                  <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Welcome, {appUser?.username}</h1>
-                  <p className="text-zinc-500 dark:text-[#9D99A8]">Manage your quizzes and track progress.</p>
+
+              {/* ACTION: QUICK TEST */}
+              <button
+                onClick={handleQuickTest}
+                className="w-full mb-10 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-200 dark:shadow-none flex items-center justify-center gap-4 transition-all group"
+              >
+                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                  <Zap size={32} fill="currentColor" />
                 </div>
-              </div>
+                <div className="text-left">
+                  <h2 className="text-2xl font-bold">Start Quick Test</h2>
+                  <p className="text-purple-100 opacity-90">20 random questions from your library</p>
+                </div>
+                <ChevronRight size={32} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all ml-4" />
+              </button>
 
               {/* STATS OVERVIEW */}
               <div className="flex justify-between items-center mb-4">
@@ -1049,388 +1094,322 @@ export default function App() {
               </div>
               <StatsOverview />
 
-            {/* Upload Area */}
-            <div
-              className="bg-white dark:bg-[#18161F] rounded-2xl shadow-sm p-8 border-2 border-dashed border-zinc-300 dark:border-[#2A2633] text-center hover:border-purple-500 dark:hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all cursor-pointer group mb-8"
-              onClick={() => fileInputRef.current?.click()}
-            >
-              <input type="file" accept=".json" className="hidden" ref={fileInputRef} onChange={handleFileUpload} />
-              <Upload className="mx-auto text-zinc-400 group-hover:text-purple-500 mb-4 transition-colors" size={40} />
-              <p className="font-bold text-lg text-zinc-700 dark:text-[#EBE9F0]">Create New Quiz</p>
-              <p className="text-zinc-400 dark:text-[#9D99A8]">Upload a JSON file to start</p>
+              {/* UPLOAD / CREATE */}
+              <h2 className="text-xl font-bold text-zinc-800 dark:text-white mb-4">Manage Library</h2>
+              <div
+                className="bg-white dark:bg-[#18161F] rounded-2xl shadow-sm p-8 border-2 border-dashed border-zinc-300 dark:border-[#2A2633] text-center hover:border-purple-500 dark:hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all cursor-pointer group"
+                onClick={() => fileInputRef.current?.click()}
+              >
+                <input type="file" accept=".json" className="hidden" ref={fileInputRef} onChange={handleFileUpload} />
+                <Upload className="mx-auto text-zinc-400 group-hover:text-purple-500 mb-4 transition-colors" size={40} />
+                <p className="font-bold text-lg text-zinc-700 dark:text-[#EBE9F0]">Upload Quiz</p>
+                <p className="text-zinc-400 dark:text-[#9D99A8]">Drag & drop or click to upload JSON</p>
+              </div>
+
+              {/* Sample Loader (Hidden but accessible via text if needed, or fully removed. User asked for Upload, Stats, Quick Test. I'll keep a small text link for sample just in case, or remove it. I'll remove it to be clean.) */}
             </div>
+          )}
 
-            {/* Quiz Lists */}
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Private Quizzes */}
-              <div>
-                <h2 className="flex items-center gap-2 font-bold text-zinc-400 uppercase tracking-wider mb-4 text-sm">
-                  <Lock size={14} /> My Private Library
-                </h2>
-                <div className="space-y-3">
-                  {privateQuizzes.length === 0 && <p className="text-zinc-400 italic text-sm">No saved quizzes yet.</p>}
-                  {privateQuizzes.map(q => (
-                    <div key={q.id} className="bg-white dark:bg-[#18161F] p-4 rounded-xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-500 transition-all flex justify-between items-center group">
-                      <div>
-                        <h3 className="font-bold text-zinc-800 dark:text-white">{q.title}</h3>
-                        <p className="text-xs text-zinc-400 dark:text-[#9D99A8]">{q.questions.length} Questions</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <button onClick={() => downloadQuiz(q)} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Download JSON">
-                          <Download size={16} />
-                        </button>
-                        <button onClick={() => generateSmartSession(q.questions, q.id)} className="bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all">
-                          <Play size={16} fill="currentColor" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+          {/* --- MODAL: SAVE OPTIONS --- */}
+          {showSaveModal && (
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+              <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-xl font-bold dark:text-white">Upload Options</h2>
+                  <button onClick={() => setShowSaveModal(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
                 </div>
-              </div>
 
-              {/* Public Quizzes */}
-              <div>
-                <h2 className="flex items-center gap-2 font-bold text-zinc-400 uppercase tracking-wider mb-4 text-sm">
-                  <Globe size={14} /> Community Quizzes
-                </h2>
-                <div className="space-y-3">
-                  {publicQuizzes.length === 0 && <p className="text-zinc-400 italic text-sm">No public quizzes available.</p>}
-                  {publicQuizzes.map(q => (
-                    <div key={q.id} className="bg-white dark:bg-[#18161F] p-4 rounded-xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-500 transition-all flex justify-between items-center group">
-                      <div>
-                        <h3 className="font-bold text-zinc-800 dark:text-white">{q.title}</h3>
-                        {(appUser?.username === 'liforra' || q.author === appUser?.username) && (
-                          <>
-                            <button onClick={() => { setEditingQuiz(q); setEditTitle(q.title); setSelectedIcon(q.icon || "BookOpen"); }} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Edit Quiz">
-                              <Edit2 size={16} />
-                            </button>
-                            <button onClick={() => handleDeleteQuiz(q)} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-red-600 dark:hover:text-red-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Delete Quiz">
-                              <Trash2 size={16} />
-                            </button>
-                          </>
-                        )}
-                        <button onClick={() => downloadQuiz(q)} className="bg-zinc-100 dark:bg-[#23202B] text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all" title="Download JSON">
-                          <Download size={16} />
+                <div className="bg-zinc-50 dark:bg-[#23202B] p-4 rounded-xl mb-6">
+                  <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] truncate"><span className="font-bold">File:</span> {pendingFileName}</p>
+                  <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] mb-4"><span className="font-bold">Questions:</span> {pendingUpload?.length}</p>
+
+                  <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Select Icon</p>
+                  <div className="grid grid-cols-5 gap-2 max-h-[120px] overflow-y-auto pr-1">
+                    {ICON_KEYS.map(key => {
+                      const Icon = ICON_MAP[key];
+                      return (
+                        <button
+                          key={key}
+                          onClick={() => setSelectedIcon(key)}
+                          className={`p-2 rounded-lg flex items-center justify-center transition-colors ${selectedIcon === key ? 'bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 ring-2 ring-purple-500' : 'bg-white dark:bg-[#18161F] text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#2A2633]'}`}
+                        >
+                          <Icon size={20} />
                         </button>
-                        <button onClick={() => generateSmartSession(q.questions, q.id)} className="bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all">
-                          <Play size={16} fill="currentColor" />
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Sample Loader */}
-            <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-[#2A2633] text-center">
-              <button onClick={() => { setPendingUpload(SAMPLE_QUIZ); setPendingFileName("Sample Quiz"); setShowSaveModal(true); }} className="text-sm text-zinc-500 hover:text-purple-500 transition-colors">
-                Try Sample Quiz
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* --- MODAL: SAVE OPTIONS --- */}
-        {showSaveModal && (
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-            <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-bold dark:text-white">Upload Options</h2>
-                <button onClick={() => setShowSaveModal(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
-              </div>
-
-              <div className="bg-zinc-50 dark:bg-[#23202B] p-4 rounded-xl mb-6">
-                <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] truncate"><span className="font-bold">File:</span> {pendingFileName}</p>
-                <p className="font-mono text-sm text-zinc-600 dark:text-[#9D99A8] mb-4"><span className="font-bold">Questions:</span> {pendingUpload?.length}</p>
-                
-                <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2">Select Icon</p>
-                <div className="grid grid-cols-5 gap-2 max-h-[120px] overflow-y-auto pr-1">
-                  {ICON_KEYS.map(key => {
-                    const Icon = ICON_MAP[key];
-                    return (
-                      <button
-                        key={key}
-                        onClick={() => setSelectedIcon(key)}
-                        className={`p-2 rounded-lg flex items-center justify-center transition-colors ${selectedIcon === key ? 'bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300 ring-2 ring-purple-500' : 'bg-white dark:bg-[#18161F] text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#2A2633]'}`}
-                      >
-                        <Icon size={20} />
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <button onClick={() => handleSaveQuiz('private')} className="w-full p-4 rounded-xl border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 text-left flex items-center gap-4 transition-all group">
-                  <div className="bg-zinc-100 dark:bg-[#23202B] p-3 rounded-lg text-zinc-500 group-hover:text-purple-500 transition-colors"><Lock size={20} /></div>
-                  <div>
-                    <h3 className="font-bold text-zinc-800 dark:text-white">Save to Private Library</h3>
-                    <p className="text-xs text-zinc-500">Only you can access this quiz.</p>
+                      )
+                    })}
                   </div>
-                </button>
-
-                <button onClick={() => handleSaveQuiz('public')} className="w-full p-4 rounded-xl border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 text-left flex items-center gap-4 transition-all group">
-                  <div className="bg-zinc-100 dark:bg-[#23202B] p-3 rounded-lg text-zinc-500 group-hover:text-purple-500 transition-colors"><Globe size={20} /></div>
-                  <div>
-                    <h3 className="font-bold text-zinc-800 dark:text-white">Publish to Community</h3>
-                    <p className="text-xs text-zinc-500">Share with other users.</p>
-                  </div>
-                </button>
-
-                <div className="relative flex py-2 items-center">
-                  <div className="flex-grow border-t border-zinc-200 dark:border-[#2A2633]"></div>
-                  <span className="flex-shrink-0 mx-4 text-zinc-400 text-xs uppercase">Or</span>
-                  <div className="flex-grow border-t border-zinc-200 dark:border-[#2A2633]"></div>
                 </div>
 
-                <button onClick={() => handleSaveQuiz('play')} className="w-full py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
-                  Don't Save, Just Play
-                </button>
+                <div className="space-y-3">
+                  <button onClick={() => handleSaveQuiz('private')} className="w-full p-4 rounded-xl border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 text-left flex items-center gap-4 transition-all group">
+                    <div className="bg-zinc-100 dark:bg-[#23202B] p-3 rounded-lg text-zinc-500 group-hover:text-purple-500 transition-colors"><Lock size={20} /></div>
+                    <div>
+                      <h3 className="font-bold text-zinc-800 dark:text-white">Save to Private Library</h3>
+                      <p className="text-xs text-zinc-500">Only you can access this quiz.</p>
+                    </div>
+                  </button>
+
+                  <button onClick={() => handleSaveQuiz('public')} className="w-full p-4 rounded-xl border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 text-left flex items-center gap-4 transition-all group">
+                    <div className="bg-zinc-100 dark:bg-[#23202B] p-3 rounded-lg text-zinc-500 group-hover:text-purple-500 transition-colors"><Globe size={20} /></div>
+                    <div>
+                      <h3 className="font-bold text-zinc-800 dark:text-white">Publish to Community</h3>
+                      <p className="text-xs text-zinc-500">Share with other users.</p>
+                    </div>
+                  </button>
+
+                  <div className="relative flex py-2 items-center">
+                    <div className="flex-grow border-t border-zinc-200 dark:border-[#2A2633]"></div>
+                    <span className="flex-shrink-0 mx-4 text-zinc-400 text-xs uppercase">Or</span>
+                    <div className="flex-grow border-t border-zinc-200 dark:border-[#2A2633]"></div>
+                  </div>
+
+                  <button onClick={() => handleSaveQuiz('play')} className="w-full py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
+                    Don't Save, Just Play
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* --- VIEW: PLAYING --- */}
-        {view === 'playing' && currentQData && (
-          <div className="min-h-screen flex flex-col items-center justify-center p-4">
-            <div className="max-w-2xl w-full">
-              {/* Header */}
-              <div className="flex justify-between items-end mb-4 px-1">
-                <div>
-                  <h2 className="text-zinc-500 dark:text-[#9D99A8] text-sm font-semibold uppercase tracking-wider">
-                    Question {currentQuestionIndex + 1} of {sessionQueue.length}
-                  </h2>
-                  <div className="flex flex-wrap items-center gap-2 mt-1">
-                    <span className={`text-xs px-2 py-0.5 rounded-full border ${currentQData.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
+          {/* --- VIEW: PLAYING --- */}
+          {view === 'playing' && currentQData && (
+            <div className="min-h-full flex flex-col items-center p-4 py-10">
+              <div className="max-w-2xl w-full">
+                {/* Header */}
+                <div className="flex justify-between items-end mb-4 px-1">
+                  <div>
+                    <h2 className="text-zinc-500 dark:text-[#9D99A8] text-sm font-semibold uppercase tracking-wider">
+                      Question {currentQuestionIndex + 1} of {sessionQueue.length}
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <span className={`text-xs px-2 py-0.5 rounded-full border ${currentQData.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
                         currentQData.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
                           'border-zinc-200 text-zinc-600 bg-zinc-50'
-                      }`}>
-                      {currentQData.type.includes('multiple') ? 'Multi-Select' : currentQData.type.includes('text') ? 'Flashcard' : 'Single Choice'}
-                    </span>
-
-                    {currentQData.category && (
-                      <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
-                        {currentQData.category}
+                        }`}>
+                        {currentQData.type.includes('multiple') ? 'Multi-Select' : currentQData.type.includes('text') ? 'Flashcard' : 'Single Choice'}
                       </span>
-                    )}
 
-                    {/* Algorithm Tag */}
-                    {stats[currentQData.id] && (stats[currentQData.id].correct / (stats[currentQData.id].correct + stats[currentQData.id].wrong) < 0.7) && (
-                      <span className="text-xs px-2 py-0.5 rounded-full border border-orange-200 text-orange-600 bg-orange-50 flex items-center gap-1">
-                        <RotateCcw size={10} /> Review
-                      </span>
-                    )}
-                    {!stats[currentQData.id] && (
-                      <span className="text-xs px-2 py-0.5 rounded-full border border-green-200 text-green-600 bg-green-50 flex items-center gap-1">
-                        New
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
-              </div>
+                      {currentQData.category && (
+                        <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
+                          {currentQData.category}
+                        </span>
+                      )}
 
-              <div className="w-full bg-purple-200 dark:bg-[#23202B] h-2 rounded-full mb-6 overflow-hidden">
-                <div className="bg-purple-600 dark:bg-purple-500 h-full transition-all duration-300 ease-out" style={{ width: `${((currentQuestionIndex + 1) / sessionQueue.length) * 100}%` }}></div>
-              </div>
-
-              {/* Card */}
-              <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative overflow-hidden">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{currentQData.question}</h3>
-                  <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
-                    <Keyboard size={20} />
-                  </div>
-                </div>
-
-                <div className="flex-grow z-10">
-                  {(currentQData.type === 'single' || currentQData.type === 'single_choice') && renderSingleChoice()}
-                  {(currentQData.type === 'multiple' || currentQData.type === 'multiple_response') && renderMultiChoice()}
-                  {(currentQData.type === 'text' || currentQData.type === 'text_input') && renderTextChoice()}
-                </div>
-
-                {/* Feedback Footer */}
-                {showFeedback && (
-                  <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-[#2A2633] animate-in fade-in slide-in-from-bottom-4 duration-300">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        {feedbackType === 'correct' ? (
-                          <span className="text-green-600 dark:text-green-400 font-bold flex items-center gap-2"><CheckCircle size={18} /> Correct!</span>
-                        ) : (
-                          <span className="text-red-600 dark:text-red-400 font-bold flex items-center gap-2"><XCircle size={18} /> Incorrect</span>
-                        )}
-
-                        {!isPaused && (
-                          <div className="flex items-center gap-2 text-zinc-500 dark:text-[#9D99A8] text-sm ml-4 border-l border-zinc-200 dark:border-[#2A2633] pl-4">
-                            <Timer size={16} className="animate-pulse" />
-                            <span>Next in {countdown}s</span>
-                            <span className="text-xs bg-zinc-100 dark:bg-[#23202B] px-1.5 py-0.5 rounded border border-zinc-300 dark:border-[#2A2633] font-mono">Space</span>
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex gap-2">
-                        {!isPaused && currentQuestionIndex < sessionQueue.length - 1 && (
-                          <button onClick={() => setIsPaused(true)} className="px-4 py-2 bg-zinc-100 dark:bg-[#23202B] hover:bg-zinc-200 text-zinc-600 dark:text-[#9D99A8] rounded-lg text-sm font-semibold flex items-center gap-2">
-                            <Pause size={16} /> Wait
-                          </button>
-                        )}
-                        <button onClick={handleNext} className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-semibold flex items-center gap-2 shadow-lg shadow-purple-200 dark:shadow-none">
-                          {currentQuestionIndex === sessionQueue.length - 1 ? 'Finish' : 'Next'} <ChevronRight size={16} />
-                        </button>
-                      </div>
+                      {/* Algorithm Tag */}
+                      {stats[currentQData.id] && (stats[currentQData.id].correct / (stats[currentQData.id].correct + stats[currentQData.id].wrong) < 0.7) && (
+                        <span className="text-xs px-2 py-0.5 rounded-full border border-orange-200 text-orange-600 bg-orange-50 flex items-center gap-1">
+                          <RotateCcw size={10} /> Review
+                        </span>
+                      )}
+                      {!stats[currentQData.id] && (
+                        <span className="text-xs px-2 py-0.5 rounded-full border border-green-200 text-green-600 bg-green-50 flex items-center gap-1">
+                          New
+                        </span>
+                      )}
                     </div>
-                    {!isPaused && currentQuestionIndex < sessionQueue.length - 1 && (
-                      <div className="h-1 bg-zinc-100 dark:bg-[#23202B] mt-4 rounded-full overflow-hidden">
-                        <div className="h-full bg-purple-500 transition-all duration-1000 ease-linear" style={{ width: `${(countdown / (feedbackType === 'correct' ? 2 : 5)) * 100}%` }}></div>
-                      </div>
-                    )}
                   </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* --- VIEW: RESULTS --- */}
-        {view === 'results' && (
-          <div className="min-h-screen flex items-center justify-center p-4 py-12">
-            <div className="max-w-3xl w-full bg-white dark:bg-[#18161F] rounded-3xl shadow-2xl overflow-hidden border border-zinc-100 dark:border-[#2A2633]">
-              <div className="bg-purple-600 dark:bg-purple-700 p-10 text-center text-white relative">
-                <Award className="mx-auto mb-4 opacity-90" size={48} />
-                <h2 className="text-4xl font-bold mb-2">{Math.round((sessionScore / sessionQueue.length) * 100)}%</h2>
-                <p className="text-purple-200 font-medium text-lg">Good job, {appUser?.username}!</p>
-                <div className="mt-4 flex justify-center gap-2">
-                  <span className="bg-purple-800/50 px-3 py-1 rounded-full text-xs flex items-center gap-1"><Save size={12} /> Stats Updated</span>
+                  <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
                 </div>
-              </div>
 
-              <div className="p-8 bg-purple-50 dark:bg-[#23202B]">
-                <h3 className="text-zinc-800 dark:text-white font-bold text-lg mb-6">Session Review</h3>
-                <div className="space-y-4">
-                  {sessionQueue.map((q, index) => {
-                    const ans = userAnswers[index];
-                    let isCorrect = false;
+                <div className="w-full bg-purple-200 dark:bg-[#23202B] h-2 rounded-full mb-6 overflow-hidden">
+                  <div className="bg-purple-600 dark:bg-purple-500 h-full transition-all duration-300 ease-out" style={{ width: `${((currentQuestionIndex + 1) / sessionQueue.length) * 100}%` }}></div>
+                </div>
 
-                    if (q.type.includes('multiple')) {
-                      // Array exact match
-                      isCorrect = Array.isArray(q.answer) && Array.isArray(ans) &&
-                        ans.length === q.answer.length &&
-                        ans.every(a => q.answer.includes(a));
-                    } else if (q.type.includes('text')) {
-                      // Self reported
-                      isCorrect = ans && ans.includes('Correct');
-                    } else {
-                      // Single choice (flexible)
-                      isCorrect = Array.isArray(q.answer) ? q.answer.includes(ans) : ans === q.answer;
-                    }
+                {/* Card */}
+                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative overflow-hidden">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{currentQData.question}</h3>
+                    <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
+                      <Keyboard size={20} />
+                    </div>
+                  </div>
 
-                    return (
-                      <div key={index} className="bg-white dark:bg-[#18161F] p-5 rounded-xl border border-zinc-200 dark:border-[#2A2633] shadow-sm flex items-center gap-4">
-                        <div className={isCorrect ? "text-green-500" : "text-red-500"}>
-                          {isCorrect ? <CheckCircle /> : <XCircle />}
-                        </div>
-                        <div>
-                          <p className="font-semibold text-zinc-800 dark:text-[#EBE9F0]">{q.question}</p>
-                          <p className="text-xs text-zinc-500 mt-1">
-                            {Array.isArray(ans) ? ans.join(", ") : ans || "Skipped"}
-                          </p>
-                          {q.explanation && !isCorrect && (
-                            <p className="text-xs text-zinc-400 mt-2 italic bg-zinc-50 dark:bg-[#23202B] p-2 rounded">Note: {q.explanation}</p>
+                  <div className="flex-grow z-10">
+                    {(currentQData.type === 'single' || currentQData.type === 'single_choice') && renderSingleChoice()}
+                    {(currentQData.type === 'multiple' || currentQData.type === 'multiple_response') && renderMultiChoice()}
+                    {(currentQData.type === 'text' || currentQData.type === 'text_input') && renderTextChoice()}
+                  </div>
+
+                  {/* Feedback Footer */}
+                  {showFeedback && (
+                    <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-[#2A2633] animate-in fade-in slide-in-from-bottom-4 duration-300">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          {feedbackType === 'correct' ? (
+                            <span className="text-green-600 dark:text-green-400 font-bold flex items-center gap-2"><CheckCircle size={18} /> Correct!</span>
+                          ) : (
+                            <span className="text-red-600 dark:text-red-400 font-bold flex items-center gap-2"><XCircle size={18} /> Incorrect</span>
+                          )}
+
+                          {!isPaused && (
+                            <div className="flex items-center gap-2 text-zinc-500 dark:text-[#9D99A8] text-sm ml-4 border-l border-zinc-200 dark:border-[#2A2633] pl-4">
+                              <Timer size={16} className="animate-pulse" />
+                              <span>Next in {countdown}s</span>
+                              <span className="text-xs bg-zinc-100 dark:bg-[#23202B] px-1.5 py-0.5 rounded border border-zinc-300 dark:border-[#2A2633] font-mono">Space</span>
+                            </div>
                           )}
                         </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
 
-              <div className="p-6 bg-white dark:bg-[#18161F] border-t border-zinc-100 dark:border-[#2A2633] flex justify-center">
-                <button onClick={() => setView('dashboard')} className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors">
-                  <RotateCcw size={18} /> Back to Dashboard
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* --- VIEW: ADMIN --- */}
-        {view === 'admin' && appUser?.username === 'liforra' && (
-          <div className="min-h-screen p-8 max-w-6xl mx-auto">
-            <div className="flex justify-between items-center mb-8">
-              <h1 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
-                <Shield className="text-red-500" /> Admin Dashboard
-              </h1>
-              <button onClick={() => setView('dashboard')} className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">Exit</button>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* User List */}
-              <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] overflow-hidden">
-                <div className="p-4 border-b border-zinc-100 dark:border-[#2A2633] bg-zinc-50 dark:bg-[#23202B]">
-                  <h2 className="font-bold text-zinc-700 dark:text-white">Users</h2>
-                </div>
-                <div className="overflow-y-auto max-h-[600px]">
-                  {adminUsers.map(u => (
-                    <button
-                      key={u.uid}
-                      onClick={() => handleAdminUserSelect(u)}
-                      className={`w-full text-left p-4 border-b border-zinc-100 dark:border-[#2A2633] hover:bg-zinc-50 dark:hover:bg-[#23202B] transition-colors ${selectedAdminUser?.uid === u.uid ? 'bg-purple-50 dark:bg-purple-900/20 border-l-4 border-l-purple-500' : ''}`}
-                    >
-                      <p className="font-bold text-zinc-800 dark:text-white">{u.username || "Unknown"}</p>
-                      <p className="text-xs text-zinc-400 font-mono truncate">{u.uid}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Details */}
-              <div className="md:col-span-2 space-y-6">
-                {selectedAdminUser ? (
-                  <>
-                    <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
-                      <h2 className="text-xl font-bold mb-4 dark:text-white">Stats for {selectedAdminUser.username}</h2>
-                      {selectedAdminUserData ? (
-                        <div className="grid grid-cols-2 gap-4">
-                          <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl">
-                            <p className="text-sm text-green-600 dark:text-green-400 font-bold uppercase">Questions Played</p>
-                            <p className="text-3xl font-bold text-zinc-800 dark:text-white">{Object.keys(selectedAdminUserData.stats).length}</p>
-                          </div>
-                          <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
-                            <p className="text-sm text-purple-600 dark:text-purple-400 font-bold uppercase">Private Quizzes</p>
-                            <p className="text-3xl font-bold text-zinc-800 dark:text-white">{selectedAdminUserData.quizzes.length}</p>
-                          </div>
+                        <div className="flex gap-2">
+                          {!isPaused && currentQuestionIndex < sessionQueue.length - 1 && (
+                            <button onClick={() => setIsPaused(true)} className="px-4 py-2 bg-zinc-100 dark:bg-[#23202B] hover:bg-zinc-200 text-zinc-600 dark:text-[#9D99A8] rounded-lg text-sm font-semibold flex items-center gap-2">
+                              <Pause size={16} /> Wait
+                            </button>
+                          )}
+                          <button onClick={handleNext} className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-semibold flex items-center gap-2 shadow-lg shadow-purple-200 dark:shadow-none">
+                            {currentQuestionIndex === sessionQueue.length - 1 ? 'Finish' : 'Next'} <ChevronRight size={16} />
+                          </button>
                         </div>
-                      ) : <p>Loading data...</p>}
+                      </div>
+                      {!isPaused && currentQuestionIndex < sessionQueue.length - 1 && (
+                        <div className="h-1 bg-zinc-100 dark:bg-[#23202B] mt-4 rounded-full overflow-hidden">
+                          <div className="h-full bg-purple-500 transition-all duration-1000 ease-linear" style={{ width: `${(countdown / (feedbackType === 'correct' ? 2 : 5)) * 100}%` }}></div>
+                        </div>
+                      )}
                     </div>
-
-                    {selectedAdminUserData && (
-                      <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
-                        <h2 className="text-xl font-bold mb-4 dark:text-white">Private Quizzes</h2>
-                        <div className="space-y-3">
-                          {selectedAdminUserData.quizzes.map(q => (
-                            <div key={q.id} className="p-4 border border-zinc-200 dark:border-[#2A2633] rounded-xl">
-                              <h3 className="font-bold dark:text-white">{q.title}</h3>
-                              <p className="text-xs text-zinc-500">{q.questions.length} questions • {q.createdAt}</p>
-                              <button onClick={() => downloadQuiz(q)} className="mt-2 text-xs text-purple-600 hover:underline">Download JSON</button>
-                            </div>
-                          ))}
-                          {selectedAdminUserData.quizzes.length === 0 && <p className="text-zinc-400 italic">No private quizzes.</p>}
-                        </div>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="h-full flex items-center justify-center text-zinc-400">
-                    Select a user to view details
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* --- VIEW: RESULTS --- */}
+          {view === 'results' && (
+            <div className="min-h-screen flex items-start justify-center p-4 py-12">
+              <div className="max-w-3xl w-full bg-white dark:bg-[#18161F] rounded-3xl shadow-2xl overflow-hidden border border-zinc-100 dark:border-[#2A2633]">
+                <div className="bg-purple-600 dark:bg-purple-700 p-10 text-center text-white relative">
+                  <Award className="mx-auto mb-4 opacity-90" size={48} />
+                  <h2 className="text-4xl font-bold mb-2">{Math.round((sessionScore / sessionQueue.length) * 100)}%</h2>
+                  <p className="text-purple-200 font-medium text-lg">Good job, {appUser?.username}!</p>
+                  <div className="mt-4 flex justify-center gap-2">
+                    <span className="bg-purple-800/50 px-3 py-1 rounded-full text-xs flex items-center gap-1"><Save size={12} /> Stats Updated</span>
+                  </div>
+                </div>
+
+                <div className="p-8 bg-purple-50 dark:bg-[#23202B]">
+                  <h3 className="text-zinc-800 dark:text-white font-bold text-lg mb-6">Session Review</h3>
+                  <div className="space-y-4">
+                    {sessionQueue.map((q, index) => {
+                      const ans = userAnswers[index];
+                      let isCorrect = false;
+
+                      if (q.type.includes('multiple')) {
+                        // Array exact match
+                        isCorrect = Array.isArray(q.answer) && Array.isArray(ans) &&
+                          ans.length === q.answer.length &&
+                          ans.every(a => q.answer.includes(a));
+                      } else if (q.type.includes('text')) {
+                        // Self reported
+                        isCorrect = ans && ans.includes('Correct');
+                      } else {
+                        // Single choice (flexible)
+                        isCorrect = Array.isArray(q.answer) ? q.answer.includes(ans) : ans === q.answer;
+                      }
+
+                      return (
+                        <div key={index} className="bg-white dark:bg-[#18161F] p-5 rounded-xl border border-zinc-200 dark:border-[#2A2633] shadow-sm flex items-center gap-4">
+                          <div className={isCorrect ? "text-green-500" : "text-red-500"}>
+                            {isCorrect ? <CheckCircle /> : <XCircle />}
+                          </div>
+                          <div>
+                            <p className="font-semibold text-zinc-800 dark:text-[#EBE9F0]">{q.question}</p>
+                            <p className="text-xs text-zinc-500 mt-1">
+                              {Array.isArray(ans) ? ans.join(", ") : ans || "Skipped"}
+                            </p>
+                            {q.explanation && !isCorrect && (
+                              <p className="text-xs text-zinc-400 mt-2 italic bg-zinc-50 dark:bg-[#23202B] p-2 rounded">Note: {q.explanation}</p>
+                            )}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <div className="p-6 bg-white dark:bg-[#18161F] border-t border-zinc-100 dark:border-[#2A2633] flex justify-center">
+                  <button onClick={() => setView('dashboard')} className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors">
+                    <RotateCcw size={18} /> Back to Dashboard
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* --- VIEW: ADMIN --- */}
+          {view === 'admin' && appUser?.username === 'liforra' && (
+            <div className="min-h-screen p-8 max-w-6xl mx-auto">
+              <div className="flex justify-between items-center mb-8">
+                <h1 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+                  <Shield className="text-red-500" /> Admin Dashboard
+                </h1>
+                <button onClick={() => setView('dashboard')} className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">Exit</button>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* User List */}
+                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] overflow-hidden">
+                  <div className="p-4 border-b border-zinc-100 dark:border-[#2A2633] bg-zinc-50 dark:bg-[#23202B]">
+                    <h2 className="font-bold text-zinc-700 dark:text-white">Users</h2>
+                  </div>
+                  <div className="overflow-y-auto max-h-[600px]">
+                    {adminUsers.map(u => (
+                      <button
+                        key={u.uid}
+                        onClick={() => handleAdminUserSelect(u)}
+                        className={`w-full text-left p-4 border-b border-zinc-100 dark:border-[#2A2633] hover:bg-zinc-50 dark:hover:bg-[#23202B] transition-colors ${selectedAdminUser?.uid === u.uid ? 'bg-purple-50 dark:bg-purple-900/20 border-l-4 border-l-purple-500' : ''}`}
+                      >
+                        <p className="font-bold text-zinc-800 dark:text-white">{u.username || "Unknown"}</p>
+                        <p className="text-xs text-zinc-400 font-mono truncate">{u.uid}</p>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="md:col-span-2 space-y-6">
+                  {selectedAdminUser ? (
+                    <>
+                      <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
+                        <h2 className="text-xl font-bold mb-4 dark:text-white">Stats for {selectedAdminUser.username}</h2>
+                        {selectedAdminUserData ? (
+                          <div className="grid grid-cols-2 gap-4">
+                            <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                              <p className="text-sm text-green-600 dark:text-green-400 font-bold uppercase">Questions Played</p>
+                              <p className="text-3xl font-bold text-zinc-800 dark:text-white">{Object.keys(selectedAdminUserData.stats).length}</p>
+                            </div>
+                            <div className="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl">
+                              <p className="text-sm text-purple-600 dark:text-purple-400 font-bold uppercase">Private Quizzes</p>
+                              <p className="text-3xl font-bold text-zinc-800 dark:text-white">{selectedAdminUserData.quizzes.length}</p>
+                            </div>
+                          </div>
+                        ) : <p>Loading data...</p>}
+                      </div>
+
+                      {selectedAdminUserData && (
+                        <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
+                          <h2 className="text-xl font-bold mb-4 dark:text-white">Private Quizzes</h2>
+                          <div className="space-y-3">
+                            {selectedAdminUserData.quizzes.map(q => (
+                              <div key={q.id} className="p-4 border border-zinc-200 dark:border-[#2A2633] rounded-xl">
+                                <h3 className="font-bold dark:text-white">{q.title}</h3>
+                                <p className="text-xs text-zinc-500">{q.questions.length} questions • {q.createdAt}</p>
+                                <button onClick={() => downloadQuiz(q)} className="mt-2 text-xs text-purple-600 hover:underline">Download JSON</button>
+                              </div>
+                            ))}
+                            {selectedAdminUserData.quizzes.length === 0 && <p className="text-zinc-400 italic">No private quizzes.</p>}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="h-full flex items-center justify-center text-zinc-400">
+                      Select a user to view details
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

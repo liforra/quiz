@@ -45,6 +45,7 @@ interface SidebarProps {
   privateQuizzes: any[];
   publicQuizzes: any[];
   onSelectQuiz: (quiz: any) => void;
+  onSelectQuickQuiz: (quiz: any) => void;
   onLogout: () => void;
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -67,6 +68,7 @@ export default function Sidebar({
   privateQuizzes,
   publicQuizzes,
   onSelectQuiz,
+  onSelectQuickQuiz,
   onLogout,
   isOpen,
   toggleSidebar
@@ -198,7 +200,20 @@ export default function Sidebar({
                             {quiz.type === 'private' && <span className="text-amber-500">• Private</span>}
                         </div>
                       </div>
-                      <Play size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-purple-500 shrink-0" />
+                      <div className="flex items-center gap-1">
+                        <div
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onSelectQuickQuiz(quiz);
+                            if (window.innerWidth < 768) toggleSidebar();
+                          }}
+                          className="p-2 hover:bg-zinc-200 dark:hover:bg-[#2A2633] rounded-md text-zinc-400 hover:text-purple-500 transition-colors"
+                          title="Quick Test (20 Random)"
+                        >
+                          <Timer size={16} />
+                        </div>
+                        {/* <Play size={14} className="text-purple-500 shrink-0" /> */}
+                      </div>
                     </button>
                   );
                 })}
