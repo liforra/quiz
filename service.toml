@@ -1,0 +1,17 @@
+[service]
+name = "quiz"
+description = "Interactive Quiz Application"
+autostart = true
+runas = ""
+
+[commands]
+start = "nohup /usr/local/bin/pnpm dev > app.log 2>&1 & echo $! > .pid"
+stop = "kill $(cat .pid) 2>/dev/null; rm .pid 2>/dev/null"
+restart = "kill $(cat .pid) 2>/dev/null; rm .pid 2>/dev/null; nohup /usr/local/bin/pnpm dev > app.log 2>&1 & echo $! > .pid"
+update = "/usr/local/bin/pnpm install"
+
+[status]
+command = "test -f .pid && ps -p $(cat .pid) > /dev/null"
+
+[health]
+url = "http://localhost:3849"
