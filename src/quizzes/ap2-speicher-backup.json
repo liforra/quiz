@@ -5,13 +5,23 @@
       "type": "single",
       "category": "Speicher & Backup",
       "question": "Ein RAID 5 wird aus vier Festplatten mit je 4 TB aufgebaut. Wie groß ist die nutzbare Nettokapazität?",
-      "options": ["4 TB", "8 TB", "12 TB", "16 TB"],
+      "options": [
+        "4 TB",
+        "8 TB",
+        "12 TB",
+        "16 TB"
+      ],
       "answer": "12 TB",
       "explanation": "Bei RAID 5 geht die Kapazität einer Platte für die verteilte Parität verloren: (4 − 1) × 4 TB = 12 TB. Das Array verkraftet den Ausfall genau einer Platte.",
       "translations": {
         "en": {
           "question": "A RAID 5 is built from four disks of 4 TB each. What is the usable net capacity?",
-          "options": ["4 TB", "8 TB", "12 TB", "16 TB"],
+          "options": [
+            "4 TB",
+            "8 TB",
+            "12 TB",
+            "16 TB"
+          ],
           "answer": "12 TB",
           "explanation": "In RAID 5, one disk's capacity is lost to distributed parity: (4 − 1) × 4 TB = 12 TB. The array survives the failure of exactly one disk."
         }
@@ -22,13 +32,23 @@
       "type": "single",
       "category": "Speicher & Backup",
       "question": "Ein RAID 6 besteht aus sechs Festplatten mit je 8 TB. Wie groß ist die nutzbare Nettokapazität?",
-      "options": ["24 TB", "32 TB", "40 TB", "48 TB"],
+      "options": [
+        "24 TB",
+        "32 TB",
+        "40 TB",
+        "48 TB"
+      ],
       "answer": "32 TB",
       "explanation": "RAID 6 nutzt doppelte Parität — zwei Plattenkapazitäten gehen verloren: (6 − 2) × 8 TB = 32 TB. Dafür dürfen zwei Platten gleichzeitig ausfallen.",
       "translations": {
         "en": {
           "question": "A RAID 6 consists of six disks of 8 TB each. What is the usable net capacity?",
-          "options": ["24 TB", "32 TB", "40 TB", "48 TB"],
+          "options": [
+            "24 TB",
+            "32 TB",
+            "40 TB",
+            "48 TB"
+          ],
           "answer": "32 TB",
           "explanation": "RAID 6 uses double parity — two disks' worth of capacity is lost: (6 − 2) × 8 TB = 32 TB. In return, two disks may fail simultaneously."
         }
@@ -39,13 +59,23 @@
       "type": "single",
       "category": "Speicher & Backup",
       "question": "Welcher RAID-Level bietet KEINE Redundanz?",
-      "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 6"],
+      "options": [
+        "RAID 0",
+        "RAID 1",
+        "RAID 5",
+        "RAID 6"
+      ],
       "answer": "RAID 0",
       "explanation": "RAID 0 (Striping) verteilt Daten nur zur Geschwindigkeitssteigerung — fällt eine Platte aus, sind ALLE Daten verloren. Das Ausfallrisiko steigt sogar mit jeder Platte.",
       "translations": {
         "en": {
           "question": "Which RAID level provides NO redundancy?",
-          "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 6"],
+          "options": [
+            "RAID 0",
+            "RAID 1",
+            "RAID 5",
+            "RAID 6"
+          ],
           "answer": "RAID 0",
           "explanation": "RAID 0 (striping) distributes data purely for speed — if one disk fails, ALL data is lost. The failure risk actually increases with every disk added."
         }
@@ -83,14 +113,34 @@
       "type": "multiple",
       "category": "Speicher & Backup",
       "question": "Welche der folgenden sind klassische Datensicherungsarten?",
-      "options": ["Vollsicherung", "Differenzielle Sicherung", "Inkrementelle Sicherung", "Proportionale Sicherung", "Lineare Sicherung"],
-      "answer": ["Vollsicherung", "Differenzielle Sicherung", "Inkrementelle Sicherung"],
+      "options": [
+        "Vollsicherung",
+        "Differenzielle Sicherung",
+        "Inkrementelle Sicherung",
+        "Proportionale Sicherung",
+        "Lineare Sicherung"
+      ],
+      "answer": [
+        "Vollsicherung",
+        "Differenzielle Sicherung",
+        "Inkrementelle Sicherung"
+      ],
       "explanation": "Voll = alles; differenziell = alles seit der letzten VOLLsicherung; inkrementell = alles seit der letzten Sicherung beliebigen Typs. „Proportional“ und „linear“ existieren nicht.",
       "translations": {
         "en": {
           "question": "Which of the following are classic backup types?",
-          "options": ["Full backup", "Differential backup", "Incremental backup", "Proportional backup", "Linear backup"],
-          "answer": ["Full backup", "Differential backup", "Incremental backup"],
+          "options": [
+            "Full backup",
+            "Differential backup",
+            "Incremental backup",
+            "Proportional backup",
+            "Linear backup"
+          ],
+          "answer": [
+            "Full backup",
+            "Differential backup",
+            "Incremental backup"
+          ],
           "explanation": "Full = everything; differential = everything since the last FULL backup; incremental = everything since the last backup of any type. \"Proportional\" and \"linear\" don't exist."
         }
       }
@@ -137,14 +187,34 @@
       "type": "multiple",
       "category": "Speicher & Backup",
       "question": "Welche RAID-Level bieten Redundanz gegen den Ausfall mindestens einer Festplatte?",
-      "options": ["RAID 1", "RAID 5", "RAID 6", "RAID 0", "JBOD"],
-      "answer": ["RAID 1", "RAID 5", "RAID 6"],
+      "options": [
+        "RAID 1",
+        "RAID 5",
+        "RAID 6",
+        "RAID 0",
+        "JBOD"
+      ],
+      "answer": [
+        "RAID 1",
+        "RAID 5",
+        "RAID 6"
+      ],
       "explanation": "RAID 1 (Spiegel), RAID 5 (einfache Parität) und RAID 6 (doppelte Parität) überstehen Plattenausfälle. RAID 0 und JBOD bieten keinerlei Redundanz.",
       "translations": {
         "en": {
           "question": "Which RAID levels provide redundancy against the failure of at least one disk?",
-          "options": ["RAID 1", "RAID 5", "RAID 6", "RAID 0", "JBOD"],
-          "answer": ["RAID 1", "RAID 5", "RAID 6"],
+          "options": [
+            "RAID 1",
+            "RAID 5",
+            "RAID 6",
+            "RAID 0",
+            "JBOD"
+          ],
+          "answer": [
+            "RAID 1",
+            "RAID 5",
+            "RAID 6"
+          ],
           "explanation": "RAID 1 (mirror), RAID 5 (single parity) and RAID 6 (double parity) survive disk failures. RAID 0 and JBOD offer no redundancy at all."
         }
       }
@@ -241,6 +311,1326 @@
           "question": "What does the abbreviation RAID stand for?",
           "answer": "Redundant Array of Independent Disks",
           "explanation": "Originally \"Inexpensive\" instead of \"Independent\". RAID combines multiple physical disks into one logical array — for redundancy, speed, or both."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q13",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID 0 im Bereich Speicher & Backup?",
+      "answer": "RAID 0 striped Daten ohne Redundanz.",
+      "explanation": "RAID 0 striped Daten ohne Redundanz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID 0 in Speicher & Backup?",
+          "answer": "RAID 0 stripes data without redundancy.",
+          "explanation": "RAID 0 stripes data without redundancy. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q14",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID 1 im Bereich Speicher & Backup?",
+      "answer": "RAID 1 spiegelt Daten auf mindestens zwei Datenträger.",
+      "explanation": "RAID 1 spiegelt Daten auf mindestens zwei Datenträger. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID 1 in Speicher & Backup?",
+          "answer": "RAID 1 mirrors data to at least two drives.",
+          "explanation": "RAID 1 mirrors data to at least two drives. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q15",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID 5 im Bereich Speicher & Backup?",
+      "answer": "RAID 5 nutzt verteilte Parität und toleriert einen Plattenausfall.",
+      "explanation": "RAID 5 nutzt verteilte Parität und toleriert einen Plattenausfall. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID 5 in Speicher & Backup?",
+          "answer": "RAID 5 uses distributed parity and tolerates one disk failure.",
+          "explanation": "RAID 5 uses distributed parity and tolerates one disk failure. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q16",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID 6 im Bereich Speicher & Backup?",
+      "answer": "RAID 6 nutzt doppelte Parität und toleriert zwei Plattenausfälle.",
+      "explanation": "RAID 6 nutzt doppelte Parität und toleriert zwei Plattenausfälle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID 6 in Speicher & Backup?",
+          "answer": "RAID 6 uses double parity and tolerates two disk failures.",
+          "explanation": "RAID 6 uses double parity and tolerates two disk failures. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q17",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID 10 im Bereich Speicher & Backup?",
+      "answer": "RAID 10 kombiniert Striping und Mirroring.",
+      "explanation": "RAID 10 kombiniert Striping und Mirroring. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID 10 in Speicher & Backup?",
+          "answer": "RAID 10 combines striping and mirroring.",
+          "explanation": "RAID 10 combines striping and mirroring. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q18",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Hot Spare im Bereich Speicher & Backup?",
+      "answer": "Hot Spare ist ein Ersatzlaufwerk, das automatisch einspringen kann.",
+      "explanation": "Hot Spare ist ein Ersatzlaufwerk, das automatisch einspringen kann. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Hot Spare in Speicher & Backup?",
+          "answer": "Hot Spare is a spare drive that can automatically take over.",
+          "explanation": "Hot Spare is a spare drive that can automatically take over. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q19",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Rebuild im Bereich Speicher & Backup?",
+      "answer": "Rebuild stellt Redundanz nach Laufwerkstausch wieder her.",
+      "explanation": "Rebuild stellt Redundanz nach Laufwerkstausch wieder her. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Rebuild in Speicher & Backup?",
+          "answer": "Rebuild restores redundancy after drive replacement.",
+          "explanation": "Rebuild restores redundancy after drive replacement. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q20",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Stripe im Bereich Speicher & Backup?",
+      "answer": "Stripe verteilt Datenblöcke über mehrere Laufwerke.",
+      "explanation": "Stripe verteilt Datenblöcke über mehrere Laufwerke. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Stripe in Speicher & Backup?",
+          "answer": "Stripe distributes data blocks across several drives.",
+          "explanation": "Stripe distributes data blocks across several drives. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q21",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Parität im Bereich Speicher & Backup?",
+      "answer": "Parität speichert Prüfinformationen zur Wiederherstellung.",
+      "explanation": "Parität speichert Prüfinformationen zur Wiederherstellung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Parität in Speicher & Backup?",
+          "answer": "Parität stores check information for recovery.",
+          "explanation": "Parität stores check information for recovery. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q22",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat JBOD im Bereich Speicher & Backup?",
+      "answer": "JBOD fasst Laufwerke ohne RAID-Redundanz zusammen.",
+      "explanation": "JBOD fasst Laufwerke ohne RAID-Redundanz zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of JBOD in Speicher & Backup?",
+          "answer": "JBOD combines drives without RAID redundancy.",
+          "explanation": "JBOD combines drives without RAID redundancy. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q23",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat NAS im Bereich Speicher & Backup?",
+      "answer": "NAS stellt Speicher dateibasiert über das Netzwerk bereit.",
+      "explanation": "NAS stellt Speicher dateibasiert über das Netzwerk bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of NAS in Speicher & Backup?",
+          "answer": "NAS provides file-based storage over the network.",
+          "explanation": "NAS provides file-based storage over the network. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q24",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat SAN im Bereich Speicher & Backup?",
+      "answer": "SAN stellt blockbasierten Speicher über ein Speichernetz bereit.",
+      "explanation": "SAN stellt blockbasierten Speicher über ein Speichernetz bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of SAN in Speicher & Backup?",
+          "answer": "SAN provides block-based storage over a storage network.",
+          "explanation": "SAN provides block-based storage over a storage network. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q25",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat DAS im Bereich Speicher & Backup?",
+      "answer": "DAS ist direkt an einen Server angeschlossener Speicher.",
+      "explanation": "DAS ist direkt an einen Server angeschlossener Speicher. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of DAS in Speicher & Backup?",
+          "answer": "DAS is storage directly attached to a server.",
+          "explanation": "DAS is storage directly attached to a server. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q26",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Block Storage im Bereich Speicher & Backup?",
+      "answer": "Block Storage stellt rohe Blöcke für Dateisysteme oder Datenbanken bereit.",
+      "explanation": "Block Storage stellt rohe Blöcke für Dateisysteme oder Datenbanken bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Block Storage in Speicher & Backup?",
+          "answer": "Block Storage provides raw blocks for file systems or databases.",
+          "explanation": "Block Storage provides raw blocks for file systems or databases. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q27",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat File Storage im Bereich Speicher & Backup?",
+      "answer": "File Storage stellt Dateien und Verzeichnisse bereit.",
+      "explanation": "File Storage stellt Dateien und Verzeichnisse bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of File Storage in Speicher & Backup?",
+          "answer": "File Storage provides files and directories.",
+          "explanation": "File Storage provides files and directories. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q28",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Object Storage im Bereich Speicher & Backup?",
+      "answer": "Object Storage speichert Objekte mit Metadaten in Buckets.",
+      "explanation": "Object Storage speichert Objekte mit Metadaten in Buckets. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Object Storage in Speicher & Backup?",
+          "answer": "Object Storage stores objects with metadata in buckets.",
+          "explanation": "Object Storage stores objects with metadata in buckets. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q29",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat iSCSI im Bereich Speicher & Backup?",
+      "answer": "iSCSI transportiert SCSI-Kommandos über IP-Netze.",
+      "explanation": "iSCSI transportiert SCSI-Kommandos über IP-Netze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of iSCSI in Speicher & Backup?",
+          "answer": "iSCSI transports SCSI commands over IP networks.",
+          "explanation": "iSCSI transports SCSI commands over IP networks. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q30",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Fibre Channel im Bereich Speicher & Backup?",
+      "answer": "Fibre Channel ist ein Speichernetzprotokoll für SANs.",
+      "explanation": "Fibre Channel ist ein Speichernetzprotokoll für SANs. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Fibre Channel in Speicher & Backup?",
+          "answer": "Fibre Channel is a storage network protocol for SANs.",
+          "explanation": "Fibre Channel is a storage network protocol for SANs. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q31",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat LUN im Bereich Speicher & Backup?",
+      "answer": "LUN ist eine logisch bereitgestellte Speichereinheit im SAN.",
+      "explanation": "LUN ist eine logisch bereitgestellte Speichereinheit im SAN. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of LUN in Speicher & Backup?",
+          "answer": "LUN is a logically provided storage unit in a SAN.",
+          "explanation": "LUN is a logically provided storage unit in a SAN. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q32",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Multipathing im Bereich Speicher & Backup?",
+      "answer": "Multipathing nutzt mehrere Pfade zu Speicher für Redundanz oder Lastverteilung.",
+      "explanation": "Multipathing nutzt mehrere Pfade zu Speicher für Redundanz oder Lastverteilung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Multipathing in Speicher & Backup?",
+          "answer": "Multipathing uses multiple paths to storage for redundancy or load balancing.",
+          "explanation": "Multipathing uses multiple paths to storage for redundancy or load balancing. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q33",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Thin Provisioning im Bereich Speicher & Backup?",
+      "answer": "Thin Provisioning weist Speicher logisch zu und belegt ihn physisch erst bei Nutzung.",
+      "explanation": "Thin Provisioning weist Speicher logisch zu und belegt ihn physisch erst bei Nutzung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Thin Provisioning in Speicher & Backup?",
+          "answer": "Thin Provisioning allocates storage logically and consumes it physically when used.",
+          "explanation": "Thin Provisioning allocates storage logically and consumes it physically when used. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q34",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Thick Provisioning im Bereich Speicher & Backup?",
+      "answer": "Thick Provisioning reserviert Speicher physisch sofort vollständig.",
+      "explanation": "Thick Provisioning reserviert Speicher physisch sofort vollständig. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Thick Provisioning in Speicher & Backup?",
+          "answer": "Thick Provisioning physically reserves storage immediately.",
+          "explanation": "Thick Provisioning physically reserves storage immediately. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q35",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Deduplication im Bereich Speicher & Backup?",
+      "answer": "Deduplication speichert identische Datenblöcke nur einmal.",
+      "explanation": "Deduplication speichert identische Datenblöcke nur einmal. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Deduplication in Speicher & Backup?",
+          "answer": "Deduplication stores identical data blocks only once.",
+          "explanation": "Deduplication stores identical data blocks only once. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q36",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Kompression im Bereich Speicher & Backup?",
+      "answer": "Kompression reduziert Speicherbedarf durch verdichtete Darstellung.",
+      "explanation": "Kompression reduziert Speicherbedarf durch verdichtete Darstellung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Kompression in Speicher & Backup?",
+          "answer": "Kompression reduces storage needs through compressed representation.",
+          "explanation": "Kompression reduces storage needs through compressed representation. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q37",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Tiering im Bereich Speicher & Backup?",
+      "answer": "Tiering verschiebt Daten je nach Nutzung auf passende Speicherklassen.",
+      "explanation": "Tiering verschiebt Daten je nach Nutzung auf passende Speicherklassen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Tiering in Speicher & Backup?",
+          "answer": "Tiering moves data to suitable storage classes based on usage.",
+          "explanation": "Tiering moves data to suitable storage classes based on usage. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q38",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat SSD im Bereich Speicher & Backup?",
+      "answer": "SSD speichert Daten ohne bewegliche Teile in Flash-Speicher.",
+      "explanation": "SSD speichert Daten ohne bewegliche Teile in Flash-Speicher. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of SSD in Speicher & Backup?",
+          "answer": "SSD stores data in flash memory without moving parts.",
+          "explanation": "SSD stores data in flash memory without moving parts. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q39",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat HDD im Bereich Speicher & Backup?",
+      "answer": "HDD speichert Daten magnetisch auf rotierenden Platten.",
+      "explanation": "HDD speichert Daten magnetisch auf rotierenden Platten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of HDD in Speicher & Backup?",
+          "answer": "HDD stores data magnetically on spinning platters.",
+          "explanation": "HDD stores data magnetically on spinning platters. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q40",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat NVMe im Bereich Speicher & Backup?",
+      "answer": "NVMe ist ein schnelles Protokoll für SSDs über PCIe.",
+      "explanation": "NVMe ist ein schnelles Protokoll für SSDs über PCIe. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of NVMe in Speicher & Backup?",
+          "answer": "NVMe is a fast protocol for SSDs over PCIe.",
+          "explanation": "NVMe is a fast protocol for SSDs over PCIe. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q41",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat SATA im Bereich Speicher & Backup?",
+      "answer": "SATA ist eine Schnittstelle für Laufwerke.",
+      "explanation": "SATA ist eine Schnittstelle für Laufwerke. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of SATA in Speicher & Backup?",
+          "answer": "SATA is an interface for drives.",
+          "explanation": "SATA is an interface for drives. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q42",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat SAS im Bereich Speicher & Backup?",
+      "answer": "SAS ist eine enterpriseorientierte serielle SCSI-Schnittstelle.",
+      "explanation": "SAS ist eine enterpriseorientierte serielle SCSI-Schnittstelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of SAS in Speicher & Backup?",
+          "answer": "SAS is an enterprise-oriented serial SCSI interface.",
+          "explanation": "SAS is an enterprise-oriented serial SCSI interface. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q43",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Backup im Bereich Speicher & Backup?",
+      "answer": "Backup ist eine Kopie zur Wiederherstellung nach Datenverlust.",
+      "explanation": "Backup ist eine Kopie zur Wiederherstellung nach Datenverlust. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Backup in Speicher & Backup?",
+          "answer": "Backup is a copy for recovery after data loss.",
+          "explanation": "Backup is a copy for recovery after data loss. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q44",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Restore im Bereich Speicher & Backup?",
+      "answer": "Restore stellt Daten aus einer Sicherung wieder her.",
+      "explanation": "Restore stellt Daten aus einer Sicherung wieder her. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Restore in Speicher & Backup?",
+          "answer": "Restore restores data from a backup.",
+          "explanation": "Restore restores data from a backup. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q45",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Vollsicherung im Bereich Speicher & Backup?",
+      "answer": "Vollsicherung sichert alle ausgewählten Daten vollständig.",
+      "explanation": "Vollsicherung sichert alle ausgewählten Daten vollständig. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Vollsicherung in Speicher & Backup?",
+          "answer": "Vollsicherung backs up all selected data completely.",
+          "explanation": "Vollsicherung backs up all selected data completely. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q46",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Inkrementelle Sicherung im Bereich Speicher & Backup?",
+      "answer": "Inkrementelle Sicherung sichert Änderungen seit der letzten Sicherung.",
+      "explanation": "Inkrementelle Sicherung sichert Änderungen seit der letzten Sicherung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Inkrementelle Sicherung in Speicher & Backup?",
+          "answer": "Inkrementelle Sicherung backs up changes since the last backup.",
+          "explanation": "Inkrementelle Sicherung backs up changes since the last backup. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q47",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Differentielle Sicherung im Bereich Speicher & Backup?",
+      "answer": "Differentielle Sicherung sichert Änderungen seit der letzten Vollsicherung.",
+      "explanation": "Differentielle Sicherung sichert Änderungen seit der letzten Vollsicherung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Differentielle Sicherung in Speicher & Backup?",
+          "answer": "Differentielle Sicherung backs up changes since the last full backup.",
+          "explanation": "Differentielle Sicherung backs up changes since the last full backup. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q48",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Synthetic Full Backup im Bereich Speicher & Backup?",
+      "answer": "Synthetic Full Backup erzeugt eine Vollsicherung aus vorhandenen Sicherungen.",
+      "explanation": "Synthetic Full Backup erzeugt eine Vollsicherung aus vorhandenen Sicherungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Synthetic Full Backup in Speicher & Backup?",
+          "answer": "Synthetic Full Backup creates a full backup from existing backups.",
+          "explanation": "Synthetic Full Backup creates a full backup from existing backups. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q49",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Image Backup im Bereich Speicher & Backup?",
+      "answer": "Image Backup sichert ein komplettes Systemabbild.",
+      "explanation": "Image Backup sichert ein komplettes Systemabbild. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Image Backup in Speicher & Backup?",
+          "answer": "Image Backup backs up a complete system image.",
+          "explanation": "Image Backup backs up a complete system image. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q50",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat File Backup im Bereich Speicher & Backup?",
+      "answer": "File Backup sichert ausgewählte Dateien und Verzeichnisse.",
+      "explanation": "File Backup sichert ausgewählte Dateien und Verzeichnisse. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of File Backup in Speicher & Backup?",
+          "answer": "File Backup backs up selected files and directories.",
+          "explanation": "File Backup backs up selected files and directories. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q51",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Application-aware Backup im Bereich Speicher & Backup?",
+      "answer": "Application-aware Backup berücksichtigt den konsistenten Zustand einer Anwendung.",
+      "explanation": "Application-aware Backup berücksichtigt den konsistenten Zustand einer Anwendung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Application-aware Backup in Speicher & Backup?",
+          "answer": "Application-aware Backup considers the consistent state of an application.",
+          "explanation": "Application-aware Backup considers the consistent state of an application. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q52",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Snapshot im Bereich Speicher & Backup?",
+      "answer": "Snapshot hält einen Speicherzustand zu einem Zeitpunkt fest.",
+      "explanation": "Snapshot hält einen Speicherzustand zu einem Zeitpunkt fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Snapshot in Speicher & Backup?",
+          "answer": "Snapshot captures storage state at a point in time.",
+          "explanation": "Snapshot captures storage state at a point in time. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q53",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat CDP im Bereich Speicher & Backup?",
+      "answer": "CDP sichert Änderungen nahezu kontinuierlich.",
+      "explanation": "CDP sichert Änderungen nahezu kontinuierlich. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of CDP in Speicher & Backup?",
+          "answer": "CDP backs up changes nearly continuously.",
+          "explanation": "CDP backs up changes nearly continuously. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q54",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RTO im Bereich Speicher & Backup?",
+      "answer": "RTO ist die maximal akzeptable Wiederherstellungszeit.",
+      "explanation": "RTO ist die maximal akzeptable Wiederherstellungszeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RTO in Speicher & Backup?",
+          "answer": "RTO is the maximum acceptable recovery time.",
+          "explanation": "RTO is the maximum acceptable recovery time. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q55",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RPO im Bereich Speicher & Backup?",
+      "answer": "RPO ist der maximal akzeptable Datenverlust gemessen in Zeit.",
+      "explanation": "RPO ist der maximal akzeptable Datenverlust gemessen in Zeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RPO in Speicher & Backup?",
+          "answer": "RPO is the maximum acceptable data loss measured in time.",
+          "explanation": "RPO is the maximum acceptable data loss measured in time. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q56",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat 3-2-1-Regel im Bereich Speicher & Backup?",
+      "answer": "3-2-1-Regel fordert drei Kopien, zwei Medienarten und eine externe Kopie.",
+      "explanation": "3-2-1-Regel fordert drei Kopien, zwei Medienarten und eine externe Kopie. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of 3-2-1-Regel in Speicher & Backup?",
+          "answer": "3-2-1-Regel requires three copies, two media types and one off-site copy.",
+          "explanation": "3-2-1-Regel requires three copies, two media types and one off-site copy. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q57",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Offsite Backup im Bereich Speicher & Backup?",
+      "answer": "Offsite Backup liegt an einem anderen Standort.",
+      "explanation": "Offsite Backup liegt an einem anderen Standort. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Offsite Backup in Speicher & Backup?",
+          "answer": "Offsite Backup is stored at another location.",
+          "explanation": "Offsite Backup is stored at another location. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q58",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Offline Backup im Bereich Speicher & Backup?",
+      "answer": "Offline Backup ist nicht dauerhaft mit dem System verbunden.",
+      "explanation": "Offline Backup ist nicht dauerhaft mit dem System verbunden. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Offline Backup in Speicher & Backup?",
+          "answer": "Offline Backup is not permanently connected to the system.",
+          "explanation": "Offline Backup is not permanently connected to the system. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q59",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Immutable Backup im Bereich Speicher & Backup?",
+      "answer": "Immutable Backup kann für eine definierte Zeit nicht verändert oder gelöscht werden.",
+      "explanation": "Immutable Backup kann für eine definierte Zeit nicht verändert oder gelöscht werden. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Immutable Backup in Speicher & Backup?",
+          "answer": "Immutable Backup cannot be changed or deleted for a defined time.",
+          "explanation": "Immutable Backup cannot be changed or deleted for a defined time. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q60",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Air Gap im Bereich Speicher & Backup?",
+      "answer": "Air Gap trennt Sicherungen physisch oder logisch vom Produktivnetz.",
+      "explanation": "Air Gap trennt Sicherungen physisch oder logisch vom Produktivnetz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Air Gap in Speicher & Backup?",
+          "answer": "Air Gap physically or logically separates backups from the production network.",
+          "explanation": "Air Gap physically or logically separates backups from the production network. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q61",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Backup-Fenster im Bereich Speicher & Backup?",
+      "answer": "Backup-Fenster ist die verfügbare Zeit für Sicherungsläufe.",
+      "explanation": "Backup-Fenster ist die verfügbare Zeit für Sicherungsläufe. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Backup-Fenster in Speicher & Backup?",
+          "answer": "Backup-Fenster is the available time for backup jobs.",
+          "explanation": "Backup-Fenster is the available time for backup jobs. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q62",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Aufbewahrungsfrist im Bereich Speicher & Backup?",
+      "answer": "Aufbewahrungsfrist legt fest, wie lange Sicherungen behalten werden.",
+      "explanation": "Aufbewahrungsfrist legt fest, wie lange Sicherungen behalten werden. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Aufbewahrungsfrist in Speicher & Backup?",
+          "answer": "Aufbewahrungsfrist defines how long backups are retained.",
+          "explanation": "Aufbewahrungsfrist defines how long backups are retained. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q63",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Retention Policy im Bereich Speicher & Backup?",
+      "answer": "Retention Policy regelt Aufbewahrung und Löschung von Sicherungen.",
+      "explanation": "Retention Policy regelt Aufbewahrung und Löschung von Sicherungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Retention Policy in Speicher & Backup?",
+          "answer": "Retention Policy controls retention and deletion of backups.",
+          "explanation": "Retention Policy controls retention and deletion of backups. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q64",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat GFS-Prinzip im Bereich Speicher & Backup?",
+      "answer": "GFS-Prinzip organisiert Sicherungen als Großvater, Vater und Sohn.",
+      "explanation": "GFS-Prinzip organisiert Sicherungen als Großvater, Vater und Sohn. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of GFS-Prinzip in Speicher & Backup?",
+          "answer": "GFS-Prinzip organizes backups as grandfather, father and son.",
+          "explanation": "GFS-Prinzip organizes backups as grandfather, father and son. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q65",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Medienrotation im Bereich Speicher & Backup?",
+      "answer": "Medienrotation wechselt Sicherungsmedien nach einem Plan.",
+      "explanation": "Medienrotation wechselt Sicherungsmedien nach einem Plan. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Medienrotation in Speicher & Backup?",
+          "answer": "Medienrotation rotates backup media according to a schedule.",
+          "explanation": "Medienrotation rotates backup media according to a schedule. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q66",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Backup-Katalog im Bereich Speicher & Backup?",
+      "answer": "Backup-Katalog verwaltet Informationen über vorhandene Sicherungen.",
+      "explanation": "Backup-Katalog verwaltet Informationen über vorhandene Sicherungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Backup-Katalog in Speicher & Backup?",
+          "answer": "Backup-Katalog manages information about available backups.",
+          "explanation": "Backup-Katalog manages information about available backups. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q67",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Restore-Test im Bereich Speicher & Backup?",
+      "answer": "Restore-Test prüft, ob Sicherungen wirklich wiederherstellbar sind.",
+      "explanation": "Restore-Test prüft, ob Sicherungen wirklich wiederherstellbar sind. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Restore-Test in Speicher & Backup?",
+          "answer": "Restore-Test checks whether backups can actually be restored.",
+          "explanation": "Restore-Test checks whether backups can actually be restored. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q68",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Verifikation im Bereich Speicher & Backup?",
+      "answer": "Verifikation prüft die Lesbarkeit und Integrität einer Sicherung.",
+      "explanation": "Verifikation prüft die Lesbarkeit und Integrität einer Sicherung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Verifikation in Speicher & Backup?",
+          "answer": "Verifikation checks readability and integrity of a backup.",
+          "explanation": "Verifikation checks readability and integrity of a backup. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q69",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Checksumme im Bereich Speicher & Backup?",
+      "answer": "Checksumme erkennt Veränderungen oder Übertragungsfehler.",
+      "explanation": "Checksumme erkennt Veränderungen oder Übertragungsfehler. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Checksumme in Speicher & Backup?",
+          "answer": "Checksumme detects changes or transfer errors.",
+          "explanation": "Checksumme detects changes or transfer errors. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q70",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Verschlüsselung im Bereich Speicher & Backup?",
+      "answer": "Verschlüsselung schützt Sicherungsdaten vor unbefugtem Zugriff.",
+      "explanation": "Verschlüsselung schützt Sicherungsdaten vor unbefugtem Zugriff. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Verschlüsselung in Speicher & Backup?",
+          "answer": "Verschlüsselung protects backup data from unauthorized access.",
+          "explanation": "Verschlüsselung protects backup data from unauthorized access. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q71",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Bandlaufwerk im Bereich Speicher & Backup?",
+      "answer": "Bandlaufwerk speichert Sicherungen sequenziell auf Magnetband.",
+      "explanation": "Bandlaufwerk speichert Sicherungen sequenziell auf Magnetband. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Bandlaufwerk in Speicher & Backup?",
+          "answer": "Bandlaufwerk stores backups sequentially on magnetic tape.",
+          "explanation": "Bandlaufwerk stores backups sequentially on magnetic tape. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q72",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat LTO im Bereich Speicher & Backup?",
+      "answer": "LTO ist ein verbreiteter Magnetbandstandard.",
+      "explanation": "LTO ist ein verbreiteter Magnetbandstandard. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of LTO in Speicher & Backup?",
+          "answer": "LTO is a common magnetic tape standard.",
+          "explanation": "LTO is a common magnetic tape standard. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q73",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Cloud Backup im Bereich Speicher & Backup?",
+      "answer": "Cloud Backup speichert Sicherungen bei einem Cloud-Anbieter.",
+      "explanation": "Cloud Backup speichert Sicherungen bei einem Cloud-Anbieter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Cloud Backup in Speicher & Backup?",
+          "answer": "Cloud Backup stores backups with a cloud provider.",
+          "explanation": "Cloud Backup stores backups with a cloud provider. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q74",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat S3 Object Lock im Bereich Speicher & Backup?",
+      "answer": "S3 Object Lock kann objektbasierte Sicherungen unveränderlich machen.",
+      "explanation": "S3 Object Lock kann objektbasierte Sicherungen unveränderlich machen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of S3 Object Lock in Speicher & Backup?",
+          "answer": "S3 Object Lock can make object-based backups immutable.",
+          "explanation": "S3 Object Lock can make object-based backups immutable. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q75",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Archivierung im Bereich Speicher & Backup?",
+      "answer": "Archivierung bewahrt Daten langfristig für Nachweis oder Compliance auf.",
+      "explanation": "Archivierung bewahrt Daten langfristig für Nachweis oder Compliance auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Archivierung in Speicher & Backup?",
+          "answer": "Archivierung keeps data long-term for evidence or compliance.",
+          "explanation": "Archivierung keeps data long-term for evidence or compliance. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q76",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Backup vs Archiv im Bereich Speicher & Backup?",
+      "answer": "Backup vs Archiv Backup dient Wiederherstellung, Archiv dient langfristiger Aufbewahrung.",
+      "explanation": "Backup vs Archiv Backup dient Wiederherstellung, Archiv dient langfristiger Aufbewahrung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Backup vs Archiv in Speicher & Backup?",
+          "answer": "Backup vs Archiv backup is for recovery, archive is for long-term retention.",
+          "explanation": "Backup vs Archiv backup is for recovery, archive is for long-term retention. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q77",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Desaster Recovery im Bereich Speicher & Backup?",
+      "answer": "Desaster Recovery beschreibt Wiederanlauf nach schwerem Ausfall.",
+      "explanation": "Desaster Recovery beschreibt Wiederanlauf nach schwerem Ausfall. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Desaster Recovery in Speicher & Backup?",
+          "answer": "Desaster Recovery describes recovery after a major outage.",
+          "explanation": "Desaster Recovery describes recovery after a major outage. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q78",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Recovery Plan im Bereich Speicher & Backup?",
+      "answer": "Recovery Plan legt Schritte zur Wiederherstellung fest.",
+      "explanation": "Recovery Plan legt Schritte zur Wiederherstellung fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Recovery Plan in Speicher & Backup?",
+          "answer": "Recovery Plan defines recovery steps.",
+          "explanation": "Recovery Plan defines recovery steps. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q79",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Bare-Metal-Recovery im Bereich Speicher & Backup?",
+      "answer": "Bare-Metal-Recovery stellt ein System auf leerer Hardware wieder her.",
+      "explanation": "Bare-Metal-Recovery stellt ein System auf leerer Hardware wieder her. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Bare-Metal-Recovery in Speicher & Backup?",
+          "answer": "Bare-Metal-Recovery restores a system onto empty hardware.",
+          "explanation": "Bare-Metal-Recovery restores a system onto empty hardware. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q80",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Replikation im Bereich Speicher & Backup?",
+      "answer": "Replikation kopiert Daten laufend auf ein anderes System.",
+      "explanation": "Replikation kopiert Daten laufend auf ein anderes System. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Replikation in Speicher & Backup?",
+          "answer": "Replikation continuously copies data to another system.",
+          "explanation": "Replikation continuously copies data to another system. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q81",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Synchronreplikation im Bereich Speicher & Backup?",
+      "answer": "Synchronreplikation bestätigt Schreibvorgänge erst nach Kopie auf Zielsystem.",
+      "explanation": "Synchronreplikation bestätigt Schreibvorgänge erst nach Kopie auf Zielsystem. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Synchronreplikation in Speicher & Backup?",
+          "answer": "Synchronreplikation confirms writes only after copying to the target.",
+          "explanation": "Synchronreplikation confirms writes only after copying to the target. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q82",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Asynchronreplikation im Bereich Speicher & Backup?",
+      "answer": "Asynchronreplikation kopiert Änderungen zeitverzögert.",
+      "explanation": "Asynchronreplikation kopiert Änderungen zeitverzögert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Asynchronreplikation in Speicher & Backup?",
+          "answer": "Asynchronreplikation copies changes with a delay.",
+          "explanation": "Asynchronreplikation copies changes with a delay. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q83",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Geo-Redundanz im Bereich Speicher & Backup?",
+      "answer": "Geo-Redundanz verteilt Daten über unterschiedliche Standorte.",
+      "explanation": "Geo-Redundanz verteilt Daten über unterschiedliche Standorte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Geo-Redundanz in Speicher & Backup?",
+          "answer": "Geo-Redundanz distributes data across different locations.",
+          "explanation": "Geo-Redundanz distributes data across different locations. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q84",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat SPOF im Bereich Speicher & Backup?",
+      "answer": "SPOF ist eine einzelne Komponente, deren Ausfall den Dienst stoppt.",
+      "explanation": "SPOF ist eine einzelne Komponente, deren Ausfall den Dienst stoppt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of SPOF in Speicher & Backup?",
+          "answer": "SPOF is a single component whose failure stops the service.",
+          "explanation": "SPOF is a single component whose failure stops the service. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q85",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Kapazitätsplanung im Bereich Speicher & Backup?",
+      "answer": "Kapazitätsplanung plant Speicherbedarf anhand Wachstum und Aufbewahrung.",
+      "explanation": "Kapazitätsplanung plant Speicherbedarf anhand Wachstum und Aufbewahrung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Kapazitätsplanung in Speicher & Backup?",
+          "answer": "Kapazitätsplanung plans storage needs based on growth and retention.",
+          "explanation": "Kapazitätsplanung plans storage needs based on growth and retention. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q86",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat IOPS im Bereich Speicher & Backup?",
+      "answer": "IOPS misst Ein-/Ausgabeoperationen pro Sekunde.",
+      "explanation": "IOPS misst Ein-/Ausgabeoperationen pro Sekunde. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of IOPS in Speicher & Backup?",
+          "answer": "IOPS measures input/output operations per second.",
+          "explanation": "IOPS measures input/output operations per second. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q87",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Latenz im Bereich Speicher & Backup?",
+      "answer": "Latenz misst die Verzögerung einer Speicheroperation.",
+      "explanation": "Latenz misst die Verzögerung einer Speicheroperation. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Latenz in Speicher & Backup?",
+          "answer": "Latenz measures the delay of a storage operation.",
+          "explanation": "Latenz measures the delay of a storage operation. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q88",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Durchsatz im Bereich Speicher & Backup?",
+      "answer": "Durchsatz misst die übertragene Datenmenge pro Zeit.",
+      "explanation": "Durchsatz misst die übertragene Datenmenge pro Zeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Durchsatz in Speicher & Backup?",
+          "answer": "Durchsatz measures transferred data volume per time.",
+          "explanation": "Durchsatz measures transferred data volume per time. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q89",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat RAID ist kein Backup im Bereich Speicher & Backup?",
+      "answer": "RAID ist kein Backup weil es nicht vor Löschen, Ransomware oder logischen Fehlern schützt.",
+      "explanation": "RAID ist kein Backup weil es nicht vor Löschen, Ransomware oder logischen Fehlern schützt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of RAID ist kein Backup in Speicher & Backup?",
+          "answer": "RAID ist kein Backup because it does not protect against deletion, ransomware or logical errors.",
+          "explanation": "RAID ist kein Backup because it does not protect against deletion, ransomware or logical errors. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q90",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Quiescing im Bereich Speicher & Backup?",
+      "answer": "Quiescing bringt Anwendungen für konsistente Snapshots kurz in einen ruhigen Zustand.",
+      "explanation": "Quiescing bringt Anwendungen für konsistente Snapshots kurz in einen ruhigen Zustand. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Quiescing in Speicher & Backup?",
+          "answer": "Quiescing briefly brings applications into a quiet state for consistent snapshots.",
+          "explanation": "Quiescing briefly brings applications into a quiet state for consistent snapshots. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q91",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat WORM im Bereich Speicher & Backup?",
+      "answer": "WORM steht für Write Once Read Many.",
+      "explanation": "WORM steht für Write Once Read Many. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of WORM in Speicher & Backup?",
+          "answer": "WORM stands for write once read many.",
+          "explanation": "WORM stands for write once read many. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q92",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Datenlebenszyklus im Bereich Speicher & Backup?",
+      "answer": "Datenlebenszyklus beschreibt Entstehung, Nutzung, Aufbewahrung und Löschung von Daten.",
+      "explanation": "Datenlebenszyklus beschreibt Entstehung, Nutzung, Aufbewahrung und Löschung von Daten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Datenlebenszyklus in Speicher & Backup?",
+          "answer": "Datenlebenszyklus describes creation, use, retention and deletion of data.",
+          "explanation": "Datenlebenszyklus describes creation, use, retention and deletion of data. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q93",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Storage Pool im Bereich Speicher & Backup?",
+      "answer": "Storage Pool fasst physischen Speicher logisch zusammen.",
+      "explanation": "Storage Pool fasst physischen Speicher logisch zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Storage Pool in Speicher & Backup?",
+          "answer": "Storage Pool logically combines physical storage.",
+          "explanation": "Storage Pool logically combines physical storage. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q94",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Welche Aufgabe hat Volume im Bereich Speicher & Backup?",
+      "answer": "Volume ist ein logisch bereitgestellter Speicherbereich.",
+      "explanation": "Volume ist ein logisch bereitgestellter Speicherbereich. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of Volume in Speicher & Backup?",
+          "answer": "Volume is a logically provided storage area.",
+          "explanation": "Volume is a logically provided storage area. This is a common exam building block because it separates function from use case."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q95",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was ist eine Backup-Policy?",
+      "answer": "Eine Regelung zu Umfang, Häufigkeit, Aufbewahrung und Verantwortlichkeiten von Sicherungen.",
+      "explanation": "Eine Backup-Policy macht Sicherungen planbar und überprüfbar.",
+      "translations": {
+        "en": {
+          "question": "What is a backup policy?",
+          "answer": "A rule set for scope, frequency, retention and responsibilities of backups.",
+          "explanation": "A backup policy makes backups plannable and verifiable."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q96",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was ist ein Medienbruch bei Backups?",
+      "answer": "Der Wechsel auf ein anderes Medium oder einen anderen Speicherort.",
+      "explanation": "Medienbrüche können Risiken durch Malware, Brand oder Bedienfehler reduzieren.",
+      "translations": {
+        "en": {
+          "question": "What is a media break in backups?",
+          "answer": "A change to another medium or storage location.",
+          "explanation": "Media breaks can reduce risks from malware, fire or operator mistakes."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q97",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was ist ein Recovery Point?",
+      "answer": "Der Zeitpunkt, auf den Daten nach einer Wiederherstellung zurückgesetzt werden.",
+      "explanation": "Der Recovery Point bestimmt praktisch, welche Änderungen nach einem Ausfall verloren gehen können.",
+      "translations": {
+        "en": {
+          "question": "What is a recovery point?",
+          "answer": "The point in time to which data is restored.",
+          "explanation": "The recovery point effectively determines which changes may be lost after an outage."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q98",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was ist ein Storage-Snapshot?",
+      "answer": "Ein zeitpunktbezogener Zustand eines Speicherbereichs.",
+      "explanation": "Snapshots sind schnell, ersetzen aber ohne separate Kopie kein vollwertiges Backup.",
+      "translations": {
+        "en": {
+          "question": "What is a storage snapshot?",
+          "answer": "A point-in-time state of a storage area.",
+          "explanation": "Snapshots are fast but do not replace a full backup without a separate copy."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q99",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was bedeutet Restore-Granularität?",
+      "answer": "Wie fein einzelne Daten wiederhergestellt werden können.",
+      "explanation": "Granulare Wiederherstellung kann einzelne Dateien, Postfächer oder Datenbankobjekte betreffen.",
+      "translations": {
+        "en": {
+          "question": "What does restore granularity mean?",
+          "answer": "How finely individual data can be restored.",
+          "explanation": "Granular restore can involve individual files, mailboxes or database objects."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q100",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was ist ein Backup-Repository?",
+      "answer": "Ein Speicherziel, in dem Sicherungen abgelegt und verwaltet werden.",
+      "explanation": "Das Repository muss ausreichend Kapazität, Schutz und Wiederherstellungsgeschwindigkeit bieten.",
+      "translations": {
+        "en": {
+          "question": "What is a backup repository?",
+          "answer": "A storage target where backups are stored and managed.",
+          "explanation": "The repository must provide enough capacity, protection and restore performance."
         }
       }
     }

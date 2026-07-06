@@ -2329,6 +2329,156 @@
           "explanation": "Instead of running a separate, often lightly utilized physical server for each application, multiple workloads can be consolidated onto fewer, better-utilized servers."
         }
       }
+    },
+    {
+      "id": "ap1-hw-q91",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aufgabe hat ein Netzteil im PC?",
+      "answer": "Es wandelt Netzspannung in die benötigten Gleichspannungen für die Komponenten um.",
+      "explanation": "PC-Komponenten benötigen stabile Gleichspannungen, zum Beispiel 12 V, 5 V und 3,3 V.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of a PC power supply?",
+          "answer": "It converts mains voltage into the DC voltages required by the components.",
+          "explanation": "PC components need stable DC voltages, for example 12 V, 5 V and 3.3 V."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q92",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was bedeutet Formfaktor bei Mainboards?",
+      "answer": "Die genormte Größe und Anordnung von Bohrungen, Anschlüssen und Steckplätzen.",
+      "explanation": "ATX, Micro-ATX und Mini-ITX sind typische Mainboard-Formfaktoren.",
+      "translations": {
+        "en": {
+          "question": "What does motherboard form factor mean?",
+          "answer": "The standardized size and layout of holes, connectors and slots.",
+          "explanation": "ATX, Micro-ATX and Mini-ITX are typical motherboard form factors."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q93",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aufgabe hat Wärmeleitpaste?",
+      "answer": "Sie verbessert den Wärmeübergang zwischen CPU und Kühler.",
+      "explanation": "Wärmeleitpaste füllt mikroskopische Unebenheiten und senkt den thermischen Widerstand.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of thermal paste?",
+          "answer": "It improves heat transfer between CPU and cooler.",
+          "explanation": "Thermal paste fills microscopic gaps and lowers thermal resistance."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q94",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist ein Dockingstation?",
+      "answer": "Eine Erweiterungsstation, die Notebook-Anschlüsse zentral bereitstellt.",
+      "explanation": "Dockingstations erleichtern den Wechsel zwischen mobilem und stationärem Arbeitsplatz.",
+      "translations": {
+        "en": {
+          "question": "What is a docking station?",
+          "answer": "An expansion station that provides notebook connections centrally.",
+          "explanation": "Docking stations make switching between mobile and desk work easier."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q95",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist der Unterschied zwischen HDD und SSD beim Zugriff?",
+      "answer": "SSDs greifen elektronisch ohne bewegliche Teile zu, HDDs mechanisch mit rotierenden Platten.",
+      "explanation": "Dadurch sind SSDs meist schneller, leiser und stoßunempfindlicher.",
+      "translations": {
+        "en": {
+          "question": "What is the access difference between HDD and SSD?",
+          "answer": "SSDs access data electronically without moving parts, HDDs mechanically with spinning platters.",
+          "explanation": "This usually makes SSDs faster, quieter and more shock-resistant."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q96",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aufgabe hat der Arbeitsspeicher?",
+      "answer": "Er hält aktuell benötigte Programme und Daten flüchtig für schnellen Zugriff bereit.",
+      "explanation": "RAM ist deutlich schneller als Massenspeicher, verliert seinen Inhalt aber ohne Strom.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of main memory?",
+          "answer": "It temporarily holds currently needed programs and data for fast access.",
+          "explanation": "RAM is much faster than mass storage but loses its contents without power."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q97",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was bedeutet Hot-Swap?",
+      "answer": "Komponenten können im laufenden Betrieb gewechselt werden.",
+      "explanation": "Hot-Swap ist typisch bei Server-Festplatteneinschüben oder redundanten Netzteilen.",
+      "translations": {
+        "en": {
+          "question": "What does hot swap mean?",
+          "answer": "Components can be replaced while the system is running.",
+          "explanation": "Hot swap is common for server drive bays or redundant power supplies."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q98",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist ein Thin Client?",
+      "answer": "Ein schlanker Arbeitsplatzrechner, der Anwendungen meist zentral auf Servern nutzt.",
+      "explanation": "Thin Clients benötigen lokal wenig Leistung und werden oft in VDI-Umgebungen eingesetzt.",
+      "translations": {
+        "en": {
+          "question": "What is a thin client?",
+          "answer": "A lightweight endpoint that usually runs applications centrally on servers.",
+          "explanation": "Thin clients need little local performance and are often used in VDI environments."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q99",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aufgabe hat ein KVM-Switch?",
+      "answer": "Mehrere Rechner können über eine Tastatur, einen Monitor und eine Maus bedient werden.",
+      "explanation": "KVM steht für Keyboard, Video, Mouse.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of a KVM switch?",
+          "answer": "Several computers can be operated using one keyboard, monitor and mouse.",
+          "explanation": "KVM stands for keyboard, video, mouse."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q100",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was bedeutet EPEAT?",
+      "answer": "Ein Bewertungssystem für umweltfreundliche IT-Produkte.",
+      "explanation": "EPEAT berücksichtigt Kriterien wie Energieeffizienz, Materialien und Recyclingfähigkeit.",
+      "translations": {
+        "en": {
+          "question": "What does EPEAT mean?",
+          "answer": "A rating system for environmentally preferable IT products.",
+          "explanation": "EPEAT considers criteria such as energy efficiency, materials and recyclability."
+        }
+      }
     }
   ]
 }

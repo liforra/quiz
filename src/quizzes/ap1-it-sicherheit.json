@@ -2345,6 +2345,156 @@
         }
       },
       "answer": "Aufbewahrungsrichtlinie (Retention-Policy) für Backups"
+    },
+    {
+      "id": "ap1-sec-q91",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was bedeutet Need-to-know-Prinzip?",
+      "answer": "Benutzer erhalten nur Zugriff auf Informationen, die sie für ihre Aufgabe benötigen.",
+      "explanation": "Das Prinzip begrenzt Schäden durch Fehlbedienung, Missbrauch oder kompromittierte Konten.",
+      "translations": {
+        "en": {
+          "question": "What does the need-to-know principle mean?",
+          "answer": "Users only get access to information required for their task.",
+          "explanation": "The principle limits damage from mistakes, misuse or compromised accounts."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q92",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein Clean-Desk-Prinzip?",
+      "answer": "Vertrauliche Unterlagen und Datenträger werden nicht offen am Arbeitsplatz liegen gelassen.",
+      "explanation": "Clean Desk reduziert das Risiko, dass Unbefugte Informationen einsehen oder entwenden.",
+      "translations": {
+        "en": {
+          "question": "What is a clean desk principle?",
+          "answer": "Confidential documents and media are not left openly at the workplace.",
+          "explanation": "Clean desk reduces the risk of unauthorized viewing or theft of information."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q93",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist Social Engineering?",
+      "answer": "Manipulation von Menschen, um an Informationen oder Zugriff zu gelangen.",
+      "explanation": "Dabei werden Vertrauen, Hilfsbereitschaft oder Zeitdruck ausgenutzt statt technische Schwachstellen.",
+      "translations": {
+        "en": {
+          "question": "What is social engineering?",
+          "answer": "Manipulating people to obtain information or access.",
+          "explanation": "It exploits trust, helpfulness or time pressure rather than technical vulnerabilities."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q94",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein Keylogger?",
+      "answer": "Software oder Hardware, die Tastatureingaben aufzeichnet.",
+      "explanation": "Keylogger können Passwörter und andere sensible Eingaben kompromittieren.",
+      "translations": {
+        "en": {
+          "question": "What is a keylogger?",
+          "answer": "Software or hardware that records keystrokes.",
+          "explanation": "Keyloggers can compromise passwords and other sensitive input."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q95",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was bedeutet Privacy by Default?",
+      "answer": "Datenschutzfreundliche Voreinstellungen sind standardmäßig aktiv.",
+      "explanation": "Nutzer sollen ohne zusätzliche Konfiguration möglichst wenige personenbezogene Daten preisgeben.",
+      "translations": {
+        "en": {
+          "question": "What does privacy by default mean?",
+          "answer": "Privacy-friendly defaults are enabled by default.",
+          "explanation": "Users should disclose as little personal data as possible without extra configuration."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q96",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was bedeutet Privacy by Design?",
+      "answer": "Datenschutz wird bereits bei Planung und Entwicklung berücksichtigt.",
+      "explanation": "Schutzmaßnahmen werden in Prozesse und Systeme eingebaut statt erst nachträglich ergänzt.",
+      "translations": {
+        "en": {
+          "question": "What does privacy by design mean?",
+          "answer": "Privacy is considered during planning and development.",
+          "explanation": "Protective measures are built into processes and systems instead of added later."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q97",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein AV-Vertrag nach DSGVO?",
+      "answer": "Ein Vertrag zur Auftragsverarbeitung personenbezogener Daten.",
+      "explanation": "Er regelt Pflichten, Weisungen und Schutzmaßnahmen zwischen Verantwortlichem und Auftragsverarbeiter.",
+      "translations": {
+        "en": {
+          "question": "What is a data processing agreement under GDPR?",
+          "answer": "A contract for processing personal data on behalf of a controller.",
+          "explanation": "It defines duties, instructions and safeguards between controller and processor."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q98",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein Sicherheitsvorfall?",
+      "answer": "Ein Ereignis, das Vertraulichkeit, Integrität oder Verfügbarkeit beeinträchtigen kann.",
+      "explanation": "Nicht jeder Vorfall ist meldepflichtig, aber er muss bewertet und dokumentiert werden.",
+      "translations": {
+        "en": {
+          "question": "What is a security incident?",
+          "answer": "An event that may affect confidentiality, integrity or availability.",
+          "explanation": "Not every incident is reportable, but it must be assessed and documented."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q99",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist Pseudonymisierung?",
+      "answer": "Personenbezug wird durch Ersatzkennzeichen erschwert, bleibt aber grundsätzlich wiederherstellbar.",
+      "explanation": "Der Schlüssel zur Zuordnung muss getrennt und geschützt aufbewahrt werden.",
+      "translations": {
+        "en": {
+          "question": "What is pseudonymization?",
+          "answer": "Personal reference is made harder by replacement identifiers but remains reversible.",
+          "explanation": "The mapping key must be stored separately and protected."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q100",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist Anonymisierung?",
+      "answer": "Personenbezug wird so entfernt, dass eine Zuordnung praktisch nicht mehr möglich ist.",
+      "explanation": "Wirksam anonymisierte Daten fallen nicht mehr unter die DSGVO.",
+      "translations": {
+        "en": {
+          "question": "What is anonymization?",
+          "answer": "Personal reference is removed so identification is practically no longer possible.",
+          "explanation": "Effectively anonymized data is no longer subject to GDPR."
+        }
+      }
     }
   ]
 }

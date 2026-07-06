@@ -5,13 +5,23 @@
       "type": "single",
       "category": "Softwareentwicklung",
       "question": "Welcher Datentyp eignet sich für die Speicherung eines Wahrheitswertes (wahr/falsch)?",
-      "options": ["boolean", "integer", "float", "string"],
+      "options": [
+        "boolean",
+        "integer",
+        "float",
+        "string"
+      ],
       "answer": "boolean",
       "explanation": "Ein boolean kennt genau zwei Zustände: true und false. Integer speichert Ganzzahlen, float Gleitkommazahlen, string Zeichenketten.",
       "translations": {
         "en": {
           "question": "Which data type is suitable for storing a truth value (true/false)?",
-          "options": ["boolean", "integer", "float", "string"],
+          "options": [
+            "boolean",
+            "integer",
+            "float",
+            "string"
+          ],
           "answer": "boolean",
           "explanation": "A boolean has exactly two states: true and false. Integer stores whole numbers, float stores floating-point numbers, string stores text."
         }
@@ -22,13 +32,23 @@
       "type": "single",
       "category": "Softwareentwicklung",
       "question": "Welchen dezimalen Wert hat die Binärzahl 1101?",
-      "options": ["11", "12", "13", "14"],
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
       "answer": "13",
       "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Stellenwerte von rechts: 1, 2, 4, 8.",
       "translations": {
         "en": {
           "question": "What is the decimal value of the binary number 1101?",
-          "options": ["11", "12", "13", "14"],
+          "options": [
+            "11",
+            "12",
+            "13",
+            "14"
+          ],
           "answer": "13",
           "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Place values from the right: 1, 2, 4, 8."
         }
@@ -66,13 +86,23 @@
       "type": "single",
       "category": "Softwareentwicklung",
       "question": "Wie viele verschiedene Werte lassen sich mit einem Byte darstellen?",
-      "options": ["8", "64", "255", "256"],
+      "options": [
+        "8",
+        "64",
+        "255",
+        "256"
+      ],
       "answer": "256",
       "explanation": "1 Byte = 8 Bit → 2⁸ = 256 verschiedene Werte (z. B. 0 bis 255). Beliebte Falle: 255 ist der höchste Wert, nicht die Anzahl.",
       "translations": {
         "en": {
           "question": "How many different values can be represented with one byte?",
-          "options": ["8", "64", "255", "256"],
+          "options": [
+            "8",
+            "64",
+            "255",
+            "256"
+          ],
           "answer": "256",
           "explanation": "1 byte = 8 bits → 2⁸ = 256 different values (e.g. 0 to 255). Popular trap: 255 is the highest value, not the count."
         }
@@ -279,6 +309,1326 @@
           "question": "What is an algorithm?",
           "answer": "An unambiguous, finite set of instructions for solving a problem, consisting of individual executable steps",
           "explanation": "Key properties: unambiguity, finiteness, executability and determinism — the same input leads to the same result."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q13",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Variable?",
+      "answer": "Ein benannter Speicherplatz für einen veränderbaren Wert.",
+      "explanation": "Variablen speichern Zwischenergebnisse, Eingaben oder Zustände eines Programms.",
+      "translations": {
+        "en": {
+          "question": "What is a variable?",
+          "answer": "A named storage location for a changeable value.",
+          "explanation": "Variables store intermediate results, input or program state."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q14",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Konstante?",
+      "answer": "Ein benannter Wert, der nach der Definition nicht verändert werden soll.",
+      "explanation": "Konstanten machen feste Werte lesbarer und verhindern unbeabsichtigte Änderungen.",
+      "translations": {
+        "en": {
+          "question": "What is a constant?",
+          "answer": "A named value that should not be changed after definition.",
+          "explanation": "Constants make fixed values more readable and prevent accidental changes."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q15",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Array?",
+      "answer": "Eine Datenstruktur, die mehrere gleichartige Werte unter einem Namen speichert.",
+      "explanation": "Elemente eines Arrays werden meist über einen Index angesprochen.",
+      "translations": {
+        "en": {
+          "question": "What is an array?",
+          "answer": "A data structure that stores multiple similar values under one name.",
+          "explanation": "Array elements are usually accessed by index."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q16",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Funktion?",
+      "answer": "Ein benannter Programmblock, der eine Aufgabe ausführt und optional einen Wert zurückgibt.",
+      "explanation": "Funktionen strukturieren Programme und vermeiden Wiederholungen.",
+      "translations": {
+        "en": {
+          "question": "What is a function?",
+          "answer": "A named block of code that performs a task and optionally returns a value.",
+          "explanation": "Functions structure programs and avoid repetition."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q17",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Parameter in einer Funktion?",
+      "answer": "Ein Eingabewert, den eine Funktion bei ihrem Aufruf erhält.",
+      "explanation": "Parameter machen Funktionen flexibel und wiederverwendbar.",
+      "translations": {
+        "en": {
+          "question": "What does parameter mean in a function?",
+          "answer": "An input value that a function receives when called.",
+          "explanation": "Parameters make functions flexible and reusable."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q18",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Bedingung in einem Programm?",
+      "answer": "Ein Ausdruck, der wahr oder falsch ergibt und den Programmablauf steuert.",
+      "explanation": "Bedingungen werden zum Beispiel in if-Anweisungen und Schleifen verwendet.",
+      "translations": {
+        "en": {
+          "question": "What is a condition in a program?",
+          "answer": "An expression that evaluates to true or false and controls program flow.",
+          "explanation": "Conditions are used in if statements and loops, for example."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q19",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine for-Schleife?",
+      "answer": "Eine Schleife, die häufig mit Zähler und fester Wiederholungsanzahl arbeitet.",
+      "explanation": "Sie eignet sich besonders, wenn die Anzahl der Durchläufe vorher bekannt ist.",
+      "translations": {
+        "en": {
+          "question": "What is a for loop?",
+          "answer": "A loop often using a counter and fixed number of repetitions.",
+          "explanation": "It is useful when the number of iterations is known in advance."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q20",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine while-Schleife?",
+      "answer": "Eine kopfgesteuerte Schleife, die läuft, solange eine Bedingung wahr ist.",
+      "explanation": "Ist die Bedingung zu Beginn falsch, wird der Schleifenrumpf nicht ausgeführt.",
+      "translations": {
+        "en": {
+          "question": "What is a while loop?",
+          "answer": "A pre-test loop that runs while a condition is true.",
+          "explanation": "If the condition is false initially, the loop body is not executed."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q21",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist Debugging?",
+      "answer": "Das Suchen, Analysieren und Beheben von Fehlern in Programmen.",
+      "explanation": "Debugger, Logging und Tests helfen dabei, Fehlerursachen einzugrenzen.",
+      "translations": {
+        "en": {
+          "question": "What is debugging?",
+          "answer": "Finding, analyzing and fixing errors in programs.",
+          "explanation": "Debuggers, logging and tests help narrow down causes."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q22",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Syntaxfehler?",
+      "answer": "Ein Verstoß gegen die Grammatik der Programmiersprache.",
+      "explanation": "Syntaxfehler verhindern meist, dass ein Programm übersetzt oder ausgeführt wird.",
+      "translations": {
+        "en": {
+          "question": "What is a syntax error?",
+          "answer": "A violation of the programming language grammar.",
+          "explanation": "Syntax errors usually prevent a program from compiling or running."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q23",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Laufzeitfehler?",
+      "answer": "Ein Fehler, der erst während der Programmausführung auftritt.",
+      "explanation": "Beispiele sind Division durch null oder Zugriff auf nicht vorhandene Dateien.",
+      "translations": {
+        "en": {
+          "question": "What is a runtime error?",
+          "answer": "An error that occurs only while the program is running.",
+          "explanation": "Examples include division by zero or access to missing files."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q24",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein logischer Fehler?",
+      "answer": "Ein Programm läuft, liefert aber fachlich falsche Ergebnisse.",
+      "explanation": "Logische Fehler sind oft schwerer zu finden, weil kein Absturz auftreten muss.",
+      "translations": {
+        "en": {
+          "question": "What is a logic error?",
+          "answer": "A program runs but produces incorrect results.",
+          "explanation": "Logic errors are often harder to find because no crash has to occur."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q25",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet EVA-Prinzip?",
+      "answer": "Eingabe, Verarbeitung, Ausgabe",
+      "explanation": "Das EVA-Prinzip beschreibt den grundlegenden Ablauf vieler IT-Systeme.",
+      "translations": {
+        "en": {
+          "question": "What does the IPO principle mean?",
+          "answer": "Input, processing, output",
+          "explanation": "The IPO principle describes the basic flow of many IT systems."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q26",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein PAP?",
+      "answer": "Ein Programmablaufplan",
+      "explanation": "Ein PAP stellt Algorithmen mit genormten Symbolen grafisch dar.",
+      "translations": {
+        "en": {
+          "question": "What is a flowchart?",
+          "answer": "A graphical program flow plan",
+          "explanation": "A flowchart represents algorithms graphically using standardized symbols."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q27",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Struktogramm?",
+      "answer": "Eine strukturierte grafische Darstellung eines Algorithmus nach Nassi-Shneiderman.",
+      "explanation": "Struktogramme zeigen Sequenz, Auswahl und Wiederholung ohne Sprungpfeile.",
+      "translations": {
+        "en": {
+          "question": "What is a Nassi-Shneiderman diagram?",
+          "answer": "A structured graphical representation of an algorithm.",
+          "explanation": "It shows sequence, selection and repetition without jump arrows."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q28",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist Pseudocode?",
+      "answer": "Eine sprachnahe, nicht streng normierte Beschreibung eines Algorithmus.",
+      "explanation": "Pseudocode ist unabhängig von einer konkreten Programmiersprache lesbar.",
+      "translations": {
+        "en": {
+          "question": "What is pseudocode?",
+          "answer": "A language-like, not strictly standardized description of an algorithm.",
+          "explanation": "Pseudocode is readable independent of a specific programming language."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q29",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Initialisierung einer Variable?",
+      "answer": "Einer Variable wird ein Anfangswert zugewiesen.",
+      "explanation": "Ohne Initialisierung können je nach Sprache undefinierte oder unerwartete Werte entstehen.",
+      "translations": {
+        "en": {
+          "question": "What does variable initialization mean?",
+          "answer": "A variable is assigned an initial value.",
+          "explanation": "Without initialization, undefined or unexpected values may occur depending on the language."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q30",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Boolean?",
+      "answer": "Ein Datentyp mit den Wahrheitswerten wahr und falsch.",
+      "explanation": "Boolean-Werte werden besonders für Bedingungen und Flags verwendet.",
+      "translations": {
+        "en": {
+          "question": "What is a Boolean?",
+          "answer": "A data type with the truth values true and false.",
+          "explanation": "Boolean values are used especially for conditions and flags."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q31",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Integer?",
+      "answer": "Ein Datentyp für ganze Zahlen.",
+      "explanation": "Integer speichern Werte ohne Nachkommastellen, zum Beispiel 0, 42 oder -7.",
+      "translations": {
+        "en": {
+          "question": "What is an integer?",
+          "answer": "A data type for whole numbers.",
+          "explanation": "Integers store values without fractional parts, such as 0, 42 or -7."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q32",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein String?",
+      "answer": "Eine Zeichenkette.",
+      "explanation": "Strings speichern Text wie Namen, Meldungen oder Eingaben.",
+      "translations": {
+        "en": {
+          "question": "What is a string?",
+          "answer": "A sequence of characters.",
+          "explanation": "Strings store text such as names, messages or input."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q33",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Kommentar im Quellcode?",
+      "answer": "Text, der den Code erläutert und nicht als Programm ausgeführt wird.",
+      "explanation": "Kommentare helfen beim Verständnis, sollten aber nicht offensichtlichen Code wiederholen.",
+      "translations": {
+        "en": {
+          "question": "What is a comment in source code?",
+          "answer": "Text that explains code and is not executed as a program.",
+          "explanation": "Comments help understanding but should not repeat obvious code."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q34",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Refactoring?",
+      "answer": "Verbesserung der inneren Codestruktur ohne Änderung des beobachtbaren Verhaltens.",
+      "explanation": "Refactoring erhöht Wartbarkeit und Lesbarkeit, sollte durch Tests abgesichert sein.",
+      "translations": {
+        "en": {
+          "question": "What does refactoring mean?",
+          "answer": "Improving internal code structure without changing observable behavior.",
+          "explanation": "Refactoring improves maintainability and readability and should be protected by tests."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q35",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Unit-Test?",
+      "answer": "Ein Test, der eine kleine Programmeinheit isoliert prüft.",
+      "explanation": "Unit-Tests prüfen typischerweise Funktionen, Methoden oder Klassen.",
+      "translations": {
+        "en": {
+          "question": "What is a unit test?",
+          "answer": "A test that checks a small program unit in isolation.",
+          "explanation": "Unit tests typically check functions, methods or classes."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q36",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Integrationstest?",
+      "answer": "Ein Test, der das Zusammenspiel mehrerer Komponenten prüft.",
+      "explanation": "Integrationstests finden Fehler an Schnittstellen zwischen Modulen oder Systemen.",
+      "translations": {
+        "en": {
+          "question": "What is an integration test?",
+          "answer": "A test that checks the interaction of several components.",
+          "explanation": "Integration tests find errors at interfaces between modules or systems."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q37",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Commit in Git?",
+      "answer": "Ein gespeicherter Änderungsstand mit eindeutiger Kennung.",
+      "explanation": "Commits dokumentieren die Entwicklungshistorie und können später nachvollzogen werden.",
+      "translations": {
+        "en": {
+          "question": "What is a commit in Git?",
+          "answer": "A saved state of changes with a unique identifier.",
+          "explanation": "Commits document development history and can be reviewed later."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q38",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Branch in Git?",
+      "answer": "Ein separater Entwicklungszweig.",
+      "explanation": "Branches erlauben paralleles Arbeiten an Features oder Fehlerbehebungen.",
+      "translations": {
+        "en": {
+          "question": "What is a branch in Git?",
+          "answer": "A separate line of development.",
+          "explanation": "Branches allow parallel work on features or fixes."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q39",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Merge in Git?",
+      "answer": "Das Zusammenführen von Änderungen aus unterschiedlichen Branches.",
+      "explanation": "Beim Merge können Konflikte entstehen, wenn dieselben Stellen geändert wurden.",
+      "translations": {
+        "en": {
+          "question": "What does merge mean in Git?",
+          "answer": "Combining changes from different branches.",
+          "explanation": "A merge can cause conflicts if the same locations were changed."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q40",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Merge-Konflikt?",
+      "answer": "Git kann Änderungen nicht automatisch zusammenführen.",
+      "explanation": "Der Entwickler muss entscheiden, welche Version oder Kombination korrekt ist.",
+      "translations": {
+        "en": {
+          "question": "What is a merge conflict?",
+          "answer": "Git cannot combine changes automatically.",
+          "explanation": "The developer must decide which version or combination is correct."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q41",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Repository?",
+      "answer": "Ein Speicherort für Quellcode inklusive Versionshistorie.",
+      "explanation": "Ein Repository kann lokal oder auf einem Server wie GitHub liegen.",
+      "translations": {
+        "en": {
+          "question": "What is a repository?",
+          "answer": "A storage location for source code including version history.",
+          "explanation": "A repository can be local or hosted on a server such as GitHub."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q42",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine IDE?",
+      "answer": "Eine integrierte Entwicklungsumgebung.",
+      "explanation": "IDEs bündeln Editor, Build-Werkzeuge, Debugger und oft Versionsverwaltung.",
+      "translations": {
+        "en": {
+          "question": "What is an IDE?",
+          "answer": "An integrated development environment.",
+          "explanation": "IDEs combine editor, build tools, debugger and often version control."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q43",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Compiler?",
+      "answer": "Ein Programm, das Quellcode in Maschinencode oder Zwischencode übersetzt.",
+      "explanation": "Compiler prüfen dabei oft Syntax und Typen vor der Ausführung.",
+      "translations": {
+        "en": {
+          "question": "What is a compiler?",
+          "answer": "A program that translates source code into machine code or intermediate code.",
+          "explanation": "Compilers often check syntax and types before execution."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q44",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Interpreter?",
+      "answer": "Ein Programm, das Code schrittweise zur Laufzeit ausführt.",
+      "explanation": "Interpreter führen Programme meist ohne vorherige vollständige Übersetzung aus.",
+      "translations": {
+        "en": {
+          "question": "What is an interpreter?",
+          "answer": "A program that executes code step by step at runtime.",
+          "explanation": "Interpreters usually run programs without prior full compilation."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q45",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet objektorientierte Programmierung?",
+      "answer": "Programmierung mit Objekten, die Daten und Verhalten kapseln.",
+      "explanation": "OOP nutzt Konzepte wie Klassen, Objekte, Vererbung und Polymorphie.",
+      "translations": {
+        "en": {
+          "question": "What does object-oriented programming mean?",
+          "answer": "Programming with objects that encapsulate data and behavior.",
+          "explanation": "OOP uses concepts such as classes, objects, inheritance and polymorphism."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q46",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Klasse?",
+      "answer": "Ein Bauplan für Objekte.",
+      "explanation": "Eine Klasse beschreibt Attribute und Methoden, die ihre Objekte besitzen.",
+      "translations": {
+        "en": {
+          "question": "What is a class?",
+          "answer": "A blueprint for objects.",
+          "explanation": "A class describes attributes and methods its objects have."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q47",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Objekt?",
+      "answer": "Eine konkrete Instanz einer Klasse.",
+      "explanation": "Objekte besitzen eigene Attributwerte und können Methoden ausführen.",
+      "translations": {
+        "en": {
+          "question": "What is an object?",
+          "answer": "A concrete instance of a class.",
+          "explanation": "Objects have their own attribute values and can execute methods."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q48",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Attribut?",
+      "answer": "Eine Eigenschaft oder ein Datenfeld eines Objekts.",
+      "explanation": "Attribute beschreiben den Zustand eines Objekts.",
+      "translations": {
+        "en": {
+          "question": "What is an attribute?",
+          "answer": "A property or data field of an object.",
+          "explanation": "Attributes describe the state of an object."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q49",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Methode?",
+      "answer": "Eine Funktion, die zu einer Klasse oder einem Objekt gehört.",
+      "explanation": "Methoden beschreiben das Verhalten von Objekten.",
+      "translations": {
+        "en": {
+          "question": "What is a method?",
+          "answer": "A function that belongs to a class or object.",
+          "explanation": "Methods describe the behavior of objects."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q50",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Kapselung?",
+      "answer": "Daten und Zugriff darauf werden in einer Klasse gebündelt und kontrolliert.",
+      "explanation": "Kapselung schützt interne Zustände vor unkontrolliertem Zugriff.",
+      "translations": {
+        "en": {
+          "question": "What does encapsulation mean?",
+          "answer": "Data and access to it are bundled and controlled in a class.",
+          "explanation": "Encapsulation protects internal state from uncontrolled access."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q51",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Vererbung?",
+      "answer": "Eine Klasse übernimmt Eigenschaften und Methoden einer anderen Klasse.",
+      "explanation": "Vererbung kann Wiederverwendung fördern, sollte aber fachlich sinnvoll sein.",
+      "translations": {
+        "en": {
+          "question": "What does inheritance mean?",
+          "answer": "A class takes over properties and methods from another class.",
+          "explanation": "Inheritance can support reuse but should be meaningful in the domain."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q52",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Polymorphie?",
+      "answer": "Gleiche Schnittstellen können unterschiedliche konkrete Implementierungen haben.",
+      "explanation": "Polymorphie erlaubt austauschbare Objekte mit gemeinsamem Verhalten.",
+      "translations": {
+        "en": {
+          "question": "What does polymorphism mean?",
+          "answer": "The same interfaces can have different concrete implementations.",
+          "explanation": "Polymorphism allows interchangeable objects with shared behavior."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q53",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist UML?",
+      "answer": "Unified Modeling Language",
+      "explanation": "UML dient zur grafischen Modellierung von Softwarestrukturen und Abläufen.",
+      "translations": {
+        "en": {
+          "question": "What is UML?",
+          "answer": "Unified Modeling Language",
+          "explanation": "UML is used for graphical modeling of software structures and processes."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q54",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was zeigt ein UML-Klassendiagramm?",
+      "answer": "Klassen, Attribute, Methoden und Beziehungen.",
+      "explanation": "Klassendiagramme beschreiben die statische Struktur eines Systems.",
+      "translations": {
+        "en": {
+          "question": "What does a UML class diagram show?",
+          "answer": "Classes, attributes, methods and relationships.",
+          "explanation": "Class diagrams describe the static structure of a system."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q55",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was zeigt ein UML-Aktivitätsdiagramm?",
+      "answer": "Abläufe, Entscheidungen und Parallelitäten.",
+      "explanation": "Aktivitätsdiagramme eignen sich zur Darstellung von Prozessen und Algorithmen.",
+      "translations": {
+        "en": {
+          "question": "What does a UML activity diagram show?",
+          "answer": "Workflows, decisions and parallelism.",
+          "explanation": "Activity diagrams are useful for processes and algorithms."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q56",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Sequenzdiagramm?",
+      "answer": "Ein Diagramm, das Nachrichten zwischen Objekten über die Zeit zeigt.",
+      "explanation": "Sequenzdiagramme machen Interaktionen und Aufrufreihenfolgen sichtbar.",
+      "translations": {
+        "en": {
+          "question": "What is a sequence diagram?",
+          "answer": "A diagram that shows messages between objects over time.",
+          "explanation": "Sequence diagrams visualize interactions and call order."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q57",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Use Case?",
+      "answer": "Ein Anwendungsfall aus Sicht eines Akteurs.",
+      "explanation": "Use Cases beschreiben, welches Ziel ein Nutzer mit dem System erreichen möchte.",
+      "translations": {
+        "en": {
+          "question": "What is a use case?",
+          "answer": "A usage scenario from an actor perspective.",
+          "explanation": "Use cases describe what goal a user wants to achieve with the system."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q58",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Algorithmus mit linearer Suche?",
+      "answer": "Ein Verfahren, das Elemente nacheinander prüft.",
+      "explanation": "Lineare Suche funktioniert auch unsortiert, benötigt im schlechtesten Fall aber alle Elemente.",
+      "translations": {
+        "en": {
+          "question": "What is linear search?",
+          "answer": "A method that checks elements one after another.",
+          "explanation": "Linear search works on unsorted data but may need all elements in the worst case."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q59",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche Voraussetzung hat binäre Suche?",
+      "answer": "Die Daten müssen sortiert sein.",
+      "explanation": "Binäre Suche halbiert den Suchbereich in jedem Schritt.",
+      "translations": {
+        "en": {
+          "question": "What prerequisite does binary search have?",
+          "answer": "The data must be sorted.",
+          "explanation": "Binary search halves the search range at each step."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q60",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist Sortieren in der Softwareentwicklung?",
+      "answer": "Das Anordnen von Daten nach einem Kriterium.",
+      "explanation": "Sortiert werden kann zum Beispiel alphabetisch, numerisch oder nach Datum.",
+      "translations": {
+        "en": {
+          "question": "What is sorting in software development?",
+          "answer": "Arranging data according to a criterion.",
+          "explanation": "Data can be sorted alphabetically, numerically or by date."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q61",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Big-O-Notation?",
+      "answer": "Eine Beschreibung des Wachstums von Laufzeit oder Speicherbedarf.",
+      "explanation": "Big-O abstrahiert von konkreter Hardware und betrachtet die Eingabegröße.",
+      "translations": {
+        "en": {
+          "question": "What does Big O notation mean?",
+          "answer": "A description of how runtime or memory usage grows.",
+          "explanation": "Big O abstracts from specific hardware and considers input size."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q62",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet O(1)?",
+      "answer": "Konstante Laufzeit unabhängig von der Eingabegröße.",
+      "explanation": "Ein Array-Zugriff per Index ist ein typisches Beispiel.",
+      "translations": {
+        "en": {
+          "question": "What does O(1) mean?",
+          "answer": "Constant runtime independent of input size.",
+          "explanation": "Array access by index is a typical example."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q63",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet O(n)?",
+      "answer": "Lineare Laufzeit proportional zur Eingabegröße.",
+      "explanation": "Eine einfache Schleife über alle Elemente ist typischerweise O(n).",
+      "translations": {
+        "en": {
+          "question": "What does O(n) mean?",
+          "answer": "Linear runtime proportional to input size.",
+          "explanation": "A simple loop over all elements is typically O(n)."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q64",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine API?",
+      "answer": "Eine definierte Schnittstelle zur Nutzung von Funktionen oder Daten.",
+      "explanation": "APIs ermöglichen kontrollierte Kommunikation zwischen Programmen.",
+      "translations": {
+        "en": {
+          "question": "What is an API?",
+          "answer": "A defined interface for using functions or data.",
+          "explanation": "APIs enable controlled communication between programs."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q65",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet REST?",
+      "answer": "Representational State Transfer",
+      "explanation": "REST nutzt Ressourcen, HTTP-Methoden und zustandslose Kommunikation als Architekturprinzip.",
+      "translations": {
+        "en": {
+          "question": "What does REST mean?",
+          "answer": "Representational State Transfer",
+          "explanation": "REST uses resources, HTTP methods and stateless communication as architectural principles."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q66",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche HTTP-Methode wird typischerweise zum Lesen von Daten genutzt?",
+      "answer": "GET",
+      "explanation": "GET fordert eine Ressource an und sollte keine Zustandsänderung auslösen.",
+      "translations": {
+        "en": {
+          "question": "Which HTTP method is typically used to read data?",
+          "answer": "GET",
+          "explanation": "GET requests a resource and should not cause a state change."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q67",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche HTTP-Methode wird typischerweise zum Anlegen neuer Ressourcen genutzt?",
+      "answer": "POST",
+      "explanation": "POST übermittelt Daten an den Server, häufig zum Erzeugen einer neuen Ressource.",
+      "translations": {
+        "en": {
+          "question": "Which HTTP method is typically used to create new resources?",
+          "answer": "POST",
+          "explanation": "POST sends data to the server, often to create a new resource."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q68",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche HTTP-Methode wird typischerweise zum vollständigen Ersetzen einer Ressource genutzt?",
+      "answer": "PUT",
+      "explanation": "PUT wird oft verwendet, um eine Ressource vollständig zu aktualisieren oder zu ersetzen.",
+      "translations": {
+        "en": {
+          "question": "Which HTTP method is typically used to fully replace a resource?",
+          "answer": "PUT",
+          "explanation": "PUT is often used to fully update or replace a resource."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q69",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche HTTP-Methode wird typischerweise zum Löschen einer Ressource genutzt?",
+      "answer": "DELETE",
+      "explanation": "DELETE fordert das Entfernen einer Ressource an.",
+      "translations": {
+        "en": {
+          "question": "Which HTTP method is typically used to delete a resource?",
+          "answer": "DELETE",
+          "explanation": "DELETE requests removal of a resource."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q70",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet HTTP-Statuscode 200?",
+      "answer": "OK",
+      "explanation": "Die Anfrage wurde erfolgreich verarbeitet.",
+      "translations": {
+        "en": {
+          "question": "What does HTTP status code 200 mean?",
+          "answer": "OK",
+          "explanation": "The request was processed successfully."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q71",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet HTTP-Statuscode 404?",
+      "answer": "Not Found",
+      "explanation": "Die angeforderte Ressource wurde nicht gefunden.",
+      "translations": {
+        "en": {
+          "question": "What does HTTP status code 404 mean?",
+          "answer": "Not Found",
+          "explanation": "The requested resource was not found."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q72",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet HTTP-Statuscode 500?",
+      "answer": "Internal Server Error",
+      "explanation": "Auf dem Server ist ein unerwarteter Fehler aufgetreten.",
+      "translations": {
+        "en": {
+          "question": "What does HTTP status code 500 mean?",
+          "answer": "Internal Server Error",
+          "explanation": "An unexpected error occurred on the server."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q73",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist JSON?",
+      "answer": "Ein textbasiertes Datenformat aus Objekten, Arrays, Zahlen, Strings und Wahrheitswerten.",
+      "explanation": "JSON wird häufig für APIs und Konfigurationsdaten verwendet.",
+      "translations": {
+        "en": {
+          "question": "What is JSON?",
+          "answer": "A text-based data format using objects, arrays, numbers, strings and booleans.",
+          "explanation": "JSON is commonly used for APIs and configuration data."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q74",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist XML?",
+      "answer": "Eine Auszeichnungssprache zur strukturierten Darstellung von Daten.",
+      "explanation": "XML nutzt Tags und kann mit Schemata validiert werden.",
+      "translations": {
+        "en": {
+          "question": "What is XML?",
+          "answer": "A markup language for structured representation of data.",
+          "explanation": "XML uses tags and can be validated with schemas."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q75",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein relationaler Operator?",
+      "answer": "Ein Operator zum Vergleichen von Werten.",
+      "explanation": "Beispiele sind ==, !=, <, >, <= und >=.",
+      "translations": {
+        "en": {
+          "question": "What is a relational operator?",
+          "answer": "An operator for comparing values.",
+          "explanation": "Examples are ==, !=, <, >, <= and >=."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q76",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein logischer Operator?",
+      "answer": "Ein Operator zur Verknüpfung von Wahrheitswerten.",
+      "explanation": "Typische logische Operatoren sind AND, OR und NOT.",
+      "translations": {
+        "en": {
+          "question": "What is a logical operator?",
+          "answer": "An operator for combining truth values.",
+          "explanation": "Typical logical operators are AND, OR and NOT."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q77",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Endlosschleife?",
+      "answer": "Eine Schleife, deren Abbruchbedingung nie erreicht wird.",
+      "explanation": "Endlosschleifen entstehen oft durch fehlerhafte Bedingungen oder fehlende Zähleränderung.",
+      "translations": {
+        "en": {
+          "question": "What is an infinite loop?",
+          "answer": "A loop whose termination condition is never reached.",
+          "explanation": "Infinite loops often arise from faulty conditions or missing counter updates."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q78",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Off-by-one-Fehler?",
+      "answer": "Ein Fehler, bei dem eine Schleife oder ein Index um genau eins danebenliegt.",
+      "explanation": "Er tritt häufig an Bereichsgrenzen auf, etwa beim ersten oder letzten Element.",
+      "translations": {
+        "en": {
+          "question": "What is an off-by-one error?",
+          "answer": "An error where a loop or index is off by exactly one.",
+          "explanation": "It often occurs at boundaries such as the first or last element."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q79",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Stack?",
+      "answer": "Eine LIFO-Datenstruktur.",
+      "explanation": "Bei Last In, First Out wird das zuletzt abgelegte Element zuerst entnommen.",
+      "translations": {
+        "en": {
+          "question": "What is a stack?",
+          "answer": "A LIFO data structure.",
+          "explanation": "With last in, first out, the last pushed element is removed first."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q80",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Queue?",
+      "answer": "Eine FIFO-Datenstruktur.",
+      "explanation": "Bei First In, First Out wird das zuerst eingefügte Element zuerst entnommen.",
+      "translations": {
+        "en": {
+          "question": "What is a queue?",
+          "answer": "A FIFO data structure.",
+          "explanation": "With first in, first out, the first inserted element is removed first."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q81",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Hashwert?",
+      "answer": "Ein aus Daten berechneter Wert fester Länge.",
+      "explanation": "Hashwerte dienen unter anderem zum schnellen Vergleichen oder Prüfen von Integrität.",
+      "translations": {
+        "en": {
+          "question": "What is a hash value?",
+          "answer": "A fixed-length value calculated from data.",
+          "explanation": "Hash values are used for fast comparison or integrity checks, among other things."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q82",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Nullwert?",
+      "answer": "Ein spezieller Wert für keine vorhandene Referenz oder keinen vorhandenen Wert.",
+      "explanation": "Null muss geprüft werden, um Laufzeitfehler zu vermeiden.",
+      "translations": {
+        "en": {
+          "question": "What is a null value?",
+          "answer": "A special value for no reference or no present value.",
+          "explanation": "Null must be checked to avoid runtime errors."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q83",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Bibliothek in der Programmierung?",
+      "answer": "Eine Sammlung wiederverwendbarer Funktionen, Klassen oder Module.",
+      "explanation": "Bibliotheken sparen Entwicklungsaufwand und bündeln getestete Lösungen.",
+      "translations": {
+        "en": {
+          "question": "What is a programming library?",
+          "answer": "A collection of reusable functions, classes or modules.",
+          "explanation": "Libraries save development effort and bundle tested solutions."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q84",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Framework?",
+      "answer": "Ein Rahmenwerk, das Struktur und Ablauf einer Anwendung vorgibt.",
+      "explanation": "Frameworks liefern Konventionen und übernehmen häufig wiederkehrende Aufgaben.",
+      "translations": {
+        "en": {
+          "question": "What is a framework?",
+          "answer": "A framework that defines structure and flow of an application.",
+          "explanation": "Frameworks provide conventions and often handle recurring tasks."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q85",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Lizenz bei Software?",
+      "answer": "Eine rechtliche Regelung zur Nutzung, Änderung und Weitergabe.",
+      "explanation": "Lizenzen legen fest, was Anwender und Entwickler mit Software tun dürfen.",
+      "translations": {
+        "en": {
+          "question": "What is a software license?",
+          "answer": "A legal rule for use, modification and distribution.",
+          "explanation": "Licenses define what users and developers may do with software."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q86",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Open Source?",
+      "answer": "Der Quellcode ist öffentlich einsehbar und unter Lizenz nutzbar.",
+      "explanation": "Open Source heißt nicht automatisch kostenlos oder frei von Bedingungen.",
+      "translations": {
+        "en": {
+          "question": "What does open source mean?",
+          "answer": "The source code is publicly visible and usable under a license.",
+          "explanation": "Open source does not automatically mean free of charge or without conditions."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q87",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Build?",
+      "answer": "Der Prozess oder das Ergebnis der Erstellung lauffähiger Software aus Quellcode.",
+      "explanation": "Builds umfassen oft Kompilieren, Bündeln, Testen und Paketieren.",
+      "translations": {
+        "en": {
+          "question": "What is a build?",
+          "answer": "The process or result of creating runnable software from source code.",
+          "explanation": "Builds often include compiling, bundling, testing and packaging."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q88",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist Deployment?",
+      "answer": "Das Bereitstellen einer Anwendung in einer Zielumgebung.",
+      "explanation": "Deployment bringt Software zum Beispiel auf Test-, Staging- oder Produktivsysteme.",
+      "translations": {
+        "en": {
+          "question": "What is deployment?",
+          "answer": "Making an application available in a target environment.",
+          "explanation": "Deployment places software on test, staging or production systems, for example."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q89",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Release?",
+      "answer": "Eine freigegebene Version einer Software.",
+      "explanation": "Ein Release enthält definierte Änderungen und wird für Nutzung oder Verteilung bereitgestellt.",
+      "translations": {
+        "en": {
+          "question": "What is a release?",
+          "answer": "An approved version of software.",
+          "explanation": "A release contains defined changes and is made available for use or distribution."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q90",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Bug?",
+      "answer": "Ein Fehler in Software, der zu unerwartetem oder falschem Verhalten führt.",
+      "explanation": "Bugs können aus Anforderungen, Design, Implementierung oder Betrieb entstehen.",
+      "translations": {
+        "en": {
+          "question": "What is a bug?",
+          "answer": "A software defect that causes unexpected or incorrect behavior.",
+          "explanation": "Bugs can come from requirements, design, implementation or operation."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q91",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Issue-Tracker?",
+      "answer": "Ein System zur Erfassung und Nachverfolgung von Aufgaben, Fehlern und Anforderungen.",
+      "explanation": "Issue-Tracker helfen bei Priorisierung, Zuständigkeit und Statusübersicht.",
+      "translations": {
+        "en": {
+          "question": "What is an issue tracker?",
+          "answer": "A system for recording and tracking tasks, defects and requirements.",
+          "explanation": "Issue trackers help with prioritization, ownership and status visibility."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q92",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Pull Request?",
+      "answer": "Ein Vorschlag, Änderungen in einen anderen Branch zu übernehmen.",
+      "explanation": "Pull Requests ermöglichen Code-Review und Diskussion vor dem Zusammenführen.",
+      "translations": {
+        "en": {
+          "question": "What is a pull request?",
+          "answer": "A proposal to merge changes into another branch.",
+          "explanation": "Pull requests enable code review and discussion before merging."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q93",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet Code-Review?",
+      "answer": "Eine fachliche Prüfung von Quellcode durch andere Entwickler.",
+      "explanation": "Code-Reviews finden Fehler, verbessern Verständlichkeit und verteilen Wissen.",
+      "translations": {
+        "en": {
+          "question": "What does code review mean?",
+          "answer": "A technical inspection of source code by other developers.",
+          "explanation": "Code reviews find defects, improve clarity and share knowledge."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q94",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist technische Dokumentation?",
+      "answer": "Beschreibung von Aufbau, Nutzung oder Betrieb eines Systems.",
+      "explanation": "Gute Dokumentation erleichtert Wartung, Übergabe und Fehlersuche.",
+      "translations": {
+        "en": {
+          "question": "What is technical documentation?",
+          "answer": "Description of structure, use or operation of a system.",
+          "explanation": "Good documentation makes maintenance, handover and troubleshooting easier."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q95",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist ein Sequenzschritt in einem Algorithmus?",
+      "answer": "Eine Anweisung, die der Reihe nach ausgeführt wird.",
+      "explanation": "Sequenz ist neben Auswahl und Wiederholung eine Grundstruktur der Programmierung.",
+      "translations": {
+        "en": {
+          "question": "What is a sequence step in an algorithm?",
+          "answer": "An instruction executed in order.",
+          "explanation": "Sequence is one of the basic programming structures alongside selection and repetition."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q96",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist eine Auswahl in einem Algorithmus?",
+      "answer": "Eine Verzweigung abhängig von einer Bedingung.",
+      "explanation": "Auswahl wird typischerweise mit if/else dargestellt.",
+      "translations": {
+        "en": {
+          "question": "What is selection in an algorithm?",
+          "answer": "A branch depending on a condition.",
+          "explanation": "Selection is typically represented with if/else."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q97",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was ist Wiederholung in einem Algorithmus?",
+      "answer": "Ein Block wird mehrfach ausgeführt, solange oder bis eine Bedingung erfüllt ist.",
+      "explanation": "Wiederholungen werden in Programmen durch Schleifen umgesetzt.",
+      "translations": {
+        "en": {
+          "question": "What is repetition in an algorithm?",
+          "answer": "A block is executed multiple times while or until a condition is met.",
+          "explanation": "Repetition is implemented with loops in programs."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q98",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welchen dezimalen Wert hat die Binärzahl 1111?",
+      "answer": "15",
+      "explanation": "1111₂ entspricht 8 + 4 + 2 + 1 = 15.",
+      "translations": {
+        "en": {
+          "question": "What decimal value does the binary number 1111 have?",
+          "answer": "15",
+          "explanation": "1111₂ equals 8 + 4 + 2 + 1 = 15."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q99",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welchen dezimalen Wert hat die Binärzahl 100000?",
+      "answer": "32",
+      "explanation": "100000₂ hat nur das 2⁵-Bit gesetzt und entspricht 32.",
+      "translations": {
+        "en": {
+          "question": "What decimal value does the binary number 100000 have?",
+          "answer": "32",
+          "explanation": "100000₂ has only the 2⁵ bit set and equals 32."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q100",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche Binärzahl entspricht der Dezimalzahl 10?",
+      "answer": "1010",
+      "explanation": "10 dezimal entspricht 8 + 2, also 1010₂.",
+      "translations": {
+        "en": {
+          "question": "Which binary number corresponds to decimal 10?",
+          "answer": "1010",
+          "explanation": "Decimal 10 equals 8 + 2, so 1010₂."
         }
       }
     }

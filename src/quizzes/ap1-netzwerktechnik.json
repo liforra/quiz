@@ -2379,6 +2379,156 @@
           "explanation": "/23 leaves 9 host bits: 2⁹ − 2 = 510 usable hosts, enough for 500 hosts. /24 would not suffice, providing only 254 usable hosts."
         }
       }
+    },
+    {
+      "id": "ap1-net-q91",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung DNS?",
+      "answer": "Domain Name System",
+      "explanation": "DNS übersetzt Namen wie example.org in IP-Adressen und ist damit zentral für die Namensauflösung.",
+      "translations": {
+        "en": {
+          "question": "What does DNS stand for?",
+          "answer": "Domain Name System",
+          "explanation": "DNS translates names such as example.org into IP addresses and is central to name resolution."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q92",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen UDP-Port nutzt DHCP auf Serverseite standardmäßig?",
+      "answer": "UDP 67",
+      "explanation": "DHCP-Server lauschen standardmäßig auf UDP-Port 67; Clients verwenden UDP-Port 68.",
+      "translations": {
+        "en": {
+          "question": "Which UDP port does DHCP use on the server side by default?",
+          "answer": "UDP 67",
+          "explanation": "DHCP servers listen on UDP port 67; clients use UDP port 68."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q93",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen UDP-Port nutzt DHCP auf Clientseite standardmäßig?",
+      "answer": "UDP 68",
+      "explanation": "Der DHCP-Client empfängt Antworten standardmäßig auf UDP-Port 68.",
+      "translations": {
+        "en": {
+          "question": "Which UDP port does DHCP use on the client side by default?",
+          "answer": "UDP 68",
+          "explanation": "The DHCP client receives replies on UDP port 68."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q94",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aufgabe hat ICMP?",
+      "answer": "Status- und Fehlermeldungen im IP-Netz übertragen",
+      "explanation": "ICMP wird unter anderem von ping genutzt und meldet Erreichbarkeit oder Fehler wie Time Exceeded.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of ICMP?",
+          "answer": "To carry status and error messages in IP networks",
+          "explanation": "ICMP is used by tools such as ping and reports reachability or errors such as Time Exceeded."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q95",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welche Präfixlänge entspricht der Subnetzmaske 255.255.255.0?",
+      "answer": "/24",
+      "explanation": "255.255.255.0 enthält 24 gesetzte Netzbits.",
+      "translations": {
+        "en": {
+          "question": "Which prefix length corresponds to the subnet mask 255.255.255.0?",
+          "answer": "/24",
+          "explanation": "255.255.255.0 contains 24 network bits."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q96",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele nutzbare Hosts bietet ein /30-Netz?",
+      "answer": "2",
+      "explanation": "/30 hat 2 Hostbits: 4 Adressen minus Netz- und Broadcastadresse ergeben 2 nutzbare Hosts.",
+      "translations": {
+        "en": {
+          "question": "How many usable hosts does a /30 network provide?",
+          "answer": "2",
+          "explanation": "/30 has 2 host bits: 4 addresses minus network and broadcast addresses gives 2 usable hosts."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q97",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welcher Port wird standardmäßig für DNS-Abfragen verwendet?",
+      "answer": "53",
+      "explanation": "DNS nutzt für normale Abfragen meist UDP 53, für Zonentransfers und große Antworten auch TCP 53.",
+      "translations": {
+        "en": {
+          "question": "Which port is used by default for DNS queries?",
+          "answer": "53",
+          "explanation": "DNS usually uses UDP 53 for normal queries and TCP 53 for zone transfers or large replies."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q98",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Was bedeutet MTU?",
+      "answer": "Maximum Transmission Unit",
+      "explanation": "Die MTU gibt die maximale Paketgröße an, die auf einem Link ohne Fragmentierung übertragen werden kann.",
+      "translations": {
+        "en": {
+          "question": "What does MTU mean?",
+          "answer": "Maximum Transmission Unit",
+          "explanation": "The MTU is the maximum packet size that can be sent over a link without fragmentation."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q99",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welche Ethernet-MTU ist in LANs typischerweise üblich?",
+      "answer": "1500 Byte",
+      "explanation": "Klassisches Ethernet nutzt meist eine MTU von 1500 Byte Nutzlast.",
+      "translations": {
+        "en": {
+          "question": "What Ethernet MTU is commonly used in LANs?",
+          "answer": "1500 bytes",
+          "explanation": "Classic Ethernet commonly uses an MTU of 1500 bytes of payload."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q100",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht PoE?",
+      "answer": "Power over Ethernet",
+      "explanation": "PoE versorgt Geräte wie Access Points, IP-Telefone oder Kameras über das Netzwerkkabel mit Strom.",
+      "translations": {
+        "en": {
+          "question": "What does PoE stand for?",
+          "answer": "Power over Ethernet",
+          "explanation": "PoE powers devices such as access points, IP phones or cameras through the network cable."
+        }
+      }
     }
   ]
 }

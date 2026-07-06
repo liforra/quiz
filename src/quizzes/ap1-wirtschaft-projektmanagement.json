@@ -2395,6 +2395,156 @@
           "explanation": "Vague goals like \"achieve better quality\" are hard to verify objectively, unlike SMART goals."
         }
       }
+    },
+    {
+      "id": "ap1-wpm-q91",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist ein Lastenheft?",
+      "answer": "Die Auftraggeberbeschreibung dessen, was gefordert wird.",
+      "explanation": "Das Lastenheft beschreibt Anforderungen aus Sicht des Auftraggebers.",
+      "translations": {
+        "en": {
+          "question": "What is a requirements specification from the customer side?",
+          "answer": "The client-side description of what is required.",
+          "explanation": "It describes requirements from the customer perspective."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q92",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist ein Pflichtenheft?",
+      "answer": "Die Auftragnehmerbeschreibung, wie die Anforderungen umgesetzt werden.",
+      "explanation": "Das Pflichtenheft konkretisiert die Lösung und dient oft als Vertragsgrundlage.",
+      "translations": {
+        "en": {
+          "question": "What is a functional specification from the supplier side?",
+          "answer": "The supplier-side description of how requirements will be implemented.",
+          "explanation": "It specifies the solution and often serves as a contractual basis."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q93",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was bedeutet Break-even-Point?",
+      "answer": "Der Punkt, an dem Erlöse und Kosten gleich hoch sind.",
+      "explanation": "Ab dem Break-even erwirtschaftet ein Produkt oder Projekt Gewinn.",
+      "translations": {
+        "en": {
+          "question": "What does break-even point mean?",
+          "answer": "The point where revenues and costs are equal.",
+          "explanation": "After break-even, a product or project generates profit."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q94",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist eine Nutzwertanalyse?",
+      "answer": "Ein Bewertungsverfahren, bei dem Alternativen anhand gewichteter Kriterien verglichen werden.",
+      "explanation": "Sie eignet sich besonders, wenn qualitative und quantitative Kriterien zusammen bewertet werden.",
+      "translations": {
+        "en": {
+          "question": "What is a utility analysis?",
+          "answer": "An evaluation method that compares alternatives using weighted criteria.",
+          "explanation": "It is useful when qualitative and quantitative criteria are evaluated together."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q95",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist ein Meilenstein im Projekt?",
+      "answer": "Ein wichtiger Termin oder Zwischenerfolg ohne eigene Dauer.",
+      "explanation": "Meilensteine markieren Kontrollpunkte und Entscheidungszeitpunkte im Projektplan.",
+      "translations": {
+        "en": {
+          "question": "What is a milestone in a project?",
+          "answer": "An important date or intermediate result without its own duration.",
+          "explanation": "Milestones mark control points and decision points in the project plan."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q96",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was bedeutet linear abschreiben?",
+      "answer": "Anschaffungskosten werden gleichmäßig über die Nutzungsdauer verteilt.",
+      "explanation": "Bei linearer Abschreibung ist der jährliche Abschreibungsbetrag konstant.",
+      "translations": {
+        "en": {
+          "question": "What does straight-line depreciation mean?",
+          "answer": "Acquisition costs are distributed evenly over the useful life.",
+          "explanation": "With straight-line depreciation, the annual depreciation amount is constant."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q97",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist Skonto?",
+      "answer": "Ein Preisnachlass bei Zahlung innerhalb einer kurzen Frist.",
+      "explanation": "Skonto soll schnelle Zahlung fördern und wird vom Rechnungsbetrag abgezogen.",
+      "translations": {
+        "en": {
+          "question": "What is a cash discount?",
+          "answer": "A price reduction for payment within a short period.",
+          "explanation": "It encourages quick payment and is deducted from the invoice amount."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q98",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist eine Stakeholderanalyse?",
+      "answer": "Die Ermittlung und Bewertung betroffener oder einflussreicher Personen und Gruppen.",
+      "explanation": "Sie hilft, Interessen, Einfluss und Kommunikationsbedarf im Projekt zu erkennen.",
+      "translations": {
+        "en": {
+          "question": "What is stakeholder analysis?",
+          "answer": "Identifying and assessing affected or influential people and groups.",
+          "explanation": "It helps identify interests, influence and communication needs in a project."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q99",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was bedeutet ROI?",
+      "answer": "Return on Investment",
+      "explanation": "Der ROI setzt Gewinn oder Nutzen ins Verhältnis zum eingesetzten Kapital.",
+      "translations": {
+        "en": {
+          "question": "What does ROI stand for?",
+          "answer": "Return on Investment",
+          "explanation": "ROI relates profit or benefit to the capital invested."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q100",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist ein Projektstrukturplan?",
+      "answer": "Eine hierarchische Zerlegung des Projekts in Teilaufgaben und Arbeitspakete.",
+      "explanation": "Der PSP schafft Übersicht über den Leistungsumfang eines Projekts.",
+      "translations": {
+        "en": {
+          "question": "What is a work breakdown structure?",
+          "answer": "A hierarchical decomposition of the project into subtasks and work packages.",
+          "explanation": "The WBS provides an overview of project scope."
+        }
+      }
     }
   ]
 }
