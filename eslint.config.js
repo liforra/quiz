@@ -27,6 +27,7 @@ export default tseslint.config(
   },
   {
     files: ['**/*.{js,jsx}'],
+    ignores: ['server/**'],
     extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 2020,
@@ -48,6 +49,15 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+    },
+  },
+  {
+    files: ['server/**/*.js'],
+    extends: [js.configs.recommended],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.node,
     },
   },
 )

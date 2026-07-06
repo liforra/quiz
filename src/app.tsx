@@ -3,10 +3,18 @@ import Sidebar from './components/Sidebar';
 import {
   Upload, FileJson, Play, CheckCircle, XCircle, ChevronRight, RotateCcw, Award, AlertCircle,
   Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard,
-  Globe, Shield, X, BarChart2, TrendingUp, TrendingDown, Download, Menu, GraduationCap,
+  Globe, Shield, X, Download, Menu, GraduationCap,
   Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
-  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap
+  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2
 } from 'lucide-react';
+import { BUILT_IN_MODES } from './modes';
+import { DEFAULT_QUIZZES } from './defaultQuizzes';
+import { t, resolveQuestionLang, Lang } from './i18n';
+import { checkAiStatus, gradeAnswer } from './api';
+import HelpChat from './components/HelpChat';
+import ExplainPopover from './components/ExplainPopover';
+import StatsPanel from './components/StatsPanel';
+import { computeCategoryBreakdown, pickBestCategory } from './stats';
 
 // --- FIREBASE IMPORTS ---
 import { initializeApp } from 'firebase/app';
@@ -62,6 +70,14 @@ const ICON_MAP: any = {
 };
 
 // --- UTILS ---
+// Gravatar hashing uses SHA-256 (Gravatar's newer API supports this natively,
+// so we can use the browser's built-in crypto.subtle instead of an MD5 lib).
+async function sha256Hex(text) {
+  const bytes = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 // Helper for multi-select validation
 const isCorrectArr = (arr1, arr2) => {
   if (!arr1 || !arr2 || arr1.length !== arr2.length) return false;
@@ -69,40 +85,6 @@ const isCorrectArr = (arr1, arr2) => {
   const sorted2 = [...arr2].sort();
   return sorted1.every((val, index) => val === sorted2[index]);
 };
-
-const SAMPLE_QUIZ = [
-  {
-    id: "q1",
-    type: "single",
-    category: "Biology",
-    question: "What is the powerhouse of the cell?",
-    options: ["Nucleus", "Mitochondria", "Ribosome", "Golgi Apparatus"],
-    answer: "Mitochondria"
-  },
-  {
-    id: "q2",
-    type: "multiple",
-    category: "Computer Science",
-    question: "Select the colors in the RGB model (Select all that apply)",
-    options: ["Red", "Cyan", "Green", "Yellow", "Blue"],
-    answer: ["Red", "Green", "Blue"]
-  },
-  {
-    id: "q3",
-    type: "text",
-    category: "Web Development",
-    question: "What does DOM stand for?",
-    answer: "Document Object Model"
-  },
-  {
-    id: "q4",
-    type: "single",
-    category: "Web Development",
-    question: "Which hook handles side effects?",
-    options: ["useState", "useEffect", "useMemo"],
-    answer: "useEffect"
-  }
-];
 
 export default function App() {
   // --- STATE ---
@@ -116,9 +98,31 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [view]);
 
+  // Modes/Categories + UI Language
+  const [activeMode, setActiveModeState] = useState<string | null>(() => localStorage.getItem('quiz_active_mode') || null);
+  const [uiLang, setUiLangState] = useState<Lang>(() => (localStorage.getItem('quiz_ui_lang') as Lang) || 'de');
+  const [customModes, setCustomModes] = useState([]);
+
+  const setActiveMode = (mode: string | null) => {
+    setActiveModeState(mode);
+    if (mode) localStorage.setItem('quiz_active_mode', mode);
+    else localStorage.removeItem('quiz_active_mode');
+  };
+  const setUiLang = (lang: Lang) => {
+    setUiLangState(lang);
+    localStorage.setItem('quiz_ui_lang', lang);
+  };
+
   // Library Data
   const [privateQuizzes, setPrivateQuizzes] = useState([]);
   const [publicQuizzes, setPublicQuizzes] = useState([]);
+  // Premade/library quizzes filtered by the active mode (untagged quizzes only show under "Alle").
+  // Built-in default quizzes (shipped with the app, not stored in Firestore) come first.
+  const premadeQuizzes = useMemo(() => [
+    ...DEFAULT_QUIZZES.map(q => ({ ...q, type: 'default' })),
+    ...privateQuizzes.map(q => ({ ...q, type: 'private' })),
+    ...publicQuizzes.map(q => ({ ...q, type: 'public' }))
+  ].filter(q => activeMode == null || (q.modes || []).includes(activeMode)), [privateQuizzes, publicQuizzes, activeMode]);
 
   // Stats Data
   const [currentQuizId, setCurrentQuizId] = useState(null);
@@ -127,13 +131,21 @@ export default function App() {
   // Effective stats: Quiz stats override global stats (Forking pattern for legacy compatibility)
   const stats = useMemo(() => ({ ...globalStats, ...currentQuizStats }), [globalStats, currentQuizStats]);
 
-  const [categoryStats, setCategoryStats] = useState({}); // Category stats
+  const [attempts, setAttempts] = useState([]); // Per-answer history (for category breakdown + trend chart)
+  const categoryBreakdown = useMemo(
+    () => computeCategoryBreakdown(stats, [...DEFAULT_QUIZZES, ...privateQuizzes, ...publicQuizzes]),
+    [stats, privateQuizzes, publicQuizzes]
+  );
 
   // Quiz Data
   const [activeQuizQuestions, setActiveQuizQuestions] = useState([]); // The full pool
   const [sessionQueue, setSessionQueue] = useState([]); // The smart queue for this run
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [currentQData, setCurrentQData] = useState(null);
+  // Derived (not separate state) so it can never drift out of sync with currentQuestionIndex
+  const currentQData = sessionQueue[currentQuestionIndex] ?? null;
+  // Language-resolved view of the current question (falls back to original fields when untranslated).
+  // Rendering AND the value captured on answer both read from this, so correctness checks stay consistent.
+  const displayQ = useMemo(() => resolveQuestionLang(currentQData, uiLang), [currentQData, uiLang]);
 
   // Upload State
   const [pendingUpload, setPendingUpload] = useState(null);
@@ -142,6 +154,11 @@ export default function App() {
   const [editingQuiz, setEditingQuiz] = useState(null); // Track quiz being edited
   const [selectedIcon, setSelectedIcon] = useState("BookOpen"); // Default icon
   const [editTitle, setEditTitle] = useState("");
+  const [selectedModes, setSelectedModes] = useState<string[]>([]); // Mode ids this quiz is tagged with
+
+  const toggleSelectedMode = (modeId: string) => {
+    setSelectedModes(prev => prev.includes(modeId) ? prev.filter(m => m !== modeId) : [...prev, modeId]);
+  };
 
   // Gameplay State
   const [userAnswers, setUserAnswers] = useState({});
@@ -151,6 +168,51 @@ export default function App() {
   const [countdown, setCountdown] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const processingRef = useRef(false);
+  const advancingRef = useRef(false);
+
+  // AI (Groq, via server/index.js — the client never sees the key or the prompts)
+  const [aiConfigured, setAiConfigured] = useState(false);
+  const [aiRateLimited, setAiRateLimited] = useState(false);
+  const aiEnabled = aiConfigured && !aiRateLimited;
+  const [helpChatQuestion, setHelpChatQuestion] = useState(null);
+  const [explainContext, setExplainContext] = useState(null);
+  const [gradingAnswer, setGradingAnswer] = useState(false);
+  const [textAnswerInput, setTextAnswerInput] = useState('');
+
+  const refreshAiStatus = useCallback(() => {
+    checkAiStatus().then(({ enabled, rateLimited }) => {
+      setAiConfigured(enabled);
+      setAiRateLimited(rateLimited);
+    });
+  }, []);
+
+  // Check once on load, then keep polling so the app quietly recovers on its
+  // own once a Groq rate limit clears (no need to reload).
+  useEffect(() => {
+    refreshAiStatus();
+    const interval = setInterval(refreshAiStatus, 60_000);
+    return () => clearInterval(interval);
+  }, [refreshAiStatus]);
+
+  // Called wherever an AI call fails — flips the shared rate-limited flag so
+  // every AI-dependent bit of UI (grading, explain, help chat) falls back at
+  // once, and schedules a status re-check once Groq says we can retry.
+  const handleAiError = useCallback((e: any) => {
+    if (e?.retryAfterSeconds != null) {
+      setAiRateLimited(true);
+      setTimeout(refreshAiStatus, (e.retryAfterSeconds + 1) * 1000);
+      return true;
+    }
+    return false;
+  }, [refreshAiStatus]);
+
+  // Close any open help/explain panel when the question or view changes, so
+  // stale context never lingers onto the next question (or outside gameplay).
+  useEffect(() => {
+    setHelpChatQuestion(null);
+    setExplainContext(null);
+    setTextAnswerInput('');
+  }, [currentQuestionIndex, view]);
 
   // Inputs
   const [error, setError] = useState('');
@@ -165,6 +227,40 @@ export default function App() {
   // Text/Multi Inputs
   const [textInputReveal, setTextInputReveal] = useState(false);
   const [multiSelection, setMultiSelection] = useState([]);
+
+  // Settings / Profile State
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [gravatarEmailInput, setGravatarEmailInput] = useState('');
+  const [gravatarHash, setGravatarHash] = useState('');
+
+  useEffect(() => {
+    const email = appUser?.gravatarEmail?.trim().toLowerCase();
+    if (!email) {
+      setGravatarHash('');
+      return;
+    }
+    let cancelled = false;
+    sha256Hex(email).then(hash => { if (!cancelled) setGravatarHash(hash); });
+    return () => { cancelled = true; };
+  }, [appUser?.gravatarEmail]);
+
+  const gravatarUrl = gravatarHash ? `https://www.gravatar.com/avatar/${gravatarHash}?d=404&s=80` : null;
+
+  const openSettingsModal = () => {
+    setGravatarEmailInput(appUser?.gravatarEmail || '');
+    setShowSettingsModal(true);
+  };
+
+  const saveGravatarEmail = async () => {
+    try {
+      await setDoc(doc(db, 'artifacts', appId, 'users', user.uid), {
+        gravatarEmail: gravatarEmailInput.trim()
+      }, { merge: true });
+      setShowSettingsModal(false);
+    } catch (e) {
+      setError("Failed to save settings: " + e.message);
+    }
+  };
 
   // Admin State
   const [adminUsers, setAdminUsers] = useState([]);
@@ -213,6 +309,13 @@ export default function App() {
   useEffect(() => {
     if (!user) return;
 
+    // 0. Sync own user doc (profile prefs like gravatarEmail)
+    const userDocRef = doc(db, 'artifacts', appId, 'users', user.uid);
+    const unsubUserDoc = onSnapshot(userDocRef, (snap) => {
+      const data = snap.data();
+      setAppUser(prev => prev ? { ...prev, gravatarEmail: data?.gravatarEmail || '' } : prev);
+    }, (err) => console.error("User doc sync error", err));
+
     // 1. Sync User Stats (Questions)
     const statsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'stats');
     const unsubStats = onSnapshot(statsRef, (snapshot) => {
@@ -223,15 +326,11 @@ export default function App() {
       setGlobalStats(newStats);
     }, (err) => console.error("Stats sync error", err));
 
-    // 2. Sync Category Stats
-    const catStatsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'category_stats');
-    const unsubCatStats = onSnapshot(catStatsRef, (snapshot) => {
-      const newCatStats = {};
-      snapshot.forEach(doc => {
-        newCatStats[doc.id] = doc.data();
-      });
-      setCategoryStats(newCatStats);
-    }, (err) => console.error("Category stats sync error", err));
+    // 2. Sync Attempt History (per-answer log, feeds category breakdown + trend chart)
+    const attemptsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'attempts');
+    const unsubAttempts = onSnapshot(attemptsRef, (snapshot) => {
+      setAttempts(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
+    }, (err) => console.error("Attempts sync error", err));
 
     // 3. Sync Private Quizzes
     const privateRef = collection(db, 'artifacts', appId, 'users', user.uid, 'quizzes');
@@ -245,11 +344,19 @@ export default function App() {
       setPublicQuizzes(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
     }, (err) => console.error("Public quiz sync error", err));
 
+    // 5. Sync Custom Modes (private to this user)
+    const modesRef = collection(db, 'artifacts', appId, 'users', user.uid, 'modes');
+    const unsubModes = onSnapshot(modesRef, (snapshot) => {
+      setCustomModes(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
+    }, (err) => console.error("Custom modes sync error", err));
+
     return () => {
+      unsubUserDoc();
       unsubStats();
-      unsubCatStats();
+      unsubAttempts();
       unsubPrivate();
       unsubPublic();
+      unsubModes();
     };
   }, [user]);
 
@@ -335,18 +442,15 @@ export default function App() {
           }, { merge: true });
         }
 
-        // 2. Update Category Stats (If category exists)
-        if (currentQ.category) {
-          // Use safe slugification instead of btoa
-          const catId = currentQ.category.toLowerCase().replace(/[^a-z0-9]+/g, '-') || 'misc';
-          const catRef = doc(db, 'artifacts', appId, 'users', user.uid, 'category_stats', catId);
-          await setDoc(catRef, {
-            name: currentQ.category,
-            correct: increment(isCorrect ? 1 : 0),
-            wrong: increment(isCorrect ? 0 : 1),
-            lastUpdated: new Date().toISOString()
-          }, { merge: true });
-        }
+        // 2. Log this attempt (feeds the category breakdown + trend chart;
+        // uncategorized questions land under "Unknown" rather than vanishing)
+        await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'attempts'), {
+          questionId: currentQ.id,
+          category: currentQ.category || 'Unknown',
+          correct: isCorrect,
+          quizId: currentQuizId || null,
+          timestamp: new Date().toISOString()
+        });
       } catch (e) {
         console.error("Failed to save stats", e);
       }
@@ -358,13 +462,33 @@ export default function App() {
     setCountdown(isCorrect ? 2 : 5);
   }, [showFeedback, sessionQueue, currentQuestionIndex, user, appUser]);
 
+  const submitTextAnswer = async (typedAnswer: string) => {
+    if (showFeedback || processingRef.current || gradingAnswer || !typedAnswer.trim()) return;
+    setGradingAnswer(true);
+    try {
+      const answerForGrading = Array.isArray(displayQ.answer) ? displayQ.answer.join(', ') : displayQ.answer;
+      const result = await gradeAnswer(displayQ.question, answerForGrading, typedAnswer.trim(), uiLang);
+      submitAnswer(result.correct, typedAnswer.trim());
+    } catch (e) {
+      // On rate limit this flips aiEnabled off, so the UI falls back to the
+      // classic self-report flow (the typed answer is kept in the input).
+      handleAiError(e);
+    } finally {
+      setGradingAnswer(false);
+    }
+  };
+
   const handleNext = useCallback(() => {
+    // Guards against a second handleNext firing (e.g. key-repeat, or the
+    // auto-advance timer and a manual Space press landing in the same tick)
+    // before React has re-rendered and swapped in a fresh closure.
+    if (advancingRef.current) return;
+    advancingRef.current = true;
+
     if (currentQuestionIndex < sessionQueue.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
-      setCurrentQData(sessionQueue[currentQuestionIndex + 1]);
       setShowFeedback(false);
       setTextInputReveal(false);
-      setMultiSelection([]);
       setMultiSelection([]);
       setIsPaused(false);
       processingRef.current = false;
@@ -372,6 +496,12 @@ export default function App() {
       setView('results');
     }
   }, [currentQuestionIndex, sessionQueue]);
+
+  // Release the handleNext guard only once the question index has actually
+  // advanced, so a legitimate next press isn't blocked by a prior one.
+  useEffect(() => {
+    advancingRef.current = false;
+  }, [currentQuestionIndex]);
 
   const downloadQuiz = (quiz) => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(quiz, null, 2));
@@ -387,7 +517,7 @@ export default function App() {
     const exportData = {
       user: appUser?.username,
       exportedAt: new Date().toISOString(),
-      categoryStats: categoryStats,
+      categoryStats: categoryBreakdown,
       questionStats: stats
     };
 
@@ -403,7 +533,13 @@ export default function App() {
   // --- KEYBOARD LISTENER ---
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (view !== 'playing' || !currentQData) return;
+      // Never hijack keys while the user is typing in an input/textarea
+      // (the AI help chat box, the AI-graded text-answer field, etc.) —
+      // otherwise 1/2/space/enter get "consumed" by the quiz controls too.
+      const target = e.target;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) return;
+
+      if (view !== 'playing' || !displayQ) return;
 
       const key = e.key;
       const num = parseInt(key, 10);
@@ -418,7 +554,7 @@ export default function App() {
       }
 
       // --- 1. Flashcard Logic ---
-      if (currentQData.type === 'text' || currentQData.type === 'text_input') {
+      if (displayQ.type === 'text' || displayQ.type === 'text_input') {
         if (!textInputReveal && (key === 'Enter' || key === ' ')) {
           e.preventDefault();
           setTextInputReveal(true);
@@ -430,29 +566,29 @@ export default function App() {
       }
 
       // --- 2. Multi-Select Logic ---
-      if (currentQData.type === 'multiple' || currentQData.type === 'multiple_response') {
+      if (displayQ.type === 'multiple' || displayQ.type === 'multiple_response') {
         if (key === 'Enter') {
           e.preventDefault();
-          submitAnswer(isCorrectArr(multiSelection, currentQData.answer), multiSelection);
+          submitAnswer(isCorrectArr(multiSelection, displayQ.answer), multiSelection);
           return;
         }
         // Toggle options 1-9
         if (!isNaN(num) && num > 0 && num <= 9) {
           const index = num - 1;
-          if (index < currentQData.options.length) {
-            toggleSelection(currentQData.options[index]);
+          if (index < displayQ.options.length) {
+            toggleSelection(displayQ.options[index]);
           }
         }
         return;
       }
 
       // --- 3. Single Choice Logic ---
-      if (currentQData.type === 'single' || currentQData.type === 'single_choice') {
+      if (displayQ.type === 'single' || displayQ.type === 'single_choice') {
         if (!isNaN(num) && num > 0 && num <= 9) {
           const index = num - 1;
-          if (index < currentQData.options.length) {
-            const option = currentQData.options[index];
-            const ans = currentQData.answer;
+          if (index < displayQ.options.length) {
+            const option = displayQ.options[index];
+            const ans = displayQ.answer;
             const isCorrect = Array.isArray(ans) ? ans.includes(option) : ans === option;
             submitAnswer(isCorrect, option);
           }
@@ -462,7 +598,7 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [view, currentQData, showFeedback, textInputReveal, multiSelection, submitAnswer, toggleSelection, handleNext]);
+  }, [view, displayQ, showFeedback, textInputReveal, multiSelection, submitAnswer, toggleSelection, handleNext]);
 
 
   // --- AUTH HANDLERS ---
@@ -552,6 +688,7 @@ export default function App() {
     const quizData = {
       title: pendingFileName,
       icon: selectedIcon,
+      modes: selectedModes,
       questions: processed,
       createdAt: new Date().toISOString(),
       author: appUser.username,
@@ -569,6 +706,7 @@ export default function App() {
       setShowSaveModal(false);
       setPendingUpload(null);
       setSelectedIcon("BookOpen");
+      setSelectedModes([]);
     } catch (e) {
       setError("Failed to save quiz: " + e.message);
     }
@@ -585,19 +723,21 @@ export default function App() {
 
       await updateDoc(quizRef, {
         title: editTitle,
-        icon: selectedIcon
+        icon: selectedIcon,
+        modes: selectedModes
       });
 
       // Update local state to reflect changes immediately
       if (editingQuiz.type === 'private') {
-        setPrivateQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon } : q));
+        setPrivateQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon, modes: selectedModes } : q));
       } else {
-        setPublicQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon } : q));
+        setPublicQuizzes(prev => prev.map(q => q.id === editingQuiz.id ? { ...q, title: editTitle, icon: selectedIcon, modes: selectedModes } : q));
       }
 
       setEditingQuiz(null);
       setSelectedIcon("BookOpen");
       setEditTitle("");
+      setSelectedModes([]);
     } catch (e) {
       setError("Failed to update quiz: " + e.message);
     }
@@ -625,6 +765,19 @@ export default function App() {
 
   const validateQuizData = (data) => {
     return Array.isArray(data) && data.length > 0 && data[0].question && (data[0].answer || data[0].options);
+  };
+
+  const saveCustomMode = async (label: string, icon: string) => {
+    if (!user) return;
+    try {
+      await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'modes'), {
+        label,
+        icon,
+        createdAt: new Date().toISOString()
+      });
+    } catch (e) {
+      setError("Failed to create mode: " + e.message);
+    }
   };
 
   const generateSmartSession = (allQuestions, quizId = null) => {
@@ -698,7 +851,6 @@ export default function App() {
     setSessionScore(0);
     setUserAnswers({});
     setCurrentQuestionIndex(0);
-    setCurrentQData(finalQueue[0]);
     setView('playing');
     setError('');
 
@@ -707,13 +859,12 @@ export default function App() {
     setTextInputReveal(false);
     setMultiSelection([]);
     setIsPaused(false);
+    processingRef.current = false;
+    advancingRef.current = false;
   };
 
   const handleQuickTest = () => {
-    const allQuestions = [
-      ...privateQuizzes.flatMap(q => q.questions || []),
-      ...publicQuizzes.flatMap(q => q.questions || [])
-    ];
+    const allQuestions = premadeQuizzes.flatMap(q => q.questions || []);
 
     if (allQuestions.length === 0) {
       setError("No questions available for a quick test! Upload or find some quizzes first.");
@@ -762,70 +913,24 @@ export default function App() {
       const quizzesSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'quizzes'));
       const q = quizzesSnap.docs.map(d => ({ id: d.id, ...d.data() }));
 
-      setSelectedAdminUserData({ stats: s, quizzes: q });
+      const attemptsSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'attempts'));
+      const a = attemptsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+      setSelectedAdminUserData({ stats: s, quizzes: q, attempts: a });
     } catch (e) {
       console.error("Failed to fetch user details", e);
     }
   };
 
-  // --- COMPONENT: STATS DASHBOARD ---
-  const StatsOverview = () => {
-    const cats = Object.values(categoryStats);
-    if (cats.length === 0) return null;
-
-    const sorted = [...cats].sort((a, b) => {
-      const rateA = a.correct / (a.correct + a.wrong);
-      const rateB = b.correct / (b.correct + b.wrong);
-      return rateB - rateA;
-    });
-
-    const top = sorted.slice(0, 3).filter(c => (c.correct + c.wrong) > 0);
-    const bottom = sorted.reverse().slice(0, 3).filter(c => (c.correct / (c.correct + c.wrong)) < 0.8);
-
-    return (
-      <div className="grid md:grid-cols-2 gap-6 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
-          <h3 className="flex items-center gap-2 font-bold text-zinc-800 dark:text-white mb-4">
-            <TrendingUp className="text-green-500" size={20} /> Top Strengths
-          </h3>
-          <div className="space-y-3">
-            {top.length === 0 ? <p className="text-sm text-zinc-400">Play more to see stats!</p> : top.map(c => (
-              <div key={c.name} className="flex justify-between items-center">
-                <span className="text-sm font-medium text-zinc-600 dark:text-zinc-300 truncate w-2/3" title={c.name}>{c.name}</span>
-                <span className="text-xs font-bold text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-full">
-                  {Math.round((c.correct / (c.correct + c.wrong)) * 100)}%
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
-          <h3 className="flex items-center gap-2 font-bold text-zinc-800 dark:text-white mb-4">
-            <TrendingDown className="text-orange-500" size={20} /> Focus Areas
-          </h3>
-          <div className="space-y-3">
-            {bottom.length === 0 ? <p className="text-sm text-zinc-400">No weak spots found yet!</p> : bottom.map(c => (
-              <div key={c.name} className="flex justify-between items-center">
-                <span className="text-sm font-medium text-zinc-600 dark:text-zinc-300 truncate w-2/3" title={c.name}>{c.name}</span>
-                <span className="text-xs font-bold text-orange-600 bg-orange-50 dark:bg-orange-900/20 px-2 py-1 rounded-full">
-                  {Math.round((c.correct / (c.correct + c.wrong)) * 100)}%
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   // --- RENDER HELPERS ---
   const renderSingleChoice = () => (
     <div className="space-y-3">
-      {currentQData.options.map((option, idx) => {
+      {displayQ.options.map((option, idx) => {
         const isSelected = userAnswers[currentQuestionIndex] === option;
-        const ans = currentQData.answer;
+        const ans = displayQ.answer;
         const isCorrect = Array.isArray(ans) ? ans.includes(option) : ans === option;
+        const optionKey = `${displayQ.id}::${idx}`;
 
         let style = "border-zinc-200 dark:border-[#2A2633] hover:bg-zinc-50 dark:hover:bg-[#23202B]";
         if (showFeedback) {
@@ -835,23 +940,43 @@ export default function App() {
         }
 
         return (
-          <button
-            key={idx}
-            disabled={showFeedback}
-            onClick={() => submitAnswer(isCorrect, option)}
-            className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium flex justify-between items-center group relative ${style}`}
-          >
-            <div className="flex items-center gap-3">
-              <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
-                'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
-                }`}>
-                {idx + 1}
-              </span>
-              <span className="dark:text-[#EBE9F0]">{option}</span>
-            </div>
-            {showFeedback && isCorrect && <CheckCircle size={20} />}
-            {showFeedback && isSelected && !isCorrect && <XCircle size={20} />}
-          </button>
+          <div key={idx} className="relative flex items-center gap-2">
+            <button
+              disabled={showFeedback}
+              onClick={() => submitAnswer(isCorrect, option)}
+              className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${style}`}
+            >
+              <div className="flex items-center gap-3">
+                <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
+                  'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
+                  }`}>
+                  {idx + 1}
+                </span>
+                <span className="dark:text-[#EBE9F0]">{option}</span>
+              </div>
+              {showFeedback && isCorrect && <CheckCircle size={20} />}
+              {showFeedback && isSelected && !isCorrect && <XCircle size={20} />}
+            </button>
+            {showFeedback && aiEnabled && (
+              <button
+                onClick={() => setExplainContext({
+                  id: optionKey,
+                  question: displayQ.question,
+                  options: displayQ.options,
+                  correctAnswer: displayQ.answer,
+                  userAnswer: option,
+                  wasCorrect: isCorrect
+                })}
+                className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-[#23202B] text-zinc-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                title={t(uiLang, 'whyRightWrong')}
+              >
+                <HelpCircle size={14} />
+              </button>
+            )}
+            {explainContext?.id === optionKey && (
+              <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+            )}
+          </div>
         );
       })}
     </div>
@@ -861,9 +986,9 @@ export default function App() {
     return (
       <div className="space-y-4">
         <div className="space-y-3">
-          {currentQData.options.map((option, idx) => {
+          {displayQ.options.map((option, idx) => {
             const isSelected = multiSelection.includes(option);
-            const isActuallyCorrect = currentQData.answer.includes(option);
+            const isActuallyCorrect = displayQ.answer.includes(option);
 
             let style = "border-zinc-200 dark:border-[#2A2633]";
             let icon = isSelected ? <CheckSquare size={24} className="text-purple-600 dark:text-purple-400" /> : <Square size={24} className="text-zinc-300 dark:text-[#4A4555]" />;
@@ -882,29 +1007,51 @@ export default function App() {
               style = "border-purple-500 bg-purple-50 dark:bg-purple-900/20";
             }
 
+            const optionKey = `${displayQ.id}::${idx}`;
+
             return (
-              <button
-                key={idx}
-                disabled={showFeedback}
-                onClick={() => toggleSelection(option)}
-                className={`w-full text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${style}`}
-              >
-                <div className="flex items-center gap-3 w-full">
-                  <span className={`w-6 h-6 flex flex-shrink-0 items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
-                    'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
-                    }`}>
-                    {idx + 1}
-                  </span>
-                  {icon}
-                  <span className="flex-1 dark:text-[#EBE9F0]">{option}</span>
-                </div>
-              </button>
+              <div key={idx} className="relative flex items-center gap-2">
+                <button
+                  disabled={showFeedback}
+                  onClick={() => toggleSelection(option)}
+                  className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${style}`}
+                >
+                  <div className="flex items-center gap-3 w-full">
+                    <span className={`w-6 h-6 flex flex-shrink-0 items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
+                      'bg-zinc-100 dark:bg-[#2A2633] text-zinc-500 dark:text-[#9D99A8] border-zinc-200 dark:border-[#2A2633] group-hover:border-purple-300'
+                      }`}>
+                      {idx + 1}
+                    </span>
+                    {icon}
+                    <span className="flex-1 dark:text-[#EBE9F0]">{option}</span>
+                  </div>
+                </button>
+                {showFeedback && aiEnabled && (
+                  <button
+                    onClick={() => setExplainContext({
+                      id: optionKey,
+                      question: displayQ.question,
+                      options: displayQ.options,
+                      correctAnswer: displayQ.answer,
+                      userAnswer: option,
+                      wasCorrect: isActuallyCorrect
+                    })}
+                    className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-[#23202B] text-zinc-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                    title={t(uiLang, 'whyRightWrong')}
+                  >
+                    <HelpCircle size={14} />
+                  </button>
+                )}
+                {explainContext?.id === optionKey && (
+                  <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+                )}
+              </div>
             );
           })}
         </div>
         {!showFeedback && (
           <button
-            onClick={() => submitAnswer(isCorrectArr(multiSelection, currentQData.answer), multiSelection)}
+            onClick={() => submitAnswer(isCorrectArr(multiSelection, displayQ.answer), multiSelection)}
             className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2"
           >
             <span>Submit Answer</span>
@@ -917,7 +1064,55 @@ export default function App() {
 
   const renderTextChoice = () => (
     <div className="text-center py-8">
-      {!textInputReveal ? (
+      {aiEnabled ? (
+        <div className="space-y-4 max-w-md mx-auto">
+          <input
+            type="text"
+            value={textAnswerInput}
+            onChange={(e) => setTextAnswerInput(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') submitTextAnswer(textAnswerInput); }}
+            disabled={showFeedback || gradingAnswer}
+            placeholder={t(uiLang, 'typeYourAnswer')}
+            autoFocus
+            className="w-full px-4 py-3 text-center text-lg bg-zinc-50 dark:bg-[#23202B] border-2 border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-all dark:text-white disabled:opacity-60"
+          />
+          {!showFeedback && (
+            <button
+              onClick={() => submitTextAnswer(textAnswerInput)}
+              disabled={gradingAnswer || !textAnswerInput.trim()}
+              className="w-full py-3 bg-purple-600 hover:bg-purple-700 disabled:opacity-40 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2"
+            >
+              {gradingAnswer ? <><Loader2 size={16} className="animate-spin" /> {t(uiLang, 'grading')}</> : t(uiLang, 'submitAnswerBtn')}
+            </button>
+          )}
+          {showFeedback && (
+            <div className="relative inline-flex items-center gap-2">
+              <p className="text-sm text-zinc-500 dark:text-[#9D99A8]">
+                {t(uiLang, 'correctAnswerLabel')} <span className="font-bold text-zinc-800 dark:text-white">{Array.isArray(displayQ.answer) ? displayQ.answer.join(", ") : displayQ.answer}</span>
+              </p>
+              {aiEnabled && (
+                <button
+                  onClick={() => setExplainContext({
+                    id: `${displayQ.id}::text`,
+                    question: displayQ.question,
+                    options: displayQ.options,
+                    correctAnswer: displayQ.answer,
+                    userAnswer: userAnswers[currentQuestionIndex],
+                    wasCorrect: feedbackType === 'correct'
+                  })}
+                  className="shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-[#23202B] text-zinc-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                  title={t(uiLang, 'whyRightWrong')}
+                >
+                  <HelpCircle size={14} />
+                </button>
+              )}
+              {explainContext?.id === `${displayQ.id}::text` && (
+                <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+              )}
+            </div>
+          )}
+        </div>
+      ) : !textInputReveal ? (
         <div className="space-y-4">
           <button
             onClick={() => setTextInputReveal(true)}
@@ -932,10 +1127,10 @@ export default function App() {
           <div className="p-6 bg-zinc-100 dark:bg-[#23202B] rounded-xl border border-zinc-200 dark:border-[#2A2633]">
             <p className="text-sm uppercase tracking-wider text-zinc-500 dark:text-[#9D99A8] mb-2">Correct Answer</p>
             <div className="text-2xl font-bold text-zinc-800 dark:text-white">
-              {Array.isArray(currentQData.answer) ? currentQData.answer.join(", ") : currentQData.answer}
+              {Array.isArray(displayQ.answer) ? displayQ.answer.join(", ") : displayQ.answer}
             </div>
-            {currentQData.explanation && (
-              <p className="mt-4 text-sm text-zinc-600 dark:text-[#9D99A8] italic">"{currentQData.explanation}"</p>
+            {displayQ.explanation && (
+              <p className="mt-4 text-sm text-zinc-600 dark:text-[#9D99A8] italic">"{displayQ.explanation}"</p>
             )}
           </div>
 
@@ -1045,14 +1240,30 @@ export default function App() {
           setTheme={setTheme}
           user={user}
           appUser={appUser}
-          categoryStats={categoryStats}
+          defaultQuizzes={DEFAULT_QUIZZES}
           privateQuizzes={privateQuizzes}
           publicQuizzes={publicQuizzes}
           onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
           onSelectQuickQuiz={handleQuickQuizSession}
+          onEditQuiz={(quiz) => {
+            setEditingQuiz(quiz);
+            setEditTitle(quiz.title);
+            setSelectedIcon(quiz.icon || "BookOpen");
+            setSelectedModes(quiz.modes || []);
+          }}
+          onDeleteQuiz={handleDeleteQuiz}
           onLogout={() => auth.signOut()}
           isOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
+          gravatarUrl={gravatarUrl}
+          onOpenSettings={openSettingsModal}
+          uiLang={uiLang}
+          setUiLang={setUiLang}
+          activeMode={activeMode}
+          setActiveMode={setActiveMode}
+          builtInModes={BUILT_IN_MODES}
+          customModes={customModes}
+          onCreateMode={saveCustomMode}
         />
 
         {/* Main Content Area */}
@@ -1065,6 +1276,12 @@ export default function App() {
             </button>
             <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
           </div>
+
+          {aiConfigured && aiRateLimited && (
+            <div className="px-4 py-2 bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800/30 text-amber-700 dark:text-amber-400 text-xs font-medium text-center">
+              {t(uiLang, 'aiRateLimited')}
+            </div>
+          )}
 
           {/* --- VIEW: DASHBOARD (UPLOAD & SELECT) --- */}
           {view === 'dashboard' && (
@@ -1079,34 +1296,81 @@ export default function App() {
                   <Zap size={32} fill="currentColor" />
                 </div>
                 <div className="text-left">
-                  <h2 className="text-2xl font-bold">Start Quick Test</h2>
-                  <p className="text-purple-100 opacity-90">20 random questions from your library</p>
+                  <h2 className="text-2xl font-bold">{t(uiLang, 'quickTest')}</h2>
+                  <p className="text-purple-100 opacity-90">{t(uiLang, 'quickTestDesc')}</p>
                 </div>
                 <ChevronRight size={32} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all ml-4" />
               </button>
 
-              {/* STATS OVERVIEW */}
+              {/* PREMADE QUIZZES (focus of the dashboard) */}
+              <h2 className="text-xl font-bold text-zinc-800 dark:text-white mb-4">{t(uiLang, 'premadeQuizzes')}</h2>
+              {premadeQuizzes.length === 0 ? (
+                <p className="text-sm text-zinc-400 italic mb-10">{t(uiLang, 'noQuizzesInMode')}</p>
+              ) : (
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+                  {premadeQuizzes.map(quiz => {
+                    const QuizIcon = (quiz.icon && ICON_MAP[quiz.icon]) ? ICON_MAP[quiz.icon] : BookOpen;
+                    return (
+                      <button
+                        key={quiz.id}
+                        onClick={() => generateSmartSession(quiz.questions, quiz.id)}
+                        className="text-left p-5 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all group"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                          <QuizIcon size={20} />
+                        </div>
+                        <h3 className="font-bold text-zinc-800 dark:text-white truncate">{quiz.title}</h3>
+                        <p className="text-xs text-zinc-400 mt-1 flex items-center gap-1">
+                          {quiz.questions?.length} {t(uiLang, 'questions')}
+                          {quiz.type === 'private' && <span className="text-amber-500">• {t(uiLang, 'private')}</span>}
+                        </p>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* STATS TEASER — full breakdown + trend chart lives on the Statistics page */}
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold text-zinc-800 dark:text-white">Performance Stats</h2>
+                <h2 className="text-xl font-bold text-zinc-800 dark:text-white">{t(uiLang, 'performanceStats')}</h2>
                 <button onClick={downloadStats} className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:underline bg-purple-50 dark:bg-purple-900/10 px-3 py-1.5 rounded-lg border border-purple-100 dark:border-purple-800/30 transition-all">
-                  <Download size={16} /> Export Data
+                  <Download size={16} /> {t(uiLang, 'exportData')}
                 </button>
               </div>
-              <StatsOverview />
+              {(() => {
+                const best = pickBestCategory(categoryBreakdown);
+                return (
+                  <button
+                    onClick={() => setView('stats')}
+                    className="w-full mb-10 p-5 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 transition-all flex items-center justify-between group text-left"
+                  >
+                    <div>
+                      {best ? (
+                        <>
+                          <p className="text-xs uppercase tracking-wider text-zinc-400 font-bold mb-1">{t(uiLang, 'bestCategory')}</p>
+                          <p className="font-bold text-zinc-800 dark:text-white">{best.name} — {Math.round(best.correct / (best.correct + best.wrong || 1) * 100)}%</p>
+                        </>
+                      ) : (
+                        <p className="text-sm text-zinc-400">{t(uiLang, 'noStatsYet')}</p>
+                      )}
+                    </div>
+                    <span className="flex items-center gap-1 text-sm font-semibold text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform">
+                      {t(uiLang, 'viewFullStats')} <ChevronRight size={16} />
+                    </span>
+                  </button>
+                );
+              })()}
 
-              {/* UPLOAD / CREATE */}
-              <h2 className="text-xl font-bold text-zinc-800 dark:text-white mb-4">Manage Library</h2>
+              {/* UPLOAD / CREATE (secondary) */}
+              <h2 className="text-sm font-bold text-zinc-500 dark:text-zinc-400 mb-2 mt-10">{t(uiLang, 'manageLibrary')}</h2>
               <div
-                className="bg-white dark:bg-[#18161F] rounded-2xl shadow-sm p-8 border-2 border-dashed border-zinc-300 dark:border-[#2A2633] text-center hover:border-purple-500 dark:hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all cursor-pointer group"
+                className="bg-white/60 dark:bg-[#18161F]/60 rounded-xl p-4 border border-dashed border-zinc-200 dark:border-[#2A2633] text-center hover:border-purple-500 dark:hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/10 transition-all cursor-pointer group flex items-center justify-center gap-3"
                 onClick={() => fileInputRef.current?.click()}
               >
                 <input type="file" accept=".json" className="hidden" ref={fileInputRef} onChange={handleFileUpload} />
-                <Upload className="mx-auto text-zinc-400 group-hover:text-purple-500 mb-4 transition-colors" size={40} />
-                <p className="font-bold text-lg text-zinc-700 dark:text-[#EBE9F0]">Upload Quiz</p>
-                <p className="text-zinc-400 dark:text-[#9D99A8]">Drag & drop or click to upload JSON</p>
+                <Upload className="text-zinc-400 group-hover:text-purple-500 transition-colors" size={18} />
+                <p className="text-sm text-zinc-500 dark:text-[#9D99A8]"><span className="font-bold text-zinc-700 dark:text-[#EBE9F0]">{t(uiLang, 'uploadQuiz')}</span> — {t(uiLang, 'uploadDesc')}</p>
               </div>
-
-              {/* Sample Loader (Hidden but accessible via text if needed, or fully removed. User asked for Upload, Stats, Quick Test. I'll keep a small text link for sample just in case, or remove it. I'll remove it to be clean.) */}
             </div>
           )}
 
@@ -1137,6 +1401,20 @@ export default function App() {
                         </button>
                       )
                     })}
+                  </div>
+
+                  <p className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-2 mt-4">Modes</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[...BUILT_IN_MODES, ...customModes].map(mode => (
+                      <button
+                        key={mode.id}
+                        type="button"
+                        onClick={() => toggleSelectedMode(mode.id)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${selectedModes.includes(mode.id) ? 'bg-purple-600 text-white' : 'bg-white dark:bg-[#18161F] text-zinc-500 border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500'}`}
+                      >
+                        {mode.label}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
@@ -1171,8 +1449,19 @@ export default function App() {
             </div>
           )}
 
+          {/* --- VIEW: STATISTICS --- */}
+          {view === 'stats' && (
+            <div className="p-4 md:p-8 max-w-4xl mx-auto w-full">
+              <div className="flex justify-between items-center mb-6">
+                <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">{t(uiLang, 'statistics')}</h1>
+                <button onClick={() => setView('dashboard')} className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white text-sm font-medium">Exit</button>
+              </div>
+              <StatsPanel statsMap={stats} attempts={attempts} quizzes={[...DEFAULT_QUIZZES, ...privateQuizzes, ...publicQuizzes]} uiLang={uiLang} />
+            </div>
+          )}
+
           {/* --- VIEW: PLAYING --- */}
-          {view === 'playing' && currentQData && (
+          {view === 'playing' && displayQ && (
             <div className="min-h-full flex flex-col items-center p-4 py-10">
               <div className="max-w-2xl w-full">
                 {/* Header */}
@@ -1182,26 +1471,26 @@ export default function App() {
                       Question {currentQuestionIndex + 1} of {sessionQueue.length}
                     </h2>
                     <div className="flex flex-wrap items-center gap-2 mt-1">
-                      <span className={`text-xs px-2 py-0.5 rounded-full border ${currentQData.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
-                        currentQData.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
+                      <span className={`text-xs px-2 py-0.5 rounded-full border ${displayQ.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
+                        displayQ.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
                           'border-zinc-200 text-zinc-600 bg-zinc-50'
                         }`}>
-                        {currentQData.type.includes('multiple') ? 'Multi-Select' : currentQData.type.includes('text') ? 'Flashcard' : 'Single Choice'}
+                        {displayQ.type.includes('multiple') ? 'Multi-Select' : displayQ.type.includes('text') ? 'Flashcard' : 'Single Choice'}
                       </span>
 
-                      {currentQData.category && (
+                      {displayQ.category && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
-                          {currentQData.category}
+                          {displayQ.category}
                         </span>
                       )}
 
                       {/* Algorithm Tag */}
-                      {stats[currentQData.id] && (stats[currentQData.id].correct / (stats[currentQData.id].correct + stats[currentQData.id].wrong) < 0.7) && (
+                      {stats[displayQ.id] && (stats[displayQ.id].correct / (stats[displayQ.id].correct + stats[displayQ.id].wrong) < 0.7) && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-orange-200 text-orange-600 bg-orange-50 flex items-center gap-1">
                           <RotateCcw size={10} /> Review
                         </span>
                       )}
-                      {!stats[currentQData.id] && (
+                      {!stats[displayQ.id] && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-green-200 text-green-600 bg-green-50 flex items-center gap-1">
                           New
                         </span>
@@ -1216,18 +1505,29 @@ export default function App() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative overflow-hidden">
+                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative">
                   <div className="flex items-start justify-between">
-                    <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{currentQData.question}</h3>
-                    <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
-                      <Keyboard size={20} />
+                    <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{displayQ.question}</h3>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
+                        <Keyboard size={20} />
+                      </div>
+                      {aiEnabled && (
+                        <button
+                          onClick={() => setHelpChatQuestion(displayQ)}
+                          className="w-7 h-7 flex items-center justify-center rounded-full bg-zinc-100 dark:bg-[#23202B] text-zinc-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors text-sm font-bold"
+                          title={t(uiLang, 'needHint')}
+                        >
+                          <HelpCircle size={16} />
+                        </button>
+                      )}
                     </div>
                   </div>
 
                   <div className="flex-grow z-10">
-                    {(currentQData.type === 'single' || currentQData.type === 'single_choice') && renderSingleChoice()}
-                    {(currentQData.type === 'multiple' || currentQData.type === 'multiple_response') && renderMultiChoice()}
-                    {(currentQData.type === 'text' || currentQData.type === 'text_input') && renderTextChoice()}
+                    {(displayQ.type === 'single' || displayQ.type === 'single_choice') && renderSingleChoice()}
+                    {(displayQ.type === 'multiple' || displayQ.type === 'multiple_response') && renderMultiChoice()}
+                    {(displayQ.type === 'text' || displayQ.type === 'text_input') && renderTextChoice()}
                   </div>
 
                   {/* Feedback Footer */}
@@ -1270,6 +1570,15 @@ export default function App() {
                   )}
                 </div>
               </div>
+
+              {aiEnabled && !helpChatQuestion && (
+                <button
+                  onClick={() => setHelpChatQuestion(displayQ)}
+                  className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-xl shadow-purple-500/20 font-bold text-sm transition-all hover:scale-105"
+                >
+                  <MessageCircle size={18} /> {t(uiLang, 'help')}
+                </button>
+              )}
             </div>
           )}
 
@@ -1289,7 +1598,10 @@ export default function App() {
                 <div className="p-8 bg-purple-50 dark:bg-[#23202B]">
                   <h3 className="text-zinc-800 dark:text-white font-bold text-lg mb-6">Session Review</h3>
                   <div className="space-y-4">
-                    {sessionQueue.map((q, index) => {
+                    {sessionQueue.map((rawQ, index) => {
+                      // Resolve through the same language as gameplay used, so the comparison
+                      // matches whatever text/options were actually shown and submitted.
+                      const q = resolveQuestionLang(rawQ, uiLang);
                       const ans = userAnswers[index];
                       let isCorrect = false;
 
@@ -1387,6 +1699,18 @@ export default function App() {
 
                       {selectedAdminUserData && (
                         <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
+                          <h2 className="text-xl font-bold mb-4 dark:text-white">Statistics</h2>
+                          <StatsPanel
+                            statsMap={selectedAdminUserData.stats}
+                            attempts={selectedAdminUserData.attempts}
+                            quizzes={[...DEFAULT_QUIZZES, ...selectedAdminUserData.quizzes, ...publicQuizzes]}
+                            uiLang={uiLang}
+                          />
+                        </div>
+                      )}
+
+                      {selectedAdminUserData && (
+                        <div className="bg-white dark:bg-[#18161F] p-6 rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633]">
                           <h2 className="text-xl font-bold mb-4 dark:text-white">Private Quizzes</h2>
                           <div className="space-y-3">
                             {selectedAdminUserData.quizzes.map(q => (
@@ -1453,6 +1777,22 @@ export default function App() {
                 </div>
               </div>
 
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-2">Modes</label>
+                <div className="flex flex-wrap gap-2">
+                  {[...BUILT_IN_MODES, ...customModes].map(mode => (
+                    <button
+                      key={mode.id}
+                      type="button"
+                      onClick={() => toggleSelectedMode(mode.id)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${selectedModes.includes(mode.id) ? 'bg-purple-600 text-white' : 'bg-white dark:bg-[#18161F] text-zinc-500 border border-zinc-200 dark:border-[#2A2633] hover:border-purple-500'}`}
+                    >
+                      {mode.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex gap-2 pt-2">
                 <button type="button" onClick={() => setEditingQuiz(null)} className="flex-1 py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
                   Cancel
@@ -1465,6 +1805,43 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* --- MODAL: SETTINGS --- */}
+      {showSettingsModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold dark:text-white">Profile Settings</h2>
+              <button onClick={() => setShowSettingsModal(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">Gravatar Email</label>
+                <input
+                  type="email"
+                  value={gravatarEmailInput}
+                  onChange={(e) => setGravatarEmailInput(e.target.value)}
+                  className="w-full px-4 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                  placeholder="you@example.com"
+                />
+                <p className="text-xs text-zinc-400 mt-2">Uses your <a href="https://gravatar.com" target="_blank" rel="noreferrer" className="underline hover:text-purple-500">Gravatar</a> picture as your profile avatar. Leave empty to keep the default avatar.</p>
+              </div>
+
+              <div className="flex gap-2 pt-2">
+                <button type="button" onClick={() => setShowSettingsModal(false)} className="flex-1 py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
+                  Cancel
+                </button>
+                <button type="button" onClick={saveGravatarEmail} className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} />
     </div>
   );
 }
