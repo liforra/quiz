@@ -1,0 +1,248 @@
+{
+  "questions": [
+    {
+      "id": "ap2-sto-q01",
+      "type": "single",
+      "category": "Speicher & Backup",
+      "question": "Ein RAID 5 wird aus vier Festplatten mit je 4 TB aufgebaut. Wie groß ist die nutzbare Nettokapazität?",
+      "options": ["4 TB", "8 TB", "12 TB", "16 TB"],
+      "answer": "12 TB",
+      "explanation": "Bei RAID 5 geht die Kapazität einer Platte für die verteilte Parität verloren: (4 − 1) × 4 TB = 12 TB. Das Array verkraftet den Ausfall genau einer Platte.",
+      "translations": {
+        "en": {
+          "question": "A RAID 5 is built from four disks of 4 TB each. What is the usable net capacity?",
+          "options": ["4 TB", "8 TB", "12 TB", "16 TB"],
+          "answer": "12 TB",
+          "explanation": "In RAID 5, one disk's capacity is lost to distributed parity: (4 − 1) × 4 TB = 12 TB. The array survives the failure of exactly one disk."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q02",
+      "type": "single",
+      "category": "Speicher & Backup",
+      "question": "Ein RAID 6 besteht aus sechs Festplatten mit je 8 TB. Wie groß ist die nutzbare Nettokapazität?",
+      "options": ["24 TB", "32 TB", "40 TB", "48 TB"],
+      "answer": "32 TB",
+      "explanation": "RAID 6 nutzt doppelte Parität — zwei Plattenkapazitäten gehen verloren: (6 − 2) × 8 TB = 32 TB. Dafür dürfen zwei Platten gleichzeitig ausfallen.",
+      "translations": {
+        "en": {
+          "question": "A RAID 6 consists of six disks of 8 TB each. What is the usable net capacity?",
+          "options": ["24 TB", "32 TB", "40 TB", "48 TB"],
+          "answer": "32 TB",
+          "explanation": "RAID 6 uses double parity — two disks' worth of capacity is lost: (6 − 2) × 8 TB = 32 TB. In return, two disks may fail simultaneously."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q03",
+      "type": "single",
+      "category": "Speicher & Backup",
+      "question": "Welcher RAID-Level bietet KEINE Redundanz?",
+      "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 6"],
+      "answer": "RAID 0",
+      "explanation": "RAID 0 (Striping) verteilt Daten nur zur Geschwindigkeitssteigerung — fällt eine Platte aus, sind ALLE Daten verloren. Das Ausfallrisiko steigt sogar mit jeder Platte.",
+      "translations": {
+        "en": {
+          "question": "Which RAID level provides NO redundancy?",
+          "options": ["RAID 0", "RAID 1", "RAID 5", "RAID 6"],
+          "answer": "RAID 0",
+          "explanation": "RAID 0 (striping) distributes data purely for speed — if one disk fails, ALL data is lost. The failure risk actually increases with every disk added."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q04",
+      "type": "single",
+      "category": "Speicher & Backup",
+      "question": "Worin unterscheidet sich ein NAS grundsätzlich von einem SAN?",
+      "options": [
+        "NAS bietet dateibasierten Zugriff (z. B. SMB/NFS), SAN blockbasierten Zugriff",
+        "NAS ist immer schneller als ein SAN",
+        "SAN funktioniert nur mit Bandlaufwerken",
+        "NAS kann ausschließlich über WLAN angebunden werden"
+      ],
+      "answer": "NAS bietet dateibasierten Zugriff (z. B. SMB/NFS), SAN blockbasierten Zugriff",
+      "explanation": "NAS = Network Attached Storage, Freigaben auf Dateiebene. SAN = Storage Area Network, präsentiert Block-Speicher (z. B. über iSCSI oder Fibre Channel), der wie eine lokale Platte erscheint.",
+      "translations": {
+        "en": {
+          "question": "What is the fundamental difference between a NAS and a SAN?",
+          "options": [
+            "NAS provides file-based access (e.g. SMB/NFS), SAN provides block-based access",
+            "A NAS is always faster than a SAN",
+            "A SAN only works with tape drives",
+            "A NAS can only be connected via Wi-Fi"
+          ],
+          "answer": "NAS provides file-based access (e.g. SMB/NFS), SAN provides block-based access",
+          "explanation": "NAS = Network Attached Storage, shares at file level. SAN = Storage Area Network, presents block storage (e.g. via iSCSI or Fibre Channel) that appears like a local disk."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q05",
+      "type": "multiple",
+      "category": "Speicher & Backup",
+      "question": "Welche der folgenden sind klassische Datensicherungsarten?",
+      "options": ["Vollsicherung", "Differenzielle Sicherung", "Inkrementelle Sicherung", "Proportionale Sicherung", "Lineare Sicherung"],
+      "answer": ["Vollsicherung", "Differenzielle Sicherung", "Inkrementelle Sicherung"],
+      "explanation": "Voll = alles; differenziell = alles seit der letzten VOLLsicherung; inkrementell = alles seit der letzten Sicherung beliebigen Typs. „Proportional“ und „linear“ existieren nicht.",
+      "translations": {
+        "en": {
+          "question": "Which of the following are classic backup types?",
+          "options": ["Full backup", "Differential backup", "Incremental backup", "Proportional backup", "Linear backup"],
+          "answer": ["Full backup", "Differential backup", "Incremental backup"],
+          "explanation": "Full = everything; differential = everything since the last FULL backup; incremental = everything since the last backup of any type. \"Proportional\" and \"linear\" don't exist."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q06",
+      "type": "multiple",
+      "category": "Speicher & Backup",
+      "question": "Welche Aussagen zur inkrementellen Sicherung sind korrekt?",
+      "options": [
+        "Sie sichert nur Änderungen seit der letzten Sicherung (egal welchen Typs)",
+        "Sie erzeugt die kleinste Datenmenge pro Sicherungslauf",
+        "Zur Wiederherstellung braucht man die Vollsicherung plus ALLE folgenden Inkremente",
+        "Zur Wiederherstellung genügt die letzte inkrementelle Sicherung allein",
+        "Sie sichert bei jedem Lauf den kompletten Datenbestand"
+      ],
+      "answer": [
+        "Sie sichert nur Änderungen seit der letzten Sicherung (egal welchen Typs)",
+        "Sie erzeugt die kleinste Datenmenge pro Sicherungslauf",
+        "Zur Wiederherstellung braucht man die Vollsicherung plus ALLE folgenden Inkremente"
+      ],
+      "explanation": "Inkrementell = schnellste Sicherung, aber aufwendigste Wiederherstellung: Die gesamte Kette muss intakt sein. Bei differenzieller Sicherung genügen Vollsicherung + letztes Differenzial.",
+      "translations": {
+        "en": {
+          "question": "Which statements about incremental backups are correct?",
+          "options": [
+            "It only backs up changes since the last backup (of any type)",
+            "It produces the smallest amount of data per backup run",
+            "Restoring requires the full backup plus ALL subsequent increments",
+            "Restoring requires only the latest incremental backup by itself",
+            "It backs up the complete data set on every run"
+          ],
+          "answer": [
+            "It only backs up changes since the last backup (of any type)",
+            "It produces the smallest amount of data per backup run",
+            "Restoring requires the full backup plus ALL subsequent increments"
+          ],
+          "explanation": "Incremental = fastest backup, but the most laborious restore: the whole chain must be intact. With differential backups, full backup + latest differential suffice."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q07",
+      "type": "multiple",
+      "category": "Speicher & Backup",
+      "question": "Welche RAID-Level bieten Redundanz gegen den Ausfall mindestens einer Festplatte?",
+      "options": ["RAID 1", "RAID 5", "RAID 6", "RAID 0", "JBOD"],
+      "answer": ["RAID 1", "RAID 5", "RAID 6"],
+      "explanation": "RAID 1 (Spiegel), RAID 5 (einfache Parität) und RAID 6 (doppelte Parität) überstehen Plattenausfälle. RAID 0 und JBOD bieten keinerlei Redundanz.",
+      "translations": {
+        "en": {
+          "question": "Which RAID levels provide redundancy against the failure of at least one disk?",
+          "options": ["RAID 1", "RAID 5", "RAID 6", "RAID 0", "JBOD"],
+          "answer": ["RAID 1", "RAID 5", "RAID 6"],
+          "explanation": "RAID 1 (mirror), RAID 5 (single parity) and RAID 6 (double parity) survive disk failures. RAID 0 and JBOD offer no redundancy at all."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q08",
+      "type": "multiple",
+      "category": "Speicher & Backup",
+      "question": "Welche Aussagen zu RTO und RPO sind korrekt?",
+      "options": [
+        "RTO ist die maximal zulässige Ausfallzeit bis zur Wiederherstellung",
+        "RPO ist der maximal tolerierbare Datenverlust",
+        "Ein kleinerer RPO erfordert häufigere Sicherungen",
+        "RPO beschreibt die Zeit, die die Wiederherstellung dauern darf"
+      ],
+      "answer": [
+        "RTO ist die maximal zulässige Ausfallzeit bis zur Wiederherstellung",
+        "RPO ist der maximal tolerierbare Datenverlust",
+        "Ein kleinerer RPO erfordert häufigere Sicherungen"
+      ],
+      "explanation": "RTO (Recovery Time Objective) = Wie lange darf die Wiederherstellung dauern? RPO (Recovery Point Objective) = Wie viele Daten (Zeitraum) dürfen verloren gehen?",
+      "translations": {
+        "en": {
+          "question": "Which statements about RTO and RPO are correct?",
+          "options": [
+            "RTO is the maximum allowed downtime until recovery",
+            "RPO is the maximum tolerable data loss",
+            "A smaller RPO requires more frequent backups",
+            "RPO describes how long the recovery may take"
+          ],
+          "answer": [
+            "RTO is the maximum allowed downtime until recovery",
+            "RPO is the maximum tolerable data loss",
+            "A smaller RPO requires more frequent backups"
+          ],
+          "explanation": "RTO (Recovery Time Objective) = how long may recovery take? RPO (Recovery Point Objective) = how much data (time span) may be lost?"
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q09",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Ein RAID 5 besteht aus vier Festplatten mit je 2 TB. Berechnen Sie die nutzbare Kapazität.",
+      "answer": "6 TB ((4 − 1) × 2 TB, da eine Plattenkapazität für Parität verwendet wird)",
+      "explanation": "Formel für RAID 5: (n − 1) × Kapazität der kleinsten Platte.",
+      "translations": {
+        "en": {
+          "question": "A RAID 5 consists of four disks of 2 TB each. Calculate the usable capacity.",
+          "answer": "6 TB ((4 − 1) × 2 TB, since one disk's capacity is used for parity)",
+          "explanation": "RAID 5 formula: (n − 1) × capacity of the smallest disk."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q10",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Worin unterscheidet sich die differenzielle von der inkrementellen Sicherung?",
+      "answer": "Differenziell sichert alle Änderungen seit der letzten VOLLsicherung, inkrementell nur die Änderungen seit der LETZTEN Sicherung beliebigen Typs",
+      "explanation": "Differenzielle Sicherungen wachsen von Tag zu Tag, sind aber einfacher wiederherzustellen (Voll + letztes Differenzial statt der ganzen Inkrement-Kette).",
+      "translations": {
+        "en": {
+          "question": "How does a differential backup differ from an incremental backup?",
+          "answer": "Differential backs up all changes since the last FULL backup; incremental only the changes since the LAST backup of any type",
+          "explanation": "Differential backups grow day by day but are easier to restore (full + latest differential instead of the whole incremental chain)."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q11",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Was versteht man beim Backup unter dem Generationenprinzip (Großvater-Vater-Sohn)?",
+      "answer": "Ein Rotationsschema mit Sicherungen unterschiedlichen Alters: z. B. tägliche (Sohn), wöchentliche (Vater) und monatliche (Großvater) Sicherungen, die unterschiedlich lange aufbewahrt werden",
+      "explanation": "So lassen sich auch ältere Datenstände wiederherstellen — etwa wenn ein Fehler oder eine Verschlüsselung durch Ransomware erst spät bemerkt wird.",
+      "translations": {
+        "en": {
+          "question": "In backups, what is the grandfather-father-son (generation) principle?",
+          "answer": "A rotation scheme with backups of different ages: e.g. daily (son), weekly (father) and monthly (grandfather) backups, each retained for different periods",
+          "explanation": "This allows restoring older data states — e.g. when an error or ransomware encryption is only noticed late."
+        }
+      }
+    },
+    {
+      "id": "ap2-sto-q12",
+      "type": "text",
+      "category": "Speicher & Backup",
+      "question": "Wofür steht die Abkürzung RAID?",
+      "answer": "Redundant Array of Independent Disks",
+      "explanation": "Ursprünglich „Inexpensive“ statt „Independent“. RAID verbindet mehrere physische Platten zu einem logischen Verbund — für Redundanz, Geschwindigkeit oder beides.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation RAID stand for?",
+          "answer": "Redundant Array of Independent Disks",
+          "explanation": "Originally \"Inexpensive\" instead of \"Independent\". RAID combines multiple physical disks into one logical array — for redundancy, speed, or both."
+        }
+      }
+    }
+  ]
+}

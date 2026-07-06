@@ -1,0 +1,2350 @@
+{
+  "questions": [
+    {
+      "id": "ap1-sec-q01",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Unbefugte konnten vertrauliche Kundendaten mitlesen. Welches Schutzziel der Informationssicherheit wurde dadurch verletzt?",
+      "options": [
+        "Vertraulichkeit",
+        "Integrität",
+        "Verfügbarkeit",
+        "Authentizität"
+      ],
+      "answer": "Vertraulichkeit",
+      "explanation": "Vertraulichkeit = nur Befugte dürfen Daten einsehen. Integrität = Daten dürfen nicht unbemerkt verändert werden. Verfügbarkeit = Systeme sind nutzbar, wenn sie gebraucht werden.",
+      "translations": {
+        "en": {
+          "question": "Unauthorized persons were able to read confidential customer data. Which information security objective was violated?",
+          "options": [
+            "Confidentiality",
+            "Integrity",
+            "Availability",
+            "Authenticity"
+          ],
+          "answer": "Confidentiality",
+          "explanation": "Confidentiality = only authorized people may view data. Integrity = data must not be altered unnoticed. Availability = systems are usable when needed."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q02",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aufgabe erfüllt eine Firewall?",
+      "options": [
+        "Sie filtert Netzwerkverkehr anhand definierter Regeln",
+        "Sie entfernt Schadsoftware von infizierten Rechnern",
+        "Sie komprimiert Daten vor der Übertragung",
+        "Sie verwaltet Benutzerpasswörter zentral"
+      ],
+      "answer": "Sie filtert Netzwerkverkehr anhand definierter Regeln",
+      "explanation": "Eine Firewall erlaubt oder blockiert Verbindungen anhand von Regeln (z. B. Quell-/Ziel-IP, Port). Schadsoftware entfernt ein Virenscanner, Passwörter verwaltet ein Passwort-Manager.",
+      "translations": {
+        "en": {
+          "question": "What is the job of a firewall?",
+          "options": [
+            "It filters network traffic based on defined rules",
+            "It removes malware from infected computers",
+            "It compresses data before transmission",
+            "It manages user passwords centrally"
+          ],
+          "answer": "It filters network traffic based on defined rules",
+          "explanation": "A firewall allows or blocks connections based on rules (e.g. source/destination IP, port). Malware removal is an antivirus job, password management is done by a password manager."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q03",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches Schutzziel wird durch den Einsatz einer USV in erster Linie unterstützt?",
+      "options": [
+        "Verfügbarkeit",
+        "Vertraulichkeit",
+        "Integrität",
+        "Authentizität"
+      ],
+      "answer": "Verfügbarkeit",
+      "explanation": "Eine USV überbrückt Stromausfälle und hält Systeme am Laufen — das ist Verfügbarkeit. Vertraulichkeit sichern z. B. Verschlüsselung und Zugriffsrechte.",
+      "translations": {
+        "en": {
+          "question": "Which security objective is primarily supported by using a UPS?",
+          "options": [
+            "Availability",
+            "Confidentiality",
+            "Integrity",
+            "Authenticity"
+          ],
+          "answer": "Availability",
+          "explanation": "A UPS bridges power outages and keeps systems running — that is availability. Confidentiality is ensured by things like encryption and access rights."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q04",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Innerhalb welcher Frist muss eine meldepflichtige Datenschutzverletzung nach DSGVO der Aufsichtsbehörde gemeldet werden?",
+      "options": [
+        "24 Stunden",
+        "48 Stunden",
+        "72 Stunden",
+        "1 Woche"
+      ],
+      "answer": "72 Stunden",
+      "explanation": "Art. 33 DSGVO: Meldung an die Aufsichtsbehörde unverzüglich, möglichst binnen 72 Stunden nach Bekanntwerden der Verletzung.",
+      "translations": {
+        "en": {
+          "question": "Under the GDPR, within what time frame must a reportable data breach be reported to the supervisory authority?",
+          "options": [
+            "24 hours",
+            "48 hours",
+            "72 hours",
+            "1 week"
+          ],
+          "answer": "72 hours",
+          "explanation": "Art. 33 GDPR: notification to the supervisory authority without undue delay, where feasible within 72 hours of becoming aware of the breach."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q05",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Begriffe gehören zu den drei klassischen Schutzzielen der Informationssicherheit?",
+      "options": [
+        "Vertraulichkeit",
+        "Rentabilität",
+        "Integrität",
+        "Skalierbarkeit",
+        "Verfügbarkeit"
+      ],
+      "answer": [
+        "Vertraulichkeit",
+        "Integrität",
+        "Verfügbarkeit"
+      ],
+      "explanation": "Die CIA-Triade: Confidentiality (Vertraulichkeit), Integrity (Integrität), Availability (Verfügbarkeit). Rentabilität und Skalierbarkeit sind keine Schutzziele.",
+      "translations": {
+        "en": {
+          "question": "Which of the following terms belong to the three classic objectives of information security?",
+          "options": [
+            "Confidentiality",
+            "Profitability",
+            "Integrity",
+            "Scalability",
+            "Availability"
+          ],
+          "answer": [
+            "Confidentiality",
+            "Integrity",
+            "Availability"
+          ],
+          "explanation": "The CIA triad: Confidentiality, Integrity, Availability. Profitability and scalability are not security objectives."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q06",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Angaben sind personenbezogene Daten im Sinne der DSGVO?",
+      "options": [
+        "Name eines Kunden",
+        "Private E-Mail-Adresse",
+        "Geburtsdatum einer Person",
+        "Seriennummer eines Lager-Routers",
+        "Raumtemperatur im Serverraum"
+      ],
+      "answer": [
+        "Name eines Kunden",
+        "Private E-Mail-Adresse",
+        "Geburtsdatum einer Person"
+      ],
+      "explanation": "Personenbezogene Daten beziehen sich auf eine identifizierte oder identifizierbare natürliche Person. Gerätedaten ohne Personenbezug fallen nicht darunter.",
+      "translations": {
+        "en": {
+          "question": "Which of the following are personal data within the meaning of the GDPR?",
+          "options": [
+            "A customer's name",
+            "A private email address",
+            "A person's date of birth",
+            "The serial number of a spare router",
+            "The room temperature in the server room"
+          ],
+          "answer": [
+            "A customer's name",
+            "A private email address",
+            "A person's date of birth"
+          ],
+          "explanation": "Personal data relates to an identified or identifiable natural person. Device data without any link to a person does not qualify."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q07",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Maßnahmen erhöhen die Sicherheit eines Benutzerkontos?",
+      "options": [
+        "Zwei-Faktor-Authentifizierung aktivieren",
+        "Ein langes, einzigartiges Passwort verwenden",
+        "Das Passwort auf einem Zettel unter der Tastatur aufbewahren",
+        "Dasselbe Passwort für alle Dienste verwenden",
+        "Einen Passwort-Manager einsetzen"
+      ],
+      "answer": [
+        "Zwei-Faktor-Authentifizierung aktivieren",
+        "Ein langes, einzigartiges Passwort verwenden",
+        "Einen Passwort-Manager einsetzen"
+      ],
+      "explanation": "2FA kombiniert zwei Faktoren (z. B. Wissen + Besitz). Passwort-Manager ermöglichen einzigartige Passwörter pro Dienst. Zettel und Passwort-Wiederverwendung sind klassische Schwachstellen.",
+      "translations": {
+        "en": {
+          "question": "Which measures increase the security of a user account?",
+          "options": [
+            "Enable two-factor authentication",
+            "Use a long, unique password",
+            "Keep the password on a note under the keyboard",
+            "Use the same password for all services",
+            "Use a password manager"
+          ],
+          "answer": [
+            "Enable two-factor authentication",
+            "Use a long, unique password",
+            "Use a password manager"
+          ],
+          "explanation": "2FA combines two factors (e.g. knowledge + possession). Password managers enable unique passwords per service. Sticky notes and password reuse are classic weaknesses."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q08",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Maßnahmen zählen zu den technisch-organisatorischen Maßnahmen (TOM) nach DSGVO?",
+      "options": [
+        "Verschlüsselung personenbezogener Daten",
+        "Zutrittskontrolle zum Serverraum",
+        "Datenschutzschulung der Mitarbeiter",
+        "Preiskalkulation für Neukunden",
+        "Suchmaschinenoptimierung der Firmenwebseite"
+      ],
+      "answer": [
+        "Verschlüsselung personenbezogener Daten",
+        "Zutrittskontrolle zum Serverraum",
+        "Datenschutzschulung der Mitarbeiter"
+      ],
+      "explanation": "TOM sichern die Verarbeitung personenbezogener Daten ab — technisch (Verschlüsselung, Zutrittskontrolle) und organisatorisch (Schulungen, Richtlinien). Art. 32 DSGVO.",
+      "translations": {
+        "en": {
+          "question": "Which of the following count as technical and organizational measures (TOM) under the GDPR?",
+          "options": [
+            "Encryption of personal data",
+            "Physical access control to the server room",
+            "Data protection training for employees",
+            "Price calculation for new customers",
+            "Search engine optimization of the company website"
+          ],
+          "answer": [
+            "Encryption of personal data",
+            "Physical access control to the server room",
+            "Data protection training for employees"
+          ],
+          "explanation": "TOMs safeguard the processing of personal data — technically (encryption, access control) and organizationally (training, policies). Art. 32 GDPR."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q09",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Beschreiben Sie kurz die 3-2-1-Backup-Regel.",
+      "answer": "3 Kopien der Daten, auf 2 verschiedenen Medientypen, davon 1 Kopie außer Haus (extern) aufbewahren",
+      "explanation": "Die 3-2-1-Regel schützt gegen Hardwareausfall, Bedienfehler und Standort-Katastrophen wie Brand oder Diebstahl.",
+      "translations": {
+        "en": {
+          "question": "Briefly describe the 3-2-1 backup rule.",
+          "answer": "Keep 3 copies of the data, on 2 different types of media, with 1 copy stored off-site",
+          "explanation": "The 3-2-1 rule protects against hardware failure, user error and site-level disasters such as fire or theft."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q10",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wofür steht die Abkürzung DSGVO?",
+      "answer": "Datenschutz-Grundverordnung",
+      "explanation": "Die DSGVO ist die EU-weite Verordnung zum Schutz personenbezogener Daten, in Kraft seit Mai 2018.",
+      "translations": {
+        "en": {
+          "question": "What does the German abbreviation DSGVO stand for?",
+          "answer": "Datenschutz-Grundverordnung (General Data Protection Regulation, GDPR)",
+          "explanation": "The DSGVO/GDPR is the EU-wide regulation for the protection of personal data, in force since May 2018."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q11",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man einen Angriff, bei dem Opfer über gefälschte E-Mails oder Webseiten zur Eingabe ihrer Zugangsdaten verleitet werden?",
+      "answer": "Phishing",
+      "explanation": "Phishing ist eine Social-Engineering-Methode: Angreifer imitieren vertrauenswürdige Absender, um Passwörter oder Bankdaten abzugreifen.",
+      "translations": {
+        "en": {
+          "question": "What do you call an attack in which victims are tricked into entering their credentials via fake emails or websites?",
+          "answer": "Phishing",
+          "explanation": "Phishing is a social engineering technique: attackers impersonate trustworthy senders to harvest passwords or banking data."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q12",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wofür steht die Abkürzung RPO im Kontext der Datensicherung und was gibt sie an?",
+      "answer": "Recovery Point Objective — der maximal tolerierbare Datenverlust, also der Zeitraum zwischen letzter Sicherung und Ausfall",
+      "explanation": "Ein RPO von 24 Stunden bedeutet: Es darf maximal ein Tag an Daten verloren gehen, also muss mindestens täglich gesichert werden. Gegenstück: RTO (maximale Wiederanlaufzeit).",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation RPO stand for in the context of backups, and what does it specify?",
+          "answer": "Recovery Point Objective — the maximum tolerable data loss, i.e. the time between the last backup and the failure",
+          "explanation": "An RPO of 24 hours means at most one day of data may be lost, so backups must run at least daily. Its counterpart is RTO (maximum recovery time)."
+        }
+      }
+    },
+    {
+      "id": "ap1-sec-q13",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Ein Mitarbeiter stellt fest, dass eine wichtige Datei unbemerkt verändert wurde, obwohl niemand offiziell Zugriff hatte. Welches Schutzziel der Informationssicherheit ist dadurch verletzt?",
+      "explanation": "Integrität bedeutet, dass Daten korrekt und unverändert bleiben, solange keine autorisierte Änderung erfolgt. Eine unbemerkte Manipulation verletzt genau dieses Schutzziel.",
+      "translations": {
+        "en": {
+          "question": "An employee notices that an important file was altered without anyone having had authorized access. Which information security objective was violated?",
+          "explanation": "Integrity means data stays correct and unaltered unless an authorized change occurs. An unnoticed manipulation violates exactly this objective.",
+          "options": [
+            "Integrity",
+            "Confidentiality",
+            "Availability",
+            "Authenticity"
+          ],
+          "answer": "Integrity"
+        }
+      },
+      "options": [
+        "Integrität",
+        "Vertraulichkeit",
+        "Verfügbarkeit",
+        "Authentizität"
+      ],
+      "answer": "Integrität"
+    },
+    {
+      "id": "ap1-sec-q14",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie wird Schadsoftware bezeichnet, die sich eigenständig über Netzwerke und Sicherheitslücken verbreitet, ohne ein Wirtsprogramm oder eine Benutzeraktion zu benötigen?",
+      "explanation": "Ein Wurm verbreitet sich eigenständig über Netzwerke, während ein Virus sich an ein Wirtsprogramm anhängt und eine Benutzeraktion zur Verbreitung benötigt.",
+      "translations": {
+        "en": {
+          "question": "What is malware called that spreads independently across networks and security holes, without needing a host program or user action?",
+          "explanation": "A worm spreads on its own across networks, whereas a virus attaches itself to a host program and needs a user action to propagate.",
+          "options": [
+            "Computer worm",
+            "Computer virus",
+            "Trojan horse",
+            "Spyware"
+          ],
+          "answer": "Computer worm"
+        }
+      },
+      "options": [
+        "Computerwurm",
+        "Computervirus",
+        "Trojanisches Pferd",
+        "Spyware"
+      ],
+      "answer": "Computerwurm"
+    },
+    {
+      "id": "ap1-sec-q15",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussage beschreibt einen Trojaner am besten?",
+      "explanation": "Trojaner tarnen sich als legitime, nützliche Software, um zur Installation zu verleiten, und führen verdeckt schädliche Funktionen aus. Anders als Würmer verbreiten sie sich nicht selbstständig.",
+      "translations": {
+        "en": {
+          "question": "Which statement best describes a Trojan horse?",
+          "explanation": "Trojans pose as legitimate, useful software to get installed, then covertly perform malicious actions. Unlike worms, they don't spread on their own.",
+          "options": [
+            "A program that disguises itself as a useful application and runs malicious functions in the background",
+            "A program that copies itself across networks on its own",
+            "A program that only logs keystrokes",
+            "A program that encrypts files and demands a ransom"
+          ],
+          "answer": "A program that disguises itself as a useful application and runs malicious functions in the background"
+        }
+      },
+      "options": [
+        "Ein Programm, das sich als nützliche Anwendung tarnt und im Hintergrund schädliche Funktionen ausführt",
+        "Ein Programm, das sich selbstständig über Netzwerke kopiert",
+        "Ein Programm, das ausschließlich Tastatureingaben protokolliert",
+        "Ein Programm, das Dateien verschlüsselt und ein Lösegeld fordert"
+      ],
+      "answer": "Ein Programm, das sich als nützliche Anwendung tarnt und im Hintergrund schädliche Funktionen ausführt"
+    },
+    {
+      "id": "ap1-sec-q16",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Art von Schadsoftware verschlüsselt gezielt Dateien des Opfers und verlangt für die Entschlüsselung eine Zahlung?",
+      "explanation": "Ransomware sperrt oder verschlüsselt Daten und fordert vom Opfer ein Lösegeld (englisch „ransom“) für die Freigabe.",
+      "translations": {
+        "en": {
+          "question": "Which type of malware specifically encrypts a victim's files and demands payment for decryption?",
+          "explanation": "Ransomware locks or encrypts data and demands a ransom payment from the victim in exchange for restoring access.",
+          "options": [
+            "Ransomware",
+            "Adware",
+            "Spyware",
+            "Rootkit"
+          ],
+          "answer": "Ransomware"
+        }
+      },
+      "options": [
+        "Ransomware",
+        "Adware",
+        "Spyware",
+        "Rootkit"
+      ],
+      "answer": "Ransomware"
+    },
+    {
+      "id": "ap1-sec-q17",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aufgabe hat ein Paketfilter als einfache Firewall-Art?",
+      "explanation": "Ein Paketfilter arbeitet auf Netzwerk- und Transportebene und entscheidet anhand von Header-Informationen wie IP-Adresse und Port, ob ein Paket durchgelassen wird.",
+      "translations": {
+        "en": {
+          "question": "What does a packet filter do as a basic type of firewall?",
+          "explanation": "A packet filter operates at the network and transport layer, deciding whether to let a packet through based on header information such as IP address and port.",
+          "options": [
+            "It inspects individual data packets based on IP addresses and port numbers",
+            "It analyzes the content of encrypted application data",
+            "It completely replaces an antivirus scanner",
+            "It manages digital certificates"
+          ],
+          "answer": "It inspects individual data packets based on IP addresses and port numbers"
+        }
+      },
+      "options": [
+        "Er prüft einzelne Datenpakete anhand von IP-Adressen und Portnummern",
+        "Er analysiert den Inhalt verschlüsselter Anwendungsdaten",
+        "Er ersetzt einen Virenscanner vollständig",
+        "Er verwaltet digitale Zertifikate"
+      ],
+      "answer": "Er prüft einzelne Datenpakete anhand von IP-Adressen und Portnummern"
+    },
+    {
+      "id": "ap1-sec-q18",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein wesentlicher Vorteil einer Application-Layer-Firewall (Proxy-Firewall) gegenüber einem einfachen Paketfilter?",
+      "explanation": "Eine Application-Layer-Firewall arbeitet auf Schicht 7 und kann Inhalte von Protokollen wie HTTP oder FTP prüfen, während ein Paketfilter nur Header-Daten auswertet.",
+      "translations": {
+        "en": {
+          "question": "What is a key advantage of an application-layer (proxy) firewall over a basic packet filter?",
+          "explanation": "An application-layer firewall works at layer 7 and can examine the content of protocols like HTTP or FTP, while a packet filter only evaluates header data.",
+          "options": [
+            "It can inspect the actual content of application protocols such as HTTP",
+            "It fundamentally requires no configuration",
+            "It is inherently always faster than a packet filter",
+            "It makes encryption unnecessary"
+          ],
+          "answer": "It can inspect the actual content of application protocols such as HTTP"
+        }
+      },
+      "options": [
+        "Sie kann den Inhalt von Anwendungsprotokollen wie HTTP inhaltlich analysieren",
+        "Sie benötigt grundsätzlich keine Konfiguration",
+        "Sie ist prinzipbedingt immer schneller als ein Paketfilter",
+        "Sie macht Verschlüsselung überflüssig"
+      ],
+      "answer": "Sie kann den Inhalt von Anwendungsprotokollen wie HTTP inhaltlich analysieren"
+    },
+    {
+      "id": "ap1-sec-q19",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches Verschlüsselungsverfahren nutzt für Ver- und Entschlüsselung denselben Schlüssel?",
+      "explanation": "Bei symmetrischer Verschlüsselung (z. B. AES) wird derselbe geheime Schlüssel zum Verschlüsseln und Entschlüsseln verwendet, was einen sicheren Schlüsselaustausch erfordert.",
+      "translations": {
+        "en": {
+          "question": "Which encryption method uses the same key for both encryption and decryption?",
+          "explanation": "Symmetric encryption (e.g. AES) uses the same secret key for encrypting and decrypting, which requires a secure way to exchange that key.",
+          "options": [
+            "Symmetric encryption",
+            "Asymmetric encryption",
+            "Hashing",
+            "Digital signature"
+          ],
+          "answer": "Symmetric encryption"
+        }
+      },
+      "options": [
+        "Symmetrische Verschlüsselung",
+        "Asymmetrische Verschlüsselung",
+        "Hashing",
+        "Digitale Signatur"
+      ],
+      "answer": "Symmetrische Verschlüsselung"
+    },
+    {
+      "id": "ap1-sec-q20",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches der folgenden Verfahren ist ein asymmetrisches Verschlüsselungsverfahren?",
+      "explanation": "RSA arbeitet mit einem öffentlichen und einem privaten Schlüssel und ist damit ein klassisches asymmetrisches Verfahren. AES, DES und 3DES sind symmetrische Verfahren.",
+      "translations": {
+        "en": {
+          "question": "Which of the following algorithms is an asymmetric encryption method?",
+          "explanation": "RSA works with a public and a private key, making it a classic asymmetric algorithm. AES, DES and 3DES are symmetric algorithms.",
+          "options": [
+            "RSA",
+            "AES",
+            "DES",
+            "3DES"
+          ],
+          "answer": "RSA"
+        }
+      },
+      "options": [
+        "RSA",
+        "AES",
+        "DES",
+        "3DES"
+      ],
+      "answer": "RSA"
+    },
+    {
+      "id": "ap1-sec-q21",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Warum kombiniert TLS in der Praxis symmetrische und asymmetrische Verschlüsselung (Hybridverfahren)?",
+      "explanation": "Asymmetrische Verfahren sind rechenintensiv, eignen sich aber gut für den sicheren Schlüsselaustausch. Die eigentlichen Nutzdaten werden aus Performancegründen symmetrisch verschlüsselt.",
+      "translations": {
+        "en": {
+          "question": "Why does TLS combine symmetric and asymmetric encryption in practice (a hybrid approach)?",
+          "explanation": "Asymmetric algorithms are computationally expensive but well suited to secure key exchange. The actual payload is encrypted symmetrically for performance reasons.",
+          "options": [
+            "Asymmetric encryption is only used to securely exchange the symmetric session key; the actual data is then encrypted with the faster symmetric method",
+            "Symmetric encryption is fundamentally insecure and is therefore only used briefly",
+            "Hybrid schemes are legally required",
+            "Asymmetric methods do not need any keys"
+          ],
+          "answer": "Asymmetric encryption is only used to securely exchange the symmetric session key; the actual data is then encrypted with the faster symmetric method"
+        }
+      },
+      "options": [
+        "Asymmetrische Verschlüsselung dient nur dem sicheren Austausch des symmetrischen Sitzungsschlüssels, die eigentlichen Daten verschlüsselt danach das schnellere symmetrische Verfahren",
+        "Symmetrische Verschlüsselung ist grundsätzlich unsicher und wird deshalb nur kurz verwendet",
+        "Hybridverfahren sind gesetzlich vorgeschrieben",
+        "Asymmetrische Verfahren benötigen keine Schlüssel"
+      ],
+      "answer": "Asymmetrische Verschlüsselung dient nur dem sicheren Austausch des symmetrischen Sitzungsschlüssels, die eigentlichen Daten verschlüsselt danach das schnellere symmetrische Verfahren"
+    },
+    {
+      "id": "ap1-sec-q22",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Eigenschaft muss eine kryptografische Hashfunktion erfüllen, damit sie für Integritätsprüfungen geeignet ist?",
+      "explanation": "Hashfunktionen sind Einwegfunktionen: Aus dem Hashwert lässt sich die ursprüngliche Nachricht praktisch nicht zurückrechnen, und schon kleinste Änderungen der Eingabe verändern den Hashwert vollständig.",
+      "translations": {
+        "en": {
+          "question": "Which property must a cryptographic hash function have to be suitable for integrity checks?",
+          "explanation": "Hash functions are one-way functions: the original message can practically not be derived from the hash, and even a tiny change to the input completely changes the hash value.",
+          "options": [
+            "It must be practically impossible to reconstruct the original message from the hash value",
+            "The hash value must be longer than the input",
+            "The hash value must be reversible",
+            "The hash value must resemble the input"
+          ],
+          "answer": "It must be practically impossible to reconstruct the original message from the hash value"
+        }
+      },
+      "options": [
+        "Aus dem Hashwert darf sich die Ursprungsnachricht praktisch nicht rekonstruieren lassen",
+        "Der Hashwert muss länger sein als die Eingabe",
+        "Der Hashwert muss reversibel sein",
+        "Der Hashwert muss der Eingabe ähneln"
+      ],
+      "answer": "Aus dem Hashwert darf sich die Ursprungsnachricht praktisch nicht rekonstruieren lassen"
+    },
+    {
+      "id": "ap1-sec-q23",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was bezeichnet man als Hash-Kollision?",
+      "explanation": "Eine Kollision liegt vor, wenn zwei verschiedene Eingabewerte durch die Hashfunktion auf denselben Hashwert abgebildet werden. Gute Hashfunktionen minimieren die Wahrscheinlichkeit solcher Kollisionen.",
+      "translations": {
+        "en": {
+          "question": "What is a hash collision?",
+          "explanation": "A collision occurs when two different inputs are mapped by the hash function to the same hash value. Good hash functions minimize the probability of such collisions.",
+          "options": [
+            "Two different inputs produce the same hash value",
+            "An input produces no hash value at all",
+            "The hash value is shorter than expected",
+            "Two identical inputs produce different hash values"
+          ],
+          "answer": "Two different inputs produce the same hash value"
+        }
+      },
+      "options": [
+        "Zwei unterschiedliche Eingaben erzeugen denselben Hashwert",
+        "Eine Eingabe erzeugt keinen Hashwert",
+        "Der Hashwert ist kürzer als erwartet",
+        "Zwei identische Eingaben erzeugen unterschiedliche Hashwerte"
+      ],
+      "answer": "Zwei unterschiedliche Eingaben erzeugen denselben Hashwert"
+    },
+    {
+      "id": "ap1-sec-q24",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Maßnahme schützt Passwort-Hashes zusätzlich davor, mit vorab berechneten Tabellen (Rainbow Tables) geknackt zu werden?",
+      "explanation": "Ein individueller Zufallswert (Salt) pro Passwort verhindert, dass Angreifer vorab berechnete Hash-Tabellen (Rainbow Tables) nutzen können, da jeder Hash dadurch einzigartig wird.",
+      "translations": {
+        "en": {
+          "question": "Which measure additionally protects password hashes from being cracked using precomputed tables (rainbow tables)?",
+          "explanation": "An individual random value (salt) per password prevents attackers from using precomputed rainbow tables, because it makes every hash unique.",
+          "options": [
+            "Salting (adding a random value before hashing)",
+            "Shortening the password",
+            "Avoiding special characters",
+            "Hashing repeatedly without any extra value"
+          ],
+          "answer": "Salting (adding a random value before hashing)"
+        }
+      },
+      "options": [
+        "Salting (Hinzufügen eines Zufallswerts vor dem Hashen)",
+        "Verkürzen des Passworts",
+        "Verzicht auf Sonderzeichen",
+        "Mehrfaches Hashen ohne jeden Zusatzwert"
+      ],
+      "answer": "Salting (Hinzufügen eines Zufallswerts vor dem Hashen)"
+    },
+    {
+      "id": "ap1-sec-q25",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Angriffsart probiert systematisch alle möglichen Zeichenkombinationen aus, um ein Passwort zu erraten?",
+      "explanation": "Beim Brute-Force-Angriff werden automatisiert alle möglichen Kombinationen durchprobiert, bis das richtige Passwort gefunden wird. Lange, komplexe Passwörter erhöhen den Zeitaufwand erheblich.",
+      "translations": {
+        "en": {
+          "question": "Which type of attack systematically tries every possible character combination to guess a password?",
+          "explanation": "A brute-force attack automatically tries every possible combination until the correct password is found. Long, complex passwords massively increase the time required.",
+          "options": [
+            "Brute-force attack",
+            "Phishing",
+            "Man-in-the-middle attack",
+            "SQL injection"
+          ],
+          "answer": "Brute-force attack"
+        }
+      },
+      "options": [
+        "Brute-Force-Angriff",
+        "Phishing",
+        "Man-in-the-Middle-Angriff",
+        "SQL-Injection"
+      ],
+      "answer": "Brute-Force-Angriff"
+    },
+    {
+      "id": "ap1-sec-q26",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Sicherungsart erstellt bei jedem Durchlauf eine vollständige Kopie aller ausgewählten Daten?",
+      "explanation": "Bei der Vollsicherung (Full Backup) werden immer alle Daten komplett gesichert, unabhängig davon, ob sie sich verändert haben. Das benötigt am meisten Speicherplatz und Zeit.",
+      "translations": {
+        "en": {
+          "question": "Which backup type creates a complete copy of all selected data every time it runs?",
+          "explanation": "A full backup always copies all data completely, regardless of whether it changed. This takes the most storage space and time.",
+          "options": [
+            "Full backup",
+            "Incremental backup",
+            "Differential backup",
+            "Mirroring"
+          ],
+          "answer": "Full backup"
+        }
+      },
+      "options": [
+        "Vollsicherung",
+        "Inkrementelle Sicherung",
+        "Differenzielle Sicherung",
+        "Spiegelung"
+      ],
+      "answer": "Vollsicherung"
+    },
+    {
+      "id": "ap1-sec-q27",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie funktioniert eine inkrementelle Sicherung?",
+      "explanation": "Inkrementelle Sicherungen speichern jeweils nur die Änderungen seit der letzten Sicherung, wodurch sie sehr platzsparend sind, die Wiederherstellung aber mehrere Sicherungssätze erfordert.",
+      "translations": {
+        "en": {
+          "question": "How does an incremental backup work?",
+          "explanation": "Incremental backups only store the changes since the previous backup, making them very space-efficient, though restoring requires all the backup sets in the chain.",
+          "options": [
+            "Only the data that changed since the last backup of any type is saved",
+            "A complete copy of all data is created on every run",
+            "Only data that changed since the last full backup is saved",
+            "Only deleted files are saved"
+          ],
+          "answer": "Only the data that changed since the last backup of any type is saved"
+        }
+      },
+      "options": [
+        "Es werden nur die Daten gesichert, die sich seit der letzten Sicherung (egal welchen Typs) geändert haben",
+        "Es wird bei jedem Lauf eine komplette Kopie aller Daten erstellt",
+        "Es werden nur Daten gesichert, die sich seit der letzten Vollsicherung geändert haben",
+        "Es werden nur gelöschte Dateien gesichert"
+      ],
+      "answer": "Es werden nur die Daten gesichert, die sich seit der letzten Sicherung (egal welchen Typs) geändert haben"
+    },
+    {
+      "id": "ap1-sec-q28",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie unterscheidet sich eine differenzielle Sicherung von einer inkrementellen Sicherung?",
+      "explanation": "Die differenzielle Sicherung bezieht sich immer auf die letzte Vollsicherung, wodurch die Wiederherstellung nur die Vollsicherung plus die letzte differenzielle Sicherung benötigt.",
+      "translations": {
+        "en": {
+          "question": "How does a differential backup differ from an incremental backup?",
+          "explanation": "A differential backup always refers back to the last full backup, so restoring only needs the full backup plus the latest differential backup.",
+          "options": [
+            "It saves all changes since the last full backup, not just since the last backup",
+            "It always creates a complete copy of all data",
+            "It only backs up system files",
+            "It does not require a prior full backup"
+          ],
+          "answer": "It saves all changes since the last full backup, not just since the last backup"
+        }
+      },
+      "options": [
+        "Sie sichert alle Änderungen seit der letzten Vollsicherung, nicht nur seit der letzten Sicherung",
+        "Sie erstellt immer eine komplette Kopie aller Daten",
+        "Sie sichert ausschließlich Systemdateien",
+        "Sie benötigt keine vorherige Vollsicherung"
+      ],
+      "answer": "Sie sichert alle Änderungen seit der letzten Vollsicherung, nicht nur seit der letzten Sicherung"
+    },
+    {
+      "id": "ap1-sec-q29",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie wird das klassische Rotationsschema für Bandsicherungen genannt, bei dem tägliche, wöchentliche und monatliche Sicherungen kombiniert werden?",
+      "explanation": "Das Generationenprinzip (Großvater-Vater-Sohn) staffelt Sicherungen in tägliche (Sohn), wöchentliche (Vater) und monatliche (Großvater) Generationen, um verschiedene Wiederherstellungszeitpunkte abzudecken.",
+      "translations": {
+        "en": {
+          "question": "What is the classic tape rotation scheme called that combines daily, weekly and monthly backups?",
+          "explanation": "The generation scheme (grandfather-father-son) staggers backups into daily (son), weekly (father) and monthly (grandfather) generations to cover different recovery points.",
+          "options": [
+            "Grandfather-father-son scheme",
+            "3-2-1 rule",
+            "RAID-1 principle",
+            "Journaling principle"
+          ],
+          "answer": "Grandfather-father-son scheme"
+        }
+      },
+      "options": [
+        "Großvater-Vater-Sohn-Prinzip",
+        "3-2-1-Regel",
+        "RAID-1-Prinzip",
+        "Journaling-Prinzip"
+      ],
+      "answer": "Großvater-Vater-Sohn-Prinzip"
+    },
+    {
+      "id": "ap1-sec-q30",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie wird das in Art. 17 DSGVO verankerte Recht einer Person, ihre gespeicherten Daten löschen zu lassen, umgangssprachlich genannt?",
+      "explanation": "Das „Recht auf Vergessenwerden“ nach Art. 17 DSGVO erlaubt Betroffenen, unter bestimmten Voraussetzungen die Löschung ihrer personenbezogenen Daten zu verlangen.",
+      "translations": {
+        "en": {
+          "question": "What is the right anchored in Art. 17 GDPR, allowing a person to have their stored data deleted, commonly called?",
+          "explanation": "The \"right to be forgotten\" under Art. 17 GDPR lets data subjects request deletion of their personal data under certain conditions.",
+          "options": [
+            "Right to be forgotten",
+            "Right to data portability",
+            "Right to object",
+            "Right of access"
+          ],
+          "answer": "Right to be forgotten"
+        }
+      },
+      "options": [
+        "Recht auf Vergessenwerden",
+        "Recht auf Datenübertragbarkeit",
+        "Widerspruchsrecht",
+        "Auskunftsrecht"
+      ],
+      "answer": "Recht auf Vergessenwerden"
+    },
+    {
+      "id": "ap1-sec-q31",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches Dokument regelt vertraglich die Pflichten, wenn ein Dienstleister personenbezogene Daten im Auftrag eines Unternehmens verarbeitet?",
+      "explanation": "Nach Art. 28 DSGVO muss zwischen Verantwortlichem und Auftragsverarbeiter ein AVV geschlossen werden, der Umfang, Zweck und Pflichten der Datenverarbeitung regelt.",
+      "translations": {
+        "en": {
+          "question": "Which document contractually regulates the obligations when a service provider processes personal data on behalf of a company?",
+          "explanation": "Under Art. 28 GDPR, the controller and processor must sign a DPA that regulates the scope, purpose and obligations of the data processing.",
+          "options": [
+            "Data processing agreement (DPA)",
+            "Employment contract",
+            "Service level agreement",
+            "Non-disclosure agreement"
+          ],
+          "answer": "Data processing agreement (DPA)"
+        }
+      },
+      "options": [
+        "Auftragsverarbeitungsvertrag (AVV)",
+        "Arbeitsvertrag",
+        "Service-Level-Agreement",
+        "Geheimhaltungsvereinbarung"
+      ],
+      "answer": "Auftragsverarbeitungsvertrag (AVV)"
+    },
+    {
+      "id": "ap1-sec-q32",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Rolle trägt nach DSGVO die Hauptverantwortung dafür, dass eine Datenverarbeitung rechtmäßig erfolgt?",
+      "explanation": "Der Verantwortliche entscheidet über Zweck und Mittel der Datenverarbeitung und trägt die primäre rechtliche Verantwortung. Ein Auftragsverarbeiter handelt lediglich nach dessen Weisung.",
+      "translations": {
+        "en": {
+          "question": "Under the GDPR, which role bears the main responsibility for ensuring data processing is lawful?",
+          "explanation": "The controller decides on the purpose and means of data processing and bears the primary legal responsibility. A processor merely acts on the controller's instructions.",
+          "options": [
+            "The controller",
+            "The processor",
+            "The data subject",
+            "The supervisory authority"
+          ],
+          "answer": "The controller"
+        }
+      },
+      "options": [
+        "Der Verantwortliche",
+        "Der Auftragsverarbeiter",
+        "Der Betroffene",
+        "Die Aufsichtsbehörde"
+      ],
+      "answer": "Der Verantwortliche"
+    },
+    {
+      "id": "ap1-sec-q33",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche physische Schutzmaßnahme dient primär dazu, unautorisierten Personen den Zutritt zum Serverraum zu verwehren?",
+      "explanation": "Zutrittskontrollsysteme regeln physisch, wer einen Serverraum betreten darf. Firewall, Virenscanner und Verschlüsselung sind logische bzw. technische Schutzmaßnahmen, keine physischen.",
+      "translations": {
+        "en": {
+          "question": "Which physical protection measure primarily prevents unauthorized persons from entering the server room?",
+          "explanation": "Access control systems physically regulate who may enter a server room. Firewalls, antivirus software and encryption are logical/technical measures, not physical ones.",
+          "options": [
+            "An access control system using a keycard or PIN",
+            "Antivirus software",
+            "A firewall",
+            "Data encryption"
+          ],
+          "answer": "An access control system using a keycard or PIN"
+        }
+      },
+      "options": [
+        "Zutrittskontrollsystem mit Chipkarte oder PIN",
+        "Virenscanner",
+        "Firewall",
+        "Datenverschlüsselung"
+      ],
+      "answer": "Zutrittskontrollsystem mit Chipkarte oder PIN"
+    },
+    {
+      "id": "ap1-sec-q34",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches Sicherheitsprinzip besagt, dass Benutzer nur die Zugriffsrechte erhalten sollen, die sie für ihre Aufgabe unbedingt benötigen?",
+      "explanation": "Least Privilege minimiert Zugriffsrechte auf das notwendige Minimum, um den potenziellen Schaden durch Missbrauch oder Kompromittierung eines Kontos zu begrenzen.",
+      "translations": {
+        "en": {
+          "question": "Which security principle states that users should only be granted the access rights strictly necessary for their task?",
+          "explanation": "Least privilege minimizes access rights to the necessary minimum, limiting the potential damage from misuse or a compromised account.",
+          "options": [
+            "Principle of least privilege",
+            "Need-to-know principle",
+            "Four-eyes principle",
+            "Separation of duties"
+          ],
+          "answer": "Principle of least privilege"
+        }
+      },
+      "options": [
+        "Prinzip der geringsten Rechte (Least Privilege)",
+        "Need-to-know-Prinzip",
+        "Vier-Augen-Prinzip",
+        "Trennung von Pflichten"
+      ],
+      "answer": "Prinzip der geringsten Rechte (Least Privilege)"
+    },
+    {
+      "id": "ap1-sec-q35",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was versteht man unter dem Zugriffskontrollmodell RBAC?",
+      "explanation": "Role Based Access Control (RBAC) bündelt Berechtigungen in Rollen (z. B. „Buchhaltung“, „Administrator“), die dann Benutzern zugewiesen werden. Das vereinfacht die Rechteverwaltung erheblich.",
+      "translations": {
+        "en": {
+          "question": "What does the RBAC access control model mean?",
+          "explanation": "Role Based Access Control (RBAC) bundles permissions into roles (e.g. \"accounting\", \"administrator\") that are then assigned to users, greatly simplifying rights management.",
+          "options": [
+            "Permissions are granted via roles, which are then assigned to users",
+            "Every user gets individually defined rights with no connection to roles at all",
+            "Rights are assigned exclusively and automatically by the OS kernel",
+            "Access rights depend solely on the time of day"
+          ],
+          "answer": "Permissions are granted via roles, which are then assigned to users"
+        }
+      },
+      "options": [
+        "Rechte werden über Rollen vergeben, die anschließend Benutzern zugewiesen werden",
+        "Jeder Benutzer erhält individuell festgelegte Rechte ohne jeden Rollenbezug",
+        "Rechte werden ausschließlich vom Betriebssystemkern automatisch vergeben",
+        "Zugriffsrechte richten sich ausschließlich nach der Tageszeit"
+      ],
+      "answer": "Rechte werden über Rollen vergeben, die anschließend Benutzern zugewiesen werden"
+    },
+    {
+      "id": "ap1-sec-q36",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist die Hauptfunktion eines VPN (Virtual Private Network)?",
+      "explanation": "Ein VPN erstellt einen verschlüsselten Tunnel über ein unsicheres, öffentliches Netz wie das Internet, sodass Daten vertraulich und sicher übertragen werden können.",
+      "translations": {
+        "en": {
+          "question": "What is the main function of a VPN (virtual private network)?",
+          "explanation": "A VPN creates an encrypted tunnel over an untrusted public network like the internet, so data can be transmitted confidentially and securely.",
+          "options": [
+            "It establishes an encrypted, private connection over a public network",
+            "It fundamentally speeds up the internet connection",
+            "It makes firewalls completely unnecessary",
+            "It directly prevents malware infections on the endpoint device"
+          ],
+          "answer": "It establishes an encrypted, private connection over a public network"
+        }
+      },
+      "options": [
+        "Es baut über ein öffentliches Netz eine verschlüsselte, private Verbindung auf",
+        "Es beschleunigt grundsätzlich die Internetverbindung",
+        "Es macht Firewalls vollständig überflüssig",
+        "Es verhindert Schadsoftware-Infektionen direkt auf dem Endgerät"
+      ],
+      "answer": "Es baut über ein öffentliches Netz eine verschlüsselte, private Verbindung auf"
+    },
+    {
+      "id": "ap1-sec-q37",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welches WLAN-Verschlüsselungsverfahren gilt heute als veraltet und unsicher, weil sein Schlüssel mit geringem Aufwand geknackt werden kann?",
+      "explanation": "WEP (Wired Equivalent Privacy) nutzt einen schwachen Verschlüsselungsalgorithmus mit statischen Schlüsseln, die mit wenig Aufwand geknackt werden können. WPA2 und WPA3 haben WEP abgelöst.",
+      "translations": {
+        "en": {
+          "question": "Which WLAN encryption method is now considered outdated and insecure because its key can be cracked with little effort?",
+          "explanation": "WEP (Wired Equivalent Privacy) uses a weak encryption algorithm with static keys that can be cracked with little effort. WPA2 and WPA3 have since replaced WEP.",
+          "options": [
+            "WEP",
+            "WPA2",
+            "WPA3",
+            "802.1X"
+          ],
+          "answer": "WEP"
+        }
+      },
+      "options": [
+        "WEP",
+        "WPA2",
+        "WPA3",
+        "802.1X"
+      ],
+      "answer": "WEP"
+    },
+    {
+      "id": "ap1-sec-q38",
+      "type": "single",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was ist ein zentraler Vorteil von WPA3 gegenüber WPA2 im privaten WLAN-Betrieb?",
+      "explanation": "WPA3 nutzt mit „Simultaneous Authentication of Equals“ (SAE) ein robusteres Schlüsselaustauschverfahren, das Offline-Angriffe auf abgefangene Handshakes deutlich erschwert.",
+      "translations": {
+        "en": {
+          "question": "What is a key advantage of WPA3 over WPA2 for private WLAN use?",
+          "explanation": "WPA3 uses \"Simultaneous Authentication of Equals\" (SAE), a more robust key exchange that makes offline attacks on captured handshakes much harder.",
+          "options": [
+            "WPA3 uses an improved key exchange that better protects the pre-shared key against offline dictionary attacks",
+            "WPA3 completely drops any form of encryption",
+            "WPA3 only works together with MAC address filtering",
+            "WPA3 no longer requires an access point"
+          ],
+          "answer": "WPA3 uses an improved key exchange that better protects the pre-shared key against offline dictionary attacks"
+        }
+      },
+      "options": [
+        "WPA3 schützt durch ein verbessertes Schlüsselaustauschverfahren besser gegen Offline-Wörterbuchangriffe auf den Pre-Shared Key",
+        "WPA3 verzichtet vollständig auf jede Verschlüsselung",
+        "WPA3 funktioniert ausschließlich mit MAC-Adressfilterung",
+        "WPA3 benötigt keinen Access Point mehr"
+      ],
+      "answer": "WPA3 schützt durch ein verbessertes Schlüsselaustauschverfahren besser gegen Offline-Wörterbuchangriffe auf den Pre-Shared Key"
+    },
+    {
+      "id": "ap1-sec-q39",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Schadprogramme zählen zu klassischen Malware-Arten?",
+      "explanation": "Virus, Wurm und Trojaner sind Schadsoftware-Kategorien. Firewall und Passwort-Manager sind Schutzwerkzeuge, keine Schadprogramme.",
+      "translations": {
+        "en": {
+          "question": "Which of the following count as classic types of malware?",
+          "explanation": "Virus, worm and Trojan horse are malware categories. Firewall and password manager are protective tools, not malware.",
+          "options": [
+            "Virus",
+            "Worm",
+            "Trojan horse",
+            "Firewall",
+            "Password manager"
+          ],
+          "answer": [
+            "Virus",
+            "Worm",
+            "Trojan horse"
+          ]
+        }
+      },
+      "options": [
+        "Virus",
+        "Wurm",
+        "Trojaner",
+        "Firewall",
+        "Passwort-Manager"
+      ],
+      "answer": [
+        "Virus",
+        "Wurm",
+        "Trojaner"
+      ]
+    },
+    {
+      "id": "ap1-sec-q40",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Merkmale sind typisch für Social-Engineering-Angriffe?",
+      "explanation": "Social Engineering zielt auf menschliche Schwächen wie Vertrauen, Angst oder Zeitdruck ab und nutzt oft vorgetäuschte Identitäten — im Gegensatz zu rein technischen Angriffen.",
+      "translations": {
+        "en": {
+          "question": "Which characteristics are typical of social engineering attacks?",
+          "explanation": "Social engineering targets human weaknesses such as trust, fear or time pressure, and often relies on impersonation — unlike purely technical attacks.",
+          "options": [
+            "Exploiting trust or authority",
+            "Creating time pressure or fear",
+            "Purely technical exploitation of software flaws with no human interaction at all",
+            "Impersonating a false identity",
+            "Encrypting communication to protect the victim"
+          ],
+          "answer": [
+            "Exploiting trust or authority",
+            "Creating time pressure or fear",
+            "Impersonating a false identity"
+          ]
+        }
+      },
+      "options": [
+        "Ausnutzung von Vertrauen oder Autorität",
+        "Erzeugen von Zeitdruck oder Angst",
+        "Rein technische Ausnutzung von Softwarelücken ohne jede menschliche Interaktion",
+        "Vortäuschen einer falschen Identität",
+        "Verschlüsselung der Kommunikation zum Schutz des Opfers"
+      ],
+      "answer": [
+        "Ausnutzung von Vertrauen oder Autorität",
+        "Erzeugen von Zeitdruck oder Angst",
+        "Vortäuschen einer falschen Identität"
+      ]
+    },
+    {
+      "id": "ap1-sec-q41",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Varianten sind Spielarten von Phishing-Angriffen?",
+      "explanation": "Spear-Phishing, Smishing und Vishing sind Varianten des Phishings über unterschiedliche Kanäle (gezielte Mail, SMS, Telefon). Patch-Management und Load-Balancing sind IT-Betriebsthemen ohne Bezug zu Phishing.",
+      "translations": {
+        "en": {
+          "question": "Which of the following are variants of phishing attacks?",
+          "explanation": "Spear phishing, smishing and vishing are phishing variants over different channels (targeted email, SMS, phone). Patch management and load balancing are IT operations topics unrelated to phishing.",
+          "options": [
+            "Spear phishing (targeted at one person)",
+            "Smishing (via SMS)",
+            "Vishing (via phone call)",
+            "Patch management",
+            "Load balancing"
+          ],
+          "answer": [
+            "Spear phishing (targeted at one person)",
+            "Smishing (via SMS)",
+            "Vishing (via phone call)"
+          ]
+        }
+      },
+      "options": [
+        "Spear-Phishing (gezielt auf eine Person)",
+        "Smishing (per SMS)",
+        "Vishing (per Telefonanruf)",
+        "Patch-Management",
+        "Load-Balancing"
+      ],
+      "answer": [
+        "Spear-Phishing (gezielt auf eine Person)",
+        "Smishing (per SMS)",
+        "Vishing (per Telefonanruf)"
+      ]
+    },
+    {
+      "id": "ap1-sec-q42",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Eigenschaften unterscheiden eine Stateful-Inspection-Firewall von einem einfachen Paketfilter?",
+      "explanation": "Stateful-Inspection-Firewalls verwalten eine Zustandstabelle aktiver Verbindungen und lassen dazugehörige Antwortpakete automatisch durch, was ein zustandsloser Paketfilter nicht kann.",
+      "translations": {
+        "en": {
+          "question": "Which properties distinguish a stateful inspection firewall from a basic packet filter?",
+          "explanation": "Stateful inspection firewalls maintain a table of active connection states and automatically permit corresponding reply packets, which a stateless packet filter cannot do.",
+          "options": [
+            "It keeps track of the state of existing connections",
+            "It can automatically allow reply packets belonging to an already permitted connection",
+            "It only inspects individual packets with no context at all",
+            "It fundamentally cannot define any rules"
+          ],
+          "answer": [
+            "It keeps track of the state of existing connections",
+            "It can automatically allow reply packets belonging to an already permitted connection"
+          ]
+        }
+      },
+      "options": [
+        "Sie merkt sich den Zustand bestehender Verbindungen",
+        "Sie kann Antwortpakete einer bereits erlaubten Verbindung automatisch zulassen",
+        "Sie prüft ausschließlich einzelne Pakete ohne jeden Zusammenhang",
+        "Sie kann grundsätzlich keine Regeln definieren"
+      ],
+      "answer": [
+        "Sie merkt sich den Zustand bestehender Verbindungen",
+        "Sie kann Antwortpakete einer bereits erlaubten Verbindung automatisch zulassen"
+      ]
+    },
+    {
+      "id": "ap1-sec-q43",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu symmetrischer Verschlüsselung sind korrekt?",
+      "explanation": "Symmetrische Verfahren nutzen einen gemeinsamen Schlüssel und sind schnell, erfordern aber einen sicheren Schlüsselaustausch. Ein Schlüsselpaar ist Merkmal asymmetrischer Verschlüsselung.",
+      "translations": {
+        "en": {
+          "question": "Which statements about symmetric encryption are correct?",
+          "explanation": "Symmetric methods use a shared key and are fast, but require a secure key exchange. A key pair is a feature of asymmetric encryption.",
+          "options": [
+            "Sender and recipient need the same secret key",
+            "It is generally much more performant than asymmetric encryption",
+            "The key exchange must happen securely",
+            "It fundamentally uses a key pair of a public and a private key"
+          ],
+          "answer": [
+            "Sender and recipient need the same secret key",
+            "It is generally much more performant than asymmetric encryption",
+            "The key exchange must happen securely"
+          ]
+        }
+      },
+      "options": [
+        "Sender und Empfänger benötigen denselben geheimen Schlüssel",
+        "Sie ist in der Regel deutlich performanter als asymmetrische Verschlüsselung",
+        "Der Schlüsselaustausch muss sicher erfolgen",
+        "Sie verwendet grundsätzlich ein Schlüsselpaar aus öffentlichem und privatem Schlüssel"
+      ],
+      "answer": [
+        "Sender und Empfänger benötigen denselben geheimen Schlüssel",
+        "Sie ist in der Regel deutlich performanter als asymmetrische Verschlüsselung",
+        "Der Schlüsselaustausch muss sicher erfolgen"
+      ]
+    },
+    {
+      "id": "ap1-sec-q44",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu asymmetrischer Verschlüsselung sind korrekt?",
+      "explanation": "Asymmetrische Verfahren nutzen ein Schlüsselpaar; ein gemeinsamer Vorab-Schlüsselaustausch wie bei symmetrischen Verfahren ist nicht nötig. Sie werden u. a. für digitale Signaturen genutzt.",
+      "translations": {
+        "en": {
+          "question": "Which statements about asymmetric encryption are correct?",
+          "explanation": "Asymmetric methods use a key pair; unlike symmetric methods, no prior shared-key exchange is needed. They are also used for digital signatures.",
+          "options": [
+            "There is a public key and a private key",
+            "Data encrypted with the public key can only be decrypted with the matching private key",
+            "Sender and recipient must first agree on a shared secret key",
+            "It is well suited for digital signatures"
+          ],
+          "answer": [
+            "There is a public key and a private key",
+            "Data encrypted with the public key can only be decrypted with the matching private key",
+            "It is well suited for digital signatures"
+          ]
+        }
+      },
+      "options": [
+        "Es gibt einen öffentlichen und einen privaten Schlüssel",
+        "Mit dem öffentlichen Schlüssel verschlüsselte Daten können nur mit dem passenden privaten Schlüssel entschlüsselt werden",
+        "Sender und Empfänger müssen sich vorher auf einen gemeinsamen geheimen Schlüssel einigen",
+        "Sie eignet sich gut für digitale Signaturen"
+      ],
+      "answer": [
+        "Es gibt einen öffentlichen und einen privaten Schlüssel",
+        "Mit dem öffentlichen Schlüssel verschlüsselte Daten können nur mit dem passenden privaten Schlüssel entschlüsselt werden",
+        "Sie eignet sich gut für digitale Signaturen"
+      ]
+    },
+    {
+      "id": "ap1-sec-q45",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Elemente gehören typischerweise zu einer Public-Key-Infrastruktur (PKI)?",
+      "explanation": "Eine PKI umfasst Zertifizierungsstellen, die digitale Zertifikate ausstellen, welche öffentliche Schlüssel an Personen oder Systeme binden. Firewall-Regeln und Passwortlisten gehören nicht zur PKI.",
+      "translations": {
+        "en": {
+          "question": "Which elements typically belong to a public key infrastructure (PKI)?",
+          "explanation": "A PKI includes certificate authorities that issue digital certificates, binding public keys to people or systems. Firewall rules and password lists are not part of a PKI.",
+          "options": [
+            "Certificate authority (CA)",
+            "Digital certificates",
+            "Public and private keys",
+            "Firewall rule sets",
+            "Password dictionaries"
+          ],
+          "answer": [
+            "Certificate authority (CA)",
+            "Digital certificates",
+            "Public and private keys"
+          ]
+        }
+      },
+      "options": [
+        "Zertifizierungsstelle (CA)",
+        "Digitale Zertifikate",
+        "Öffentliche und private Schlüssel",
+        "Firewall-Regelsätze",
+        "Passwort-Wörterbücher"
+      ],
+      "answer": [
+        "Zertifizierungsstelle (CA)",
+        "Digitale Zertifikate",
+        "Öffentliche und private Schlüssel"
+      ]
+    },
+    {
+      "id": "ap1-sec-q46",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu digitalen Zertifikaten (z. B. TLS-Zertifikaten) sind zutreffend?",
+      "explanation": "Digitale Zertifikate binden einen öffentlichen Schlüssel an eine Identität und werden von einer CA signiert, wodurch Vertrauen in die Echtheit entsteht.",
+      "translations": {
+        "en": {
+          "question": "Which statements about digital certificates (e.g. TLS certificates) are correct?",
+          "explanation": "Digital certificates bind a public key to an identity and are signed by a CA, which creates trust in their authenticity.",
+          "options": [
+            "They confirm the identity of the certificate holder",
+            "They are signed by a trusted certificate authority",
+            "They contain the holder's public key",
+            "They make any further encryption unnecessary"
+          ],
+          "answer": [
+            "They confirm the identity of the certificate holder",
+            "They are signed by a trusted certificate authority",
+            "They contain the holder's public key"
+          ]
+        }
+      },
+      "options": [
+        "Sie bestätigen die Identität des Zertifikatsinhabers",
+        "Sie werden von einer vertrauenswürdigen Zertifizierungsstelle signiert",
+        "Sie enthalten den öffentlichen Schlüssel des Inhabers",
+        "Sie machen jede weitere Verschlüsselung überflüssig"
+      ],
+      "answer": [
+        "Sie bestätigen die Identität des Zertifikatsinhabers",
+        "Sie werden von einer vertrauenswürdigen Zertifizierungsstelle signiert",
+        "Sie enthalten den öffentlichen Schlüssel des Inhabers"
+      ]
+    },
+    {
+      "id": "ap1-sec-q47",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Faktoren gehören zu den klassischen Kategorien der Multi-Faktor-Authentifizierung?",
+      "explanation": "MFA kombiniert mindestens zwei der Kategorien Wissen, Besitz und Biometrie (Sein), um die Sicherheit gegenüber einer reinen Passwortabfrage deutlich zu erhöhen.",
+      "translations": {
+        "en": {
+          "question": "Which factors belong to the classic categories of multi-factor authentication?",
+          "explanation": "MFA combines at least two of the categories knowledge, possession and biometrics (inherence), significantly increasing security compared to a password alone.",
+          "options": [
+            "Knowledge (e.g. a password)",
+            "Possession (e.g. smartcard, smartphone)",
+            "Biometrics (e.g. fingerprint)",
+            "The IP address alone as the only factor",
+            "Company affiliation"
+          ],
+          "answer": [
+            "Knowledge (e.g. a password)",
+            "Possession (e.g. smartcard, smartphone)",
+            "Biometrics (e.g. fingerprint)"
+          ]
+        }
+      },
+      "options": [
+        "Wissen (z. B. Passwort)",
+        "Besitz (z. B. Smartcard, Smartphone)",
+        "Biometrie (z. B. Fingerabdruck)",
+        "Die reine IP-Adresse als alleiniger Faktor",
+        "Firmenzugehörigkeit"
+      ],
+      "answer": [
+        "Wissen (z. B. Passwort)",
+        "Besitz (z. B. Smartcard, Smartphone)",
+        "Biometrie (z. B. Fingerabdruck)"
+      ]
+    },
+    {
+      "id": "ap1-sec-q48",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Maßnahmen entsprechen dem Prinzip „Least Privilege“ in der Praxis?",
+      "explanation": "Least Privilege bedeutet minimale, aufgabenbezogene Rechtevergabe mit regelmäßiger Überprüfung. Pauschale Administratorrechte für alle widersprechen diesem Prinzip.",
+      "translations": {
+        "en": {
+          "question": "Which measures reflect the \"least privilege\" principle in practice?",
+          "explanation": "Least privilege means minimal, task-based rights allocation with regular review. Giving everyone blanket admin rights contradicts this principle.",
+          "options": [
+            "User accounts only get the rights necessary for their job",
+            "Administrator rights are only granted temporarily when actually needed",
+            "All employees are given full administrator rights by default",
+            "Access rights are regularly reviewed and adjusted"
+          ],
+          "answer": [
+            "User accounts only get the rights necessary for their job",
+            "Administrator rights are only granted temporarily when actually needed",
+            "Access rights are regularly reviewed and adjusted"
+          ]
+        }
+      },
+      "options": [
+        "Benutzerkonten erhalten nur die für ihre Tätigkeit notwendigen Rechte",
+        "Administratorrechte werden nur bei tatsächlichem Bedarf temporär vergeben",
+        "Alle Mitarbeiter erhalten standardmäßig volle Administratorrechte",
+        "Zugriffsrechte werden regelmäßig überprüft und angepasst"
+      ],
+      "answer": [
+        "Benutzerkonten erhalten nur die für ihre Tätigkeit notwendigen Rechte",
+        "Administratorrechte werden nur bei tatsächlichem Bedarf temporär vergeben",
+        "Zugriffsrechte werden regelmäßig überprüft und angepasst"
+      ]
+    },
+    {
+      "id": "ap1-sec-q49",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Rechte haben Betroffene nach der DSGVO?",
+      "explanation": "Die DSGVO gewährt Betroffenen u. a. Auskunfts-, Berichtigungs-, Löschungs- und Datenübertragbarkeitsrechte. Ein Recht, fremde Daten beliebig weiterzugeben, existiert nicht.",
+      "translations": {
+        "en": {
+          "question": "Which rights do data subjects have under the GDPR?",
+          "explanation": "The GDPR grants data subjects rights including access, rectification, erasure and data portability. There is no right to freely pass on someone else's data.",
+          "options": [
+            "Right of access",
+            "Right to rectification",
+            "Right to erasure",
+            "The right to freely pass on third parties' data",
+            "Right to data portability"
+          ],
+          "answer": [
+            "Right of access",
+            "Right to rectification",
+            "Right to erasure",
+            "Right to data portability"
+          ]
+        }
+      },
+      "options": [
+        "Recht auf Auskunft",
+        "Recht auf Berichtigung",
+        "Recht auf Löschung",
+        "Recht auf beliebige Weitergabe der Daten Dritter",
+        "Recht auf Datenübertragbarkeit"
+      ],
+      "answer": [
+        "Recht auf Auskunft",
+        "Recht auf Berichtigung",
+        "Recht auf Löschung",
+        "Recht auf Datenübertragbarkeit"
+      ]
+    },
+    {
+      "id": "ap1-sec-q50",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zur Auftragsverarbeitung nach DSGVO sind korrekt?",
+      "explanation": "Der Auftragsverarbeiter handelt weisungsgebunden auf Basis eines AVV, während die Verantwortung für die Rechtmäßigkeit weiterhin beim Verantwortlichen liegt.",
+      "translations": {
+        "en": {
+          "question": "Which statements about data processing agreements under the GDPR are correct?",
+          "explanation": "The processor acts under instruction based on a DPA, while responsibility for lawfulness remains with the controller.",
+          "options": [
+            "The processor may only process data on the controller's instructions",
+            "A written data processing agreement must be signed",
+            "This automatically makes the processor a controller itself",
+            "The controller remains responsible for the lawfulness of the processing"
+          ],
+          "answer": [
+            "The processor may only process data on the controller's instructions",
+            "A written data processing agreement must be signed",
+            "The controller remains responsible for the lawfulness of the processing"
+          ]
+        }
+      },
+      "options": [
+        "Der Auftragsverarbeiter darf Daten nur nach Weisung des Verantwortlichen verarbeiten",
+        "Es muss ein schriftlicher Auftragsverarbeitungsvertrag geschlossen werden",
+        "Der Auftragsverarbeiter wird dadurch automatisch selbst zum datenschutzrechtlich Verantwortlichen",
+        "Der Verantwortliche bleibt für die Rechtmäßigkeit der Verarbeitung verantwortlich"
+      ],
+      "answer": [
+        "Der Auftragsverarbeiter darf Daten nur nach Weisung des Verantwortlichen verarbeiten",
+        "Es muss ein schriftlicher Auftragsverarbeitungsvertrag geschlossen werden",
+        "Der Verantwortliche bleibt für die Rechtmäßigkeit der Verarbeitung verantwortlich"
+      ]
+    },
+    {
+      "id": "ap1-sec-q51",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Maßnahmen zählen zu physischen Sicherheitsmaßnahmen für einen Serverraum?",
+      "explanation": "Physische Sicherheitsmaßnahmen betreffen den realen Zugang und Schutz des Raums (Zutritt, Brandschutz, Überwachung). Verschlüsselung und 2FA sind logische bzw. technische Maßnahmen.",
+      "translations": {
+        "en": {
+          "question": "Which of the following count as physical security measures for a server room?",
+          "explanation": "Physical security measures concern real-world access and protection of the room (entry control, fire protection, surveillance). Encryption and 2FA are logical/technical measures.",
+          "options": [
+            "Access control system",
+            "Fire detection and suppression system",
+            "Video surveillance",
+            "Hard drive encryption",
+            "Two-factor authentication for web applications"
+          ],
+          "answer": [
+            "Access control system",
+            "Fire detection and suppression system",
+            "Video surveillance"
+          ]
+        }
+      },
+      "options": [
+        "Zutrittskontrollsystem",
+        "Brandmelde- und Löschanlage",
+        "Videoüberwachung",
+        "Verschlüsselung der Festplatten",
+        "Zwei-Faktor-Authentifizierung für Webanwendungen"
+      ],
+      "answer": [
+        "Zutrittskontrollsystem",
+        "Brandmelde- und Löschanlage",
+        "Videoüberwachung"
+      ]
+    },
+    {
+      "id": "ap1-sec-q52",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu VPN-Verbindungen sind korrekt?",
+      "explanation": "Site-to-Site verbindet Standorte, End-to-Site einzelne Clients mit einem Netz; beide nutzen häufig IPsec oder SSL/TLS. Zugriffsrechte bleiben trotz VPN weiterhin notwendig.",
+      "translations": {
+        "en": {
+          "question": "Which statements about VPN connections are correct?",
+          "explanation": "Site-to-site connects locations, end-to-site connects individual clients to a network; both commonly use IPsec or SSL/TLS. Access rights remain necessary despite a VPN.",
+          "options": [
+            "A site-to-site VPN permanently connects two network locations",
+            "An end-to-site VPN allows individual clients secure access to a company network",
+            "IPsec and SSL/TLS are common underlying VPN protocols",
+            "A VPN fundamentally makes access rights within the network unnecessary"
+          ],
+          "answer": [
+            "A site-to-site VPN permanently connects two network locations",
+            "An end-to-site VPN allows individual clients secure access to a company network",
+            "IPsec and SSL/TLS are common underlying VPN protocols"
+          ]
+        }
+      },
+      "options": [
+        "Ein Site-to-Site-VPN verbindet zwei Netzwerkstandorte dauerhaft miteinander",
+        "Ein End-to-Site-VPN ermöglicht einzelnen Clients den sicheren Zugriff auf ein Firmennetz",
+        "IPsec und SSL/TLS sind gängige VPN-Protokollgrundlagen",
+        "Ein VPN macht Zugriffsrechte innerhalb des Netzwerks grundsätzlich überflüssig"
+      ],
+      "answer": [
+        "Ein Site-to-Site-VPN verbindet zwei Netzwerkstandorte dauerhaft miteinander",
+        "Ein End-to-Site-VPN ermöglicht einzelnen Clients den sicheren Zugriff auf ein Firmennetz",
+        "IPsec und SSL/TLS sind gängige VPN-Protokollgrundlagen"
+      ]
+    },
+    {
+      "id": "ap1-sec-q53",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Maßnahmen gehören zu einem soliden Patch-Management-Prozess?",
+      "explanation": "Gutes Patch-Management umfasst zeitnahes, getestetes und dokumentiertes Einspielen von Updates. Updates ungeprüft zu deaktivieren oder Warnungen zu ignorieren erhöht das Risiko erheblich.",
+      "translations": {
+        "en": {
+          "question": "Which measures belong to a solid patch management process?",
+          "explanation": "Good patch management involves timely, tested, and documented installation of updates. Disabling updates without a plan, or ignoring vendor warnings, significantly increases risk.",
+          "options": [
+            "Regularly installing security updates",
+            "Testing patches in a test environment before production rollout",
+            "Documenting installed patches",
+            "Permanently disabling automatic updates with no replacement process",
+            "Ignoring vendor warnings about critical vulnerabilities"
+          ],
+          "answer": [
+            "Regularly installing security updates",
+            "Testing patches in a test environment before production rollout",
+            "Documenting installed patches"
+          ]
+        }
+      },
+      "options": [
+        "Regelmäßiges Einspielen von Sicherheitsupdates",
+        "Testen von Patches in einer Testumgebung vor dem produktiven Rollout",
+        "Dokumentation eingespielter Patches",
+        "Dauerhaftes Deaktivieren automatischer Updates ohne jeden Ersatzprozess",
+        "Ignorieren von Herstellerwarnungen zu kritischen Sicherheitslücken"
+      ],
+      "answer": [
+        "Regelmäßiges Einspielen von Sicherheitsupdates",
+        "Testen von Patches in einer Testumgebung vor dem produktiven Rollout",
+        "Dokumentation eingespielter Patches"
+      ]
+    },
+    {
+      "id": "ap1-sec-q54",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Schritte gehören zu einem typischen Incident-Response-Prozess?",
+      "explanation": "Incident Response folgt Phasen wie Erkennung, Eindämmung, Beseitigung der Ursache und Nachbereitung. Protokolle sollten für die forensische Analyse gerade nicht sofort gelöscht werden.",
+      "translations": {
+        "en": {
+          "question": "Which steps are part of a typical incident response process?",
+          "explanation": "Incident response follows phases such as detection, containment, root-cause remediation and follow-up. Logs should specifically not be deleted immediately, since they are needed for forensic analysis.",
+          "options": [
+            "Detecting and reporting the incident",
+            "Containing the threat",
+            "Root cause analysis and remediation",
+            "Immediately and permanently deleting all system logs",
+            "Follow-up and lessons learned"
+          ],
+          "answer": [
+            "Detecting and reporting the incident",
+            "Containing the threat",
+            "Root cause analysis and remediation",
+            "Follow-up and lessons learned"
+          ]
+        }
+      },
+      "options": [
+        "Erkennung und Meldung des Vorfalls",
+        "Eindämmung (Containment) der Bedrohung",
+        "Ursachenanalyse und Beseitigung",
+        "Sofortiges endgültiges Löschen aller Systemprotokolle",
+        "Nachbereitung und Lessons Learned"
+      ],
+      "answer": [
+        "Erkennung und Meldung des Vorfalls",
+        "Eindämmung (Containment) der Bedrohung",
+        "Ursachenanalyse und Beseitigung",
+        "Nachbereitung und Lessons Learned"
+      ]
+    },
+    {
+      "id": "ap1-sec-q55",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu WPA2 im WLAN sind korrekt?",
+      "explanation": "WPA2 setzt auf AES-Verschlüsselung und im Heimbereich einen Pre-Shared Key (PSK); es ist WEP in der Sicherheit deutlich überlegen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about WPA2 in WLANs are correct?",
+          "explanation": "WPA2 relies on AES encryption and, in home use, a pre-shared key (PSK); it is far more secure than WEP.",
+          "options": [
+            "WPA2 usually uses AES for encryption",
+            "WPA2 is considered much more secure than the outdated WEP",
+            "WPA2-Personal uses a shared pre-shared key",
+            "WPA2 completely omits any encryption"
+          ],
+          "answer": [
+            "WPA2 usually uses AES for encryption",
+            "WPA2 is considered much more secure than the outdated WEP",
+            "WPA2-Personal uses a shared pre-shared key"
+          ]
+        }
+      },
+      "options": [
+        "WPA2 nutzt üblicherweise AES zur Verschlüsselung",
+        "WPA2 gilt als deutlich sicherer als das veraltete WEP",
+        "WPA2-Personal verwendet einen gemeinsamen Pre-Shared Key",
+        "WPA2 verzichtet vollständig auf jede Verschlüsselung"
+      ],
+      "answer": [
+        "WPA2 nutzt üblicherweise AES zur Verschlüsselung",
+        "WPA2 gilt als deutlich sicherer als das veraltete WEP",
+        "WPA2-Personal verwendet einen gemeinsamen Pre-Shared Key"
+      ]
+    },
+    {
+      "id": "ap1-sec-q56",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Maßnahmen gehören zu einem umfassenden Schutz gegen Malware?",
+      "explanation": "Wirksamer Malware-Schutz kombiniert technische Maßnahmen (Virenscanner, Patches) mit organisatorischen Maßnahmen (Schulung). Firewalls zu deaktivieren oder unbekannte Anhänge zu öffnen erhöht das Risiko.",
+      "translations": {
+        "en": {
+          "question": "Which measures are part of comprehensive malware protection?",
+          "explanation": "Effective malware protection combines technical measures (antivirus, patches) with organizational measures (training). Disabling firewalls or opening unknown attachments increases risk.",
+          "options": [
+            "An up-to-date antivirus scanner with regular updates",
+            "Regular security updates for the operating system",
+            "Training employees to recognize suspicious emails",
+            "Disabling all firewalls to boost performance",
+            "Opening unknown email attachments to test them"
+          ],
+          "answer": [
+            "An up-to-date antivirus scanner with regular updates",
+            "Regular security updates for the operating system",
+            "Training employees to recognize suspicious emails"
+          ]
+        }
+      },
+      "options": [
+        "Aktueller Virenscanner mit regelmäßigen Updates",
+        "Regelmäßige Sicherheitsupdates des Betriebssystems",
+        "Schulung der Mitarbeiter zum Erkennen verdächtiger E-Mails",
+        "Deaktivierung aller Firewalls zur Leistungssteigerung",
+        "Öffnen unbekannter E-Mail-Anhänge zum Testen"
+      ],
+      "answer": [
+        "Aktueller Virenscanner mit regelmäßigen Updates",
+        "Regelmäßige Sicherheitsupdates des Betriebssystems",
+        "Schulung der Mitarbeiter zum Erkennen verdächtiger E-Mails"
+      ]
+    },
+    {
+      "id": "ap1-sec-q57",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zur Verfügbarkeit als Schutzziel sind zutreffend?",
+      "explanation": "Verfügbarkeit wird durch Redundanz, USV und Lastverteilung gestärkt. Die Beschreibung „nur Befugte dürfen Daten einsehen“ betrifft Vertraulichkeit, nicht Verfügbarkeit.",
+      "translations": {
+        "en": {
+          "question": "Which statements about availability as a security objective are correct?",
+          "explanation": "Availability is strengthened by redundancy, a UPS, and load balancing. \"Only authorized people may view data\" describes confidentiality, not availability.",
+          "options": [
+            "Redundant systems increase availability",
+            "A UPS increases availability during power outages",
+            "Availability means only authorized people may view data",
+            "Load balancing can increase availability"
+          ],
+          "answer": [
+            "Redundant systems increase availability",
+            "A UPS increases availability during power outages",
+            "Load balancing can increase availability"
+          ]
+        }
+      },
+      "options": [
+        "Redundante Systeme erhöhen die Verfügbarkeit",
+        "Eine USV erhöht die Verfügbarkeit bei Stromausfällen",
+        "Verfügbarkeit bedeutet, dass nur befugte Personen Daten einsehen dürfen",
+        "Lastverteilung (Load Balancing) kann die Verfügbarkeit steigern"
+      ],
+      "answer": [
+        "Redundante Systeme erhöhen die Verfügbarkeit",
+        "Eine USV erhöht die Verfügbarkeit bei Stromausfällen",
+        "Lastverteilung (Load Balancing) kann die Verfügbarkeit steigern"
+      ]
+    },
+    {
+      "id": "ap1-sec-q58",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Angaben zählen laut BSI zu guten Passworteigenschaften?",
+      "explanation": "Sichere Passwörter sind lang, zeichenvielfältig und einzigartig pro Dienst. Persönliche Bezüge wie Namen oder Geburtsdaten sowie das Weitergeben von Passwörtern schwächen die Sicherheit.",
+      "translations": {
+        "en": {
+          "question": "According to the BSI, which of the following are good password properties?",
+          "explanation": "Secure passwords are long, use varied character types, and are unique per service. Personal references like names or birthdates, and sharing passwords, weaken security.",
+          "options": [
+            "Sufficient length (today usually well beyond 8 characters)",
+            "Use of different character types",
+            "Uniqueness per service",
+            "Using your own name or date of birth",
+            "Regularly sharing it with colleagues as a backup"
+          ],
+          "answer": [
+            "Sufficient length (today usually well beyond 8 characters)",
+            "Use of different character types",
+            "Uniqueness per service"
+          ]
+        }
+      },
+      "options": [
+        "Ausreichende Länge (heute in der Regel deutlich mehr als 8 Zeichen)",
+        "Verwendung unterschiedlicher Zeichenarten",
+        "Einzigartigkeit pro Dienst",
+        "Verwendung des eigenen Namens oder Geburtsdatums",
+        "Regelmäßige Weitergabe an Kollegen zur Vertretung"
+      ],
+      "answer": [
+        "Ausreichende Länge (heute in der Regel deutlich mehr als 8 Zeichen)",
+        "Verwendung unterschiedlicher Zeichenarten",
+        "Einzigartigkeit pro Dienst"
+      ]
+    },
+    {
+      "id": "ap1-sec-q59",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche der folgenden Angriffsarten zielen direkt auf das Erraten oder Knacken von Zugangsdaten ab?",
+      "explanation": "Brute-Force, Wörterbuchangriffe und Credential Stuffing (Wiederverwendung gestohlener Zugangsdaten) zielen auf das Erlangen gültiger Zugangsdaten ab. DoS-Angriffe und Firewall-Konfiguration betreffen andere Bereiche.",
+      "translations": {
+        "en": {
+          "question": "Which of the following attack types directly aim to guess or crack credentials?",
+          "explanation": "Brute-force, dictionary attacks and credential stuffing (reusing stolen credentials) aim to obtain valid login data. DoS attacks and firewall configuration are unrelated areas.",
+          "options": [
+            "Brute-force attack",
+            "Dictionary attack",
+            "Credential stuffing",
+            "Denial-of-service attack",
+            "Firewall configuration"
+          ],
+          "answer": [
+            "Brute-force attack",
+            "Dictionary attack",
+            "Credential stuffing"
+          ]
+        }
+      },
+      "options": [
+        "Brute-Force-Angriff",
+        "Wörterbuchangriff",
+        "Credential Stuffing",
+        "Denial-of-Service-Angriff",
+        "Firewall-Konfiguration"
+      ],
+      "answer": [
+        "Brute-Force-Angriff",
+        "Wörterbuchangriff",
+        "Credential Stuffing"
+      ]
+    },
+    {
+      "id": "ap1-sec-q60",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zum BSI-IT-Grundschutz sind korrekt?",
+      "explanation": "Der IT-Grundschutz des deutschen BSI bietet Bausteine und eine Methodik zur Absicherung von Informationssicherheit und ermöglicht eine ISO-27001-Zertifizierung auf dieser Basis.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the BSI IT-Grundschutz (baseline protection) are correct?",
+          "explanation": "The German BSI's IT-Grundschutz offers modules and a methodology for securing information security, and allows an ISO 27001 certification on that basis.",
+          "options": [
+            "It provides a methodological framework for securing IT systems",
+            "The IT-Grundschutz compendium contains concrete modules with requirements",
+            "It is a purely American standard with no connection to Germany",
+            "An ISO 27001 certification based on IT-Grundschutz is possible"
+          ],
+          "answer": [
+            "It provides a methodological framework for securing IT systems",
+            "The IT-Grundschutz compendium contains concrete modules with requirements",
+            "An ISO 27001 certification based on IT-Grundschutz is possible"
+          ]
+        }
+      },
+      "options": [
+        "Er liefert einen methodischen Rahmen zur Absicherung von IT-Systemen",
+        "Das IT-Grundschutz-Kompendium enthält konkrete Bausteine mit Anforderungen",
+        "Er ist eine rein US-amerikanische Norm ohne jeden Bezug zu Deutschland",
+        "Eine Zertifizierung nach ISO 27001 auf Basis von IT-Grundschutz ist möglich"
+      ],
+      "answer": [
+        "Er liefert einen methodischen Rahmen zur Absicherung von IT-Systemen",
+        "Das IT-Grundschutz-Kompendium enthält konkrete Bausteine mit Anforderungen",
+        "Eine Zertifizierung nach ISO 27001 auf Basis von IT-Grundschutz ist möglich"
+      ]
+    },
+    {
+      "id": "ap1-sec-q61",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Kennzahlen werden häufig zur Bewertung der Verfügbarkeit und Ausfallsicherheit von IT-Systemen genutzt?",
+      "explanation": "MTBF, MTTR und die prozentuale Verfügbarkeit sind gängige Kennzahlen zur Bewertung von Systemzuverlässigkeit. RGB-Farbtiefe und Bildwiederholrate gehören nicht zur Verfügbarkeitsbewertung.",
+      "translations": {
+        "en": {
+          "question": "Which metrics are commonly used to assess the availability and resilience of IT systems?",
+          "explanation": "MTBF, MTTR and percentage availability are common metrics for assessing system reliability. RGB color depth and refresh rate are unrelated to availability assessment.",
+          "options": [
+            "MTBF (Mean Time Between Failures)",
+            "MTTR (Mean Time To Repair)",
+            "Availability as a percentage per year",
+            "RGB color depth",
+            "Screen refresh rate"
+          ],
+          "answer": [
+            "MTBF (Mean Time Between Failures)",
+            "MTTR (Mean Time To Repair)",
+            "Availability as a percentage per year"
+          ]
+        }
+      },
+      "options": [
+        "MTBF (Mean Time Between Failures)",
+        "MTTR (Mean Time To Repair)",
+        "Verfügbarkeit in Prozent pro Jahr",
+        "RGB-Farbtiefe",
+        "Bildwiederholrate"
+      ],
+      "answer": [
+        "MTBF (Mean Time Between Failures)",
+        "MTTR (Mean Time To Repair)",
+        "Verfügbarkeit in Prozent pro Jahr"
+      ]
+    },
+    {
+      "id": "ap1-sec-q62",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zu Ransomware-Angriffen und ihrer Abwehr sind korrekt?",
+      "explanation": "Getrennt gelagerte Backups und aktuelle Patches sind wirksame Schutzmaßnahmen gegen Ransomware. Eine Lösegeldzahlung ist keine Garantie für die Datenwiederherstellung und wird generell nicht empfohlen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about ransomware attacks and defending against them are correct?",
+          "explanation": "Separately stored backups and current patches are effective defenses against ransomware. Paying a ransom is no guarantee of data recovery and is generally not recommended.",
+          "options": [
+            "Regular, separately stored backups make recovery without paying a ransom easier",
+            "Ransomware often encrypts files and demands payment",
+            "Paying the ransom always guarantees full data recovery",
+            "Up-to-date security patches can close known entry points"
+          ],
+          "answer": [
+            "Regular, separately stored backups make recovery without paying a ransom easier",
+            "Ransomware often encrypts files and demands payment",
+            "Up-to-date security patches can close known entry points"
+          ]
+        }
+      },
+      "options": [
+        "Regelmäßige, getrennt aufbewahrte Backups erleichtern die Wiederherstellung ohne Lösegeldzahlung",
+        "Ransomware verschlüsselt häufig Dateien und fordert eine Zahlung",
+        "Die Zahlung von Lösegeld garantiert immer die vollständige Wiederherstellung der Daten",
+        "Aktuelle Sicherheitsupdates können bekannte Einfallstore schließen"
+      ],
+      "answer": [
+        "Regelmäßige, getrennt aufbewahrte Backups erleichtern die Wiederherstellung ohne Lösegeldzahlung",
+        "Ransomware verschlüsselt häufig Dateien und fordert eine Zahlung",
+        "Aktuelle Sicherheitsupdates können bekannte Einfallstore schließen"
+      ]
+    },
+    {
+      "id": "ap1-sec-q63",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Aussagen zum Zugriffskontrollprinzip „Need-to-know“ sind zutreffend?",
+      "explanation": "Need-to-know beschränkt den Zugriff strikt auf erforderliche Informationen und wird oft mit Rollenkonzepten kombiniert; ein pauschaler Zugriff auf alle Daten widerspricht diesem Prinzip.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the \"need-to-know\" access control principle are correct?",
+          "explanation": "Need-to-know strictly limits access to required information and is often combined with role concepts; blanket access to all data contradicts this principle.",
+          "options": [
+            "Access is only granted to information required for the specific task",
+            "It reduces the attack surface when an account is compromised",
+            "Every employee should fundamentally be able to access all company data",
+            "It is often implemented together with role- or rights-based concepts"
+          ],
+          "answer": [
+            "Access is only granted to information required for the specific task",
+            "It reduces the attack surface when an account is compromised",
+            "It is often implemented together with role- or rights-based concepts"
+          ]
+        }
+      },
+      "options": [
+        "Zugriff wird nur auf Informationen gewährt, die für die konkrete Aufgabe erforderlich sind",
+        "Es reduziert die Angriffsfläche bei kompromittierten Konten",
+        "Jeder Mitarbeiter soll grundsätzlich auf alle Unternehmensdaten zugreifen können",
+        "Es wird häufig in Kombination mit Rollen- oder Rechtekonzepten umgesetzt"
+      ],
+      "answer": [
+        "Zugriff wird nur auf Informationen gewährt, die für die konkrete Aufgabe erforderlich sind",
+        "Es reduziert die Angriffsfläche bei kompromittierten Konten",
+        "Es wird häufig in Kombination mit Rollen- oder Rechtekonzepten umgesetzt"
+      ]
+    },
+    {
+      "id": "ap1-sec-q64",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Welche Zuordnungen von Schutzmaßnahme zu Schutzziel sind korrekt?",
+      "explanation": "Prüfsummen sichern die Integrität, Redundanz sichert die Verfügbarkeit und Verschlüsselung sichert die Vertraulichkeit. Ein Marketingbudget hat keinen Bezug zu einem Schutzziel der Informationssicherheit.",
+      "translations": {
+        "en": {
+          "question": "Which pairings of protective measure and security objective are correct?",
+          "explanation": "Checksums secure integrity, redundancy secures availability, and encryption secures confidentiality. A marketing budget has no bearing on any information security objective.",
+          "options": [
+            "Checksums or hash values protect the integrity of files",
+            "Redundant server systems increase availability",
+            "Encryption protects the confidentiality of data",
+            "A larger marketing budget increases the confidentiality of data"
+          ],
+          "answer": [
+            "Checksums or hash values protect the integrity of files",
+            "Redundant server systems increase availability",
+            "Encryption protects the confidentiality of data"
+          ]
+        }
+      },
+      "options": [
+        "Prüfsummen bzw. Hashwerte schützen die Integrität von Dateien",
+        "Redundante Serversysteme erhöhen die Verfügbarkeit",
+        "Verschlüsselung schützt die Vertraulichkeit von Daten",
+        "Ein höheres Marketingbudget erhöht die Vertraulichkeit von Daten"
+      ],
+      "answer": [
+        "Prüfsummen bzw. Hashwerte schützen die Integrität von Dateien",
+        "Redundante Serversysteme erhöhen die Verfügbarkeit",
+        "Verschlüsselung schützt die Vertraulichkeit von Daten"
+      ]
+    },
+    {
+      "id": "ap1-sec-q65",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man eine Sicherheitslücke, die dem Hersteller noch unbekannt ist und für die es folglich noch keinen Patch gibt, wenn sie bereits ausgenutzt wird?",
+      "explanation": "Ein Zero-Day-Exploit nutzt eine Schwachstelle aus, bevor der Hersteller sie kennt oder einen Patch bereitstellen konnte, wodurch klassische Schutzmaßnahmen wie Patches noch nicht wirken.",
+      "translations": {
+        "en": {
+          "question": "What is a security vulnerability called that is still unknown to the vendor, and therefore has no patch yet, when it is already being exploited?",
+          "explanation": "A zero-day exploit takes advantage of a flaw before the vendor knows about it or could provide a patch, so classic defenses like patching don't yet help.",
+          "answer": "Zero-day exploit (zero-day vulnerability)"
+        }
+      },
+      "answer": "Zero-Day-Exploit (Zero-Day-Lücke)"
+    },
+    {
+      "id": "ap1-sec-q66",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man Schadsoftware, die sich unbemerkt an ein Wirtsprogramm anhängt und sich bei dessen Ausführung weiterverbreitet?",
+      "explanation": "Ein Virus benötigt ein Wirtsprogramm und eine Benutzeraktion (z. B. das Ausführen einer Datei), um sich zu verbreiten — im Gegensatz zum eigenständig agierenden Wurm.",
+      "translations": {
+        "en": {
+          "question": "What is malware called that attaches itself unnoticed to a host program and spreads further when that program runs?",
+          "explanation": "A virus needs a host program and a user action (e.g. running a file) to spread — unlike a worm, which propagates on its own.",
+          "answer": "Computer virus"
+        }
+      },
+      "answer": "Computervirus"
+    },
+    {
+      "id": "ap1-sec-q67",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man die Kombination aus zwei unterschiedlichen Authentifizierungsfaktoren, z. B. Passwort und Einmalcode, bei der Anmeldung?",
+      "explanation": "2FA verlangt zusätzlich zum Wissen (Passwort) einen zweiten, unabhängigen Faktor wie Besitz (Einmalcode auf dem Smartphone), wodurch ein gestohlenes Passwort allein nicht ausreicht.",
+      "translations": {
+        "en": {
+          "question": "What is it called when two different authentication factors, e.g. a password and a one-time code, are combined during login?",
+          "explanation": "2FA requires a second, independent factor (e.g. possession of a phone generating a one-time code) in addition to knowledge (the password), so a stolen password alone isn't enough.",
+          "answer": "Two-factor authentication (2FA)"
+        }
+      },
+      "answer": "Zwei-Faktor-Authentifizierung (2FA)"
+    },
+    {
+      "id": "ap1-sec-q68",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man die psychologische Manipulation von Menschen, um sie zur Preisgabe vertraulicher Informationen oder zu sicherheitsrelevanten Handlungen zu bewegen?",
+      "explanation": "Social Engineering nutzt menschliche Eigenschaften wie Vertrauen, Hilfsbereitschaft oder Angst aus, um an Informationen zu gelangen oder Handlungen zu erzwingen, statt technische Schwachstellen anzugreifen.",
+      "translations": {
+        "en": {
+          "question": "What is the psychological manipulation of people called, aimed at getting them to reveal confidential information or perform security-relevant actions?",
+          "explanation": "Social engineering exploits human traits like trust, helpfulness or fear to obtain information or force actions, rather than attacking technical weaknesses.",
+          "answer": "Social engineering"
+        }
+      },
+      "answer": "Social Engineering"
+    },
+    {
+      "id": "ap1-sec-q69",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man das Sicherheitskonzept, bei dem mehrere unabhängige Schutzschichten (z. B. Firewall, Virenscanner, Zugriffskontrolle) übereinandergelegt werden, damit der Ausfall einer Schicht nicht sofort zum Totalschaden führt?",
+      "explanation": "Defense in Depth kombiniert mehrere unabhängige Sicherheitsmaßnahmen auf verschiedenen Ebenen, sodass ein einzelner Fehlschlag nicht die gesamte Sicherheit gefährdet.",
+      "translations": {
+        "en": {
+          "question": "What is the security concept called in which multiple independent protective layers (e.g. firewall, antivirus, access control) are stacked so that the failure of one layer doesn't cause total compromise?",
+          "explanation": "Defense in depth combines several independent security measures at different levels, so that a single failure doesn't jeopardize overall security.",
+          "answer": "Defense in depth"
+        }
+      },
+      "answer": "Defense in Depth (mehrschichtige Verteidigung)"
+    },
+    {
+      "id": "ap1-sec-q70",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wofür steht die Abkürzung RTO im Kontext von Notfallplänen, und was beschreibt sie?",
+      "explanation": "Ein RTO von 4 Stunden bedeutet, dass ein System spätestens 4 Stunden nach einem Ausfall wieder verfügbar sein muss. Gegenstück ist der RPO (maximal tolerierbarer Datenverlust).",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation RTO stand for in the context of disaster recovery plans, and what does it describe?",
+          "explanation": "An RTO of 4 hours means a system must be back up within 4 hours of a failure at the latest. Its counterpart is the RPO (maximum tolerable data loss).",
+          "answer": "Recovery Time Objective — the maximum tolerable time to restore a system after a failure"
+        }
+      },
+      "answer": "Recovery Time Objective — die maximal tolerierbare Zeit bis zur Wiederherstellung eines Systems nach einem Ausfall"
+    },
+    {
+      "id": "ap1-sec-q71",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man das Verfahren, bei dem aus beliebig langen Eingabedaten ein Wert fester Länge erzeugt wird, aus dem sich die Eingabedaten praktisch nicht zurückrechnen lassen?",
+      "explanation": "Hashfunktionen erzeugen deterministisch einen Wert fester Länge (Hashwert) aus beliebigen Eingabedaten; sie sind Einwegfunktionen und werden u. a. zur Integritätsprüfung und Passwortspeicherung genutzt.",
+      "translations": {
+        "en": {
+          "question": "What is the process called in which arbitrary-length input data is transformed into a fixed-length value that practically cannot be reversed back into the input?",
+          "explanation": "Hash functions deterministically produce a fixed-length value (hash) from arbitrary input; they are one-way functions used for integrity checks and password storage, among other things.",
+          "answer": "Hashing (a hash function)"
+        }
+      },
+      "answer": "Hashing (Hashfunktion)"
+    },
+    {
+      "id": "ap1-sec-q72",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie wird die Stelle genannt, die im Rahmen einer PKI digitale Zertifikate ausstellt und deren Echtheit bestätigt?",
+      "explanation": "Die Zertifizierungsstelle prüft die Identität eines Antragstellers und signiert dessen Zertifikat, wodurch andere Teilnehmer der Zuordnung von öffentlichem Schlüssel und Identität vertrauen können.",
+      "translations": {
+        "en": {
+          "question": "What is the entity called that issues digital certificates within a PKI and confirms their authenticity?",
+          "explanation": "The certificate authority verifies an applicant's identity and signs their certificate, allowing other parties to trust the binding between the public key and that identity.",
+          "answer": "Certificate authority (CA)"
+        }
+      },
+      "answer": "Zertifizierungsstelle (Certificate Authority, CA)"
+    },
+    {
+      "id": "ap1-sec-q73",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man Techniken wie bcrypt oder PBKDF2, die durch mehrfache, absichtlich verlangsamte Hash-Durchläufe Brute-Force-Angriffe auf Passwort-Hashes erschweren?",
+      "explanation": "Key-Stretching-Verfahren wie bcrypt oder PBKDF2 wenden die Hashfunktion absichtlich sehr viele Male an, um den Rechenaufwand pro Rateversuch künstlich zu erhöhen und Brute-Force-Angriffe zu verlangsamen.",
+      "translations": {
+        "en": {
+          "question": "What are techniques like bcrypt or PBKDF2 called that deliberately slow down password hashing through many repeated rounds, making brute-force attacks on password hashes harder?",
+          "explanation": "Key stretching techniques such as bcrypt or PBKDF2 deliberately apply the hash function many times, artificially increasing the computational cost per guess and slowing brute-force attacks.",
+          "answer": "Key stretching"
+        }
+      },
+      "answer": "Key Stretching (Schlüsselstreckung)"
+    },
+    {
+      "id": "ap1-sec-q74",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wofür steht die Abkürzung WPA im Kontext der WLAN-Sicherheit?",
+      "explanation": "WPA und seine Nachfolger WPA2 und WPA3 sind Sicherheitsstandards zur Verschlüsselung und Authentifizierung im WLAN, die das unsichere WEP abgelöst haben.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation WPA stand for in the context of WLAN security?",
+          "explanation": "WPA and its successors WPA2 and WPA3 are security standards for WLAN encryption and authentication that replaced the insecure WEP standard.",
+          "answer": "Wi-Fi Protected Access"
+        }
+      },
+      "answer": "Wi-Fi Protected Access"
+    },
+    {
+      "id": "ap1-sec-q75",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man ein Netzwerksegment, das speziell dazu dient, öffentlich erreichbare Server vom internen Firmennetz zu trennen und zusätzlich abzusichern?",
+      "explanation": "Eine DMZ isoliert öffentlich zugängliche Dienste (z. B. Webserver) so vom internen Netz, dass ein kompromittierter Server in der DMZ nicht direkt auf das interne Netz zugreifen kann.",
+      "translations": {
+        "en": {
+          "question": "What is a network segment called that specifically separates publicly reachable servers from the internal company network and adds an extra layer of protection?",
+          "explanation": "A DMZ isolates publicly accessible services (e.g. web servers) from the internal network, so that a compromised server in the DMZ cannot directly reach the internal network.",
+          "answer": "DMZ (demilitarized zone)"
+        }
+      },
+      "answer": "DMZ (Demilitarisierte Zone)"
+    },
+    {
+      "id": "ap1-sec-q76",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man die betriebliche Funktion, die im Unternehmen die Einhaltung der DSGVO überwacht und Beschäftigte sowie die Geschäftsleitung berät?",
+      "explanation": "Ein Datenschutzbeauftragter überwacht die Einhaltung der Datenschutzvorschriften, berät das Unternehmen und ist Ansprechpartner für Aufsichtsbehörden und Betroffene.",
+      "translations": {
+        "en": {
+          "question": "What is the organizational role called that monitors GDPR compliance within a company and advises staff and management?",
+          "explanation": "A data protection officer monitors compliance with data protection rules, advises the company, and serves as the contact point for supervisory authorities and data subjects.",
+          "answer": "Data protection officer (DPO)"
+        }
+      },
+      "answer": "Datenschutzbeauftragter (DSB)"
+    },
+    {
+      "id": "ap1-sec-q77",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie lautet der Fachbegriff für Schadsoftware, die heimlich Nutzeraktivitäten wie Tastatureingaben oder Surfverhalten ausspioniert und an Dritte weiterleitet?",
+      "explanation": "Spyware sammelt unbemerkt Informationen über den Nutzer, etwa Tastatureingaben oder besuchte Webseiten, und übermittelt diese ohne dessen Wissen an Dritte.",
+      "translations": {
+        "en": {
+          "question": "What is the technical term for malware that secretly spies on user activity, such as keystrokes or browsing behavior, and forwards it to third parties?",
+          "explanation": "Spyware unnoticeably collects information about the user, such as keystrokes or visited websites, and transmits it to third parties without the user's knowledge.",
+          "answer": "Spyware"
+        }
+      },
+      "answer": "Spyware"
+    },
+    {
+      "id": "ap1-sec-q78",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man Schadsoftware, die sich tief im Betriebssystem verankert und dabei ihre eigene Präsenz sowie die Aktivität anderer Malware verschleiert?",
+      "explanation": "Ein Rootkit manipuliert Betriebssystemfunktionen so, dass es sich selbst und andere Schadsoftware vor Virenscannern und dem Nutzer verbirgt, was die Erkennung stark erschwert.",
+      "translations": {
+        "en": {
+          "question": "What is malware called that embeds itself deep within the operating system and conceals both its own presence and the activity of other malware?",
+          "explanation": "A rootkit manipulates operating system functions to hide itself and other malware from antivirus tools and the user, making detection very difficult.",
+          "answer": "Rootkit"
+        }
+      },
+      "answer": "Rootkit"
+    },
+    {
+      "id": "ap1-sec-q79",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Was versteht man unter „Patch-Management“?",
+      "explanation": "Patch-Management umfasst das Erkennen, Testen, Freigeben und dokumentierte Einspielen von Updates, um bekannte Sicherheitslücken zeitnah zu schließen.",
+      "translations": {
+        "en": {
+          "question": "What does \"patch management\" mean?",
+          "explanation": "Patch management covers identifying, testing, approving and documenting the rollout of updates in order to close known vulnerabilities in a timely manner.",
+          "answer": "The organized process of deploying software and security updates (patches) to IT systems"
+        }
+      },
+      "answer": "Der geregelte Prozess zum Einspielen von Software- und Sicherheitsupdates (Patches) auf IT-Systemen"
+    },
+    {
+      "id": "ap1-sec-q80",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man den Prozess der systematischen Erkennung, Bewältigung und Nachbereitung von IT-Sicherheitsvorfällen?",
+      "explanation": "Incident Response beschreibt den strukturierten Ablauf von der Erkennung eines Sicherheitsvorfalls über die Eindämmung und Beseitigung der Ursache bis zur abschließenden Nachbereitung.",
+      "translations": {
+        "en": {
+          "question": "What is the process called for systematically detecting, handling and reviewing IT security incidents?",
+          "explanation": "Incident response describes the structured process from detecting a security incident, through containment and root-cause remediation, to the final follow-up review.",
+          "answer": "Incident response"
+        }
+      },
+      "answer": "Incident Response (Vorfallsreaktion)"
+    },
+    {
+      "id": "ap1-sec-q81",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man eine Sicherungskopie, die räumlich getrennt vom Originalstandort aufbewahrt wird, um Schäden durch lokale Katastrophen wie Brand oder Diebstahl zu vermeiden?",
+      "explanation": "Ein Offsite-Backup wird an einem anderen physischen Standort als die Originaldaten gelagert, sodass ein lokales Ereignis wie ein Brand nicht auch die Sicherungskopie zerstört.",
+      "translations": {
+        "en": {
+          "question": "What is a backup copy called that is stored at a location physically separate from the original, to protect against local disasters such as fire or theft?",
+          "explanation": "An offsite backup is stored at a different physical location than the original data, so a local event like a fire doesn't also destroy the backup copy.",
+          "answer": "Offsite backup"
+        }
+      },
+      "answer": "Offsite-Backup (externe Sicherung)"
+    },
+    {
+      "id": "ap1-sec-q82",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie lautet der Fachbegriff für die elektronische Bestätigung, dass ein Dokument von einer bestimmten Person stammt und seit der Unterschrift nicht verändert wurde?",
+      "explanation": "Eine digitale Signatur wird mit dem privaten Schlüssel des Unterzeichners erzeugt und lässt sich mit dessen öffentlichem Schlüssel prüfen, wodurch Herkunft und Unverändertheit des Dokuments nachgewiesen werden.",
+      "translations": {
+        "en": {
+          "question": "What is the technical term for the electronic confirmation that a document originates from a specific person and has not been altered since signing?",
+          "explanation": "A digital signature is created using the signer's private key and verified with their public key, proving both the origin and the integrity of the document.",
+          "answer": "Digital signature"
+        }
+      },
+      "answer": "Digitale Signatur"
+    },
+    {
+      "id": "ap1-sec-q83",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man das organisatorische Prinzip, nach dem mindestens zwei Personen an einer kritischen Handlung beteiligt sein müssen, damit diese durchgeführt werden kann?",
+      "explanation": "Das Vier-Augen-Prinzip verlangt, dass kritische Handlungen wie größere Überweisungen oder Systemänderungen von mindestens zwei Personen unabhängig geprüft oder freigegeben werden, um Missbrauch und Fehler zu erschweren.",
+      "translations": {
+        "en": {
+          "question": "What is the organizational principle called that requires at least two people to be involved before a critical action can be carried out?",
+          "explanation": "The four-eyes principle requires critical actions, such as large transfers or system changes, to be independently checked or approved by at least two people, making abuse and mistakes harder.",
+          "answer": "Four-eyes principle (dual control)"
+        }
+      },
+      "answer": "Vier-Augen-Prinzip"
+    },
+    {
+      "id": "ap1-sec-q84",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie wird eine E-Mail-Betrugsvariante genannt, bei der sich Angreifer als Geschäftsführung ausgeben, um Mitarbeiter zu dringenden Geldüberweisungen zu bewegen?",
+      "explanation": "Beim CEO-Fraud geben sich Angreifer per E-Mail als hochrangige Führungskraft aus und fordern unter Zeitdruck eine vertrauliche, dringende Überweisung — eine gezielte Form des Social Engineering.",
+      "translations": {
+        "en": {
+          "question": "What is the email fraud scheme called in which attackers impersonate company executives to pressure employees into making urgent money transfers?",
+          "explanation": "In CEO fraud, attackers impersonate a senior executive by email and demand a confidential, urgent transfer under time pressure — a targeted form of social engineering.",
+          "answer": "CEO fraud (business email compromise)"
+        }
+      },
+      "answer": "CEO-Fraud (Chef-Masche)"
+    },
+    {
+      "id": "ap1-sec-q85",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wofür steht die Abkürzung TOM im Datenschutzkontext der DSGVO?",
+      "explanation": "TOM bezeichnet nach Art. 32 DSGVO die Gesamtheit technischer (z. B. Verschlüsselung) und organisatorischer (z. B. Schulungen) Maßnahmen zum Schutz personenbezogener Daten.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation TOM stand for in the GDPR data protection context?",
+          "explanation": "Under Art. 32 GDPR, TOMs are the combination of technical (e.g. encryption) and organizational (e.g. training) measures used to protect personal data.",
+          "answer": "Technical and organizational measures"
+        }
+      },
+      "answer": "Technische und organisatorische Maßnahmen"
+    },
+    {
+      "id": "ap1-sec-q86",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man den Angriffstyp, bei dem sich ein Angreifer unbemerkt zwischen zwei Kommunikationspartner schaltet, um Daten mitzulesen oder zu manipulieren?",
+      "explanation": "Bei einem Man-in-the-Middle-Angriff klinkt sich der Angreifer unbemerkt in die Kommunikation zweier Parteien ein und kann Daten abfangen, mitlesen oder sogar verändern.",
+      "translations": {
+        "en": {
+          "question": "What is the attack type called in which an attacker secretly places themselves between two communicating parties to read or manipulate the data?",
+          "explanation": "In a man-in-the-middle attack, the attacker secretly inserts themselves into the communication between two parties, allowing them to intercept, read, or even alter the data.",
+          "answer": "Man-in-the-middle attack"
+        }
+      },
+      "answer": "Man-in-the-Middle-Angriff"
+    },
+    {
+      "id": "ap1-sec-q87",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie lautet die Bezeichnung des in Art. 15 DSGVO geregelten Rechts, das Betroffene nutzen können, um zu erfahren, welche Daten ein Unternehmen über sie gespeichert hat?",
+      "explanation": "Das Auskunftsrecht erlaubt Betroffenen, vom Verantwortlichen Auskunft darüber zu verlangen, ob und welche personenbezogenen Daten über sie verarbeitet werden.",
+      "translations": {
+        "en": {
+          "question": "What is the right regulated in Art. 15 GDPR called, which data subjects can use to find out what data a company holds about them?",
+          "explanation": "The right of access allows data subjects to request confirmation from the controller as to whether and which personal data about them is being processed.",
+          "answer": "Right of access"
+        }
+      },
+      "answer": "Auskunftsrecht (Recht auf Auskunft)"
+    },
+    {
+      "id": "ap1-sec-q88",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man einen Sicherheitscode, der nur für eine einzige Anmeldung oder Transaktion gültig ist und danach automatisch verfällt, z. B. bei der Zwei-Faktor-Authentifizierung?",
+      "explanation": "Ein OTP ist nur kurzzeitig oder für eine einzige Nutzung gültig, wodurch ein abgefangener Code für spätere Anmeldeversuche nicht mehr verwendet werden kann.",
+      "translations": {
+        "en": {
+          "question": "What is a security code called that is only valid for a single login or transaction and automatically expires afterwards, e.g. in two-factor authentication?",
+          "explanation": "An OTP is only valid briefly or for a single use, so an intercepted code cannot be reused for later login attempts.",
+          "answer": "One-time password (OTP)"
+        }
+      },
+      "answer": "Einmalpasswort (One-Time Password, OTP)"
+    },
+    {
+      "id": "ap1-sec-q89",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Ein System soll eine Verfügbarkeit von 99,9 % im Jahr erreichen. Wie viele Minuten Ausfallzeit sind dafür pro Jahr maximal zulässig (gerundet)?",
+      "explanation": "Ein Jahr hat 525.600 Minuten (365 Tage × 24 Stunden × 60 Minuten). 0,1 % davon entsprechen rund 525,6 Minuten zulässiger Ausfallzeit pro Jahr.",
+      "translations": {
+        "en": {
+          "question": "A system is supposed to reach 99.9% availability per year. How many minutes of downtime per year are allowed at most (rounded)?",
+          "explanation": "A year has 525,600 minutes (365 days x 24 hours x 60 minutes). 0.1% of that is about 525.6 minutes of allowed downtime per year.",
+          "answer": "about 525.6 minutes (roughly 8.76 hours)"
+        }
+      },
+      "answer": "ca. 525,6 Minuten (rund 8,76 Stunden)"
+    },
+    {
+      "id": "ap1-sec-q90",
+      "type": "text",
+      "category": "IT-Sicherheit & Datenschutz",
+      "question": "Wie nennt man eine Regelung, die festlegt, wie lange Sicherungskopien aufbewahrt und wann sie automatisch gelöscht werden, um Speicherplatz zu sparen, aber weiterhin mehrere Wiederherstellungspunkte vorzuhalten?",
+      "explanation": "Eine Retention-Policy definiert, wie lange welche Sicherungsgeneration (z. B. täglich, wöchentlich, monatlich) aufbewahrt wird, bevor sie automatisiert gelöscht oder überschrieben wird.",
+      "translations": {
+        "en": {
+          "question": "What is a rule called that defines how long backup copies are kept and when they are automatically deleted, to save storage space while still keeping several recovery points?",
+          "explanation": "A retention policy defines how long each backup generation (e.g. daily, weekly, monthly) is kept before it is automatically deleted or overwritten.",
+          "answer": "Backup retention policy"
+        }
+      },
+      "answer": "Aufbewahrungsrichtlinie (Retention-Policy) für Backups"
+    }
+  ]
+}

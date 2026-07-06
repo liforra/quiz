@@ -1,0 +1,2334 @@
+{
+  "questions": [
+    {
+      "id": "ap1-hw-q01",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Hardwarekomponente führt die eigentlichen Berechnungen eines Computers aus?",
+      "options": [
+        "Arbeitsspeicher (RAM)",
+        "Prozessor (CPU)",
+        "SSD",
+        "Netzteil"
+      ],
+      "answer": "Prozessor (CPU)",
+      "explanation": "Die CPU (Central Processing Unit) ist das Rechen- und Steuerwerk des Computers. RAM speichert nur zwischen, die SSD speichert dauerhaft, das Netzteil versorgt mit Strom.",
+      "translations": {
+        "en": {
+          "question": "Which hardware component performs the actual computations of a computer?",
+          "options": [
+            "Main memory (RAM)",
+            "Processor (CPU)",
+            "SSD",
+            "Power supply"
+          ],
+          "answer": "Processor (CPU)",
+          "explanation": "The CPU (Central Processing Unit) is the computer's arithmetic and control unit. RAM only holds data temporarily, the SSD stores persistently, the PSU provides power."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q02",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Speicher verliert seinen Inhalt, sobald der Computer ausgeschaltet wird?",
+      "options": [
+        "SSD",
+        "HDD",
+        "Arbeitsspeicher (RAM)",
+        "USB-Stick"
+      ],
+      "answer": "Arbeitsspeicher (RAM)",
+      "explanation": "RAM ist flüchtiger (volatiler) Speicher — ohne Stromversorgung gehen die Daten verloren. SSD, HDD und USB-Stick speichern persistent.",
+      "translations": {
+        "en": {
+          "question": "Which type of memory loses its contents as soon as the computer is switched off?",
+          "options": [
+            "SSD",
+            "HDD",
+            "Main memory (RAM)",
+            "USB flash drive"
+          ],
+          "answer": "Main memory (RAM)",
+          "explanation": "RAM is volatile memory — without power the data is lost. SSD, HDD and USB drives store data persistently."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q03",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein PC nimmt durchschnittlich 300 W auf und läuft 8 Stunden täglich an 250 Arbeitstagen im Jahr. Wie hoch sind die jährlichen Stromkosten bei 0,30 €/kWh?",
+      "options": [
+        "60 €",
+        "180 €",
+        "600 €",
+        "1.800 €"
+      ],
+      "answer": "180 €",
+      "explanation": "0,3 kW × 8 h × 250 Tage = 600 kWh pro Jahr. 600 kWh × 0,30 €/kWh = 180 €.",
+      "translations": {
+        "en": {
+          "question": "A PC draws an average of 300 W and runs 8 hours a day on 250 working days per year. What are the annual electricity costs at €0.30/kWh?",
+          "options": [
+            "€60",
+            "€180",
+            "€600",
+            "€1,800"
+          ],
+          "answer": "€180",
+          "explanation": "0.3 kW × 8 h × 250 days = 600 kWh per year. 600 kWh × €0.30/kWh = €180."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q04",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Bei welchem RAID-Level werden alle Daten identisch auf zwei Festplatten gespiegelt?",
+      "options": [
+        "RAID 0",
+        "RAID 1",
+        "RAID 5",
+        "RAID 10"
+      ],
+      "answer": "RAID 1",
+      "explanation": "RAID 1 = Spiegelung (Mirroring): Fällt eine Platte aus, sind alle Daten noch auf der zweiten vorhanden. RAID 0 verteilt ohne Redundanz, RAID 5 nutzt verteilte Parität.",
+      "translations": {
+        "en": {
+          "question": "In which RAID level is all data mirrored identically onto two disks?",
+          "options": [
+            "RAID 0",
+            "RAID 1",
+            "RAID 5",
+            "RAID 10"
+          ],
+          "answer": "RAID 1",
+          "explanation": "RAID 1 = mirroring: if one disk fails, all data is still on the second one. RAID 0 stripes without redundancy, RAID 5 uses distributed parity."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q05",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche der folgenden Geräte sind Eingabegeräte?",
+      "options": [
+        "Tastatur",
+        "Monitor",
+        "Scanner",
+        "Drucker",
+        "Maus"
+      ],
+      "answer": [
+        "Tastatur",
+        "Scanner",
+        "Maus"
+      ],
+      "explanation": "Eingabegeräte liefern Daten AN den Computer (Tastatur, Maus, Scanner). Monitor und Drucker sind Ausgabegeräte.",
+      "translations": {
+        "en": {
+          "question": "Which of the following devices are input devices?",
+          "options": [
+            "Keyboard",
+            "Monitor",
+            "Scanner",
+            "Printer",
+            "Mouse"
+          ],
+          "answer": [
+            "Keyboard",
+            "Scanner",
+            "Mouse"
+          ],
+          "explanation": "Input devices deliver data TO the computer (keyboard, mouse, scanner). Monitor and printer are output devices."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q06",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Maßnahmen gehören zu einem ergonomisch eingerichteten Bildschirmarbeitsplatz?",
+      "options": [
+        "Höhenverstellbarer Bürostuhl",
+        "Monitor blendfrei, seitlich zum Fenster aufgestellt",
+        "Ausreichende, flimmerfreie Beleuchtung",
+        "Monitor direkt vor einem Fenster mit Gegenlicht",
+        "Möglichst kleine Schriftgröße, um Platz zu sparen"
+      ],
+      "answer": [
+        "Höhenverstellbarer Bürostuhl",
+        "Monitor blendfrei, seitlich zum Fenster aufgestellt",
+        "Ausreichende, flimmerfreie Beleuchtung"
+      ],
+      "explanation": "Blickrichtung parallel zum Fenster vermeidet Blendung und Reflexionen. Gegenlicht und zu kleine Schrift belasten die Augen.",
+      "translations": {
+        "en": {
+          "question": "Which measures are part of an ergonomically designed computer workstation?",
+          "options": [
+            "Height-adjustable office chair",
+            "Monitor positioned glare-free, sideways to the window",
+            "Sufficient, flicker-free lighting",
+            "Monitor placed directly in front of a window with backlight",
+            "Smallest possible font size to save space"
+          ],
+          "answer": [
+            "Height-adjustable office chair",
+            "Monitor positioned glare-free, sideways to the window",
+            "Sufficient, flicker-free lighting"
+          ],
+          "explanation": "A viewing direction parallel to the window avoids glare and reflections. Backlight and tiny fonts strain the eyes."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q07",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aussagen über eine USV (unterbrechungsfreie Stromversorgung) treffen zu?",
+      "options": [
+        "Sie überbrückt kurzzeitige Stromausfälle",
+        "Sie ermöglicht ein geordnetes Herunterfahren der Server",
+        "Eine Online-USV schützt auch vor Spannungsschwankungen",
+        "Sie erhöht die Internetbandbreite",
+        "Sie macht Datensicherungen überflüssig"
+      ],
+      "answer": [
+        "Sie überbrückt kurzzeitige Stromausfälle",
+        "Sie ermöglicht ein geordnetes Herunterfahren der Server",
+        "Eine Online-USV schützt auch vor Spannungsschwankungen"
+      ],
+      "explanation": "Eine USV sichert die Stromversorgung, ersetzt aber weder Backups noch beeinflusst sie das Netzwerk. Online-USVs (Doppelwandler) liefern dauerhaft sauberen Strom.",
+      "translations": {
+        "en": {
+          "question": "Which statements about a UPS (uninterruptible power supply) are true?",
+          "options": [
+            "It bridges short power outages",
+            "It allows servers to shut down gracefully",
+            "An online UPS also protects against voltage fluctuations",
+            "It increases internet bandwidth",
+            "It makes data backups unnecessary"
+          ],
+          "answer": [
+            "It bridges short power outages",
+            "It allows servers to shut down gracefully",
+            "An online UPS also protects against voltage fluctuations"
+          ],
+          "explanation": "A UPS secures the power supply, but it neither replaces backups nor affects the network. Online (double-conversion) UPSs continuously deliver clean power."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q08",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche der folgenden Schnittstellen dienen der Bildausgabe an einen Monitor?",
+      "options": [
+        "HDMI",
+        "DisplayPort",
+        "VGA",
+        "SATA",
+        "RJ45"
+      ],
+      "answer": [
+        "HDMI",
+        "DisplayPort",
+        "VGA"
+      ],
+      "explanation": "HDMI und DisplayPort sind aktuelle digitale Bildschnittstellen, VGA die alte analoge. SATA verbindet Laufwerke, RJ45 ist der Netzwerkanschluss.",
+      "translations": {
+        "en": {
+          "question": "Which of the following interfaces are used for video output to a monitor?",
+          "options": [
+            "HDMI",
+            "DisplayPort",
+            "VGA",
+            "SATA",
+            "RJ45"
+          ],
+          "answer": [
+            "HDMI",
+            "DisplayPort",
+            "VGA"
+          ],
+          "explanation": "HDMI and DisplayPort are current digital video interfaces, VGA is the old analog one. SATA connects drives, RJ45 is the network port."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q09",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wie berechnet man die elektrische Leistung P aus Spannung und Stromstärke?",
+      "answer": "P = U × I (Leistung = Spannung mal Stromstärke)",
+      "explanation": "Beispiel: 230 V × 2 A = 460 W. Die Formel braucht man in der AP1 z. B. für Netzteil- und USV-Dimensionierung.",
+      "translations": {
+        "en": {
+          "question": "How do you calculate electrical power P from voltage and current?",
+          "answer": "P = U × I (power = voltage times current)",
+          "explanation": "Example: 230 V × 2 A = 460 W. You need this formula in AP1 e.g. for sizing power supplies and UPS units."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q10",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wofür steht die Abkürzung SSD und welchen wesentlichen Vorteil hat sie gegenüber einer HDD?",
+      "answer": "Solid State Drive — keine beweglichen Teile, dadurch deutlich schnellere Zugriffe, robuster und leiser",
+      "explanation": "HDDs speichern auf rotierenden Magnetscheiben, SSDs in Flash-Zellen. Vorteil der HDD: geringerer Preis pro Terabyte.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation SSD stand for, and what is its key advantage over an HDD?",
+          "answer": "Solid State Drive — no moving parts, therefore much faster access, more robust and silent",
+          "explanation": "HDDs store data on rotating magnetic platters, SSDs in flash cells. The HDD's advantage: lower price per terabyte."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q11",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was misst der PUE-Wert eines Rechenzentrums und welcher Wert wäre ideal?",
+      "answer": "Power Usage Effectiveness: Verhältnis der Gesamtenergieaufnahme des Rechenzentrums zur Energieaufnahme der IT-Systeme; ideal wäre 1,0",
+      "explanation": "PUE = Gesamtenergie ÷ IT-Energie. Ein PUE von 1,5 heißt: Für jede kWh IT-Last werden 0,5 kWh zusätzlich für Kühlung, USV und Infrastruktur verbraucht.",
+      "translations": {
+        "en": {
+          "question": "What does a data center's PUE value measure, and what value would be ideal?",
+          "answer": "Power Usage Effectiveness: the ratio of the data center's total energy consumption to the energy consumed by the IT systems; the ideal value would be 1.0",
+          "explanation": "PUE = total energy ÷ IT energy. A PUE of 1.5 means: for every kWh of IT load, an extra 0.5 kWh is spent on cooling, UPS and infrastructure."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q12",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Nennen Sie zwei Schutzmaßnahmen gegen elektrostatische Entladung (ESD) beim Arbeiten an Hardwarekomponenten.",
+      "answer": "Erdungsarmband tragen, auf einer ESD-Matte arbeiten, vor dem Arbeiten geerdetes Metall (z. B. Gehäuse) berühren, Komponenten in Antistatikbeuteln lagern",
+      "explanation": "Schon Entladungen unterhalb der menschlichen Wahrnehmungsschwelle (~3000 V) können Halbleiter dauerhaft beschädigen. Zwei Maßnahmen genügen als Antwort.",
+      "translations": {
+        "en": {
+          "question": "Name two protective measures against electrostatic discharge (ESD) when working on hardware components.",
+          "answer": "Wear a grounding wrist strap, work on an ESD mat, touch grounded metal (e.g. the case) before working, store components in antistatic bags",
+          "explanation": "Even discharges below the human perception threshold (~3000 V) can permanently damage semiconductors. Any two measures are a sufficient answer."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q13",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Mainboard-Formfaktor hat mit ca. 305 × 244 mm die größten Abmessungen unter den gängigen Standardformaten?",
+      "options": [
+        "Mini-ITX",
+        "Micro-ATX",
+        "ATX",
+        "Nano-ITX"
+      ],
+      "answer": "ATX",
+      "explanation": "ATX ist mit 305 × 244 mm der größte gängige Standardformfaktor. Micro-ATX ist kleiner (244 × 244 mm), Mini-ITX (170 × 170 mm) und Nano-ITX (120 × 120 mm) sind noch kompakter.",
+      "translations": {
+        "en": {
+          "question": "Which motherboard form factor has the largest dimensions among common standard formats, at approx. 305 × 244 mm?",
+          "options": [
+            "Mini-ITX",
+            "Micro-ATX",
+            "ATX",
+            "Nano-ITX"
+          ],
+          "answer": "ATX",
+          "explanation": "ATX is the largest common standard form factor at 305 × 244 mm. Micro-ATX is smaller (244 × 244 mm), and Mini-ITX (170 × 170 mm) and Nano-ITX (120 × 120 mm) are even more compact."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q14",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wie viele Erweiterungssteckplätze (Slots) bietet ein Mini-ITX-Mainboard typischerweise?",
+      "options": [
+        "Einen",
+        "Zwei",
+        "Vier",
+        "Sieben"
+      ],
+      "answer": "Einen",
+      "explanation": "Mini-ITX-Boards sind auf minimale Baugröße optimiert und besitzen deshalb nur einen einzigen Erweiterungssteckplatz (meist PCIe x16). ATX-Boards bieten dagegen bis zu sieben.",
+      "translations": {
+        "en": {
+          "question": "How many expansion slots does a Mini-ITX motherboard typically offer?",
+          "options": [
+            "One",
+            "Two",
+            "Four",
+            "Seven"
+          ],
+          "answer": "One",
+          "explanation": "Mini-ITX boards are optimized for minimal size and therefore have only a single expansion slot (usually PCIe x16). ATX boards, by contrast, offer up to seven."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q15",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Komponenten befinden sich typischerweise direkt auf einem Mainboard bzw. sind fest damit verbunden?",
+      "options": [
+        "Chipsatz",
+        "CPU-Sockel",
+        "RAM-Steckplätze (DIMM-Slots)",
+        "Netzteil",
+        "Grafikkarte im dedizierten Slot"
+      ],
+      "answer": [
+        "Chipsatz",
+        "CPU-Sockel",
+        "RAM-Steckplätze (DIMM-Slots)"
+      ],
+      "explanation": "Chipsatz, CPU-Sockel und DIMM-Slots sind feste Bestandteile des Mainboards. Das Netzteil ist eine separate Komponente, eine Grafikkarte wird nur eingesteckt, ist aber nicht fest verbaut.",
+      "translations": {
+        "en": {
+          "question": "Which components are typically located directly on a motherboard or are permanently attached to it?",
+          "options": [
+            "Chipset",
+            "CPU socket",
+            "RAM slots (DIMM slots)",
+            "Power supply",
+            "Dedicated graphics card in its slot"
+          ],
+          "answer": [
+            "Chipset",
+            "CPU socket",
+            "RAM slots (DIMM slots)"
+          ],
+          "explanation": "The chipset, CPU socket and DIMM slots are fixed parts of the motherboard. The power supply is a separate component, and a graphics card is only plugged in, not permanently installed."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q16",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche zentrale Aufgabe hat der Chipsatz auf einem Mainboard?",
+      "answer": "Er steuert die Kommunikation zwischen CPU, RAM, Peripherie und Anschlüssen (z. B. USB, SATA) und regelt die Datenflüsse zwischen den Komponenten.",
+      "explanation": "Der Chipsatz (bei modernen Systemen oft eine Southbridge-Funktion) verbindet CPU mit den restlichen Komponenten und bestimmt, welche Schnittstellen und Erweiterungen unterstützt werden.",
+      "translations": {
+        "en": {
+          "question": "What is the central function of the chipset on a motherboard?",
+          "answer": "It manages communication between CPU, RAM, peripherals and ports (e.g. USB, SATA) and controls data flow between components.",
+          "explanation": "The chipset (in modern systems often taking on the southbridge role) connects the CPU to the rest of the components and determines which interfaces and expansions are supported."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q17",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Formfaktor eignet sich am besten für ein sehr kompaktes Büro-System mit geringem Platzbedarf?",
+      "options": [
+        "ATX",
+        "E-ATX",
+        "Mini-ITX",
+        "SSI-EEB"
+      ],
+      "answer": "Mini-ITX",
+      "explanation": "Mini-ITX-Boards sind speziell für kompakte Gehäuse konzipiert. E-ATX und SSI-EEB sind größere Serverformate, ATX ist der Standard-Desktop-Formfaktor.",
+      "translations": {
+        "en": {
+          "question": "Which form factor is best suited for a very compact office system with minimal space requirements?",
+          "options": [
+            "ATX",
+            "E-ATX",
+            "Mini-ITX",
+            "SSI-EEB"
+          ],
+          "answer": "Mini-ITX",
+          "explanation": "Mini-ITX boards are specifically designed for compact cases. E-ATX and SSI-EEB are larger server formats, while ATX is the standard desktop form factor."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q18",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was gibt die Taktfrequenz einer CPU in GHz an?",
+      "options": [
+        "Die Anzahl der Rechenkerne",
+        "Die Anzahl der Rechenzyklen pro Sekunde",
+        "Die Größe des Cache-Speichers",
+        "Die Anzahl der unterstützten PCIe-Lanes"
+      ],
+      "answer": "Die Anzahl der Rechenzyklen pro Sekunde",
+      "explanation": "Die Taktfrequenz gibt an, wie viele Zyklen die CPU pro Sekunde ausführen kann (1 GHz = 1 Milliarde Zyklen/Sekunde). Sie ist unabhängig von Kernanzahl und Cache-Größe.",
+      "translations": {
+        "en": {
+          "question": "What does a CPU's clock frequency in GHz indicate?",
+          "options": [
+            "The number of processing cores",
+            "The number of processing cycles per second",
+            "The size of the cache memory",
+            "The number of supported PCIe lanes"
+          ],
+          "answer": "The number of processing cycles per second",
+          "explanation": "The clock frequency indicates how many cycles the CPU can execute per second (1 GHz = 1 billion cycles/second). It is independent of core count and cache size."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q19",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Cache einer CPU ist am kleinsten, aber am schnellsten?",
+      "options": [
+        "L1-Cache",
+        "L2-Cache",
+        "L3-Cache",
+        "Arbeitsspeicher"
+      ],
+      "answer": "L1-Cache",
+      "explanation": "Der L1-Cache ist jedem Kern direkt zugeordnet, sehr klein (meist wenige KB) und extrem schnell. L2 ist größer aber langsamer, L3 wird von mehreren Kernen geteilt und ist am größten unter den Caches.",
+      "translations": {
+        "en": {
+          "question": "Which CPU cache is the smallest but fastest?",
+          "options": [
+            "L1 cache",
+            "L2 cache",
+            "L3 cache",
+            "Main memory"
+          ],
+          "answer": "L1 cache",
+          "explanation": "L1 cache is directly assigned to each core, very small (usually a few KB) and extremely fast. L2 is larger but slower, and L3 is shared among multiple cores and is the largest of the caches."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q20",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Warum muss der CPU-Sockel exakt zum Mainboard-Chipsatz und zur gewählten CPU passen?",
+      "answer": "Der Sockel definiert die physische Pin-/Kontaktbelegung sowie die elektrische Kommunikation; passt der Sockeltyp nicht, lässt sich die CPU weder mechanisch einsetzen noch elektrisch betreiben.",
+      "explanation": "Beispiele: Intel LGA1700 und AMD AM5 sind völlig unterschiedliche Sockelformen mit unterschiedlicher Pin-Anzahl und -Anordnung — eine CPU passt nur in den dafür vorgesehenen Sockel.",
+      "translations": {
+        "en": {
+          "question": "Why must the CPU socket exactly match the motherboard chipset and the chosen CPU?",
+          "answer": "The socket defines the physical pin/contact layout and electrical communication; if the socket type doesn't match, the CPU can neither be mechanically installed nor electrically operated.",
+          "explanation": "Examples: Intel LGA1700 and AMD AM5 are completely different socket shapes with different pin counts and arrangements — a CPU only fits the socket it was designed for."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q21",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Faktoren beeinflussen die Leistungsfähigkeit einer CPU?",
+      "options": [
+        "Anzahl der Kerne",
+        "Taktfrequenz",
+        "Cache-Größe",
+        "Auflösung des Monitors",
+        "Architektur/IPC (Instructions per Cycle)"
+      ],
+      "answer": [
+        "Anzahl der Kerne",
+        "Taktfrequenz",
+        "Cache-Größe",
+        "Architektur/IPC (Instructions per Cycle)"
+      ],
+      "explanation": "Kernanzahl, Takt, Cache und die zugrundeliegende Architektur (IPC) bestimmen gemeinsam die Rechenleistung. Die Monitorauflösung hat keinen Einfluss auf die CPU-Leistung.",
+      "translations": {
+        "en": {
+          "question": "Which factors influence a CPU's performance?",
+          "options": [
+            "Number of cores",
+            "Clock frequency",
+            "Cache size",
+            "Monitor resolution",
+            "Architecture/IPC (instructions per cycle)"
+          ],
+          "answer": [
+            "Number of cores",
+            "Clock frequency",
+            "Cache size",
+            "Architecture/IPC (instructions per cycle)"
+          ],
+          "explanation": "Core count, clock speed, cache and the underlying architecture (IPC) together determine computing performance. Monitor resolution has no effect on CPU performance."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q22",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was versteht man unter „Hyper-Threading“ bzw. „SMT“ (Simultaneous Multithreading)?",
+      "options": [
+        "Ein physischer Kern kann zwei Threads gleichzeitig verarbeiten",
+        "Die CPU übertaktet sich automatisch",
+        "Die Anzahl der physischen Kerne wird verdoppelt",
+        "Der Cache wird auf zwei Kerne aufgeteilt"
+      ],
+      "answer": "Ein physischer Kern kann zwei Threads gleichzeitig verarbeiten",
+      "explanation": "SMT/Hyper-Threading erlaubt es einem physischen Kern, zwei logische Threads parallel zu bearbeiten, indem ungenutzte Ausführungseinheiten besser ausgelastet werden — es entsteht dabei aber kein zweiter physischer Kern.",
+      "translations": {
+        "en": {
+          "question": "What is meant by \"Hyper-Threading\" or \"SMT\" (Simultaneous Multithreading)?",
+          "options": [
+            "A single physical core can process two threads simultaneously",
+            "The CPU automatically overclocks itself",
+            "The number of physical cores is doubled",
+            "The cache is split across two cores"
+          ],
+          "answer": "A single physical core can process two threads simultaneously",
+          "explanation": "SMT/Hyper-Threading allows one physical core to handle two logical threads in parallel by better utilizing idle execution units — however, no second physical core is actually created."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q23",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was bedeutet „thermisches Drosseln“ (Thermal Throttling) bei einer CPU?",
+      "answer": "Die CPU reduziert bei Überhitzung automatisch ihre Taktfrequenz, um die Temperatur zu senken und eine Beschädigung zu verhindern.",
+      "explanation": "Thermal Throttling ist ein Schutzmechanismus: Wird eine kritische Temperatur überschritten, senkt die CPU Takt (und ggf. Spannung), was die Leistung reduziert, aber die Hardware schützt.",
+      "translations": {
+        "en": {
+          "question": "What does \"thermal throttling\" mean for a CPU?",
+          "answer": "When overheating, the CPU automatically reduces its clock frequency to lower the temperature and prevent damage.",
+          "explanation": "Thermal throttling is a protective mechanism: if a critical temperature is exceeded, the CPU lowers its clock speed (and possibly voltage), reducing performance but protecting the hardware."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q24",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher RAM-Typ ist der aktuellste unter den folgenden und bietet die höchste Datenrate?",
+      "options": [
+        "DDR3",
+        "DDR4",
+        "DDR5",
+        "SDRAM"
+      ],
+      "answer": "DDR5",
+      "explanation": "DDR5 ist die neueste Generation und bietet gegenüber DDR4 höhere Datenraten und Kapazitäten pro Modul. SDRAM ist ein veralteter Vorgängerstandard.",
+      "translations": {
+        "en": {
+          "question": "Which of the following RAM types is the most current and offers the highest data rate?",
+          "options": [
+            "DDR3",
+            "DDR4",
+            "DDR5",
+            "SDRAM"
+          ],
+          "answer": "DDR5",
+          "explanation": "DDR5 is the newest generation and offers higher data rates and per-module capacities than DDR4. SDRAM is an outdated predecessor standard."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q25",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wofür steht ECC bei Arbeitsspeicher?",
+      "options": [
+        "Extended Clock Control",
+        "Error Correcting Code",
+        "Enhanced Cache Capacity",
+        "Electronic Component Cooling"
+      ],
+      "answer": "Error Correcting Code",
+      "explanation": "ECC-RAM kann kleine Bitfehler selbstständig erkennen und korrigieren. Es wird vor allem in Servern eingesetzt, wo Datenintegrität kritisch ist.",
+      "translations": {
+        "en": {
+          "question": "What does ECC stand for in the context of RAM?",
+          "options": [
+            "Extended Clock Control",
+            "Error Correcting Code",
+            "Enhanced Cache Capacity",
+            "Electronic Component Cooling"
+          ],
+          "answer": "Error Correcting Code",
+          "explanation": "ECC RAM can detect and correct small bit errors on its own. It is mainly used in servers, where data integrity is critical."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q26",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist der Vorteil des Dual-Channel-Betriebs von Arbeitsspeicher gegenüber Single-Channel?",
+      "answer": "Durch die parallele Ansteuerung zweier RAM-Module verdoppelt sich theoretisch die Speicherbandbreite, was die Datenübertragung zwischen CPU und RAM beschleunigt.",
+      "explanation": "Dual-Channel benötigt zwei (oder ein Vielfaches von zwei) identische bzw. kompatible RAM-Module, die in den entsprechend markierten Slots stecken müssen, um den Bandbreitenvorteil zu erzielen.",
+      "translations": {
+        "en": {
+          "question": "What is the advantage of dual-channel RAM operation over single-channel?",
+          "answer": "By addressing two RAM modules in parallel, memory bandwidth is theoretically doubled, speeding up data transfer between CPU and RAM.",
+          "explanation": "Dual-channel requires two (or a multiple of two) identical or compatible RAM modules installed in the correspondingly marked slots to achieve the bandwidth benefit."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q27",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aussagen zu DDR4- und DDR5-Arbeitsspeicher sind korrekt?",
+      "options": [
+        "DDR4- und DDR5-Module sind aufgrund unterschiedlicher Kerben nicht ineinander steckbar",
+        "DDR5 arbeitet bei gleicher Taktfrequenz i. d. R. mit höherer Bandbreite als DDR4",
+        "DDR5-Module benötigen ein kompatibles Mainboard mit entsprechendem Speicher-Controller",
+        "DDR4 und DDR5 sind zueinander abwärtskompatibel"
+      ],
+      "answer": [
+        "DDR4- und DDR5-Module sind aufgrund unterschiedlicher Kerben nicht ineinander steckbar",
+        "DDR5 arbeitet bei gleicher Taktfrequenz i. d. R. mit höherer Bandbreite als DDR4",
+        "DDR5-Module benötigen ein kompatibles Mainboard mit entsprechendem Speicher-Controller"
+      ],
+      "explanation": "DDR4 und DDR5 sind physisch und elektrisch inkompatibel — unterschiedliche Kerbposition verhindert ein falsches Einstecken. Es gibt keine Abwärtskompatibilität zwischen den Standards.",
+      "translations": {
+        "en": {
+          "question": "Which statements about DDR4 and DDR5 RAM are correct?",
+          "options": [
+            "DDR4 and DDR5 modules cannot be inserted into each other's slots due to different notch positions",
+            "At the same clock frequency, DDR5 generally offers higher bandwidth than DDR4",
+            "DDR5 modules require a compatible motherboard with a matching memory controller",
+            "DDR4 and DDR5 are backward compatible with each other"
+          ],
+          "answer": [
+            "DDR4 and DDR5 modules cannot be inserted into each other's slots due to different notch positions",
+            "At the same clock frequency, DDR5 generally offers higher bandwidth than DDR4",
+            "DDR5 modules require a compatible motherboard with a matching memory controller"
+          ],
+          "explanation": "DDR4 and DDR5 are physically and electrically incompatible — the different notch position prevents incorrect insertion. There is no backward compatibility between the standards."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q28",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein PC hat 2 × 8 GB RAM verbaut und soll auf 32 GB aufgerüstet werden, wobei alle 4 Slots belegt sein sollen. Welche Modulgröße wird pro zusätzlichem Modul benötigt, wenn die vorhandenen Module bleiben?",
+      "options": [
+        "4 GB",
+        "8 GB",
+        "16 GB",
+        "32 GB"
+      ],
+      "answer": "8 GB",
+      "explanation": "16 GB sind bereits vorhanden, es fehlen 16 GB auf 32 GB. Bei 2 freien Slots braucht man 2 × 8 GB, damit alle 4 Module weiterhin identisch sind (empfehlenswert für stabilen Dual-Channel-Betrieb).",
+      "translations": {
+        "en": {
+          "question": "A PC has 2 × 8 GB RAM installed and is to be upgraded to 32 GB, filling all 4 slots. What module size is needed per additional module if the existing modules stay in place?",
+          "options": [
+            "4 GB",
+            "8 GB",
+            "16 GB",
+            "32 GB"
+          ],
+          "answer": "8 GB",
+          "explanation": "16 GB is already installed, leaving 16 GB needed to reach 32 GB. With 2 free slots, that means 2 × 8 GB, keeping all four modules identical (recommended for stable dual-channel operation)."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q29",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Schnittstelle wird von modernen NVMe-SSDs zur direkten Anbindung an die CPU genutzt?",
+      "options": [
+        "SATA III",
+        "PCIe",
+        "USB 2.0",
+        "eSATA"
+      ],
+      "answer": "PCIe",
+      "explanation": "NVMe-SSDs nutzen das PCIe-Protokoll und werden meist über M.2-Steckplätze angebunden, wodurch sie deutlich höhere Geschwindigkeiten als SATA-SSDs erreichen.",
+      "translations": {
+        "en": {
+          "question": "Which interface do modern NVMe SSDs use to connect directly to the CPU?",
+          "options": [
+            "SATA III",
+            "PCIe",
+            "USB 2.0",
+            "eSATA"
+          ],
+          "answer": "PCIe",
+          "explanation": "NVMe SSDs use the PCIe protocol and are usually connected via M.2 slots, achieving significantly higher speeds than SATA SSDs."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q30",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche maximale theoretische Datenrate bietet die Schnittstelle SATA III?",
+      "options": [
+        "1,5 Gbit/s",
+        "3 Gbit/s",
+        "6 Gbit/s",
+        "10 Gbit/s"
+      ],
+      "answer": "6 Gbit/s",
+      "explanation": "SATA III (SATA 6G) bietet maximal 6 Gbit/s (ca. 600 MB/s netto). SATA I liefert 1,5 Gbit/s, SATA II 3 Gbit/s.",
+      "translations": {
+        "en": {
+          "question": "What is the maximum theoretical data rate of the SATA III interface?",
+          "options": [
+            "1.5 Gbit/s",
+            "3 Gbit/s",
+            "6 Gbit/s",
+            "10 Gbit/s"
+          ],
+          "answer": "6 Gbit/s",
+          "explanation": "SATA III (SATA 6G) offers up to 6 Gbit/s (about 600 MB/s net). SATA I provides 1.5 Gbit/s, SATA II 3 Gbit/s."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q31",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Vorteile bietet eine SSD gegenüber einer klassischen HDD?",
+      "options": [
+        "Deutlich schnellere Zugriffszeiten",
+        "Geringere Anfälligkeit für Erschütterungen",
+        "Geringerer Preis pro Gigabyte",
+        "Geräuschloser Betrieb",
+        "Höhere maximale Speicherkapazität pro Datenträger"
+      ],
+      "answer": [
+        "Deutlich schnellere Zugriffszeiten",
+        "Geringere Anfälligkeit für Erschütterungen",
+        "Geräuschloser Betrieb"
+      ],
+      "explanation": "SSDs sind schneller, robuster gegen Stöße und lautlos, da keine mechanischen Teile vorhanden sind. HDDs sind aktuell noch günstiger pro GB und bei sehr hohen Kapazitäten (mehrere TB) verfügbar.",
+      "translations": {
+        "en": {
+          "question": "Which advantages does an SSD offer over a classic HDD?",
+          "options": [
+            "Significantly faster access times",
+            "Lower susceptibility to shocks",
+            "Lower price per gigabyte",
+            "Silent operation",
+            "Higher maximum storage capacity per drive"
+          ],
+          "answer": [
+            "Significantly faster access times",
+            "Lower susceptibility to shocks",
+            "Silent operation"
+          ],
+          "explanation": "SSDs are faster, more resistant to shock and silent, since they have no mechanical parts. HDDs are currently still cheaper per GB and available at very high capacities (multiple TB)."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q32",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein RAID-0-Verbund aus zwei 2-TB-Festplatten bietet welche nutzbare Gesamtkapazität?",
+      "options": [
+        "1 TB",
+        "2 TB",
+        "4 TB",
+        "0 TB (keine Nutzkapazität)"
+      ],
+      "answer": "4 TB",
+      "explanation": "RAID 0 (Striping) summiert die Kapazitäten aller Platten ohne Redundanz: 2 TB + 2 TB = 4 TB nutzbarer Speicher, allerdings ohne Ausfallschutz.",
+      "translations": {
+        "en": {
+          "question": "A RAID 0 array made of two 2 TB hard drives offers which total usable capacity?",
+          "options": [
+            "1 TB",
+            "2 TB",
+            "4 TB",
+            "0 TB (no usable capacity)"
+          ],
+          "answer": "4 TB",
+          "explanation": "RAID 0 (striping) sums the capacities of all drives without redundancy: 2 TB + 2 TB = 4 TB of usable storage, but with no failure protection."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q33",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein RAID-5-Verbund besteht aus vier 2-TB-Festplatten. Wie groß ist die nutzbare Speicherkapazität?",
+      "options": [
+        "2 TB",
+        "4 TB",
+        "6 TB",
+        "8 TB"
+      ],
+      "answer": "6 TB",
+      "explanation": "Bei RAID 5 steht die Kapazität einer Platte für die verteilte Parität zur Verfügung: (4 - 1) × 2 TB = 6 TB nutzbarer Speicher, bei Ausfallschutz für eine Platte.",
+      "translations": {
+        "en": {
+          "question": "A RAID 5 array consists of four 2 TB hard drives. What is the usable storage capacity?",
+          "options": [
+            "2 TB",
+            "4 TB",
+            "6 TB",
+            "8 TB"
+          ],
+          "answer": "6 TB",
+          "explanation": "In RAID 5, the capacity of one drive is used for distributed parity: (4 - 1) × 2 TB = 6 TB of usable storage, with protection against the failure of one drive."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q34",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was zeichnet RAID 10 im Vergleich zu RAID 0 und RAID 1 aus?",
+      "answer": "RAID 10 kombiniert Striping (RAID 0) und Mirroring (RAID 1): Daten werden auf gespiegelte Plattenpaare verteilt, wodurch sowohl Geschwindigkeit als auch Redundanz erreicht werden — benötigt mindestens 4 Platten.",
+      "explanation": "RAID 10 vereint die Geschwindigkeitsvorteile von RAID 0 mit der Ausfallsicherheit von RAID 1, kostet dafür aber die Hälfte der Rohkapazität als Nutzkapazität.",
+      "translations": {
+        "en": {
+          "question": "What distinguishes RAID 10 from RAID 0 and RAID 1?",
+          "answer": "RAID 10 combines striping (RAID 0) and mirroring (RAID 1): data is distributed across mirrored disk pairs, achieving both speed and redundancy — requires at least 4 drives.",
+          "explanation": "RAID 10 combines the speed benefits of RAID 0 with the fault tolerance of RAID 1, at the cost of only having half of the raw capacity available as usable capacity."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q35",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Warum ist RAID kein Ersatz für eine Datensicherung (Backup)?",
+      "answer": "RAID schützt nur vor Ausfall einzelner physischer Datenträger, nicht aber vor versehentlichem Löschen, Ransomware, Softwarefehlern oder gleichzeitigem Ausfall mehrerer Platten — solche Fehler werden auf alle Platten des Verbunds gespiegelt bzw. verteilt.",
+      "explanation": "Ein klassisches Beispiel: Löscht ein Nutzer versehentlich eine Datei, ist sie auch im RAID-1-Spiegel gelöscht, da beide Platten denselben (jetzt fehlerhaften) Zustand abbilden.",
+      "translations": {
+        "en": {
+          "question": "Why is RAID not a substitute for a proper data backup?",
+          "answer": "RAID only protects against the failure of individual physical drives, not against accidental deletion, ransomware, software errors, or the simultaneous failure of multiple drives — such errors are mirrored or distributed across all drives in the array.",
+          "explanation": "A classic example: if a user accidentally deletes a file, it is also deleted on the RAID 1 mirror, since both drives reflect the same (now erroneous) state."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q36",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Formfaktor beschreibt eine typische M.2-SSD mit den Maßen 22 mm Breite und 80 mm Länge?",
+      "options": [
+        "M.2 2242",
+        "M.2 2260",
+        "M.2 2280",
+        "M.2 22110"
+      ],
+      "answer": "M.2 2280",
+      "explanation": "Die Zahlenbezeichnung gibt Breite und Länge in Millimetern an: 2280 = 22 mm breit, 80 mm lang. Dies ist die verbreitetste M.2-SSD-Größe für Desktops und Notebooks.",
+      "translations": {
+        "en": {
+          "question": "Which form factor describes a typical M.2 SSD measuring 22 mm wide and 80 mm long?",
+          "options": [
+            "M.2 2242",
+            "M.2 2260",
+            "M.2 2280",
+            "M.2 22110"
+          ],
+          "answer": "M.2 2280",
+          "explanation": "The number designation gives width and length in millimeters: 2280 = 22 mm wide, 80 mm long. This is the most common M.2 SSD size for desktops and notebooks."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q37",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein Netzteil ist mit „80+ Gold“ zertifiziert. Welche Mindesteffizienz wird bei 50 % Last garantiert?",
+      "options": [
+        "80 %",
+        "87 %",
+        "90 %",
+        "94 %"
+      ],
+      "answer": "90 %",
+      "explanation": "80+ Gold garantiert mindestens 90 % Effizienz bei 50 % Last (87 % bei 20 % bzw. 100 % Last). Höhere Effizienzklassen (Platinum, Titanium) fordern noch höhere Werte.",
+      "translations": {
+        "en": {
+          "question": "A power supply is certified \"80+ Gold\". What minimum efficiency is guaranteed at 50% load?",
+          "options": [
+            "80%",
+            "87%",
+            "90%",
+            "94%"
+          ],
+          "answer": "90%",
+          "explanation": "80+ Gold guarantees at least 90% efficiency at 50% load (87% at 20% or 100% load). Higher efficiency classes (Platinum, Titanium) require even higher values."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q38",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein Netzteil hat eine Effizienz von 80 % und nimmt 500 W aus der Steckdose auf. Wie viel Watt stehen als tatsächliche Ausgangsleistung für die Komponenten zur Verfügung?",
+      "options": [
+        "300 W",
+        "400 W",
+        "450 W",
+        "500 W"
+      ],
+      "answer": "400 W",
+      "explanation": "Ausgangsleistung = Eingangsleistung × Effizienz = 500 W × 0,8 = 400 W. Die restlichen 100 W gehen als Wärmeverlust verloren.",
+      "translations": {
+        "en": {
+          "question": "A power supply has an efficiency of 80% and draws 500 W from the wall outlet. How much power is actually available as output for the components?",
+          "options": [
+            "300 W",
+            "400 W",
+            "450 W",
+            "500 W"
+          ],
+          "answer": "400 W",
+          "explanation": "Output power = input power × efficiency = 500 W × 0.8 = 400 W. The remaining 100 W is lost as heat."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q39",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Nach welchem Kriterium sollte die Nennleistung eines PC-Netzteils bei der Neubeschaffung dimensioniert werden?",
+      "answer": "Anhand der Summe der maximalen Leistungsaufnahme aller verbauten Komponenten (CPU, GPU, Laufwerke, Lüfter usw.) plus einem Sicherheitspuffer (üblich ca. 20-30 %) für Lastspitzen und künftige Erweiterungen.",
+      "explanation": "Ein zu knapp dimensioniertes Netzteil kann bei Lastspitzen (z. B. Gaming, Rendering) instabil werden oder abschalten; ein deutlich überdimensioniertes Netzteil läuft dagegen oft ineffizient im niedrigen Lastbereich.",
+      "translations": {
+        "en": {
+          "question": "By what criterion should a PC power supply's rated wattage be sized when purchasing a new one?",
+          "answer": "Based on the sum of the maximum power draw of all installed components (CPU, GPU, drives, fans, etc.) plus a safety margin (typically around 20-30%) for load spikes and future upgrades.",
+          "explanation": "An undersized power supply can become unstable or shut down under load spikes (e.g. gaming, rendering); a significantly oversized power supply, on the other hand, often runs inefficiently at low load."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q40",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Steckertypen/Kabel sind an einem typischen ATX-Netzteil zu finden?",
+      "options": [
+        "24-Pin-Mainboardstecker",
+        "SATA-Stromstecker",
+        "PCIe-Stromstecker für Grafikkarten",
+        "RJ45-Netzwerkstecker",
+        "4/8-Pin-CPU-Stecker (EPS)"
+      ],
+      "answer": [
+        "24-Pin-Mainboardstecker",
+        "SATA-Stromstecker",
+        "PCIe-Stromstecker für Grafikkarten",
+        "4/8-Pin-CPU-Stecker (EPS)"
+      ],
+      "explanation": "ATX-Netzteile liefern Strom über 24-Pin-Mainboard-, SATA-, PCIe- und EPS(CPU)-Stecker. RJ45 ist ein Netzwerkanschluss und hat mit der Stromversorgung nichts zu tun.",
+      "translations": {
+        "en": {
+          "question": "Which connector types/cables are found on a typical ATX power supply?",
+          "options": [
+            "24-pin motherboard connector",
+            "SATA power connector",
+            "PCIe power connector for graphics cards",
+            "RJ45 network connector",
+            "4/8-pin CPU connector (EPS)"
+          ],
+          "answer": [
+            "24-pin motherboard connector",
+            "SATA power connector",
+            "PCIe power connector for graphics cards",
+            "4/8-pin CPU connector (EPS)"
+          ],
+          "explanation": "ATX power supplies deliver power via 24-pin motherboard, SATA, PCIe and EPS (CPU) connectors. RJ45 is a network connector and has nothing to do with power delivery."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q41",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was beschreibt der Begriff „Effizienz“ bei einem Netzteil?",
+      "options": [
+        "Das Verhältnis von abgegebener zu aufgenommener elektrischer Leistung",
+        "Die maximale Ausgangsspannung",
+        "Die Anzahl der verfügbaren Stromanschlüsse",
+        "Die Lebensdauer des Netzteils in Stunden"
+      ],
+      "answer": "Das Verhältnis von abgegebener zu aufgenommener elektrischer Leistung",
+      "explanation": "Effizienz = Ausgangsleistung ÷ Eingangsleistung. Je höher die Effizienz, desto weniger Energie wird als Wärme verschwendet.",
+      "translations": {
+        "en": {
+          "question": "What does the term \"efficiency\" describe for a power supply?",
+          "options": [
+            "The ratio of delivered to consumed electrical power",
+            "The maximum output voltage",
+            "The number of available power connectors",
+            "The lifespan of the power supply in hours"
+          ],
+          "answer": "The ratio of delivered to consumed electrical power",
+          "explanation": "Efficiency = output power ÷ input power. The higher the efficiency, the less energy is wasted as heat."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q42",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Auflösung wird als „Full HD“ bezeichnet?",
+      "options": [
+        "1280 × 720",
+        "1920 × 1080",
+        "2560 × 1440",
+        "3840 × 2160"
+      ],
+      "answer": "1920 × 1080",
+      "explanation": "1920 × 1080 Pixel ist die Full-HD-Auflösung (auch 1080p). 1280 × 720 ist HD/720p, 2560 × 1440 ist QHD, 3840 × 2160 ist 4K/UHD.",
+      "translations": {
+        "en": {
+          "question": "Which resolution is referred to as \"Full HD\"?",
+          "options": [
+            "1280 × 720",
+            "1920 × 1080",
+            "2560 × 1440",
+            "3840 × 2160"
+          ],
+          "answer": "1920 × 1080",
+          "explanation": "1920 × 1080 pixels is the Full HD resolution (also called 1080p). 1280 × 720 is HD/720p, 2560 × 1440 is QHD, and 3840 × 2160 is 4K/UHD."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q43",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was gibt die Bildwiederholfrequenz (Refresh Rate) eines Monitors in Hertz (Hz) an?",
+      "options": [
+        "Wie oft das Bild pro Sekunde neu aufgebaut wird",
+        "Die maximale Auflösung des Monitors",
+        "Die Reaktionszeit der Pixel",
+        "Den Kontrastumfang des Panels"
+      ],
+      "answer": "Wie oft das Bild pro Sekunde neu aufgebaut wird",
+      "explanation": "60 Hz bedeutet 60 Bildaktualisierungen pro Sekunde. Höhere Werte (z. B. 144 Hz) sorgen für flüssigere Bewegungsdarstellung, besonders bei schnellen Inhalten.",
+      "translations": {
+        "en": {
+          "question": "What does a monitor's refresh rate in Hertz (Hz) indicate?",
+          "options": [
+            "How often the image is redrawn per second",
+            "The monitor's maximum resolution",
+            "The pixel response time",
+            "The panel's contrast range"
+          ],
+          "answer": "How often the image is redrawn per second",
+          "explanation": "60 Hz means 60 image updates per second. Higher values (e.g. 144 Hz) result in smoother motion display, especially for fast-moving content."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q44",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Schnittstellen können zur Videoübertragung an einen modernen Monitor genutzt werden?",
+      "options": [
+        "DisplayPort",
+        "HDMI",
+        "USB-C (mit DisplayPort Alt Mode)",
+        "PS/2",
+        "Thunderbolt"
+      ],
+      "answer": [
+        "DisplayPort",
+        "HDMI",
+        "USB-C (mit DisplayPort Alt Mode)",
+        "Thunderbolt"
+      ],
+      "explanation": "PS/2 ist ein reiner Anschluss für Tastatur/Maus und überträgt keine Bildsignale. Die übrigen genannten Schnittstellen unterstützen alle Videoübertragung.",
+      "translations": {
+        "en": {
+          "question": "Which interfaces can be used to transmit video to a modern monitor?",
+          "options": [
+            "DisplayPort",
+            "HDMI",
+            "USB-C (with DisplayPort Alt Mode)",
+            "PS/2",
+            "Thunderbolt"
+          ],
+          "answer": [
+            "DisplayPort",
+            "HDMI",
+            "USB-C (with DisplayPort Alt Mode)",
+            "Thunderbolt"
+          ],
+          "explanation": "PS/2 is purely a keyboard/mouse connector and does not carry video signals. All the other interfaces listed support video transmission."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q45",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was versteht man unter der „Reaktionszeit“ (Response Time) eines Monitors und in welcher Einheit wird sie angegeben?",
+      "answer": "Die Zeit, die ein Pixel benötigt, um von einer Farbe/Helligkeit zur nächsten zu wechseln; angegeben in Millisekunden (ms).",
+      "explanation": "Eine niedrige Reaktionszeit (z. B. 1 ms) reduziert Bewegungsunschärfe (Ghosting) bei schnellen Bildinhalten, was besonders für Gaming und Video relevant ist.",
+      "translations": {
+        "en": {
+          "question": "What is meant by a monitor's \"response time\" and in what unit is it specified?",
+          "answer": "The time a pixel needs to switch from one color/brightness to another; specified in milliseconds (ms).",
+          "explanation": "A low response time (e.g. 1 ms) reduces motion blur (ghosting) with fast-moving content, which is especially relevant for gaming and video."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q46",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Panel-Technologie bietet in der Regel die besten Blickwinkel und die genaueste Farbdarstellung, jedoch tendenziell längere Reaktionszeiten als TN?",
+      "options": [
+        "TN",
+        "IPS",
+        "VA",
+        "OLED-Backlight"
+      ],
+      "answer": "IPS",
+      "explanation": "IPS-Panels bieten hervorragende Farbtreue und weite Blickwinkel, sind aber traditionell etwas langsamer als TN-Panels. VA liegt bei Kontrast und Blickwinkel oft dazwischen.",
+      "translations": {
+        "en": {
+          "question": "Which panel technology typically offers the best viewing angles and most accurate color reproduction, but tends to have longer response times than TN?",
+          "options": [
+            "TN",
+            "IPS",
+            "VA",
+            "OLED backlight"
+          ],
+          "answer": "IPS",
+          "explanation": "IPS panels offer excellent color accuracy and wide viewing angles but are traditionally somewhat slower than TN panels. VA often falls in between in terms of contrast and viewing angle."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q47",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welches deutsche Regelwerk legt die Mindestanforderungen an die Gestaltung von Bildschirmarbeitsplätzen fest?",
+      "options": [
+        "Bildschirmarbeitsverordnung (ArbStättV/BildscharbV)",
+        "DSGVO",
+        "TKG",
+        "BetrVG"
+      ],
+      "answer": "Bildschirmarbeitsverordnung (ArbStättV/BildscharbV)",
+      "explanation": "Die Bildschirmarbeitsverordnung (heute in die Arbeitsstättenverordnung integriert) regelt u. a. Anforderungen an Monitore, Beleuchtung und Pausenzeiten am Bildschirmarbeitsplatz.",
+      "translations": {
+        "en": {
+          "question": "Which German regulation sets the minimum requirements for the design of computer workstations?",
+          "options": [
+            "Display Screen Equipment Regulation (ArbStättV/BildscharbV)",
+            "GDPR",
+            "TKG (Telecommunications Act)",
+            "BetrVG (Works Constitution Act)"
+          ],
+          "answer": "Display Screen Equipment Regulation (ArbStättV/BildscharbV)",
+          "explanation": "The Display Screen Equipment Regulation (now integrated into the Workplace Ordinance) governs, among other things, requirements for monitors, lighting and breaks at computer workstations."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q48",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "In welchem Winkel sollte die Blickrichtung zum Fenster idealerweise ausgerichtet sein, um Blendung am Bildschirmarbeitsplatz zu vermeiden?",
+      "options": [
+        "Direkt zum Fenster (frontal)",
+        "Mit dem Rücken zum Fenster",
+        "Parallel/seitlich zum Fenster",
+        "Es spielt keine Rolle"
+      ],
+      "answer": "Parallel/seitlich zum Fenster",
+      "explanation": "Eine seitliche Ausrichtung zum Fenster vermeidet sowohl direkte Blendung (Blick zum Fenster) als auch Spiegelungen auf dem Monitor (Fenster im Rücken).",
+      "translations": {
+        "en": {
+          "question": "At what angle should the line of sight ideally be oriented relative to a window to avoid glare at a computer workstation?",
+          "options": [
+            "Directly facing the window",
+            "With back to the window",
+            "Parallel/sideways to the window",
+            "It doesn't matter"
+          ],
+          "answer": "Parallel/sideways to the window",
+          "explanation": "A sideways orientation to the window avoids both direct glare (facing the window) and reflections on the monitor (window behind the back)."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q49",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Kriterien gehören zu einer ergonomisch korrekten Sitzhaltung am Schreibtisch?",
+      "options": [
+        "Unterarme liegen etwa waagerecht auf der Tischplatte",
+        "Füße stehen vollständig auf dem Boden oder einer Fußstütze",
+        "Oberer Bildschirmrand befindet sich etwa auf Augenhöhe",
+        "Der Stuhl wird möglichst niedrig eingestellt, unabhängig von der Tischhöhe",
+        "Rückenlehne stützt die natürliche Wirbelsäulenkrümmung"
+      ],
+      "answer": [
+        "Unterarme liegen etwa waagerecht auf der Tischplatte",
+        "Füße stehen vollständig auf dem Boden oder einer Fußstütze",
+        "Oberer Bildschirmrand befindet sich etwa auf Augenhöhe",
+        "Rückenlehne stützt die natürliche Wirbelsäulenkrümmung"
+      ],
+      "explanation": "Stuhl- und Tischhöhe müssen aufeinander abgestimmt sein — eine pauschal niedrige Stuhleinstellung ohne Bezug zur Tischhöhe ist nicht ergonomisch korrekt.",
+      "translations": {
+        "en": {
+          "question": "Which criteria are part of an ergonomically correct sitting posture at a desk?",
+          "options": [
+            "Forearms rest roughly horizontally on the desk surface",
+            "Feet are fully placed on the floor or a footrest",
+            "The top edge of the screen is roughly at eye level",
+            "The chair is set as low as possible, regardless of desk height",
+            "The backrest supports the spine's natural curvature"
+          ],
+          "answer": [
+            "Forearms rest roughly horizontally on the desk surface",
+            "Feet are fully placed on the floor or a footrest",
+            "The top edge of the screen is roughly at eye level",
+            "The backrest supports the spine's natural curvature"
+          ],
+          "explanation": "Chair and desk height must be coordinated with each other — setting the chair uniformly low without regard to desk height is not ergonomically correct."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q50",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Mindestabstand zum Bildschirm wird für Bildschirmarbeitsplätze im Allgemeinen empfohlen?",
+      "answer": "Etwa 50 bis 70 cm Abstand zwischen Augen und Bildschirm, abhängig von Bildschirmgröße und Schriftgröße.",
+      "explanation": "Ein zu geringer Abstand belastet die Augen zusätzlich; die genaue empfohlene Distanz hängt von der Bildschirmdiagonale und Auflösung ab.",
+      "translations": {
+        "en": {
+          "question": "What minimum distance to the screen is generally recommended for computer workstations?",
+          "answer": "Approximately 50 to 70 cm between the eyes and the screen, depending on screen size and font size.",
+          "explanation": "A distance that is too short puts additional strain on the eyes; the exact recommended distance depends on the screen diagonal and resolution."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q51",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Nennen Sie zwei Maßnahmen zur Barrierefreiheit, die an einem IT-Arbeitsplatz für Menschen mit Sehbehinderung umgesetzt werden können.",
+      "answer": "Zum Beispiel: Bildschirmvergrößerungssoftware, Screenreader mit Sprachausgabe, hoher Kontrastmodus, Braillezeile, größere Schriftgrößen einstellen.",
+      "explanation": "Barrierefreie Arbeitsplatzgestaltung ist Teil der betrieblichen Fürsorgepflicht und kann sowohl Software- (Screenreader, Kontrastmodi) als auch Hardwarelösungen (Braillezeile, spezielle Eingabegeräte) umfassen.",
+      "translations": {
+        "en": {
+          "question": "Name two accessibility measures that can be implemented at an IT workstation for people with visual impairments.",
+          "answer": "For example: screen magnification software, screen readers with speech output, high-contrast mode, Braille display, increasing font sizes.",
+          "explanation": "Accessible workstation design is part of an employer's duty of care and can include both software solutions (screen readers, contrast modes) and hardware solutions (Braille displays, special input devices)."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q52",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wie oft sollte laut allgemeinen ergonomischen Empfehlungen bei intensiver Bildschirmarbeit mindestens eine kurze Erholungspause eingelegt werden?",
+      "options": [
+        "Alle 10 Minuten",
+        "Etwa jede Stunde",
+        "Alle 4 Stunden",
+        "Nur einmal am Tag"
+      ],
+      "answer": "Etwa jede Stunde",
+      "explanation": "Regelmäßige kurze Pausen (ca. stündlich) helfen, Augen, Rücken und Konzentration zu entlasten. Zusätzlich sollte regelmäßig der Blick von Nahsicht auf Fernsicht gewechselt werden.",
+      "translations": {
+        "en": {
+          "question": "According to general ergonomic recommendations, how often should at least a short recovery break be taken during intensive screen work?",
+          "options": [
+            "Every 10 minutes",
+            "Roughly every hour",
+            "Every 4 hours",
+            "Only once a day"
+          ],
+          "answer": "Roughly every hour",
+          "explanation": "Regular short breaks (roughly hourly) help relieve strain on eyes, back and concentration. Additionally, the gaze should regularly shift from near to distant viewing."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q53",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche maximale theoretische Datenübertragungsrate bietet USB 3.2 Gen 2 (auch bekannt als USB 3.1 Gen 2)?",
+      "options": [
+        "480 Mbit/s",
+        "5 Gbit/s",
+        "10 Gbit/s",
+        "40 Gbit/s"
+      ],
+      "answer": "10 Gbit/s",
+      "explanation": "USB 3.2 Gen 2 (früher USB 3.1 Gen 2) erreicht 10 Gbit/s. USB 2.0 liefert 480 Mbit/s, USB 3.2 Gen 1 (früher USB 3.0) 5 Gbit/s, Thunderbolt 3/4 bis zu 40 Gbit/s.",
+      "translations": {
+        "en": {
+          "question": "What maximum theoretical data transfer rate does USB 3.2 Gen 2 (also known as USB 3.1 Gen 2) offer?",
+          "options": [
+            "480 Mbit/s",
+            "5 Gbit/s",
+            "10 Gbit/s",
+            "40 Gbit/s"
+          ],
+          "answer": "10 Gbit/s",
+          "explanation": "USB 3.2 Gen 2 (formerly USB 3.1 Gen 2) reaches 10 Gbit/s. USB 2.0 delivers 480 Mbit/s, USB 3.2 Gen 1 (formerly USB 3.0) 5 Gbit/s, and Thunderbolt 3/4 up to 40 Gbit/s."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q54",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Steckerform ist bei USB-C typisch?",
+      "options": [
+        "Rechteckig, nicht verpolungssicher",
+        "Oval, symmetrisch und verpolungssicher (beidseitig einsteckbar)",
+        "Rund wie bei PS/2",
+        "Quadratisch wie bei älteren Druckerkabeln"
+      ],
+      "answer": "Oval, symmetrisch und verpolungssicher (beidseitig einsteckbar)",
+      "explanation": "USB-C-Stecker sind symmetrisch gestaltet und können in beiden Ausrichtungen eingesteckt werden — ein klarer Vorteil gegenüber dem alten USB-A-Stecker.",
+      "translations": {
+        "en": {
+          "question": "What connector shape is typical for USB-C?",
+          "options": [
+            "Rectangular, not reversible",
+            "Oval, symmetric and reversible (can be plugged in either way)",
+            "Round like PS/2",
+            "Square like older printer cables"
+          ],
+          "answer": "Oval, symmetric and reversible (can be plugged in either way)",
+          "explanation": "USB-C connectors are designed symmetrically and can be plugged in either orientation — a clear advantage over the older USB-A connector."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q55",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Aussagen zu Thunderbolt sind zutreffend?",
+      "options": [
+        "Thunderbolt 3 und 4 nutzen den USB-C-Steckertyp",
+        "Thunderbolt kann sowohl Daten als auch Videosignale übertragen",
+        "Thunderbolt-Geräte können in Reihe (daisy-chaining) verbunden werden",
+        "Thunderbolt ist ausschließlich für Netzwerkverbindungen konzipiert",
+        "Thunderbolt kann bei entsprechenden Geräten auch zum Laden verwendet werden"
+      ],
+      "answer": [
+        "Thunderbolt 3 und 4 nutzen den USB-C-Steckertyp",
+        "Thunderbolt kann sowohl Daten als auch Videosignale übertragen",
+        "Thunderbolt-Geräte können in Reihe (daisy-chaining) verbunden werden",
+        "Thunderbolt kann bei entsprechenden Geräten auch zum Laden verwendet werden"
+      ],
+      "explanation": "Thunderbolt ist eine sehr flexible Schnittstelle für Daten, Video und Stromversorgung über den USB-C-Stecker und unterstützt Daisy-Chaining mehrerer Geräte. Es ist keine reine Netzwerkschnittstelle.",
+      "translations": {
+        "en": {
+          "question": "Which statements about Thunderbolt are correct?",
+          "options": [
+            "Thunderbolt 3 and 4 use the USB-C connector type",
+            "Thunderbolt can transmit both data and video signals",
+            "Thunderbolt devices can be daisy-chained",
+            "Thunderbolt is designed exclusively for network connections",
+            "Thunderbolt can also be used for charging on suitable devices"
+          ],
+          "answer": [
+            "Thunderbolt 3 and 4 use the USB-C connector type",
+            "Thunderbolt can transmit both data and video signals",
+            "Thunderbolt devices can be daisy-chained",
+            "Thunderbolt can also be used for charging on suitable devices"
+          ],
+          "explanation": "Thunderbolt is a very flexible interface for data, video and power delivery over the USB-C connector and supports daisy-chaining multiple devices. It is not a pure network interface."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q56",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist der Hauptunterschied zwischen HDMI und DisplayPort in Bezug auf ihre ursprüngliche Zielanwendung?",
+      "answer": "HDMI wurde primär für die Unterhaltungselektronik (TV, Blu-ray, Heimkino) entwickelt, DisplayPort primär für Computer- und Monitoranwendungen (inkl. Multi-Monitor-Betrieb via Daisy-Chaining/MST).",
+      "explanation": "Beide übertragen heute Bild und Ton, DisplayPort unterstützt jedoch zusätzlich Multi-Stream-Transport (MST), mit dem sich mehrere Monitore über eine einzige Verbindung ansteuern lassen.",
+      "translations": {
+        "en": {
+          "question": "What is the main difference between HDMI and DisplayPort in terms of their original target application?",
+          "answer": "HDMI was primarily developed for consumer electronics (TV, Blu-ray, home theater), while DisplayPort was primarily developed for computer and monitor applications (including multi-monitor setups via daisy-chaining/MST).",
+          "explanation": "Both now carry video and audio, but DisplayPort additionally supports Multi-Stream Transport (MST), which allows multiple monitors to be driven over a single connection."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q57",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Steckverbindung wird üblicherweise zum Anschluss interner SATA-Festplatten an das Mainboard genutzt?",
+      "options": [
+        "Molex-Stecker",
+        "SATA-Datenkabel",
+        "PS/2-Kabel",
+        "RJ11-Kabel"
+      ],
+      "answer": "SATA-Datenkabel",
+      "explanation": "SATA-Datenkabel verbinden Laufwerk und Mainboard für die Datenübertragung; die Stromversorgung erfolgt separat über SATA-Stromstecker. Molex ist ein älterer Stromstecker, PS/2 und RJ11 haben andere Anwendungszwecke.",
+      "translations": {
+        "en": {
+          "question": "Which connection is typically used to connect internal SATA hard drives to the motherboard?",
+          "options": [
+            "Molex connector",
+            "SATA data cable",
+            "PS/2 cable",
+            "RJ11 cable"
+          ],
+          "answer": "SATA data cable",
+          "explanation": "SATA data cables connect the drive and motherboard for data transfer; power is supplied separately via SATA power connectors. Molex is an older power connector, while PS/2 and RJ11 serve different purposes."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q58",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welches Druckverfahren nutzt Tonerpulver, das durch Hitze auf das Papier fixiert wird?",
+      "options": [
+        "Tintenstrahldruck",
+        "Laserdruck",
+        "Nadeldruck",
+        "Thermosublimationsdruck"
+      ],
+      "answer": "Laserdruck",
+      "explanation": "Beim Laserdruck wird Tonerpulver elektrostatisch auf eine Bildtrommel übertragen und anschließend mit Hitze (Fixiereinheit) dauerhaft auf das Papier fixiert.",
+      "translations": {
+        "en": {
+          "question": "Which printing method uses toner powder that is fused onto the paper by heat?",
+          "options": [
+            "Inkjet printing",
+            "Laser printing",
+            "Dot matrix printing",
+            "Thermal sublimation printing"
+          ],
+          "answer": "Laser printing",
+          "explanation": "In laser printing, toner powder is electrostatically transferred onto an imaging drum and then permanently fused onto the paper using heat (the fuser unit)."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q59",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Verbrauchsmaterialien sind typisch für einen Laserdrucker?",
+      "options": [
+        "Tonerkartusche",
+        "Bildtrommel (Drum)",
+        "Tintenpatrone",
+        "Fixiereinheit",
+        "Farbband"
+      ],
+      "answer": [
+        "Tonerkartusche",
+        "Bildtrommel (Drum)",
+        "Fixiereinheit"
+      ],
+      "explanation": "Toner, Bildtrommel und Fixiereinheit sind typische Verschleiß- bzw. Verbrauchsteile beim Laserdruck. Tintenpatronen gehören zum Tintenstrahldruck, Farbbänder zum Nadeldrucker.",
+      "translations": {
+        "en": {
+          "question": "Which consumables are typical for a laser printer?",
+          "options": [
+            "Toner cartridge",
+            "Imaging drum",
+            "Ink cartridge",
+            "Fuser unit",
+            "Ribbon"
+          ],
+          "answer": [
+            "Toner cartridge",
+            "Imaging drum",
+            "Fuser unit"
+          ],
+          "explanation": "Toner, imaging drum and fuser unit are typical wear/consumable parts in laser printing. Ink cartridges belong to inkjet printing, and ribbons to dot matrix printers."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q60",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Für welchen Einsatzbereich ist Tintenstrahldruck gegenüber Laserdruck oft im Vorteil?",
+      "answer": "Für hochwertigen Fotodruck bzw. Druck mit feinen Farbverläufen, da Tintenstrahldrucker in der Regel eine höhere Farbgenauigkeit und feinere Farbabstufungen erzielen können.",
+      "explanation": "Laserdrucker sind hingegen meist im Vorteil bei hohen Druckvolumina im Textbereich, da sie schneller drucken und geringere Kosten pro Seite verursachen.",
+      "translations": {
+        "en": {
+          "question": "For which use case does inkjet printing often have an advantage over laser printing?",
+          "answer": "For high-quality photo printing or printing with fine color gradients, since inkjet printers can generally achieve higher color accuracy and finer color gradations.",
+          "explanation": "Laser printers, on the other hand, are usually preferable for high-volume text printing, since they print faster and have lower cost per page."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q61",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist eine typische Ursache für horizontale weiße Streifen im Ausdruck eines Tintenstrahldruckers?",
+      "options": [
+        "Verstopfte Druckkopfdüsen",
+        "Zu geringe Papierauflösung",
+        "Defekte Bildtrommel",
+        "Fehlende Fixiereinheit"
+      ],
+      "answer": "Verstopfte Druckkopfdüsen",
+      "explanation": "Getrocknete Tinte kann Düsen im Druckkopf verstopfen. Eine Druckkopfreinigungsfunktion in der Druckersoftware behebt das Problem meist. Bildtrommel und Fixiereinheit sind laserdruckspezifisch.",
+      "translations": {
+        "en": {
+          "question": "What is a typical cause of horizontal white streaks in an inkjet printer's output?",
+          "options": [
+            "Clogged print head nozzles",
+            "Too low a paper resolution",
+            "Defective imaging drum",
+            "Missing fuser unit"
+          ],
+          "answer": "Clogged print head nozzles",
+          "explanation": "Dried ink can clog nozzles in the print head. A print head cleaning function in the printer software usually resolves the issue. Imaging drum and fuser unit are laser-printer-specific components."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q62",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Funktion hat Wärmeleitpaste zwischen CPU und Kühlkörper?",
+      "options": [
+        "Sie klebt den Kühlkörper mechanisch fest",
+        "Sie füllt mikroskopische Luftspalte und verbessert die Wärmeübertragung",
+        "Sie isoliert elektrisch gegen Kurzschlüsse",
+        "Sie dämpft Vibrationen des Lüfters"
+      ],
+      "answer": "Sie füllt mikroskopische Luftspalte und verbessert die Wärmeübertragung",
+      "explanation": "Auch bei planen Oberflächen bleiben mikroskopisch kleine Luftspalte, die Wärme schlecht leiten. Wärmeleitpaste verdrängt die Luft und verbessert so den Wärmeübergang zwischen CPU und Kühlkörper.",
+      "translations": {
+        "en": {
+          "question": "What is the function of thermal paste between the CPU and heat sink?",
+          "options": [
+            "It mechanically glues the heat sink in place",
+            "It fills microscopic air gaps and improves heat transfer",
+            "It provides electrical insulation against short circuits",
+            "It dampens fan vibrations"
+          ],
+          "answer": "It fills microscopic air gaps and improves heat transfer",
+          "explanation": "Even flat surfaces retain microscopic air gaps, which conduct heat poorly. Thermal paste displaces the air and thereby improves heat transfer between the CPU and heat sink."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q63",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Vorteile bietet eine Wasserkühlung gegenüber einer klassischen Luftkühlung bei hoher Wärmeabgabe?",
+      "options": [
+        "Effizientere Wärmeabfuhr bei gleichem Bauraum",
+        "Oft geringere Geräuschentwicklung bei vergleichbarer Kühlleistung",
+        "Keine Wartung erforderlich",
+        "Möglichkeit, Wärme über größere Radiatorflächen abzuführen",
+        "Keinerlei Risiko eines Flüssigkeitsverlusts"
+      ],
+      "answer": [
+        "Effizientere Wärmeabfuhr bei gleichem Bauraum",
+        "Oft geringere Geräuschentwicklung bei vergleichbarer Kühlleistung",
+        "Möglichkeit, Wärme über größere Radiatorflächen abzuführen"
+      ],
+      "explanation": "Wasserkühlungen können Wärme effizienter über große Radiatoren mit langsam drehenden Lüftern abführen. Sie benötigen dennoch gelegentliche Wartung/Kontrolle und bergen ein (geringes) Leckagerisiko.",
+      "translations": {
+        "en": {
+          "question": "What advantages does liquid cooling offer over classic air cooling under high heat loads?",
+          "options": [
+            "More efficient heat dissipation in the same space",
+            "Often lower noise levels at comparable cooling performance",
+            "No maintenance required",
+            "Ability to dissipate heat via larger radiator surface areas",
+            "No risk whatsoever of fluid leakage"
+          ],
+          "answer": [
+            "More efficient heat dissipation in the same space",
+            "Often lower noise levels at comparable cooling performance",
+            "Ability to dissipate heat via larger radiator surface areas"
+          ],
+          "explanation": "Liquid cooling can dissipate heat more efficiently via large radiators with slowly spinning fans. It still requires occasional maintenance/inspection and carries a (small) risk of leakage."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q64",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Folge kann eine unzureichende Gehäusebelüftung (Airflow) langfristig für die verbaute Hardware haben?",
+      "answer": "Überhitzung der Komponenten, was zu thermischem Drosseln (Leistungsverlust), instabilem Systemverhalten (Abstürze) und einer verkürzten Lebensdauer der Bauteile führen kann.",
+      "explanation": "Ein durchdachtes Airflow-Konzept mit Frischluftzufuhr und Abluftführung ist entscheidend, damit Wärme kontinuierlich aus dem Gehäuse abtransportiert wird.",
+      "translations": {
+        "en": {
+          "question": "What long-term consequence can insufficient case ventilation (airflow) have for installed hardware?",
+          "answer": "Overheating of components, which can lead to thermal throttling (performance loss), unstable system behavior (crashes), and a shortened component lifespan.",
+          "explanation": "A well-thought-out airflow concept with fresh-air intake and exhaust routing is crucial so that heat is continuously removed from the case."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q65",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wodurch unterscheidet sich eine All-in-One(AiO)-Wasserkühlung von einer Custom-Loop-Wasserkühlung?",
+      "options": [
+        "AiO-Kühlungen sind werkseitig vormontiert und geschlossen, Custom Loops werden individuell zusammengebaut",
+        "AiO-Kühlungen benötigen keinen Lüfter",
+        "Custom Loops können nur die CPU kühlen",
+        "AiO-Kühlungen nutzen Luft statt Flüssigkeit"
+      ],
+      "answer": "AiO-Kühlungen sind werkseitig vormontiert und geschlossen, Custom Loops werden individuell zusammengebaut",
+      "explanation": "AiO-Systeme (All-in-One) sind wartungsfrei vorbefüllt und geschlossen. Custom Loops werden aus Einzelkomponenten (Pumpe, Radiator, Schläuche, Kühlblöcke) individuell aufgebaut und können z. B. auch die GPU einbeziehen.",
+      "translations": {
+        "en": {
+          "question": "How does an all-in-one (AiO) liquid cooler differ from a custom-loop liquid cooling setup?",
+          "options": [
+            "AiO coolers are factory pre-assembled and sealed, while custom loops are individually built",
+            "AiO coolers do not require a fan",
+            "Custom loops can only cool the CPU",
+            "AiO coolers use air instead of liquid"
+          ],
+          "answer": "AiO coolers are factory pre-assembled and sealed, while custom loops are individually built",
+          "explanation": "AiO systems are pre-filled, sealed and maintenance-free. Custom loops are individually built from separate components (pump, radiator, tubing, cooling blocks) and can, for example, also include the GPU."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q66",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welcher Nachfolgestandard von BIOS bietet u. a. Unterstützung für Festplatten über 2 TB und ein grafisches Setup-Menü?",
+      "options": [
+        "POST",
+        "UEFI",
+        "CMOS",
+        "ACPI"
+      ],
+      "answer": "UEFI",
+      "explanation": "UEFI (Unified Extensible Firmware Interface) löst das klassische BIOS ab und unterstützt größere Festplatten (GPT-Partitionierung), schnelleres Booten und grafische Oberflächen.",
+      "translations": {
+        "en": {
+          "question": "Which successor standard to BIOS supports, among other things, hard drives over 2 TB and a graphical setup menu?",
+          "options": [
+            "POST",
+            "UEFI",
+            "CMOS",
+            "ACPI"
+          ],
+          "answer": "UEFI",
+          "explanation": "UEFI (Unified Extensible Firmware Interface) replaces the classic BIOS and supports larger hard drives (GPT partitioning), faster booting and graphical interfaces."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q67",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wofür steht die Abkürzung POST im Kontext des Systemstarts?",
+      "options": [
+        "Power-On Self-Test",
+        "Program Output Start Trigger",
+        "Peripheral Output System Test",
+        "Primary Operating System Trigger"
+      ],
+      "answer": "Power-On Self-Test",
+      "explanation": "Der POST prüft beim Einschalten grundlegende Hardwarekomponenten (RAM, CPU, Grafikkarte usw.) auf Funktionsfähigkeit, bevor das Betriebssystem gestartet wird.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation POST stand for in the context of system startup?",
+          "options": [
+            "Power-On Self-Test",
+            "Program Output Start Trigger",
+            "Peripheral Output System Test",
+            "Primary Operating System Trigger"
+          ],
+          "answer": "Power-On Self-Test",
+          "explanation": "The POST checks basic hardware components (RAM, CPU, graphics card, etc.) for proper function when the system is powered on, before the operating system starts."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q68",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist die Aufgabe der Bootreihenfolge (Boot Order) im BIOS/UEFI?",
+      "answer": "Sie legt fest, in welcher Reihenfolge das System nach einem startfähigen Datenträger (z. B. interne SSD, USB-Stick, Netzwerk) sucht, um das Betriebssystem zu laden.",
+      "explanation": "Die Bootreihenfolge ist z. B. wichtig, um von einem USB-Installationsmedium zu booten, ohne die interne Systemplatte zu verändern.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of the boot order in BIOS/UEFI?",
+          "answer": "It determines the sequence in which the system searches for a bootable device (e.g. internal SSD, USB drive, network) to load the operating system.",
+          "explanation": "The boot order matters, for example, when booting from a USB installation medium without altering the internal system drive."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q69",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Einstellungen lassen sich typischerweise im BIOS/UEFI-Setup vornehmen?",
+      "options": [
+        "Bootreihenfolge ändern",
+        "Systemzeit und Datum einstellen",
+        "RAM-Timings/XMP-Profile aktivieren",
+        "Windows-Updates installieren",
+        "Secure Boot aktivieren/deaktivieren"
+      ],
+      "answer": [
+        "Bootreihenfolge ändern",
+        "Systemzeit und Datum einstellen",
+        "RAM-Timings/XMP-Profile aktivieren",
+        "Secure Boot aktivieren/deaktivieren"
+      ],
+      "explanation": "Windows-Updates werden im Betriebssystem installiert, nicht im BIOS/UEFI. Bootreihenfolge, Systemzeit, RAM-Profile und Secure Boot sind klassische Firmware-Einstellungen.",
+      "translations": {
+        "en": {
+          "question": "Which settings can typically be configured in the BIOS/UEFI setup?",
+          "options": [
+            "Change boot order",
+            "Set system time and date",
+            "Enable RAM timings/XMP profiles",
+            "Install Windows updates",
+            "Enable/disable Secure Boot"
+          ],
+          "answer": [
+            "Change boot order",
+            "Set system time and date",
+            "Enable RAM timings/XMP profiles",
+            "Enable/disable Secure Boot"
+          ],
+          "explanation": "Windows updates are installed within the operating system, not in the BIOS/UEFI. Boot order, system time, RAM profiles and Secure Boot are classic firmware settings."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q70",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Batterie versorgt üblicherweise die BIOS/UEFI-Einstellungen (Uhrzeit, CMOS-Daten) bei ausgeschaltetem PC?",
+      "options": [
+        "9-V-Blockbatterie",
+        "AA-Batterie",
+        "CMOS-Batterie (meist CR2032)",
+        "Li-Ion-Akku"
+      ],
+      "answer": "CMOS-Batterie (meist CR2032)",
+      "explanation": "Eine kleine Knopfzelle (häufig Typ CR2032) versorgt den CMOS-Speicher, damit Uhrzeit und BIOS-Einstellungen auch ohne Netzanschluss erhalten bleiben.",
+      "translations": {
+        "en": {
+          "question": "Which battery typically powers the BIOS/UEFI settings (clock, CMOS data) when the PC is switched off?",
+          "options": [
+            "9V block battery",
+            "AA battery",
+            "CMOS battery (usually CR2032)",
+            "Li-ion battery pack"
+          ],
+          "answer": "CMOS battery (usually CR2032)",
+          "explanation": "A small coin cell (often type CR2032) powers the CMOS memory so that the clock and BIOS settings are retained even without mains power."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q71",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein PC gibt beim Start mehrere Signaltöne (Beep-Codes) aus und bootet nicht. Was ist der wahrscheinlichste erste Verdacht?",
+      "options": [
+        "Fehlerhafte Netzwerkkabel",
+        "Ein Hardwareproblem, das der POST erkannt hat (z. B. RAM oder Grafikkarte)",
+        "Ein Softwarefehler im Betriebssystem",
+        "Ein defekter Drucker"
+      ],
+      "answer": "Ein Hardwareproblem, das der POST erkannt hat (z. B. RAM oder Grafikkarte)",
+      "explanation": "Beep-Codes werden vom POST ausgegeben, wenn grundlegende Hardware wie RAM oder Grafikkarte nicht korrekt erkannt wird — noch bevor ein Betriebssystem überhaupt starten könnte.",
+      "translations": {
+        "en": {
+          "question": "A PC emits several beep codes at startup and does not boot. What is the most likely initial suspicion?",
+          "options": [
+            "Faulty network cables",
+            "A hardware problem detected by the POST (e.g. RAM or graphics card)",
+            "A software error in the operating system",
+            "A defective printer"
+          ],
+          "answer": "A hardware problem detected by the POST (e.g. RAM or graphics card)",
+          "explanation": "Beep codes are emitted by the POST when basic hardware such as RAM or the graphics card is not detected correctly — before an operating system could even start."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q72",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein PC startet, zeigt aber kein Bild auf dem Monitor. Welche Ursachen sollten zuerst überprüft werden?",
+      "options": [
+        "Ist das Videokabel korrekt am richtigen Ausgang (dedizierte GPU vs. Onboard) angeschlossen?",
+        "Ist der Monitor eingeschaltet und der richtige Eingang ausgewählt?",
+        "Ist die Netzwerkkarte defekt?",
+        "Sitzt die RAM korrekt in den Slots?",
+        "Ist der Drucker richtig installiert?"
+      ],
+      "answer": [
+        "Ist das Videokabel korrekt am richtigen Ausgang (dedizierte GPU vs. Onboard) angeschlossen?",
+        "Ist der Monitor eingeschaltet und der richtige Eingang ausgewählt?",
+        "Sitzt die RAM korrekt in den Slots?"
+      ],
+      "explanation": "Klassische Fehlerquellen bei fehlendem Bild sind falsche Kabelanschlüsse, falscher Monitoreingang oder nicht korrekt eingesetzter RAM. Netzwerkkarte und Drucker haben keinen Einfluss auf die Bildausgabe.",
+      "translations": {
+        "en": {
+          "question": "A PC starts up but shows no image on the monitor. Which causes should be checked first?",
+          "options": [
+            "Is the video cable correctly connected to the right output (dedicated GPU vs. onboard)?",
+            "Is the monitor turned on and is the correct input selected?",
+            "Is the network card defective?",
+            "Is the RAM properly seated in its slots?",
+            "Is the printer installed correctly?"
+          ],
+          "answer": [
+            "Is the video cable correctly connected to the right output (dedicated GPU vs. onboard)?",
+            "Is the monitor turned on and is the correct input selected?",
+            "Is the RAM properly seated in its slots?"
+          ],
+          "explanation": "Classic causes for no display include incorrect cable connections, the wrong monitor input, or improperly seated RAM. The network card and printer have no bearing on video output."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q73",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein System läuft instabil und stürzt vor allem unter hoher Last ab. Welche zwei mögliche Hardwareursachen sollten geprüft werden?",
+      "answer": "Zum Beispiel: unzureichende Kühlung/Überhitzung, defektes oder unzureichend dimensioniertes Netzteil, fehlerhafter Arbeitsspeicher, Staubablagerungen, die den Luftstrom blockieren.",
+      "explanation": "Lastabhängige Abstürze deuten oft auf thermische Probleme oder eine überlastete Stromversorgung hin; ein Blick in die Temperaturüberwachung und ein RAM-Test (z. B. MemTest) helfen bei der Eingrenzung.",
+      "translations": {
+        "en": {
+          "question": "A system runs unstably and crashes especially under high load. Which two possible hardware causes should be checked?",
+          "answer": "For example: insufficient cooling/overheating, a defective or undersized power supply, faulty RAM, dust buildup blocking airflow.",
+          "explanation": "Load-dependent crashes often point to thermal issues or an overloaded power supply; checking temperature monitoring and running a RAM test (e.g. MemTest) help narrow down the cause."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q74",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welches Diagnosewerkzeug wird typischerweise eingesetzt, um fehlerhaften Arbeitsspeicher zu identifizieren?",
+      "options": [
+        "CrystalDiskInfo",
+        "MemTest86",
+        "CPU-Z",
+        "Wireshark"
+      ],
+      "answer": "MemTest86",
+      "explanation": "MemTest86 führt intensive Lese-/Schreibtests auf dem RAM durch und deckt Bitfehler auf. CrystalDiskInfo prüft Laufwerke, CPU-Z zeigt Systeminformationen, Wireshark analysiert Netzwerkverkehr.",
+      "translations": {
+        "en": {
+          "question": "Which diagnostic tool is typically used to identify faulty RAM?",
+          "options": [
+            "CrystalDiskInfo",
+            "MemTest86",
+            "CPU-Z",
+            "Wireshark"
+          ],
+          "answer": "MemTest86",
+          "explanation": "MemTest86 performs intensive read/write tests on RAM and reveals bit errors. CrystalDiskInfo checks drives, CPU-Z shows system information, and Wireshark analyzes network traffic."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q75",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist bei der systematischen Fehlersuche an Hardware der übliche erste Schritt, bevor Komponenten getauscht werden?",
+      "answer": "Eingrenzung des Fehlers durch Beobachtung der Symptome, Prüfen von Kabelverbindungen und Sitz der Komponenten, sowie ggf. Minimalkonfiguration (nur Netzteil, Mainboard, CPU, ein RAM-Modul) zum Ausschluss von Wechselwirkungen.",
+      "explanation": "Erst nach dieser systematischen Eingrenzung sollten Komponenten einzeln getauscht oder in einem anderen System getestet werden, um Kosten und Zeitaufwand gering zu halten.",
+      "translations": {
+        "en": {
+          "question": "In systematic hardware troubleshooting, what is the usual first step before swapping components?",
+          "answer": "Narrowing down the fault by observing symptoms, checking cable connections and component seating, and if necessary testing a minimal configuration (only PSU, motherboard, CPU, one RAM module) to rule out interactions.",
+          "explanation": "Only after this systematic narrowing down should components be swapped individually or tested in another system, to keep cost and time expenditure low."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q76",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ab welcher ungefähren Spannung kann elektrostatische Entladung (ESD) bereits empfindliche elektronische Bauteile beschädigen?",
+      "options": [
+        "ab ca. 10 V",
+        "ab ca. 100 V",
+        "ab ca. 3000 V",
+        "erst ab 100.000 V"
+      ],
+      "answer": "ab ca. 100 V",
+      "explanation": "Bereits ab etwa 100 V können empfindliche Halbleiterbauteile geschädigt werden — deutlich unterhalb der menschlichen Wahrnehmungsschwelle von ca. 3000 V, ab der ein Mensch die Entladung überhaupt spürt.",
+      "translations": {
+        "en": {
+          "question": "From approximately what voltage can electrostatic discharge (ESD) already damage sensitive electronic components?",
+          "options": [
+            "from approx. 10 V",
+            "from approx. 100 V",
+            "from approx. 3000 V",
+            "only from 100,000 V"
+          ],
+          "answer": "from approx. 100 V",
+          "explanation": "Sensitive semiconductor components can already be damaged from around 100 V — well below the human perception threshold of about 3000 V, above which a person can even feel the discharge."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q77",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Maßnahmen zählen zum ESD-Schutz beim Arbeiten an offener Hardware?",
+      "options": [
+        "Erdungsarmband anlegen",
+        "Auf einer leitfähigen ESD-Matte arbeiten",
+        "Komponenten an den Kanten anfassen statt an Kontakten/Chips",
+        "Möglichst auf Teppichboden mit Wollsocken arbeiten",
+        "Bauteile in antistatischen Beuteln transportieren"
+      ],
+      "answer": [
+        "Erdungsarmband anlegen",
+        "Auf einer leitfähigen ESD-Matte arbeiten",
+        "Komponenten an den Kanten anfassen statt an Kontakten/Chips",
+        "Bauteile in antistatischen Beuteln transportieren"
+      ],
+      "explanation": "Teppichboden und Wollsocken begünstigen elektrostatische Aufladung und sind daher kontraproduktiv für ESD-Schutz. Die übrigen Maßnahmen reduzieren das Risiko einer Entladung.",
+      "translations": {
+        "en": {
+          "question": "Which measures count as ESD protection when working on open hardware?",
+          "options": [
+            "Wear a grounding wrist strap",
+            "Work on a conductive ESD mat",
+            "Hold components by their edges instead of contacts/chips",
+            "Preferably work on carpet while wearing wool socks",
+            "Transport components in antistatic bags"
+          ],
+          "answer": [
+            "Wear a grounding wrist strap",
+            "Work on a conductive ESD mat",
+            "Hold components by their edges instead of contacts/chips",
+            "Transport components in antistatic bags"
+          ],
+          "explanation": "Carpeted floors and wool socks promote electrostatic charging and are therefore counterproductive for ESD protection. The other measures reduce the risk of discharge."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q78",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Warum sind ESD-Schäden an Bauteilen besonders problematisch in der Fehlerdiagnose?",
+      "answer": "Weil ESD-Schäden oft nicht sofort zum Totalausfall führen, sondern die Bauteile latent vorschädigen und erst später (z. B. nach Wochen) zu sporadischen Fehlern oder komplettem Ausfall führen können.",
+      "explanation": "Solche verzögerten Ausfälle sind schwer auf ihre eigentliche Ursache zurückzuführen, da der Zusammenhang zur ursprünglichen ESD-Einwirkung meist nicht mehr erkennbar ist.",
+      "translations": {
+        "en": {
+          "question": "Why are ESD-related damages to components particularly problematic in fault diagnosis?",
+          "answer": "Because ESD damage often does not cause immediate total failure but instead latently pre-damages components, leading to sporadic errors or complete failure only later (e.g. after weeks).",
+          "explanation": "Such delayed failures are hard to trace back to their actual cause, since the connection to the original ESD event is usually no longer recognizable."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q79",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Akkutechnologie ist in modernen Notebooks am weitesten verbreitet?",
+      "options": [
+        "Nickel-Cadmium (NiCd)",
+        "Blei-Säure",
+        "Lithium-Ionen (Li-Ion) / Lithium-Polymer (LiPo)",
+        "Alkaline"
+      ],
+      "answer": "Lithium-Ionen (Li-Ion) / Lithium-Polymer (LiPo)",
+      "explanation": "Li-Ion- bzw. LiPo-Akkus bieten eine hohe Energiedichte bei geringem Gewicht und keinen Memory-Effekt, weshalb sie heute Standard in Notebooks und Mobilgeräten sind.",
+      "translations": {
+        "en": {
+          "question": "Which battery technology is most common in modern notebooks?",
+          "options": [
+            "Nickel-cadmium (NiCd)",
+            "Lead-acid",
+            "Lithium-ion (Li-ion) / lithium-polymer (LiPo)",
+            "Alkaline"
+          ],
+          "answer": "Lithium-ion (Li-ion) / lithium-polymer (LiPo)",
+          "explanation": "Li-ion and LiPo batteries offer high energy density at low weight and no memory effect, which is why they are now standard in notebooks and mobile devices."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q80",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Warum sollten Notebook-Akkus nicht dauerhaft bei 100 % Ladezustand betrieben bzw. gelagert werden?",
+      "answer": "Eine ständige Vollladung erhöht die chemische Belastung der Lithium-Ionen-Zellen und beschleunigt die Alterung, wodurch die Gesamtlebensdauer und Kapazität des Akkus schneller abnimmt.",
+      "explanation": "Viele Hersteller bieten deshalb Lademodi an, die die Ladung auf z. B. 80 % begrenzen, um die Lebensdauer im Dauerbetrieb am Netzteil zu verlängern.",
+      "translations": {
+        "en": {
+          "question": "Why should notebook batteries not be permanently kept at or stored at 100% charge?",
+          "answer": "Constant full charging increases the chemical stress on lithium-ion cells and accelerates aging, causing the battery's overall lifespan and capacity to decline faster.",
+          "explanation": "Many manufacturers therefore offer charge modes that cap charging at, e.g., 80% to extend battery life during continuous operation on mains power."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q81",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Wofür wird ein M.2-Slot in einem Notebook typischerweise genutzt?",
+      "options": [
+        "Für den Anschluss einer NVMe-SSD oder WLAN-Karte",
+        "Für den Anschluss eines externen Monitors",
+        "Für den Anschluss der Tastatur",
+        "Für den Anschluss des Netzteils"
+      ],
+      "answer": "Für den Anschluss einer NVMe-SSD oder WLAN-Karte",
+      "explanation": "M.2-Slots in Notebooks werden meist für kompakte NVMe-SSDs oder WLAN/Bluetooth-Module genutzt, da sie sehr platzsparend sind.",
+      "translations": {
+        "en": {
+          "question": "What is an M.2 slot in a notebook typically used for?",
+          "options": [
+            "Connecting an NVMe SSD or Wi-Fi card",
+            "Connecting an external monitor",
+            "Connecting the keyboard",
+            "Connecting the power adapter"
+          ],
+          "answer": "Connecting an NVMe SSD or Wi-Fi card",
+          "explanation": "M.2 slots in notebooks are mostly used for compact NVMe SSDs or Wi-Fi/Bluetooth modules, since they are very space-efficient."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q82",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Komponenten sind bei den meisten modernen Ultrabook-Notebooks im Gegensatz zu klassischen Desktop-PCs fest verlötet und nicht ohne Weiteres austauschbar?",
+      "options": [
+        "Arbeitsspeicher (RAM)",
+        "CPU",
+        "M.2-SSD",
+        "Bildschirm",
+        "Netzteil (extern)"
+      ],
+      "answer": [
+        "Arbeitsspeicher (RAM)",
+        "CPU"
+      ],
+      "explanation": "Bei vielen Ultrabooks sind RAM und CPU direkt auf dem Mainboard verlötet, um Bauhöhe zu sparen. M.2-SSDs sind meist noch steckbar, der Bildschirm ist fest verbaut aber grundsätzlich austauschbar, das externe Netzteil ist ohnehin lose.",
+      "translations": {
+        "en": {
+          "question": "Which components in most modern ultrabook notebooks, unlike classic desktop PCs, are soldered in place and not easily replaceable?",
+          "options": [
+            "Main memory (RAM)",
+            "CPU",
+            "M.2 SSD",
+            "Display",
+            "Power adapter (external)"
+          ],
+          "answer": [
+            "Main memory (RAM)",
+            "CPU"
+          ],
+          "explanation": "In many ultrabooks, RAM and CPU are soldered directly onto the motherboard to save on thickness. M.2 SSDs are usually still socketed, the display is fixed but generally replaceable, and the external power adapter is loose anyway."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q83",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist die primäre Aufgabe eines Gerätetreibers?",
+      "options": [
+        "Er übersetzt Befehle des Betriebssystems in für die Hardware verständliche Signale",
+        "Er ersetzt das BIOS/UEFI",
+        "Er verschlüsselt Netzwerkverkehr",
+        "Er verwaltet Benutzerkonten"
+      ],
+      "answer": "Er übersetzt Befehle des Betriebssystems in für die Hardware verständliche Signale",
+      "explanation": "Ein Treiber fungiert als Vermittler zwischen Betriebssystem und Hardwarekomponente, damit das Betriebssystem generische Befehle senden kann, ohne die konkrete Hardwareimplementierung zu kennen.",
+      "translations": {
+        "en": {
+          "question": "What is the primary function of a device driver?",
+          "options": [
+            "It translates operating system commands into signals the hardware can understand",
+            "It replaces the BIOS/UEFI",
+            "It encrypts network traffic",
+            "It manages user accounts"
+          ],
+          "answer": "It translates operating system commands into signals the hardware can understand",
+          "explanation": "A driver acts as an intermediary between the operating system and a hardware component, allowing the OS to send generic commands without knowing the specific hardware implementation."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q84",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Ein neu installiertes Gerät wird im Geräte-Manager mit einem gelben Ausrufezeichen angezeigt. Was bedeutet das üblicherweise?",
+      "answer": "Es liegt ein Treiberproblem vor: entweder fehlt der passende Treiber, ist er veraltet oder fehlerhaft installiert — das Gerät funktioniert dadurch nicht korrekt.",
+      "explanation": "Häufige Lösung: aktuellen Treiber vom Hersteller herunterladen und installieren oder den Treiber im Geräte-Manager deinstallieren und neu erkennen lassen.",
+      "translations": {
+        "en": {
+          "question": "A newly installed device shows a yellow exclamation mark in the Device Manager. What does this usually indicate?",
+          "answer": "There is a driver problem: either the correct driver is missing, outdated, or incorrectly installed — as a result, the device does not function properly.",
+          "explanation": "Common fix: download and install the current driver from the manufacturer, or uninstall the driver in Device Manager and let it be redetected."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q85",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welches Windows-Tool wird typischerweise genutzt, um installierte Hardware, deren Treiberstatus und eventuelle Konflikte einzusehen?",
+      "options": [
+        "Task-Manager",
+        "Geräte-Manager",
+        "Ereignisanzeige",
+        "Datenträgerverwaltung"
+      ],
+      "answer": "Geräte-Manager",
+      "explanation": "Der Geräte-Manager (devmgmt.msc) zeigt alle erkannten Hardwarekomponenten mit Treiberstatus an. Der Task-Manager zeigt laufende Prozesse, die Ereignisanzeige Systemprotokolle, die Datenträgerverwaltung Partitionen.",
+      "translations": {
+        "en": {
+          "question": "Which Windows tool is typically used to view installed hardware, its driver status, and any conflicts?",
+          "options": [
+            "Task Manager",
+            "Device Manager",
+            "Event Viewer",
+            "Disk Management"
+          ],
+          "answer": "Device Manager",
+          "explanation": "Device Manager (devmgmt.msc) displays all detected hardware components along with their driver status. Task Manager shows running processes, Event Viewer shows system logs, and Disk Management shows partitions."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q86",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was ist ein zentrales Ziel von Green-IT-Maßnahmen in Unternehmen?",
+      "options": [
+        "Maximale Rechenleistung unabhängig vom Energieverbrauch",
+        "Reduzierung des Energieverbrauchs und der Umweltbelastung von IT-Systemen über deren gesamten Lebenszyklus",
+        "Vollständiger Verzicht auf Klimatisierung im Rechenzentrum",
+        "Ausschließliche Nutzung von gebrauchter Hardware"
+      ],
+      "answer": "Reduzierung des Energieverbrauchs und der Umweltbelastung von IT-Systemen über deren gesamten Lebenszyklus",
+      "explanation": "Green IT umfasst Maßnahmen wie energieeffiziente Hardware, Virtualisierung, optimierte Kühlung und nachhaltige Entsorgung/Recycling, um den ökologischen Fußabdruck der IT zu senken.",
+      "translations": {
+        "en": {
+          "question": "What is a central goal of Green IT measures in companies?",
+          "options": [
+            "Maximum computing performance regardless of energy consumption",
+            "Reducing the energy consumption and environmental impact of IT systems across their entire life cycle",
+            "Completely forgoing air conditioning in the data center",
+            "Exclusively using second-hand hardware"
+          ],
+          "answer": "Reducing the energy consumption and environmental impact of IT systems across their entire life cycle",
+          "explanation": "Green IT includes measures such as energy-efficient hardware, virtualization, optimized cooling, and sustainable disposal/recycling to reduce IT's ecological footprint."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q87",
+      "type": "multiple",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welche Maßnahmen tragen zur Energieeffizienz eines Büroarbeitsplatzes bei?",
+      "options": [
+        "Energiesparmodi/Ruhezustand am PC aktivieren",
+        "Monitor bei längerer Inaktivität automatisch abschalten",
+        "Monitore und PCs dauerhaft im Volllastbetrieb ohne Ruhezustand belassen",
+        "Netzteile mit hoher 80+-Zertifizierung einsetzen",
+        "Bildschirmhelligkeit unnötig auf Maximum belassen"
+      ],
+      "answer": [
+        "Energiesparmodi/Ruhezustand am PC aktivieren",
+        "Monitor bei längerer Inaktivität automatisch abschalten",
+        "Netzteile mit hoher 80+-Zertifizierung einsetzen"
+      ],
+      "explanation": "Energiesparmodi, automatische Abschaltung und effiziente Netzteile senken den Verbrauch. Dauerhafter Volllastbetrieb und unnötig hohe Helligkeit erhöhen den Energiebedarf unnötig.",
+      "translations": {
+        "en": {
+          "question": "Which measures contribute to energy efficiency at an office workstation?",
+          "options": [
+            "Enabling power-saving/sleep modes on the PC",
+            "Automatically turning off the monitor after prolonged inactivity",
+            "Leaving monitors and PCs permanently at full load without sleep mode",
+            "Using power supplies with high 80+ certification",
+            "Leaving screen brightness unnecessarily at maximum"
+          ],
+          "answer": [
+            "Enabling power-saving/sleep modes on the PC",
+            "Automatically turning off the monitor after prolonged inactivity",
+            "Using power supplies with high 80+ certification"
+          ],
+          "explanation": "Power-saving modes, automatic shutdown, and efficient power supplies reduce consumption. Permanent full-load operation and unnecessarily high brightness needlessly increase energy demand."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q88",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Was versteht man unter dem „Total Cost of Ownership“ (TCO) einer IT-Hardware-Anschaffung?",
+      "answer": "Die Gesamtkosten einer Hardware über ihre gesamte Nutzungsdauer, inklusive Anschaffungskosten, Betriebskosten (z. B. Strom, Wartung, Support) und Entsorgungskosten — nicht nur der reine Kaufpreis.",
+      "explanation": "Energieeffiziente, aber teurer angeschaffte Hardware kann über die Laufzeit trotzdem günstiger sein, wenn die Betriebskosten (Stromverbrauch, Kühlung) deutlich niedriger ausfallen.",
+      "translations": {
+        "en": {
+          "question": "What is meant by the \"Total Cost of Ownership\" (TCO) of an IT hardware purchase?",
+          "answer": "The total costs of a piece of hardware over its entire useful life, including acquisition costs, operating costs (e.g. electricity, maintenance, support) and disposal costs — not just the purchase price alone.",
+          "explanation": "Energy-efficient hardware that is more expensive to purchase can still be cheaper over its lifetime if operating costs (power consumption, cooling) turn out significantly lower."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q89",
+      "type": "single",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Welches Gütesiegel kennzeichnet in Deutschland besonders energie- und umweltfreundliche IT-Produkte?",
+      "options": [
+        "CE-Kennzeichnung",
+        "Blauer Engel",
+        "GS-Zeichen",
+        "TÜV-Rot"
+      ],
+      "answer": "Blauer Engel",
+      "explanation": "Der „Blaue Engel“ ist ein deutsches Umweltzeichen, das u. a. für Energieeffizienz, Schadstoffarmut und Recyclingfähigkeit von IT-Geräten vergeben wird. Die CE-Kennzeichnung bestätigt nur die Einhaltung von EU-Sicherheitsvorschriften.",
+      "translations": {
+        "en": {
+          "question": "Which certification label in Germany identifies particularly energy- and environmentally-friendly IT products?",
+          "options": [
+            "CE marking",
+            "Blue Angel (Blauer Engel)",
+            "GS mark",
+            "TÜV Red"
+          ],
+          "answer": "Blue Angel (Blauer Engel)",
+          "explanation": "The \"Blue Angel\" is a German environmental label awarded, among other things, for energy efficiency, low pollutant content, and recyclability of IT devices. The CE marking only confirms compliance with EU safety regulations."
+        }
+      }
+    },
+    {
+      "id": "ap1-hw-q90",
+      "type": "text",
+      "category": "Hardware & Arbeitsplatz",
+      "question": "Nennen Sie eine Möglichkeit, wie Server-Virtualisierung zur Energieeffizienz im Rechenzentrum beitragen kann.",
+      "answer": "Durch Virtualisierung können mehrere virtuelle Server auf einer physischen Maschine konsolidiert werden, wodurch weniger physische Hardware benötigt wird und die vorhandene Hardware besser ausgelastet ist — das senkt Energie- und Kühlungsbedarf.",
+      "explanation": "Statt für jede Anwendung einen eigenen, oft nur gering ausgelasteten physischen Server zu betreiben, lassen sich mehrere Workloads auf weniger, aber besser ausgelasteten Servern zusammenfassen.",
+      "translations": {
+        "en": {
+          "question": "Name one way server virtualization can contribute to energy efficiency in a data center.",
+          "answer": "Virtualization allows multiple virtual servers to be consolidated onto one physical machine, requiring less physical hardware and achieving better utilization of existing hardware — this lowers energy and cooling demand.",
+          "explanation": "Instead of running a separate, often lightly utilized physical server for each application, multiple workloads can be consolidated onto fewer, better-utilized servers."
+        }
+      }
+    }
+  ]
+}

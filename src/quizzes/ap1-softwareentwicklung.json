@@ -1,0 +1,286 @@
+{
+  "questions": [
+    {
+      "id": "ap1-swe-q01",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welcher Datentyp eignet sich für die Speicherung eines Wahrheitswertes (wahr/falsch)?",
+      "options": ["boolean", "integer", "float", "string"],
+      "answer": "boolean",
+      "explanation": "Ein boolean kennt genau zwei Zustände: true und false. Integer speichert Ganzzahlen, float Gleitkommazahlen, string Zeichenketten.",
+      "translations": {
+        "en": {
+          "question": "Which data type is suitable for storing a truth value (true/false)?",
+          "options": ["boolean", "integer", "float", "string"],
+          "answer": "boolean",
+          "explanation": "A boolean has exactly two states: true and false. Integer stores whole numbers, float stores floating-point numbers, string stores text."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q02",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welchen dezimalen Wert hat die Binärzahl 1101?",
+      "options": ["11", "12", "13", "14"],
+      "answer": "13",
+      "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Stellenwerte von rechts: 1, 2, 4, 8.",
+      "translations": {
+        "en": {
+          "question": "What is the decimal value of the binary number 1101?",
+          "options": ["11", "12", "13", "14"],
+          "answer": "13",
+          "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Place values from the right: 1, 2, 4, 8."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q03",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Schleifenart wird in jedem Fall mindestens einmal durchlaufen?",
+      "options": [
+        "Fußgesteuerte Schleife (do-while)",
+        "Kopfgesteuerte Schleife (while)",
+        "Zählschleife mit Startwert größer als Endwert",
+        "Keine — jede Schleife kann übersprungen werden"
+      ],
+      "answer": "Fußgesteuerte Schleife (do-while)",
+      "explanation": "Bei der fußgesteuerten Schleife wird die Bedingung erst NACH dem Schleifenkörper geprüft — der Körper läuft also mindestens einmal. Die while-Schleife prüft vorher.",
+      "translations": {
+        "en": {
+          "question": "Which type of loop is always executed at least once?",
+          "options": [
+            "Exit-controlled loop (do-while)",
+            "Entry-controlled loop (while)",
+            "Counting loop with a start value greater than the end value",
+            "None — every loop can be skipped"
+          ],
+          "answer": "Exit-controlled loop (do-while)",
+          "explanation": "In an exit-controlled loop the condition is checked AFTER the loop body — so the body runs at least once. A while loop checks beforehand."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q04",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Wie viele verschiedene Werte lassen sich mit einem Byte darstellen?",
+      "options": ["8", "64", "255", "256"],
+      "answer": "256",
+      "explanation": "1 Byte = 8 Bit → 2⁸ = 256 verschiedene Werte (z. B. 0 bis 255). Beliebte Falle: 255 ist der höchste Wert, nicht die Anzahl.",
+      "translations": {
+        "en": {
+          "question": "How many different values can be represented with one byte?",
+          "options": ["8", "64", "255", "256"],
+          "answer": "256",
+          "explanation": "1 byte = 8 bits → 2⁸ = 256 different values (e.g. 0 to 255). Popular trap: 255 is the highest value, not the count."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q05",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Kontrollstrukturen kennt die strukturierte Programmierung?",
+      "options": [
+        "Sequenz (Anweisungsfolge)",
+        "Auswahl (Verzweigung)",
+        "Wiederholung (Schleife)",
+        "Unbedingter Sprung (GOTO)",
+        "Kompilierung"
+      ],
+      "answer": [
+        "Sequenz (Anweisungsfolge)",
+        "Auswahl (Verzweigung)",
+        "Wiederholung (Schleife)"
+      ],
+      "explanation": "Die strukturierte Programmierung kommt mit genau drei Kontrollstrukturen aus — GOTO-Sprünge werden bewusst vermieden. Kompilierung ist ein Übersetzungsvorgang.",
+      "translations": {
+        "en": {
+          "question": "Which control structures does structured programming use?",
+          "options": [
+            "Sequence (series of statements)",
+            "Selection (branching)",
+            "Iteration (loop)",
+            "Unconditional jump (GOTO)",
+            "Compilation"
+          ],
+          "answer": [
+            "Sequence (series of statements)",
+            "Selection (branching)",
+            "Iteration (loop)"
+          ],
+          "explanation": "Structured programming gets by with exactly three control structures — GOTO jumps are deliberately avoided. Compilation is a translation step, not a control structure."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q06",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aufgaben übernimmt eine Versionsverwaltung wie Git?",
+      "options": [
+        "Änderungshistorie des Quellcodes nachvollziehbar machen",
+        "Paralleles Arbeiten mehrerer Entwickler ermöglichen",
+        "Frühere Programmstände wiederherstellen",
+        "Quellcode automatisch auf Viren prüfen",
+        "Den Stromverbrauch des Servers senken"
+      ],
+      "answer": [
+        "Änderungshistorie des Quellcodes nachvollziehbar machen",
+        "Paralleles Arbeiten mehrerer Entwickler ermöglichen",
+        "Frühere Programmstände wiederherstellen"
+      ],
+      "explanation": "Versionsverwaltung protokolliert, wer wann was geändert hat, unterstützt Branches/Merges für Teamarbeit und erlaubt das Zurückrollen auf jeden früheren Stand.",
+      "translations": {
+        "en": {
+          "question": "Which tasks does a version control system like Git handle?",
+          "options": [
+            "Make the change history of the source code traceable",
+            "Enable multiple developers to work in parallel",
+            "Restore earlier versions of the program",
+            "Automatically scan source code for viruses",
+            "Reduce the server's power consumption"
+          ],
+          "answer": [
+            "Make the change history of the source code traceable",
+            "Enable multiple developers to work in parallel",
+            "Restore earlier versions of the program"
+          ],
+          "explanation": "Version control records who changed what and when, supports branches/merges for teamwork, and allows rolling back to any earlier state."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q07",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Pseudocode treffen zu?",
+      "options": [
+        "Er ist nicht direkt auf einem Computer ausführbar",
+        "Er ist unabhängig von einer konkreten Programmiersprache",
+        "Er dient der Planung und Kommunikation von Algorithmen",
+        "Er muss vor der Verwendung kompiliert werden",
+        "Er benötigt eine spezielle Entwicklungsumgebung"
+      ],
+      "answer": [
+        "Er ist nicht direkt auf einem Computer ausführbar",
+        "Er ist unabhängig von einer konkreten Programmiersprache",
+        "Er dient der Planung und Kommunikation von Algorithmen"
+      ],
+      "explanation": "Pseudocode beschreibt Algorithmen in halbformaler, menschenlesbarer Form — als Entwurfswerkzeug vor der eigentlichen Implementierung.",
+      "translations": {
+        "en": {
+          "question": "Which statements about pseudocode are true?",
+          "options": [
+            "It cannot be executed directly on a computer",
+            "It is independent of any specific programming language",
+            "It is used to plan and communicate algorithms",
+            "It must be compiled before use",
+            "It requires a special development environment"
+          ],
+          "answer": [
+            "It cannot be executed directly on a computer",
+            "It is independent of any specific programming language",
+            "It is used to plan and communicate algorithms"
+          ],
+          "explanation": "Pseudocode describes algorithms in a semi-formal, human-readable form — a design tool used before the actual implementation."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q08",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Kriterien sollte ein guter Variablenname erfüllen?",
+      "options": [
+        "Er beschreibt den Inhalt bzw. Zweck der Variablen",
+        "Er ist eindeutig und konsistent zum restlichen Code benannt",
+        "Er ist so kurz wie möglich, z. B. immer nur ein Buchstabe",
+        "Er enthält möglichst viele Sonderzeichen"
+      ],
+      "answer": [
+        "Er beschreibt den Inhalt bzw. Zweck der Variablen",
+        "Er ist eindeutig und konsistent zum restlichen Code benannt"
+      ],
+      "explanation": "„anzahlKunden“ statt „x“: sprechende Namen machen Code wartbar. Einbuchstabige Namen sind nur für kurzlebige Zähler (z. B. Schleifenindex i) üblich.",
+      "translations": {
+        "en": {
+          "question": "Which criteria should a good variable name meet?",
+          "options": [
+            "It describes the content or purpose of the variable",
+            "It is unambiguous and named consistently with the rest of the code",
+            "It is as short as possible, e.g. always just one letter",
+            "It contains as many special characters as possible"
+          ],
+          "answer": [
+            "It describes the content or purpose of the variable",
+            "It is unambiguous and named consistently with the rest of the code"
+          ],
+          "explanation": "\"customerCount\" instead of \"x\": descriptive names keep code maintainable. Single-letter names are only conventional for short-lived counters (e.g. loop index i)."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q09",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Worin unterscheiden sich Compiler und Interpreter?",
+      "answer": "Ein Compiler übersetzt den gesamten Quellcode vor der Ausführung in Maschinencode; ein Interpreter übersetzt und führt den Code zeilenweise zur Laufzeit aus",
+      "explanation": "Kompilierte Programme laufen schneller, interpretierte sind flexibler und plattformunabhängiger. Beispiele: C/C++ (Compiler), Python (Interpreter).",
+      "translations": {
+        "en": {
+          "question": "What is the difference between a compiler and an interpreter?",
+          "answer": "A compiler translates the entire source code into machine code before execution; an interpreter translates and executes the code line by line at runtime",
+          "explanation": "Compiled programs run faster, interpreted ones are more flexible and platform-independent. Examples: C/C++ (compiler), Python (interpreter)."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q10",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Wie heißt das nach seinen beiden Erfindern benannte Diagramm, mit dem Algorithmen strukturiert grafisch dargestellt werden?",
+      "answer": "Nassi-Shneiderman-Diagramm (Struktogramm)",
+      "explanation": "Struktogramme stellen Sequenz, Verzweigung und Schleife als verschachtelte Blöcke dar — ohne Sprünge, im Gegensatz zum Programmablaufplan (Flussdiagramm).",
+      "translations": {
+        "en": {
+          "question": "What is the name of the diagram, named after its two inventors, used to represent algorithms graphically in a structured way?",
+          "answer": "Nassi-Shneiderman diagram (structogram)",
+          "explanation": "Structograms represent sequence, branching and loops as nested blocks — without jumps, unlike a classic flowchart."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q11",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Wandeln Sie die Binärzahl 10100 in eine Dezimalzahl um.",
+      "answer": "20 (16 + 4)",
+      "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20.",
+      "translations": {
+        "en": {
+          "question": "Convert the binary number 10100 to decimal.",
+          "answer": "20 (16 + 4)",
+          "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20."
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-q12",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Was versteht man unter einem Algorithmus?",
+      "answer": "Eine eindeutige, endliche Handlungsvorschrift zur Lösung eines Problems, die aus einzelnen, ausführbaren Schritten besteht",
+      "explanation": "Wichtige Eigenschaften: Eindeutigkeit, Endlichkeit, Ausführbarkeit und Determiniertheit — gleiche Eingabe führt zum gleichen Ergebnis.",
+      "translations": {
+        "en": {
+          "question": "What is an algorithm?",
+          "answer": "An unambiguous, finite set of instructions for solving a problem, consisting of individual executable steps",
+          "explanation": "Key properties: unambiguity, finiteness, executability and determinism — the same input leads to the same result."
+        }
+      }
+    }
+  ]
+}

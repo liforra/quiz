@@ -1,0 +1,290 @@
+{
+  "questions": [
+    {
+      "id": "ap2-srv-q01",
+      "type": "single",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Über welchen Standard-Port beantwortet ein DNS-Server Anfragen?",
+      "options": ["Port 25", "Port 53", "Port 67", "Port 443"],
+      "answer": "Port 53",
+      "explanation": "DNS nutzt Port 53 (UDP für normale Anfragen, TCP z. B. für Zonentransfers). Port 25 ist SMTP, 67 DHCP, 443 HTTPS.",
+      "translations": {
+        "en": {
+          "question": "On which standard port does a DNS server answer queries?",
+          "options": ["Port 25", "Port 53", "Port 67", "Port 443"],
+          "answer": "Port 53",
+          "explanation": "DNS uses port 53 (UDP for normal queries, TCP e.g. for zone transfers). Port 25 is SMTP, 67 is DHCP, 443 is HTTPS."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q02",
+      "type": "single",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Was kennzeichnet einen Typ-1-Hypervisor?",
+      "options": [
+        "Er läuft direkt auf der Hardware (bare metal)",
+        "Er läuft als Anwendung innerhalb eines Betriebssystems",
+        "Er kann nur eine einzige VM gleichzeitig ausführen",
+        "Er funktioniert ausschließlich mit Linux-Gästen"
+      ],
+      "answer": "Er läuft direkt auf der Hardware (bare metal)",
+      "explanation": "Typ 1 (z. B. VMware ESXi, Proxmox VE, Hyper-V) läuft direkt auf der Hardware — effizient und für Server üblich. Typ 2 (z. B. VirtualBox) läuft als Programm im Host-OS.",
+      "translations": {
+        "en": {
+          "question": "What characterizes a type 1 hypervisor?",
+          "options": [
+            "It runs directly on the hardware (bare metal)",
+            "It runs as an application inside an operating system",
+            "It can only run a single VM at a time",
+            "It only works with Linux guests"
+          ],
+          "answer": "It runs directly on the hardware (bare metal)",
+          "explanation": "Type 1 (e.g. VMware ESXi, Proxmox VE, Hyper-V) runs directly on the hardware — efficient and standard for servers. Type 2 (e.g. VirtualBox) runs as a program inside a host OS."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q03",
+      "type": "single",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welches Protokoll wird verwendet, um die Uhrzeit von Servern und Clients im Netzwerk zu synchronisieren?",
+      "options": ["NTP", "SNMP", "ARP", "FTP"],
+      "answer": "NTP",
+      "explanation": "NTP (Network Time Protocol) hält Systemuhren synchron — wichtig u. a. für Kerberos, Logauswertung und Zertifikatsprüfung. SNMP ist Monitoring, ARP löst IP→MAC auf.",
+      "translations": {
+        "en": {
+          "question": "Which protocol is used to synchronize the clocks of servers and clients on the network?",
+          "options": ["NTP", "SNMP", "ARP", "FTP"],
+          "answer": "NTP",
+          "explanation": "NTP (Network Time Protocol) keeps system clocks in sync — important for Kerberos, log analysis and certificate validation. SNMP is monitoring, ARP resolves IP→MAC."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q04",
+      "type": "single",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Ein Server benötigt 690 W Wirkleistung. Die USV hat einen Leistungsfaktor von 0,92. Welche Scheinleistung muss die USV mindestens liefern?",
+      "options": ["635 VA", "690 VA", "750 VA", "920 VA"],
+      "answer": "750 VA",
+      "explanation": "Scheinleistung S = Wirkleistung P ÷ Leistungsfaktor cos φ = 690 W ÷ 0,92 = 750 VA.",
+      "translations": {
+        "en": {
+          "question": "A server requires 690 W of real power. The UPS has a power factor of 0.92. What apparent power must the UPS provide at minimum?",
+          "options": ["635 VA", "690 VA", "750 VA", "920 VA"],
+          "answer": "750 VA",
+          "explanation": "Apparent power S = real power P ÷ power factor cos φ = 690 W ÷ 0.92 = 750 VA."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q05",
+      "type": "multiple",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welche der folgenden Aufgaben übernimmt ein DHCP-Server?",
+      "options": [
+        "IP-Adressen an Clients vergeben",
+        "Die Subnetzmaske übermitteln",
+        "Standardgateway und DNS-Server mitteilen",
+        "Domainnamen in IP-Adressen auflösen",
+        "Webseiten ausliefern"
+      ],
+      "answer": [
+        "IP-Adressen an Clients vergeben",
+        "Die Subnetzmaske übermitteln",
+        "Standardgateway und DNS-Server mitteilen"
+      ],
+      "explanation": "DHCP verteilt die komplette IP-Konfiguration per Lease. Die Namensauflösung selbst macht der DNS-Server, Webseiten liefert ein Webserver.",
+      "translations": {
+        "en": {
+          "question": "Which of the following tasks does a DHCP server perform?",
+          "options": [
+            "Assign IP addresses to clients",
+            "Provide the subnet mask",
+            "Communicate the default gateway and DNS server",
+            "Resolve domain names to IP addresses",
+            "Serve web pages"
+          ],
+          "answer": [
+            "Assign IP addresses to clients",
+            "Provide the subnet mask",
+            "Communicate the default gateway and DNS server"
+          ],
+          "explanation": "DHCP hands out the complete IP configuration via leases. Name resolution itself is done by the DNS server; web pages are served by a web server."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q06",
+      "type": "multiple",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welche Vorteile bietet Servervirtualisierung?",
+      "options": [
+        "Bessere Auslastung der physischen Hardware",
+        "Snapshots ermöglichen schnelles Zurücksetzen",
+        "Schnelle Bereitstellung neuer Systeme",
+        "Backups werden überflüssig",
+        "Jede Anwendung läuft automatisch schneller"
+      ],
+      "answer": [
+        "Bessere Auslastung der physischen Hardware",
+        "Snapshots ermöglichen schnelles Zurücksetzen",
+        "Schnelle Bereitstellung neuer Systeme"
+      ],
+      "explanation": "Konsolidierung, Snapshots und Templates sind die Kernvorteile. Backups bleiben nötig (Snapshots sind kein Backup!), und Virtualisierung kostet sogar etwas Leistung.",
+      "translations": {
+        "en": {
+          "question": "What advantages does server virtualization offer?",
+          "options": [
+            "Better utilization of the physical hardware",
+            "Snapshots enable quick rollbacks",
+            "Fast provisioning of new systems",
+            "Backups become unnecessary",
+            "Every application automatically runs faster"
+          ],
+          "answer": [
+            "Better utilization of the physical hardware",
+            "Snapshots enable quick rollbacks",
+            "Fast provisioning of new systems"
+          ],
+          "explanation": "Consolidation, snapshots and templates are the core benefits. Backups remain necessary (snapshots are not backups!), and virtualization even costs a little performance."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q07",
+      "type": "multiple",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welche Aussagen zum Vergleich von Containern und virtuellen Maschinen sind korrekt?",
+      "options": [
+        "Container teilen sich den Kernel des Host-Systems",
+        "Container starten in der Regel schneller als VMs",
+        "VMs bieten eine stärkere Isolation als Container",
+        "Jeder Container enthält einen eigenen Betriebssystem-Kernel",
+        "VMs teilen sich immer den Kernel des Hosts"
+      ],
+      "answer": [
+        "Container teilen sich den Kernel des Host-Systems",
+        "Container starten in der Regel schneller als VMs",
+        "VMs bieten eine stärkere Isolation als Container"
+      ],
+      "explanation": "Container (z. B. Docker) virtualisieren auf OS-Ebene und teilen den Host-Kernel — leichtgewichtig, aber schwächer isoliert. VMs bringen je ein komplettes OS samt Kernel mit.",
+      "translations": {
+        "en": {
+          "question": "Which statements comparing containers and virtual machines are correct?",
+          "options": [
+            "Containers share the host system's kernel",
+            "Containers usually start faster than VMs",
+            "VMs provide stronger isolation than containers",
+            "Each container contains its own operating system kernel",
+            "VMs always share the host's kernel"
+          ],
+          "answer": [
+            "Containers share the host system's kernel",
+            "Containers usually start faster than VMs",
+            "VMs provide stronger isolation than containers"
+          ],
+          "explanation": "Containers (e.g. Docker) virtualize at OS level and share the host kernel — lightweight but less isolated. Each VM brings a complete OS including its own kernel."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q08",
+      "type": "multiple",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welche Aussagen über SaaS (Software as a Service) treffen zu?",
+      "options": [
+        "Die Software läuft auf der Infrastruktur des Anbieters",
+        "Die Abrechnung erfolgt meist als Abonnement",
+        "Microsoft 365 ist ein typisches Beispiel",
+        "Der Kunde wartet die Server selbst",
+        "Der Kunde muss Updates selbst einspielen"
+      ],
+      "answer": [
+        "Die Software läuft auf der Infrastruktur des Anbieters",
+        "Die Abrechnung erfolgt meist als Abonnement",
+        "Microsoft 365 ist ein typisches Beispiel"
+      ],
+      "explanation": "Bei SaaS liegt der gesamte Betrieb (Server, Updates, Verfügbarkeit) beim Anbieter. Bei IaaS dagegen verwaltet der Kunde Betriebssystem und Anwendungen selbst.",
+      "translations": {
+        "en": {
+          "question": "Which statements about SaaS (Software as a Service) are true?",
+          "options": [
+            "The software runs on the provider's infrastructure",
+            "Billing is usually subscription-based",
+            "Microsoft 365 is a typical example",
+            "The customer maintains the servers themselves",
+            "The customer has to install updates themselves"
+          ],
+          "answer": [
+            "The software runs on the provider's infrastructure",
+            "Billing is usually subscription-based",
+            "Microsoft 365 is a typical example"
+          ],
+          "explanation": "With SaaS, the entire operation (servers, updates, availability) is the provider's job. With IaaS, in contrast, the customer manages OS and applications themselves."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q09",
+      "type": "text",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Welcher DNS-Recordtyp löst einen Hostnamen in eine IPv4-Adresse auf?",
+      "answer": "A-Record",
+      "explanation": "A = IPv4, AAAA = IPv6, CNAME = Alias, MX = Mailserver, PTR = Reverse-Auflösung (IP → Name).",
+      "translations": {
+        "en": {
+          "question": "Which DNS record type resolves a hostname to an IPv4 address?",
+          "answer": "A record",
+          "explanation": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail server, PTR = reverse resolution (IP → name)."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q10",
+      "type": "text",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Was ist ein Snapshot einer virtuellen Maschine und wofür wird er typischerweise genutzt?",
+      "answer": "Ein eingefrorener Zustand der VM zu einem bestimmten Zeitpunkt, auf den man zurückkehren kann — typisch vor Updates oder riskanten Änderungen",
+      "explanation": "Wichtig: Snapshots sind kein Backup-Ersatz — sie liegen auf demselben Speicher wie die VM und kosten bei langer Aufbewahrung Performance und Platz.",
+      "translations": {
+        "en": {
+          "question": "What is a snapshot of a virtual machine, and what is it typically used for?",
+          "answer": "A frozen state of the VM at a specific point in time that you can revert to — typically taken before updates or risky changes",
+          "explanation": "Important: snapshots are not a backup replacement — they live on the same storage as the VM and cost performance and space when kept for long."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q11",
+      "type": "text",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Wozu dient ein DHCP-Relay-Agent?",
+      "answer": "Er leitet DHCP-Broadcasts der Clients über Netzgrenzen hinweg als Unicast an einen zentralen DHCP-Server in einem anderen Subnetz weiter",
+      "explanation": "Broadcasts überqueren keine Router. Ohne Relay bräuchte jedes Subnetz/VLAN einen eigenen DHCP-Server.",
+      "translations": {
+        "en": {
+          "question": "What is a DHCP relay agent for?",
+          "answer": "It forwards clients' DHCP broadcasts across network boundaries as unicast to a central DHCP server in another subnet",
+          "explanation": "Broadcasts do not cross routers. Without a relay, every subnet/VLAN would need its own DHCP server."
+        }
+      }
+    },
+    {
+      "id": "ap2-srv-q12",
+      "type": "text",
+      "category": "Serverdienste & Virtualisierung",
+      "question": "Wofür steht die Abkürzung SLA und was wird darin geregelt?",
+      "answer": "Service Level Agreement — ein Vertrag, der die zugesicherte Dienstgüte regelt, z. B. Verfügbarkeit, Reaktionszeiten und Sanktionen bei Nichteinhaltung",
+      "explanation": "Beispiel: 99,9 % Verfügbarkeit entspricht max. ca. 8,8 Stunden Ausfall pro Jahr. Kennzahlen im SLA müssen messbar sein.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation SLA stand for, and what does it regulate?",
+          "answer": "Service Level Agreement — a contract defining the guaranteed quality of service, e.g. availability, response times and penalties for non-compliance",
+          "explanation": "Example: 99.9% availability corresponds to a maximum of about 8.8 hours of downtime per year. SLA metrics must be measurable."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2384 @@
+{
+  "questions": [
+    {
+      "id": "ap1-net-q01",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aufgabe übernimmt ein DHCP-Server in einem Netzwerk?",
+      "options": [
+        "Er löst Domainnamen in IP-Adressen auf",
+        "Er vergibt automatisch IP-Konfigurationen an Clients",
+        "Er filtert unerwünschten Netzwerkverkehr",
+        "Er synchronisiert die Uhrzeit der Clients"
+      ],
+      "answer": "Er vergibt automatisch IP-Konfigurationen an Clients",
+      "explanation": "DHCP verteilt IP-Adresse, Subnetzmaske, Gateway und DNS-Server automatisch. Namensauflösung ist DNS, Zeit ist NTP, Filterung übernimmt die Firewall.",
+      "translations": {
+        "en": {
+          "question": "What is the role of a DHCP server in a network?",
+          "options": [
+            "It resolves domain names to IP addresses",
+            "It automatically assigns IP configurations to clients",
+            "It filters unwanted network traffic",
+            "It synchronizes the clients' clocks"
+          ],
+          "answer": "It automatically assigns IP configurations to clients",
+          "explanation": "DHCP hands out IP address, subnet mask, gateway and DNS server automatically. Name resolution is DNS, time is NTP, filtering is done by a firewall."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q02",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Aus wie vielen Bits besteht eine IPv4-Adresse?",
+      "options": [
+        "16 Bit",
+        "32 Bit",
+        "64 Bit",
+        "128 Bit"
+      ],
+      "answer": "32 Bit",
+      "explanation": "IPv4-Adressen bestehen aus 32 Bit (4 Oktette à 8 Bit, z. B. 192.168.1.1). IPv6-Adressen sind 128 Bit lang.",
+      "translations": {
+        "en": {
+          "question": "How many bits does an IPv4 address consist of?",
+          "options": [
+            "16 bits",
+            "32 bits",
+            "64 bits",
+            "128 bits"
+          ],
+          "answer": "32 bits",
+          "explanation": "IPv4 addresses are 32 bits long (4 octets of 8 bits each, e.g. 192.168.1.1). IPv6 addresses are 128 bits."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q03",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele nutzbare Hostadressen bietet das Subnetz 192.168.10.0/26?",
+      "options": [
+        "30",
+        "62",
+        "64",
+        "126"
+      ],
+      "answer": "62",
+      "explanation": "/26 lässt 6 Hostbits übrig: 2⁶ = 64 Adressen, minus Netzadresse und Broadcast = 62 nutzbare Hosts.",
+      "translations": {
+        "en": {
+          "question": "How many usable host addresses does the subnet 192.168.10.0/26 provide?",
+          "options": [
+            "30",
+            "62",
+            "64",
+            "126"
+          ],
+          "answer": "62",
+          "explanation": "/26 leaves 6 host bits: 2⁶ = 64 addresses, minus network address and broadcast = 62 usable hosts."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q04",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden IPv4-Adressen liegt in einem privaten Adressbereich?",
+      "options": [
+        "172.16.5.10",
+        "172.32.1.1",
+        "192.169.1.1",
+        "11.0.0.1"
+      ],
+      "answer": "172.16.5.10",
+      "explanation": "Private Bereiche (RFC 1918): 10.0.0.0/8, 172.16.0.0/12 (bis 172.31.255.255) und 192.168.0.0/16. 172.32.x.x und 192.169.x.x liegen knapp außerhalb — beliebte Prüfungsfallen.",
+      "translations": {
+        "en": {
+          "question": "Which of the following IPv4 addresses is in a private address range?",
+          "options": [
+            "172.16.5.10",
+            "172.32.1.1",
+            "192.169.1.1",
+            "11.0.0.1"
+          ],
+          "answer": "172.16.5.10",
+          "explanation": "Private ranges (RFC 1918): 10.0.0.0/8, 172.16.0.0/12 (up to 172.31.255.255) and 192.168.0.0/16. 172.32.x.x and 192.169.x.x are just outside — classic exam traps."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q05",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Protokolle arbeiten auf der Anwendungsschicht?",
+      "options": [
+        "HTTP",
+        "TCP",
+        "SMTP",
+        "IP",
+        "DNS"
+      ],
+      "answer": [
+        "HTTP",
+        "SMTP",
+        "DNS"
+      ],
+      "explanation": "HTTP (Web), SMTP (Mailversand) und DNS (Namensauflösung) sind Anwendungsprotokolle. TCP ist Transportschicht, IP ist Vermittlungsschicht.",
+      "translations": {
+        "en": {
+          "question": "Which of the following protocols operate at the application layer?",
+          "options": [
+            "HTTP",
+            "TCP",
+            "SMTP",
+            "IP",
+            "DNS"
+          ],
+          "answer": [
+            "HTTP",
+            "SMTP",
+            "DNS"
+          ],
+          "explanation": "HTTP (web), SMTP (mail delivery) and DNS (name resolution) are application-layer protocols. TCP is transport layer, IP is network layer."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q06",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen über IPv6 sind korrekt?",
+      "options": [
+        "Eine IPv6-Adresse ist 128 Bit lang",
+        "IPv6-Adressen werden hexadezimal notiert",
+        "IPv6 kennt keine Broadcasts mehr",
+        "IPv6 benötigt zwingend NAT",
+        "Eine IPv6-Adresse ist 64 Bit lang"
+      ],
+      "answer": [
+        "Eine IPv6-Adresse ist 128 Bit lang",
+        "IPv6-Adressen werden hexadezimal notiert",
+        "IPv6 kennt keine Broadcasts mehr"
+      ],
+      "explanation": "IPv6: 128 Bit, hexadezimale Notation in 8 Blöcken, statt Broadcast gibt es Multicast. NAT ist dank des riesigen Adressraums gerade nicht mehr nötig.",
+      "translations": {
+        "en": {
+          "question": "Which statements about IPv6 are correct?",
+          "options": [
+            "An IPv6 address is 128 bits long",
+            "IPv6 addresses are written in hexadecimal",
+            "IPv6 no longer uses broadcasts",
+            "IPv6 strictly requires NAT",
+            "An IPv6 address is 64 bits long"
+          ],
+          "answer": [
+            "An IPv6 address is 128 bits long",
+            "IPv6 addresses are written in hexadecimal",
+            "IPv6 no longer uses broadcasts"
+          ],
+          "explanation": "IPv6: 128 bits, hexadecimal notation in 8 blocks, multicast replaces broadcast. NAT is precisely what the huge address space makes unnecessary."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q07",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Angaben gehören zu einer vollständigen IP-Konfiguration eines Clients?",
+      "options": [
+        "IP-Adresse",
+        "Subnetzmaske",
+        "Standardgateway",
+        "DNS-Server",
+        "Prozessortakt",
+        "BIOS-Version"
+      ],
+      "answer": [
+        "IP-Adresse",
+        "Subnetzmaske",
+        "Standardgateway",
+        "DNS-Server"
+      ],
+      "explanation": "Diese vier Angaben verteilt auch ein DHCP-Server. Ohne Gateway keine Kommunikation in fremde Netze, ohne DNS keine Namensauflösung.",
+      "translations": {
+        "en": {
+          "question": "Which items belong to a complete IP configuration of a client?",
+          "options": [
+            "IP address",
+            "Subnet mask",
+            "Default gateway",
+            "DNS server",
+            "CPU clock speed",
+            "BIOS version"
+          ],
+          "answer": [
+            "IP address",
+            "Subnet mask",
+            "Default gateway",
+            "DNS server"
+          ],
+          "explanation": "These four items are exactly what a DHCP server hands out. Without a gateway there is no communication with other networks, without DNS no name resolution."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q08",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Protokolle übertragen Daten verschlüsselt?",
+      "options": [
+        "SSH",
+        "Telnet",
+        "HTTPS",
+        "HTTP",
+        "SFTP"
+      ],
+      "answer": [
+        "SSH",
+        "HTTPS",
+        "SFTP"
+      ],
+      "explanation": "SSH, HTTPS und SFTP verschlüsseln die Übertragung. Telnet und HTTP senden alles im Klartext — inklusive Passwörtern.",
+      "translations": {
+        "en": {
+          "question": "Which of the following protocols transmit data encrypted?",
+          "options": [
+            "SSH",
+            "Telnet",
+            "HTTPS",
+            "HTTP",
+            "SFTP"
+          ],
+          "answer": [
+            "SSH",
+            "HTTPS",
+            "SFTP"
+          ],
+          "explanation": "SSH, HTTPS and SFTP encrypt the transmission. Telnet and HTTP send everything in plain text — including passwords."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q09",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung LAN?",
+      "answer": "Local Area Network",
+      "explanation": "Ein LAN ist ein lokales Netzwerk mit begrenzter räumlicher Ausdehnung, z. B. innerhalb eines Gebäudes.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation LAN stand for?",
+          "answer": "Local Area Network",
+          "explanation": "A LAN is a local network with limited physical reach, e.g. within a single building."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q10",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie heißt die Adresse, die einer Netzwerkkarte vom Hersteller fest zugewiesen wird und sie weltweit eindeutig identifizieren soll?",
+      "answer": "MAC-Adresse",
+      "explanation": "Die MAC-Adresse (Media Access Control) ist 48 Bit lang und wird auf Schicht 2 (Sicherungsschicht) verwendet, z. B. 00:1A:2B:3C:4D:5E.",
+      "translations": {
+        "en": {
+          "question": "What is the name of the address permanently assigned to a network card by its manufacturer, intended to identify it uniquely worldwide?",
+          "answer": "MAC address",
+          "explanation": "The MAC address (Media Access Control) is 48 bits long and is used at layer 2 (data link layer), e.g. 00:1A:2B:3C:4D:5E."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q11",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie lange dauert die Übertragung von 600 MB über eine 100-Mbit/s-Leitung unter idealen Bedingungen (vereinfacht: 1 MB = 10⁶ Byte)? Geben Sie das Ergebnis in Sekunden an.",
+      "answer": "48 Sekunden (600 MB × 8 = 4800 Mbit; 4800 Mbit ÷ 100 Mbit/s = 48 s)",
+      "explanation": "Typischer Stolperstein: Byte in Bit umrechnen (×8) nicht vergessen!",
+      "translations": {
+        "en": {
+          "question": "How long does it take to transfer 600 MB over a 100 Mbit/s link under ideal conditions (simplified: 1 MB = 10⁶ bytes)? Give the result in seconds.",
+          "answer": "48 seconds (600 MB × 8 = 4800 Mbit; 4800 Mbit ÷ 100 Mbit/s = 48 s)",
+          "explanation": "Classic pitfall: don't forget to convert bytes to bits (×8)!"
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q12",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Ein Host hat die IP-Adresse 192.168.178.77 mit der Präfixlänge /27. Wie lautet die Netzadresse dieses Subnetzes?",
+      "answer": "192.168.178.64",
+      "explanation": "/27 → Blockgröße 32 im letzten Oktett (0, 32, 64, 96, …). 77 liegt im Block 64–95, die Netzadresse ist also 192.168.178.64.",
+      "translations": {
+        "en": {
+          "question": "A host has the IP address 192.168.178.77 with prefix length /27. What is the network address of this subnet?",
+          "answer": "192.168.178.64",
+          "explanation": "/27 → block size 32 in the last octet (0, 32, 64, 96, …). 77 falls into the 64–95 block, so the network address is 192.168.178.64."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q13",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Auf welcher Schicht des OSI-Modells arbeitet ein Router primär?",
+      "options": [
+        "Schicht 1 (Bitübertragung)",
+        "Schicht 2 (Sicherung)",
+        "Schicht 3 (Vermittlung)",
+        "Schicht 4 (Transport)"
+      ],
+      "answer": "Schicht 3 (Vermittlung)",
+      "explanation": "Router treffen ihre Weiterleitungsentscheidung anhand von IP-Adressen und arbeiten damit auf der Vermittlungsschicht (Schicht 3).",
+      "translations": {
+        "en": {
+          "question": "At which layer of the OSI model does a router primarily operate?",
+          "options": [
+            "Layer 1 (Physical)",
+            "Layer 2 (Data Link)",
+            "Layer 3 (Network)",
+            "Layer 4 (Transport)"
+          ],
+          "answer": "Layer 3 (Network)",
+          "explanation": "Routers make forwarding decisions based on IP addresses, which places them at the network layer (layer 3)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q14",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Aus wie vielen Schichten besteht das TCP/IP-Referenzmodell (im Gegensatz zum 7-schichtigen OSI-Modell)?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "answer": "4",
+      "explanation": "Das TCP/IP-Modell fasst mehrere OSI-Schichten zusammen und besteht aus Anwendung, Transport, Internet und Netzzugang – also 4 Schichten.",
+      "translations": {
+        "en": {
+          "question": "How many layers does the TCP/IP reference model have (as opposed to the 7-layer OSI model)?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "7"
+          ],
+          "answer": "4",
+          "explanation": "The TCP/IP model merges several OSI layers into application, transport, internet and network access — 4 layers in total."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q15",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Auf welcher OSI-Schicht arbeitet ein klassischer (nicht-Layer-3) Switch?",
+      "options": [
+        "Schicht 1",
+        "Schicht 2",
+        "Schicht 3",
+        "Schicht 4"
+      ],
+      "answer": "Schicht 2",
+      "explanation": "Switches leiten Frames anhand von MAC-Adressen weiter und arbeiten daher auf der Sicherungsschicht (Schicht 2).",
+      "translations": {
+        "en": {
+          "question": "At which OSI layer does a classic (non layer-3) switch operate?",
+          "options": [
+            "Layer 1",
+            "Layer 2",
+            "Layer 3",
+            "Layer 4"
+          ],
+          "answer": "Layer 2",
+          "explanation": "Switches forward frames based on MAC addresses, placing them at the data link layer (layer 2)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q16",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Was ist der wesentliche Unterschied zwischen einem Hub und einem Switch?",
+      "options": [
+        "Ein Hub filtert Broadcasts, ein Switch nicht",
+        "Ein Switch leitet Frames gezielt anhand der MAC-Adresse weiter, ein Hub sendet an alle Ports",
+        "Ein Hub arbeitet auf Schicht 3, ein Switch auf Schicht 2",
+        "Ein Switch kann keine Kollisionsdomänen trennen"
+      ],
+      "answer": "Ein Switch leitet Frames gezielt anhand der MAC-Adresse weiter, ein Hub sendet an alle Ports",
+      "explanation": "Ein Hub ist ein reiner Signalverteiler ohne Intelligenz, jedes Bit geht an alle Ports (eine gemeinsame Kollisionsdomäne). Ein Switch lernt MAC-Adressen und leitet Frames gezielt nur an den passenden Port weiter, wodurch jeder Port eine eigene Kollisionsdomäne bildet.",
+      "translations": {
+        "en": {
+          "question": "What is the essential difference between a hub and a switch?",
+          "options": [
+            "A hub filters broadcasts, a switch does not",
+            "A switch forwards frames selectively based on the MAC address, a hub sends to all ports",
+            "A hub operates at layer 3, a switch at layer 2",
+            "A switch cannot separate collision domains"
+          ],
+          "answer": "A switch forwards frames selectively based on the MAC address, a hub sends to all ports",
+          "explanation": "A hub is a dumb signal repeater — every bit goes out every port (one shared collision domain). A switch learns MAC addresses and forwards frames only to the correct port, giving each port its own collision domain."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q17",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche Standard-Subnetzmaske hat ein klassisches Class-C-Netz?",
+      "options": [
+        "255.0.0.0",
+        "255.255.0.0",
+        "255.255.255.0",
+        "255.255.255.128"
+      ],
+      "answer": "255.255.255.0",
+      "explanation": "Class-C-Netze nutzen standardmäßig ein /24-Präfix, also die Maske 255.255.255.0.",
+      "translations": {
+        "en": {
+          "question": "What is the default subnet mask for a classic Class C network?",
+          "options": [
+            "255.0.0.0",
+            "255.255.0.0",
+            "255.255.255.0",
+            "255.255.255.128"
+          ],
+          "answer": "255.255.255.0",
+          "explanation": "Class C networks default to a /24 prefix, i.e. the mask 255.255.255.0."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q18",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele nutzbare Hostadressen bietet ein /24-Subnetz?",
+      "options": [
+        "254",
+        "256",
+        "126",
+        "510"
+      ],
+      "answer": "254",
+      "explanation": "/24 lässt 8 Hostbits: 2⁸ = 256 Adressen, minus Netz- und Broadcast-Adresse = 254 nutzbare Hosts.",
+      "translations": {
+        "en": {
+          "question": "How many usable host addresses does a /24 subnet provide?",
+          "options": [
+            "254",
+            "256",
+            "126",
+            "510"
+          ],
+          "answer": "254",
+          "explanation": "/24 leaves 8 host bits: 2⁸ = 256 addresses, minus network and broadcast address = 254 usable hosts."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q19",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Ein Administrator möchte ein 192.168.20.0/24-Netz in 4 gleich große Subnetze aufteilen. Welche Präfixlänge ergibt sich?",
+      "options": [
+        "/25",
+        "/26",
+        "/27",
+        "/28"
+      ],
+      "answer": "/26",
+      "explanation": "Für 4 Subnetze werden 2 zusätzliche Bits benötigt (2² = 4), also /24 + 2 = /26.",
+      "translations": {
+        "en": {
+          "question": "An administrator wants to split a 192.168.20.0/24 network into 4 equally sized subnets. What prefix length results?",
+          "options": [
+            "/25",
+            "/26",
+            "/27",
+            "/28"
+          ],
+          "answer": "/26",
+          "explanation": "4 subnets require 2 extra bits (2² = 4), so /24 + 2 = /26."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q20",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Wie lautet die Broadcast-Adresse des Subnetzes 10.0.4.0/22?",
+      "options": [
+        "10.0.5.255",
+        "10.0.7.255",
+        "10.0.4.255",
+        "10.0.255.255"
+      ],
+      "answer": "10.0.7.255",
+      "explanation": "/22 ergibt eine Blockgröße von 4 im dritten Oktett (0,4,8,...). Das Netz 10.0.4.0/22 reicht bis 10.0.7.255, das ist die Broadcast-Adresse.",
+      "translations": {
+        "en": {
+          "question": "What is the broadcast address of the subnet 10.0.4.0/22?",
+          "options": [
+            "10.0.5.255",
+            "10.0.7.255",
+            "10.0.4.255",
+            "10.0.255.255"
+          ],
+          "answer": "10.0.7.255",
+          "explanation": "/22 gives a block size of 4 in the third octet (0,4,8,...). The network 10.0.4.0/22 extends up to 10.0.7.255, which is the broadcast address."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q21",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Was ist der Hauptvorteil von VLSM (Variable Length Subnet Mask) gegenüber klassischem Subnetting mit fester Maskenlänge?",
+      "options": [
+        "Es erlaubt unterschiedlich große Subnetze und spart dadurch Adressraum",
+        "Es macht IPv6 überflüssig",
+        "Es ersetzt DHCP",
+        "Es verhindert Broadcast-Storms"
+      ],
+      "answer": "Es erlaubt unterschiedlich große Subnetze und spart dadurch Adressraum",
+      "explanation": "VLSM erlaubt es, jedem Subnetz genau die Anzahl Adressen zuzuweisen, die es braucht, statt überall dieselbe Maske zu verwenden – das vermeidet Verschwendung von Adressraum.",
+      "translations": {
+        "en": {
+          "question": "What is the main advantage of VLSM (Variable Length Subnet Mask) over classic fixed-length subnetting?",
+          "options": [
+            "It allows differently sized subnets and thereby saves address space",
+            "It makes IPv6 unnecessary",
+            "It replaces DHCP",
+            "It prevents broadcast storms"
+          ],
+          "answer": "It allows differently sized subnets and thereby saves address space",
+          "explanation": "VLSM lets each subnet get exactly the number of addresses it needs instead of using the same mask everywhere, avoiding wasted address space."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q22",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welches Problem löst das Spanning Tree Protocol (STP) in geswitchten Netzwerken?",
+      "options": [
+        "Es verschlüsselt den Datenverkehr",
+        "Es verhindert Schleifen (Loops) bei redundanten Verbindungen",
+        "Es vergibt IP-Adressen automatisch",
+        "Es komprimiert Ethernet-Frames"
+      ],
+      "answer": "Es verhindert Schleifen (Loops) bei redundanten Verbindungen",
+      "explanation": "STP erkennt redundante Verbindungen zwischen Switches und blockiert gezielt Ports, um Broadcast-Storms durch Schleifen zu verhindern.",
+      "translations": {
+        "en": {
+          "question": "What problem does the Spanning Tree Protocol (STP) solve in switched networks?",
+          "options": [
+            "It encrypts network traffic",
+            "It prevents loops from redundant links",
+            "It automatically assigns IP addresses",
+            "It compresses Ethernet frames"
+          ],
+          "answer": "It prevents loops from redundant links",
+          "explanation": "STP detects redundant links between switches and selectively blocks ports to prevent broadcast storms caused by loops."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q23",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welcher Port ist standardmäßig für unverschlüsseltes HTTP reserviert?",
+      "options": [
+        "21",
+        "80",
+        "443",
+        "8080"
+      ],
+      "answer": "80",
+      "explanation": "HTTP nutzt standardmäßig TCP-Port 80, HTTPS Port 443.",
+      "translations": {
+        "en": {
+          "question": "Which port is reserved by default for unencrypted HTTP?",
+          "options": [
+            "21",
+            "80",
+            "443",
+            "8080"
+          ],
+          "answer": "80",
+          "explanation": "HTTP uses TCP port 80 by default, HTTPS uses port 443."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q24",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welcher TCP-Port wird standardmäßig von SSH verwendet?",
+      "options": [
+        "21",
+        "22",
+        "23",
+        "25"
+      ],
+      "answer": "22",
+      "explanation": "SSH (Secure Shell) läuft standardmäßig auf TCP-Port 22 und ermöglicht verschlüsselten Remote-Zugriff.",
+      "translations": {
+        "en": {
+          "question": "Which TCP port does SSH use by default?",
+          "options": [
+            "21",
+            "22",
+            "23",
+            "25"
+          ],
+          "answer": "22",
+          "explanation": "SSH (Secure Shell) runs on TCP port 22 by default and provides encrypted remote access."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q25",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Port nutzt DNS primär für Namensauflösungsanfragen?",
+      "options": [
+        "UDP 53",
+        "TCP 80",
+        "UDP 67",
+        "TCP 143"
+      ],
+      "answer": "UDP 53",
+      "explanation": "DNS-Abfragen laufen normalerweise über UDP-Port 53; für größere Antworten oder Zonentransfers wird auf TCP 53 gewechselt.",
+      "translations": {
+        "en": {
+          "question": "Which port does DNS primarily use for name resolution queries?",
+          "options": [
+            "UDP 53",
+            "TCP 80",
+            "UDP 67",
+            "TCP 143"
+          ],
+          "answer": "UDP 53",
+          "explanation": "DNS queries normally run over UDP port 53; for larger responses or zone transfers, TCP port 53 is used instead."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q26",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche Funktion erfüllt NAT (Network Address Translation)?",
+      "options": [
+        "Es löst Hostnamen in IP-Adressen auf",
+        "Es übersetzt private IP-Adressen in eine öffentliche Adresse und umgekehrt",
+        "Es verhindert Schleifen im Netzwerk",
+        "Es synchronisiert Uhrzeiten"
+      ],
+      "answer": "Es übersetzt private IP-Adressen in eine öffentliche Adresse und umgekehrt",
+      "explanation": "NAT ermöglicht es mehreren Geräten mit privaten IP-Adressen, sich eine oder wenige öffentliche IP-Adressen für den Internetzugang zu teilen.",
+      "translations": {
+        "en": {
+          "question": "What function does NAT (Network Address Translation) perform?",
+          "options": [
+            "It resolves hostnames into IP addresses",
+            "It translates private IP addresses into a public address and back",
+            "It prevents loops in the network",
+            "It synchronizes clocks"
+          ],
+          "answer": "It translates private IP addresses into a public address and back",
+          "explanation": "NAT lets multiple devices with private IP addresses share one or a few public IP addresses for internet access."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q27",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aufgabe hat das ARP-Protokoll (Address Resolution Protocol)?",
+      "options": [
+        "Es ermittelt zu einer bekannten IP-Adresse die zugehörige MAC-Adresse im lokalen Netz",
+        "Es vergibt IP-Adressen automatisch",
+        "Es überwacht die Netzwerklast",
+        "Es verschlüsselt den Datenverkehr"
+      ],
+      "answer": "Es ermittelt zu einer bekannten IP-Adresse die zugehörige MAC-Adresse im lokalen Netz",
+      "explanation": "ARP fragt per Broadcast im lokalen Netz ab, welches Gerät zu einer bestimmten IP-Adresse gehört, und liefert dessen MAC-Adresse zurück.",
+      "translations": {
+        "en": {
+          "question": "What is the role of the ARP (Address Resolution Protocol)?",
+          "options": [
+            "It determines the MAC address belonging to a known IP address on the local network",
+            "It automatically assigns IP addresses",
+            "It monitors network load",
+            "It encrypts network traffic"
+          ],
+          "answer": "It determines the MAC address belonging to a known IP address on the local network",
+          "explanation": "ARP broadcasts on the local network to ask which device owns a given IP address, and receives that device's MAC address in reply."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q28",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Wozu dient das Standardgateway in der IP-Konfiguration eines Clients?",
+      "options": [
+        "Es ist die Adresse des DNS-Servers",
+        "Es ist das Gerät, an das Pakete für fremde Netze weitergeleitet werden",
+        "Es vergibt IP-Adressen per DHCP",
+        "Es speichert die MAC-Adressen aller Geräte"
+      ],
+      "answer": "Es ist das Gerät, an das Pakete für fremde Netze weitergeleitet werden",
+      "explanation": "Das Standardgateway ist üblicherweise ein Router, an den alle Pakete geschickt werden, deren Zieladresse nicht im eigenen Subnetz liegt.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of the default gateway in a client's IP configuration?",
+          "options": [
+            "It is the address of the DNS server",
+            "It is the device to which packets for foreign networks are forwarded",
+            "It assigns IP addresses via DHCP",
+            "It stores the MAC addresses of all devices"
+          ],
+          "answer": "It is the device to which packets for foreign networks are forwarded",
+          "explanation": "The default gateway is usually a router to which all packets are sent whose destination is not within the local subnet."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q29",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welches Gerät trennt Broadcast-Domänen?",
+      "options": [
+        "Hub",
+        "Switch (ohne VLANs)",
+        "Router",
+        "Repeater"
+      ],
+      "answer": "Router",
+      "explanation": "Router trennen Netze auf Schicht 3 und leiten Broadcasts standardmäßig nicht weiter. Ein einfacher Switch ohne VLANs bildet dagegen eine einzige gemeinsame Broadcast-Domäne.",
+      "translations": {
+        "en": {
+          "question": "Which device separates broadcast domains?",
+          "options": [
+            "Hub",
+            "Switch (without VLANs)",
+            "Router",
+            "Repeater"
+          ],
+          "answer": "Router",
+          "explanation": "Routers separate networks at layer 3 and do not forward broadcasts by default. A plain switch without VLANs forms a single shared broadcast domain instead."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q30",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "In welchem Frequenzband arbeitet der WLAN-Standard 802.11ac?",
+      "options": [
+        "2,4 GHz",
+        "5 GHz",
+        "60 GHz",
+        "900 MHz"
+      ],
+      "answer": "5 GHz",
+      "explanation": "802.11ac (Wi-Fi 5) nutzt ausschließlich das 5-GHz-Band, was höhere Datenraten und weniger Störungen als im überfüllten 2,4-GHz-Band ermöglicht.",
+      "translations": {
+        "en": {
+          "question": "In which frequency band does the 802.11ac wireless standard operate?",
+          "options": [
+            "2.4 GHz",
+            "5 GHz",
+            "60 GHz",
+            "900 MHz"
+          ],
+          "answer": "5 GHz",
+          "explanation": "802.11ac (Wi-Fi 5) operates exclusively in the 5 GHz band, enabling higher data rates and less interference than the crowded 2.4 GHz band."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q31",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Was ist eine wesentliche Verbesserung von WPA3 gegenüber WPA2?",
+      "options": [
+        "WPA3 verzichtet komplett auf Verschlüsselung",
+        "WPA3 nutzt ein sichereres Schlüsselaustauschverfahren (SAE) statt des anfälligen 4-Way-Handshakes",
+        "WPA3 funktioniert nur mit Kabelnetzen",
+        "WPA3 senkt die maximale Reichweite"
+      ],
+      "answer": "WPA3 nutzt ein sichereres Schlüsselaustauschverfahren (SAE) statt des anfälligen 4-Way-Handshakes",
+      "explanation": "WPA3 ersetzt den bei WPA2 für Offline-Wörterbuchangriffe anfälligen 4-Way-Handshake durch SAE (Simultaneous Authentication of Equals) und bietet damit besseren Schutz, besonders bei schwachen Passwörtern.",
+      "translations": {
+        "en": {
+          "question": "What is a key improvement of WPA3 over WPA2?",
+          "options": [
+            "WPA3 abandons encryption entirely",
+            "WPA3 uses a more secure key exchange (SAE) instead of the vulnerable 4-way handshake",
+            "WPA3 only works on wired networks",
+            "WPA3 reduces the maximum range"
+          ],
+          "answer": "WPA3 uses a more secure key exchange (SAE) instead of the vulnerable 4-way handshake",
+          "explanation": "WPA3 replaces WPA2's 4-way handshake, which is vulnerable to offline dictionary attacks, with SAE (Simultaneous Authentication of Equals), offering better protection especially for weak passwords."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q32",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche maximale Übertragungsrate unterstützt Cat6a-Verkabelung über die volle Distanz von 100 Metern?",
+      "options": [
+        "100 Mbit/s",
+        "1 Gbit/s",
+        "10 Gbit/s",
+        "40 Gbit/s"
+      ],
+      "answer": "10 Gbit/s",
+      "explanation": "Cat6a (augmented Cat6) ist für 10GBASE-T über die vollen 100 Meter spezifiziert, während einfaches Cat6 10 Gbit/s nur auf kürzeren Strecken (~55 m) zuverlässig schafft.",
+      "translations": {
+        "en": {
+          "question": "What maximum data rate does Cat6a cabling support over the full 100-meter distance?",
+          "options": [
+            "100 Mbit/s",
+            "1 Gbit/s",
+            "10 Gbit/s",
+            "40 Gbit/s"
+          ],
+          "answer": "10 Gbit/s",
+          "explanation": "Cat6a (augmented Cat6) is specified for 10GBASE-T over the full 100 meters, while plain Cat6 only reliably achieves 10 Gbit/s over shorter runs (~55 m)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q33",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche Faserart eignet sich besser für sehr große Entfernungen (mehrere Kilometer)?",
+      "options": [
+        "Multimode-Glasfaser",
+        "Singlemode-Glasfaser",
+        "Koaxialkabel",
+        "Twisted-Pair-Kupferkabel"
+      ],
+      "answer": "Singlemode-Glasfaser",
+      "explanation": "Singlemode-Fasern führen nur einen Lichtmodus mit sehr geringer Dämpfung und Dispersion, wodurch sie für Fernstrecken (Kilometer bis Dutzende Kilometer) geeignet sind. Multimode wird meist nur für kurze Distanzen im Gebäude eingesetzt.",
+      "translations": {
+        "en": {
+          "question": "Which fiber type is better suited for very long distances (several kilometers)?",
+          "options": [
+            "Multimode fiber",
+            "Single-mode fiber",
+            "Coaxial cable",
+            "Twisted-pair copper cable"
+          ],
+          "answer": "Single-mode fiber",
+          "explanation": "Single-mode fiber carries only one light mode with very low attenuation and dispersion, making it suitable for long-haul links (kilometers to tens of kilometers). Multimode is mostly used for short in-building distances."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q34",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Wofür wird das Tool traceroute (bzw. tracert unter Windows) typischerweise eingesetzt?",
+      "options": [
+        "Zum Anzeigen der lokalen IP-Konfiguration",
+        "Zum Anzeigen aller Router-Hops auf dem Weg zu einem Zielhost",
+        "Zum Auflösen von Hostnamen in IP-Adressen",
+        "Zum Vergeben von IP-Adressen"
+      ],
+      "answer": "Zum Anzeigen aller Router-Hops auf dem Weg zu einem Zielhost",
+      "explanation": "traceroute sendet Pakete mit steigender TTL und wertet die daraufhin von jedem Router zurückgesendeten ICMP-Fehlermeldungen aus, um den Weg (alle Hops) zu einem Ziel sichtbar zu machen.",
+      "translations": {
+        "en": {
+          "question": "What is the traceroute (or tracert on Windows) tool typically used for?",
+          "options": [
+            "To display the local IP configuration",
+            "To display all router hops on the path to a destination host",
+            "To resolve hostnames into IP addresses",
+            "To assign IP addresses"
+          ],
+          "answer": "To display all router hops on the path to a destination host",
+          "explanation": "traceroute sends packets with increasing TTL and evaluates the resulting ICMP error messages from each router to reveal the full path (every hop) to a destination."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q35",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welches Protokoll nutzt der Befehl ping zur Überprüfung der Erreichbarkeit eines Hosts?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "ARP"
+      ],
+      "answer": "ICMP",
+      "explanation": "ping verwendet ICMP-Echo-Request- und Echo-Reply-Nachrichten, um die Erreichbarkeit und Antwortzeit eines Hosts zu prüfen.",
+      "translations": {
+        "en": {
+          "question": "Which protocol does the ping command use to check whether a host is reachable?",
+          "options": [
+            "TCP",
+            "UDP",
+            "ICMP",
+            "ARP"
+          ],
+          "answer": "ICMP",
+          "explanation": "ping uses ICMP echo-request and echo-reply messages to check a host's reachability and response time."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q36",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welche IPv4-Adresse bezeichnet man als Loopback-Adresse, die jeder Rechner auf sich selbst verweisend nutzt?",
+      "options": [
+        "0.0.0.0",
+        "127.0.0.1",
+        "169.254.0.1",
+        "255.255.255.255"
+      ],
+      "answer": "127.0.0.1",
+      "explanation": "127.0.0.1 (aus dem Bereich 127.0.0.0/8) ist die klassische Loopback-Adresse, über die ein Rechner Dienste auf sich selbst adressiert.",
+      "translations": {
+        "en": {
+          "question": "Which IPv4 address is known as the loopback address that every computer uses to refer to itself?",
+          "options": [
+            "0.0.0.0",
+            "127.0.0.1",
+            "169.254.0.1",
+            "255.255.255.255"
+          ],
+          "answer": "127.0.0.1",
+          "explanation": "127.0.0.1 (from the 127.0.0.0/8 range) is the classic loopback address a computer uses to address services on itself."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q37",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Adressbereich vergibt sich ein Windows-Client automatisch per APIPA, wenn kein DHCP-Server erreichbar ist?",
+      "options": [
+        "10.0.0.0/8",
+        "169.254.0.0/16",
+        "192.168.0.0/16",
+        "172.16.0.0/12"
+      ],
+      "answer": "169.254.0.0/16",
+      "explanation": "APIPA (Automatic Private IP Addressing) weist bei fehlendem DHCP-Server automatisch eine Adresse aus 169.254.0.0/16 zu, damit zumindest lokale Kommunikation im Segment möglich ist.",
+      "translations": {
+        "en": {
+          "question": "Which address range does a Windows client assign itself automatically via APIPA when no DHCP server is reachable?",
+          "options": [
+            "10.0.0.0/8",
+            "169.254.0.0/16",
+            "192.168.0.0/16",
+            "172.16.0.0/12"
+          ],
+          "answer": "169.254.0.0/16",
+          "explanation": "APIPA (Automatic Private IP Addressing) automatically assigns an address from 169.254.0.0/16 when no DHCP server responds, allowing at least local communication on the segment."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q38",
+      "type": "single",
+      "category": "Netzwerktechnik",
+      "question": "Was bedeutet der Begriff 'Vollduplex' bei einer Netzwerkverbindung?",
+      "options": [
+        "Daten können nur abwechselnd in eine Richtung gesendet werden",
+        "Daten können gleichzeitig in beide Richtungen gesendet und empfangen werden",
+        "Es gibt keine Kollisionen mehr im gesamten Netzwerk",
+        "Die Übertragung erfolgt nur über Glasfaser"
+      ],
+      "answer": "Daten können gleichzeitig in beide Richtungen gesendet und empfangen werden",
+      "explanation": "Im Vollduplex-Betrieb können Senden und Empfangen gleichzeitig erfolgen, wodurch bei Punkt-zu-Punkt-Verbindungen (z. B. Switch-Port) keine Kollisionen mehr auftreten.",
+      "translations": {
+        "en": {
+          "question": "What does the term 'full duplex' mean for a network connection?",
+          "options": [
+            "Data can only be sent alternately in one direction",
+            "Data can be sent and received simultaneously in both directions",
+            "There are no collisions anywhere in the entire network",
+            "Transmission only happens over fiber optics"
+          ],
+          "answer": "Data can be sent and received simultaneously in both directions",
+          "explanation": "In full-duplex mode, sending and receiving can happen at the same time, which eliminates collisions on point-to-point links (e.g. a switch port)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q39",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Geräte arbeiten typischerweise auf der Sicherungsschicht (Schicht 2)?",
+      "options": [
+        "Switch",
+        "Bridge",
+        "Access Point",
+        "Router",
+        "Layer-3-Switch"
+      ],
+      "answer": [
+        "Switch",
+        "Bridge",
+        "Access Point"
+      ],
+      "explanation": "Switch, Bridge und Access Point leiten Frames anhand von MAC-Adressen weiter (Schicht 2). Router und Layer-3-Switches treffen ihre Entscheidungen anhand von IP-Adressen (Schicht 3).",
+      "translations": {
+        "en": {
+          "question": "Which of the following devices typically operate at the data link layer (layer 2)?",
+          "options": [
+            "Switch",
+            "Bridge",
+            "Access point",
+            "Router",
+            "Layer 3 switch"
+          ],
+          "answer": [
+            "Switch",
+            "Bridge",
+            "Access point"
+          ],
+          "explanation": "Switches, bridges and access points forward frames based on MAC addresses (layer 2). Routers and layer-3 switches make decisions based on IP addresses (layer 3)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q40",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Protokolle/Dienste nutzen typischerweise UDP als Transportprotokoll?",
+      "options": [
+        "DNS-Abfragen",
+        "DHCP",
+        "TFTP",
+        "HTTP",
+        "FTP-Datenübertragung"
+      ],
+      "answer": [
+        "DNS-Abfragen",
+        "DHCP",
+        "TFTP"
+      ],
+      "explanation": "DNS-Abfragen, DHCP und TFTP arbeiten verbindungslos über UDP, da Geschwindigkeit wichtiger ist als Zuverlässigkeit auf Transportebene. HTTP und FTP benötigen die zuverlässige, verbindungsorientierte Übertragung von TCP.",
+      "translations": {
+        "en": {
+          "question": "Which of the following protocols/services typically use UDP as their transport protocol?",
+          "options": [
+            "DNS queries",
+            "DHCP",
+            "TFTP",
+            "HTTP",
+            "FTP data transfer"
+          ],
+          "answer": [
+            "DNS queries",
+            "DHCP",
+            "TFTP"
+          ],
+          "explanation": "DNS queries, DHCP and TFTP operate connectionlessly over UDP since speed matters more than transport-layer reliability. HTTP and FTP need TCP's reliable, connection-oriented delivery."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q41",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Werte sind gültige IPv4-Subnetzmasken?",
+      "options": [
+        "255.255.255.0",
+        "255.255.255.192",
+        "255.255.255.100",
+        "255.255.254.0",
+        "255.0.255.0"
+      ],
+      "answer": [
+        "255.255.255.0",
+        "255.255.255.192",
+        "255.255.254.0"
+      ],
+      "explanation": "Gültige Masken bestehen aus einer zusammenhängenden Folge von Einsen gefolgt von Nullen (z. B. .0, .192, .254.0). 255.255.255.100 und 255.0.255.0 enthalten keine zusammenhängenden Bitfolgen und sind ungültig.",
+      "translations": {
+        "en": {
+          "question": "Which of the following values are valid IPv4 subnet masks?",
+          "options": [
+            "255.255.255.0",
+            "255.255.255.192",
+            "255.255.255.100",
+            "255.255.254.0",
+            "255.0.255.0"
+          ],
+          "answer": [
+            "255.255.255.0",
+            "255.255.255.192",
+            "255.255.254.0"
+          ],
+          "explanation": "Valid masks consist of a contiguous run of ones followed by zeros (e.g. .0, .192, .254.0). 255.255.255.100 and 255.0.255.0 don't form contiguous bit runs and are invalid."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q42",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zu VLANs (Virtual Local Area Networks) sind korrekt?",
+      "options": [
+        "Ein VLAN trennt Broadcast-Domänen logisch, auch ohne separate Verkabelung",
+        "Geräte in unterschiedlichen VLANs benötigen zur Kommunikation einen Router oder Layer-3-Switch",
+        "VLAN-Tags werden nach IEEE 802.1Q eingefügt",
+        "Ein VLAN kann niemals mehr als einen physischen Switch umfassen",
+        "VLANs erhöhen automatisch die verfügbare Bandbreite jedes Ports"
+      ],
+      "answer": [
+        "Ein VLAN trennt Broadcast-Domänen logisch, auch ohne separate Verkabelung",
+        "Geräte in unterschiedlichen VLANs benötigen zur Kommunikation einen Router oder Layer-3-Switch",
+        "VLAN-Tags werden nach IEEE 802.1Q eingefügt"
+      ],
+      "explanation": "VLANs schaffen logisch getrennte Broadcast-Domänen auf gemeinsamer Hardware; die Kennzeichnung erfolgt über 802.1Q-Tags. Kommunikation zwischen VLANs erfordert Routing. Ein VLAN kann sich über mehrere Switches per Trunk erstrecken (Trunking).",
+      "translations": {
+        "en": {
+          "question": "Which statements about VLANs (Virtual Local Area Networks) are correct?",
+          "options": [
+            "A VLAN logically separates broadcast domains, even without separate cabling",
+            "Devices in different VLANs need a router or layer-3 switch to communicate",
+            "VLAN tags are inserted according to IEEE 802.1Q",
+            "A VLAN can never span more than one physical switch",
+            "VLANs automatically increase the available bandwidth of each port"
+          ],
+          "answer": [
+            "A VLAN logically separates broadcast domains, even without separate cabling",
+            "Devices in different VLANs need a router or layer-3 switch to communicate",
+            "VLAN tags are inserted according to IEEE 802.1Q"
+          ],
+          "explanation": "VLANs create logically separate broadcast domains on shared hardware, tagged via 802.1Q. Communication between VLANs requires routing. A VLAN can span multiple switches via trunking."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q43",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zum Spanning Tree Protocol (STP) sind korrekt?",
+      "options": [
+        "STP wählt eine Root Bridge als Bezugspunkt für den Baum",
+        "STP blockiert redundante Pfade, um Schleifen zu vermeiden",
+        "STP arbeitet ausschließlich auf Schicht 3",
+        "Blockierte Ports können bei Ausfall eines aktiven Pfads automatisch wieder aktiviert werden",
+        "STP verhindert das Lernen von MAC-Adressen"
+      ],
+      "answer": [
+        "STP wählt eine Root Bridge als Bezugspunkt für den Baum",
+        "STP blockiert redundante Pfade, um Schleifen zu vermeiden",
+        "Blockierte Ports können bei Ausfall eines aktiven Pfads automatisch wieder aktiviert werden"
+      ],
+      "explanation": "STP wählt eine Root Bridge, berechnet die kürzesten Pfade dorthin und blockiert redundante Verbindungen. Fällt ein aktiver Pfad aus, aktiviert STP automatisch einen zuvor blockierten Port. STP arbeitet auf Schicht 2 und beeinflusst nicht das MAC-Lernen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the Spanning Tree Protocol (STP) are correct?",
+          "options": [
+            "STP elects a root bridge as the reference point for the tree",
+            "STP blocks redundant paths to prevent loops",
+            "STP operates exclusively at layer 3",
+            "Blocked ports can be automatically re-activated if an active path fails",
+            "STP prevents MAC address learning"
+          ],
+          "answer": [
+            "STP elects a root bridge as the reference point for the tree",
+            "STP blocks redundant paths to prevent loops",
+            "Blocked ports can be automatically re-activated if an active path fails"
+          ],
+          "explanation": "STP elects a root bridge, computes shortest paths to it, and blocks redundant links. If an active path fails, STP automatically activates a previously blocked port. STP operates at layer 2 and does not affect MAC learning."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q44",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Bezeichnungen sind tatsächlich WLAN-Standards nach IEEE 802.11?",
+      "options": [
+        "802.11n",
+        "802.11ac",
+        "802.11ax",
+        "802.3ax",
+        "802.11q"
+      ],
+      "answer": [
+        "802.11n",
+        "802.11ac",
+        "802.11ax"
+      ],
+      "explanation": "802.11n, 802.11ac und 802.11ax (Wi-Fi 4/5/6) sind reale WLAN-Standards. 802.3ax gehört zur Ethernet-Familie (Link Aggregation), 802.11q existiert nicht (das ist 802.1Q, ein VLAN-Standard).",
+      "translations": {
+        "en": {
+          "question": "Which of the following are actually IEEE 802.11 wireless standards?",
+          "options": [
+            "802.11n",
+            "802.11ac",
+            "802.11ax",
+            "802.3ax",
+            "802.11q"
+          ],
+          "answer": [
+            "802.11n",
+            "802.11ac",
+            "802.11ax"
+          ],
+          "explanation": "802.11n, 802.11ac and 802.11ax (Wi-Fi 4/5/6) are real wireless standards. 802.3ax belongs to the Ethernet family (link aggregation); 802.11q doesn't exist (that's 802.1Q, a VLAN standard)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q45",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aufgaben kann eine Firewall übernehmen?",
+      "options": [
+        "Filtern von Datenverkehr anhand von IP-Adressen und Ports",
+        "Blockieren unerwünschter Verbindungen aus dem Internet",
+        "Protokollierung (Logging) von Verbindungsversuchen",
+        "Automatisches Vergeben von IP-Adressen",
+        "Auflösen von Domainnamen"
+      ],
+      "answer": [
+        "Filtern von Datenverkehr anhand von IP-Adressen und Ports",
+        "Blockieren unerwünschter Verbindungen aus dem Internet",
+        "Protokollierung (Logging) von Verbindungsversuchen"
+      ],
+      "explanation": "Firewalls filtern und protokollieren Verkehr anhand von Regeln (IP, Port, Protokoll). IP-Vergabe ist Aufgabe von DHCP, Namensauflösung von DNS.",
+      "translations": {
+        "en": {
+          "question": "Which tasks can a firewall perform?",
+          "options": [
+            "Filtering traffic based on IP addresses and ports",
+            "Blocking unwanted connections from the internet",
+            "Logging connection attempts",
+            "Automatically assigning IP addresses",
+            "Resolving domain names"
+          ],
+          "answer": [
+            "Filtering traffic based on IP addresses and ports",
+            "Blocking unwanted connections from the internet",
+            "Logging connection attempts"
+          ],
+          "explanation": "Firewalls filter and log traffic according to rules (IP, port, protocol). Assigning IPs is DHCP's job, name resolution is DNS's job."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q46",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden sind gültige DNS-Ressourcendatensatztypen?",
+      "options": [
+        "A",
+        "AAAA",
+        "MX",
+        "CNAME",
+        "DORA"
+      ],
+      "answer": [
+        "A",
+        "AAAA",
+        "MX",
+        "CNAME"
+      ],
+      "explanation": "A (IPv4), AAAA (IPv6), MX (Mailserver) und CNAME (Alias) sind reale DNS-Record-Typen. DORA ist kein DNS-Record, sondern der Ablauf des DHCP-Leases (Discover, Offer, Request, Acknowledge).",
+      "translations": {
+        "en": {
+          "question": "Which of the following are valid DNS resource record types?",
+          "options": [
+            "A",
+            "AAAA",
+            "MX",
+            "CNAME",
+            "DORA"
+          ],
+          "answer": [
+            "A",
+            "AAAA",
+            "MX",
+            "CNAME"
+          ],
+          "explanation": "A (IPv4), AAAA (IPv6), MX (mail server) and CNAME (alias) are real DNS record types. DORA is not a DNS record — it's the DHCP lease sequence (Discover, Offer, Request, Acknowledge)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q47",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Vorteile bietet Glasfaser gegenüber Kupferverkabelung?",
+      "options": [
+        "Immunität gegenüber elektromagnetischen Störungen",
+        "Größere überbrückbare Entfernungen ohne Signalverstärkung",
+        "Geringeres Abhörrisiko durch fehlende elektromagnetische Abstrahlung",
+        "Geringere Anschaffungskosten für Endgeräte in jedem Fall",
+        "Möglichkeit der Stromversorgung von Endgeräten über das Kabel (PoE)"
+      ],
+      "answer": [
+        "Immunität gegenüber elektromagnetischen Störungen",
+        "Größere überbrückbare Entfernungen ohne Signalverstärkung",
+        "Geringeres Abhörrisiko durch fehlende elektromagnetische Abstrahlung"
+      ],
+      "explanation": "Glasfaser ist unempfindlich gegen EMI, ermöglicht deutlich größere Reichweiten und lässt sich kaum unbemerkt anzapfen. PoE (Power over Ethernet) funktioniert dagegen nur über Kupferleitungen, nicht über Glasfaser.",
+      "translations": {
+        "en": {
+          "question": "What advantages does fiber optic cabling offer over copper cabling?",
+          "options": [
+            "Immunity to electromagnetic interference",
+            "Greater achievable distances without signal amplification",
+            "Lower eavesdropping risk due to no electromagnetic radiation",
+            "Always lower acquisition costs for end devices",
+            "Ability to power end devices over the cable (PoE)"
+          ],
+          "answer": [
+            "Immunity to electromagnetic interference",
+            "Greater achievable distances without signal amplification",
+            "Lower eavesdropping risk due to no electromagnetic radiation"
+          ],
+          "explanation": "Fiber is immune to EMI, allows much greater distances, and is very hard to tap unnoticed. PoE (Power over Ethernet), on the other hand, only works over copper, not fiber."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q48",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zum Vollduplex-Betrieb bei Ethernet sind korrekt?",
+      "options": [
+        "Es treten keine Kollisionen mehr auf",
+        "CSMA/CD wird nicht mehr benötigt",
+        "Senden und Empfangen sind gleichzeitig möglich",
+        "Vollduplex ist nur bei Glasfaser möglich",
+        "Vollduplex verdoppelt automatisch die Signalfrequenz des Kabels"
+      ],
+      "answer": [
+        "Es treten keine Kollisionen mehr auf",
+        "CSMA/CD wird nicht mehr benötigt",
+        "Senden und Empfangen sind gleichzeitig möglich"
+      ],
+      "explanation": "Im Vollduplex-Betrieb an einer Punkt-zu-Punkt-Verbindung (z. B. Switch-Port) sind getrennte Sende- und Empfangsleitungen aktiv, wodurch Kollisionen und damit CSMA/CD entfallen. Vollduplex ist auch über Twisted-Pair-Kupfer möglich.",
+      "translations": {
+        "en": {
+          "question": "Which statements about full-duplex operation in Ethernet are correct?",
+          "options": [
+            "No collisions occur anymore",
+            "CSMA/CD is no longer needed",
+            "Sending and receiving can happen simultaneously",
+            "Full duplex is only possible over fiber",
+            "Full duplex automatically doubles the cable's signal frequency"
+          ],
+          "answer": [
+            "No collisions occur anymore",
+            "CSMA/CD is no longer needed",
+            "Sending and receiving can happen simultaneously"
+          ],
+          "explanation": "In full-duplex mode on a point-to-point link (e.g. a switch port), separate transmit and receive paths are active, eliminating collisions and therefore CSMA/CD. Full duplex also works over twisted-pair copper."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q49",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Adressbereiche sind nach RFC 1918 als privat reserviert?",
+      "options": [
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16",
+        "169.254.0.0/16",
+        "100.64.0.0/10"
+      ],
+      "answer": [
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16"
+      ],
+      "explanation": "RFC 1918 definiert genau diese drei privaten Bereiche. 169.254.0.0/16 ist der APIPA-Bereich für automatische Selbstkonfiguration, 100.64.0.0/10 ist der Shared-Address-Space für Carrier-Grade-NAT (RFC 6598) – beides ist kein klassischer RFC-1918-Bereich.",
+      "translations": {
+        "en": {
+          "question": "Which of the following address ranges are reserved as private under RFC 1918?",
+          "options": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16",
+            "169.254.0.0/16",
+            "100.64.0.0/10"
+          ],
+          "answer": [
+            "10.0.0.0/8",
+            "172.16.0.0/12",
+            "192.168.0.0/16"
+          ],
+          "explanation": "RFC 1918 defines exactly these three private ranges. 169.254.0.0/16 is the APIPA range for automatic self-configuration, and 100.64.0.0/10 is the shared address space for carrier-grade NAT (RFC 6598) — neither is a classic RFC 1918 range."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q50",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zur Funktionsweise eines Switches sind korrekt?",
+      "options": [
+        "Er lernt MAC-Adressen anhand der Absenderadresse eingehender Frames",
+        "Unbekannte Ziel-MAC-Adressen werden an alle Ports außer dem Eingangsport geflutet (Flooding)",
+        "Er speichert gelernte Zuordnungen in einer MAC-Adresstabelle (CAM-Tabelle)",
+        "Er vergibt automatisch IP-Adressen an angeschlossene Geräte",
+        "Er entfernt automatisch VLAN-Tags aus jedem Frame"
+      ],
+      "answer": [
+        "Er lernt MAC-Adressen anhand der Absenderadresse eingehender Frames",
+        "Unbekannte Ziel-MAC-Adressen werden an alle Ports außer dem Eingangsport geflutet (Flooding)",
+        "Er speichert gelernte Zuordnungen in einer MAC-Adresstabelle (CAM-Tabelle)"
+      ],
+      "explanation": "Switches lernen dynamisch, hinter welchem Port welche MAC-Adresse liegt, speichern dies in der CAM-Tabelle und fluten Frames mit unbekanntem Ziel an alle übrigen Ports. IP-Vergabe ist Aufgabe von DHCP.",
+      "translations": {
+        "en": {
+          "question": "Which statements about how a switch works are correct?",
+          "options": [
+            "It learns MAC addresses from the source address of incoming frames",
+            "Unknown destination MAC addresses are flooded to all ports except the incoming port",
+            "It stores learned mappings in a MAC address table (CAM table)",
+            "It automatically assigns IP addresses to connected devices",
+            "It automatically strips VLAN tags from every frame"
+          ],
+          "answer": [
+            "It learns MAC addresses from the source address of incoming frames",
+            "Unknown destination MAC addresses are flooded to all ports except the incoming port",
+            "It stores learned mappings in a MAC address table (CAM table)"
+          ],
+          "explanation": "Switches dynamically learn which MAC address sits behind which port, store this in the CAM table, and flood frames with an unknown destination to all other ports. Assigning IPs is DHCP's job."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q51",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Schritte gehören zum klassischen DHCP-Lease-Prozess (DORA)?",
+      "options": [
+        "Discover",
+        "Offer",
+        "Request",
+        "Acknowledge",
+        "Authenticate"
+      ],
+      "answer": [
+        "Discover",
+        "Offer",
+        "Request",
+        "Acknowledge"
+      ],
+      "explanation": "DORA steht für Discover (Client sucht DHCP-Server per Broadcast), Offer (Server bietet Konfiguration an), Request (Client fordert sie an) und Acknowledge (Server bestätigt). 'Authenticate' ist kein Bestandteil dieses Standardablaufs.",
+      "translations": {
+        "en": {
+          "question": "Which steps belong to the classic DHCP lease process (DORA)?",
+          "options": [
+            "Discover",
+            "Offer",
+            "Request",
+            "Acknowledge",
+            "Authenticate"
+          ],
+          "answer": [
+            "Discover",
+            "Offer",
+            "Request",
+            "Acknowledge"
+          ],
+          "explanation": "DORA stands for Discover (client searches for a DHCP server via broadcast), Offer (server offers a configuration), Request (client requests it) and Acknowledge (server confirms). 'Authenticate' is not part of this standard sequence."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q52",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zu einem Broadcast-Storm treffen zu?",
+      "options": [
+        "Er kann durch eine Schleife in einem geswitchten Netz ohne aktives STP entstehen",
+        "Er führt typischerweise zu massiv erhöhter Netzwerklast und Performance-Einbrüchen",
+        "Er wird durch VLANs vollständig unmöglich gemacht",
+        "Redundante Verbindungen ohne Loop-Prevention erhöhen das Risiko",
+        "Er betrifft ausschließlich Layer-3-Router"
+      ],
+      "answer": [
+        "Er kann durch eine Schleife in einem geswitchten Netz ohne aktives STP entstehen",
+        "Er führt typischerweise zu massiv erhöhter Netzwerklast und Performance-Einbrüchen",
+        "Redundante Verbindungen ohne Loop-Prevention erhöhen das Risiko"
+      ],
+      "explanation": "Ohne Schleifenschutz (z. B. STP) werden Broadcasts in einer redundant verkabelten Switch-Topologie endlos wiederholt und vervielfacht, was die Netzlast explodieren lässt. VLANs alleine verhindern das nicht, wenn die Schleife innerhalb eines VLANs liegt.",
+      "translations": {
+        "en": {
+          "question": "Which statements about a broadcast storm are correct?",
+          "options": [
+            "It can arise from a loop in a switched network without active STP",
+            "It typically causes massively increased network load and severe performance drops",
+            "VLANs make it completely impossible",
+            "Redundant links without loop prevention increase the risk",
+            "It only affects layer-3 routers"
+          ],
+          "answer": [
+            "It can arise from a loop in a switched network without active STP",
+            "It typically causes massively increased network load and severe performance drops",
+            "Redundant links without loop prevention increase the risk"
+          ],
+          "explanation": "Without loop protection (e.g. STP), broadcasts in a redundantly cabled switch topology get repeated and multiplied endlessly, causing network load to explode. VLANs alone don't prevent this if the loop lies within a single VLAN."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q53",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zum WLAN-Standard 802.11ax (Wi-Fi 6) sind korrekt?",
+      "options": [
+        "Er unterstützt OFDMA zur effizienteren Kanalnutzung bei vielen gleichzeitigen Clients",
+        "Er kann sowohl im 2,4-GHz- als auch im 5-GHz-Band arbeiten",
+        "Er ist ausschließlich für Punkt-zu-Punkt-Richtfunkstrecken gedacht",
+        "Er bringt gegenüber 802.11ac im Regelfall höhere Effizienz in dicht besiedelten Umgebungen",
+        "Er verzichtet vollständig auf Rückwärtskompatibilität zu älteren Standards"
+      ],
+      "answer": [
+        "Er unterstützt OFDMA zur effizienteren Kanalnutzung bei vielen gleichzeitigen Clients",
+        "Er kann sowohl im 2,4-GHz- als auch im 5-GHz-Band arbeiten",
+        "Er bringt gegenüber 802.11ac im Regelfall höhere Effizienz in dicht besiedelten Umgebungen"
+      ],
+      "explanation": "Wi-Fi 6 (802.11ax) nutzt OFDMA für effizientere Multi-User-Übertragung, arbeitet in 2,4 GHz und 5 GHz und bleibt abwärtskompatibel zu älteren 802.11-Standards.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the 802.11ax (Wi-Fi 6) wireless standard are correct?",
+          "options": [
+            "It supports OFDMA for more efficient channel use with many simultaneous clients",
+            "It can operate in both the 2.4 GHz and 5 GHz bands",
+            "It is intended exclusively for point-to-point directional links",
+            "It typically brings higher efficiency than 802.11ac in densely populated environments",
+            "It completely abandons backward compatibility with older standards"
+          ],
+          "answer": [
+            "It supports OFDMA for more efficient channel use with many simultaneous clients",
+            "It can operate in both the 2.4 GHz and 5 GHz bands",
+            "It typically brings higher efficiency than 802.11ac in densely populated environments"
+          ],
+          "explanation": "Wi-Fi 6 (802.11ax) uses OFDMA for more efficient multi-user transmission, operates in both 2.4 GHz and 5 GHz, and remains backward compatible with older 802.11 standards."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q54",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Verkabelungsstandards unterstützen Gigabit-Ethernet (1000BASE-T) über 100 Meter?",
+      "options": [
+        "Cat5e",
+        "Cat6",
+        "Cat6a",
+        "Cat3",
+        "Cat5"
+      ],
+      "answer": [
+        "Cat5e",
+        "Cat6",
+        "Cat6a"
+      ],
+      "explanation": "Ab Cat5e ist Gigabit-Ethernet über die volle Distanz von 100 m spezifiziert; Cat6 und Cat6a übertreffen diese Anforderung noch deutlich. Cat3 und einfaches Cat5 sind dafür nicht spezifiziert.",
+      "translations": {
+        "en": {
+          "question": "Which of the following cabling standards support Gigabit Ethernet (1000BASE-T) over 100 meters?",
+          "options": [
+            "Cat5e",
+            "Cat6",
+            "Cat6a",
+            "Cat3",
+            "Cat5"
+          ],
+          "answer": [
+            "Cat5e",
+            "Cat6",
+            "Cat6a"
+          ],
+          "explanation": "Starting with Cat5e, gigabit Ethernet is specified over the full 100 m distance; Cat6 and Cat6a exceed this requirement further. Cat3 and plain Cat5 are not specified for it."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q55",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Regeln zur verkürzten Schreibweise von IPv6-Adressen sind korrekt?",
+      "options": [
+        "Führende Nullen innerhalb eines Blocks dürfen weggelassen werden",
+        "Eine zusammenhängende Folge von Nullblöcken darf einmalig durch :: ersetzt werden",
+        "Die doppelte Doppelpunkt-Notation :: darf beliebig oft in einer Adresse vorkommen",
+        "Eine IPv6-Adresse besteht aus 8 Blöcken zu je 16 Bit",
+        "Groß- und Kleinschreibung der Hex-Ziffern verändert die Bedeutung der Adresse"
+      ],
+      "answer": [
+        "Führende Nullen innerhalb eines Blocks dürfen weggelassen werden",
+        "Eine zusammenhängende Folge von Nullblöcken darf einmalig durch :: ersetzt werden",
+        "Eine IPv6-Adresse besteht aus 8 Blöcken zu je 16 Bit"
+      ],
+      "explanation": "IPv6-Adressen bestehen aus 8 Blöcken à 16 Bit; führende Nullen je Block können entfallen, und eine zusammenhängende Nullblock-Folge darf einmal (nicht mehrfach) durch :: abgekürzt werden, um Eindeutigkeit zu gewährleisten.",
+      "translations": {
+        "en": {
+          "question": "Which rules for the shortened notation of IPv6 addresses are correct?",
+          "options": [
+            "Leading zeros within a block may be omitted",
+            "One contiguous run of zero blocks may be replaced once by ::",
+            "The double-colon notation :: may appear any number of times in one address",
+            "An IPv6 address consists of 8 blocks of 16 bits each",
+            "Upper/lower case of the hex digits changes the meaning of the address"
+          ],
+          "answer": [
+            "Leading zeros within a block may be omitted",
+            "One contiguous run of zero blocks may be replaced once by ::",
+            "An IPv6 address consists of 8 blocks of 16 bits each"
+          ],
+          "explanation": "IPv6 addresses consist of 8 blocks of 16 bits each; leading zeros per block can be dropped, and one contiguous run of zero blocks may be abbreviated once (not repeatedly) with :: to preserve uniqueness."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q56",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Pakete gehören zum TCP-Drei-Wege-Handshake beim Verbindungsaufbau?",
+      "options": [
+        "SYN",
+        "SYN-ACK",
+        "ACK",
+        "FIN",
+        "RST"
+      ],
+      "answer": [
+        "SYN",
+        "SYN-ACK",
+        "ACK"
+      ],
+      "explanation": "Der Verbindungsaufbau erfolgt über SYN (Client), SYN-ACK (Server) und ACK (Client). FIN dient dem geordneten Verbindungsabbau, RST dem abrupten Zurücksetzen einer Verbindung.",
+      "translations": {
+        "en": {
+          "question": "Which packets are part of the TCP three-way handshake for connection establishment?",
+          "options": [
+            "SYN",
+            "SYN-ACK",
+            "ACK",
+            "FIN",
+            "RST"
+          ],
+          "answer": [
+            "SYN",
+            "SYN-ACK",
+            "ACK"
+          ],
+          "explanation": "Connection setup happens via SYN (client), SYN-ACK (server) and ACK (client). FIN is used for orderly connection teardown, RST for abruptly resetting a connection."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q57",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Kommandozeilenwerkzeuge dienen der Netzwerkdiagnose?",
+      "options": [
+        "ping",
+        "tracert/traceroute",
+        "nslookup",
+        "ipconfig/ifconfig",
+        "chkdsk"
+      ],
+      "answer": [
+        "ping",
+        "tracert/traceroute",
+        "nslookup",
+        "ipconfig/ifconfig"
+      ],
+      "explanation": "ping, tracert/traceroute, nslookup und ipconfig/ifconfig sind klassische Netzwerk-Diagnosewerkzeuge. chkdsk prüft dagegen die Dateisystemintegrität einer Festplatte und hat nichts mit Netzwerken zu tun.",
+      "translations": {
+        "en": {
+          "question": "Which of the following command-line tools are used for network diagnostics?",
+          "options": [
+            "ping",
+            "tracert/traceroute",
+            "nslookup",
+            "ipconfig/ifconfig",
+            "chkdsk"
+          ],
+          "answer": [
+            "ping",
+            "tracert/traceroute",
+            "nslookup",
+            "ipconfig/ifconfig"
+          ],
+          "explanation": "ping, tracert/traceroute, nslookup and ipconfig/ifconfig are classic network diagnostic tools. chkdsk, on the other hand, checks a disk's file system integrity and has nothing to do with networking."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q58",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Funktionen übernimmt typischerweise ein Router, nicht aber ein einfacher Layer-2-Switch?",
+      "options": [
+        "Weiterleitung von Paketen zwischen unterschiedlichen IP-Netzen",
+        "Führen einer Routing-Tabelle",
+        "Trennen von Broadcast-Domänen",
+        "Lernen von MAC-Adressen zur Frame-Weiterleitung innerhalb eines Netzes",
+        "Auffüllen von zu kurzen Ethernet-Frames"
+      ],
+      "answer": [
+        "Weiterleitung von Paketen zwischen unterschiedlichen IP-Netzen",
+        "Führen einer Routing-Tabelle",
+        "Trennen von Broadcast-Domänen"
+      ],
+      "explanation": "Router leiten Pakete zwischen verschiedenen IP-Netzen anhand einer Routing-Tabelle weiter und trennen dadurch Broadcast-Domänen. Das MAC-Lernen ist Aufgabe eines Layer-2-Switches.",
+      "translations": {
+        "en": {
+          "question": "Which functions does a router typically perform that a plain layer-2 switch does not?",
+          "options": [
+            "Forwarding packets between different IP networks",
+            "Maintaining a routing table",
+            "Separating broadcast domains",
+            "Learning MAC addresses for frame forwarding within a network",
+            "Padding out undersized Ethernet frames"
+          ],
+          "answer": [
+            "Forwarding packets between different IP networks",
+            "Maintaining a routing table",
+            "Separating broadcast domains"
+          ],
+          "explanation": "Routers forward packets between different IP networks based on a routing table, thereby separating broadcast domains. MAC learning is the job of a layer-2 switch."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q59",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen über NAT (Network Address Translation) sind korrekt?",
+      "options": [
+        "Bei PAT (Port Address Translation) teilen sich mehrere interne Hosts eine öffentliche IP-Adresse über unterschiedliche Ports",
+        "NAT übersetzt zwischen privaten und öffentlichen IP-Adressen",
+        "NAT ist ein Bestandteil von IPv6 und wird dort zwingend eingesetzt",
+        "NAT kann eingehende, von außen initiierte Verbindungen zu internen Hosts ohne weitere Konfiguration erschweren",
+        "NAT ersetzt vollständig die Notwendigkeit einer Firewall"
+      ],
+      "answer": [
+        "Bei PAT (Port Address Translation) teilen sich mehrere interne Hosts eine öffentliche IP-Adresse über unterschiedliche Ports",
+        "NAT übersetzt zwischen privaten und öffentlichen IP-Adressen",
+        "NAT kann eingehende, von außen initiierte Verbindungen zu internen Hosts ohne weitere Konfiguration erschweren"
+      ],
+      "explanation": "PAT (auch NAT-Overload) ist die verbreitetste NAT-Form und multiplext viele interne Hosts über Portnummern auf eine öffentliche IP. Da NAT keine Zuordnung für unangeforderte eingehende Pakete kennt, blockiert es solche Verbindungen faktisch (nützlicher Nebeneffekt, aber kein Ersatz für eine Firewall). IPv6 ist wegen des riesigen Adressraums explizit nicht auf NAT angewiesen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about NAT (Network Address Translation) are correct?",
+          "options": [
+            "With PAT (Port Address Translation), multiple internal hosts share one public IP address via different ports",
+            "NAT translates between private and public IP addresses",
+            "NAT is a mandatory part of IPv6 and must be used there",
+            "NAT can make inbound, externally initiated connections to internal hosts harder without additional configuration",
+            "NAT completely replaces the need for a firewall"
+          ],
+          "answer": [
+            "With PAT (Port Address Translation), multiple internal hosts share one public IP address via different ports",
+            "NAT translates between private and public IP addresses",
+            "NAT can make inbound, externally initiated connections to internal hosts harder without additional configuration"
+          ],
+          "explanation": "PAT (also called NAT overload) is the most common form of NAT, multiplexing many internal hosts onto one public IP via port numbers. Since NAT has no mapping for unsolicited inbound packets, it effectively blocks such connections (a useful side effect, but not a firewall replacement). IPv6's huge address space explicitly removes the need for NAT."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q60",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zur Stern-Topologie treffen zu?",
+      "options": [
+        "Alle Endgeräte sind mit einem zentralen Knoten (z. B. Switch) verbunden",
+        "Der Ausfall eines einzelnen Endgeräts legt nicht automatisch das restliche Netz lahm",
+        "Der Ausfall des zentralen Knotens legt das gesamte Sternnetz lahm",
+        "Sie benötigt grundsätzlich weniger Kabel als eine Bus-Topologie",
+        "Sie ist die im modernen LAN am wenigsten verbreitete Topologie"
+      ],
+      "answer": [
+        "Alle Endgeräte sind mit einem zentralen Knoten (z. B. Switch) verbunden",
+        "Der Ausfall eines einzelnen Endgeräts legt nicht automatisch das restliche Netz lahm",
+        "Der Ausfall des zentralen Knotens legt das gesamte Sternnetz lahm"
+      ],
+      "explanation": "In der Stern-Topologie hängt jedes Endgerät per eigener Leitung am zentralen Verteiler. Das macht sie robust gegen Ausfall einzelner Endgeräte, aber abhängig vom zentralen Knoten. Sie ist heute die mit Abstand am weitesten verbreitete LAN-Topologie und benötigt tendenziell mehr Kabel als ein Bus.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the star topology are correct?",
+          "options": [
+            "All end devices are connected to a central node (e.g. a switch)",
+            "The failure of a single end device does not automatically take down the rest of the network",
+            "The failure of the central node takes down the entire star network",
+            "It fundamentally requires less cabling than a bus topology",
+            "It is the least common topology in modern LANs"
+          ],
+          "answer": [
+            "All end devices are connected to a central node (e.g. a switch)",
+            "The failure of a single end device does not automatically take down the rest of the network",
+            "The failure of the central node takes down the entire star network"
+          ],
+          "explanation": "In a star topology, every end device has its own line to the central hub. This makes it robust against individual device failures but dependent on the central node. It is by far the most common LAN topology today and generally needs more cabling than a bus."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q61",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche der folgenden Protokolle arbeiten auf der Transportschicht?",
+      "options": [
+        "TCP",
+        "UDP",
+        "IP",
+        "ICMP",
+        "Ethernet"
+      ],
+      "answer": [
+        "TCP",
+        "UDP"
+      ],
+      "explanation": "TCP und UDP sind die zentralen Transportprotokolle der TCP/IP-Familie. IP und ICMP arbeiten auf der Vermittlungsschicht, Ethernet auf der Sicherungsschicht.",
+      "translations": {
+        "en": {
+          "question": "Which of the following protocols operate at the transport layer?",
+          "options": [
+            "TCP",
+            "UDP",
+            "IP",
+            "ICMP",
+            "Ethernet"
+          ],
+          "answer": [
+            "TCP",
+            "UDP"
+          ],
+          "explanation": "TCP and UDP are the core transport protocols of the TCP/IP family. IP and ICMP operate at the network layer, Ethernet at the data link layer."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q62",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zum Unterschied zwischen einem reinen Access Point und einem WLAN-Router treffen zu?",
+      "options": [
+        "Ein reiner Access Point verbindet WLAN-Clients mit einem bereits vorhandenen kabelgebundenen Netz, routet aber selbst nicht zwischen Netzen",
+        "Ein WLAN-Router enthält üblicherweise zusätzlich Routing- und meist auch DHCP-Funktionalität",
+        "Ein Access Point vergibt grundsätzlich öffentliche IP-Adressen",
+        "Beide Geräte können denselben WLAN-Standard (z. B. 802.11ax) unterstützen",
+        "Ein Access Point arbeitet ausschließlich auf Schicht 3"
+      ],
+      "answer": [
+        "Ein reiner Access Point verbindet WLAN-Clients mit einem bereits vorhandenen kabelgebundenen Netz, routet aber selbst nicht zwischen Netzen",
+        "Ein WLAN-Router enthält üblicherweise zusätzlich Routing- und meist auch DHCP-Funktionalität",
+        "Beide Geräte können denselben WLAN-Standard (z. B. 802.11ax) unterstützen"
+      ],
+      "explanation": "Ein Access Point ist im Kern eine Schicht-2-Bridge zwischen Funk und Kabel, während ein WLAN-Router zusätzlich Routing zwischen Netzen (meist LAN und Internet) sowie oft DHCP übernimmt. Beide können denselben Funkstandard nutzen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the difference between a plain access point and a WLAN router are correct?",
+          "options": [
+            "A plain access point connects wireless clients to an already existing wired network but does not itself route between networks",
+            "A WLAN router usually additionally provides routing and often DHCP functionality",
+            "An access point always assigns public IP addresses",
+            "Both devices can support the same wireless standard (e.g. 802.11ax)",
+            "An access point operates exclusively at layer 3"
+          ],
+          "answer": [
+            "A plain access point connects wireless clients to an already existing wired network but does not itself route between networks",
+            "A WLAN router usually additionally provides routing and often DHCP functionality",
+            "Both devices can support the same wireless standard (e.g. 802.11ax)"
+          ],
+          "explanation": "An access point is essentially a layer-2 bridge between radio and wire, while a WLAN router additionally handles routing between networks (usually LAN and internet) and often DHCP. Both can use the same radio standard."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q63",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zu den E-Mail-Protokollen POP3 und IMAP treffen zu?",
+      "options": [
+        "POP3 lädt E-Mails üblicherweise herunter und löscht sie standardmäßig danach vom Server",
+        "IMAP synchronisiert E-Mails und Ordnerstruktur zwischen mehreren Geräten und dem Server",
+        "POP3 nutzt Standardport 110, IMAP Standardport 143",
+        "SMTP wird zum Abrufen von E-Mails vom Server verwendet",
+        "IMAP kann nur auf einem einzigen Gerät gleichzeitig genutzt werden"
+      ],
+      "answer": [
+        "POP3 lädt E-Mails üblicherweise herunter und löscht sie standardmäßig danach vom Server",
+        "IMAP synchronisiert E-Mails und Ordnerstruktur zwischen mehreren Geräten und dem Server",
+        "POP3 nutzt Standardport 110, IMAP Standardport 143"
+      ],
+      "explanation": "POP3 ist für den lokalen Download mit anschließendem Löschen auf dem Server ausgelegt, IMAP hält den Zustand serverseitig synchron und ist damit für Mehrgeräte-Nutzung geeignet. SMTP dient dem Versand, nicht dem Abruf, von E-Mails.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the email protocols POP3 and IMAP are correct?",
+          "options": [
+            "POP3 typically downloads emails and deletes them from the server by default afterward",
+            "IMAP synchronizes emails and folder structure between multiple devices and the server",
+            "POP3 uses default port 110, IMAP uses default port 143",
+            "SMTP is used to retrieve emails from the server",
+            "IMAP can only be used on a single device at a time"
+          ],
+          "answer": [
+            "POP3 typically downloads emails and deletes them from the server by default afterward",
+            "IMAP synchronizes emails and folder structure between multiple devices and the server",
+            "POP3 uses default port 110, IMAP uses default port 143"
+          ],
+          "explanation": "POP3 is designed for local download followed by deletion on the server, while IMAP keeps state synchronized server-side, making it suitable for multi-device use. SMTP is for sending, not retrieving, email."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q64",
+      "type": "multiple",
+      "category": "Netzwerktechnik",
+      "question": "Welche Aussagen zum Unterschied zwischen Kollisionsdomäne und Broadcast-Domäne treffen zu?",
+      "options": [
+        "Jeder Port eines modernen Switches im Vollduplex-Betrieb bildet eine eigene Kollisionsdomäne",
+        "Ein Router trennt Broadcast-Domänen, ein einfacher Switch nicht",
+        "Alle Geräte an einem Hub befinden sich in derselben Kollisionsdomäne",
+        "Eine Broadcast-Domäne kann niemals mehrere Kollisionsdomänen enthalten",
+        "VLANs können eine physische Switch-Infrastruktur in mehrere Broadcast-Domänen aufteilen"
+      ],
+      "answer": [
+        "Jeder Port eines modernen Switches im Vollduplex-Betrieb bildet eine eigene Kollisionsdomäne",
+        "Ein Router trennt Broadcast-Domänen, ein einfacher Switch nicht",
+        "Alle Geräte an einem Hub befinden sich in derselben Kollisionsdomäne",
+        "VLANs können eine physische Switch-Infrastruktur in mehrere Broadcast-Domänen aufteilen"
+      ],
+      "explanation": "Ein Switch trennt Kollisionsdomänen pro Port, bildet aber ohne VLANs eine einzige gemeinsame Broadcast-Domäne; ein Router trennt auch Broadcast-Domänen. Ein Hub kennt gar keine Trennung, alle Ports teilen sich eine Kollisionsdomäne. Eine Broadcast-Domäne besteht in der Regel sogar aus vielen einzelnen Kollisionsdomänen (je Switch-Port eine).",
+      "translations": {
+        "en": {
+          "question": "Which statements about the difference between collision domain and broadcast domain are correct?",
+          "options": [
+            "Every port of a modern switch in full-duplex mode forms its own collision domain",
+            "A router separates broadcast domains, a plain switch does not",
+            "All devices on a hub are in the same collision domain",
+            "A broadcast domain can never contain multiple collision domains",
+            "VLANs can split a physical switch infrastructure into multiple broadcast domains"
+          ],
+          "answer": [
+            "Every port of a modern switch in full-duplex mode forms its own collision domain",
+            "A router separates broadcast domains, a plain switch does not",
+            "All devices on a hub are in the same collision domain",
+            "VLANs can split a physical switch infrastructure into multiple broadcast domains"
+          ],
+          "explanation": "A switch separates collision domains per port but, without VLANs, forms one shared broadcast domain; a router also separates broadcast domains. A hub has no separation at all — all ports share one collision domain. A broadcast domain typically consists of many individual collision domains (one per switch port)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q65",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung WAN?",
+      "answer": "Wide Area Network",
+      "explanation": "Ein WAN verbindet räumlich weit entfernte Standorte, z. B. über das Internet oder gemietete Standleitungen, im Gegensatz zum räumlich begrenzten LAN.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation WAN stand for?",
+          "answer": "Wide Area Network",
+          "explanation": "A WAN connects geographically distant sites, e.g. via the internet or leased lines, as opposed to the spatially limited LAN."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q66",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung VLAN?",
+      "answer": "Virtual Local Area Network",
+      "explanation": "Ein VLAN ist ein logisch getrenntes Netzwerk innerhalb einer gemeinsamen physischen Infrastruktur, gekennzeichnet meist durch 802.1Q-Tags.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation VLAN stand for?",
+          "answer": "Virtual Local Area Network",
+          "explanation": "A VLAN is a logically separated network within shared physical infrastructure, usually marked by 802.1Q tags."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q67",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung NAT?",
+      "answer": "Network Address Translation",
+      "explanation": "NAT übersetzt IP-Adressen beim Durchqueren eines Routers, meist zwischen privatem und öffentlichem Adressraum.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation NAT stand for?",
+          "answer": "Network Address Translation",
+          "explanation": "NAT translates IP addresses as traffic passes through a router, usually between private and public address space."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q68",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welches Protokoll wird zur Synchronisation der Systemuhr über ein Netzwerk verwendet?",
+      "answer": "NTP (Network Time Protocol)",
+      "explanation": "NTP gleicht die Uhrzeit von Clients mit einem Zeitserver ab, was z. B. für Kerberos-Authentifizierung und Log-Auswertung essenziell ist.",
+      "translations": {
+        "en": {
+          "question": "Which protocol is used to synchronize the system clock over a network?",
+          "answer": "NTP (Network Time Protocol)",
+          "explanation": "NTP synchronizes clients' clocks with a time server, which is essential for things like Kerberos authentication and log analysis."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q69",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen TCP-Port nutzt HTTPS standardmäßig?",
+      "answer": "443",
+      "explanation": "HTTPS (HTTP über TLS/SSL) verwendet standardmäßig TCP-Port 443, unverschlüsseltes HTTP Port 80.",
+      "translations": {
+        "en": {
+          "question": "Which TCP port does HTTPS use by default?",
+          "answer": "443",
+          "explanation": "HTTPS (HTTP over TLS/SSL) uses TCP port 443 by default; unencrypted HTTP uses port 80."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q70",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen TCP-Port nutzt FTP standardmäßig für den Steuerkanal (Control Connection)?",
+      "answer": "21",
+      "explanation": "FTP nutzt Port 21 für Befehle/Steuerung und (im aktiven Modus) Port 20 für die eigentliche Datenübertragung.",
+      "translations": {
+        "en": {
+          "question": "Which TCP port does FTP use by default for its control connection?",
+          "answer": "21",
+          "explanation": "FTP uses port 21 for commands/control and (in active mode) port 20 for the actual data transfer."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q71",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele nutzbare Hostadressen bietet ein Subnetz mit der Präfixlänge /28?",
+      "answer": "14",
+      "explanation": "/28 lässt 4 Hostbits: 2⁴ = 16 Adressen, minus Netz- und Broadcast-Adresse = 14 nutzbare Hosts.",
+      "translations": {
+        "en": {
+          "question": "How many usable host addresses does a subnet with prefix length /28 provide?",
+          "answer": "14",
+          "explanation": "/28 leaves 4 host bits: 2⁴ = 16 addresses, minus network and broadcast address = 14 usable hosts."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q72",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Ein Host besitzt die Adresse 172.20.15.10/20. Wie lautet die Netzadresse dieses Subnetzes?",
+      "answer": "172.20.0.0",
+      "explanation": "/20 ergibt eine Blockgröße von 16 im dritten Oktett (0,16,32,...). 15 liegt im Block 0–15, die Netzadresse ist somit 172.20.0.0.",
+      "translations": {
+        "en": {
+          "question": "A host has the address 172.20.15.10/20. What is the network address of this subnet?",
+          "answer": "172.20.0.0",
+          "explanation": "/20 gives a block size of 16 in the third octet (0,16,32,...). 15 falls in the 0–15 block, so the network address is 172.20.0.0."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q73",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie lautet die Broadcast-Adresse des Subnetzes 192.168.5.0/25?",
+      "answer": "192.168.5.127",
+      "explanation": "/25 teilt das letzte Oktett in zwei Blöcke zu je 128 Adressen (0–127 und 128–255). Für den Block 0–127 ist 192.168.5.127 die Broadcast-Adresse.",
+      "translations": {
+        "en": {
+          "question": "What is the broadcast address of the subnet 192.168.5.0/25?",
+          "answer": "192.168.5.127",
+          "explanation": "/25 splits the last octet into two blocks of 128 addresses each (0–127 and 128–255). For the 0–127 block, 192.168.5.127 is the broadcast address."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q74",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wenn beim Subnetting 3 zusätzliche Bits vom Hostanteil für den Netzanteil entliehen werden, wie viele Subnetze entstehen daraus?",
+      "answer": "8",
+      "explanation": "Mit n entliehenen Bits entstehen 2ⁿ Subnetze; bei 3 Bit sind das 2³ = 8 Subnetze.",
+      "translations": {
+        "en": {
+          "question": "If 3 extra bits are borrowed from the host portion for the network portion during subnetting, how many subnets result?",
+          "answer": "8",
+          "explanation": "With n borrowed bits, 2ⁿ subnets result; with 3 bits that is 2³ = 8 subnets."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q75",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie lautet die gebräuchliche Abkürzung für das Protokoll, das Schleifen in redundant verkabelten Switch-Netzen verhindert?",
+      "answer": "STP (Spanning Tree Protocol)",
+      "explanation": "STP berechnet einen schleifenfreien Baum über alle Switches und blockiert dafür redundante Verbindungen gezielt.",
+      "translations": {
+        "en": {
+          "question": "What is the common abbreviation for the protocol that prevents loops in redundantly cabled switched networks?",
+          "answer": "STP (Spanning Tree Protocol)",
+          "explanation": "STP computes a loop-free tree across all switches and selectively blocks redundant links to achieve it."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q76",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie nennt man ein einfaches Layer-1-Gerät, das ein elektrisches Signal lediglich verstärkt/regeneriert und über größere Entfernungen weiterleitet?",
+      "answer": "Repeater",
+      "explanation": "Ein Repeater arbeitet rein auf der Bitübertragungsschicht und verstärkt das Signal ohne jede Adress- oder Inhaltsauswertung.",
+      "translations": {
+        "en": {
+          "question": "What is a simple layer-1 device called that merely amplifies/regenerates an electrical signal and passes it on over greater distances?",
+          "answer": "Repeater",
+          "explanation": "A repeater operates purely at the physical layer and amplifies the signal without any address or content inspection."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q77",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie lautet die IPv6-Loopback-Adresse?",
+      "answer": "::1",
+      "explanation": "::1 entspricht in IPv6 der IPv4-Adresse 127.0.0.1 und referenziert den eigenen Host.",
+      "translations": {
+        "en": {
+          "question": "What is the IPv6 loopback address?",
+          "answer": "::1",
+          "explanation": "::1 is the IPv6 equivalent of the IPv4 address 127.0.0.1 and refers to the local host itself."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q78",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung SSID im WLAN-Kontext?",
+      "answer": "Service Set Identifier",
+      "explanation": "Die SSID ist der Name eines WLAN-Netzes, mit dem sich Clients bei der Suche nach verfügbaren Netzen identifizieren.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation SSID stand for in a wireless context?",
+          "answer": "Service Set Identifier",
+          "explanation": "The SSID is the name of a wireless network that clients use to identify it when searching for available networks."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q79",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Standardport nutzt POP3?",
+      "answer": "110",
+      "explanation": "POP3 (Post Office Protocol Version 3) läuft standardmäßig auf TCP-Port 110 (verschlüsselt via POP3S meist auf Port 995).",
+      "translations": {
+        "en": {
+          "question": "Which default port does POP3 use?",
+          "answer": "110",
+          "explanation": "POP3 (Post Office Protocol version 3) runs on TCP port 110 by default (encrypted via POP3S usually on port 995)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q80",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Standardport nutzt IMAP?",
+      "answer": "143",
+      "explanation": "IMAP (Internet Message Access Protocol) läuft standardmäßig auf TCP-Port 143 (verschlüsselt via IMAPS meist auf Port 993).",
+      "translations": {
+        "en": {
+          "question": "Which default port does IMAP use?",
+          "answer": "143",
+          "explanation": "IMAP (Internet Message Access Protocol) runs on TCP port 143 by default (encrypted via IMAPS usually on port 993)."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q81",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Standardport nutzt SMTP für den Mailversand zwischen Servern?",
+      "answer": "25",
+      "explanation": "SMTP nutzt klassischerweise Port 25; für authentifizierten Client-Versand wird häufig Port 587 (Submission) verwendet.",
+      "translations": {
+        "en": {
+          "question": "Which default port does SMTP use for mail delivery between servers?",
+          "answer": "25",
+          "explanation": "SMTP classically uses port 25; for authenticated client submission, port 587 (Submission) is often used instead."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q82",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Standardport nutzt SNMP für Abfragen (Get/Set)?",
+      "answer": "161",
+      "explanation": "SNMP-Abfragen laufen über UDP-Port 161, während Traps (unaufgeforderte Benachrichtigungen von Geräten) über Port 162 gesendet werden.",
+      "translations": {
+        "en": {
+          "question": "Which default port does SNMP use for queries (get/set)?",
+          "answer": "161",
+          "explanation": "SNMP queries run over UDP port 161, while traps (unsolicited notifications from devices) are sent over port 162."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q83",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welchen Standardport nutzt Telnet?",
+      "answer": "23",
+      "explanation": "Telnet nutzt TCP-Port 23 und überträgt sämtliche Daten, inklusive Zugangsdaten, unverschlüsselt im Klartext.",
+      "translations": {
+        "en": {
+          "question": "Which default port does Telnet use?",
+          "answer": "23",
+          "explanation": "Telnet uses TCP port 23 and transmits all data, including credentials, unencrypted in plain text."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q84",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele Hostbits verbleiben bei einer Präfixlänge von /22?",
+      "answer": "10",
+      "explanation": "Eine IPv4-Adresse hat 32 Bit; bei /22 sind 22 Bit für das Netz reserviert, es bleiben 32 − 22 = 10 Hostbits.",
+      "translations": {
+        "en": {
+          "question": "How many host bits remain with a prefix length of /22?",
+          "answer": "10",
+          "explanation": "An IPv4 address has 32 bits; with /22, 22 bits are reserved for the network, leaving 32 − 22 = 10 host bits."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q85",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Welche Präfixlänge (CIDR-Notation) entspricht der Subnetzmaske 255.255.255.240?",
+      "answer": "/28",
+      "explanation": "240 in Binär ist 11110000, also 4 gesetzte Bits im letzten Oktett zusätzlich zu den 24 Bit der ersten drei Oktette: 24 + 4 = 28.",
+      "translations": {
+        "en": {
+          "question": "Which prefix length (CIDR notation) corresponds to the subnet mask 255.255.255.240?",
+          "answer": "/28",
+          "explanation": "240 in binary is 11110000, i.e. 4 set bits in the last octet in addition to the 24 bits of the first three octets: 24 + 4 = 28."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q86",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie wird die Tabelle genannt, in der ein Switch die Zuordnung von MAC-Adressen zu seinen Ports speichert?",
+      "answer": "MAC-Adresstabelle (CAM-Tabelle)",
+      "explanation": "Diese auch als CAM-Tabelle (Content Addressable Memory) bezeichnete Tabelle erlaubt dem Switch, Frames gezielt statt geflutet weiterzuleiten.",
+      "translations": {
+        "en": {
+          "question": "What is the table called in which a switch stores the mapping of MAC addresses to its ports?",
+          "answer": "MAC address table (CAM table)",
+          "explanation": "This table, also called the CAM table (Content Addressable Memory), lets the switch forward frames selectively instead of flooding them."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q87",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wofür steht die Abkürzung ARP?",
+      "answer": "Address Resolution Protocol",
+      "explanation": "ARP löst zu einer bekannten IPv4-Adresse im lokalen Netz die zugehörige MAC-Adresse auf.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation ARP stand for?",
+          "answer": "Address Resolution Protocol",
+          "explanation": "ARP resolves the MAC address belonging to a known IPv4 address on the local network."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q88",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Wie viele Meter darf ein einzelnes Segment einer Twisted-Pair-Kupferverkabelung (z. B. Cat5e/Cat6) laut Standard maximal lang sein?",
+      "answer": "100 Meter",
+      "explanation": "Die Standards für strukturierte Verkabelung (z. B. TIA/EIA-568) begrenzen ein Kupfersegment auf 100 Meter, davon maximal 90 Meter feste Verkabelung plus Patchkabel.",
+      "translations": {
+        "en": {
+          "question": "What is the maximum standard length for a single twisted-pair copper cabling segment (e.g. Cat5e/Cat6)?",
+          "answer": "100 meters",
+          "explanation": "Structured cabling standards (e.g. TIA/EIA-568) limit a copper segment to 100 meters, of which at most 90 meters is fixed cabling plus patch cables."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q89",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "In welchem Frequenzband arbeiten die WLAN-Standards 802.11b und 802.11g?",
+      "answer": "2,4 GHz",
+      "explanation": "802.11b und 802.11g nutzen ausschließlich das 2,4-GHz-Band, das durch viele andere Geräte (z. B. Mikrowellen, Bluetooth) stärker gestört wird als das 5-GHz-Band.",
+      "translations": {
+        "en": {
+          "question": "In which frequency band do the 802.11b and 802.11g wireless standards operate?",
+          "answer": "2.4 GHz",
+          "explanation": "802.11b and 802.11g operate exclusively in the 2.4 GHz band, which suffers more interference from other devices (e.g. microwaves, Bluetooth) than the 5 GHz band."
+        }
+      }
+    },
+    {
+      "id": "ap1-net-q90",
+      "type": "text",
+      "category": "Netzwerktechnik",
+      "question": "Ein Subnetz muss mindestens 500 nutzbare Hostadressen bereitstellen. Welche minimale Präfixlänge erfüllt diese Anforderung?",
+      "answer": "/23 (510 nutzbare Hosts)",
+      "explanation": "/23 lässt 9 Hostbits: 2⁹ − 2 = 510 nutzbare Hosts, genug für 500 Hosts. /24 würde mit 254 nutzbaren Hosts nicht ausreichen.",
+      "translations": {
+        "en": {
+          "question": "A subnet must provide at least 500 usable host addresses. What is the minimum prefix length that satisfies this requirement?",
+          "answer": "/23 (510 usable hosts)",
+          "explanation": "/23 leaves 9 host bits: 2⁹ − 2 = 510 usable hosts, enough for 500 hosts. /24 would not suffice, providing only 254 usable hosts."
+        }
+      }
+    }
+  ]
+}

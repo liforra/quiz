@@ -1,0 +1,248 @@
+{
+  "questions": [
+    {
+      "id": "ap2-db-q01",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche SQL-Abfrage liefert alle Kunden aus Berlin, alphabetisch nach Name sortiert?",
+      "options": [
+        "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
+        "SELECT * FROM kunden ORDER BY ort = 'Berlin' WHERE name;",
+        "SELECT * FROM kunden GROUP BY name HAVING ort = 'Berlin';",
+        "SELECT name FROM kunden SORT BY ort = 'Berlin';"
+      ],
+      "answer": "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
+      "explanation": "WHERE filtert Zeilen, ORDER BY sortiert das Ergebnis. GROUP BY/HAVING sind für Gruppierungen und Aggregate gedacht, SORT BY existiert in SQL nicht.",
+      "translations": {
+        "en": {
+          "question": "Which SQL query returns all customers from Berlin, sorted alphabetically by name?",
+          "options": [
+            "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
+            "SELECT * FROM kunden ORDER BY ort = 'Berlin' WHERE name;",
+            "SELECT * FROM kunden GROUP BY name HAVING ort = 'Berlin';",
+            "SELECT name FROM kunden SORT BY ort = 'Berlin';"
+          ],
+          "answer": "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
+          "explanation": "WHERE filters rows, ORDER BY sorts the result. GROUP BY/HAVING are for grouping and aggregates; SORT BY does not exist in SQL."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q02",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Mit welchem SQL-Befehl wird ein neuer Datensatz in eine Tabelle eingefügt?",
+      "options": ["INSERT INTO", "UPDATE", "CREATE TABLE", "ALTER TABLE"],
+      "answer": "INSERT INTO",
+      "explanation": "INSERT INTO fügt neue Zeilen ein, UPDATE ändert bestehende, CREATE TABLE legt eine neue Tabelle an, ALTER TABLE ändert die Tabellenstruktur.",
+      "translations": {
+        "en": {
+          "question": "Which SQL command inserts a new record into a table?",
+          "options": ["INSERT INTO", "UPDATE", "CREATE TABLE", "ALTER TABLE"],
+          "answer": "INSERT INTO",
+          "explanation": "INSERT INTO adds new rows, UPDATE modifies existing ones, CREATE TABLE creates a new table, ALTER TABLE changes the table structure."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q03",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher JOIN-Typ liefert nur die Datensätze, für die es in BEIDEN verknüpften Tabellen eine Übereinstimmung gibt?",
+      "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+      "answer": "INNER JOIN",
+      "explanation": "INNER JOIN = nur Treffer in beiden Tabellen. LEFT/RIGHT JOIN behalten zusätzlich alle Zeilen der linken/rechten Tabelle, FULL OUTER JOIN alle Zeilen beider Tabellen.",
+      "translations": {
+        "en": {
+          "question": "Which JOIN type returns only the records that have a match in BOTH joined tables?",
+          "options": ["INNER JOIN", "LEFT JOIN", "RIGHT JOIN", "FULL OUTER JOIN"],
+          "answer": "INNER JOIN",
+          "explanation": "INNER JOIN = only matches in both tables. LEFT/RIGHT JOIN additionally keep all rows of the left/right table, FULL OUTER JOIN keeps all rows of both."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q04",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche SQL-Funktion ermittelt die Anzahl der Zeilen eines Abfrageergebnisses?",
+      "options": ["COUNT()", "SUM()", "AVG()", "MAX()"],
+      "answer": "COUNT()",
+      "explanation": "COUNT() zählt Zeilen, SUM() summiert Werte, AVG() bildet den Durchschnitt, MAX() liefert den größten Wert.",
+      "translations": {
+        "en": {
+          "question": "Which SQL function determines the number of rows in a query result?",
+          "options": ["COUNT()", "SUM()", "AVG()", "MAX()"],
+          "answer": "COUNT()",
+          "explanation": "COUNT() counts rows, SUM() adds up values, AVG() computes the average, MAX() returns the largest value."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q05",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche der folgenden SQL-Befehle gehören zur DML (Data Manipulation Language)?",
+      "options": ["INSERT", "UPDATE", "DELETE", "CREATE TABLE", "DROP TABLE"],
+      "answer": ["INSERT", "UPDATE", "DELETE"],
+      "explanation": "DML manipuliert Daten (INSERT, UPDATE, DELETE). CREATE und DROP verändern die Struktur und gehören zur DDL (Data Definition Language).",
+      "translations": {
+        "en": {
+          "question": "Which of the following SQL commands belong to DML (Data Manipulation Language)?",
+          "options": ["INSERT", "UPDATE", "DELETE", "CREATE TABLE", "DROP TABLE"],
+          "answer": ["INSERT", "UPDATE", "DELETE"],
+          "explanation": "DML manipulates data (INSERT, UPDATE, DELETE). CREATE and DROP change the structure and belong to DDL (Data Definition Language)."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q06",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Eigenschaften muss ein Primärschlüssel erfüllen?",
+      "options": [
+        "Er ist innerhalb der Tabelle eindeutig",
+        "Er darf nicht NULL sein",
+        "Er identifiziert jeden Datensatz zweifelsfrei",
+        "Er darf mehrfach vorkommen, solange die Tabelle klein ist"
+      ],
+      "answer": [
+        "Er ist innerhalb der Tabelle eindeutig",
+        "Er darf nicht NULL sein",
+        "Er identifiziert jeden Datensatz zweifelsfrei"
+      ],
+      "explanation": "Eindeutig + nicht NULL = jeder Datensatz ist zweifelsfrei ansprechbar. Häufig wird dafür eine künstliche ID (Auto-Increment) verwendet.",
+      "translations": {
+        "en": {
+          "question": "Which properties must a primary key satisfy?",
+          "options": [
+            "It is unique within the table",
+            "It must not be NULL",
+            "It unambiguously identifies every record",
+            "It may occur multiple times as long as the table is small"
+          ],
+          "answer": [
+            "It is unique within the table",
+            "It must not be NULL",
+            "It unambiguously identifies every record"
+          ],
+          "explanation": "Unique + not NULL = every record can be addressed unambiguously. Often an artificial ID (auto-increment) is used for this."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q07",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Ziele verfolgt die Normalisierung einer relationalen Datenbank?",
+      "options": [
+        "Redundanzen (doppelte Datenhaltung) vermeiden",
+        "Anomalien beim Einfügen, Ändern und Löschen verhindern",
+        "Die Datenkonsistenz verbessern",
+        "Jede Abfrage automatisch beschleunigen",
+        "Backups überflüssig machen"
+      ],
+      "answer": [
+        "Redundanzen (doppelte Datenhaltung) vermeiden",
+        "Anomalien beim Einfügen, Ändern und Löschen verhindern",
+        "Die Datenkonsistenz verbessern"
+      ],
+      "explanation": "Normalisierung (1.–3. Normalform) strukturiert Daten sauber. Abfragen können durch die nötigen JOINs sogar langsamer werden — deshalb wird gelegentlich bewusst denormalisiert.",
+      "translations": {
+        "en": {
+          "question": "What are the goals of normalizing a relational database?",
+          "options": [
+            "Avoid redundancy (duplicate data storage)",
+            "Prevent insert, update and delete anomalies",
+            "Improve data consistency",
+            "Automatically speed up every query",
+            "Make backups unnecessary"
+          ],
+          "answer": [
+            "Avoid redundancy (duplicate data storage)",
+            "Prevent insert, update and delete anomalies",
+            "Improve data consistency"
+          ],
+          "explanation": "Normalization (1st–3rd normal form) structures data cleanly. Queries can actually become slower due to the required JOINs — which is why databases are sometimes deliberately denormalized."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q08",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche der folgenden Systeme sind relationale Datenbankmanagementsysteme?",
+      "options": ["MySQL", "PostgreSQL", "MariaDB", "MongoDB", "Redis"],
+      "answer": ["MySQL", "PostgreSQL", "MariaDB"],
+      "explanation": "MySQL, PostgreSQL und MariaDB speichern in Tabellen mit SQL. MongoDB ist eine Dokumenten-Datenbank, Redis ein Key-Value-Store (beide NoSQL).",
+      "translations": {
+        "en": {
+          "question": "Which of the following systems are relational database management systems?",
+          "options": ["MySQL", "PostgreSQL", "MariaDB", "MongoDB", "Redis"],
+          "answer": ["MySQL", "PostgreSQL", "MariaDB"],
+          "explanation": "MySQL, PostgreSQL and MariaDB store data in tables using SQL. MongoDB is a document database, Redis a key-value store (both NoSQL)."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q09",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Welche Aufgabe hat die WHERE-Klausel in einer SQL-Abfrage?",
+      "answer": "Sie filtert die Zeilen nach einer Bedingung — nur Datensätze, welche die Bedingung erfüllen, erscheinen im Ergebnis",
+      "explanation": "Beispiel: WHERE preis > 100 liefert nur Zeilen mit einem Preis über 100. Für Aggregat-Filter nach GROUP BY nutzt man stattdessen HAVING.",
+      "translations": {
+        "en": {
+          "question": "What is the purpose of the WHERE clause in an SQL query?",
+          "answer": "It filters the rows by a condition — only records satisfying the condition appear in the result",
+          "explanation": "Example: WHERE price > 100 returns only rows with a price above 100. To filter aggregates after GROUP BY, you use HAVING instead."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q10",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Mit welchem SQL-Befehl entfernt man die Tabelle „kunden“ vollständig — inklusive ihrer Struktur — aus der Datenbank?",
+      "answer": "DROP TABLE kunden;",
+      "explanation": "DROP TABLE löscht Struktur UND Daten. DELETE FROM kunden würde nur die Zeilen löschen, die leere Tabelle bliebe bestehen (TRUNCATE leert sie schneller).",
+      "translations": {
+        "en": {
+          "question": "Which SQL command removes the table \"kunden\" completely — including its structure — from the database?",
+          "answer": "DROP TABLE kunden;",
+          "explanation": "DROP TABLE deletes structure AND data. DELETE FROM kunden would only delete the rows, leaving the empty table in place (TRUNCATE empties it faster)."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q11",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Was ist eine 1:n-Beziehung? Nennen Sie ein Beispiel.",
+      "answer": "Ein Datensatz der einen Tabelle ist mit beliebig vielen Datensätzen der anderen Tabelle verknüpft — z. B. ein Kunde hat viele Bestellungen, jede Bestellung gehört genau einem Kunden",
+      "explanation": "Umgesetzt wird sie über einen Fremdschlüssel auf der n-Seite (z. B. kunden_id in der Tabelle bestellungen).",
+      "translations": {
+        "en": {
+          "question": "What is a 1:n relationship? Give an example.",
+          "answer": "One record in one table is linked to any number of records in another table — e.g. one customer has many orders, and each order belongs to exactly one customer",
+          "explanation": "It is implemented via a foreign key on the n side (e.g. customer_id in the orders table)."
+        }
+      }
+    },
+    {
+      "id": "ap2-db-q12",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Wofür steht die Abkürzung SQL?",
+      "answer": "Structured Query Language",
+      "explanation": "SQL ist die Standardsprache für relationale Datenbanken — für Abfragen (SELECT), Datenmanipulation (DML) und Strukturdefinition (DDL).",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation SQL stand for?",
+          "answer": "Structured Query Language",
+          "explanation": "SQL is the standard language for relational databases — for queries (SELECT), data manipulation (DML) and structure definition (DDL)."
+        }
+      }
+    }
+  ]
+}

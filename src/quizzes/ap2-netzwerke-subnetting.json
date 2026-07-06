@@ -1,0 +1,238 @@
+{
+  "questions": [
+    {
+      "id": "ap2-net-q01",
+      "type": "single",
+      "category": "Netzwerke & Subnetting",
+      "question": "Für ein Subnetz werden 50 Hostadressen benötigt. Welche Subnetzmaske ist die kleinstmögliche, die ausreicht?",
+      "options": ["255.255.255.224", "255.255.255.192", "255.255.255.128", "255.255.255.0"],
+      "answer": "255.255.255.192",
+      "explanation": "50 Hosts + Netz- und Broadcastadresse = 52 Adressen → 2⁶ = 64 (/26 = 255.255.255.192). /27 böte nur 30 nutzbare Hosts.",
+      "translations": {
+        "en": {
+          "question": "A subnet needs 50 host addresses. Which is the smallest subnet mask that is sufficient?",
+          "options": ["255.255.255.224", "255.255.255.192", "255.255.255.128", "255.255.255.0"],
+          "answer": "255.255.255.192",
+          "explanation": "50 hosts + network and broadcast address = 52 addresses → 2⁶ = 64 (/26 = 255.255.255.192). A /27 would only offer 30 usable hosts."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q02",
+      "type": "single",
+      "category": "Netzwerke & Subnetting",
+      "question": "An welchem Präfix erkennt man eine IPv6-Link-Local-Adresse?",
+      "options": ["fe80::/10", "fc00::/7", "2000::/3", "ff00::/8"],
+      "answer": "fe80::/10",
+      "explanation": "fe80::/10 = Link-Local (nur im lokalen Netzsegment gültig). fc00::/7 = Unique Local (privat), 2000::/3 = Global Unicast, ff00::/8 = Multicast.",
+      "translations": {
+        "en": {
+          "question": "By which prefix can you recognize an IPv6 link-local address?",
+          "options": ["fe80::/10", "fc00::/7", "2000::/3", "ff00::/8"],
+          "answer": "fe80::/10",
+          "explanation": "fe80::/10 = link-local (valid only on the local segment). fc00::/7 = unique local (private), 2000::/3 = global unicast, ff00::/8 = multicast."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q03",
+      "type": "single",
+      "category": "Netzwerke & Subnetting",
+      "question": "Welches Protokoll verhindert Schleifen (Loops) in einem geswitchten Netzwerk?",
+      "options": ["STP (Spanning Tree Protocol)", "OSPF", "LACP", "VTP"],
+      "answer": "STP (Spanning Tree Protocol)",
+      "explanation": "STP deaktiviert redundante Pfade logisch, bis sie im Fehlerfall gebraucht werden. OSPF ist ein Routingprotokoll, LACP bündelt Links, VTP verteilt VLAN-Konfigurationen.",
+      "translations": {
+        "en": {
+          "question": "Which protocol prevents loops in a switched network?",
+          "options": ["STP (Spanning Tree Protocol)", "OSPF", "LACP", "VTP"],
+          "answer": "STP (Spanning Tree Protocol)",
+          "explanation": "STP logically disables redundant paths until they are needed after a failure. OSPF is a routing protocol, LACP aggregates links, VTP distributes VLAN configurations."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q04",
+      "type": "single",
+      "category": "Netzwerke & Subnetting",
+      "question": "Wie lange dauert die Übertragung von 2,4 GB über eine 1-Gbit/s-Leitung, wenn effektiv nur 80 % der Nennrate erreicht werden (vereinfacht: 1 GB = 10⁹ Byte)?",
+      "options": ["19 Sekunden", "24 Sekunden", "30 Sekunden", "48 Sekunden"],
+      "answer": "24 Sekunden",
+      "explanation": "2,4 GB × 8 = 19,2 Gbit. Effektive Rate: 1 Gbit/s × 0,8 = 0,8 Gbit/s. 19,2 ÷ 0,8 = 24 s.",
+      "translations": {
+        "en": {
+          "question": "How long does it take to transfer 2.4 GB over a 1 Gbit/s link if only 80% of the nominal rate is effectively achieved (simplified: 1 GB = 10⁹ bytes)?",
+          "options": ["19 seconds", "24 seconds", "30 seconds", "48 seconds"],
+          "answer": "24 seconds",
+          "explanation": "2.4 GB × 8 = 19.2 Gbit. Effective rate: 1 Gbit/s × 0.8 = 0.8 Gbit/s. 19.2 ÷ 0.8 = 24 s."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q05",
+      "type": "multiple",
+      "category": "Netzwerke & Subnetting",
+      "question": "Welche Vorteile bietet die Segmentierung eines Netzwerks mit VLANs?",
+      "options": [
+        "Kleinere Broadcast-Domänen",
+        "Logische Trennung von Abteilungen unabhängig von der Verkabelung",
+        "Erhöhte Sicherheit durch Isolation der Segmente",
+        "Höhere Übertragungsrate pro Switchport",
+        "Eine Firewall wird überflüssig"
+      ],
+      "answer": [
+        "Kleinere Broadcast-Domänen",
+        "Logische Trennung von Abteilungen unabhängig von der Verkabelung",
+        "Erhöhte Sicherheit durch Isolation der Segmente"
+      ],
+      "explanation": "VLANs teilen einen physischen Switch in logische Netze. Die Portgeschwindigkeit ändert sich nicht, und für Verkehr ZWISCHEN VLANs braucht es weiterhin Routing/Firewalling.",
+      "translations": {
+        "en": {
+          "question": "What advantages does segmenting a network with VLANs provide?",
+          "options": [
+            "Smaller broadcast domains",
+            "Logical separation of departments independent of the cabling",
+            "Increased security through isolation of segments",
+            "Higher transfer rate per switch port",
+            "A firewall becomes unnecessary"
+          ],
+          "answer": [
+            "Smaller broadcast domains",
+            "Logical separation of departments independent of the cabling",
+            "Increased security through isolation of segments"
+          ],
+          "explanation": "VLANs split a physical switch into logical networks. Port speed does not change, and traffic BETWEEN VLANs still needs routing/firewalling."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q06",
+      "type": "multiple",
+      "category": "Netzwerke & Subnetting",
+      "question": "Welche der folgenden Geräte arbeiten klassisch auf Schicht 2 des OSI-Modells?",
+      "options": ["Switch", "Bridge", "Router", "Hub", "Repeater"],
+      "answer": ["Switch", "Bridge"],
+      "explanation": "Switch und Bridge leiten anhand von MAC-Adressen weiter (Schicht 2). Router arbeiten auf Schicht 3 (IP), Hub und Repeater auf Schicht 1 (Bitübertragung).",
+      "translations": {
+        "en": {
+          "question": "Which of the following devices classically operate at layer 2 of the OSI model?",
+          "options": ["Switch", "Bridge", "Router", "Hub", "Repeater"],
+          "answer": ["Switch", "Bridge"],
+          "explanation": "Switches and bridges forward based on MAC addresses (layer 2). Routers work at layer 3 (IP), hubs and repeaters at layer 1 (physical)."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q07",
+      "type": "multiple",
+      "category": "Netzwerke & Subnetting",
+      "question": "Welche der folgenden Protokolle sind Routingprotokolle?",
+      "options": ["OSPF", "RIP", "BGP", "STP", "SMTP"],
+      "answer": ["OSPF", "RIP", "BGP"],
+      "explanation": "OSPF (Link-State), RIP (Distance-Vector) und BGP (Internet-Backbone) tauschen Routing-Informationen aus. STP verhindert Switch-Loops, SMTP versendet E-Mails.",
+      "translations": {
+        "en": {
+          "question": "Which of the following protocols are routing protocols?",
+          "options": ["OSPF", "RIP", "BGP", "STP", "SMTP"],
+          "answer": ["OSPF", "RIP", "BGP"],
+          "explanation": "OSPF (link-state), RIP (distance-vector) and BGP (internet backbone) exchange routing information. STP prevents switch loops, SMTP delivers email."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q08",
+      "type": "multiple",
+      "category": "Netzwerke & Subnetting",
+      "question": "Welche Aussagen über NAT (Network Address Translation) treffen zu?",
+      "options": [
+        "Es übersetzt private in öffentliche IP-Adressen",
+        "Es hilft, öffentliche IPv4-Adressen einzusparen",
+        "Mit PAT können viele interne Clients eine öffentliche IP-Adresse teilen",
+        "Es verschlüsselt den gesamten Datenverkehr"
+      ],
+      "answer": [
+        "Es übersetzt private in öffentliche IP-Adressen",
+        "Es hilft, öffentliche IPv4-Adressen einzusparen",
+        "Mit PAT können viele interne Clients eine öffentliche IP-Adresse teilen"
+      ],
+      "explanation": "NAT/PAT (Port Address Translation) ist Adressumschreibung, keine Verschlüsselung — dafür braucht es TLS oder VPN.",
+      "translations": {
+        "en": {
+          "question": "Which statements about NAT (Network Address Translation) are true?",
+          "options": [
+            "It translates private IP addresses into public ones",
+            "It helps conserve public IPv4 addresses",
+            "With PAT, many internal clients can share one public IP address",
+            "It encrypts all network traffic"
+          ],
+          "answer": [
+            "It translates private IP addresses into public ones",
+            "It helps conserve public IPv4 addresses",
+            "With PAT, many internal clients can share one public IP address"
+          ],
+          "explanation": "NAT/PAT (Port Address Translation) rewrites addresses — it does not encrypt anything; that requires TLS or a VPN."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q09",
+      "type": "text",
+      "category": "Netzwerke & Subnetting",
+      "question": "Wie lautet die Broadcast-Adresse des Netzes 172.16.32.0/20?",
+      "answer": "172.16.47.255",
+      "explanation": "/20 → Blockgröße 16 im dritten Oktett: Das Netz reicht von 172.16.32.0 bis 172.16.47.255, die letzte Adresse ist der Broadcast.",
+      "translations": {
+        "en": {
+          "question": "What is the broadcast address of the network 172.16.32.0/20?",
+          "answer": "172.16.47.255",
+          "explanation": "/20 → block size 16 in the third octet: the network spans 172.16.32.0 to 172.16.47.255; the last address is the broadcast."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q10",
+      "type": "text",
+      "category": "Netzwerke & Subnetting",
+      "question": "Wie viele nutzbare Hostadressen bietet ein /29-Subnetz?",
+      "answer": "6 (2³ = 8 Adressen minus Netz- und Broadcastadresse)",
+      "explanation": "/29 lässt 3 Hostbits: 8 Adressen − 2 = 6 nutzbare Hosts. Typische Größe für kleine Transfernetze.",
+      "translations": {
+        "en": {
+          "question": "How many usable host addresses does a /29 subnet provide?",
+          "answer": "6 (2³ = 8 addresses minus network and broadcast address)",
+          "explanation": "/29 leaves 3 host bits: 8 addresses − 2 = 6 usable hosts. A typical size for small transfer networks."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q11",
+      "type": "text",
+      "category": "Netzwerke & Subnetting",
+      "question": "Das Netz 10.20.0.0/16 soll in gleich große Subnetze mit jeweils mindestens 1000 Hosts aufgeteilt werden. Welche Präfixlänge müssen die Subnetze haben?",
+      "answer": "/22 (1022 nutzbare Hostadressen pro Subnetz)",
+      "explanation": "1000 Hosts + 2 → mindestens 1024 Adressen → 10 Hostbits → 32 − 10 = /22. Ein /23 böte nur 510 Hosts.",
+      "translations": {
+        "en": {
+          "question": "The network 10.20.0.0/16 is to be divided into equally sized subnets with at least 1000 hosts each. What prefix length must the subnets have?",
+          "answer": "/22 (1022 usable host addresses per subnet)",
+          "explanation": "1000 hosts + 2 → at least 1024 addresses → 10 host bits → 32 − 10 = /22. A /23 would only offer 510 hosts."
+        }
+      }
+    },
+    {
+      "id": "ap2-net-q12",
+      "type": "text",
+      "category": "Netzwerke & Subnetting",
+      "question": "Was macht der Befehl traceroute (Windows: tracert) und wofür setzt man ihn ein?",
+      "answer": "Er zeigt die einzelnen Router-Hops auf dem Weg zum Zielhost samt Laufzeiten — zur Lokalisierung von Netzwerkproblemen auf der Strecke",
+      "explanation": "Traceroute nutzt aufsteigende TTL-Werte: Jeder Router, der die TTL auf 0 dekrementiert, meldet sich mit einer ICMP-Time-Exceeded-Nachricht.",
+      "translations": {
+        "en": {
+          "question": "What does the traceroute command (Windows: tracert) do, and what is it used for?",
+          "answer": "It shows the individual router hops on the way to the target host including round-trip times — used to localize network problems along the path",
+          "explanation": "Traceroute uses increasing TTL values: each router that decrements the TTL to 0 responds with an ICMP Time Exceeded message."
+        }
+      }
+    }
+  ]
+}

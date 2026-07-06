@@ -1,0 +1,282 @@
+{
+  "questions": [
+    {
+      "id": "ap2-sec-q01",
+      "type": "single",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welche Rolle übernimmt der Switch bei der Port-basierten Netzwerkzugangskontrolle nach IEEE 802.1X?",
+      "options": ["Authenticator", "Supplicant", "Authentication Server", "Certificate Authority"],
+      "answer": "Authenticator",
+      "explanation": "802.1X-Rollen: Der Client ist der Supplicant, der Switch/Access Point der Authenticator, und ein RADIUS-Server der Authentication Server.",
+      "translations": {
+        "en": {
+          "question": "Which role does the switch play in port-based network access control according to IEEE 802.1X?",
+          "options": ["Authenticator", "Supplicant", "Authentication server", "Certificate authority"],
+          "answer": "Authenticator",
+          "explanation": "802.1X roles: the client is the supplicant, the switch/access point is the authenticator, and a RADIUS server is the authentication server."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q02",
+      "type": "single",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Mit welchem Protokoll wird eine verschlüsselte Terminalverbindung zu einem entfernten Server aufgebaut?",
+      "options": ["SSH", "Telnet", "SNMP", "RDP über Port 80"],
+      "answer": "SSH",
+      "explanation": "SSH (Secure Shell, Port 22) verschlüsselt die komplette Sitzung. Telnet überträgt im Klartext und gilt als unsicher.",
+      "translations": {
+        "en": {
+          "question": "Which protocol is used to establish an encrypted terminal connection to a remote server?",
+          "options": ["SSH", "Telnet", "SNMP", "RDP over port 80"],
+          "answer": "SSH",
+          "explanation": "SSH (Secure Shell, port 22) encrypts the entire session. Telnet transmits in plain text and is considered insecure."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q03",
+      "type": "single",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welchen Zweck erfüllt ein digitales Zertifikat?",
+      "options": [
+        "Es bindet einen öffentlichen Schlüssel beglaubigt an eine Identität",
+        "Es verschlüsselt Festplatten vollständig",
+        "Es ersetzt Benutzerpasswörter im Betriebssystem",
+        "Es blockiert Schadsoftware auf dem Endgerät"
+      ],
+      "answer": "Es bindet einen öffentlichen Schlüssel beglaubigt an eine Identität",
+      "explanation": "Eine Zertifizierungsstelle (CA) bestätigt mit ihrer Signatur, dass der öffentliche Schlüssel wirklich zur angegebenen Identität (z. B. Domain) gehört — Grundlage von TLS/HTTPS.",
+      "translations": {
+        "en": {
+          "question": "What purpose does a digital certificate serve?",
+          "options": [
+            "It bindingly attests that a public key belongs to an identity",
+            "It fully encrypts hard drives",
+            "It replaces user passwords in the operating system",
+            "It blocks malware on the end device"
+          ],
+          "answer": "It bindingly attests that a public key belongs to an identity",
+          "explanation": "A certificate authority (CA) confirms with its signature that the public key really belongs to the stated identity (e.g. a domain) — the foundation of TLS/HTTPS."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q04",
+      "type": "single",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Bei welchem IPsec-Betriebsmodus wird das gesamte ursprüngliche IP-Paket gekapselt und verschlüsselt?",
+      "options": ["Tunnelmodus", "Transportmodus", "Aggressive Mode", "Main Mode"],
+      "answer": "Tunnelmodus",
+      "explanation": "Tunnelmodus: komplettes IP-Paket wird gekapselt — Standard bei Site-to-Site-VPNs. Transportmodus verschlüsselt nur die Nutzdaten. Main/Aggressive Mode betreffen den IKE-Schlüsselaustausch.",
+      "translations": {
+        "en": {
+          "question": "In which IPsec mode of operation is the entire original IP packet encapsulated and encrypted?",
+          "options": ["Tunnel mode", "Transport mode", "Aggressive mode", "Main mode"],
+          "answer": "Tunnel mode",
+          "explanation": "Tunnel mode: the complete IP packet is encapsulated — standard for site-to-site VPNs. Transport mode only encrypts the payload. Main/aggressive mode concern the IKE key exchange."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q05",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welche der folgenden Kategorien sind Faktoren einer Multi-Faktor-Authentifizierung?",
+      "options": [
+        "Wissen (z. B. Passwort)",
+        "Besitz (z. B. Smartphone mit TOTP-App)",
+        "Biometrie (z. B. Fingerabdruck)",
+        "Wohnort des Benutzers",
+        "Dauer der Betriebszugehörigkeit"
+      ],
+      "answer": [
+        "Wissen (z. B. Passwort)",
+        "Besitz (z. B. Smartphone mit TOTP-App)",
+        "Biometrie (z. B. Fingerabdruck)"
+      ],
+      "explanation": "Die drei Faktorkategorien: etwas, das man WEISS, etwas, das man HAT, etwas, das man IST. MFA kombiniert mindestens zwei verschiedene Kategorien.",
+      "translations": {
+        "en": {
+          "question": "Which of the following categories are factors of multi-factor authentication?",
+          "options": [
+            "Knowledge (e.g. password)",
+            "Possession (e.g. smartphone with TOTP app)",
+            "Biometrics (e.g. fingerprint)",
+            "The user's place of residence",
+            "Length of employment"
+          ],
+          "answer": [
+            "Knowledge (e.g. password)",
+            "Possession (e.g. smartphone with TOTP app)",
+            "Biometrics (e.g. fingerprint)"
+          ],
+          "explanation": "The three factor categories: something you KNOW, something you HAVE, something you ARE. MFA combines at least two different categories."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q06",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welche Maßnahmen härten einen Linux-Server sinnvoll ab?",
+      "options": [
+        "SSH-Login als root deaktivieren",
+        "Authentifizierung per SSH-Key statt Passwort",
+        "Nicht benötigte Dienste deaktivieren",
+        "Regelmäßige Sicherheitsupdates einspielen",
+        "Telnet für die Fernwartung aktivieren"
+      ],
+      "answer": [
+        "SSH-Login als root deaktivieren",
+        "Authentifizierung per SSH-Key statt Passwort",
+        "Nicht benötigte Dienste deaktivieren",
+        "Regelmäßige Sicherheitsupdates einspielen"
+      ],
+      "explanation": "Härtung = Angriffsfläche minimieren: weniger Dienste, starke Authentifizierung, aktuelle Software. Telnet wäre ein Rückschritt (Klartext).",
+      "translations": {
+        "en": {
+          "question": "Which measures sensibly harden a Linux server?",
+          "options": [
+            "Disable SSH login as root",
+            "Authenticate via SSH key instead of password",
+            "Disable services that are not needed",
+            "Apply security updates regularly",
+            "Enable Telnet for remote maintenance"
+          ],
+          "answer": [
+            "Disable SSH login as root",
+            "Authenticate via SSH key instead of password",
+            "Disable services that are not needed",
+            "Apply security updates regularly"
+          ],
+          "explanation": "Hardening = minimizing the attack surface: fewer services, strong authentication, up-to-date software. Telnet would be a step backwards (plain text)."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q07",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welche Aussagen zur symmetrischen und asymmetrischen Verschlüsselung sind korrekt?",
+      "options": [
+        "AES ist ein symmetrisches Verfahren",
+        "RSA ist ein asymmetrisches Verfahren",
+        "Bei symmetrischer Verschlüsselung nutzen beide Seiten denselben Schlüssel",
+        "Asymmetrische Verfahren sind generell schneller als symmetrische",
+        "Bei asymmetrischen Verfahren wird der private Schlüssel öffentlich verteilt"
+      ],
+      "answer": [
+        "AES ist ein symmetrisches Verfahren",
+        "RSA ist ein asymmetrisches Verfahren",
+        "Bei symmetrischer Verschlüsselung nutzen beide Seiten denselben Schlüssel"
+      ],
+      "explanation": "In der Praxis kombiniert man beides (hybrid, z. B. TLS): asymmetrisch für den Schlüsselaustausch, symmetrisch für die schnellen Nutzdaten. Der private Schlüssel bleibt immer geheim.",
+      "translations": {
+        "en": {
+          "question": "Which statements about symmetric and asymmetric encryption are correct?",
+          "options": [
+            "AES is a symmetric algorithm",
+            "RSA is an asymmetric algorithm",
+            "With symmetric encryption, both sides use the same key",
+            "Asymmetric algorithms are generally faster than symmetric ones",
+            "With asymmetric algorithms, the private key is distributed publicly"
+          ],
+          "answer": [
+            "AES is a symmetric algorithm",
+            "RSA is an asymmetric algorithm",
+            "With symmetric encryption, both sides use the same key"
+          ],
+          "explanation": "In practice both are combined (hybrid, e.g. TLS): asymmetric for the key exchange, symmetric for the fast payload encryption. The private key always stays secret."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q08",
+      "type": "multiple",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Welche DNS-Record-Typen sind für den Versand und die Absicherung von E-Mails relevant?",
+      "options": [
+        "MX-Record",
+        "TXT-Record (z. B. für SPF und DKIM)",
+        "CNAME-Record",
+        "SRV-Record"
+      ],
+      "answer": ["MX-Record", "TXT-Record (z. B. für SPF und DKIM)"],
+      "explanation": "MX bestimmt den zuständigen Mailserver; SPF und DKIM werden als TXT-Records hinterlegt und erschweren Absender-Fälschung. CNAME ist ein Alias, SRV lokalisiert allgemeine Dienste.",
+      "translations": {
+        "en": {
+          "question": "Which DNS record types are relevant for delivering and securing email?",
+          "options": [
+            "MX record",
+            "TXT record (e.g. for SPF and DKIM)",
+            "CNAME record",
+            "SRV record"
+          ],
+          "answer": ["MX record", "TXT record (e.g. for SPF and DKIM)"],
+          "explanation": "MX designates the responsible mail server; SPF and DKIM are stored as TXT records and make sender spoofing harder. CNAME is an alias, SRV locates generic services."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q09",
+      "type": "text",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Was versteht man unter einer DMZ und welche Systeme platziert man dort?",
+      "answer": "Eine demilitarisierte Zone — ein durch Firewalls abgetrenntes Netzsegment zwischen Internet und internem Netz, in dem von außen erreichbare Dienste stehen (z. B. Web-, Mail-, Proxy-Server)",
+      "explanation": "Wird ein Server in der DMZ kompromittiert, hat der Angreifer noch keinen direkten Zugriff auf das interne LAN.",
+      "translations": {
+        "en": {
+          "question": "What is a DMZ, and which systems are placed there?",
+          "answer": "A demilitarized zone — a network segment separated by firewalls between the internet and the internal network, hosting externally reachable services (e.g. web, mail, proxy servers)",
+          "explanation": "If a server in the DMZ is compromised, the attacker still has no direct access to the internal LAN."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q10",
+      "type": "text",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Erklären Sie kurz den Unterschied zwischen Authentifizierung und Autorisierung.",
+      "answer": "Authentifizierung prüft die Identität (Wer bist du?), Autorisierung prüft die Berechtigungen (Was darfst du?)",
+      "explanation": "Erst nach erfolgreicher Authentifizierung (z. B. Login) entscheidet die Autorisierung (z. B. Dateirechte, Gruppenrichtlinien), welche Aktionen erlaubt sind.",
+      "translations": {
+        "en": {
+          "question": "Briefly explain the difference between authentication and authorization.",
+          "answer": "Authentication verifies identity (who are you?), authorization verifies permissions (what are you allowed to do?)",
+          "explanation": "Only after successful authentication (e.g. login) does authorization (e.g. file permissions, group policies) decide which actions are allowed."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q11",
+      "type": "text",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Was ist ein Brute-Force-Angriff und nennen Sie eine wirksame Gegenmaßnahme.",
+      "answer": "Das systematische Durchprobieren aller möglichen Passwörter/Schlüssel; Gegenmaßnahmen: lange Passwörter, Kontosperrung bzw. Rate-Limiting nach Fehlversuchen, 2FA",
+      "explanation": "Jedes zusätzliche Zeichen vervielfacht den Aufwand exponentiell. Fail2ban oder Account-Lockout stoppen automatisierte Versuche früh.",
+      "translations": {
+        "en": {
+          "question": "What is a brute-force attack, and name one effective countermeasure.",
+          "answer": "Systematically trying all possible passwords/keys; countermeasures: long passwords, account lockout or rate limiting after failed attempts, 2FA",
+          "explanation": "Every additional character multiplies the effort exponentially. Fail2ban or account lockout stops automated attempts early."
+        }
+      }
+    },
+    {
+      "id": "ap2-sec-q12",
+      "type": "text",
+      "category": "IT-Sicherheit & Netzwerksicherheit",
+      "question": "Wofür steht die Abkürzung VPN und wozu wird es eingesetzt?",
+      "answer": "Virtual Private Network — ein verschlüsselter Tunnel über ein unsicheres Netz (z. B. Internet), etwa für Homeoffice-Zugriff oder Standortkopplung",
+      "explanation": "Gängige Techniken: IPsec, OpenVPN, WireGuard. Das VPN schützt Vertraulichkeit und Integrität der übertragenen Daten.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation VPN stand for, and what is it used for?",
+          "answer": "Virtual Private Network — an encrypted tunnel over an insecure network (e.g. the internet), used e.g. for remote work access or site-to-site links",
+          "explanation": "Common technologies: IPsec, OpenVPN, WireGuard. The VPN protects the confidentiality and integrity of the transmitted data."
+        }
+      }
+    }
+  ]
+}

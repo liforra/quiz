@@ -1,0 +1,2400 @@
+{
+  "questions": [
+    {
+      "id": "ap1-wpm-q01",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ein Angebot über 2.000 € netto gewährt 2 % Skonto bei Zahlung innerhalb von 10 Tagen. Welcher Betrag ist bei Ausnutzung des Skontos zu zahlen?",
+      "options": [
+        "1.900 €",
+        "1.960 €",
+        "1.980 €",
+        "2.040 €"
+      ],
+      "answer": "1.960 €",
+      "explanation": "2 % von 2.000 € = 40 € Abzug → 2.000 € − 40 € = 1.960 €. Skonto ist ein Preisnachlass für schnelle Zahlung.",
+      "translations": {
+        "en": {
+          "question": "An offer of €2,000 net grants a 2% cash discount for payment within 10 days. What amount is due if the discount is used?",
+          "options": [
+            "€1,900",
+            "€1,960",
+            "€1,980",
+            "€2,040"
+          ],
+          "answer": "€1,960",
+          "explanation": "2% of €2,000 = €40 deduction → €2,000 − €40 = €1,960. A cash discount (Skonto) rewards fast payment."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q02",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "In einer Nutzwertanalyse wird Kriterium A (Gewichtung 40 %) mit 3 Punkten und Kriterium B (Gewichtung 60 %) mit 5 Punkten bewertet. Wie hoch ist der Gesamtnutzwert?",
+      "options": [
+        "3,8",
+        "4,0",
+        "4,2",
+        "4,5"
+      ],
+      "answer": "4,2",
+      "explanation": "Gewichtete Summe: 0,4 × 3 + 0,6 × 5 = 1,2 + 3,0 = 4,2. Die Nutzwertanalyse macht qualitative Kriterien durch Gewichtung und Punktevergabe vergleichbar.",
+      "translations": {
+        "en": {
+          "question": "In a utility analysis, criterion A (weight 40%) scores 3 points and criterion B (weight 60%) scores 5 points. What is the total utility value?",
+          "options": [
+            "3.8",
+            "4.0",
+            "4.2",
+            "4.5"
+          ],
+          "answer": "4.2",
+          "explanation": "Weighted sum: 0.4 × 3 + 0.6 × 5 = 1.2 + 3.0 = 4.2. A utility analysis makes qualitative criteria comparable through weighting and scoring."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q03",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ein Server wird für 4.800 € netto angeschafft und über 3 Jahre linear abgeschrieben. Wie hoch ist der jährliche Abschreibungsbetrag?",
+      "options": [
+        "1.200 €",
+        "1.600 €",
+        "2.400 €",
+        "4.800 €"
+      ],
+      "answer": "1.600 €",
+      "explanation": "Lineare AfA: Anschaffungskosten ÷ Nutzungsdauer = 4.800 € ÷ 3 Jahre = 1.600 € pro Jahr.",
+      "translations": {
+        "en": {
+          "question": "A server is purchased for €4,800 net and depreciated linearly over 3 years. What is the annual depreciation amount?",
+          "options": [
+            "€1,200",
+            "€1,600",
+            "€2,400",
+            "€4,800"
+          ],
+          "answer": "€1,600",
+          "explanation": "Straight-line depreciation: acquisition cost ÷ useful life = €4,800 ÷ 3 years = €1,600 per year."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q04",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was gibt der Gesamtpuffer (GP) eines Vorgangs im Netzplan an?",
+      "options": [
+        "Die Zeitspanne, um die sich der Vorgang verschieben darf, ohne das Projektende zu gefährden",
+        "Die Mindestdauer des Vorgangs",
+        "Die Anzahl der beteiligten Mitarbeiter",
+        "Die Kosten des Vorgangs pro Tag"
+      ],
+      "answer": "Die Zeitspanne, um die sich der Vorgang verschieben darf, ohne das Projektende zu gefährden",
+      "explanation": "GP = spätester Anfangszeitpunkt − frühester Anfangszeitpunkt (SAZ − FAZ). Vorgänge mit GP = 0 liegen auf dem kritischen Pfad.",
+      "translations": {
+        "en": {
+          "question": "What does the total float (slack) of an activity in a network diagram indicate?",
+          "options": [
+            "The amount of time the activity can be delayed without endangering the project end date",
+            "The minimum duration of the activity",
+            "The number of employees involved",
+            "The cost of the activity per day"
+          ],
+          "answer": "The amount of time the activity can be delayed without endangering the project end date",
+          "explanation": "Total float = latest start − earliest start. Activities with zero float lie on the critical path."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q05",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen über das Lastenheft sind korrekt?",
+      "options": [
+        "Es wird vom Auftraggeber erstellt",
+        "Es beschreibt, WAS gefordert wird",
+        "Es wird vom Auftragnehmer erstellt",
+        "Es beschreibt im Detail, WIE die Anforderungen technisch umgesetzt werden"
+      ],
+      "answer": [
+        "Es wird vom Auftraggeber erstellt",
+        "Es beschreibt, WAS gefordert wird"
+      ],
+      "explanation": "Lastenheft: Auftraggeber beschreibt WAS und WOFÜR. Pflichtenheft: Auftragnehmer beschreibt WIE und WOMIT er die Anforderungen umsetzt.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the requirements specification (Lastenheft) are correct?",
+          "options": [
+            "It is written by the customer/client",
+            "It describes WHAT is required",
+            "It is written by the contractor",
+            "It describes in detail HOW the requirements are implemented technically"
+          ],
+          "answer": [
+            "It is written by the customer/client",
+            "It describes WHAT is required"
+          ],
+          "explanation": "Lastenheft: the client describes WHAT and WHY. Pflichtenheft: the contractor describes HOW and WITH WHAT the requirements will be implemented."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q06",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen über das Pflichtenheft sind korrekt?",
+      "options": [
+        "Es wird vom Auftragnehmer erstellt",
+        "Es beschreibt, WIE die Anforderungen umgesetzt werden",
+        "Es basiert auf dem Lastenheft",
+        "Es wird zeitlich vor dem Lastenheft erstellt",
+        "Es wird vom Auftraggeber erstellt"
+      ],
+      "answer": [
+        "Es wird vom Auftragnehmer erstellt",
+        "Es beschreibt, WIE die Anforderungen umgesetzt werden",
+        "Es basiert auf dem Lastenheft"
+      ],
+      "explanation": "Reihenfolge: Erst formuliert der Auftraggeber das Lastenheft (WAS), dann antwortet der Auftragnehmer mit dem Pflichtenheft (WIE) als Umsetzungskonzept.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the functional specification (Pflichtenheft) are correct?",
+          "options": [
+            "It is written by the contractor",
+            "It describes HOW the requirements will be implemented",
+            "It is based on the requirements specification (Lastenheft)",
+            "It is written before the requirements specification",
+            "It is written by the customer/client"
+          ],
+          "answer": [
+            "It is written by the contractor",
+            "It describes HOW the requirements will be implemented",
+            "It is based on the requirements specification (Lastenheft)"
+          ],
+          "explanation": "Order: first the client writes the Lastenheft (WHAT), then the contractor responds with the Pflichtenheft (HOW) as the implementation concept."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q07",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Aus welchen drei Größen besteht das „magische Dreieck“ des Projektmanagements?",
+      "options": [
+        "Zeit",
+        "Kosten",
+        "Qualität/Leistung",
+        "Motivation",
+        "Marktanteil"
+      ],
+      "answer": [
+        "Zeit",
+        "Kosten",
+        "Qualität/Leistung"
+      ],
+      "explanation": "Die drei Größen konkurrieren miteinander: Wer z. B. die Zeit verkürzt, muss meist höhere Kosten oder geringere Qualität in Kauf nehmen.",
+      "translations": {
+        "en": {
+          "question": "Which three factors make up the \"magic triangle\" of project management?",
+          "options": [
+            "Time",
+            "Cost",
+            "Quality/scope",
+            "Motivation",
+            "Market share"
+          ],
+          "answer": [
+            "Time",
+            "Cost",
+            "Quality/scope"
+          ],
+          "explanation": "The three factors compete with each other: shortening the schedule usually means higher costs or lower quality."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q08",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Kostenarten fließen in eine TCO-Betrachtung (Total Cost of Ownership) eines IT-Arbeitsplatzes ein?",
+      "options": [
+        "Anschaffungskosten der Hardware",
+        "Energiekosten im Betrieb",
+        "Wartungs- und Supportkosten",
+        "Schulungskosten der Mitarbeiter",
+        "Umsatz des Hardware-Herstellers"
+      ],
+      "answer": [
+        "Anschaffungskosten der Hardware",
+        "Energiekosten im Betrieb",
+        "Wartungs- und Supportkosten",
+        "Schulungskosten der Mitarbeiter"
+      ],
+      "explanation": "TCO umfasst alle direkten und indirekten Kosten über den gesamten Lebenszyklus — nicht nur den Kaufpreis.",
+      "translations": {
+        "en": {
+          "question": "Which cost types are included in a TCO (Total Cost of Ownership) analysis of an IT workstation?",
+          "options": [
+            "Hardware acquisition costs",
+            "Energy costs during operation",
+            "Maintenance and support costs",
+            "Employee training costs",
+            "The hardware manufacturer's revenue"
+          ],
+          "answer": [
+            "Hardware acquisition costs",
+            "Energy costs during operation",
+            "Maintenance and support costs",
+            "Employee training costs"
+          ],
+          "explanation": "TCO covers all direct and indirect costs over the entire life cycle — not just the purchase price."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q09",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Worin unterscheiden sich Netto- und Bruttopreis?",
+      "answer": "Der Nettopreis ist ohne Umsatzsteuer, der Bruttopreis enthält die Umsatzsteuer (in Deutschland i. d. R. 19 %)",
+      "explanation": "Brutto = Netto + Umsatzsteuer. Im B2B-Bereich wird meist netto kalkuliert, Endverbraucherpreise sind brutto.",
+      "translations": {
+        "en": {
+          "question": "What is the difference between a net price and a gross price?",
+          "answer": "The net price excludes VAT, the gross price includes VAT (usually 19% in Germany)",
+          "explanation": "Gross = net + VAT. B2B pricing is usually net, consumer prices are gross."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q10",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was versteht man unter dem kritischen Pfad in einem Netzplan?",
+      "answer": "Die längste Kette voneinander abhängiger Vorgänge ohne Pufferzeiten — sie bestimmt die minimale Projektdauer",
+      "explanation": "Verzögert sich ein Vorgang auf dem kritischen Pfad, verschiebt sich das gesamte Projektende, da der Gesamtpuffer dieser Vorgänge null ist.",
+      "translations": {
+        "en": {
+          "question": "What is the critical path in a project network diagram?",
+          "answer": "The longest chain of dependent activities with zero float — it determines the minimum project duration",
+          "explanation": "If an activity on the critical path is delayed, the whole project end date shifts, because these activities have zero total float."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q11",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Nennen Sie zwei Vorteile von Leasing gegenüber dem Kauf von IT-Hardware.",
+      "answer": "Schonung der Liquidität (kein hoher Einmalbetrag), planbare monatliche Kosten, regelmäßig aktuelle Hardware, Raten sind als Betriebsausgaben absetzbar",
+      "explanation": "Zwei beliebige dieser Punkte genügen. Nachteil: Über die Gesamtlaufzeit ist Leasing meist teurer, und die Hardware geht nicht ins Eigentum über.",
+      "translations": {
+        "en": {
+          "question": "Name two advantages of leasing IT hardware compared to buying it.",
+          "answer": "Preserves liquidity (no large one-off payment), predictable monthly costs, regularly up-to-date hardware, installments are tax-deductible operating expenses",
+          "explanation": "Any two of these points are sufficient. Downside: over the full term leasing is usually more expensive, and you never own the hardware."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q12",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wofür steht die Abkürzung SMART bei der Formulierung von (Projekt-)Zielen?",
+      "answer": "Spezifisch, Messbar, Attraktiv (bzw. Akzeptiert), Realistisch, Terminiert",
+      "explanation": "SMART-Ziele sind eindeutig überprüfbar. Beispiel: „Bis zum 31.12. die Ticket-Antwortzeit auf unter 4 Stunden senken“ statt „besseren Support bieten“.",
+      "translations": {
+        "en": {
+          "question": "What does the abbreviation SMART stand for when formulating (project) goals?",
+          "answer": "Specific, Measurable, Achievable (or Accepted), Realistic, Time-bound",
+          "explanation": "SMART goals are unambiguously verifiable. Example: \"Reduce ticket response time to under 4 hours by Dec 31\" instead of \"provide better support\"."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q13",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "In welcher Reihenfolge laufen die klassischen Projektphasen ab?",
+      "options": [
+        "Initiierung, Planung, Durchführung, Abschluss",
+        "Planung, Initiierung, Durchführung, Abschluss",
+        "Durchführung, Planung, Initiierung, Abschluss",
+        "Initiierung, Durchführung, Planung, Abschluss"
+      ],
+      "answer": "Initiierung, Planung, Durchführung, Abschluss",
+      "explanation": "Die Projektsteuerung (Controlling) läuft begleitend zur Durchführung mit und ist kein eigener sequenzieller Schritt, sondern eine Querschnittsaufgabe.",
+      "translations": {
+        "en": {
+          "question": "In which order do the classic project phases run?",
+          "options": [
+            "Initiation, planning, execution, closure",
+            "Planning, initiation, execution, closure",
+            "Execution, planning, initiation, closure",
+            "Initiation, execution, planning, closure"
+          ],
+          "answer": "Initiation, planning, execution, closure",
+          "explanation": "Project control/monitoring runs alongside execution and is a cross-cutting task rather than a separate sequential step."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q14",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Vorgang A dauert 4 Tage und hat keinen Vorgänger (FAZ = 0). Vorgang B dauert 3 Tage und folgt unmittelbar auf A. Wie lautet der früheste Endzeitpunkt (FEZ) von Vorgang B?",
+      "options": [
+        "3",
+        "4",
+        "7",
+        "11"
+      ],
+      "answer": "7",
+      "explanation": "FAZ(B) = FEZ(A) = 0 + 4 = 4. FEZ(B) = FAZ(B) + Dauer(B) = 4 + 3 = 7.",
+      "translations": {
+        "en": {
+          "question": "Activity A takes 4 days and has no predecessor (ES = 0). Activity B takes 3 days and directly follows A. What is the earliest finish (EF) of activity B?",
+          "options": [
+            "3",
+            "4",
+            "7",
+            "11"
+          ],
+          "answer": "7",
+          "explanation": "ES(B) = EF(A) = 0 + 4 = 4. EF(B) = ES(B) + duration(B) = 4 + 3 = 7."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q15",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was zeigt ein Gantt-Diagramm primär?",
+      "options": [
+        "Den zeitlichen Ablauf von Vorgängen als Balken auf einer Zeitachse",
+        "Die Kostenverteilung eines Projekts als Kreisdiagramm",
+        "Die Abhängigkeiten zwischen Unternehmen in einer Lieferkette",
+        "Die Hierarchie der Projektorganisation"
+      ],
+      "answer": "Den zeitlichen Ablauf von Vorgängen als Balken auf einer Zeitachse",
+      "explanation": "Im Gantt-Diagramm entspricht die Balkenlänge der Vorgangsdauer, die Position auf der Zeitachse dem geplanten Start- und Endtermin.",
+      "translations": {
+        "en": {
+          "question": "What does a Gantt chart primarily show?",
+          "options": [
+            "The timing of activities as bars on a time axis",
+            "The cost distribution of a project as a pie chart",
+            "The dependencies between companies in a supply chain",
+            "The hierarchy of the project organization"
+          ],
+          "answer": "The timing of activities as bars on a time axis",
+          "explanation": "In a Gantt chart, bar length represents activity duration, and its position on the time axis represents the planned start and end dates."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q16",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie verhalten sich Fixkosten, wenn die Produktionsmenge innerhalb der bestehenden Kapazitätsgrenze steigt?",
+      "options": [
+        "Sie bleiben konstant",
+        "Sie steigen proportional",
+        "Sie sinken proportional",
+        "Sie steigen degressiv"
+      ],
+      "answer": "Sie bleiben konstant",
+      "explanation": "Fixkosten (z. B. Miete, Gehälter) fallen unabhängig von der Ausbringungsmenge an, solange die Kapazitätsgrenze nicht überschritten wird.",
+      "translations": {
+        "en": {
+          "question": "How do fixed costs behave when production volume rises within the existing capacity limit?",
+          "options": [
+            "They stay constant",
+            "They rise proportionally",
+            "They fall proportionally",
+            "They rise degressively"
+          ],
+          "answer": "They stay constant",
+          "explanation": "Fixed costs (e.g. rent, salaries) are incurred regardless of output volume as long as the capacity limit is not exceeded."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q17",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ein Produkt wird für 50 € verkauft. Die variablen Kosten je Stück betragen 30 €. Wie hoch ist der Stückdeckungsbeitrag?",
+      "options": [
+        "20 €",
+        "30 €",
+        "50 €",
+        "80 €"
+      ],
+      "answer": "20 €",
+      "explanation": "Stückdeckungsbeitrag = Verkaufspreis − variable Kosten je Stück = 50 € − 30 € = 20 €.",
+      "translations": {
+        "en": {
+          "question": "A product sells for €50. Variable costs per unit are €30. What is the contribution margin per unit?",
+          "options": [
+            "€20",
+            "€30",
+            "€50",
+            "€80"
+          ],
+          "answer": "€20",
+          "explanation": "Contribution margin per unit = selling price − variable cost per unit = €50 − €30 = €20."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q18",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Die Fixkosten eines Projekts betragen 10.000 €, der Stückdeckungsbeitrag 25 €. Wie viele Stück müssen mindestens verkauft werden, um die Gewinnschwelle (Break-even-Punkt) zu erreichen?",
+      "options": [
+        "250",
+        "400",
+        "500",
+        "1.000"
+      ],
+      "answer": "400",
+      "explanation": "Break-even-Menge = Fixkosten ÷ Stückdeckungsbeitrag = 10.000 € ÷ 25 € = 400 Stück.",
+      "translations": {
+        "en": {
+          "question": "A project has fixed costs of €10,000 and a contribution margin of €25 per unit. How many units must be sold at minimum to reach the break-even point?",
+          "options": [
+            "250",
+            "400",
+            "500",
+            "1,000"
+          ],
+          "answer": "400",
+          "explanation": "Break-even quantity = fixed costs ÷ contribution margin per unit = €10,000 ÷ €25 = 400 units."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q19",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Der Einstandspreis einer Ware beträgt 80 €, der Kalkulationszuschlag 25 %. Wie hoch ist der Verkaufspreis (netto)?",
+      "options": [
+        "95 €",
+        "100 €",
+        "105 €",
+        "120 €"
+      ],
+      "answer": "100 €",
+      "explanation": "Verkaufspreis = Einstandspreis × (1 + Zuschlagssatz) = 80 € × 1,25 = 100 €.",
+      "translations": {
+        "en": {
+          "question": "The cost price of a product is €80, the markup (Kalkulationszuschlag) is 25%. What is the net selling price?",
+          "options": [
+            "€95",
+            "€100",
+            "€105",
+            "€120"
+          ],
+          "answer": "€100",
+          "explanation": "Selling price = cost price × (1 + markup rate) = €80 × 1.25 = €100."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q20",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Der Listeneinkaufspreis einer Ware beträgt 200 €. Nach Abzug von 10 % Liefererrabatt und weiteren 2 % Skonto ergibt sich der Bareinkaufspreis. Wie hoch ist dieser?",
+      "options": [
+        "176,40 €",
+        "180,00 €",
+        "196,00 €",
+        "198,00 €"
+      ],
+      "answer": "176,40 €",
+      "explanation": "Zieleinkaufspreis = 200 € × 0,90 = 180 €. Bareinkaufspreis = 180 € × 0,98 = 176,40 €.",
+      "translations": {
+        "en": {
+          "question": "The list purchase price of an item is €200. After deducting a 10% trade discount and a further 2% cash discount, what is the resulting cash purchase price?",
+          "options": [
+            "€176.40",
+            "€180.00",
+            "€196.00",
+            "€198.00"
+          ],
+          "answer": "€176.40",
+          "explanation": "Target price = €200 × 0.90 = €180. Cash purchase price = €180 × 0.98 = €176.40."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q21",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was wird zum Bareinkaufspreis in der Bezugskalkulation addiert, um den Einstandspreis zu ermitteln?",
+      "options": [
+        "Bezugskosten (z. B. Frachtkosten, Transportversicherung)",
+        "Gewinnzuschlag",
+        "Umsatzsteuer",
+        "Kundenskonto"
+      ],
+      "answer": "Bezugskosten (z. B. Frachtkosten, Transportversicherung)",
+      "explanation": "Einstandspreis = Bareinkaufspreis + Bezugskosten. Gewinnzuschlag und Kundenskonto gehören erst zur Verkaufskalkulation.",
+      "translations": {
+        "en": {
+          "question": "What is added to the cash purchase price to determine the cost price in a procurement cost calculation (Bezugskalkulation)?",
+          "options": [
+            "Procurement costs (e.g. freight charges, transport insurance)",
+            "Profit markup",
+            "VAT",
+            "Customer cash discount"
+          ],
+          "answer": "Procurement costs (e.g. freight charges, transport insurance)",
+          "explanation": "Cost price = cash purchase price + procurement costs. Profit markup and customer discount only apply in the sales-price calculation."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q22",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie hoch ist das gesetzlich vorgeschriebene Mindeststammkapital einer GmbH in Deutschland?",
+      "options": [
+        "1 €",
+        "12.500 €",
+        "25.000 €",
+        "50.000 €"
+      ],
+      "answer": "25.000 €",
+      "explanation": "Nach § 5 GmbHG beträgt das Mindeststammkapital 25.000 €; bei Gründung muss mindestens die Hälfte eingezahlt sein.",
+      "translations": {
+        "en": {
+          "question": "What is the legally required minimum share capital for a GmbH (German limited liability company)?",
+          "options": [
+            "€1",
+            "€12,500",
+            "€25,000",
+            "€50,000"
+          ],
+          "answer": "€25,000",
+          "explanation": "Under the GmbH Act, the minimum share capital is €25,000; at least half must be paid in upon formation."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q23",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie hoch ist das gesetzlich vorgeschriebene Mindestgrundkapital einer Aktiengesellschaft (AG)?",
+      "options": [
+        "25.000 €",
+        "50.000 €",
+        "100.000 €",
+        "500.000 €"
+      ],
+      "answer": "50.000 €",
+      "explanation": "Nach § 7 AktG beträgt das Mindestgrundkapital einer AG 50.000 €, aufgeteilt in Aktien.",
+      "translations": {
+        "en": {
+          "question": "What is the legally required minimum share capital for a German stock corporation (AG)?",
+          "options": [
+            "€25,000",
+            "€50,000",
+            "€100,000",
+            "€500,000"
+          ],
+          "answer": "€50,000",
+          "explanation": "Under the German Stock Corporation Act, the minimum share capital for an AG is €50,000, divided into shares."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q24",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie haften die Gesellschafter einer OHG (Offene Handelsgesellschaft)?",
+      "options": [
+        "Alle Gesellschafter haften unbeschränkt, unmittelbar und gesamtschuldnerisch mit ihrem gesamten Vermögen",
+        "Nur mit der Höhe ihrer Einlage",
+        "Gar nicht persönlich",
+        "Nur der geschäftsführende Gesellschafter haftet"
+      ],
+      "answer": "Alle Gesellschafter haften unbeschränkt, unmittelbar und gesamtschuldnerisch mit ihrem gesamten Vermögen",
+      "explanation": "Die unbeschränkte persönliche Haftung ist ein zentrales Merkmal der OHG und unterscheidet sie von Kapitalgesellschaften.",
+      "translations": {
+        "en": {
+          "question": "How do the partners of an OHG (general commercial partnership) liable?",
+          "options": [
+            "All partners are liable unlimitedly, directly, and jointly with their entire personal assets",
+            "Only up to the amount of their capital contribution",
+            "They have no personal liability at all",
+            "Only the managing partner is liable"
+          ],
+          "answer": "All partners are liable unlimitedly, directly, and jointly with their entire personal assets",
+          "explanation": "Unlimited personal liability is a defining feature of the OHG, distinguishing it from corporations."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q25",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie unterscheidet sich die Haftung von Komplementär und Kommanditist in einer KG?",
+      "options": [
+        "Der Komplementär haftet unbeschränkt, der Kommanditist nur bis zur Höhe seiner Einlage",
+        "Beide haften unbeschränkt",
+        "Beide haften nur mit ihrer Einlage",
+        "Der Kommanditist haftet unbeschränkt, der Komplementär nur mit seiner Einlage"
+      ],
+      "answer": "Der Komplementär haftet unbeschränkt, der Kommanditist nur bis zur Höhe seiner Einlage",
+      "explanation": "Der Komplementär führt die Geschäfte und haftet unbeschränkt; der Kommanditist ist von der Geschäftsführung ausgeschlossen und haftet beschränkt.",
+      "translations": {
+        "en": {
+          "question": "How does the liability of the general partner (Komplementär) differ from that of the limited partner (Kommanditist) in a KG (limited partnership)?",
+          "options": [
+            "The general partner is liable without limit, the limited partner only up to their capital contribution",
+            "Both are liable without limit",
+            "Both are liable only up to their contribution",
+            "The limited partner is liable without limit, the general partner only up to their contribution"
+          ],
+          "answer": "The general partner is liable without limit, the limited partner only up to their capital contribution",
+          "explanation": "The general partner manages the business and bears unlimited liability; the limited partner is excluded from management and has limited liability."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q26",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie haftet der Inhaber eines Einzelunternehmens für Geschäftsschulden?",
+      "options": [
+        "Unbeschränkt mit seinem gesamten Privat- und Geschäftsvermögen",
+        "Nur mit dem Betriebsvermögen",
+        "Beschränkt auf eine festgelegte Einlage",
+        "Gar nicht"
+      ],
+      "answer": "Unbeschränkt mit seinem gesamten Privat- und Geschäftsvermögen",
+      "explanation": "Beim Einzelunternehmen gibt es keine Trennung zwischen Privat- und Geschäftsvermögen bei der Haftung.",
+      "translations": {
+        "en": {
+          "question": "How is the owner of a sole proprietorship (Einzelunternehmen) liable for business debts?",
+          "options": [
+            "Without limit, with all private and business assets",
+            "Only with the business assets",
+            "Limited to a fixed capital contribution",
+            "Not liable at all"
+          ],
+          "answer": "Without limit, with all private and business assets",
+          "explanation": "A sole proprietorship has no separation between private and business assets when it comes to liability."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q27",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche gesetzliche Grundkündigungsfrist gilt für Arbeitnehmer nach § 622 BGB, sofern vertraglich oder tariflich nichts anderes vereinbart ist?",
+      "options": [
+        "4 Wochen zum 15. oder zum Ende eines Kalendermonats",
+        "2 Wochen ohne festen Termin",
+        "1 Monat zum Monatsende",
+        "6 Wochen zum Quartalsende"
+      ],
+      "answer": "4 Wochen zum 15. oder zum Ende eines Kalendermonats",
+      "explanation": "Diese Grundfrist gilt für beide Vertragsparteien, sofern keine längere vertragliche oder tarifliche Frist vereinbart wurde.",
+      "translations": {
+        "en": {
+          "question": "What is the statutory basic notice period for employees under § 622 BGB, if no other contractual or collective-agreement period applies?",
+          "options": [
+            "4 weeks to the 15th or the end of a calendar month",
+            "2 weeks without a fixed date",
+            "1 month to the end of the month",
+            "6 weeks to the end of the quarter"
+          ],
+          "answer": "4 weeks to the 15th or the end of a calendar month",
+          "explanation": "This basic period applies to both contracting parties unless a longer contractual or collectively agreed period applies."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q28",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie lange darf die Probezeit in einem regulären (nicht-ausbildungs-) Arbeitsverhältnis in Deutschland höchstens vereinbart werden?",
+      "options": [
+        "3 Monate",
+        "6 Monate",
+        "12 Monate",
+        "keine gesetzliche Obergrenze"
+      ],
+      "answer": "6 Monate",
+      "explanation": "Nach § 622 Abs. 3 BGB kann während einer vereinbarten Probezeit von höchstens 6 Monaten mit einer verkürzten Frist von 2 Wochen gekündigt werden.",
+      "translations": {
+        "en": {
+          "question": "What is the maximum probationary period that can be agreed for a regular (non-apprenticeship) employment relationship in Germany?",
+          "options": [
+            "3 months",
+            "6 months",
+            "12 months",
+            "no statutory maximum"
+          ],
+          "answer": "6 months",
+          "explanation": "Under § 622(3) BGB, during an agreed probationary period of up to 6 months, a shortened notice period of 2 weeks applies."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q29",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie lange beträgt die gesetzliche Gewährleistungsfrist für Sachmängel beim Kauf neuer beweglicher Sachen im Regelfall?",
+      "options": [
+        "6 Monate",
+        "1 Jahr",
+        "2 Jahre",
+        "5 Jahre"
+      ],
+      "answer": "2 Jahre",
+      "explanation": "Nach § 438 BGB beträgt die regelmäßige Verjährungsfrist für Mängelansprüche bei beweglichen Sachen 2 Jahre ab Übergabe.",
+      "translations": {
+        "en": {
+          "question": "What is the standard statutory warranty period for defects when purchasing new movable goods?",
+          "options": [
+            "6 months",
+            "1 year",
+            "2 years",
+            "5 years"
+          ],
+          "answer": "2 years",
+          "explanation": "Under § 438 BGB, the standard limitation period for defect claims on movable goods is 2 years from delivery."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q30",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was bedeutet ein vereinbarter Eigentumsvorbehalt beim Warenkauf?",
+      "options": [
+        "Der Verkäufer bleibt bis zur vollständigen Zahlung Eigentümer der Ware",
+        "Der Käufer wird sofort mit Übergabe Eigentümer",
+        "Der Verkäufer verzichtet auf sein Eigentum",
+        "Die Ware gehört ab Vertragsschluss beiden Parteien gemeinsam"
+      ],
+      "answer": "Der Verkäufer bleibt bis zur vollständigen Zahlung Eigentümer der Ware",
+      "explanation": "Der Eigentumsvorbehalt (§ 449 BGB) sichert den Verkäufer ab: Erst mit vollständiger Kaufpreiszahlung geht das Eigentum auf den Käufer über.",
+      "translations": {
+        "en": {
+          "question": "What does a retention of title (Eigentumsvorbehalt) agreement mean when purchasing goods?",
+          "options": [
+            "The seller remains the owner of the goods until full payment is made",
+            "The buyer becomes the owner immediately upon handover",
+            "The seller waives ownership",
+            "The goods belong jointly to both parties from the moment the contract is signed"
+          ],
+          "answer": "The seller remains the owner of the goods until full payment is made",
+          "explanation": "Retention of title protects the seller: ownership only transfers to the buyer once the purchase price has been paid in full."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q31",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welches der folgenden Elemente gehört NICHT zu den klassischen 4 Ps des Marketing-Mix?",
+      "options": [
+        "Product",
+        "Price",
+        "Promotion",
+        "Personal"
+      ],
+      "answer": "Personal",
+      "explanation": "Die klassischen 4 Ps sind Product, Price, Place und Promotion. „Personal\" (Personalpolitik) ist erst im erweiterten 7-Ps-Modell für Dienstleistungen enthalten.",
+      "translations": {
+        "en": {
+          "question": "Which of the following elements is NOT one of the classic 4 Ps of the marketing mix?",
+          "options": [
+            "Product",
+            "Price",
+            "Promotion",
+            "Personnel"
+          ],
+          "answer": "Personnel",
+          "explanation": "The classic 4 Ps are Product, Price, Place, and Promotion. \"People/Personnel\" is only added in the extended 7-Ps model for services."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q32",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wofür steht das „O\" in der SWOT-Analyse?",
+      "options": [
+        "Opportunities (Chancen)",
+        "Objectives (Ziele)",
+        "Organization (Organisation)",
+        "Outcome (Ergebnis)"
+      ],
+      "answer": "Opportunities (Chancen)",
+      "explanation": "SWOT steht für Strengths, Weaknesses, Opportunities und Threats — Stärken, Schwächen, Chancen und Risiken.",
+      "translations": {
+        "en": {
+          "question": "What does the \"O\" in a SWOT analysis stand for?",
+          "options": [
+            "Opportunities",
+            "Objectives",
+            "Organization",
+            "Outcome"
+          ],
+          "answer": "Opportunities",
+          "explanation": "SWOT stands for Strengths, Weaknesses, Opportunities, and Threats."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q33",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ein Investment von 20.000 € erzielt einen Gewinn von 4.000 €. Wie hoch ist der ROI (Return on Investment)?",
+      "options": [
+        "4 %",
+        "5 %",
+        "20 %",
+        "25 %"
+      ],
+      "answer": "20 %",
+      "explanation": "ROI = Gewinn ÷ eingesetztes Kapital × 100 = 4.000 € ÷ 20.000 € × 100 = 20 %.",
+      "translations": {
+        "en": {
+          "question": "An investment of €20,000 generates a profit of €4,000. What is the ROI (Return on Investment)?",
+          "options": [
+            "4%",
+            "5%",
+            "20%",
+            "25%"
+          ],
+          "answer": "20%",
+          "explanation": "ROI = profit ÷ invested capital × 100 = €4,000 ÷ €20,000 × 100 = 20%."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q34",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie wird die Liquidität 1. Grades (Barliquidität) berechnet?",
+      "options": [
+        "Flüssige Mittel ÷ kurzfristige Verbindlichkeiten × 100",
+        "Umlaufvermögen ÷ kurzfristige Verbindlichkeiten × 100",
+        "Eigenkapital ÷ Gesamtkapital × 100",
+        "Gewinn ÷ Umsatz × 100"
+      ],
+      "answer": "Flüssige Mittel ÷ kurzfristige Verbindlichkeiten × 100",
+      "explanation": "Die Liquidität 1. Grades zeigt, welcher Anteil der kurzfristigen Verbindlichkeiten sofort mit vorhandenen Zahlungsmitteln gedeckt werden kann.",
+      "translations": {
+        "en": {
+          "question": "How is the cash ratio (Liquidität 1. Grades) calculated?",
+          "options": [
+            "Cash and cash equivalents ÷ current liabilities × 100",
+            "Current assets ÷ current liabilities × 100",
+            "Equity ÷ total capital × 100",
+            "Profit ÷ revenue × 100"
+          ],
+          "answer": "Cash and cash equivalents ÷ current liabilities × 100",
+          "explanation": "The cash ratio shows what proportion of current liabilities can be covered immediately with available cash."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q35",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ab wie vielen wahlberechtigten Arbeitnehmern kann in einem Betrieb ein Betriebsrat gewählt werden?",
+      "options": [
+        "Ab 1 Arbeitnehmer",
+        "Ab 5 Arbeitnehmern",
+        "Ab 20 Arbeitnehmern",
+        "Ab 50 Arbeitnehmern"
+      ],
+      "answer": "Ab 5 Arbeitnehmern",
+      "explanation": "Nach § 1 BetrVG kann ein Betriebsrat gewählt werden, wenn der Betrieb ständig mindestens 5 wahlberechtigte Arbeitnehmer beschäftigt, von denen 3 wählbar sind.",
+      "translations": {
+        "en": {
+          "question": "From how many eligible employees can a works council (Betriebsrat) be elected in a company?",
+          "options": [
+            "From 1 employee",
+            "From 5 employees",
+            "From 20 employees",
+            "From 50 employees"
+          ],
+          "answer": "From 5 employees",
+          "explanation": "Under German works council law, a works council can be elected once a company permanently employs at least 5 eligible employees, 3 of whom are eligible to stand."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q36",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was regelt ein Tarifvertrag typischerweise?",
+      "options": [
+        "Löhne, Arbeitszeiten und sonstige Arbeitsbedingungen zwischen Gewerkschaft und Arbeitgeber(-verband)",
+        "Ausschließlich die Unternehmenssteuern",
+        "Die Satzung einer Aktiengesellschaft",
+        "Die technische Spezifikation eines Produkts"
+      ],
+      "answer": "Löhne, Arbeitszeiten und sonstige Arbeitsbedingungen zwischen Gewerkschaft und Arbeitgeber(-verband)",
+      "explanation": "Tarifverträge werden zwischen Gewerkschaften und einzelnen Arbeitgebern oder Arbeitgeberverbänden ausgehandelt und regeln kollektive Arbeitsbedingungen.",
+      "translations": {
+        "en": {
+          "question": "What does a collective bargaining agreement (Tarifvertrag) typically regulate?",
+          "options": [
+            "Wages, working hours, and other working conditions between a union and an employer/employer association",
+            "Only corporate taxes",
+            "The articles of association of a stock corporation",
+            "The technical specification of a product"
+          ],
+          "answer": "Wages, working hours, and other working conditions between a union and an employer/employer association",
+          "explanation": "Collective bargaining agreements are negotiated between unions and individual employers or employer associations and set collective working conditions."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q37",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie lang muss die Probezeit in einem Berufsausbildungsverhältnis nach dem BBiG mindestens sein?",
+      "options": [
+        "1 Monat",
+        "2 Monate",
+        "4 Monate",
+        "6 Monate"
+      ],
+      "answer": "1 Monat",
+      "explanation": "Nach § 20 BBiG muss die Probezeit mindestens 1 Monat und darf höchstens 4 Monate betragen.",
+      "translations": {
+        "en": {
+          "question": "What is the minimum probationary period for an apprenticeship contract under the German Vocational Training Act (BBiG)?",
+          "options": [
+            "1 month",
+            "2 months",
+            "4 months",
+            "6 months"
+          ],
+          "answer": "1 month",
+          "explanation": "Under § 20 BBiG, the probationary period must be at least 1 month and at most 4 months."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q38",
+      "type": "single",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was kennzeichnet die Matrix-Projektorganisation?",
+      "options": [
+        "Mitarbeiter unterstehen fachlich weiterhin ihrer Linieninstanz, erhalten aber zusätzlich Weisungen vom Projektleiter",
+        "Der Projektleiter hat die volle disziplinarische Weisungsbefugnis wie bei der reinen Projektorganisation",
+        "Es gibt keinen Projektleiter, nur einen Lenkungsausschuss",
+        "Das Projekt wird komplett außerhalb der Linienorganisation abgewickelt"
+      ],
+      "answer": "Mitarbeiter unterstehen fachlich weiterhin ihrer Linieninstanz, erhalten aber zusätzlich Weisungen vom Projektleiter",
+      "explanation": "Die Matrix-Projektorganisation führt zu einer doppelten Unterstellung (Linie und Projekt), was Kompetenzkonflikte begünstigen kann.",
+      "translations": {
+        "en": {
+          "question": "What characterizes a matrix project organization?",
+          "options": [
+            "Employees still report to their line manager but also receive instructions from the project manager",
+            "The project manager has full disciplinary authority, as in a pure project organization",
+            "There is no project manager, only a steering committee",
+            "The project is handled entirely outside the line organization"
+          ],
+          "answer": "Employees still report to their line manager but also receive instructions from the project manager",
+          "explanation": "Matrix project organization creates dual reporting lines (functional and project), which can foster conflicts of authority."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q39",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche der folgenden Phasen gehören zum klassischen Projektlebenszyklus?",
+      "options": [
+        "Initiierung",
+        "Planung",
+        "Durchführung",
+        "Abschluss",
+        "Vertrieb"
+      ],
+      "answer": [
+        "Initiierung",
+        "Planung",
+        "Durchführung",
+        "Abschluss"
+      ],
+      "explanation": "Vertrieb ist eine betriebliche Funktion, keine Phase des Projektlebenszyklus.",
+      "translations": {
+        "en": {
+          "question": "Which of the following belong to the classic project life cycle?",
+          "options": [
+            "Initiation",
+            "Planning",
+            "Execution",
+            "Closure",
+            "Sales"
+          ],
+          "answer": [
+            "Initiation",
+            "Planning",
+            "Execution",
+            "Closure"
+          ],
+          "explanation": "Sales is a business function, not a phase of the project life cycle."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q40",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Begriffe werden in der Netzplantechnik verwendet?",
+      "options": [
+        "Frühester Anfangszeitpunkt (FAZ)",
+        "Spätester Endzeitpunkt (SEZ)",
+        "Gesamtpuffer (GP)",
+        "Deckungsbeitrag",
+        "Kalkulationszuschlag"
+      ],
+      "answer": [
+        "Frühester Anfangszeitpunkt (FAZ)",
+        "Spätester Endzeitpunkt (SEZ)",
+        "Gesamtpuffer (GP)"
+      ],
+      "explanation": "Deckungsbeitrag und Kalkulationszuschlag sind Begriffe aus der Kosten- und Preisrechnung, nicht aus der Netzplantechnik.",
+      "translations": {
+        "en": {
+          "question": "Which terms are used in network diagram (critical path) technique?",
+          "options": [
+            "Earliest start (ES)",
+            "Latest finish (LF)",
+            "Total float (TF)",
+            "Contribution margin",
+            "Markup rate"
+          ],
+          "answer": [
+            "Earliest start (ES)",
+            "Latest finish (LF)",
+            "Total float (TF)"
+          ],
+          "explanation": "Contribution margin and markup rate are cost/pricing terms, not network diagram terms."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q41",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen über Gantt-Diagramme sind zutreffend?",
+      "options": [
+        "Vorgänge werden als Balken auf einer Zeitachse dargestellt",
+        "Abhängigkeiten zwischen Vorgängen können durch Pfeile dargestellt werden",
+        "Sie eignen sich gut zur visuellen Terminplanung",
+        "Sie berechnen automatisch exakte Pufferzeiten wie ein Netzplan",
+        "Sie zeigen ausschließlich Kostenverläufe"
+      ],
+      "answer": [
+        "Vorgänge werden als Balken auf einer Zeitachse dargestellt",
+        "Abhängigkeiten zwischen Vorgängen können durch Pfeile dargestellt werden",
+        "Sie eignen sich gut zur visuellen Terminplanung"
+      ],
+      "explanation": "Gantt-Diagramme sind primär ein Visualisierungswerkzeug für die Terminplanung; die Pufferzeitberechnung ist Aufgabe der Netzplantechnik.",
+      "translations": {
+        "en": {
+          "question": "Which statements about Gantt charts are correct?",
+          "options": [
+            "Activities are shown as bars on a time axis",
+            "Dependencies between activities can be shown with arrows",
+            "They are well-suited for visual schedule planning",
+            "They automatically calculate exact float times like a network diagram",
+            "They exclusively show cost trends"
+          ],
+          "answer": [
+            "Activities are shown as bars on a time axis",
+            "Dependencies between activities can be shown with arrows",
+            "They are well-suited for visual schedule planning"
+          ],
+          "explanation": "Gantt charts are primarily a visualization tool for scheduling; calculating float times is the job of network diagram technique."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q42",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche der folgenden Kosten sind typischerweise Fixkosten in einem IT-Unternehmen?",
+      "options": [
+        "Mietkosten für Büroräume",
+        "Gehälter der Festangestellten",
+        "Lizenzgebühren pro verkaufter Softwarekopie",
+        "Abschreibungen auf Anlagevermögen",
+        "Materialkosten pro produziertem Stück"
+      ],
+      "answer": [
+        "Mietkosten für Büroräume",
+        "Gehälter der Festangestellten",
+        "Abschreibungen auf Anlagevermögen"
+      ],
+      "explanation": "Lizenzgebühren pro Kopie und Materialkosten pro Stück sind mengenabhängig und damit variable Kosten.",
+      "translations": {
+        "en": {
+          "question": "Which of the following costs are typically fixed costs in an IT company?",
+          "options": [
+            "Office rent",
+            "Salaries of permanent employees",
+            "License fees per software copy sold",
+            "Depreciation on fixed assets",
+            "Material cost per unit produced"
+          ],
+          "answer": [
+            "Office rent",
+            "Salaries of permanent employees",
+            "Depreciation on fixed assets"
+          ],
+          "explanation": "License fees per copy and material cost per unit depend on volume and are therefore variable costs."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q43",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Kosten zählen zu den variablen Kosten?",
+      "options": [
+        "Materialkosten je Stück",
+        "Fertigungslöhne im Akkord (mengenabhängig)",
+        "Versandkosten je Bestellung",
+        "Mietkosten der Produktionshalle",
+        "Kalkulatorische Abschreibung auf Maschinen (zeitabhängig)"
+      ],
+      "answer": [
+        "Materialkosten je Stück",
+        "Fertigungslöhne im Akkord (mengenabhängig)",
+        "Versandkosten je Bestellung"
+      ],
+      "explanation": "Miete und zeitabhängige Abschreibungen fallen unabhängig von der produzierten Menge an und sind daher Fixkosten.",
+      "translations": {
+        "en": {
+          "question": "Which costs count as variable costs?",
+          "options": [
+            "Material cost per unit",
+            "Piece-rate production wages (volume-dependent)",
+            "Shipping cost per order",
+            "Rent for the production hall",
+            "Time-based depreciation on machinery"
+          ],
+          "answer": [
+            "Material cost per unit",
+            "Piece-rate production wages (volume-dependent)",
+            "Shipping cost per order"
+          ],
+          "explanation": "Rent and time-based depreciation are incurred regardless of the quantity produced and are therefore fixed costs."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q44",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Verfahren zählen zu den statischen Verfahren der Investitionsrechnung?",
+      "options": [
+        "Kostenvergleichsrechnung",
+        "Gewinnvergleichsrechnung",
+        "Rentabilitätsrechnung",
+        "Kapitalwertmethode",
+        "Interne-Zinsfuß-Methode"
+      ],
+      "answer": [
+        "Kostenvergleichsrechnung",
+        "Gewinnvergleichsrechnung",
+        "Rentabilitätsrechnung"
+      ],
+      "explanation": "Kapitalwertmethode und interner Zinsfuß sind dynamische Verfahren, da sie den Zeitwert des Geldes (Abzinsung) berücksichtigen.",
+      "translations": {
+        "en": {
+          "question": "Which methods are classified as static methods of investment appraisal?",
+          "options": [
+            "Cost comparison method",
+            "Profit comparison method",
+            "Profitability comparison method",
+            "Net present value method",
+            "Internal rate of return method"
+          ],
+          "answer": [
+            "Cost comparison method",
+            "Profit comparison method",
+            "Profitability comparison method"
+          ],
+          "explanation": "Net present value and internal rate of return are dynamic methods because they account for the time value of money (discounting)."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q45",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Kriterien sollten bei einem Angebotsvergleich neben dem Preis berücksichtigt werden?",
+      "options": [
+        "Lieferzeit",
+        "Zahlungsbedingungen (z. B. Skonto, Rabatt)",
+        "Garantie- und Serviceleistungen",
+        "Qualität/technische Spezifikation",
+        "Ausschließlich die Firmenfarbe des Anbieters"
+      ],
+      "answer": [
+        "Lieferzeit",
+        "Zahlungsbedingungen (z. B. Skonto, Rabatt)",
+        "Garantie- und Serviceleistungen",
+        "Qualität/technische Spezifikation"
+      ],
+      "explanation": "Ein fundierter Angebotsvergleich berücksichtigt mehrere Kriterien, nicht nur den nominalen Preis.",
+      "translations": {
+        "en": {
+          "question": "Which criteria should be considered in a quote comparison besides price?",
+          "options": [
+            "Delivery time",
+            "Payment terms (e.g. cash discount, rebate)",
+            "Warranty and service offerings",
+            "Quality/technical specification",
+            "Only the vendor's corporate color"
+          ],
+          "answer": [
+            "Delivery time",
+            "Payment terms (e.g. cash discount, rebate)",
+            "Warranty and service offerings",
+            "Quality/technical specification"
+          ],
+          "explanation": "A sound quote comparison weighs multiple criteria, not just the nominal price."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q46",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Bei welchen Rechtsformen ist die Haftung der Gesellschafter grundsätzlich auf die Einlage beschränkt?",
+      "options": [
+        "GmbH",
+        "AG",
+        "OHG",
+        "Einzelunternehmen",
+        "UG (haftungsbeschränkt)"
+      ],
+      "answer": [
+        "GmbH",
+        "AG",
+        "UG (haftungsbeschränkt)"
+      ],
+      "explanation": "OHG und Einzelunternehmen sind Formen mit unbeschränkter persönlicher Haftung der Inhaber bzw. Gesellschafter.",
+      "translations": {
+        "en": {
+          "question": "For which legal forms is the liability of the owners generally limited to their capital contribution?",
+          "options": [
+            "GmbH",
+            "AG",
+            "OHG",
+            "Sole proprietorship",
+            "UG (limited liability entrepreneurial company)"
+          ],
+          "answer": [
+            "GmbH",
+            "AG",
+            "UG (limited liability entrepreneurial company)"
+          ],
+          "explanation": "OHG and sole proprietorship involve unlimited personal liability of the owner(s)/partners."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q47",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche der folgenden Rechtsformen sind Personengesellschaften?",
+      "options": [
+        "OHG",
+        "KG",
+        "GmbH",
+        "AG",
+        "GbR"
+      ],
+      "answer": [
+        "OHG",
+        "KG",
+        "GbR"
+      ],
+      "explanation": "GmbH und AG sind Kapitalgesellschaften mit eigener Rechtspersönlichkeit; OHG, KG und GbR sind Personengesellschaften.",
+      "translations": {
+        "en": {
+          "question": "Which of the following legal forms are partnerships (Personengesellschaften)?",
+          "options": [
+            "OHG",
+            "KG",
+            "GmbH",
+            "AG",
+            "GbR (civil law partnership)"
+          ],
+          "answer": [
+            "OHG",
+            "KG",
+            "GbR (civil law partnership)"
+          ],
+          "explanation": "GmbH and AG are corporations with their own legal personality; OHG, KG, and GbR are partnerships."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q48",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche der folgenden Rechtsformen sind Kapitalgesellschaften?",
+      "options": [
+        "GmbH",
+        "AG",
+        "UG (haftungsbeschränkt)",
+        "OHG",
+        "Einzelunternehmen"
+      ],
+      "answer": [
+        "GmbH",
+        "AG",
+        "UG (haftungsbeschränkt)"
+      ],
+      "explanation": "Kapitalgesellschaften sind juristische Personen mit eigenem Vermögen, getrennt vom Privatvermögen der Anteilseigner.",
+      "translations": {
+        "en": {
+          "question": "Which of the following legal forms are corporations (Kapitalgesellschaften)?",
+          "options": [
+            "GmbH",
+            "AG",
+            "UG (limited liability entrepreneurial company)",
+            "OHG",
+            "Sole proprietorship"
+          ],
+          "answer": [
+            "GmbH",
+            "AG",
+            "UG (limited liability entrepreneurial company)"
+          ],
+          "explanation": "Corporations are legal entities with their own assets, separate from the private assets of the shareholders."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q49",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Angaben müssen in einem schriftlichen Arbeitsvertrag mindestens enthalten sein?",
+      "options": [
+        "Beginn des Arbeitsverhältnisses",
+        "Höhe und Zusammensetzung des Arbeitsentgelts",
+        "Vereinbarte Arbeitszeit",
+        "Lieblingsfarbe des Arbeitnehmers",
+        "Kündigungsfristen"
+      ],
+      "answer": [
+        "Beginn des Arbeitsverhältnisses",
+        "Höhe und Zusammensetzung des Arbeitsentgelts",
+        "Vereinbarte Arbeitszeit",
+        "Kündigungsfristen"
+      ],
+      "explanation": "Das Nachweisgesetz schreibt wesentliche Vertragsbedingungen vor, die schriftlich niedergelegt werden müssen.",
+      "translations": {
+        "en": {
+          "question": "What information must a written employment contract contain at minimum?",
+          "options": [
+            "Start date of the employment",
+            "Amount and composition of the pay",
+            "Agreed working hours",
+            "The employee's favorite color",
+            "Notice periods"
+          ],
+          "answer": [
+            "Start date of the employment",
+            "Amount and composition of the pay",
+            "Agreed working hours",
+            "Notice periods"
+          ],
+          "explanation": "The Documentation of Employment Conditions Act requires essential contract terms to be recorded in writing."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q50",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Kündigungsarten werden im Arbeitsrecht unterschieden?",
+      "options": [
+        "Ordentliche Kündigung",
+        "Außerordentliche (fristlose) Kündigung",
+        "Änderungskündigung",
+        "Stille Kündigung",
+        "Automatische Kündigung"
+      ],
+      "answer": [
+        "Ordentliche Kündigung",
+        "Außerordentliche (fristlose) Kündigung",
+        "Änderungskündigung"
+      ],
+      "explanation": "„Stille Kündigung\" und „automatische Kündigung\" sind keine rechtlich definierten Kündigungsarten.",
+      "translations": {
+        "en": {
+          "question": "Which types of termination are distinguished in employment law?",
+          "options": [
+            "Ordinary termination",
+            "Extraordinary (immediate) termination",
+            "Termination with change offer",
+            "Quiet quitting",
+            "Automatic termination"
+          ],
+          "answer": [
+            "Ordinary termination",
+            "Extraordinary (immediate) termination",
+            "Termination with change offer"
+          ],
+          "explanation": "\"Quiet quitting\" and \"automatic termination\" are not legally defined types of termination."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q51",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Rechte hat ein Käufer bei einem Sachmangel nach BGB?",
+      "options": [
+        "Nacherfüllung (Reparatur oder Ersatzlieferung)",
+        "Rücktritt vom Vertrag",
+        "Minderung des Kaufpreises",
+        "Schadensersatz (unter bestimmten Voraussetzungen)",
+        "Sofortige Vertragsstrafe ohne Fristsetzung"
+      ],
+      "answer": [
+        "Nacherfüllung (Reparatur oder Ersatzlieferung)",
+        "Rücktritt vom Vertrag",
+        "Minderung des Kaufpreises",
+        "Schadensersatz (unter bestimmten Voraussetzungen)"
+      ],
+      "explanation": "Grundsätzlich hat der Verkäufer zunächst ein Recht auf Nacherfüllung; erst danach kommen Rücktritt, Minderung oder Schadensersatz in Betracht.",
+      "translations": {
+        "en": {
+          "question": "What rights does a buyer have in the event of a defect under German civil law (BGB)?",
+          "options": [
+            "Supplementary performance (repair or replacement)",
+            "Withdrawal from the contract",
+            "Reduction of the purchase price",
+            "Damages (under certain conditions)",
+            "Immediate contractual penalty without a deadline notice"
+          ],
+          "answer": [
+            "Supplementary performance (repair or replacement)",
+            "Withdrawal from the contract",
+            "Reduction of the purchase price",
+            "Damages (under certain conditions)"
+          ],
+          "explanation": "The seller generally has a right to attempt supplementary performance first; only then can withdrawal, price reduction, or damages come into play."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q52",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche vier Instrumente bilden den klassischen Marketing-Mix?",
+      "options": [
+        "Product (Produktpolitik)",
+        "Price (Preispolitik)",
+        "Place (Distributionspolitik)",
+        "Promotion (Kommunikationspolitik)",
+        "Personal (Personalpolitik)"
+      ],
+      "answer": [
+        "Product (Produktpolitik)",
+        "Price (Preispolitik)",
+        "Place (Distributionspolitik)",
+        "Promotion (Kommunikationspolitik)"
+      ],
+      "explanation": "Die 4 Ps stammen aus dem klassischen Marketing-Modell; „Personal\" gehört erst zum erweiterten 7-Ps-Modell für Dienstleistungen.",
+      "translations": {
+        "en": {
+          "question": "Which four instruments make up the classic marketing mix?",
+          "options": [
+            "Product",
+            "Price",
+            "Place",
+            "Promotion",
+            "People/Personnel"
+          ],
+          "answer": [
+            "Product",
+            "Price",
+            "Place",
+            "Promotion"
+          ],
+          "explanation": "The 4 Ps come from the classic marketing model; \"People\" only belongs to the extended 7-Ps model for services."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q53",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche vier Kategorien werden in der SWOT-Analyse betrachtet?",
+      "options": [
+        "Strengths (Stärken)",
+        "Weaknesses (Schwächen)",
+        "Opportunities (Chancen)",
+        "Threats (Risiken)",
+        "Solutions (Lösungen)"
+      ],
+      "answer": [
+        "Strengths (Stärken)",
+        "Weaknesses (Schwächen)",
+        "Opportunities (Chancen)",
+        "Threats (Risiken)"
+      ],
+      "explanation": "„Solutions\" ist kein Bestandteil der SWOT-Analyse; das Akronym steht für Strengths, Weaknesses, Opportunities und Threats.",
+      "translations": {
+        "en": {
+          "question": "Which four categories are examined in a SWOT analysis?",
+          "options": [
+            "Strengths",
+            "Weaknesses",
+            "Opportunities",
+            "Threats",
+            "Solutions"
+          ],
+          "answer": [
+            "Strengths",
+            "Weaknesses",
+            "Opportunities",
+            "Threats"
+          ],
+          "explanation": "\"Solutions\" is not part of a SWOT analysis; the acronym stands for Strengths, Weaknesses, Opportunities, and Threats."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q54",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche der folgenden Kennzahlen sind Rentabilitätskennzahlen?",
+      "options": [
+        "Eigenkapitalrentabilität",
+        "Gesamtkapitalrentabilität",
+        "Umsatzrentabilität",
+        "Liquidität 1. Grades",
+        "Anlagendeckungsgrad"
+      ],
+      "answer": [
+        "Eigenkapitalrentabilität",
+        "Gesamtkapitalrentabilität",
+        "Umsatzrentabilität"
+      ],
+      "explanation": "Liquidität 1. Grades und Anlagendeckungsgrad sind Liquiditäts- bzw. Kapitalstrukturkennzahlen, keine Rentabilitätskennzahlen.",
+      "translations": {
+        "en": {
+          "question": "Which of the following are profitability ratios?",
+          "options": [
+            "Return on equity",
+            "Return on total capital",
+            "Return on sales",
+            "Cash ratio",
+            "Fixed asset coverage ratio"
+          ],
+          "answer": [
+            "Return on equity",
+            "Return on total capital",
+            "Return on sales"
+          ],
+          "explanation": "Cash ratio and fixed asset coverage ratio are liquidity/capital structure ratios, not profitability ratios."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q55",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "In welchen Angelegenheiten hat der Betriebsrat nach dem BetrVG Mitbestimmungsrechte?",
+      "options": [
+        "Beginn und Ende der täglichen Arbeitszeit",
+        "Einführung technischer Überwachungseinrichtungen",
+        "Grundsätze der Urlaubsplanung",
+        "Festlegung der Unternehmensstrategie",
+        "Fragen der betrieblichen Lohngestaltung"
+      ],
+      "answer": [
+        "Beginn und Ende der täglichen Arbeitszeit",
+        "Einführung technischer Überwachungseinrichtungen",
+        "Grundsätze der Urlaubsplanung",
+        "Fragen der betrieblichen Lohngestaltung"
+      ],
+      "explanation": "Die Festlegung der Unternehmensstrategie liegt in der unternehmerischen Entscheidungsfreiheit und unterliegt keiner Mitbestimmung.",
+      "translations": {
+        "en": {
+          "question": "In which matters does the works council (Betriebsrat) have co-determination rights under German law?",
+          "options": [
+            "Start and end of daily working hours",
+            "Introduction of technical monitoring equipment",
+            "General principles of vacation scheduling",
+            "Determination of overall corporate strategy",
+            "Matters of company pay structure"
+          ],
+          "answer": [
+            "Start and end of daily working hours",
+            "Introduction of technical monitoring equipment",
+            "General principles of vacation scheduling",
+            "Matters of company pay structure"
+          ],
+          "explanation": "Determining corporate strategy falls within entrepreneurial decision-making freedom and is not subject to co-determination."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q56",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Arten von Tarifverträgen gibt es?",
+      "options": [
+        "Entgelttarifvertrag (Lohn-/Gehaltstarifvertrag)",
+        "Rahmentarifvertrag (Manteltarifvertrag)",
+        "Firmentarifvertrag",
+        "Flächentarifvertrag",
+        "Individualtarifvertrag"
+      ],
+      "answer": [
+        "Entgelttarifvertrag (Lohn-/Gehaltstarifvertrag)",
+        "Rahmentarifvertrag (Manteltarifvertrag)",
+        "Firmentarifvertrag",
+        "Flächentarifvertrag"
+      ],
+      "explanation": "Ein „Individualtarifvertrag\" existiert nicht — Tarifverträge sind per Definition kollektive Vereinbarungen.",
+      "translations": {
+        "en": {
+          "question": "What types of collective bargaining agreements exist?",
+          "options": [
+            "Pay agreement (wage/salary agreement)",
+            "Framework agreement (general terms agreement)",
+            "Company-level agreement",
+            "Sector/regional agreement",
+            "Individual bargaining agreement"
+          ],
+          "answer": [
+            "Pay agreement (wage/salary agreement)",
+            "Framework agreement (general terms agreement)",
+            "Company-level agreement",
+            "Sector/regional agreement"
+          ],
+          "explanation": "An \"individual bargaining agreement\" does not exist — collective agreements are by definition collective arrangements."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q57",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was muss ein Berufsausbildungsvertrag nach § 11 BBiG mindestens enthalten?",
+      "options": [
+        "Beginn und Dauer der Ausbildung",
+        "Ausbildungsberuf und Ausbildungsziel",
+        "Dauer der Probezeit",
+        "Höhe der Ausbildungsvergütung",
+        "Der Notendurchschnitt des Abschlusszeugnisses"
+      ],
+      "answer": [
+        "Beginn und Dauer der Ausbildung",
+        "Ausbildungsberuf und Ausbildungsziel",
+        "Dauer der Probezeit",
+        "Höhe der Ausbildungsvergütung"
+      ],
+      "explanation": "Der Notendurchschnitt des Abschlusszeugnisses steht naturgemäß erst nach der Ausbildung fest und ist kein Vertragsbestandteil.",
+      "translations": {
+        "en": {
+          "question": "What must an apprenticeship contract contain at minimum under § 11 BBiG?",
+          "options": [
+            "Start and duration of the training",
+            "Training occupation and training goal",
+            "Length of the probationary period",
+            "Amount of the training allowance",
+            "The grade average of the final certificate"
+          ],
+          "answer": [
+            "Start and duration of the training",
+            "Training occupation and training goal",
+            "Length of the probationary period",
+            "Amount of the training allowance"
+          ],
+          "explanation": "The grade average of the final certificate is naturally only known after training ends and is not a contract element."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q58",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Formen der Projektorganisation werden unterschieden?",
+      "options": [
+        "Reine (autonome) Projektorganisation",
+        "Matrix-Projektorganisation",
+        "Stabs-Projektorganisation (Einfluss-Projektorganisation)",
+        "Lineare Projektorganisation",
+        "Divisionale Projektorganisation"
+      ],
+      "answer": [
+        "Reine (autonome) Projektorganisation",
+        "Matrix-Projektorganisation",
+        "Stabs-Projektorganisation (Einfluss-Projektorganisation)"
+      ],
+      "explanation": "„Lineare\" und „divisionale Organisation\" sind allgemeine Unternehmensorganisationsformen, keine spezifischen Projektorganisationsformen.",
+      "translations": {
+        "en": {
+          "question": "Which forms of project organization are distinguished?",
+          "options": [
+            "Pure (autonomous) project organization",
+            "Matrix project organization",
+            "Staff/influence project organization",
+            "Linear organization",
+            "Divisional organization"
+          ],
+          "answer": [
+            "Pure (autonomous) project organization",
+            "Matrix project organization",
+            "Staff/influence project organization"
+          ],
+          "explanation": "\"Linear\" and \"divisional organization\" are general corporate organization forms, not specific project organization forms."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q59",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Schritte gehören zu einem systematischen Risikomanagement-Prozess im Projekt?",
+      "options": [
+        "Risiken identifizieren",
+        "Risiken bewerten (Eintrittswahrscheinlichkeit und Auswirkung)",
+        "Gegenmaßnahmen planen",
+        "Risiken laufend überwachen",
+        "Risiken grundsätzlich ignorieren"
+      ],
+      "answer": [
+        "Risiken identifizieren",
+        "Risiken bewerten (Eintrittswahrscheinlichkeit und Auswirkung)",
+        "Gegenmaßnahmen planen",
+        "Risiken laufend überwachen"
+      ],
+      "explanation": "Risikomanagement ist ein kontinuierlicher Prozess aus Identifikation, Bewertung, Steuerung und Überwachung — Ignorieren wäre das Gegenteil.",
+      "translations": {
+        "en": {
+          "question": "What steps belong to a systematic risk management process in a project?",
+          "options": [
+            "Identify risks",
+            "Assess risks (probability and impact)",
+            "Plan countermeasures",
+            "Continuously monitor risks",
+            "Fundamentally ignore risks"
+          ],
+          "answer": [
+            "Identify risks",
+            "Assess risks (probability and impact)",
+            "Plan countermeasures",
+            "Continuously monitor risks"
+          ],
+          "explanation": "Risk management is a continuous process of identification, assessment, control, and monitoring — ignoring risks is the opposite."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q60",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Strategien zur Risikobewältigung gibt es im Projektmanagement?",
+      "options": [
+        "Risikovermeidung",
+        "Risikoreduzierung",
+        "Risikoüberwälzung (z. B. durch Versicherung)",
+        "Risikoakzeptanz",
+        "Risikoverleugnung"
+      ],
+      "answer": [
+        "Risikovermeidung",
+        "Risikoreduzierung",
+        "Risikoüberwälzung (z. B. durch Versicherung)",
+        "Risikoakzeptanz"
+      ],
+      "explanation": "„Risikoverleugnung\" ist keine anerkannte Strategie, sondern das Versäumnis, überhaupt Risikomanagement zu betreiben.",
+      "translations": {
+        "en": {
+          "question": "What risk response strategies exist in project management?",
+          "options": [
+            "Risk avoidance",
+            "Risk mitigation",
+            "Risk transfer (e.g. via insurance)",
+            "Risk acceptance",
+            "Risk denial"
+          ],
+          "answer": [
+            "Risk avoidance",
+            "Risk mitigation",
+            "Risk transfer (e.g. via insurance)",
+            "Risk acceptance"
+          ],
+          "explanation": "\"Risk denial\" is not a recognized strategy — it represents a failure to practice risk management at all."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q61",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen zum Verhältnis von Lastenheft und Pflichtenheft sind zutreffend?",
+      "options": [
+        "Das Pflichtenheft konkretisiert die Vorgaben des Lastenhefts",
+        "Beide Dokumente können bei Änderungen während des Projekts fortgeschrieben werden",
+        "Das Lastenheft ersetzt einen Vertrag vollständig",
+        "Änderungen sollten in einem Änderungsmanagement dokumentiert werden",
+        "Das Pflichtenheft wird ausschließlich mündlich vereinbart"
+      ],
+      "answer": [
+        "Das Pflichtenheft konkretisiert die Vorgaben des Lastenhefts",
+        "Beide Dokumente können bei Änderungen während des Projekts fortgeschrieben werden",
+        "Änderungen sollten in einem Änderungsmanagement dokumentiert werden"
+      ],
+      "explanation": "Lasten- und Pflichtenheft sind schriftliche, lebende Dokumente, deren Änderungen nachvollziehbar dokumentiert werden sollten.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the relationship between the requirements spec (Lastenheft) and functional spec (Pflichtenheft) are correct?",
+          "options": [
+            "The functional spec concretizes the requirements of the requirements spec",
+            "Both documents can be updated when changes occur during the project",
+            "The requirements spec completely replaces a contract",
+            "Changes should be documented through a change management process",
+            "The functional spec is agreed on exclusively verbally"
+          ],
+          "answer": [
+            "The functional spec concretizes the requirements of the requirements spec",
+            "Both documents can be updated when changes occur during the project",
+            "Changes should be documented through a change management process"
+          ],
+          "explanation": "Both documents are written, living documents whose changes should be traceably documented."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q62",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen zu SMARTen Zielen sind korrekt?",
+      "options": [
+        "Ziele sollten messbar sein, um den Erfolg überprüfen zu können",
+        "Ziele sollten realistisch erreichbar sein",
+        "Ziele sollten möglichst vage formuliert werden, um Flexibilität zu erhalten",
+        "Ziele sollten einen konkreten Termin enthalten",
+        "Ziele müssen vom Projektteam akzeptiert werden"
+      ],
+      "answer": [
+        "Ziele sollten messbar sein, um den Erfolg überprüfen zu können",
+        "Ziele sollten realistisch erreichbar sein",
+        "Ziele sollten einen konkreten Termin enthalten",
+        "Ziele müssen vom Projektteam akzeptiert werden"
+      ],
+      "explanation": "Vage Formulierungen widersprechen dem Grundgedanken von SMART; Ziele sollen im Gegenteil möglichst spezifisch sein.",
+      "translations": {
+        "en": {
+          "question": "Which statements about SMART goals are correct?",
+          "options": [
+            "Goals should be measurable so success can be verified",
+            "Goals should be realistically achievable",
+            "Goals should be formulated as vaguely as possible to keep flexibility",
+            "Goals should include a concrete deadline",
+            "Goals must be accepted by the project team"
+          ],
+          "answer": [
+            "Goals should be measurable so success can be verified",
+            "Goals should be realistically achievable",
+            "Goals should include a concrete deadline",
+            "Goals must be accepted by the project team"
+          ],
+          "explanation": "Vague wording contradicts the core idea of SMART goals — they should instead be as specific as possible."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q63",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aussagen zur Stakeholderanalyse in Projekten sind zutreffend?",
+      "options": [
+        "Sie identifiziert Personen und Gruppen mit Interesse am Projekt oder Einfluss darauf",
+        "Stakeholder können sowohl projektintern als auch -extern sein",
+        "Sie hilft, Erwartungen und mögliche Widerstände frühzeitig zu erkennen",
+        "Sie wird ausschließlich am Projektende durchgeführt",
+        "Ergebnis ist häufig eine Einordnung nach Einfluss und Interesse (Stakeholder-Matrix)"
+      ],
+      "answer": [
+        "Sie identifiziert Personen und Gruppen mit Interesse am Projekt oder Einfluss darauf",
+        "Stakeholder können sowohl projektintern als auch -extern sein",
+        "Sie hilft, Erwartungen und mögliche Widerstände frühzeitig zu erkennen",
+        "Ergebnis ist häufig eine Einordnung nach Einfluss und Interesse (Stakeholder-Matrix)"
+      ],
+      "explanation": "Die Stakeholderanalyse wird typischerweise früh im Projekt (Initiierung/Planung) durchgeführt und bei Bedarf aktualisiert, nicht erst am Ende.",
+      "translations": {
+        "en": {
+          "question": "Which statements about stakeholder analysis in projects are correct?",
+          "options": [
+            "It identifies people and groups with an interest in or influence on the project",
+            "Stakeholders can be both internal and external to the project",
+            "It helps identify expectations and possible resistance early on",
+            "It is carried out exclusively at the end of the project",
+            "The result is often a classification by influence and interest (stakeholder matrix)"
+          ],
+          "answer": [
+            "It identifies people and groups with an interest in or influence on the project",
+            "Stakeholders can be both internal and external to the project",
+            "It helps identify expectations and possible resistance early on",
+            "The result is often a classification by influence and interest (stakeholder matrix)"
+          ],
+          "explanation": "Stakeholder analysis is typically carried out early in the project (initiation/planning) and updated as needed, not only at the end."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q64",
+      "type": "multiple",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aktivitäten gehören typischerweise zum Projektabschluss?",
+      "options": [
+        "Abnahme der Projektergebnisse durch den Auftraggeber",
+        "Erstellung eines Abschlussberichts",
+        "Durchführung eines Lessons-Learned-Workshops",
+        "Auflösung des Projektteams",
+        "Erstellung des ursprünglichen Lastenhefts"
+      ],
+      "answer": [
+        "Abnahme der Projektergebnisse durch den Auftraggeber",
+        "Erstellung eines Abschlussberichts",
+        "Durchführung eines Lessons-Learned-Workshops",
+        "Auflösung des Projektteams"
+      ],
+      "explanation": "Das Lastenheft entsteht in der Initiierungs-/Planungsphase, lange vor dem Projektabschluss.",
+      "translations": {
+        "en": {
+          "question": "What activities typically belong to project closure?",
+          "options": [
+            "Acceptance of the project results by the client",
+            "Creation of a closing report",
+            "Conducting a lessons-learned workshop",
+            "Disbanding the project team",
+            "Creating the original requirements specification"
+          ],
+          "answer": [
+            "Acceptance of the project results by the client",
+            "Creation of a closing report",
+            "Conducting a lessons-learned workshop",
+            "Disbanding the project team"
+          ],
+          "explanation": "The requirements specification is created during initiation/planning, long before project closure."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q65",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist das zentrale Ziel der Initiierungsphase eines Projekts?",
+      "answer": "Klärung des Projektauftrags, der groben Ziele, der Machbarkeit und des Ressourcenrahmens sowie die formale Freigabe des Projekts",
+      "explanation": "In der Initiierungsphase wird entschieden, ob und in welchem Rahmen ein Projekt überhaupt gestartet wird.",
+      "translations": {
+        "en": {
+          "question": "What is the central goal of the initiation phase of a project?",
+          "answer": "Clarifying the project mandate, rough goals, feasibility, and resource framework, and formally approving the project",
+          "explanation": "The initiation phase decides whether and within what framework a project is started at all."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q66",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aufgaben stehen im Mittelpunkt der Projektplanungsphase?",
+      "answer": "Termin-, Kosten-, Ressourcen- und Ablaufplanung sowie die Festlegung von Meilensteinen und Zuständigkeiten",
+      "explanation": "Die Planung schafft die verbindliche Grundlage (Basisplan), an der die spätere Durchführung gemessen wird.",
+      "translations": {
+        "en": {
+          "question": "What tasks are central to the project planning phase?",
+          "answer": "Schedule, cost, resource, and workflow planning, along with defining milestones and responsibilities",
+          "explanation": "Planning creates the binding baseline against which later execution is measured."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q67",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was versteht man unter Projektsteuerung (Projektcontrolling)?",
+      "answer": "Den fortlaufenden Soll-Ist-Vergleich von Terminen, Kosten und Qualität während der Durchführung, um bei Abweichungen rechtzeitig gegensteuern zu können",
+      "explanation": "Projektsteuerung läuft begleitend zur Durchführung und ermöglicht frühzeitiges Erkennen und Korrigieren von Abweichungen.",
+      "translations": {
+        "en": {
+          "question": "What is meant by project control (project controlling)?",
+          "answer": "The ongoing comparison of planned versus actual schedule, cost, and quality during execution, so deviations can be corrected in time",
+          "explanation": "Project control runs alongside execution and enables early detection and correction of deviations."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q68",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Aktivitäten sind charakteristisch für die Projektabschlussphase?",
+      "answer": "Abnahme der Ergebnisse durch den Auftraggeber, Dokumentation der Ergebnisse und Durchführung eines Abschluss- bzw. Lessons-Learned-Berichts",
+      "explanation": "Der formale Abschluss stellt sicher, dass Ergebnisse übergeben, Erfahrungen gesichert und Ressourcen freigegeben werden.",
+      "translations": {
+        "en": {
+          "question": "What activities are characteristic of the project closure phase?",
+          "answer": "Acceptance of the results by the client, documentation of the results, and a closing/lessons-learned report",
+          "explanation": "Formal closure ensures results are handed over, lessons are captured, and resources are released."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q69",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie berechnet sich der früheste Endzeitpunkt (FEZ) eines Vorgangs im Netzplan?",
+      "answer": "FEZ = FAZ (frühester Anfangszeitpunkt) + Dauer des Vorgangs",
+      "explanation": "Diese Formel wird bei der Vorwärtsrechnung im Netzplan verwendet, um Schritt für Schritt die frühesten Zeitpunkte zu ermitteln.",
+      "translations": {
+        "en": {
+          "question": "How is the earliest finish (EF) of an activity in a network diagram calculated?",
+          "answer": "EF = ES (earliest start) + duration of the activity",
+          "explanation": "This formula is used in the forward pass of network diagram calculations to determine earliest times step by step."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q70",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist der freie Puffer (FP) eines Vorgangs im Netzplan?",
+      "answer": "Die Zeitspanne, um die sich ein Vorgang verschieben kann, ohne den frühesten Anfangszeitpunkt des unmittelbaren Nachfolgers zu beeinflussen",
+      "explanation": "Der freie Puffer ist stets kleiner oder gleich dem Gesamtpuffer und betrachtet nur den direkten Nachfolger.",
+      "translations": {
+        "en": {
+          "question": "What is the free float (FF) of an activity in a network diagram?",
+          "answer": "The amount of time an activity can be delayed without affecting the earliest start of its immediate successor",
+          "explanation": "Free float is always less than or equal to total float, and only considers the direct successor activity."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q71",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie ist der Deckungsbeitrag definiert?",
+      "answer": "Verkaufspreis abzüglich der variablen Kosten je Stück (bzw. Umsatz abzüglich der gesamten variablen Kosten) — der Betrag, der zur Deckung der Fixkosten und zur Gewinnerzielung übrig bleibt",
+      "explanation": "Der Deckungsbeitrag ist eine zentrale Größe der Kosten- und Leistungsrechnung, insbesondere für Preisuntergrenzen und Break-even-Analysen.",
+      "translations": {
+        "en": {
+          "question": "How is the contribution margin defined?",
+          "answer": "Selling price minus variable cost per unit (or revenue minus total variable costs) — the amount left over to cover fixed costs and generate profit",
+          "explanation": "The contribution margin is a key figure in cost accounting, especially for price floors and break-even analysis."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q72",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was beschreibt der Break-even-Punkt (Gewinnschwelle)?",
+      "answer": "Die Absatz- bzw. Umsatzmenge, bei der die Erlöse genau die Gesamtkosten decken — ab diesem Punkt wird Gewinn erzielt",
+      "explanation": "Unterhalb des Break-even-Punkts entsteht ein Verlust, oberhalb ein Gewinn.",
+      "translations": {
+        "en": {
+          "question": "What does the break-even point describe?",
+          "answer": "The sales volume or revenue at which revenue exactly covers total costs — beyond this point a profit is generated",
+          "explanation": "Below the break-even point there is a loss, above it a profit."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q73",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie wird der Verkaufspreis mithilfe des Kalkulationszuschlags aus dem Einstandspreis ermittelt?",
+      "answer": "Verkaufspreis = Einstandspreis + (Einstandspreis × Kalkulationszuschlagssatz), also Einstandspreis × (1 + Zuschlagssatz)",
+      "explanation": "Der Kalkulationszuschlag deckt Gewinn, Vertriebskosten und weitere Aufschläge ab.",
+      "translations": {
+        "en": {
+          "question": "How is the selling price determined from the cost price using the markup rate (Kalkulationszuschlag)?",
+          "answer": "Selling price = cost price + (cost price × markup rate), i.e. cost price × (1 + markup rate)",
+          "explanation": "The markup covers profit, distribution costs, and other surcharges."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q74",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Bestandteile umfasst die Handelskalkulation typischerweise auf dem Weg vom Listeneinkaufspreis zum Verkaufspreis?",
+      "answer": "Listeneinkaufspreis, abzüglich Liefererrabatt = Zieleinkaufspreis, abzüglich Skonto = Bareinkaufspreis, zuzüglich Bezugskosten = Einstandspreis, zuzüglich Gewinnzuschlag = Barverkaufspreis, zuzüglich Kundenskonto/-rabatt und Umsatzsteuer = Verkaufspreis",
+      "explanation": "Dieses Kalkulationsschema ist ein zentrales Werkzeug der kaufmännischen Preisfindung im Handel.",
+      "translations": {
+        "en": {
+          "question": "What steps does a trade price calculation typically include, from the list purchase price to the selling price?",
+          "answer": "List purchase price, minus supplier discount = target purchase price, minus cash discount = cash purchase price, plus procurement costs = cost price, plus profit markup = cash selling price, plus customer discount/rebate and VAT = selling price",
+          "explanation": "This calculation scheme is a key tool for commercial price determination in trade."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q75",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche Kriterien sind bei der Wahl der Rechtsform eines Unternehmens relevant?",
+      "answer": "Haftung, benötigtes Startkapital, Steuerbelastung, Publizitätspflichten, Mitspracherechte sowie Kosten und Aufwand der Gründung",
+      "explanation": "Die Rechtsformwahl beeinflusst maßgeblich Haftungsrisiko, Kapitalbedarf und laufende Pflichten des Unternehmens.",
+      "translations": {
+        "en": {
+          "question": "What criteria are relevant when choosing a company's legal form?",
+          "answer": "Liability, required start-up capital, tax burden, disclosure obligations, co-determination rights, and the cost and effort of formation",
+          "explanation": "The choice of legal form significantly affects liability risk, capital requirements, and ongoing obligations of the company."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q76",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche formalen Voraussetzungen müssen für die Gründung einer GmbH erfüllt sein?",
+      "answer": "Notariell beurkundeter Gesellschaftsvertrag, Aufbringung des Mindeststammkapitals von 25.000 € (mind. Hälfte bei Anmeldung einzuzahlen) und Eintragung ins Handelsregister",
+      "explanation": "Erst mit der Eintragung ins Handelsregister entsteht die GmbH als juristische Person mit beschränkter Haftung.",
+      "translations": {
+        "en": {
+          "question": "What formal requirements must be met to establish a GmbH?",
+          "answer": "A notarized articles of association, raising the minimum share capital of €25,000 (at least half paid in upon registration), and registration in the commercial register",
+          "explanation": "The GmbH only becomes a legal entity with limited liability once it is entered in the commercial register."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q77",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Ein Arbeitnehmer ist seit 6 Jahren im Betrieb beschäftigt. Welche gesetzliche Kündigungsfrist muss der Arbeitgeber nach § 622 BGB mindestens einhalten?",
+      "answer": "2 Monate zum Ende eines Kalendermonats",
+      "explanation": "Nach § 622 Abs. 2 BGB gilt nach einer Beschäftigungsdauer von mindestens 5 Jahren eine Kündigungsfrist von 2 Monaten zum Monatsende.",
+      "translations": {
+        "en": {
+          "question": "An employee has worked at the company for 6 years. What minimum statutory notice period must the employer observe under § 622 BGB?",
+          "answer": "2 months to the end of a calendar month",
+          "explanation": "Under § 622(2) BGB, after at least 5 years of employment, a notice period of 2 months to the end of the month applies."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q78",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Worin unterscheiden sich ordentliche und außerordentliche Kündigung?",
+      "answer": "Die ordentliche Kündigung erfolgt fristgerecht unter Einhaltung der Kündigungsfrist, die außerordentliche (fristlose) Kündigung beendet das Arbeitsverhältnis sofort und erfordert einen wichtigen Grund",
+      "explanation": "Ein wichtiger Grund für eine außerordentliche Kündigung liegt vor, wenn dem Kündigenden die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Frist nicht zumutbar ist.",
+      "translations": {
+        "en": {
+          "question": "What is the difference between ordinary and extraordinary termination?",
+          "answer": "Ordinary termination follows the applicable notice period, while extraordinary (immediate) termination ends the employment relationship at once and requires good cause",
+          "explanation": "Good cause for extraordinary termination exists when continuing the employment relationship until the end of the ordinary notice period is unreasonable for the party giving notice."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q79",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was ist der Unterschied zwischen einem Sachmangel und einem Rechtsmangel beim Kauf?",
+      "answer": "Ein Sachmangel betrifft die Beschaffenheit oder Eignung der Kaufsache selbst, ein Rechtsmangel liegt vor, wenn Dritte Rechte an der Sache haben, die der Käufer nicht übernehmen wollte",
+      "explanation": "Beide Mangelarten begründen grundsätzlich dieselben Gewährleistungsrechte des Käufers.",
+      "translations": {
+        "en": {
+          "question": "What is the difference between a material defect and a defect in title when purchasing goods?",
+          "answer": "A material defect concerns the condition or suitability of the item itself, while a defect in title exists when third parties hold rights to the item that the buyer did not agree to assume",
+          "explanation": "Both types of defect generally give rise to the same warranty rights for the buyer."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q80",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welchen Zweck verfolgt ein Eigentumsvorbehalt aus Sicht des Verkäufers?",
+      "answer": "Er sichert den Verkäufer ab, falls der Käufer nicht zahlt: Da die Ware bis zur vollständigen Bezahlung im Eigentum des Verkäufers bleibt, kann er sie im Zahlungsausfall zurückverlangen",
+      "explanation": "Der Eigentumsvorbehalt ist ein einfaches und weit verbreitetes Sicherungsmittel im Warenkreditgeschäft.",
+      "translations": {
+        "en": {
+          "question": "What purpose does a retention of title serve from the seller's point of view?",
+          "answer": "It protects the seller if the buyer fails to pay: since ownership of the goods remains with the seller until full payment, they can reclaim the goods in case of default",
+          "explanation": "Retention of title is a simple and widely used security instrument in goods financed on credit."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q81",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was versteht man unter dem Marketing-Mix?",
+      "answer": "Die Gesamtheit der absatzpolitischen Instrumente eines Unternehmens (Produkt-, Preis-, Distributions- und Kommunikationspolitik), die kombiniert eingesetzt werden, um Marketingziele zu erreichen",
+      "explanation": "Die einzelnen Instrumente des Marketing-Mix müssen aufeinander abgestimmt werden, um wirksam zu sein.",
+      "translations": {
+        "en": {
+          "question": "What is meant by the marketing mix?",
+          "answer": "The full set of sales-related instruments of a company (product, price, distribution, and communication policy), combined to achieve marketing goals",
+          "explanation": "The individual instruments of the marketing mix need to be coordinated with each other to be effective."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q82",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welchem Zweck dient eine SWOT-Analyse im Unternehmen?",
+      "answer": "Sie stellt interne Stärken und Schwächen den externen Chancen und Risiken gegenüber, um daraus strategische Handlungsoptionen abzuleiten",
+      "explanation": "Die SWOT-Analyse verbindet eine Innen- (Unternehmen) und eine Außenperspektive (Markt/Umfeld).",
+      "translations": {
+        "en": {
+          "question": "What purpose does a SWOT analysis serve in a company?",
+          "answer": "It compares internal strengths and weaknesses against external opportunities and threats in order to derive strategic options",
+          "explanation": "A SWOT analysis combines an internal perspective (the company) with an external perspective (market/environment)."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q83",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wie lautet die Formel zur Berechnung des ROI (Return on Investment)?",
+      "answer": "ROI = Gewinn ÷ eingesetztes Kapital × 100 %",
+      "explanation": "Der ROI zeigt, wie effizient eingesetztes Kapital in Gewinn umgesetzt wird, und ermöglicht den Vergleich unterschiedlicher Investitionen.",
+      "translations": {
+        "en": {
+          "question": "What is the formula for calculating ROI (Return on Investment)?",
+          "answer": "ROI = profit ÷ invested capital × 100%",
+          "explanation": "ROI shows how efficiently invested capital is converted into profit and allows comparison of different investments."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q84",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was gibt die Liquidität eines Unternehmens allgemein an?",
+      "answer": "Die Fähigkeit eines Unternehmens, seinen kurzfristigen Zahlungsverpflichtungen jederzeit fristgerecht nachkommen zu können",
+      "explanation": "Fehlende Liquidität kann selbst ein an sich rentables Unternehmen in die Insolvenz zwingen.",
+      "translations": {
+        "en": {
+          "question": "What does a company's liquidity generally indicate?",
+          "answer": "A company's ability to meet its short-term payment obligations on time at all times",
+          "explanation": "A lack of liquidity can force even a fundamentally profitable company into insolvency."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q85",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche zentralen Aufgaben hat der Betriebsrat gegenüber der Belegschaft?",
+      "answer": "Vertretung der Interessen der Arbeitnehmer, Überwachung der Einhaltung von Gesetzen, Tarifverträgen und Betriebsvereinbarungen sowie Mitbestimmung bei sozialen, personellen und wirtschaftlichen Angelegenheiten",
+      "explanation": "Der Betriebsrat wird von der Belegschaft gewählt und vertritt deren Interessen gegenüber dem Arbeitgeber.",
+      "translations": {
+        "en": {
+          "question": "What are the works council's central tasks toward the workforce?",
+          "answer": "Representing employee interests, monitoring compliance with laws, collective agreements, and works agreements, and co-determination in social, personnel, and economic matters",
+          "explanation": "The works council is elected by the workforce and represents their interests to the employer."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q86",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Wer sind die Vertragsparteien eines Tarifvertrags?",
+      "answer": "Auf Arbeitnehmerseite die Gewerkschaft, auf Arbeitgeberseite ein einzelner Arbeitgeber oder ein Arbeitgeberverband",
+      "explanation": "Einzelne Arbeitnehmer oder der Betriebsrat sind keine Vertragsparteien eines Tarifvertrags.",
+      "translations": {
+        "en": {
+          "question": "Who are the contracting parties of a collective bargaining agreement?",
+          "answer": "On the employee side, the trade union; on the employer side, an individual employer or an employer association",
+          "explanation": "Individual employees or the works council are not contracting parties to a collective bargaining agreement."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q87",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welche gesetzlichen Grenzen gelten für die Probezeit in einem Berufsausbildungsverhältnis nach dem BBiG?",
+      "answer": "Mindestens 1 Monat und höchstens 4 Monate",
+      "explanation": "Während der Probezeit kann das Ausbildungsverhältnis von beiden Seiten ohne Angabe von Gründen und ohne Einhaltung einer Frist gekündigt werden.",
+      "translations": {
+        "en": {
+          "question": "What statutory limits apply to the probationary period in an apprenticeship under the BBiG?",
+          "answer": "At least 1 month and at most 4 months",
+          "explanation": "During the probationary period, either side can terminate the apprenticeship without giving reasons and without a notice period."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q88",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Was kennzeichnet die Stabs-Projektorganisation (Einfluss-Projektorganisation)?",
+      "answer": "Der Projektleiter hat eine reine Koordinations- und Beratungsfunktion ohne eigene Weisungsbefugnis; die Entscheidungs- und Weisungsbefugnis bleibt bei den Linieninstanzen",
+      "explanation": "Diese Organisationsform eignet sich für kleinere Projekte, hat aber den Nachteil einer schwachen Position des Projektleiters.",
+      "translations": {
+        "en": {
+          "question": "What characterizes the staff/influence project organization?",
+          "answer": "The project manager has a purely coordinating and advisory role with no formal authority to issue instructions; decision-making and instruction authority stay with the line managers",
+          "explanation": "This organizational form suits smaller projects but has the drawback of leaving the project manager in a weak position."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q89",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Welchem Zweck dient Risikomanagement in einem IT-Projekt?",
+      "answer": "Es dient dazu, projektgefährdende Risiken frühzeitig zu identifizieren, zu bewerten und durch geeignete Maßnahmen zu vermeiden, zu vermindern oder abzufedern, um die Projektziele zu sichern",
+      "explanation": "Ohne systematisches Risikomanagement werden Risiken oft erst erkannt, wenn sie sich bereits negativ auf das Projekt auswirken.",
+      "translations": {
+        "en": {
+          "question": "What purpose does risk management serve in an IT project?",
+          "answer": "It serves to identify and assess project-threatening risks early on and to avoid, reduce, or mitigate them through suitable measures in order to protect the project goals",
+          "explanation": "Without systematic risk management, risks are often only recognized once they have already had a negative impact on the project."
+        }
+      }
+    },
+    {
+      "id": "ap1-wpm-q90",
+      "type": "text",
+      "category": "Wirtschaft & Projektmanagement",
+      "question": "Warum sind SMART formulierte Ziele in Projekten von Vorteil?",
+      "answer": "Sie sind eindeutig, messbar und terminiert, wodurch der Erfolg objektiv überprüfbar wird, Missverständnisse reduziert werden und alle Beteiligten ein gemeinsames Verständnis der Zielerreichung haben",
+      "explanation": "Vage Ziele wie „bessere Qualität erreichen\" lassen sich im Gegensatz zu SMARTen Zielen kaum objektiv überprüfen.",
+      "translations": {
+        "en": {
+          "question": "Why are SMART-formulated goals advantageous in projects?",
+          "answer": "They are clear, measurable, and time-bound, making success objectively verifiable, reducing misunderstandings, and giving everyone involved a shared understanding of goal achievement",
+          "explanation": "Vague goals like \"achieve better quality\" are hard to verify objectively, unlike SMART goals."
+        }
+      }
+    }
+  ]
+}
