@@ -259,7 +259,7 @@ export default function Sidebar({
                             if (window.innerWidth < 768) toggleSidebar();
                           }}
                           className="p-2 hover:bg-zinc-200 dark:hover:bg-[#2A2633] rounded-md text-zinc-400 hover:text-purple-500 transition-colors"
-                          title="Quick Test (20 Random)"
+                          title="Quick Test"
                         >
                           <Timer size={16} />
                         </div>

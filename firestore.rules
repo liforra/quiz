@@ -24,13 +24,23 @@ service cloud.firestore {
         allow read: if isSignedIn() && request.auth.token.email == 'liforra@quiz.local';
       }
       
-      // 2. Public Data
+      // 2. Public Quizzes
       // Path: artifacts/{appId}/public/data/quizzes
       // Logic: Any authenticated user can read public quizzes.
       // Any authenticated user can publish (create) a quiz.
-      match /public/{document=**} {
+      match /public/data/quizzes/{document=**} {
         allow read: if isSignedIn();
         allow write: if isSignedIn();
+      }
+
+      // 3. Per-Quiz Leaderboards
+      // Path: artifacts/{appId}/public/data/leaderboards/{quizId}/entries/{uid}
+      // Logic: Any authenticated user can read every leaderboard entry, but
+      // may only create/update/delete the entry keyed by their own uid — this
+      // is what stops one user from forging or erasing another's score.
+      match /public/data/leaderboards/{quizId}/entries/{entryId} {
+        allow read: if isSignedIn();
+        allow write: if isSignedIn() && request.auth.uid == entryId;
       }
     }
   }

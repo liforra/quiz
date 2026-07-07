@@ -5,7 +5,7 @@ import {
   Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard,
   Globe, Shield, X, Download, Menu, GraduationCap,
   Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
-  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2
+  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy
 } from 'lucide-react';
 import { BUILT_IN_MODES } from './modes';
 import { DEFAULT_QUIZZES } from './defaultQuizzes';
@@ -14,6 +14,7 @@ import { checkAiStatus, gradeAnswer } from './api';
 import HelpChat from './components/HelpChat';
 import ExplainPopover from './components/ExplainPopover';
 import StatsPanel from './components/StatsPanel';
+import Leaderboard from './components/Leaderboard';
 import { computeCategoryBreakdown, pickBestCategory } from './stats';
 
 // --- FIREBASE IMPORTS ---
@@ -36,6 +37,7 @@ import {
   collection,
   onSnapshot,
   increment,
+  arrayUnion,
   updateDoc,
   query,
   getDocs,
@@ -124,6 +126,17 @@ export default function App() {
     ...publicQuizzes.map(q => ({ ...q, type: 'public' }))
   ].filter(q => activeMode == null || (q.modes || []).includes(activeMode)), [privateQuizzes, publicQuizzes, activeMode]);
 
+  // Leaderboard Data
+  const [leaderboardQuizId, setLeaderboardQuizId] = useState<string | null>(null);
+  const openLeaderboard = (quizId: string) => {
+    setLeaderboardQuizId(quizId);
+    setView('leaderboard');
+  };
+  const leaderboardQuizTitle = useMemo(() => {
+    const all = [...DEFAULT_QUIZZES, ...privateQuizzes, ...publicQuizzes];
+    return all.find(q => q.id === leaderboardQuizId)?.title || 'Quiz';
+  }, [leaderboardQuizId, privateQuizzes, publicQuizzes]);
+
   // Stats Data
   const [currentQuizId, setCurrentQuizId] = useState(null);
   const [globalStats, setGlobalStats] = useState({}); // Legacy/Global stats
@@ -169,6 +182,18 @@ export default function App() {
   const [isPaused, setIsPaused] = useState(false);
   const processingRef = useRef(false);
   const advancingRef = useRef(false);
+  // Lazily constructed so the browser doesn't fetch a sound until it's
+  // actually needed, and reused (via .currentTime reset) on replay so
+  // rapid-fire answers don't get cut off by a still-playing instance.
+  const correctSoundRef = useRef<HTMLAudioElement | null>(null);
+  const wrongSoundRef = useRef<HTMLAudioElement | null>(null);
+  const playSound = (ref: React.MutableRefObject<HTMLAudioElement | null>, src: string) => {
+    if (!ref.current) ref.current = new Audio(src);
+    ref.current.currentTime = 0;
+    ref.current.play().catch(() => {}); // ignore autoplay-policy rejections
+  };
+  const playCorrectSound = useCallback(() => playSound(correctSoundRef, '/sounds/correct.mp3'), []);
+  const playWrongSound = useCallback(() => playSound(wrongSoundRef, '/sounds/wrong.mp3'), []);
 
   // AI (Groq, via server/index.js — the client never sees the key or the prompts)
   const [aiConfigured, setAiConfigured] = useState(false);
@@ -232,6 +257,7 @@ export default function App() {
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [gravatarEmailInput, setGravatarEmailInput] = useState('');
   const [gravatarHash, setGravatarHash] = useState('');
+  const [hideFromLeaderboardInput, setHideFromLeaderboardInput] = useState(false);
 
   useEffect(() => {
     const email = appUser?.gravatarEmail?.trim().toLowerCase();
@@ -248,14 +274,28 @@ export default function App() {
 
   const openSettingsModal = () => {
     setGravatarEmailInput(appUser?.gravatarEmail || '');
+    setHideFromLeaderboardInput(!!appUser?.hideFromLeaderboard);
     setShowSettingsModal(true);
   };
 
-  const saveGravatarEmail = async () => {
+  const saveProfileSettings = async () => {
     try {
       await setDoc(doc(db, 'artifacts', appId, 'users', user.uid), {
-        gravatarEmail: gravatarEmailInput.trim()
+        gravatarEmail: gravatarEmailInput.trim(),
+        hideFromLeaderboard: hideFromLeaderboardInput
       }, { merge: true });
+
+      // Opting out should also remove any leaderboard entries this user
+      // already has (not just block future ones) — otherwise "not included"
+      // would only apply going forward, leaving old scores visible to everyone.
+      if (hideFromLeaderboardInput) {
+        const freshUserDoc = await getDoc(doc(db, 'artifacts', appId, 'users', user.uid));
+        const quizIds: string[] = freshUserDoc.data()?.leaderboardQuizIds || [];
+        await Promise.all(quizIds.map((quizId) =>
+          deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries', user.uid))
+        ));
+      }
+
       setShowSettingsModal(false);
     } catch (e) {
       setError("Failed to save settings: " + e.message);
@@ -313,7 +353,7 @@ export default function App() {
     const userDocRef = doc(db, 'artifacts', appId, 'users', user.uid);
     const unsubUserDoc = onSnapshot(userDocRef, (snap) => {
       const data = snap.data();
-      setAppUser(prev => prev ? { ...prev, gravatarEmail: data?.gravatarEmail || '' } : prev);
+      setAppUser(prev => prev ? { ...prev, gravatarEmail: data?.gravatarEmail || '', hideFromLeaderboard: !!data?.hideFromLeaderboard } : prev);
     }, (err) => console.error("User doc sync error", err));
 
     // 1. Sync User Stats (Questions)
@@ -409,7 +449,12 @@ export default function App() {
       [currentQuestionIndex]: answerValue
     }));
 
-    if (isCorrect) setSessionScore(s => s + 1);
+    if (isCorrect) {
+      setSessionScore(s => s + 1);
+      playCorrectSound();
+    } else {
+      playWrongSound();
+    }
 
     // Update Firestore Stats
     if (user && appUser) {
@@ -460,7 +505,7 @@ export default function App() {
     setFeedbackType(isCorrect ? 'correct' : 'wrong');
     setShowFeedback(true);
     setCountdown(isCorrect ? 2 : 5);
-  }, [showFeedback, sessionQueue, currentQuestionIndex, user, appUser]);
+  }, [showFeedback, sessionQueue, currentQuestionIndex, user, appUser, playCorrectSound, playWrongSound]);
 
   const submitTextAnswer = async (typedAnswer: string) => {
     if (showFeedback || processingRef.current || gradingAnswer || !typedAnswer.trim()) return;
@@ -478,6 +523,32 @@ export default function App() {
     }
   };
 
+  // Upserts this user's best result for a quiz into its public leaderboard.
+  // Only ever raises the stored score (never lowers it on a worse retry), and
+  // is a no-op for quizzes with no stable id (ad-hoc uploads) or opted-out users.
+  const submitLeaderboardResult = useCallback(async (quizId: string, correctCount: number, totalCount: number) => {
+    if (!user || !appUser || !quizId || totalCount === 0 || appUser.hideFromLeaderboard) return;
+    const percentage = Math.round((correctCount / totalCount) * 100);
+    try {
+      const entryRef = doc(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries', user.uid);
+      const existing = await getDoc(entryRef);
+      const prevBest = existing.exists() ? (existing.data().bestPercentage ?? -1) : -1;
+      await setDoc(entryRef, {
+        username: appUser.username,
+        lastPlayed: new Date().toISOString(),
+        ...(percentage >= prevBest ? { bestScore: correctCount, bestTotal: totalCount, bestPercentage: percentage } : {})
+      }, { merge: true });
+      // Track which quizzes this user has an entry in, on their own (private,
+      // owner-readable) doc — lets opt-out purge those entries by direct path
+      // instead of a collectionGroup query, which would need a composite index.
+      await setDoc(doc(db, 'artifacts', appId, 'users', user.uid), {
+        leaderboardQuizIds: arrayUnion(quizId)
+      }, { merge: true });
+    } catch (e) {
+      console.error("Failed to update leaderboard", e);
+    }
+  }, [user, appUser]);
+
   const handleNext = useCallback(() => {
     // Guards against a second handleNext firing (e.g. key-repeat, or the
     // auto-advance timer and a manual Space press landing in the same tick)
@@ -493,9 +564,12 @@ export default function App() {
       setIsPaused(false);
       processingRef.current = false;
     } else {
+      if (currentQuizId) {
+        submitLeaderboardResult(currentQuizId, sessionScore, sessionQueue.length);
+      }
       setView('results');
     }
-  }, [currentQuestionIndex, sessionQueue]);
+  }, [currentQuestionIndex, sessionQueue, currentQuizId, sessionScore, submitLeaderboardResult]);
 
   // Release the handleNext guard only once the question index has actually
   // advanced, so a legitimate next press isn't blocked by a prior one.
@@ -621,7 +695,18 @@ export default function App() {
         await updateProfile(userCredential.user, {
           displayName: username
         });
-        // The onAuthStateChanged listener will handle the redirect and state updates
+        // onAuthStateChanged fires as soon as the account is created — typically
+        // before the updateProfile call above has resolved — so it falls back to
+        // the virtual email as the username (see u.displayName || u.email below).
+        // Correct both the in-memory state and the persisted user doc now that
+        // displayName is actually set, so this session's username (and anything
+        // that reads it this session, e.g. leaderboard entries) is right immediately
+        // instead of only after the next sign-in.
+        setAppUser(prev => prev ? { ...prev, username } : prev);
+        await setDoc(doc(db, 'artifacts', appId, 'users', userCredential.user.uid), {
+          username
+        }, { merge: true });
+        // The onAuthStateChanged listener still handles the view redirect.
       } else {
         await signInWithEmailAndPassword(auth, virtualEmail, password);
       }
@@ -847,6 +932,13 @@ export default function App() {
     // If final queue is still very small and we have dopamine left, maybe add one at start?
     // But standard flow is respected above.
 
+    // Cap the session length (5-10 questions) so a run feels quick to finish,
+    // rather than grinding through the whole question pool (up to 100) at once.
+    // Capping after the smart ordering above (not before) keeps the pick weighted
+    // toward unknowns/review items instead of a flat random sample.
+    const sessionSize = Math.min(finalQueue.length, Math.floor(Math.random() * 6) + 5); // 5-10
+    finalQueue = finalQueue.slice(0, sessionSize);
+
     setSessionQueue(finalQueue);
     setSessionScore(0);
     setUserAnswers({});
@@ -871,19 +963,13 @@ export default function App() {
       return;
     }
 
-    // Shuffle and pick 20
-    const shuffled = allQuestions.sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 20);
-
-    generateSmartSession(selected, null);
+    generateSmartSession(allQuestions, null);
   };
 
   const handleQuickQuizSession = (quiz) => {
     const questions = quiz.questions || [];
     if (questions.length === 0) return;
-    const shuffled = [...questions].sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 20);
-    generateSmartSession(selected, quiz.id);
+    generateSmartSession(questions, quiz.id);
   };
 
   // --- ADMIN LOGIC ---
@@ -1311,20 +1397,28 @@ export default function App() {
                   {premadeQuizzes.map(quiz => {
                     const QuizIcon = (quiz.icon && ICON_MAP[quiz.icon]) ? ICON_MAP[quiz.icon] : BookOpen;
                     return (
-                      <button
-                        key={quiz.id}
-                        onClick={() => generateSmartSession(quiz.questions, quiz.id)}
-                        className="text-left p-5 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all group"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
-                          <QuizIcon size={20} />
-                        </div>
-                        <h3 className="font-bold text-zinc-800 dark:text-white truncate">{quiz.title}</h3>
-                        <p className="text-xs text-zinc-400 mt-1 flex items-center gap-1">
-                          {quiz.questions?.length} {t(uiLang, 'questions')}
-                          {quiz.type === 'private' && <span className="text-amber-500">• {t(uiLang, 'private')}</span>}
-                        </p>
-                      </button>
+                      <div key={quiz.id} className="relative group">
+                        <button
+                          onClick={() => generateSmartSession(quiz.questions, quiz.id)}
+                          className="w-full text-left p-5 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+                            <QuizIcon size={20} />
+                          </div>
+                          <h3 className="font-bold text-zinc-800 dark:text-white truncate pr-6">{quiz.title}</h3>
+                          <p className="text-xs text-zinc-400 mt-1 flex items-center gap-1">
+                            {quiz.questions?.length} {t(uiLang, 'questions')}
+                            {quiz.type === 'private' && <span className="text-amber-500">• {t(uiLang, 'private')}</span>}
+                          </p>
+                        </button>
+                        <button
+                          onClick={() => openLeaderboard(quiz.id)}
+                          title="View leaderboard"
+                          className="absolute top-3 right-3 p-1.5 rounded-lg text-zinc-300 hover:text-purple-600 dark:text-zinc-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors"
+                        >
+                          <Trophy size={16} />
+                        </button>
+                      </div>
                     );
                   })}
                 </div>
@@ -1638,13 +1732,31 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="p-6 bg-white dark:bg-[#18161F] border-t border-zinc-100 dark:border-[#2A2633] flex justify-center">
+                <div className="p-6 bg-white dark:bg-[#18161F] border-t border-zinc-100 dark:border-[#2A2633] flex flex-wrap justify-center gap-3">
                   <button onClick={() => setView('dashboard')} className="flex items-center gap-2 px-8 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-700 transition-colors">
                     <RotateCcw size={18} /> Back to Dashboard
                   </button>
+                  {currentQuizId && (
+                    <button onClick={() => openLeaderboard(currentQuizId)} className="flex items-center gap-2 px-8 py-3 bg-zinc-100 dark:bg-[#23202B] text-zinc-700 dark:text-white rounded-xl font-bold hover:bg-zinc-200 dark:hover:bg-[#2A2633] transition-colors">
+                      <Trophy size={18} /> View Leaderboard
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
+          )}
+
+          {/* --- VIEW: LEADERBOARD --- */}
+          {view === 'leaderboard' && leaderboardQuizId && (
+            <Leaderboard
+              db={db}
+              appId={appId}
+              quizId={leaderboardQuizId}
+              quizTitle={leaderboardQuizTitle}
+              currentUserId={user.uid}
+              hideFromLeaderboard={!!appUser?.hideFromLeaderboard}
+              onBack={() => setView('dashboard')}
+            />
           )}
 
           {/* --- VIEW: ADMIN --- */}
@@ -1828,11 +1940,24 @@ export default function App() {
                 <p className="text-xs text-zinc-400 mt-2">Uses your <a href="https://gravatar.com" target="_blank" rel="noreferrer" className="underline hover:text-purple-500">Gravatar</a> picture as your profile avatar. Leave empty to keep the default avatar.</p>
               </div>
 
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={!hideFromLeaderboardInput}
+                  onChange={(e) => setHideFromLeaderboardInput(!e.target.checked)}
+                  className="mt-1 h-4 w-4 accent-purple-600"
+                />
+                <span>
+                  <span className="block text-sm font-semibold text-zinc-700 dark:text-white">Show me on leaderboards</span>
+                  <span className="block text-xs text-zinc-400 mt-0.5">When off, your scores are still saved but never shown on any quiz's leaderboard.</span>
+                </span>
+              </label>
+
               <div className="flex gap-2 pt-2">
                 <button type="button" onClick={() => setShowSettingsModal(false)} className="flex-1 py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
                   Cancel
                 </button>
-                <button type="button" onClick={saveGravatarEmail} className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none">
+                <button type="button" onClick={saveProfileSettings} className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none">
                   Save
                 </button>
               </div>
