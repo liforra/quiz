@@ -227,6 +227,10 @@ export default function App() {
   const [isPaused, setIsPaused] = useState(false);
   const processingRef = useRef(false);
   const advancingRef = useRef(false);
+  // Wall-clock start of the current session, for the leaderboard's speed
+  // tiebreaker — set once in generateSmartSession, read once when the last
+  // question is answered.
+  const quizStartTimeRef = useRef<number | null>(null);
   // Lazily constructed so the browser doesn't fetch a sound until it's
   // actually needed, and reused (via .currentTime reset) on replay so
   // rapid-fire answers don't get cut off by a still-playing instance.
@@ -284,6 +288,30 @@ export default function App() {
     }
     return false;
   }, [refreshAiStatus]);
+
+  // --- UPDATE-AVAILABLE CHECK ---
+  // Production used to run the Vite dev server, whose HMR client force-reloads
+  // the page the moment it reconnects after a deploy — losing whatever the
+  // user was in the middle of. Now that production serves a real static
+  // build (see the "production" npm script + server/index.js), there's no
+  // HMR to do that, so instead we poll our own build id against the one this
+  // page loaded with and surface a dismiss-free card instead of reloading
+  // out from under the user. Dev builds have no VITE_BUILD_ID, so this is a
+  // no-op outside of `npm run production`.
+  const [updateAvailable, setUpdateAvailable] = useState(false);
+  useEffect(() => {
+    if (!import.meta.env.PROD || !import.meta.env.VITE_BUILD_ID) return;
+    const checkForUpdate = () => {
+      fetch(`/version.json?t=${Date.now()}`, { cache: 'no-store' })
+        .then(res => res.json())
+        .then(({ buildId }) => {
+          if (buildId && buildId !== import.meta.env.VITE_BUILD_ID) setUpdateAvailable(true);
+        })
+        .catch(() => {}); // offline / transient — just try again next interval
+    };
+    const interval = setInterval(checkForUpdate, 60_000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Close any open help/explain panel when the question or view changes, so
   // stale context never lingers onto the next question (or outside gameplay).
@@ -580,17 +608,23 @@ export default function App() {
   // Upserts this user's best result for a quiz into its public leaderboard.
   // Only ever raises the stored score (never lowers it on a worse retry), and
   // is a no-op for quizzes with no stable id (ad-hoc uploads) or opted-out users.
-  const submitLeaderboardResult = useCallback(async (quizId: string, correctCount: number, totalCount: number) => {
+  // Speed is a secondary factor: at the same percentage, a faster completion
+  // still counts as an improvement (see Leaderboard.tsx's sort, which ranks
+  // by percentage first and completion time as the tiebreaker).
+  const submitLeaderboardResult = useCallback(async (quizId: string, correctCount: number, totalCount: number, elapsedSeconds: number) => {
     if (!user || !appUser || !quizId || totalCount === 0 || appUser.hideFromLeaderboard) return;
     const percentage = Math.round((correctCount / totalCount) * 100);
     try {
       const entryRef = doc(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries', user.uid);
       const existing = await getDoc(entryRef);
-      const prevBest = existing.exists() ? (existing.data().bestPercentage ?? -1) : -1;
+      const prevData = existing.exists() ? existing.data() : null;
+      const prevBest = prevData?.bestPercentage ?? -1;
+      const prevBestTime = prevData?.bestTimeSeconds ?? Infinity;
+      const isImprovement = percentage > prevBest || (percentage === prevBest && elapsedSeconds < prevBestTime);
       await setDoc(entryRef, {
         username: appUser.username,
         lastPlayed: new Date().toISOString(),
-        ...(percentage >= prevBest ? { bestScore: correctCount, bestTotal: totalCount, bestPercentage: percentage } : {})
+        ...(isImprovement ? { bestScore: correctCount, bestTotal: totalCount, bestPercentage: percentage, bestTimeSeconds: Math.round(elapsedSeconds) } : {})
       }, { merge: true });
       // Track which quizzes this user has an entry in, on their own (private,
       // owner-readable) doc — lets opt-out purge those entries by direct path
@@ -619,7 +653,8 @@ export default function App() {
       processingRef.current = false;
     } else {
       if (currentQuizId) {
-        submitLeaderboardResult(currentQuizId, sessionScore, sessionQueue.length);
+        const elapsedSeconds = quizStartTimeRef.current ? (Date.now() - quizStartTimeRef.current) / 1000 : 0;
+        submitLeaderboardResult(currentQuizId, sessionScore, sessionQueue.length, elapsedSeconds);
       }
       setView('results');
     }
@@ -1071,6 +1106,7 @@ export default function App() {
     setCurrentQuestionIndex(0);
     setError('');
     setActiveTimer(timerConfig);
+    quizStartTimeRef.current = Date.now();
     // A configured timer needs its 3-2-1-GO countdown to play first; plain
     // sessions (no timer) skip straight to the question view as before.
     setView(timerConfig ? 'countdown' : 'playing');
@@ -1373,6 +1409,18 @@ export default function App() {
   );
 
   // --- VIEWS ---
+  const updateCard = updateAvailable && (
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#18161F] border border-zinc-200 dark:border-[#2A2633] rounded-xl shadow-2xl">
+      <span className="text-sm text-zinc-700 dark:text-white font-medium">A new update is available</span>
+      <button
+        onClick={() => window.location.reload()}
+        className="flex items-center gap-1.5 px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-bold rounded-lg transition-colors"
+      >
+        <RotateCcw size={14} /> Refresh to update
+      </button>
+    </div>
+  );
+
   if (view === 'auth') {
     return (
       <div className={`${theme} min-h-screen flex items-center justify-center p-4 transition-colors font-sans relative overflow-hidden`}>
@@ -1439,6 +1487,7 @@ export default function App() {
             </button>
           </div>
         </div>
+        {updateCard}
       </div>
     );
   }
@@ -2238,6 +2287,7 @@ export default function App() {
       )}
 
       <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} />
+      {updateCard}
     </div>
   );
 }

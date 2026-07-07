@@ -5,9 +5,9 @@ autostart = true
 runas = ""
 
 [commands]
-start = "nohup /usr/local/bin/pnpm dev > app.log 2>&1 & echo $! > .pid"
+start = "nohup /usr/local/bin/pnpm run production > app.log 2>&1 & echo $! > .pid"
 stop = "kill $(cat .pid) 2>/dev/null; rm .pid 2>/dev/null"
-restart = "kill $(cat .pid) 2>/dev/null; rm .pid 2>/dev/null; nohup /usr/local/bin/pnpm dev > app.log 2>&1 & echo $! > .pid"
+restart = "kill $(cat .pid) 2>/dev/null; rm .pid 2>/dev/null; nohup /usr/local/bin/pnpm run production > app.log 2>&1 & echo $! > .pid"
 update = "/usr/local/bin/pnpm install"
 
 [status]

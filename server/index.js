@@ -13,7 +13,12 @@ try {
 
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { buildGradingMessages, buildExplainMessages, buildHelpMessages } from './prompts.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DIST_DIR = path.join(__dirname, '..', 'dist');
 
 const PORT = process.env.PORT || 8787;
 const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
@@ -144,6 +149,17 @@ app.post('/api/groq/help', rateLimit, groqQuotaGuard, async (req, res) => {
   } catch (e) {
     handleAiError(res, e, 'AI help chat failed');
   }
+});
+
+// Serves the production build (`npm run production` runs `vite build` first)
+// so a single process handles both the API and the frontend — in dev, `dist/`
+// doesn't exist and the frontend is served by Vite's own dev server instead,
+// so express.static below just finds nothing and next() falls through.
+app.use(express.static(DIST_DIR));
+app.get(/^(?!\/api\/).*/, (req, res, next) => {
+  res.sendFile(path.join(DIST_DIR, 'index.html'), (err) => {
+    if (err) next(); // no build present (dev mode) — let it 404 normally
+  });
 });
 
 app.listen(PORT, () => {

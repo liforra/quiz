@@ -8,6 +8,7 @@
     "vite:only": "vite",
     "server": "node server/index.js",
     "build": "vite build",
+    "production": "node scripts/write-version.js && vite build && PORT=3849 node server/index.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy:rules": "firebase deploy --only firestore:rules"

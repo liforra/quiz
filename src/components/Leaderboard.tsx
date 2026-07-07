@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { collection, onSnapshot, Firestore } from 'firebase/firestore';
-import { Trophy, Medal, ChevronLeft, EyeOff } from 'lucide-react';
+import { Trophy, Medal, ChevronLeft, EyeOff, Timer } from 'lucide-react';
 
 interface LeaderboardEntry {
   id: string; // uid
@@ -8,6 +8,13 @@ interface LeaderboardEntry {
   bestScore?: number;
   bestTotal?: number;
   bestPercentage?: number;
+  bestTimeSeconds?: number;
+}
+
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = Math.round(seconds % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
 }
 
 interface LeaderboardProps {
@@ -31,7 +38,12 @@ export default function Leaderboard({ db, appId, quizId, quizTitle, currentUserI
     const entriesRef = collection(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries');
     const unsub = onSnapshot(entriesRef, (snapshot) => {
       const rows = snapshot.docs.map(d => ({ id: d.id, ...d.data() } as LeaderboardEntry));
-      rows.sort((a, b) => (b.bestPercentage ?? -1) - (a.bestPercentage ?? -1) || (b.bestScore ?? 0) - (a.bestScore ?? 0));
+      // Rank by score first; a faster completion time only matters as the
+      // tiebreaker between equal percentages (missing times sort last).
+      rows.sort((a, b) =>
+        (b.bestPercentage ?? -1) - (a.bestPercentage ?? -1) ||
+        (a.bestTimeSeconds ?? Infinity) - (b.bestTimeSeconds ?? Infinity)
+      );
       setEntries(rows);
       setLoading(false);
     }, (err) => {
@@ -53,6 +65,7 @@ export default function Leaderboard({ db, appId, quizId, quizTitle, currentUserI
             <Trophy className="mx-auto mb-3 opacity-90" size={40} />
             <h2 className="text-2xl font-bold">{quizTitle}</h2>
             <p className="text-purple-200 text-sm mt-1">Leaderboard</p>
+            <p className="text-purple-200/80 text-xs mt-2 flex items-center justify-center gap-1"><Timer size={12} /> Ranked by score first — ties go to whoever finished faster</p>
           </div>
 
           {hideFromLeaderboard && (
@@ -88,9 +101,12 @@ export default function Leaderboard({ db, appId, quizId, quizTitle, currentUserI
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-zinc-800 dark:text-white">{entry.bestPercentage ?? 0}%</p>
-                      {entry.bestScore != null && entry.bestTotal != null && (
-                        <p className="text-xs text-zinc-400">{entry.bestScore}/{entry.bestTotal}</p>
-                      )}
+                      <p className="text-xs text-zinc-400 flex items-center justify-end gap-2">
+                        {entry.bestScore != null && entry.bestTotal != null && <span>{entry.bestScore}/{entry.bestTotal}</span>}
+                        {entry.bestTimeSeconds != null && (
+                          <span className="flex items-center gap-0.5"><Timer size={11} /> {formatTime(entry.bestTimeSeconds)}</span>
+                        )}
+                      </p>
                     </div>
                   </div>
                 );
