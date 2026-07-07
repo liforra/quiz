@@ -88,6 +88,19 @@ const isCorrectArr = (arr1, arr2) => {
   return sorted1.every((val, index) => val === sorted2[index]);
 };
 
+// Quiz authors tend to list the correct option(s) first — every correctness
+// check in this app compares option *values*, never position, so shuffling
+// display order here is safe and doesn't need to touch any grading logic.
+function shuffleOptions(question) {
+  if (!question?.options) return question;
+  const options = [...question.options];
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j], options[i]];
+  }
+  return { ...question, options };
+}
+
 export default function App() {
   // --- STATE ---
   const [theme, setTheme] = useState('dark');
@@ -137,6 +150,38 @@ export default function App() {
     return all.find(q => q.id === leaderboardQuizId)?.title || 'Quiz';
   }, [leaderboardQuizId, privateQuizzes, publicQuizzes]);
 
+  // Custom Quiz Builder — lets the player hand-pick which quizzes to draw
+  // from, how many questions, and an optional timer, instead of playing one
+  // premade quiz at a time. Unlike premadeQuizzes, the picker ignores the
+  // active mode filter — building a mix across AP1/AP2 is the whole point.
+  const allQuizzesFlat = useMemo(() => [
+    ...DEFAULT_QUIZZES.map(q => ({ ...q, type: 'default' })),
+    ...privateQuizzes.map(q => ({ ...q, type: 'private' })),
+    ...publicQuizzes.map(q => ({ ...q, type: 'public' }))
+  ], [privateQuizzes, publicQuizzes]);
+  const [showCustomBuilder, setShowCustomBuilder] = useState(false);
+  const [customSelectedQuizIds, setCustomSelectedQuizIds] = useState<string[]>([]);
+  const [customQuestionCount, setCustomQuestionCount] = useState(10);
+  const [customTimerEnabled, setCustomTimerEnabled] = useState(false);
+  const [customTimerScope, setCustomTimerScope] = useState<'question' | 'quiz'>('question');
+  const [customTimerSeconds, setCustomTimerSeconds] = useState(30);
+  const customPoolSize = useMemo(
+    () => allQuizzesFlat.filter(q => customSelectedQuizIds.includes(q.id)).reduce((n, q) => n + (q.questions?.length || 0), 0),
+    [allQuizzesFlat, customSelectedQuizIds]
+  );
+  const toggleCustomQuiz = (quizId: string) => {
+    setCustomSelectedQuizIds(prev => prev.includes(quizId) ? prev.filter(id => id !== quizId) : [...prev, quizId]);
+  };
+  const startCustomQuiz = () => {
+    const pool = allQuizzesFlat.filter(q => customSelectedQuizIds.includes(q.id)).flatMap(q => q.questions || []);
+    if (pool.length === 0) return;
+    const timerConfig = customTimerEnabled
+      ? { scope: customTimerScope, seconds: customTimerScope === 'quiz' ? customTimerSeconds * 60 : customTimerSeconds }
+      : null;
+    generateSmartSession(pool, null, Math.min(customQuestionCount, pool.length), timerConfig);
+    setShowCustomBuilder(false);
+  };
+
   // Stats Data
   const [currentQuizId, setCurrentQuizId] = useState(null);
   const [globalStats, setGlobalStats] = useState({}); // Legacy/Global stats
@@ -158,7 +203,7 @@ export default function App() {
   const currentQData = sessionQueue[currentQuestionIndex] ?? null;
   // Language-resolved view of the current question (falls back to original fields when untranslated).
   // Rendering AND the value captured on answer both read from this, so correctness checks stay consistent.
-  const displayQ = useMemo(() => resolveQuestionLang(currentQData, uiLang), [currentQData, uiLang]);
+  const displayQ = useMemo(() => shuffleOptions(resolveQuestionLang(currentQData, uiLang)), [currentQData, uiLang]);
 
   // Upload State
   const [pendingUpload, setPendingUpload] = useState(null);
@@ -192,8 +237,17 @@ export default function App() {
     ref.current.currentTime = 0;
     ref.current.play().catch(() => {}); // ignore autoplay-policy rejections
   };
+  const timerSoundRef = useRef<HTMLAudioElement | null>(null);
   const playCorrectSound = useCallback(() => playSound(correctSoundRef, '/sounds/correct.mp3'), []);
   const playWrongSound = useCallback(() => playSound(wrongSoundRef, '/sounds/wrong.mp3'), []);
+  const playTimerSound = useCallback(() => playSound(timerSoundRef, '/sounds/timer.mp3'), []);
+
+  // Custom Quiz timer state — set once when a custom quiz with a timer is
+  // started (see generateSmartSession's timerConfig param), null otherwise.
+  const [activeTimer, setActiveTimer] = useState<{ scope: 'question' | 'quiz'; seconds: number } | null>(null);
+  const [questionTimeLeft, setQuestionTimeLeft] = useState(0);
+  const [quizTimeLeft, setQuizTimeLeft] = useState(0);
+  const [countdownStep, setCountdownStep] = useState(3); // 3, 2, 1, 0 (0 displays as "GO")
 
   // AI (Groq, via server/index.js — the client never sees the key or the prompts)
   const [aiConfigured, setAiConfigured] = useState(false);
@@ -577,6 +631,76 @@ export default function App() {
     advancingRef.current = false;
   }, [currentQuestionIndex]);
 
+  // --- CUSTOM QUIZ: 3-2-1-GO COUNTDOWN ---
+  // Drives the pre-game overlay for a timed custom quiz. Steps are timed to
+  // match the four beeps baked into /sounds/timer.mp3 (one per second, at
+  // 0/1/2/3s) — so the beep and the number/GO on screen land together.
+  useEffect(() => {
+    if (view !== 'countdown') return;
+    playTimerSound();
+    setCountdownStep(3);
+    const timeouts = [
+      setTimeout(() => setCountdownStep(2), 1000),
+      setTimeout(() => setCountdownStep(1), 2000),
+      setTimeout(() => setCountdownStep(0), 3000), // 0 renders as "GO"
+      setTimeout(() => {
+        setView('playing');
+        if (activeTimer?.scope === 'quiz') setQuizTimeLeft(activeTimer.seconds);
+      }, 3800),
+    ];
+    return () => timeouts.forEach(clearTimeout);
+  }, [view, activeTimer, playTimerSound]);
+
+  // submitAnswer gets a new identity whenever showFeedback toggles (see its
+  // own deps below) — unrelated to the per-question timer. Routing calls
+  // through a ref means the timer effect only needs to depend on things that
+  // actually mean "this is a new question", not every submitAnswer identity
+  // change, so it doesn't restart (and visibly flicker) mid-feedback.
+  const submitAnswerRef = useRef(submitAnswer);
+  useEffect(() => { submitAnswerRef.current = submitAnswer; }, [submitAnswer]);
+
+  // --- CUSTOM QUIZ: PER-QUESTION TIMER ---
+  // One self-contained effect per question: resets and starts its own
+  // interval, and force-submits a wrong answer when it reaches zero.
+  // (Previously this was two separate effects — one resetting the countdown
+  // on question change, one ticking it down — which raced: right after
+  // handleNext() advanced the index, the ticking effect could still fire
+  // with its stale pre-reset closure value of 0 and immediately force-submit
+  // the *new* question too, skipping two questions per single timeout.
+  // A lone interval with a local `remaining` counter can't read stale state
+  // like that, so it can't race with itself.)
+  useEffect(() => {
+    if (activeTimer?.scope !== 'question' || view !== 'playing') return;
+    let remaining = activeTimer.seconds;
+    setQuestionTimeLeft(remaining);
+    const interval = setInterval(() => {
+      remaining -= 1;
+      setQuestionTimeLeft(remaining);
+      if (remaining <= 0) {
+        clearInterval(interval);
+        // submitAnswerRef.current no-ops if the question was already answered
+        // for real (it guards on showFeedback/processingRef), so a timeout
+        // firing right as the user answers can't double-submit.
+        submitAnswerRef.current(false, null);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [currentQuestionIndex, activeTimer, view]);
+
+  // --- CUSTOM QUIZ: PER-QUIZ (TOTAL) TIMER ---
+  // One countdown for the whole session; whatever question is still open
+  // when it hits zero is simply left unanswered (the results screen already
+  // renders unanswered questions as "Skipped"), and the quiz ends immediately.
+  useEffect(() => {
+    if (activeTimer?.scope !== 'quiz' || view !== 'playing' || isPaused) return;
+    if (quizTimeLeft <= 0) {
+      setView('results');
+      return;
+    }
+    const id = setTimeout(() => setQuizTimeLeft(t => t - 1), 1000);
+    return () => clearTimeout(id);
+  }, [activeTimer, view, isPaused, quizTimeLeft]);
+
   const downloadQuiz = (quiz) => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(quiz, null, 2));
     const downloadAnchorNode = document.createElement('a');
@@ -865,7 +989,7 @@ export default function App() {
     }
   };
 
-  const generateSmartSession = (allQuestions, quizId = null) => {
+  const generateSmartSession = (allQuestions, quizId = null, sessionSizeOverride: number | null = null, timerConfig: { scope: 'question' | 'quiz'; seconds: number } | null = null) => {
     setActiveQuizQuestions(allQuestions);
     setCurrentQuizId(quizId);
 
@@ -932,19 +1056,24 @@ export default function App() {
     // If final queue is still very small and we have dopamine left, maybe add one at start?
     // But standard flow is respected above.
 
-    // Cap the session length (5-10 questions) so a run feels quick to finish,
-    // rather than grinding through the whole question pool (up to 100) at once.
-    // Capping after the smart ordering above (not before) keeps the pick weighted
-    // toward unknowns/review items instead of a flat random sample.
-    const sessionSize = Math.min(finalQueue.length, Math.floor(Math.random() * 6) + 5); // 5-10
+    // Cap the session length (5-10 questions by default) so a run feels quick
+    // to finish, rather than grinding through the whole question pool (up to
+    // 100) at once. A caller (the custom quiz builder) can override this with
+    // an exact count. Capping after the smart ordering above (not before)
+    // keeps the pick weighted toward unknowns/review items instead of a flat
+    // random sample.
+    const sessionSize = Math.min(finalQueue.length, sessionSizeOverride ?? (Math.floor(Math.random() * 6) + 5));
     finalQueue = finalQueue.slice(0, sessionSize);
 
     setSessionQueue(finalQueue);
     setSessionScore(0);
     setUserAnswers({});
     setCurrentQuestionIndex(0);
-    setView('playing');
     setError('');
+    setActiveTimer(timerConfig);
+    // A configured timer needs its 3-2-1-GO countdown to play first; plain
+    // sessions (no timer) skip straight to the question view as before.
+    setView(timerConfig ? 'countdown' : 'playing');
 
     // Reset Round State
     setShowFeedback(false);
@@ -1373,20 +1502,34 @@ export default function App() {
           {view === 'dashboard' && (
             <div className="p-4 md:p-8 max-w-6xl mx-auto w-full">
 
-              {/* ACTION: QUICK TEST */}
-              <button
-                onClick={handleQuickTest}
-                className="w-full mb-10 py-6 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-200 dark:shadow-none flex items-center justify-center gap-4 transition-all group"
-              >
-                <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
-                  <Zap size={32} fill="currentColor" />
-                </div>
-                <div className="text-left">
-                  <h2 className="text-2xl font-bold">{t(uiLang, 'quickTest')}</h2>
-                  <p className="text-purple-100 opacity-90">{t(uiLang, 'quickTestDesc')}</p>
-                </div>
-                <ChevronRight size={32} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all ml-4" />
-              </button>
+              {/* ACTIONS: QUICK TEST + CUSTOM QUIZ */}
+              <div className="grid sm:grid-cols-2 gap-4 mb-10">
+                <button
+                  onClick={handleQuickTest}
+                  className="py-6 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-200 dark:shadow-none flex items-center justify-center gap-4 transition-all group"
+                >
+                  <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <Zap size={32} fill="currentColor" />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold">{t(uiLang, 'quickTest')}</h2>
+                    <p className="text-purple-100 opacity-90">{t(uiLang, 'quickTestDesc')}</p>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => { setCustomSelectedQuizIds([]); setShowCustomBuilder(true); }}
+                  className="py-6 px-4 bg-white dark:bg-[#18161F] border-2 border-dashed border-zinc-200 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 rounded-2xl flex items-center justify-center gap-4 transition-all group"
+                >
+                  <div className="p-3 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 rounded-xl group-hover:scale-110 transition-transform">
+                    <Timer size={32} />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold text-zinc-800 dark:text-white">Custom Quiz</h2>
+                    <p className="text-zinc-400 text-sm">Pick quizzes, question count &amp; a timer</p>
+                  </div>
+                </button>
+              </div>
 
               {/* PREMADE QUIZZES (focus of the dashboard) */}
               <h2 className="text-xl font-bold text-zinc-800 dark:text-white mb-4">{t(uiLang, 'premadeQuizzes')}</h2>
@@ -1591,7 +1734,19 @@ export default function App() {
                       )}
                     </div>
                   </div>
-                  <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
+                  <div className="flex items-center gap-3">
+                    {activeTimer?.scope === 'question' && (
+                      <span className={`flex items-center gap-1 text-sm font-bold tabular-nums px-2.5 py-1 rounded-lg ${questionTimeLeft <= 5 ? 'text-red-600 bg-red-50 dark:bg-red-900/20' : 'text-zinc-600 dark:text-zinc-300 bg-zinc-100 dark:bg-[#23202B]'}`}>
+                        <Timer size={14} /> {questionTimeLeft}s
+                      </span>
+                    )}
+                    {activeTimer?.scope === 'quiz' && (
+                      <span className={`flex items-center gap-1 text-sm font-bold tabular-nums px-2.5 py-1 rounded-lg ${quizTimeLeft <= 10 ? 'text-red-600 bg-red-50 dark:bg-red-900/20' : 'text-zinc-600 dark:text-zinc-300 bg-zinc-100 dark:bg-[#23202B]'}`}>
+                        <Timer size={14} /> {Math.floor(quizTimeLeft / 60)}:{String(quizTimeLeft % 60).padStart(2, '0')}
+                      </span>
+                    )}
+                    <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
+                  </div>
                 </div>
 
                 <div className="w-full bg-purple-200 dark:bg-[#23202B] h-2 rounded-full mb-6 overflow-hidden">
@@ -1963,6 +2118,122 @@ export default function App() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* --- MODAL: CUSTOM QUIZ BUILDER --- */}
+      {showCustomBuilder && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633] max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-bold dark:text-white">Custom Quiz</h2>
+              <button onClick={() => setShowCustomBuilder(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+            </div>
+
+            <div className="space-y-5">
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-2">Include quizzes</label>
+                <div className="space-y-1 max-h-48 overflow-y-auto pr-1">
+                  {allQuizzesFlat.map(quiz => (
+                    <label key={quiz.id} className="flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-zinc-50 dark:hover:bg-[#23202B] cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={customSelectedQuizIds.includes(quiz.id)}
+                        onChange={() => toggleCustomQuiz(quiz.id)}
+                        className="h-4 w-4 accent-purple-600"
+                      />
+                      <span className="text-sm text-zinc-700 dark:text-white truncate flex-1">{quiz.title}</span>
+                      <span className="text-xs text-zinc-400">{quiz.questions?.length || 0}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">Number of questions</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={Math.max(customPoolSize, 1)}
+                  value={customQuestionCount}
+                  onChange={(e) => setCustomQuestionCount(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                  className="w-full px-4 py-2.5 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                />
+                <p className="text-xs text-zinc-400 mt-1">{customPoolSize} question{customPoolSize === 1 ? '' : 's'} available in the selected quizzes.</p>
+              </div>
+
+              <div>
+                <label className="flex items-center gap-3 cursor-pointer select-none mb-3">
+                  <input
+                    type="checkbox"
+                    checked={customTimerEnabled}
+                    onChange={(e) => setCustomTimerEnabled(e.target.checked)}
+                    className="h-4 w-4 accent-purple-600"
+                  />
+                  <span className="text-sm font-semibold text-zinc-700 dark:text-white">Time limit</span>
+                </label>
+
+                {customTimerEnabled && (
+                  <div className="pl-1 space-y-3">
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setCustomTimerScope('question')}
+                        className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-colors ${customTimerScope === 'question' ? 'bg-purple-600 text-white' : 'bg-zinc-100 dark:bg-[#23202B] text-zinc-500 dark:text-zinc-400'}`}
+                      >
+                        Per question
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setCustomTimerScope('quiz')}
+                        className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-colors ${customTimerScope === 'quiz' ? 'bg-purple-600 text-white' : 'bg-zinc-100 dark:bg-[#23202B] text-zinc-500 dark:text-zinc-400'}`}
+                      >
+                        Per whole quiz
+                      </button>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="number"
+                        min={1}
+                        value={customTimerSeconds}
+                        onChange={(e) => setCustomTimerSeconds(Math.max(1, parseInt(e.target.value, 10) || 1))}
+                        className="w-24 px-3 py-2 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                      />
+                      <span className="text-sm text-zinc-500 dark:text-[#9D99A8]">
+                        {customTimerScope === 'question' ? 'seconds per question' : 'minutes for the whole quiz'}
+                      </span>
+                    </div>
+                    {customTimerScope === 'question' && (
+                      <p className="text-xs text-zinc-400">Running out of time on a question auto-submits it as wrong.</p>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              <div className="flex gap-2 pt-2">
+                <button type="button" onClick={() => setShowCustomBuilder(false)} className="flex-1 py-3 text-zinc-600 dark:text-[#9D99A8] font-medium hover:bg-zinc-100 dark:hover:bg-[#23202B] rounded-xl transition-colors">
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  onClick={startCustomQuiz}
+                  disabled={customPoolSize === 0}
+                  className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none"
+                >
+                  Start
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* --- VIEW: COUNTDOWN (3-2-1-GO before a timed custom quiz) --- */}
+      {view === 'countdown' && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
+          <span className="text-white font-black text-9xl tabular-nums animate-in zoom-in duration-300" key={countdownStep}>
+            {countdownStep === 0 ? 'GO' : countdownStep}
+          </span>
         </div>
       )}
 
