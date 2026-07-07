@@ -1435,8 +1435,7 @@ export default function App() {
             <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg shadow-purple-200 dark:shadow-none">
               <Lock size={32} />
             </div>
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Quiz Master Access</h1>
-            <p className="text-zinc-500 dark:text-[#9D99A8] mt-2 text-sm">Secure storage enabled via Firebase</p>
+            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Login to Liforra Quiz</h1>
           </div>
 
           <form onSubmit={handleAuthSubmit} className="space-y-4">
