@@ -14,6 +14,9 @@ dist
 dist-ssr
 *.local
 
+# Generated at build time by scripts/write-version.js — not source.
+public/version.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
