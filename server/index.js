@@ -15,10 +15,13 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { watch } from 'fs';
+import { exec } from 'child_process';
 import { buildGradingMessages, buildExplainMessages, buildHelpMessages } from './prompts.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST_DIR = path.join(__dirname, '..', 'dist');
+const PROJECT_ROOT = path.join(__dirname, '..');
+const DIST_DIR = path.join(PROJECT_ROOT, 'dist');
 
 const PORT = process.env.PORT || 8787;
 const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
@@ -161,6 +164,40 @@ app.get(/^(?!\/api\/).*/, (req, res, next) => {
     if (err) next(); // no build present (dev mode) — let it 404 normally
   });
 });
+
+// AUTO_REBUILD (set by the "production" npm script) watches the frontend
+// source for changes and rebuilds in place — no restart, no external deploy
+// hook. Once dist/ (and its version.json) is regenerated, already-open tabs
+// pick up the new build id on their next poll and show the update card
+// (see the UPDATE-AVAILABLE CHECK effect in src/app.tsx) instead of anything
+// reloading out from under the user. Only rebuilds the static bundle —
+// server/*.js changes still need a real process restart, which is out of
+// scope for a process trying to watch its own source.
+if (process.env.AUTO_REBUILD === '1') {
+  let rebuildTimer = null;
+  let rebuilding = false;
+  const triggerRebuild = (eventType, filename) => {
+    // write-version.js (run by every rebuild, below) writes public/version.json —
+    // without this check that write re-triggers the public/ watcher, which
+    // rebuilds again, which writes version.json again... forever.
+    if (filename === 'version.json') return;
+    clearTimeout(rebuildTimer);
+    rebuildTimer = setTimeout(() => {
+      if (rebuilding) { triggerRebuild(); return; } // change landed mid-build — rebuild again after
+      rebuilding = true;
+      console.log('Source changed — rebuilding...');
+      exec('node scripts/write-version.js && npx vite build', { cwd: PROJECT_ROOT }, (err, stdout, stderr) => {
+        rebuilding = false;
+        if (err) { console.error('Rebuild failed:', stderr || err.message); return; }
+        console.log('Rebuild complete.');
+      });
+    }, 1000); // debounce — editors/saves fire multiple fs events per change
+  };
+  for (const dir of ['src', 'public']) {
+    watch(path.join(PROJECT_ROOT, dir), { recursive: true }, triggerRebuild);
+  }
+  console.log('AUTO_REBUILD enabled — watching src/ and public/ for changes');
+}
 
 app.listen(PORT, () => {
   console.log(`Groq proxy listening on :${PORT} (AI ${GROQ_API_KEY ? 'enabled' : 'disabled — set GROQ_API_KEY in .env'})`);
