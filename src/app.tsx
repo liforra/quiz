@@ -1203,7 +1203,7 @@ export default function App() {
             <button
               disabled={showFeedback}
               onClick={() => submitAnswer(isCorrect, option)}
-              className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${style}`}
+              className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${isFocused ? 'p-6 text-lg' : 'p-4'} ${style}`}
             >
               <div className="flex items-center gap-3">
                 <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
@@ -1763,7 +1763,7 @@ export default function App() {
               ? "min-h-full flex flex-col items-center justify-center p-4"
               : "min-h-full flex flex-col items-center p-4 py-10"
             }>
-              <div className={isFocused ? "max-w-4xl w-full" : "max-w-2xl w-full"}>
+              <div className={isFocused ? "max-w-6xl w-full" : "max-w-2xl w-full"}>
                 {/* Header */}
                 <div className="flex justify-between items-end mb-4 px-1">
                   <div>
@@ -1831,11 +1831,11 @@ export default function App() {
 
                 {/* Card */}
                 <div className={isFocused
-                  ? "bg-white dark:bg-[#0F0E13] p-8 md:p-16 min-h-[500px] flex flex-col relative"
+                  ? "bg-white dark:bg-[#0F0E13] p-10 md:p-20 min-h-[80vh] flex flex-col relative"
                   : "bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative"
                 }>
                   <div className="flex items-start justify-between">
-                    <h3 className={isFocused ? "text-3xl md:text-4xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug" : "text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug"}>{displayQ.question}</h3>
+                    <h3 className={isFocused ? "text-4xl md:text-5xl font-bold text-zinc-800 dark:text-white mb-10 leading-snug" : "text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug"}>{displayQ.question}</h3>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
                         <Keyboard size={20} />
