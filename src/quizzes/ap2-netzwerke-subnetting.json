@@ -1041,9 +1041,10 @@
       "explanation": "Durchsatz ist die tatsächlich erreichte Datenrate. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Durchsatz in Netzwerke & Subnetting?",
-          "answer": "Durchsatz is the actually achieved data rate.",
-          "explanation": "Durchsatz is the actually achieved data rate. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of throughput in networking & subnetting?",
+          "answer": "Throughput is the data rate actually achieved.",
+          "explanation": "Throughput is the data rate actually achieved. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
