@@ -1501,7 +1501,7 @@ export default function App() {
 
   return (
     <div className={theme}>
-      <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex">
+      <div className={`min-h-screen ${isFocused ? 'bg-white dark:bg-[#0F0E13]' : 'bg-purple-50 dark:bg-[#0F0E13]'} text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex`}>
 
         {/* Sidebar */}
         {!isFocused && (
@@ -1768,26 +1768,31 @@ export default function App() {
                       Question {currentQuestionIndex + 1} of {sessionQueue.length}
                     </h2>
                     <div className="flex flex-wrap items-center gap-2 mt-1">
-                      <span className={`text-xs px-2 py-0.5 rounded-full border ${displayQ.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
-                        displayQ.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
-                          'border-zinc-200 text-zinc-600 bg-zinc-50'
-                        }`}>
-                        {displayQ.type.includes('multiple') ? 'Multi-Select' : displayQ.type.includes('text') ? 'Flashcard' : 'Single Choice'}
-                      </span>
-
-                      {displayQ.category && (
-                        <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
-                          {displayQ.category}
+                      {!isFocused && (
+                        <span className={`text-xs px-2 py-0.5 rounded-full border ${displayQ.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
+                          displayQ.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
+                            'border-zinc-200 text-zinc-600 bg-zinc-50'
+                          }`}>
+                          {displayQ.type.includes('multiple') ? 'Multi-Select' : displayQ.type.includes('text') ? 'Flashcard' : 'Single Choice'}
                         </span>
                       )}
 
-                      {/* Algorithm Tag */}
-                      {stats[displayQ.id] && (stats[displayQ.id].correct / (stats[displayQ.id].correct + stats[displayQ.id].wrong) < 0.7) && (
+                      {displayQ.category && (
+                        isFocused ? (
+                          <span className="text-xs text-zinc-400 dark:text-[#9D99A8]">{displayQ.category}</span>
+                        ) : (
+                          <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
+                            {displayQ.category}
+                          </span>
+                        )
+                      )}
+
+                      {!isFocused && stats[displayQ.id] && (stats[displayQ.id].correct / (stats[displayQ.id].correct + stats[displayQ.id].wrong) < 0.7) && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-orange-200 text-orange-600 bg-orange-50 flex items-center gap-1">
                           <RotateCcw size={10} /> Review
                         </span>
                       )}
-                      {!stats[displayQ.id] && (
+                      {!isFocused && !stats[displayQ.id] && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-green-200 text-green-600 bg-green-50 flex items-center gap-1">
                           New
                         </span>
@@ -1822,7 +1827,10 @@ export default function App() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative">
+                <div className={isFocused
+                  ? "bg-white dark:bg-[#0F0E13] p-6 md:p-10 min-h-[400px] flex flex-col relative"
+                  : "bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative"
+                }>
                   <div className="flex items-start justify-between">
                     <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{displayQ.question}</h3>
                     <div className="flex items-center gap-2 shrink-0">
