@@ -400,6 +400,15 @@ export default function App() {
     localStorage.setItem('focusMode', String(focusMode));
   }, [focusMode]);
   const isFocused = focusMode && view === 'playing';
+  // Shrink focus-mode sizing as the number of options grows, so a long
+  // multi-select question never needs the page to scroll to see every option.
+  const focusDensity = useMemo(() => {
+    if (!isFocused) return 'normal';
+    const n = displayQ?.options?.length || 0;
+    if (n >= 7) return 'tight';
+    if (n >= 5) return 'compact';
+    return 'roomy';
+  }, [isFocused, displayQ]);
 
 
   // --- FIREBASE AUTH INIT ---
@@ -1183,8 +1192,11 @@ export default function App() {
 
 
   // --- RENDER HELPERS ---
+  const focusOptionSizeClass = { roomy: 'p-6 text-lg', compact: 'p-4 text-base', tight: 'p-3 text-sm', normal: 'p-4' }[focusDensity];
+  const focusGapClass = { roomy: 'space-y-3', compact: 'space-y-2', tight: 'space-y-1.5', normal: 'space-y-3' }[focusDensity];
+
   const renderSingleChoice = () => (
-    <div className="space-y-3">
+    <div className={focusGapClass}>
       {displayQ.options.map((option, idx) => {
         const isSelected = userAnswers[currentQuestionIndex] === option;
         const ans = displayQ.answer;
@@ -1203,7 +1215,7 @@ export default function App() {
             <button
               disabled={showFeedback}
               onClick={() => submitAnswer(isCorrect, option)}
-              className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${isFocused ? 'p-6 text-lg' : 'p-4'} ${style}`}
+              className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${focusOptionSizeClass} ${style}`}
             >
               <div className="flex items-center gap-3">
                 <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
@@ -1244,7 +1256,7 @@ export default function App() {
   const renderMultiChoice = () => {
     return (
       <div className="space-y-4">
-        <div className="space-y-3">
+        <div className={focusGapClass}>
           {displayQ.options.map((option, idx) => {
             const isSelected = multiSelection.includes(option);
             const isActuallyCorrect = displayQ.answer.includes(option);
@@ -1273,7 +1285,7 @@ export default function App() {
                 <button
                   disabled={showFeedback}
                   onClick={() => toggleSelection(option)}
-                  className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${style}`}
+                  className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${focusOptionSizeClass} ${style}`}
                 >
                   <div className="flex items-center gap-3 w-full">
                     <span className={`w-6 h-6 flex flex-shrink-0 items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
@@ -1831,11 +1843,22 @@ export default function App() {
 
                 {/* Card */}
                 <div className={isFocused
-                  ? "bg-white dark:bg-[#0F0E13] p-10 md:p-20 min-h-[80vh] flex flex-col relative"
+                  ? {
+                    roomy: "bg-white dark:bg-[#0F0E13] p-10 md:p-20 min-h-[80vh] flex flex-col relative",
+                    compact: "bg-white dark:bg-[#0F0E13] p-8 md:p-14 min-h-[70vh] flex flex-col relative",
+                    tight: "bg-white dark:bg-[#0F0E13] p-6 md:p-10 min-h-[60vh] flex flex-col relative",
+                  }[focusDensity]
                   : "bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative"
                 }>
                   <div className="flex items-start justify-between">
-                    <h3 className={isFocused ? "text-4xl md:text-5xl font-bold text-zinc-800 dark:text-white mb-10 leading-snug" : "text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug"}>{displayQ.question}</h3>
+                    <h3 className={isFocused
+                      ? {
+                        roomy: "text-4xl md:text-5xl font-bold text-zinc-800 dark:text-white mb-10 leading-snug",
+                        compact: "text-3xl md:text-4xl font-bold text-zinc-800 dark:text-white mb-6 leading-snug",
+                        tight: "text-2xl md:text-3xl font-bold text-zinc-800 dark:text-white mb-4 leading-snug",
+                      }[focusDensity]
+                      : "text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug"
+                    }>{displayQ.question}</h3>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
                         <Keyboard size={20} />
