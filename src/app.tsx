@@ -290,6 +290,27 @@ export default function App() {
     return false;
   }, [refreshAiStatus]);
 
+  // Logs every successful AI call (grading/explain/help) per user so the
+  // admin panel can show a usage leaderboard. Aggregated counters only —
+  // no per-request log, so this stays a single cheap doc write per call.
+  const recordAiUsage = useCallback(async (totalTokens: number) => {
+    if (!user || !appUser) return;
+    try {
+      const usageRef = doc(db, 'artifacts', appId, 'ai_usage', user.uid);
+      const snap = await getDoc(usageRef);
+      const now = new Date().toISOString();
+      await setDoc(usageRef, {
+        username: appUser.username,
+        totalRequests: increment(1),
+        totalTokens: increment(totalTokens || 0),
+        lastUsed: now,
+        ...(snap.exists() ? {} : { firstUsed: now })
+      }, { merge: true });
+    } catch (e) {
+      console.error("Failed to record AI usage", e);
+    }
+  }, [user, appUser]);
+
   // --- UPDATE-AVAILABLE CHECK ---
   // Production used to run the Vite dev server, whose HMR client force-reloads
   // the page the moment it reconnects after a deploy — losing whatever the
@@ -389,6 +410,7 @@ export default function App() {
   const [adminUsers, setAdminUsers] = useState([]);
   const [selectedAdminUser, setSelectedAdminUser] = useState(null);
   const [selectedAdminUserData, setSelectedAdminUserData] = useState(null);
+  const [aiUsageLeaderboard, setAiUsageLeaderboard] = useState([]);
 
   // Sidebar State
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -612,6 +634,7 @@ export default function App() {
     try {
       const answerForGrading = Array.isArray(displayQ.answer) ? displayQ.answer.join(', ') : displayQ.answer;
       const result = await gradeAnswer(displayQ.question, answerForGrading, typedAnswer.trim(), uiLang);
+      recordAiUsage(result.usage?.totalTokens);
       submitAnswer(result.correct, typedAnswer.trim());
     } catch (e) {
       // On rate limit this flips aiEnabled off, so the UI falls back to the
@@ -1167,6 +1190,35 @@ export default function App() {
         }
       };
       fetchUsers();
+
+      const fetchAiUsage = async () => {
+        try {
+          const snap = await getDocs(collection(db, 'artifacts', appId, 'ai_usage'));
+          const rows = snap.docs.map(d => {
+            const data = d.data();
+            const requests = data.totalRequests || 0;
+            const tokens = data.totalTokens || 0;
+            const first = data.firstUsed ? new Date(data.firstUsed).getTime() : Date.now();
+            const last = data.lastUsed ? new Date(data.lastUsed).getTime() : Date.now();
+            // Floor at 1 minute so a handful of requests seconds apart don't
+            // produce a wildly inflated (or infinite) per-minute rate.
+            const minutes = Math.max(1, (last - first) / 60000);
+            return {
+              uid: d.id,
+              username: data.username || 'Unknown',
+              totalRequests: requests,
+              totalTokens: tokens,
+              avgRequestsPerMin: requests / minutes,
+              avgTokensPerMin: tokens / minutes
+            };
+          });
+          rows.sort((a, b) => b.totalTokens - a.totalTokens);
+          setAiUsageLeaderboard(rows);
+        } catch (e) {
+          console.error("AI usage fetch error", e);
+        }
+      };
+      fetchAiUsage();
     }
   }, [view, appUser]);
 
@@ -1245,7 +1297,7 @@ export default function App() {
               </button>
             )}
             {explainContext?.id === optionKey && (
-              <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+              <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
             )}
           </div>
         );
@@ -1314,7 +1366,7 @@ export default function App() {
                   </button>
                 )}
                 {explainContext?.id === optionKey && (
-                  <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+                  <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
                 )}
               </div>
             );
@@ -1378,7 +1430,7 @@ export default function App() {
                 </button>
               )}
               {explainContext?.id === `${displayQ.id}::text` && (
-                <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+                <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
               )}
             </div>
           )}
@@ -2101,6 +2153,44 @@ export default function App() {
                   )}
                 </div>
               </div>
+
+              {/* AI Usage Leaderboard */}
+              <div className="mt-8 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] overflow-hidden">
+                <div className="p-4 border-b border-zinc-100 dark:border-[#2A2633] bg-zinc-50 dark:bg-[#23202B] flex items-center gap-2">
+                  <Zap size={16} className="text-purple-500" />
+                  <h2 className="font-bold text-zinc-700 dark:text-white">AI Usage Leaderboard</h2>
+                </div>
+                {aiUsageLeaderboard.length === 0 ? (
+                  <p className="p-4 text-sm text-zinc-400 italic">No AI usage recorded yet.</p>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="text-left text-xs text-zinc-400 uppercase tracking-wider border-b border-zinc-100 dark:border-[#2A2633]">
+                          <th className="p-3">User</th>
+                          <th className="p-3 text-right">Requests</th>
+                          <th className="p-3 text-right">Tokens</th>
+                          <th className="p-3 text-right">Avg Req/min</th>
+                          <th className="p-3 text-right">Avg Tokens/min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {aiUsageLeaderboard.map((row, idx) => (
+                          <tr key={row.uid} className="border-b border-zinc-50 dark:border-[#23202B] last:border-0">
+                            <td className="p-3 font-bold text-zinc-800 dark:text-white">
+                              {idx === 0 && '🥇 '}{idx === 1 && '🥈 '}{idx === 2 && '🥉 '}{row.username}
+                            </td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.totalRequests.toLocaleString()}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.totalTokens.toLocaleString()}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.avgRequestsPerMin.toFixed(2)}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.avgTokensPerMin.toFixed(1)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -2339,7 +2429,7 @@ export default function App() {
         </div>
       )}
 
-      <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} />
+      <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
       {updateCard}
     </div>
   );

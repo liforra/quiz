@@ -33,6 +33,16 @@ service cloud.firestore {
         allow write: if isSignedIn();
       }
 
+      // 3b. AI Usage Tracking
+      // Path: artifacts/{appId}/ai_usage/{uid}
+      // Logic: Same shape as User Private Data above — a user may only
+      // read/write their own usage counters; liforra can read everyone's
+      // for the admin panel's AI usage leaderboard.
+      match /ai_usage/{userId} {
+        allow read, write: if isOwner(userId);
+        allow read: if isSignedIn() && request.auth.token.email == 'liforra@quiz.local';
+      }
+
       // 3. Per-Quiz Leaderboards
       // Path: artifacts/{appId}/public/data/leaderboards/{quizId}/entries/{uid}
       // Logic: Any authenticated user can read every leaderboard entry, but

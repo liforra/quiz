@@ -17,6 +17,10 @@ export interface AiStatus {
   retryAfterSeconds: number;
 }
 
+export interface AiUsage {
+  totalTokens: number;
+}
+
 export async function checkAiStatus(): Promise<AiStatus> {
   try {
     const res = await fetch('/api/groq/status');
@@ -34,7 +38,7 @@ async function throwIfRateLimited(res: Response) {
   }
 }
 
-export async function gradeAnswer(question: string, correctAnswer: any, userAnswer: string, lang: Lang): Promise<{ correct: boolean; reasoning: string }> {
+export async function gradeAnswer(question: string, correctAnswer: any, userAnswer: string, lang: Lang): Promise<{ correct: boolean; reasoning: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/grade', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -45,7 +49,7 @@ export async function gradeAnswer(question: string, correctAnswer: any, userAnsw
   return res.json();
 }
 
-export async function explainAnswer(question: string, options: any, correctAnswer: any, userAnswer: any, wasCorrect: boolean, lang: Lang): Promise<string> {
+export async function explainAnswer(question: string, options: any, correctAnswer: any, userAnswer: any, wasCorrect: boolean, lang: Lang): Promise<{ explanation: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/explain', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -53,8 +57,7 @@ export async function explainAnswer(question: string, options: any, correctAnswe
   });
   await throwIfRateLimited(res);
   if (!res.ok) throw new Error('AI explanation failed');
-  const data = await res.json();
-  return data.explanation;
+  return res.json();
 }
 
 export interface ChatMessage {
@@ -62,7 +65,7 @@ export interface ChatMessage {
   content: string;
 }
 
-export async function askHelp(question: string, options: any, history: ChatMessage[], lang: Lang): Promise<string> {
+export async function askHelp(question: string, options: any, history: ChatMessage[], lang: Lang): Promise<{ reply: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/help', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -70,6 +73,5 @@ export async function askHelp(question: string, options: any, history: ChatMessa
   });
   await throwIfRateLimited(res);
   if (!res.ok) throw new Error('AI help chat failed');
-  const data = await res.json();
-  return data.reply;
+  return res.json();
 }

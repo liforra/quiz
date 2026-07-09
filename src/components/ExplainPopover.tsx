@@ -17,9 +17,10 @@ interface ExplainPopoverProps {
   onClose: () => void;
   uiLang: Lang;
   onAiError?: (e: any) => boolean;
+  onAiUsage?: (totalTokens: number) => void;
 }
 
-export default function ExplainPopover({ context, onClose, uiLang, onAiError }: ExplainPopoverProps) {
+export default function ExplainPopover({ context, onClose, uiLang, onAiError, onAiUsage }: ExplainPopoverProps) {
   // Cached per question id so reopening within the session doesn't refire the request.
   const cache = useRef<Map<string, string>>(new Map());
   const [text, setText] = useState('');
@@ -39,8 +40,9 @@ export default function ExplainPopover({ context, onClose, uiLang, onAiError }: 
     setText('');
     explainAnswer(context.question, context.options, context.correctAnswer, context.userAnswer, context.wasCorrect, uiLang)
       .then(result => {
-        cache.current.set(context.id, result);
-        setText(result);
+        cache.current.set(context.id, result.explanation);
+        setText(result.explanation);
+        onAiUsage?.(result.usage?.totalTokens);
       })
       .catch(e => {
         onAiError?.(e);
