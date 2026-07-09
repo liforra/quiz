@@ -5,7 +5,8 @@ import {
   Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard,
   Globe, Shield, X, Download, Menu, GraduationCap,
   Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
-  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy
+  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy,
+  Maximize2, Minimize2
 } from 'lucide-react';
 import { BUILT_IN_MODES } from './modes';
 import { DEFAULT_QUIZZES } from './defaultQuizzes';
@@ -392,6 +393,13 @@ export default function App() {
   // Sidebar State
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
+
+  // Focus Mode State (hides nav chrome while playing)
+  const [focusMode, setFocusMode] = useState(() => localStorage.getItem('focusMode') === 'true');
+  useEffect(() => {
+    localStorage.setItem('focusMode', String(focusMode));
+  }, [focusMode]);
+  const isFocused = focusMode && view === 'playing';
 
 
   // --- FIREBASE AUTH INIT ---
@@ -1496,49 +1504,53 @@ export default function App() {
       <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex">
 
         {/* Sidebar */}
-        <Sidebar
-          view={view}
-          setView={setView}
-          theme={theme}
-          setTheme={setTheme}
-          user={user}
-          appUser={appUser}
-          defaultQuizzes={DEFAULT_QUIZZES}
-          privateQuizzes={privateQuizzes}
-          publicQuizzes={publicQuizzes}
-          onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
-          onSelectQuickQuiz={handleQuickQuizSession}
-          onEditQuiz={(quiz) => {
-            setEditingQuiz(quiz);
-            setEditTitle(quiz.title);
-            setSelectedIcon(quiz.icon || "BookOpen");
-            setSelectedModes(quiz.modes || []);
-          }}
-          onDeleteQuiz={handleDeleteQuiz}
-          onLogout={() => auth.signOut()}
-          isOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-          gravatarUrl={gravatarUrl}
-          onOpenSettings={openSettingsModal}
-          uiLang={uiLang}
-          setUiLang={setUiLang}
-          activeMode={activeMode}
-          setActiveMode={setActiveMode}
-          builtInModes={BUILT_IN_MODES}
-          customModes={customModes}
-          onCreateMode={saveCustomMode}
-        />
+        {!isFocused && (
+          <Sidebar
+            view={view}
+            setView={setView}
+            theme={theme}
+            setTheme={setTheme}
+            user={user}
+            appUser={appUser}
+            defaultQuizzes={DEFAULT_QUIZZES}
+            privateQuizzes={privateQuizzes}
+            publicQuizzes={publicQuizzes}
+            onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
+            onSelectQuickQuiz={handleQuickQuizSession}
+            onEditQuiz={(quiz) => {
+              setEditingQuiz(quiz);
+              setEditTitle(quiz.title);
+              setSelectedIcon(quiz.icon || "BookOpen");
+              setSelectedModes(quiz.modes || []);
+            }}
+            onDeleteQuiz={handleDeleteQuiz}
+            onLogout={() => auth.signOut()}
+            isOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+            gravatarUrl={gravatarUrl}
+            onOpenSettings={openSettingsModal}
+            uiLang={uiLang}
+            setUiLang={setUiLang}
+            activeMode={activeMode}
+            setActiveMode={setActiveMode}
+            builtInModes={BUILT_IN_MODES}
+            customModes={customModes}
+            onCreateMode={saveCustomMode}
+          />
+        )}
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
 
           {/* Mobile Header */}
-          <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
-            <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
-              <Menu size={20} />
-            </button>
-            <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
-          </div>
+          {!isFocused && (
+            <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
+              <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
+                <Menu size={20} />
+              </button>
+              <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
+            </div>
+          )}
 
           {aiConfigured && aiRateLimited && (
             <div className="px-4 py-2 bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800/30 text-amber-700 dark:text-amber-400 text-xs font-medium text-center">
@@ -1793,6 +1805,14 @@ export default function App() {
                         <Timer size={14} /> {Math.floor(quizTimeLeft / 60)}:{String(quizTimeLeft % 60).padStart(2, '0')}
                       </span>
                     )}
+                    <button
+                      onClick={() => setFocusMode(f => !f)}
+                      title={focusMode ? "Exit Focus Mode" : "Enter Focus Mode"}
+                      className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+                    >
+                      {focusMode ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+                      <span className="hidden sm:inline">{focusMode ? "Exit Focus" : "Focus Mode"}</span>
+                    </button>
                     <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
                   </div>
                 </div>
