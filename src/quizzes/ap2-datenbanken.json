@@ -23,7 +23,8 @@
             "SELECT name FROM kunden SORT BY ort = 'Berlin';"
           ],
           "answer": "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
-          "explanation": "WHERE filters rows, ORDER BY sorts the result. GROUP BY/HAVING are for grouping and aggregates; SORT BY does not exist in SQL."
+          "explanation": "WHERE filters rows, ORDER BY sorts the result. GROUP BY/HAVING are for grouping and aggregates; SORT BY does not exist in SQL.",
+          "category": "Databases"
         }
       }
     },
@@ -50,7 +51,8 @@
             "ALTER TABLE"
           ],
           "answer": "INSERT INTO",
-          "explanation": "INSERT INTO adds new rows, UPDATE modifies existing ones, CREATE TABLE creates a new table, ALTER TABLE changes the table structure."
+          "explanation": "INSERT INTO adds new rows, UPDATE modifies existing ones, CREATE TABLE creates a new table, ALTER TABLE changes the table structure.",
+          "category": "Databases"
         }
       }
     },
@@ -77,7 +79,8 @@
             "FULL OUTER JOIN"
           ],
           "answer": "INNER JOIN",
-          "explanation": "INNER JOIN = only matches in both tables. LEFT/RIGHT JOIN additionally keep all rows of the left/right table, FULL OUTER JOIN keeps all rows of both."
+          "explanation": "INNER JOIN = only matches in both tables. LEFT/RIGHT JOIN additionally keep all rows of the left/right table, FULL OUTER JOIN keeps all rows of both.",
+          "category": "Databases"
         }
       }
     },
@@ -104,7 +107,8 @@
             "MAX()"
           ],
           "answer": "COUNT()",
-          "explanation": "COUNT() counts rows, SUM() adds up values, AVG() computes the average, MAX() returns the largest value."
+          "explanation": "COUNT() counts rows, SUM() adds up values, AVG() computes the average, MAX() returns the largest value.",
+          "category": "Databases"
         }
       }
     },
@@ -141,7 +145,8 @@
             "UPDATE",
             "DELETE"
           ],
-          "explanation": "DML manipulates data (INSERT, UPDATE, DELETE). CREATE and DROP change the structure and belong to DDL (Data Definition Language)."
+          "explanation": "DML manipulates data (INSERT, UPDATE, DELETE). CREATE and DROP change the structure and belong to DDL (Data Definition Language).",
+          "category": "Databases"
         }
       }
     },
@@ -176,7 +181,8 @@
             "It must not be NULL",
             "It unambiguously identifies every record"
           ],
-          "explanation": "Unique + not NULL = every record can be addressed unambiguously. Often an artificial ID (auto-increment) is used for this."
+          "explanation": "Unique + not NULL = every record can be addressed unambiguously. Often an artificial ID (auto-increment) is used for this.",
+          "category": "Databases"
         }
       }
     },
@@ -213,7 +219,8 @@
             "Prevent insert, update and delete anomalies",
             "Improve data consistency"
           ],
-          "explanation": "Normalization (1st–3rd normal form) structures data cleanly. Queries can actually become slower due to the required JOINs — which is why databases are sometimes deliberately denormalized."
+          "explanation": "Normalization (1st–3rd normal form) structures data cleanly. Queries can actually become slower due to the required JOINs — which is why databases are sometimes deliberately denormalized.",
+          "category": "Databases"
         }
       }
     },
@@ -250,7 +257,8 @@
             "PostgreSQL",
             "MariaDB"
           ],
-          "explanation": "MySQL, PostgreSQL and MariaDB store data in tables using SQL. MongoDB is a document database, Redis a key-value store (both NoSQL)."
+          "explanation": "MySQL, PostgreSQL and MariaDB store data in tables using SQL. MongoDB is a document database, Redis a key-value store (both NoSQL).",
+          "category": "Databases"
         }
       }
     },
@@ -265,7 +273,8 @@
         "en": {
           "question": "What is the purpose of the WHERE clause in an SQL query?",
           "answer": "It filters the rows by a condition — only records satisfying the condition appear in the result",
-          "explanation": "Example: WHERE price > 100 returns only rows with a price above 100. To filter aggregates after GROUP BY, you use HAVING instead."
+          "explanation": "Example: WHERE price > 100 returns only rows with a price above 100. To filter aggregates after GROUP BY, you use HAVING instead.",
+          "category": "Databases"
         }
       }
     },
@@ -280,7 +289,8 @@
         "en": {
           "question": "Which SQL command removes the table \"kunden\" completely — including its structure — from the database?",
           "answer": "DROP TABLE kunden;",
-          "explanation": "DROP TABLE deletes structure AND data. DELETE FROM kunden would only delete the rows, leaving the empty table in place (TRUNCATE empties it faster)."
+          "explanation": "DROP TABLE deletes structure AND data. DELETE FROM kunden would only delete the rows, leaving the empty table in place (TRUNCATE empties it faster).",
+          "category": "Databases"
         }
       }
     },
@@ -295,7 +305,8 @@
         "en": {
           "question": "What is a 1:n relationship? Give an example.",
           "answer": "One record in one table is linked to any number of records in another table — e.g. one customer has many orders, and each order belongs to exactly one customer",
-          "explanation": "It is implemented via a foreign key on the n side (e.g. customer_id in the orders table)."
+          "explanation": "It is implemented via a foreign key on the n side (e.g. customer_id in the orders table).",
+          "category": "Databases"
         }
       }
     },
@@ -310,7 +321,8 @@
         "en": {
           "question": "What does the abbreviation SQL stand for?",
           "answer": "Structured Query Language",
-          "explanation": "SQL is the standard language for relational databases — for queries (SELECT), data manipulation (DML) and structure definition (DDL)."
+          "explanation": "SQL is the standard language for relational databases — for queries (SELECT), data manipulation (DML) and structure definition (DDL).",
+          "category": "Databases"
         }
       }
     },
@@ -323,9 +335,10 @@
       "explanation": "SELECT liest Daten aus Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SELECT in Datenbanken?",
+          "question": "What is the purpose of SELECT in Databases?",
           "answer": "SELECT reads data from tables.",
-          "explanation": "SELECT reads data from tables. This is a common exam building block because it separates function from use case."
+          "explanation": "SELECT reads data from tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -338,9 +351,10 @@
       "explanation": "FROM gibt die Quelltabelle einer Abfrage an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FROM in Datenbanken?",
+          "question": "What is the purpose of FROM in Databases?",
           "answer": "FROM specifies the source table of a query.",
-          "explanation": "FROM specifies the source table of a query. This is a common exam building block because it separates function from use case."
+          "explanation": "FROM specifies the source table of a query. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -353,9 +367,10 @@
       "explanation": "WHERE filtert Zeilen nach Bedingungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of WHERE in Datenbanken?",
+          "question": "What is the purpose of WHERE in Databases?",
           "answer": "WHERE filters rows by conditions.",
-          "explanation": "WHERE filters rows by conditions. This is a common exam building block because it separates function from use case."
+          "explanation": "WHERE filters rows by conditions. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -368,9 +383,10 @@
       "explanation": "ORDER BY sortiert das Abfrageergebnis. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ORDER BY in Datenbanken?",
+          "question": "What is the purpose of ORDER BY in Databases?",
           "answer": "ORDER BY sorts the query result.",
-          "explanation": "ORDER BY sorts the query result. This is a common exam building block because it separates function from use case."
+          "explanation": "ORDER BY sorts the query result. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -383,9 +399,10 @@
       "explanation": "GROUP BY fasst Zeilen für Aggregationen zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of GROUP BY in Datenbanken?",
+          "question": "What is the purpose of GROUP BY in Databases?",
           "answer": "GROUP BY groups rows for aggregation.",
-          "explanation": "GROUP BY groups rows for aggregation. This is a common exam building block because it separates function from use case."
+          "explanation": "GROUP BY groups rows for aggregation. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -398,9 +415,10 @@
       "explanation": "HAVING filtert Gruppen nach einer Aggregation. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of HAVING in Datenbanken?",
+          "question": "What is the purpose of HAVING in Databases?",
           "answer": "HAVING filters groups after aggregation.",
-          "explanation": "HAVING filters groups after aggregation. This is a common exam building block because it separates function from use case."
+          "explanation": "HAVING filters groups after aggregation. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -413,9 +431,10 @@
       "explanation": "COUNT zählt Zeilen oder Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of COUNT in Datenbanken?",
+          "question": "What is the purpose of COUNT in Databases?",
           "answer": "COUNT counts rows or values.",
-          "explanation": "COUNT counts rows or values. This is a common exam building block because it separates function from use case."
+          "explanation": "COUNT counts rows or values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -428,9 +447,10 @@
       "explanation": "SUM addiert numerische Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SUM in Datenbanken?",
+          "question": "What is the purpose of SUM in Databases?",
           "answer": "SUM adds numeric values.",
-          "explanation": "SUM adds numeric values. This is a common exam building block because it separates function from use case."
+          "explanation": "SUM adds numeric values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -443,9 +463,10 @@
       "explanation": "AVG berechnet den Durchschnitt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of AVG in Datenbanken?",
+          "question": "What is the purpose of AVG in Databases?",
           "answer": "AVG calculates the average.",
-          "explanation": "AVG calculates the average. This is a common exam building block because it separates function from use case."
+          "explanation": "AVG calculates the average. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -458,9 +479,10 @@
       "explanation": "MIN ermittelt den kleinsten Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MIN in Datenbanken?",
+          "question": "What is the purpose of MIN in Databases?",
           "answer": "MIN finds the smallest value.",
-          "explanation": "MIN finds the smallest value. This is a common exam building block because it separates function from use case."
+          "explanation": "MIN finds the smallest value. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -473,9 +495,10 @@
       "explanation": "MAX ermittelt den größten Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MAX in Datenbanken?",
+          "question": "What is the purpose of MAX in Databases?",
           "answer": "MAX finds the largest value.",
-          "explanation": "MAX finds the largest value. This is a common exam building block because it separates function from use case."
+          "explanation": "MAX finds the largest value. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -488,9 +511,10 @@
       "explanation": "INNER JOIN liefert nur passende Datensätze aus beiden Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INNER JOIN in Datenbanken?",
+          "question": "What is the purpose of INNER JOIN in Databases?",
           "answer": "INNER JOIN returns only matching rows from both tables.",
-          "explanation": "INNER JOIN returns only matching rows from both tables. This is a common exam building block because it separates function from use case."
+          "explanation": "INNER JOIN returns only matching rows from both tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -503,9 +527,10 @@
       "explanation": "LEFT JOIN liefert alle linken Zeilen und passende rechte Zeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of LEFT JOIN in Datenbanken?",
+          "question": "What is the purpose of LEFT JOIN in Databases?",
           "answer": "LEFT JOIN returns all left rows and matching right rows.",
-          "explanation": "LEFT JOIN returns all left rows and matching right rows. This is a common exam building block because it separates function from use case."
+          "explanation": "LEFT JOIN returns all left rows and matching right rows. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -518,9 +543,10 @@
       "explanation": "RIGHT JOIN liefert alle rechten Zeilen und passende linke Zeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RIGHT JOIN in Datenbanken?",
+          "question": "What is the purpose of RIGHT JOIN in Databases?",
           "answer": "RIGHT JOIN returns all right rows and matching left rows.",
-          "explanation": "RIGHT JOIN returns all right rows and matching left rows. This is a common exam building block because it separates function from use case."
+          "explanation": "RIGHT JOIN returns all right rows and matching left rows. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -533,9 +559,10 @@
       "explanation": "FULL OUTER JOIN liefert passende und nicht passende Zeilen beider Seiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FULL OUTER JOIN in Datenbanken?",
+          "question": "What is the purpose of FULL OUTER JOIN in Databases?",
           "answer": "FULL OUTER JOIN returns matching and non-matching rows from both sides.",
-          "explanation": "FULL OUTER JOIN returns matching and non-matching rows from both sides. This is a common exam building block because it separates function from use case."
+          "explanation": "FULL OUTER JOIN returns matching and non-matching rows from both sides. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -548,9 +575,10 @@
       "explanation": "CROSS JOIN bildet das kartesische Produkt zweier Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CROSS JOIN in Datenbanken?",
+          "question": "What is the purpose of CROSS JOIN in Databases?",
           "answer": "CROSS JOIN creates the Cartesian product of two tables.",
-          "explanation": "CROSS JOIN creates the Cartesian product of two tables. This is a common exam building block because it separates function from use case."
+          "explanation": "CROSS JOIN creates the Cartesian product of two tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -563,9 +591,10 @@
       "explanation": "INSERT fügt neue Datensätze ein. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INSERT in Datenbanken?",
+          "question": "What is the purpose of INSERT in Databases?",
           "answer": "INSERT inserts new records.",
-          "explanation": "INSERT inserts new records. This is a common exam building block because it separates function from use case."
+          "explanation": "INSERT inserts new records. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -578,9 +607,10 @@
       "explanation": "UPDATE ändert bestehende Datensätze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of UPDATE in Datenbanken?",
+          "question": "What is the purpose of UPDATE in Databases?",
           "answer": "UPDATE changes existing records.",
-          "explanation": "UPDATE changes existing records. This is a common exam building block because it separates function from use case."
+          "explanation": "UPDATE changes existing records. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -593,9 +623,10 @@
       "explanation": "DELETE löscht Datensätze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DELETE in Datenbanken?",
+          "question": "What is the purpose of DELETE in Databases?",
           "answer": "DELETE deletes records.",
-          "explanation": "DELETE deletes records. This is a common exam building block because it separates function from use case."
+          "explanation": "DELETE deletes records. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -608,9 +639,10 @@
       "explanation": "CREATE TABLE legt eine neue Tabelle an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CREATE TABLE in Datenbanken?",
+          "question": "What is the purpose of CREATE TABLE in Databases?",
           "answer": "CREATE TABLE creates a new table.",
-          "explanation": "CREATE TABLE creates a new table. This is a common exam building block because it separates function from use case."
+          "explanation": "CREATE TABLE creates a new table. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -623,9 +655,10 @@
       "explanation": "ALTER TABLE ändert die Struktur einer Tabelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ALTER TABLE in Datenbanken?",
+          "question": "What is the purpose of ALTER TABLE in Databases?",
           "answer": "ALTER TABLE changes the structure of a table.",
-          "explanation": "ALTER TABLE changes the structure of a table. This is a common exam building block because it separates function from use case."
+          "explanation": "ALTER TABLE changes the structure of a table. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -638,9 +671,10 @@
       "explanation": "DROP TABLE löscht eine Tabelle inklusive Struktur. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DROP TABLE in Datenbanken?",
+          "question": "What is the purpose of DROP TABLE in Databases?",
           "answer": "DROP TABLE deletes a table including its structure.",
-          "explanation": "DROP TABLE deletes a table including its structure. This is a common exam building block because it separates function from use case."
+          "explanation": "DROP TABLE deletes a table including its structure. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -653,9 +687,10 @@
       "explanation": "PRIMARY KEY identifiziert Datensätze eindeutig. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PRIMARY KEY in Datenbanken?",
+          "question": "What is the purpose of PRIMARY KEY in Databases?",
           "answer": "PRIMARY KEY uniquely identifies records.",
-          "explanation": "PRIMARY KEY uniquely identifies records. This is a common exam building block because it separates function from use case."
+          "explanation": "PRIMARY KEY uniquely identifies records. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -668,9 +703,10 @@
       "explanation": "FOREIGN KEY verweist auf einen Schlüssel einer anderen Tabelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FOREIGN KEY in Datenbanken?",
+          "question": "What is the purpose of FOREIGN KEY in Databases?",
           "answer": "FOREIGN KEY references a key in another table.",
-          "explanation": "FOREIGN KEY references a key in another table. This is a common exam building block because it separates function from use case."
+          "explanation": "FOREIGN KEY references a key in another table. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -683,9 +719,10 @@
       "explanation": "UNIQUE erzwingt eindeutige Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of UNIQUE in Datenbanken?",
+          "question": "What is the purpose of UNIQUE in Databases?",
           "answer": "UNIQUE enforces unique values.",
-          "explanation": "UNIQUE enforces unique values. This is a common exam building block because it separates function from use case."
+          "explanation": "UNIQUE enforces unique values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -698,9 +735,10 @@
       "explanation": "NOT NULL verbietet leere NULL-Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NOT NULL in Datenbanken?",
+          "question": "What is the purpose of NOT NULL in Databases?",
           "answer": "NOT NULL forbids NULL values.",
-          "explanation": "NOT NULL forbids NULL values. This is a common exam building block because it separates function from use case."
+          "explanation": "NOT NULL forbids NULL values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -713,9 +751,10 @@
       "explanation": "DEFAULT setzt einen Standardwert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DEFAULT in Datenbanken?",
+          "question": "What is the purpose of DEFAULT in Databases?",
           "answer": "DEFAULT sets a default value.",
-          "explanation": "DEFAULT sets a default value. This is a common exam building block because it separates function from use case."
+          "explanation": "DEFAULT sets a default value. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -728,9 +767,10 @@
       "explanation": "CHECK prüft Werte gegen eine Bedingung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CHECK in Datenbanken?",
+          "question": "What is the purpose of CHECK in Databases?",
           "answer": "CHECK checks values against a condition.",
-          "explanation": "CHECK checks values against a condition. This is a common exam building block because it separates function from use case."
+          "explanation": "CHECK checks values against a condition. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -743,9 +783,10 @@
       "explanation": "INDEX beschleunigt Such- und Sortierzugriffe. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INDEX in Datenbanken?",
+          "question": "What is the purpose of INDEX in Databases?",
           "answer": "INDEX speeds up search and sort access.",
-          "explanation": "INDEX speeds up search and sort access. This is a common exam building block because it separates function from use case."
+          "explanation": "INDEX speeds up search and sort access. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -758,9 +799,10 @@
       "explanation": "VIEW stellt eine gespeicherte virtuelle Abfrage bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VIEW in Datenbanken?",
+          "question": "What is the purpose of VIEW in Databases?",
           "answer": "VIEW provides a stored virtual query.",
-          "explanation": "VIEW provides a stored virtual query. This is a common exam building block because it separates function from use case."
+          "explanation": "VIEW provides a stored virtual query. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -773,9 +815,10 @@
       "explanation": "TRANSACTION fasst mehrere Änderungen logisch zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TRANSACTION in Datenbanken?",
+          "question": "What is the purpose of TRANSACTION in Databases?",
           "answer": "TRANSACTION groups several changes logically.",
-          "explanation": "TRANSACTION groups several changes logically. This is a common exam building block because it separates function from use case."
+          "explanation": "TRANSACTION groups several changes logically. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -788,9 +831,10 @@
       "explanation": "COMMIT macht Transaktionsänderungen dauerhaft. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of COMMIT in Datenbanken?",
+          "question": "What is the purpose of COMMIT in Databases?",
           "answer": "COMMIT makes transaction changes permanent.",
-          "explanation": "COMMIT makes transaction changes permanent. This is a common exam building block because it separates function from use case."
+          "explanation": "COMMIT makes transaction changes permanent. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -803,9 +847,10 @@
       "explanation": "ROLLBACK nimmt Transaktionsänderungen zurück. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ROLLBACK in Datenbanken?",
+          "question": "What is the purpose of ROLLBACK in Databases?",
           "answer": "ROLLBACK undoes transaction changes.",
-          "explanation": "ROLLBACK undoes transaction changes. This is a common exam building block because it separates function from use case."
+          "explanation": "ROLLBACK undoes transaction changes. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -818,9 +863,10 @@
       "explanation": "ACID beschreibt Atomarität, Konsistenz, Isolation und Dauerhaftigkeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ACID in Datenbanken?",
+          "question": "What is the purpose of ACID in Databases?",
           "answer": "ACID describes atomicity, consistency, isolation and durability.",
-          "explanation": "ACID describes atomicity, consistency, isolation and durability. This is a common exam building block because it separates function from use case."
+          "explanation": "ACID describes atomicity, consistency, isolation and durability. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -833,9 +879,10 @@
       "explanation": "1. Normalform verlangt atomare Werte ohne Wiederholungsgruppen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 1. Normalform in Datenbanken?",
-          "answer": "1. Normalform requires atomic values without repeating groups.",
-          "explanation": "1. Normalform requires atomic values without repeating groups. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of 1st normal form in Databases?",
+          "answer": "1st normal form requires atomic values without repeating groups.",
+          "explanation": "1st normal form requires atomic values without repeating groups. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -848,9 +895,10 @@
       "explanation": "2. Normalform beseitigt partielle Abhängigkeiten vom zusammengesetzten Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 2. Normalform in Datenbanken?",
-          "answer": "2. Normalform removes partial dependencies from a composite key.",
-          "explanation": "2. Normalform removes partial dependencies from a composite key. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of 2nd normal form in Databases?",
+          "answer": "2nd normal form removes partial dependencies from a composite key.",
+          "explanation": "2nd normal form removes partial dependencies from a composite key. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -863,9 +911,10 @@
       "explanation": "3. Normalform beseitigt transitive Abhängigkeiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 3. Normalform in Datenbanken?",
-          "answer": "3. Normalform removes transitive dependencies.",
-          "explanation": "3. Normalform removes transitive dependencies. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of 3rd normal form in Databases?",
+          "answer": "3rd normal form removes transitive dependencies.",
+          "explanation": "3rd normal form removes transitive dependencies. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -878,9 +927,10 @@
       "explanation": "Redundanz bedeutet mehrfache Speicherung derselben Information. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Redundanz in Datenbanken?",
-          "answer": "Redundanz means storing the same information multiple times.",
-          "explanation": "Redundanz means storing the same information multiple times. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Redundancy in Databases?",
+          "answer": "Redundancy means storing the same information multiple times.",
+          "explanation": "Redundancy means storing the same information multiple times. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -893,9 +943,10 @@
       "explanation": "Anomalie ist eine unerwünschte Nebenwirkung durch schlechte Tabellenstruktur. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Anomalie in Datenbanken?",
-          "answer": "Anomalie is an unwanted side effect of poor table structure.",
-          "explanation": "Anomalie is an unwanted side effect of poor table structure. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Anomaly in Databases?",
+          "answer": "Anomaly is an unwanted side effect of poor table structure.",
+          "explanation": "Anomaly is an unwanted side effect of poor table structure. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -908,9 +959,10 @@
       "explanation": "ER-Modell modelliert Entitäten, Attribute und Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ER-Modell in Datenbanken?",
-          "answer": "ER-Modell models entities, attributes and relationships.",
-          "explanation": "ER-Modell models entities, attributes and relationships. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of ER model in Databases?",
+          "answer": "ER model models entities, attributes and relationships.",
+          "explanation": "ER model models entities, attributes and relationships. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -923,9 +975,10 @@
       "explanation": "Entität ist ein eindeutig beschreibbares Objekt der realen oder fachlichen Welt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Entität in Datenbanken?",
-          "answer": "Entität is a uniquely describable object in the domain.",
-          "explanation": "Entität is a uniquely describable object in the domain. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Entity in Databases?",
+          "answer": "Entity is a uniquely describable object in the domain.",
+          "explanation": "Entity is a uniquely describable object in the domain. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -938,9 +991,10 @@
       "explanation": "Attribut beschreibt eine Eigenschaft einer Entität. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Attribut in Datenbanken?",
-          "answer": "Attribut describes a property of an entity.",
-          "explanation": "Attribut describes a property of an entity. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Attribute in Databases?",
+          "answer": "Attribute describes a property of an entity.",
+          "explanation": "Attribute describes a property of an entity. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -953,9 +1007,10 @@
       "explanation": "Kardinalität beschreibt Mengenverhältnisse zwischen Entitäten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Kardinalität in Datenbanken?",
-          "answer": "Kardinalität describes quantity relationships between entities.",
-          "explanation": "Kardinalität describes quantity relationships between entities. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Cardinality in Databases?",
+          "answer": "Cardinality describes quantity relationships between entities.",
+          "explanation": "Cardinality describes quantity relationships between entities. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -968,9 +1023,10 @@
       "explanation": "1:1-Beziehung ordnet einem Datensatz höchstens einen Datensatz der anderen Seite zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 1:1-Beziehung in Datenbanken?",
-          "answer": "1:1-Beziehung assigns at most one record on the other side.",
-          "explanation": "1:1-Beziehung assigns at most one record on the other side. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of 1:1 relationship in Databases?",
+          "answer": "1:1 relationship assigns at most one record on the other side.",
+          "explanation": "1:1 relationship assigns at most one record on the other side. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -983,9 +1039,10 @@
       "explanation": "1:n-Beziehung ordnet einem Datensatz mehrere Datensätze der anderen Seite zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 1:n-Beziehung in Datenbanken?",
-          "answer": "1:n-Beziehung assigns several records on the other side.",
-          "explanation": "1:n-Beziehung assigns several records on the other side. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of 1:n relationship in Databases?",
+          "answer": "1:n relationship assigns several records on the other side.",
+          "explanation": "1:n relationship assigns several records on the other side. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -998,9 +1055,10 @@
       "explanation": "n:m-Beziehung wird relational meist über eine Zwischentabelle aufgelöst. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of n:m-Beziehung in Datenbanken?",
-          "answer": "n:m-Beziehung is usually resolved with a junction table.",
-          "explanation": "n:m-Beziehung is usually resolved with a junction table. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of n:m relationship in Databases?",
+          "answer": "n:m relationship is usually resolved with a junction table.",
+          "explanation": "n:m relationship is usually resolved with a junction table. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1013,9 +1071,10 @@
       "explanation": "Junction Table verknüpft zwei Tabellen bei n:m-Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Junction Table in Datenbanken?",
+          "question": "What is the purpose of Junction Table in Databases?",
           "answer": "Junction Table links two tables in many-to-many relationships.",
-          "explanation": "Junction Table links two tables in many-to-many relationships. This is a common exam building block because it separates function from use case."
+          "explanation": "Junction Table links two tables in many-to-many relationships. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1028,9 +1087,10 @@
       "explanation": "NULL steht für unbekannten oder nicht vorhandenen Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NULL in Datenbanken?",
+          "question": "What is the purpose of NULL in Databases?",
           "answer": "NULL represents an unknown or missing value.",
-          "explanation": "NULL represents an unknown or missing value. This is a common exam building block because it separates function from use case."
+          "explanation": "NULL represents an unknown or missing value. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1043,9 +1103,10 @@
       "explanation": "LIKE sucht mit Mustern in Textwerten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of LIKE in Datenbanken?",
+          "question": "What is the purpose of LIKE in Databases?",
           "answer": "LIKE searches text values with patterns.",
-          "explanation": "LIKE searches text values with patterns. This is a common exam building block because it separates function from use case."
+          "explanation": "LIKE searches text values with patterns. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1058,9 +1119,10 @@
       "explanation": "BETWEEN prüft einen Wert auf einen Bereich. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of BETWEEN in Datenbanken?",
+          "question": "What is the purpose of BETWEEN in Databases?",
           "answer": "BETWEEN checks whether a value lies in a range.",
-          "explanation": "BETWEEN checks whether a value lies in a range. This is a common exam building block because it separates function from use case."
+          "explanation": "BETWEEN checks whether a value lies in a range. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1073,9 +1135,10 @@
       "explanation": "IN prüft, ob ein Wert in einer Liste enthalten ist. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IN in Datenbanken?",
+          "question": "What is the purpose of IN in Databases?",
           "answer": "IN checks whether a value is in a list.",
-          "explanation": "IN checks whether a value is in a list. This is a common exam building block because it separates function from use case."
+          "explanation": "IN checks whether a value is in a list. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1088,9 +1151,10 @@
       "explanation": "DISTINCT entfernt doppelte Ergebniszeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DISTINCT in Datenbanken?",
+          "question": "What is the purpose of DISTINCT in Databases?",
           "answer": "DISTINCT removes duplicate result rows.",
-          "explanation": "DISTINCT removes duplicate result rows. This is a common exam building block because it separates function from use case."
+          "explanation": "DISTINCT removes duplicate result rows. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1103,9 +1167,10 @@
       "explanation": "Alias vergibt temporäre Namen für Spalten oder Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Alias in Datenbanken?",
+          "question": "What is the purpose of Alias in Databases?",
           "answer": "Alias assigns temporary names to columns or tables.",
-          "explanation": "Alias assigns temporary names to columns or tables. This is a common exam building block because it separates function from use case."
+          "explanation": "Alias assigns temporary names to columns or tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1118,9 +1183,10 @@
       "explanation": "Subquery ist eine Abfrage innerhalb einer anderen Abfrage. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Subquery in Datenbanken?",
+          "question": "What is the purpose of Subquery in Databases?",
           "answer": "Subquery is a query inside another query.",
-          "explanation": "Subquery is a query inside another query. This is a common exam building block because it separates function from use case."
+          "explanation": "Subquery is a query inside another query. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1133,9 +1199,10 @@
       "explanation": "Stored Procedure ist gespeicherte Programmlogik in der Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Stored Procedure in Datenbanken?",
+          "question": "What is the purpose of Stored Procedure in Databases?",
           "answer": "Stored Procedure is stored program logic in the database.",
-          "explanation": "Stored Procedure is stored program logic in the database. This is a common exam building block because it separates function from use case."
+          "explanation": "Stored Procedure is stored program logic in the database. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1148,9 +1215,10 @@
       "explanation": "Trigger führt automatisch Logik bei Datenänderungen aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Trigger in Datenbanken?",
+          "question": "What is the purpose of Trigger in Databases?",
           "answer": "Trigger automatically runs logic on data changes.",
-          "explanation": "Trigger automatically runs logic on data changes. This is a common exam building block because it separates function from use case."
+          "explanation": "Trigger automatically runs logic on data changes. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1163,9 +1231,10 @@
       "explanation": "Backup sichert Datenbankdaten für Wiederherstellung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Backup in Datenbanken?",
+          "question": "What is the purpose of Backup in Databases?",
           "answer": "Backup backs up database data for recovery.",
-          "explanation": "Backup backs up database data for recovery. This is a common exam building block because it separates function from use case."
+          "explanation": "Backup backs up database data for recovery. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1178,9 +1247,10 @@
       "explanation": "Dump exportiert Datenbankstruktur und Daten in eine Datei. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dump in Datenbanken?",
+          "question": "What is the purpose of Dump in Databases?",
           "answer": "Dump exports database structure and data to a file.",
-          "explanation": "Dump exports database structure and data to a file. This is a common exam building block because it separates function from use case."
+          "explanation": "Dump exports database structure and data to a file. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1193,9 +1263,10 @@
       "explanation": "Replikation kopiert Daten auf weitere Datenbankserver. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Replikation in Datenbanken?",
-          "answer": "Replikation copies data to additional database servers.",
-          "explanation": "Replikation copies data to additional database servers. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Replication in Databases?",
+          "answer": "Replication copies data to additional database servers.",
+          "explanation": "Replication copies data to additional database servers. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1208,9 +1279,10 @@
       "explanation": "Locking sperrt Daten zur Vermeidung konkurrierender Konflikte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Locking in Datenbanken?",
+          "question": "What is the purpose of Locking in Databases?",
           "answer": "Locking locks data to avoid concurrent conflicts.",
-          "explanation": "Locking locks data to avoid concurrent conflicts. This is a common exam building block because it separates function from use case."
+          "explanation": "Locking locks data to avoid concurrent conflicts. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1223,9 +1295,10 @@
       "explanation": "Deadlock entsteht, wenn Transaktionen gegenseitig auf Sperren warten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Deadlock in Datenbanken?",
+          "question": "What is the purpose of Deadlock in Databases?",
           "answer": "Deadlock occurs when transactions wait on each other’s locks.",
-          "explanation": "Deadlock occurs when transactions wait on each other’s locks. This is a common exam building block because it separates function from use case."
+          "explanation": "Deadlock occurs when transactions wait on each other’s locks. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1238,9 +1311,10 @@
       "explanation": "Isolation trennt parallele Transaktionen voneinander. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Isolation in Datenbanken?",
+          "question": "What is the purpose of Isolation in Databases?",
           "answer": "Isolation separates parallel transactions from each other.",
-          "explanation": "Isolation separates parallel transactions from each other. This is a common exam building block because it separates function from use case."
+          "explanation": "Isolation separates parallel transactions from each other. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1253,9 +1327,10 @@
       "explanation": "Datenintegrität bedeutet Korrektheit und Konsistenz gespeicherter Daten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Datenintegrität in Datenbanken?",
-          "answer": "Datenintegrität means correctness and consistency of stored data.",
-          "explanation": "Datenintegrität means correctness and consistency of stored data. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Data integrity in Databases?",
+          "answer": "Data integrity means correctness and consistency of stored data.",
+          "explanation": "Data integrity means correctness and consistency of stored data. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1268,9 +1343,10 @@
       "explanation": "Referentielle Integrität stellt gültige Beziehungen zwischen Tabellen sicher. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Referentielle Integrität in Datenbanken?",
-          "answer": "Referentielle Integrität ensures valid relationships between tables.",
-          "explanation": "Referentielle Integrität ensures valid relationships between tables. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Referential integrity in Databases?",
+          "answer": "Referential integrity ensures valid relationships between tables.",
+          "explanation": "Referential integrity ensures valid relationships between tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1283,9 +1359,10 @@
       "explanation": "ON DELETE CASCADE löscht abhängige Datensätze automatisch mit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ON DELETE CASCADE in Datenbanken?",
+          "question": "What is the purpose of ON DELETE CASCADE in Databases?",
           "answer": "ON DELETE CASCADE automatically deletes dependent records.",
-          "explanation": "ON DELETE CASCADE automatically deletes dependent records. This is a common exam building block because it separates function from use case."
+          "explanation": "ON DELETE CASCADE automatically deletes dependent records. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1298,9 +1375,10 @@
       "explanation": "VARCHAR speichert Zeichenketten variabler Länge. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VARCHAR in Datenbanken?",
+          "question": "What is the purpose of VARCHAR in Databases?",
           "answer": "VARCHAR stores variable-length strings.",
-          "explanation": "VARCHAR stores variable-length strings. This is a common exam building block because it separates function from use case."
+          "explanation": "VARCHAR stores variable-length strings. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1313,9 +1391,10 @@
       "explanation": "INTEGER speichert ganze Zahlen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INTEGER in Datenbanken?",
+          "question": "What is the purpose of INTEGER in Databases?",
           "answer": "INTEGER stores whole numbers.",
-          "explanation": "INTEGER stores whole numbers. This is a common exam building block because it separates function from use case."
+          "explanation": "INTEGER stores whole numbers. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1328,9 +1407,10 @@
       "explanation": "DATE speichert Datumswerte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DATE in Datenbanken?",
+          "question": "What is the purpose of DATE in Databases?",
           "answer": "DATE stores date values.",
-          "explanation": "DATE stores date values. This is a common exam building block because it separates function from use case."
+          "explanation": "DATE stores date values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1343,9 +1423,10 @@
       "explanation": "BOOLEAN speichert Wahrheitswerte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of BOOLEAN in Datenbanken?",
+          "question": "What is the purpose of BOOLEAN in Databases?",
           "answer": "BOOLEAN stores truth values.",
-          "explanation": "BOOLEAN stores truth values. This is a common exam building block because it separates function from use case."
+          "explanation": "BOOLEAN stores truth values. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1358,9 +1439,10 @@
       "explanation": "DECIMAL speichert exakte Dezimalzahlen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DECIMAL in Datenbanken?",
+          "question": "What is the purpose of DECIMAL in Databases?",
           "answer": "DECIMAL stores exact decimal numbers.",
-          "explanation": "DECIMAL stores exact decimal numbers. This is a common exam building block because it separates function from use case."
+          "explanation": "DECIMAL stores exact decimal numbers. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1373,9 +1455,10 @@
       "explanation": "NoSQL bezeichnet nicht-relationale Datenbankmodelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NoSQL in Datenbanken?",
+          "question": "What is the purpose of NoSQL in Databases?",
           "answer": "NoSQL refers to non-relational database models.",
-          "explanation": "NoSQL refers to non-relational database models. This is a common exam building block because it separates function from use case."
+          "explanation": "NoSQL refers to non-relational database models. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1388,9 +1471,10 @@
       "explanation": "Dokumentendatenbank speichert strukturierte Dokumente wie JSON. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dokumentendatenbank in Datenbanken?",
-          "answer": "Dokumentendatenbank stores structured documents such as JSON.",
-          "explanation": "Dokumentendatenbank stores structured documents such as JSON. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Document database in Databases?",
+          "answer": "Document database stores structured documents such as JSON.",
+          "explanation": "Document database stores structured documents such as JSON. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1403,9 +1487,10 @@
       "explanation": "Key-Value-Store speichert Werte über eindeutige Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Key-Value-Store in Datenbanken?",
+          "question": "What is the purpose of Key-Value-Store in Databases?",
           "answer": "Key-Value-Store stores values by unique keys.",
-          "explanation": "Key-Value-Store stores values by unique keys. This is a common exam building block because it separates function from use case."
+          "explanation": "Key-Value-Store stores values by unique keys. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1418,9 +1503,10 @@
       "explanation": "Datenbank-Schema beschreibt die Struktur einer Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Datenbank-Schema in Datenbanken?",
-          "answer": "Datenbank-Schema describes the structure of a database.",
-          "explanation": "Datenbank-Schema describes the structure of a database. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Database schema in Databases?",
+          "answer": "Database schema describes the structure of a database.",
+          "explanation": "Database schema describes the structure of a database. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1433,9 +1519,10 @@
       "explanation": "Migration ändert Datenbankschema oder Daten kontrolliert über Versionen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Migration in Datenbanken?",
+          "question": "What is the purpose of Migration in Databases?",
           "answer": "Migration changes database schema or data through controlled versions.",
-          "explanation": "Migration changes database schema or data through controlled versions. This is a common exam building block because it separates function from use case."
+          "explanation": "Migration changes database schema or data through controlled versions. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1448,9 +1535,10 @@
       "explanation": "ORM bildet Objekte einer Programmiersprache auf Tabellen ab. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ORM in Datenbanken?",
+          "question": "What is the purpose of ORM in Databases?",
           "answer": "ORM maps programming language objects to tables.",
-          "explanation": "ORM maps programming language objects to tables. This is a common exam building block because it separates function from use case."
+          "explanation": "ORM maps programming language objects to tables. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1463,9 +1551,10 @@
       "explanation": "SQL-Injection nutzt unsichere Eingaben zur Manipulation von SQL aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SQL-Injection in Datenbanken?",
+          "question": "What is the purpose of SQL-Injection in Databases?",
           "answer": "SQL-Injection exploits unsafe input to manipulate SQL.",
-          "explanation": "SQL-Injection exploits unsafe input to manipulate SQL. This is a common exam building block because it separates function from use case."
+          "explanation": "SQL-Injection exploits unsafe input to manipulate SQL. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1478,9 +1567,10 @@
       "explanation": "Prepared Statement trennt SQL-Code von Parametern. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Prepared Statement in Datenbanken?",
+          "question": "What is the purpose of Prepared Statement in Databases?",
           "answer": "Prepared Statement separates SQL code from parameters.",
-          "explanation": "Prepared Statement separates SQL code from parameters. This is a common exam building block because it separates function from use case."
+          "explanation": "Prepared Statement separates SQL code from parameters. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1493,9 +1583,10 @@
       "explanation": "Least Privilege vergibt nur die minimal nötigen Datenbankrechte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Least Privilege in Datenbanken?",
+          "question": "What is the purpose of Least Privilege in Databases?",
           "answer": "Least Privilege grants only the minimum necessary database privileges.",
-          "explanation": "Least Privilege grants only the minimum necessary database privileges. This is a common exam building block because it separates function from use case."
+          "explanation": "Least Privilege grants only the minimum necessary database privileges. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1508,9 +1599,10 @@
       "explanation": "Connection Pool verwaltet wiederverwendbare Datenbankverbindungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Connection Pool in Datenbanken?",
+          "question": "What is the purpose of Connection Pool in Databases?",
           "answer": "Connection Pool manages reusable database connections.",
-          "explanation": "Connection Pool manages reusable database connections. This is a common exam building block because it separates function from use case."
+          "explanation": "Connection Pool manages reusable database connections. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1523,9 +1615,10 @@
       "explanation": "Normalisierung strukturiert Tabellen zur Reduktion von Redundanzen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Normalisierung in Datenbanken?",
-          "answer": "Normalisierung structures tables to reduce redundancy.",
-          "explanation": "Normalisierung structures tables to reduce redundancy. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Normalization in Databases?",
+          "answer": "Normalization structures tables to reduce redundancy.",
+          "explanation": "Normalization structures tables to reduce redundancy. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1538,9 +1631,10 @@
       "explanation": "Denormalisierung nimmt Redundanz bewusst für schnellere Abfragen in Kauf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Denormalisierung in Datenbanken?",
-          "answer": "Denormalisierung intentionally accepts redundancy for faster queries.",
-          "explanation": "Denormalisierung intentionally accepts redundancy for faster queries. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Denormalization in Databases?",
+          "answer": "Denormalization intentionally accepts redundancy for faster queries.",
+          "explanation": "Denormalization intentionally accepts redundancy for faster queries. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1553,9 +1647,10 @@
       "explanation": "Aggregation fasst mehrere Werte zu einem Ergebnis zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Aggregation in Datenbanken?",
+          "question": "What is the purpose of Aggregation in Databases?",
           "answer": "Aggregation summarizes several values into one result.",
-          "explanation": "Aggregation summarizes several values into one result. This is a common exam building block because it separates function from use case."
+          "explanation": "Aggregation summarizes several values into one result. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1568,9 +1663,10 @@
       "explanation": "Datenmodell beschreibt Datenobjekte, Eigenschaften und Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Datenmodell in Datenbanken?",
-          "answer": "Datenmodell describes data objects, properties and relationships.",
-          "explanation": "Datenmodell describes data objects, properties and relationships. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Data model in Databases?",
+          "answer": "Data model describes data objects, properties and relationships.",
+          "explanation": "Data model describes data objects, properties and relationships. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1583,9 +1679,10 @@
       "explanation": "CSV-Import lädt tabellarische Textdaten in eine Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CSV-Import in Datenbanken?",
+          "question": "What is the purpose of CSV-Import in Databases?",
           "answer": "CSV-Import loads tabular text data into a database.",
-          "explanation": "CSV-Import loads tabular text data into a database. This is a common exam building block because it separates function from use case."
+          "explanation": "CSV-Import loads tabular text data into a database. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1598,9 +1695,10 @@
       "explanation": "EXPLAIN zeigt den Ausführungsplan einer SQL-Abfrage. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of EXPLAIN in Datenbanken?",
+          "question": "What is the purpose of EXPLAIN in Databases?",
           "answer": "EXPLAIN shows the execution plan of an SQL query.",
-          "explanation": "EXPLAIN shows the execution plan of an SQL query. This is a common exam building block because it separates function from use case."
+          "explanation": "EXPLAIN shows the execution plan of an SQL query. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1613,9 +1711,10 @@
       "explanation": "Datenbankrolle bündelt Berechtigungen für Benutzer oder Dienste. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Datenbankrolle in Datenbanken?",
-          "answer": "Datenbankrolle bundles permissions for users or services.",
-          "explanation": "Datenbankrolle bundles permissions for users or services. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Database role in Databases?",
+          "answer": "Database role bundles permissions for users or services.",
+          "explanation": "Database role bundles permissions for users or services. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     },
@@ -1628,9 +1727,10 @@
       "explanation": "GRANT vergibt Berechtigungen in der Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of GRANT in Datenbanken?",
+          "question": "What is the purpose of GRANT in Databases?",
           "answer": "GRANT grants permissions in the database.",
-          "explanation": "GRANT grants permissions in the database. This is a common exam building block because it separates function from use case."
+          "explanation": "GRANT grants permissions in the database. This is a common exam building block because it separates function from use case.",
+          "category": "Databases"
         }
       }
     }

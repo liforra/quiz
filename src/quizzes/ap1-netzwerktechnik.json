@@ -23,7 +23,8 @@
             "It synchronizes the clients' clocks"
           ],
           "answer": "It automatically assigns IP configurations to clients",
-          "explanation": "DHCP hands out IP address, subnet mask, gateway and DNS server automatically. Name resolution is DNS, time is NTP, filtering is done by a firewall."
+          "explanation": "DHCP hands out IP address, subnet mask, gateway and DNS server automatically. Name resolution is DNS, time is NTP, filtering is done by a firewall.",
+          "category": "Network Technology"
         }
       }
     },
@@ -50,7 +51,8 @@
             "128 bits"
           ],
           "answer": "32 bits",
-          "explanation": "IPv4 addresses are 32 bits long (4 octets of 8 bits each, e.g. 192.168.1.1). IPv6 addresses are 128 bits."
+          "explanation": "IPv4 addresses are 32 bits long (4 octets of 8 bits each, e.g. 192.168.1.1). IPv6 addresses are 128 bits.",
+          "category": "Network Technology"
         }
       }
     },
@@ -77,7 +79,8 @@
             "126"
           ],
           "answer": "62",
-          "explanation": "/26 leaves 6 host bits: 2⁶ = 64 addresses, minus network address and broadcast = 62 usable hosts."
+          "explanation": "/26 leaves 6 host bits: 2⁶ = 64 addresses, minus network address and broadcast = 62 usable hosts.",
+          "category": "Network Technology"
         }
       }
     },
@@ -104,7 +107,8 @@
             "11.0.0.1"
           ],
           "answer": "172.16.5.10",
-          "explanation": "Private ranges (RFC 1918): 10.0.0.0/8, 172.16.0.0/12 (up to 172.31.255.255) and 192.168.0.0/16. 172.32.x.x and 192.169.x.x are just outside — classic exam traps."
+          "explanation": "Private ranges (RFC 1918): 10.0.0.0/8, 172.16.0.0/12 (up to 172.31.255.255) and 192.168.0.0/16. 172.32.x.x and 192.169.x.x are just outside — classic exam traps.",
+          "category": "Network Technology"
         }
       }
     },
@@ -141,7 +145,8 @@
             "SMTP",
             "DNS"
           ],
-          "explanation": "HTTP (web), SMTP (mail delivery) and DNS (name resolution) are application-layer protocols. TCP is transport layer, IP is network layer."
+          "explanation": "HTTP (web), SMTP (mail delivery) and DNS (name resolution) are application-layer protocols. TCP is transport layer, IP is network layer.",
+          "category": "Network Technology"
         }
       }
     },
@@ -178,7 +183,8 @@
             "IPv6 addresses are written in hexadecimal",
             "IPv6 no longer uses broadcasts"
           ],
-          "explanation": "IPv6: 128 bits, hexadecimal notation in 8 blocks, multicast replaces broadcast. NAT is precisely what the huge address space makes unnecessary."
+          "explanation": "IPv6: 128 bits, hexadecimal notation in 8 blocks, multicast replaces broadcast. NAT is precisely what the huge address space makes unnecessary.",
+          "category": "Network Technology"
         }
       }
     },
@@ -219,7 +225,8 @@
             "Default gateway",
             "DNS server"
           ],
-          "explanation": "These four items are exactly what a DHCP server hands out. Without a gateway there is no communication with other networks, without DNS no name resolution."
+          "explanation": "These four items are exactly what a DHCP server hands out. Without a gateway there is no communication with other networks, without DNS no name resolution.",
+          "category": "Network Technology"
         }
       }
     },
@@ -256,7 +263,8 @@
             "HTTPS",
             "SFTP"
           ],
-          "explanation": "SSH, HTTPS and SFTP encrypt the transmission. Telnet and HTTP send everything in plain text — including passwords."
+          "explanation": "SSH, HTTPS and SFTP encrypt the transmission. Telnet and HTTP send everything in plain text — including passwords.",
+          "category": "Network Technology"
         }
       }
     },
@@ -271,7 +279,8 @@
         "en": {
           "question": "What does the abbreviation LAN stand for?",
           "answer": "Local Area Network",
-          "explanation": "A LAN is a local network with limited physical reach, e.g. within a single building."
+          "explanation": "A LAN is a local network with limited physical reach, e.g. within a single building.",
+          "category": "Network Technology"
         }
       }
     },
@@ -286,7 +295,8 @@
         "en": {
           "question": "What is the name of the address permanently assigned to a network card by its manufacturer, intended to identify it uniquely worldwide?",
           "answer": "MAC address",
-          "explanation": "The MAC address (Media Access Control) is 48 bits long and is used at layer 2 (data link layer), e.g. 00:1A:2B:3C:4D:5E."
+          "explanation": "The MAC address (Media Access Control) is 48 bits long and is used at layer 2 (data link layer), e.g. 00:1A:2B:3C:4D:5E.",
+          "category": "Network Technology"
         }
       }
     },
@@ -301,7 +311,8 @@
         "en": {
           "question": "How long does it take to transfer 600 MB over a 100 Mbit/s link under ideal conditions (simplified: 1 MB = 10⁶ bytes)? Give the result in seconds.",
           "answer": "48 seconds (600 MB × 8 = 4800 Mbit; 4800 Mbit ÷ 100 Mbit/s = 48 s)",
-          "explanation": "Classic pitfall: don't forget to convert bytes to bits (×8)!"
+          "explanation": "Classic pitfall: don't forget to convert bytes to bits (×8)!",
+          "category": "Network Technology"
         }
       }
     },
@@ -316,7 +327,8 @@
         "en": {
           "question": "A host has the IP address 192.168.178.77 with prefix length /27. What is the network address of this subnet?",
           "answer": "192.168.178.64",
-          "explanation": "/27 → block size 32 in the last octet (0, 32, 64, 96, …). 77 falls into the 64–95 block, so the network address is 192.168.178.64."
+          "explanation": "/27 → block size 32 in the last octet (0, 32, 64, 96, …). 77 falls into the 64–95 block, so the network address is 192.168.178.64.",
+          "category": "Network Technology"
         }
       }
     },
@@ -343,7 +355,8 @@
             "Layer 4 (Transport)"
           ],
           "answer": "Layer 3 (Network)",
-          "explanation": "Routers make forwarding decisions based on IP addresses, which places them at the network layer (layer 3)."
+          "explanation": "Routers make forwarding decisions based on IP addresses, which places them at the network layer (layer 3).",
+          "category": "Network Technology"
         }
       }
     },
@@ -370,7 +383,8 @@
             "7"
           ],
           "answer": "4",
-          "explanation": "The TCP/IP model merges several OSI layers into application, transport, internet and network access — 4 layers in total."
+          "explanation": "The TCP/IP model merges several OSI layers into application, transport, internet and network access — 4 layers in total.",
+          "category": "Network Technology"
         }
       }
     },
@@ -397,7 +411,8 @@
             "Layer 4"
           ],
           "answer": "Layer 2",
-          "explanation": "Switches forward frames based on MAC addresses, placing them at the data link layer (layer 2)."
+          "explanation": "Switches forward frames based on MAC addresses, placing them at the data link layer (layer 2).",
+          "category": "Network Technology"
         }
       }
     },
@@ -424,7 +439,8 @@
             "A switch cannot separate collision domains"
           ],
           "answer": "A switch forwards frames selectively based on the MAC address, a hub sends to all ports",
-          "explanation": "A hub is a dumb signal repeater — every bit goes out every port (one shared collision domain). A switch learns MAC addresses and forwards frames only to the correct port, giving each port its own collision domain."
+          "explanation": "A hub is a dumb signal repeater — every bit goes out every port (one shared collision domain). A switch learns MAC addresses and forwards frames only to the correct port, giving each port its own collision domain.",
+          "category": "Network Technology"
         }
       }
     },
@@ -451,7 +467,8 @@
             "255.255.255.128"
           ],
           "answer": "255.255.255.0",
-          "explanation": "Class C networks default to a /24 prefix, i.e. the mask 255.255.255.0."
+          "explanation": "Class C networks default to a /24 prefix, i.e. the mask 255.255.255.0.",
+          "category": "Network Technology"
         }
       }
     },
@@ -478,7 +495,8 @@
             "510"
           ],
           "answer": "254",
-          "explanation": "/24 leaves 8 host bits: 2⁸ = 256 addresses, minus network and broadcast address = 254 usable hosts."
+          "explanation": "/24 leaves 8 host bits: 2⁸ = 256 addresses, minus network and broadcast address = 254 usable hosts.",
+          "category": "Network Technology"
         }
       }
     },
@@ -505,7 +523,8 @@
             "/28"
           ],
           "answer": "/26",
-          "explanation": "4 subnets require 2 extra bits (2² = 4), so /24 + 2 = /26."
+          "explanation": "4 subnets require 2 extra bits (2² = 4), so /24 + 2 = /26.",
+          "category": "Network Technology"
         }
       }
     },
@@ -532,7 +551,8 @@
             "10.0.255.255"
           ],
           "answer": "10.0.7.255",
-          "explanation": "/22 gives a block size of 4 in the third octet (0,4,8,...). The network 10.0.4.0/22 extends up to 10.0.7.255, which is the broadcast address."
+          "explanation": "/22 gives a block size of 4 in the third octet (0,4,8,...). The network 10.0.4.0/22 extends up to 10.0.7.255, which is the broadcast address.",
+          "category": "Network Technology"
         }
       }
     },
@@ -559,7 +579,8 @@
             "It prevents broadcast storms"
           ],
           "answer": "It allows differently sized subnets and thereby saves address space",
-          "explanation": "VLSM lets each subnet get exactly the number of addresses it needs instead of using the same mask everywhere, avoiding wasted address space."
+          "explanation": "VLSM lets each subnet get exactly the number of addresses it needs instead of using the same mask everywhere, avoiding wasted address space.",
+          "category": "Network Technology"
         }
       }
     },
@@ -586,7 +607,8 @@
             "It compresses Ethernet frames"
           ],
           "answer": "It prevents loops from redundant links",
-          "explanation": "STP detects redundant links between switches and selectively blocks ports to prevent broadcast storms caused by loops."
+          "explanation": "STP detects redundant links between switches and selectively blocks ports to prevent broadcast storms caused by loops.",
+          "category": "Network Technology"
         }
       }
     },
@@ -613,7 +635,8 @@
             "8080"
           ],
           "answer": "80",
-          "explanation": "HTTP uses TCP port 80 by default, HTTPS uses port 443."
+          "explanation": "HTTP uses TCP port 80 by default, HTTPS uses port 443.",
+          "category": "Network Technology"
         }
       }
     },
@@ -640,7 +663,8 @@
             "25"
           ],
           "answer": "22",
-          "explanation": "SSH (Secure Shell) runs on TCP port 22 by default and provides encrypted remote access."
+          "explanation": "SSH (Secure Shell) runs on TCP port 22 by default and provides encrypted remote access.",
+          "category": "Network Technology"
         }
       }
     },
@@ -667,7 +691,8 @@
             "TCP 143"
           ],
           "answer": "UDP 53",
-          "explanation": "DNS queries normally run over UDP port 53; for larger responses or zone transfers, TCP port 53 is used instead."
+          "explanation": "DNS queries normally run over UDP port 53; for larger responses or zone transfers, TCP port 53 is used instead.",
+          "category": "Network Technology"
         }
       }
     },
@@ -694,7 +719,8 @@
             "It synchronizes clocks"
           ],
           "answer": "It translates private IP addresses into a public address and back",
-          "explanation": "NAT lets multiple devices with private IP addresses share one or a few public IP addresses for internet access."
+          "explanation": "NAT lets multiple devices with private IP addresses share one or a few public IP addresses for internet access.",
+          "category": "Network Technology"
         }
       }
     },
@@ -721,7 +747,8 @@
             "It encrypts network traffic"
           ],
           "answer": "It determines the MAC address belonging to a known IP address on the local network",
-          "explanation": "ARP broadcasts on the local network to ask which device owns a given IP address, and receives that device's MAC address in reply."
+          "explanation": "ARP broadcasts on the local network to ask which device owns a given IP address, and receives that device's MAC address in reply.",
+          "category": "Network Technology"
         }
       }
     },
@@ -748,7 +775,8 @@
             "It stores the MAC addresses of all devices"
           ],
           "answer": "It is the device to which packets for foreign networks are forwarded",
-          "explanation": "The default gateway is usually a router to which all packets are sent whose destination is not within the local subnet."
+          "explanation": "The default gateway is usually a router to which all packets are sent whose destination is not within the local subnet.",
+          "category": "Network Technology"
         }
       }
     },
@@ -775,7 +803,8 @@
             "Repeater"
           ],
           "answer": "Router",
-          "explanation": "Routers separate networks at layer 3 and do not forward broadcasts by default. A plain switch without VLANs forms a single shared broadcast domain instead."
+          "explanation": "Routers separate networks at layer 3 and do not forward broadcasts by default. A plain switch without VLANs forms a single shared broadcast domain instead.",
+          "category": "Network Technology"
         }
       }
     },
@@ -802,7 +831,8 @@
             "900 MHz"
           ],
           "answer": "5 GHz",
-          "explanation": "802.11ac (Wi-Fi 5) operates exclusively in the 5 GHz band, enabling higher data rates and less interference than the crowded 2.4 GHz band."
+          "explanation": "802.11ac (Wi-Fi 5) operates exclusively in the 5 GHz band, enabling higher data rates and less interference than the crowded 2.4 GHz band.",
+          "category": "Network Technology"
         }
       }
     },
@@ -829,7 +859,8 @@
             "WPA3 reduces the maximum range"
           ],
           "answer": "WPA3 uses a more secure key exchange (SAE) instead of the vulnerable 4-way handshake",
-          "explanation": "WPA3 replaces WPA2's 4-way handshake, which is vulnerable to offline dictionary attacks, with SAE (Simultaneous Authentication of Equals), offering better protection especially for weak passwords."
+          "explanation": "WPA3 replaces WPA2's 4-way handshake, which is vulnerable to offline dictionary attacks, with SAE (Simultaneous Authentication of Equals), offering better protection especially for weak passwords.",
+          "category": "Network Technology"
         }
       }
     },
@@ -856,7 +887,8 @@
             "40 Gbit/s"
           ],
           "answer": "10 Gbit/s",
-          "explanation": "Cat6a (augmented Cat6) is specified for 10GBASE-T over the full 100 meters, while plain Cat6 only reliably achieves 10 Gbit/s over shorter runs (~55 m)."
+          "explanation": "Cat6a (augmented Cat6) is specified for 10GBASE-T over the full 100 meters, while plain Cat6 only reliably achieves 10 Gbit/s over shorter runs (~55 m).",
+          "category": "Network Technology"
         }
       }
     },
@@ -883,7 +915,8 @@
             "Twisted-pair copper cable"
           ],
           "answer": "Single-mode fiber",
-          "explanation": "Single-mode fiber carries only one light mode with very low attenuation and dispersion, making it suitable for long-haul links (kilometers to tens of kilometers). Multimode is mostly used for short in-building distances."
+          "explanation": "Single-mode fiber carries only one light mode with very low attenuation and dispersion, making it suitable for long-haul links (kilometers to tens of kilometers). Multimode is mostly used for short in-building distances.",
+          "category": "Network Technology"
         }
       }
     },
@@ -910,7 +943,8 @@
             "To assign IP addresses"
           ],
           "answer": "To display all router hops on the path to a destination host",
-          "explanation": "traceroute sends packets with increasing TTL and evaluates the resulting ICMP error messages from each router to reveal the full path (every hop) to a destination."
+          "explanation": "traceroute sends packets with increasing TTL and evaluates the resulting ICMP error messages from each router to reveal the full path (every hop) to a destination.",
+          "category": "Network Technology"
         }
       }
     },
@@ -937,7 +971,8 @@
             "ARP"
           ],
           "answer": "ICMP",
-          "explanation": "ping uses ICMP echo-request and echo-reply messages to check a host's reachability and response time."
+          "explanation": "ping uses ICMP echo-request and echo-reply messages to check a host's reachability and response time.",
+          "category": "Network Technology"
         }
       }
     },
@@ -964,7 +999,8 @@
             "255.255.255.255"
           ],
           "answer": "127.0.0.1",
-          "explanation": "127.0.0.1 (from the 127.0.0.0/8 range) is the classic loopback address a computer uses to address services on itself."
+          "explanation": "127.0.0.1 (from the 127.0.0.0/8 range) is the classic loopback address a computer uses to address services on itself.",
+          "category": "Network Technology"
         }
       }
     },
@@ -991,7 +1027,8 @@
             "172.16.0.0/12"
           ],
           "answer": "169.254.0.0/16",
-          "explanation": "APIPA (Automatic Private IP Addressing) automatically assigns an address from 169.254.0.0/16 when no DHCP server responds, allowing at least local communication on the segment."
+          "explanation": "APIPA (Automatic Private IP Addressing) automatically assigns an address from 169.254.0.0/16 when no DHCP server responds, allowing at least local communication on the segment.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1018,7 +1055,8 @@
             "Transmission only happens over fiber optics"
           ],
           "answer": "Data can be sent and received simultaneously in both directions",
-          "explanation": "In full-duplex mode, sending and receiving can happen at the same time, which eliminates collisions on point-to-point links (e.g. a switch port)."
+          "explanation": "In full-duplex mode, sending and receiving can happen at the same time, which eliminates collisions on point-to-point links (e.g. a switch port).",
+          "category": "Network Technology"
         }
       }
     },
@@ -1055,7 +1093,8 @@
             "Bridge",
             "Access point"
           ],
-          "explanation": "Switches, bridges and access points forward frames based on MAC addresses (layer 2). Routers and layer-3 switches make decisions based on IP addresses (layer 3)."
+          "explanation": "Switches, bridges and access points forward frames based on MAC addresses (layer 2). Routers and layer-3 switches make decisions based on IP addresses (layer 3).",
+          "category": "Network Technology"
         }
       }
     },
@@ -1092,7 +1131,8 @@
             "DHCP",
             "TFTP"
           ],
-          "explanation": "DNS queries, DHCP and TFTP operate connectionlessly over UDP since speed matters more than transport-layer reliability. HTTP and FTP need TCP's reliable, connection-oriented delivery."
+          "explanation": "DNS queries, DHCP and TFTP operate connectionlessly over UDP since speed matters more than transport-layer reliability. HTTP and FTP need TCP's reliable, connection-oriented delivery.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1129,7 +1169,8 @@
             "255.255.255.192",
             "255.255.254.0"
           ],
-          "explanation": "Valid masks consist of a contiguous run of ones followed by zeros (e.g. .0, .192, .254.0). 255.255.255.100 and 255.0.255.0 don't form contiguous bit runs and are invalid."
+          "explanation": "Valid masks consist of a contiguous run of ones followed by zeros (e.g. .0, .192, .254.0). 255.255.255.100 and 255.0.255.0 don't form contiguous bit runs and are invalid.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1166,7 +1207,8 @@
             "Devices in different VLANs need a router or layer-3 switch to communicate",
             "VLAN tags are inserted according to IEEE 802.1Q"
           ],
-          "explanation": "VLANs create logically separate broadcast domains on shared hardware, tagged via 802.1Q. Communication between VLANs requires routing. A VLAN can span multiple switches via trunking."
+          "explanation": "VLANs create logically separate broadcast domains on shared hardware, tagged via 802.1Q. Communication between VLANs requires routing. A VLAN can span multiple switches via trunking.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1203,7 +1245,8 @@
             "STP blocks redundant paths to prevent loops",
             "Blocked ports can be automatically re-activated if an active path fails"
           ],
-          "explanation": "STP elects a root bridge, computes shortest paths to it, and blocks redundant links. If an active path fails, STP automatically activates a previously blocked port. STP operates at layer 2 and does not affect MAC learning."
+          "explanation": "STP elects a root bridge, computes shortest paths to it, and blocks redundant links. If an active path fails, STP automatically activates a previously blocked port. STP operates at layer 2 and does not affect MAC learning.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1240,7 +1283,8 @@
             "802.11ac",
             "802.11ax"
           ],
-          "explanation": "802.11n, 802.11ac and 802.11ax (Wi-Fi 4/5/6) are real wireless standards. 802.3ax belongs to the Ethernet family (link aggregation); 802.11q doesn't exist (that's 802.1Q, a VLAN standard)."
+          "explanation": "802.11n, 802.11ac and 802.11ax (Wi-Fi 4/5/6) are real wireless standards. 802.3ax belongs to the Ethernet family (link aggregation); 802.11q doesn't exist (that's 802.1Q, a VLAN standard).",
+          "category": "Network Technology"
         }
       }
     },
@@ -1277,7 +1321,8 @@
             "Blocking unwanted connections from the internet",
             "Logging connection attempts"
           ],
-          "explanation": "Firewalls filter and log traffic according to rules (IP, port, protocol). Assigning IPs is DHCP's job, name resolution is DNS's job."
+          "explanation": "Firewalls filter and log traffic according to rules (IP, port, protocol). Assigning IPs is DHCP's job, name resolution is DNS's job.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1316,7 +1361,8 @@
             "MX",
             "CNAME"
           ],
-          "explanation": "A (IPv4), AAAA (IPv6), MX (mail server) and CNAME (alias) are real DNS record types. DORA is not a DNS record — it's the DHCP lease sequence (Discover, Offer, Request, Acknowledge)."
+          "explanation": "A (IPv4), AAAA (IPv6), MX (mail server) and CNAME (alias) are real DNS record types. DORA is not a DNS record — it's the DHCP lease sequence (Discover, Offer, Request, Acknowledge).",
+          "category": "Network Technology"
         }
       }
     },
@@ -1353,7 +1399,8 @@
             "Greater achievable distances without signal amplification",
             "Lower eavesdropping risk due to no electromagnetic radiation"
           ],
-          "explanation": "Fiber is immune to EMI, allows much greater distances, and is very hard to tap unnoticed. PoE (Power over Ethernet), on the other hand, only works over copper, not fiber."
+          "explanation": "Fiber is immune to EMI, allows much greater distances, and is very hard to tap unnoticed. PoE (Power over Ethernet), on the other hand, only works over copper, not fiber.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1390,7 +1437,8 @@
             "CSMA/CD is no longer needed",
             "Sending and receiving can happen simultaneously"
           ],
-          "explanation": "In full-duplex mode on a point-to-point link (e.g. a switch port), separate transmit and receive paths are active, eliminating collisions and therefore CSMA/CD. Full duplex also works over twisted-pair copper."
+          "explanation": "In full-duplex mode on a point-to-point link (e.g. a switch port), separate transmit and receive paths are active, eliminating collisions and therefore CSMA/CD. Full duplex also works over twisted-pair copper.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1427,7 +1475,8 @@
             "172.16.0.0/12",
             "192.168.0.0/16"
           ],
-          "explanation": "RFC 1918 defines exactly these three private ranges. 169.254.0.0/16 is the APIPA range for automatic self-configuration, and 100.64.0.0/10 is the shared address space for carrier-grade NAT (RFC 6598) — neither is a classic RFC 1918 range."
+          "explanation": "RFC 1918 defines exactly these three private ranges. 169.254.0.0/16 is the APIPA range for automatic self-configuration, and 100.64.0.0/10 is the shared address space for carrier-grade NAT (RFC 6598) — neither is a classic RFC 1918 range.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1464,7 +1513,8 @@
             "Unknown destination MAC addresses are flooded to all ports except the incoming port",
             "It stores learned mappings in a MAC address table (CAM table)"
           ],
-          "explanation": "Switches dynamically learn which MAC address sits behind which port, store this in the CAM table, and flood frames with an unknown destination to all other ports. Assigning IPs is DHCP's job."
+          "explanation": "Switches dynamically learn which MAC address sits behind which port, store this in the CAM table, and flood frames with an unknown destination to all other ports. Assigning IPs is DHCP's job.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1503,7 +1553,8 @@
             "Request",
             "Acknowledge"
           ],
-          "explanation": "DORA stands for Discover (client searches for a DHCP server via broadcast), Offer (server offers a configuration), Request (client requests it) and Acknowledge (server confirms). 'Authenticate' is not part of this standard sequence."
+          "explanation": "DORA stands for Discover (client searches for a DHCP server via broadcast), Offer (server offers a configuration), Request (client requests it) and Acknowledge (server confirms). 'Authenticate' is not part of this standard sequence.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1540,7 +1591,8 @@
             "It typically causes massively increased network load and severe performance drops",
             "Redundant links without loop prevention increase the risk"
           ],
-          "explanation": "Without loop protection (e.g. STP), broadcasts in a redundantly cabled switch topology get repeated and multiplied endlessly, causing network load to explode. VLANs alone don't prevent this if the loop lies within a single VLAN."
+          "explanation": "Without loop protection (e.g. STP), broadcasts in a redundantly cabled switch topology get repeated and multiplied endlessly, causing network load to explode. VLANs alone don't prevent this if the loop lies within a single VLAN.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1577,7 +1629,8 @@
             "It can operate in both the 2.4 GHz and 5 GHz bands",
             "It typically brings higher efficiency than 802.11ac in densely populated environments"
           ],
-          "explanation": "Wi-Fi 6 (802.11ax) uses OFDMA for more efficient multi-user transmission, operates in both 2.4 GHz and 5 GHz, and remains backward compatible with older 802.11 standards."
+          "explanation": "Wi-Fi 6 (802.11ax) uses OFDMA for more efficient multi-user transmission, operates in both 2.4 GHz and 5 GHz, and remains backward compatible with older 802.11 standards.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1614,7 +1667,8 @@
             "Cat6",
             "Cat6a"
           ],
-          "explanation": "Starting with Cat5e, gigabit Ethernet is specified over the full 100 m distance; Cat6 and Cat6a exceed this requirement further. Cat3 and plain Cat5 are not specified for it."
+          "explanation": "Starting with Cat5e, gigabit Ethernet is specified over the full 100 m distance; Cat6 and Cat6a exceed this requirement further. Cat3 and plain Cat5 are not specified for it.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1651,7 +1705,8 @@
             "One contiguous run of zero blocks may be replaced once by ::",
             "An IPv6 address consists of 8 blocks of 16 bits each"
           ],
-          "explanation": "IPv6 addresses consist of 8 blocks of 16 bits each; leading zeros per block can be dropped, and one contiguous run of zero blocks may be abbreviated once (not repeatedly) with :: to preserve uniqueness."
+          "explanation": "IPv6 addresses consist of 8 blocks of 16 bits each; leading zeros per block can be dropped, and one contiguous run of zero blocks may be abbreviated once (not repeatedly) with :: to preserve uniqueness.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1688,7 +1743,8 @@
             "SYN-ACK",
             "ACK"
           ],
-          "explanation": "Connection setup happens via SYN (client), SYN-ACK (server) and ACK (client). FIN is used for orderly connection teardown, RST for abruptly resetting a connection."
+          "explanation": "Connection setup happens via SYN (client), SYN-ACK (server) and ACK (client). FIN is used for orderly connection teardown, RST for abruptly resetting a connection.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1727,7 +1783,8 @@
             "nslookup",
             "ipconfig/ifconfig"
           ],
-          "explanation": "ping, tracert/traceroute, nslookup and ipconfig/ifconfig are classic network diagnostic tools. chkdsk, on the other hand, checks a disk's file system integrity and has nothing to do with networking."
+          "explanation": "ping, tracert/traceroute, nslookup and ipconfig/ifconfig are classic network diagnostic tools. chkdsk, on the other hand, checks a disk's file system integrity and has nothing to do with networking.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1764,7 +1821,8 @@
             "Maintaining a routing table",
             "Separating broadcast domains"
           ],
-          "explanation": "Routers forward packets between different IP networks based on a routing table, thereby separating broadcast domains. MAC learning is the job of a layer-2 switch."
+          "explanation": "Routers forward packets between different IP networks based on a routing table, thereby separating broadcast domains. MAC learning is the job of a layer-2 switch.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1801,7 +1859,8 @@
             "NAT translates between private and public IP addresses",
             "NAT can make inbound, externally initiated connections to internal hosts harder without additional configuration"
           ],
-          "explanation": "PAT (also called NAT overload) is the most common form of NAT, multiplexing many internal hosts onto one public IP via port numbers. Since NAT has no mapping for unsolicited inbound packets, it effectively blocks such connections (a useful side effect, but not a firewall replacement). IPv6's huge address space explicitly removes the need for NAT."
+          "explanation": "PAT (also called NAT overload) is the most common form of NAT, multiplexing many internal hosts onto one public IP via port numbers. Since NAT has no mapping for unsolicited inbound packets, it effectively blocks such connections (a useful side effect, but not a firewall replacement). IPv6's huge address space explicitly removes the need for NAT.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1838,7 +1897,8 @@
             "The failure of a single end device does not automatically take down the rest of the network",
             "The failure of the central node takes down the entire star network"
           ],
-          "explanation": "In a star topology, every end device has its own line to the central hub. This makes it robust against individual device failures but dependent on the central node. It is by far the most common LAN topology today and generally needs more cabling than a bus."
+          "explanation": "In a star topology, every end device has its own line to the central hub. This makes it robust against individual device failures but dependent on the central node. It is by far the most common LAN topology today and generally needs more cabling than a bus.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1873,7 +1933,8 @@
             "TCP",
             "UDP"
           ],
-          "explanation": "TCP and UDP are the core transport protocols of the TCP/IP family. IP and ICMP operate at the network layer, Ethernet at the data link layer."
+          "explanation": "TCP and UDP are the core transport protocols of the TCP/IP family. IP and ICMP operate at the network layer, Ethernet at the data link layer.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1910,7 +1971,8 @@
             "A WLAN router usually additionally provides routing and often DHCP functionality",
             "Both devices can support the same wireless standard (e.g. 802.11ax)"
           ],
-          "explanation": "An access point is essentially a layer-2 bridge between radio and wire, while a WLAN router additionally handles routing between networks (usually LAN and internet) and often DHCP. Both can use the same radio standard."
+          "explanation": "An access point is essentially a layer-2 bridge between radio and wire, while a WLAN router additionally handles routing between networks (usually LAN and internet) and often DHCP. Both can use the same radio standard.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1947,7 +2009,8 @@
             "IMAP synchronizes emails and folder structure between multiple devices and the server",
             "POP3 uses default port 110, IMAP uses default port 143"
           ],
-          "explanation": "POP3 is designed for local download followed by deletion on the server, while IMAP keeps state synchronized server-side, making it suitable for multi-device use. SMTP is for sending, not retrieving, email."
+          "explanation": "POP3 is designed for local download followed by deletion on the server, while IMAP keeps state synchronized server-side, making it suitable for multi-device use. SMTP is for sending, not retrieving, email.",
+          "category": "Network Technology"
         }
       }
     },
@@ -1986,7 +2049,8 @@
             "All devices on a hub are in the same collision domain",
             "VLANs can split a physical switch infrastructure into multiple broadcast domains"
           ],
-          "explanation": "A switch separates collision domains per port but, without VLANs, forms one shared broadcast domain; a router also separates broadcast domains. A hub has no separation at all — all ports share one collision domain. A broadcast domain typically consists of many individual collision domains (one per switch port)."
+          "explanation": "A switch separates collision domains per port but, without VLANs, forms one shared broadcast domain; a router also separates broadcast domains. A hub has no separation at all — all ports share one collision domain. A broadcast domain typically consists of many individual collision domains (one per switch port).",
+          "category": "Network Technology"
         }
       }
     },
@@ -2001,7 +2065,8 @@
         "en": {
           "question": "What does the abbreviation WAN stand for?",
           "answer": "Wide Area Network",
-          "explanation": "A WAN connects geographically distant sites, e.g. via the internet or leased lines, as opposed to the spatially limited LAN."
+          "explanation": "A WAN connects geographically distant sites, e.g. via the internet or leased lines, as opposed to the spatially limited LAN.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2016,7 +2081,8 @@
         "en": {
           "question": "What does the abbreviation VLAN stand for?",
           "answer": "Virtual Local Area Network",
-          "explanation": "A VLAN is a logically separated network within shared physical infrastructure, usually marked by 802.1Q tags."
+          "explanation": "A VLAN is a logically separated network within shared physical infrastructure, usually marked by 802.1Q tags.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2031,7 +2097,8 @@
         "en": {
           "question": "What does the abbreviation NAT stand for?",
           "answer": "Network Address Translation",
-          "explanation": "NAT translates IP addresses as traffic passes through a router, usually between private and public address space."
+          "explanation": "NAT translates IP addresses as traffic passes through a router, usually between private and public address space.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2046,7 +2113,8 @@
         "en": {
           "question": "Which protocol is used to synchronize the system clock over a network?",
           "answer": "NTP (Network Time Protocol)",
-          "explanation": "NTP synchronizes clients' clocks with a time server, which is essential for things like Kerberos authentication and log analysis."
+          "explanation": "NTP synchronizes clients' clocks with a time server, which is essential for things like Kerberos authentication and log analysis.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2061,7 +2129,8 @@
         "en": {
           "question": "Which TCP port does HTTPS use by default?",
           "answer": "443",
-          "explanation": "HTTPS (HTTP over TLS/SSL) uses TCP port 443 by default; unencrypted HTTP uses port 80."
+          "explanation": "HTTPS (HTTP over TLS/SSL) uses TCP port 443 by default; unencrypted HTTP uses port 80.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2076,7 +2145,8 @@
         "en": {
           "question": "Which TCP port does FTP use by default for its control connection?",
           "answer": "21",
-          "explanation": "FTP uses port 21 for commands/control and (in active mode) port 20 for the actual data transfer."
+          "explanation": "FTP uses port 21 for commands/control and (in active mode) port 20 for the actual data transfer.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2091,7 +2161,8 @@
         "en": {
           "question": "How many usable host addresses does a subnet with prefix length /28 provide?",
           "answer": "14",
-          "explanation": "/28 leaves 4 host bits: 2⁴ = 16 addresses, minus network and broadcast address = 14 usable hosts."
+          "explanation": "/28 leaves 4 host bits: 2⁴ = 16 addresses, minus network and broadcast address = 14 usable hosts.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2106,7 +2177,8 @@
         "en": {
           "question": "A host has the address 172.20.15.10/20. What is the network address of this subnet?",
           "answer": "172.20.0.0",
-          "explanation": "/20 gives a block size of 16 in the third octet (0,16,32,...). 15 falls in the 0–15 block, so the network address is 172.20.0.0."
+          "explanation": "/20 gives a block size of 16 in the third octet (0,16,32,...). 15 falls in the 0–15 block, so the network address is 172.20.0.0.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2121,7 +2193,8 @@
         "en": {
           "question": "What is the broadcast address of the subnet 192.168.5.0/25?",
           "answer": "192.168.5.127",
-          "explanation": "/25 splits the last octet into two blocks of 128 addresses each (0–127 and 128–255). For the 0–127 block, 192.168.5.127 is the broadcast address."
+          "explanation": "/25 splits the last octet into two blocks of 128 addresses each (0–127 and 128–255). For the 0–127 block, 192.168.5.127 is the broadcast address.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2136,7 +2209,8 @@
         "en": {
           "question": "If 3 extra bits are borrowed from the host portion for the network portion during subnetting, how many subnets result?",
           "answer": "8",
-          "explanation": "With n borrowed bits, 2ⁿ subnets result; with 3 bits that is 2³ = 8 subnets."
+          "explanation": "With n borrowed bits, 2ⁿ subnets result; with 3 bits that is 2³ = 8 subnets.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2151,7 +2225,8 @@
         "en": {
           "question": "What is the common abbreviation for the protocol that prevents loops in redundantly cabled switched networks?",
           "answer": "STP (Spanning Tree Protocol)",
-          "explanation": "STP computes a loop-free tree across all switches and selectively blocks redundant links to achieve it."
+          "explanation": "STP computes a loop-free tree across all switches and selectively blocks redundant links to achieve it.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2166,7 +2241,8 @@
         "en": {
           "question": "What is a simple layer-1 device called that merely amplifies/regenerates an electrical signal and passes it on over greater distances?",
           "answer": "Repeater",
-          "explanation": "A repeater operates purely at the physical layer and amplifies the signal without any address or content inspection."
+          "explanation": "A repeater operates purely at the physical layer and amplifies the signal without any address or content inspection.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2181,7 +2257,8 @@
         "en": {
           "question": "What is the IPv6 loopback address?",
           "answer": "::1",
-          "explanation": "::1 is the IPv6 equivalent of the IPv4 address 127.0.0.1 and refers to the local host itself."
+          "explanation": "::1 is the IPv6 equivalent of the IPv4 address 127.0.0.1 and refers to the local host itself.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2196,7 +2273,8 @@
         "en": {
           "question": "What does the abbreviation SSID stand for in a wireless context?",
           "answer": "Service Set Identifier",
-          "explanation": "The SSID is the name of a wireless network that clients use to identify it when searching for available networks."
+          "explanation": "The SSID is the name of a wireless network that clients use to identify it when searching for available networks.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2211,7 +2289,8 @@
         "en": {
           "question": "Which default port does POP3 use?",
           "answer": "110",
-          "explanation": "POP3 (Post Office Protocol version 3) runs on TCP port 110 by default (encrypted via POP3S usually on port 995)."
+          "explanation": "POP3 (Post Office Protocol version 3) runs on TCP port 110 by default (encrypted via POP3S usually on port 995).",
+          "category": "Network Technology"
         }
       }
     },
@@ -2226,7 +2305,8 @@
         "en": {
           "question": "Which default port does IMAP use?",
           "answer": "143",
-          "explanation": "IMAP (Internet Message Access Protocol) runs on TCP port 143 by default (encrypted via IMAPS usually on port 993)."
+          "explanation": "IMAP (Internet Message Access Protocol) runs on TCP port 143 by default (encrypted via IMAPS usually on port 993).",
+          "category": "Network Technology"
         }
       }
     },
@@ -2241,7 +2321,8 @@
         "en": {
           "question": "Which default port does SMTP use for mail delivery between servers?",
           "answer": "25",
-          "explanation": "SMTP classically uses port 25; for authenticated client submission, port 587 (Submission) is often used instead."
+          "explanation": "SMTP classically uses port 25; for authenticated client submission, port 587 (Submission) is often used instead.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2256,7 +2337,8 @@
         "en": {
           "question": "Which default port does SNMP use for queries (get/set)?",
           "answer": "161",
-          "explanation": "SNMP queries run over UDP port 161, while traps (unsolicited notifications from devices) are sent over port 162."
+          "explanation": "SNMP queries run over UDP port 161, while traps (unsolicited notifications from devices) are sent over port 162.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2271,7 +2353,8 @@
         "en": {
           "question": "Which default port does Telnet use?",
           "answer": "23",
-          "explanation": "Telnet uses TCP port 23 and transmits all data, including credentials, unencrypted in plain text."
+          "explanation": "Telnet uses TCP port 23 and transmits all data, including credentials, unencrypted in plain text.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2286,7 +2369,8 @@
         "en": {
           "question": "How many host bits remain with a prefix length of /22?",
           "answer": "10",
-          "explanation": "An IPv4 address has 32 bits; with /22, 22 bits are reserved for the network, leaving 32 − 22 = 10 host bits."
+          "explanation": "An IPv4 address has 32 bits; with /22, 22 bits are reserved for the network, leaving 32 − 22 = 10 host bits.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2301,7 +2385,8 @@
         "en": {
           "question": "Which prefix length (CIDR notation) corresponds to the subnet mask 255.255.255.240?",
           "answer": "/28",
-          "explanation": "240 in binary is 11110000, i.e. 4 set bits in the last octet in addition to the 24 bits of the first three octets: 24 + 4 = 28."
+          "explanation": "240 in binary is 11110000, i.e. 4 set bits in the last octet in addition to the 24 bits of the first three octets: 24 + 4 = 28.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2316,7 +2401,8 @@
         "en": {
           "question": "What is the table called in which a switch stores the mapping of MAC addresses to its ports?",
           "answer": "MAC address table (CAM table)",
-          "explanation": "This table, also called the CAM table (Content Addressable Memory), lets the switch forward frames selectively instead of flooding them."
+          "explanation": "This table, also called the CAM table (Content Addressable Memory), lets the switch forward frames selectively instead of flooding them.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2331,7 +2417,8 @@
         "en": {
           "question": "What does the abbreviation ARP stand for?",
           "answer": "Address Resolution Protocol",
-          "explanation": "ARP resolves the MAC address belonging to a known IPv4 address on the local network."
+          "explanation": "ARP resolves the MAC address belonging to a known IPv4 address on the local network.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2346,7 +2433,8 @@
         "en": {
           "question": "What is the maximum standard length for a single twisted-pair copper cabling segment (e.g. Cat5e/Cat6)?",
           "answer": "100 meters",
-          "explanation": "Structured cabling standards (e.g. TIA/EIA-568) limit a copper segment to 100 meters, of which at most 90 meters is fixed cabling plus patch cables."
+          "explanation": "Structured cabling standards (e.g. TIA/EIA-568) limit a copper segment to 100 meters, of which at most 90 meters is fixed cabling plus patch cables.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2361,7 +2449,8 @@
         "en": {
           "question": "In which frequency band do the 802.11b and 802.11g wireless standards operate?",
           "answer": "2.4 GHz",
-          "explanation": "802.11b and 802.11g operate exclusively in the 2.4 GHz band, which suffers more interference from other devices (e.g. microwaves, Bluetooth) than the 5 GHz band."
+          "explanation": "802.11b and 802.11g operate exclusively in the 2.4 GHz band, which suffers more interference from other devices (e.g. microwaves, Bluetooth) than the 5 GHz band.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2376,7 +2465,8 @@
         "en": {
           "question": "A subnet must provide at least 500 usable host addresses. What is the minimum prefix length that satisfies this requirement?",
           "answer": "/23 (510 usable hosts)",
-          "explanation": "/23 leaves 9 host bits: 2⁹ − 2 = 510 usable hosts, enough for 500 hosts. /24 would not suffice, providing only 254 usable hosts."
+          "explanation": "/23 leaves 9 host bits: 2⁹ − 2 = 510 usable hosts, enough for 500 hosts. /24 would not suffice, providing only 254 usable hosts.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2391,7 +2481,8 @@
         "en": {
           "question": "What does DNS stand for?",
           "answer": "Domain Name System",
-          "explanation": "DNS translates names such as example.org into IP addresses and is central to name resolution."
+          "explanation": "DNS translates names such as example.org into IP addresses and is central to name resolution.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2406,7 +2497,8 @@
         "en": {
           "question": "Which UDP port does DHCP use on the server side by default?",
           "answer": "UDP 67",
-          "explanation": "DHCP servers listen on UDP port 67; clients use UDP port 68."
+          "explanation": "DHCP servers listen on UDP port 67; clients use UDP port 68.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2421,7 +2513,8 @@
         "en": {
           "question": "Which UDP port does DHCP use on the client side by default?",
           "answer": "UDP 68",
-          "explanation": "The DHCP client receives replies on UDP port 68."
+          "explanation": "The DHCP client receives replies on UDP port 68.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2436,7 +2529,8 @@
         "en": {
           "question": "What is the purpose of ICMP?",
           "answer": "To carry status and error messages in IP networks",
-          "explanation": "ICMP is used by tools such as ping and reports reachability or errors such as Time Exceeded."
+          "explanation": "ICMP is used by tools such as ping and reports reachability or errors such as Time Exceeded.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2451,7 +2545,8 @@
         "en": {
           "question": "Which prefix length corresponds to the subnet mask 255.255.255.0?",
           "answer": "/24",
-          "explanation": "255.255.255.0 contains 24 network bits."
+          "explanation": "255.255.255.0 contains 24 network bits.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2466,7 +2561,8 @@
         "en": {
           "question": "How many usable hosts does a /30 network provide?",
           "answer": "2",
-          "explanation": "/30 has 2 host bits: 4 addresses minus network and broadcast addresses gives 2 usable hosts."
+          "explanation": "/30 has 2 host bits: 4 addresses minus network and broadcast addresses gives 2 usable hosts.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2481,7 +2577,8 @@
         "en": {
           "question": "Which port is used by default for DNS queries?",
           "answer": "53",
-          "explanation": "DNS usually uses UDP 53 for normal queries and TCP 53 for zone transfers or large replies."
+          "explanation": "DNS usually uses UDP 53 for normal queries and TCP 53 for zone transfers or large replies.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2496,7 +2593,8 @@
         "en": {
           "question": "What does MTU mean?",
           "answer": "Maximum Transmission Unit",
-          "explanation": "The MTU is the maximum packet size that can be sent over a link without fragmentation."
+          "explanation": "The MTU is the maximum packet size that can be sent over a link without fragmentation.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2511,7 +2609,8 @@
         "en": {
           "question": "What Ethernet MTU is commonly used in LANs?",
           "answer": "1500 bytes",
-          "explanation": "Classic Ethernet commonly uses an MTU of 1500 bytes of payload."
+          "explanation": "Classic Ethernet commonly uses an MTU of 1500 bytes of payload.",
+          "category": "Network Technology"
         }
       }
     },
@@ -2526,7 +2625,8 @@
         "en": {
           "question": "What does PoE stand for?",
           "answer": "Power over Ethernet",
-          "explanation": "PoE powers devices such as access points, IP phones or cameras through the network cable."
+          "explanation": "PoE powers devices such as access points, IP phones or cameras through the network cable.",
+          "category": "Network Technology"
         }
       }
     }

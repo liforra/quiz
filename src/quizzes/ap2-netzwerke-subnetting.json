@@ -23,7 +23,8 @@
             "255.255.255.0"
           ],
           "answer": "255.255.255.192",
-          "explanation": "50 hosts + network and broadcast address = 52 addresses → 2⁶ = 64 (/26 = 255.255.255.192). A /27 would only offer 30 usable hosts."
+          "explanation": "50 hosts + network and broadcast address = 52 addresses → 2⁶ = 64 (/26 = 255.255.255.192). A /27 would only offer 30 usable hosts.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -50,7 +51,8 @@
             "ff00::/8"
           ],
           "answer": "fe80::/10",
-          "explanation": "fe80::/10 = link-local (valid only on the local segment). fc00::/7 = unique local (private), 2000::/3 = global unicast, ff00::/8 = multicast."
+          "explanation": "fe80::/10 = link-local (valid only on the local segment). fc00::/7 = unique local (private), 2000::/3 = global unicast, ff00::/8 = multicast.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -77,7 +79,8 @@
             "VTP"
           ],
           "answer": "STP (Spanning Tree Protocol)",
-          "explanation": "STP logically disables redundant paths until they are needed after a failure. OSPF is a routing protocol, LACP aggregates links, VTP distributes VLAN configurations."
+          "explanation": "STP logically disables redundant paths until they are needed after a failure. OSPF is a routing protocol, LACP aggregates links, VTP distributes VLAN configurations.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -104,7 +107,8 @@
             "48 seconds"
           ],
           "answer": "24 seconds",
-          "explanation": "2.4 GB × 8 = 19.2 Gbit. Effective rate: 1 Gbit/s × 0.8 = 0.8 Gbit/s. 19.2 ÷ 0.8 = 24 s."
+          "explanation": "2.4 GB × 8 = 19.2 Gbit. Effective rate: 1 Gbit/s × 0.8 = 0.8 Gbit/s. 19.2 ÷ 0.8 = 24 s.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -141,7 +145,8 @@
             "Logical separation of departments independent of the cabling",
             "Increased security through isolation of segments"
           ],
-          "explanation": "VLANs split a physical switch into logical networks. Port speed does not change, and traffic BETWEEN VLANs still needs routing/firewalling."
+          "explanation": "VLANs split a physical switch into logical networks. Port speed does not change, and traffic BETWEEN VLANs still needs routing/firewalling.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -176,7 +181,8 @@
             "Switch",
             "Bridge"
           ],
-          "explanation": "Switches and bridges forward based on MAC addresses (layer 2). Routers work at layer 3 (IP), hubs and repeaters at layer 1 (physical)."
+          "explanation": "Switches and bridges forward based on MAC addresses (layer 2). Routers work at layer 3 (IP), hubs and repeaters at layer 1 (physical).",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -213,7 +219,8 @@
             "RIP",
             "BGP"
           ],
-          "explanation": "OSPF (link-state), RIP (distance-vector) and BGP (internet backbone) exchange routing information. STP prevents switch loops, SMTP delivers email."
+          "explanation": "OSPF (link-state), RIP (distance-vector) and BGP (internet backbone) exchange routing information. STP prevents switch loops, SMTP delivers email.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -248,7 +255,8 @@
             "It helps conserve public IPv4 addresses",
             "With PAT, many internal clients can share one public IP address"
           ],
-          "explanation": "NAT/PAT (Port Address Translation) rewrites addresses — it does not encrypt anything; that requires TLS or a VPN."
+          "explanation": "NAT/PAT (Port Address Translation) rewrites addresses — it does not encrypt anything; that requires TLS or a VPN.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -263,7 +271,8 @@
         "en": {
           "question": "What is the broadcast address of the network 172.16.32.0/20?",
           "answer": "172.16.47.255",
-          "explanation": "/20 → block size 16 in the third octet: the network spans 172.16.32.0 to 172.16.47.255; the last address is the broadcast."
+          "explanation": "/20 → block size 16 in the third octet: the network spans 172.16.32.0 to 172.16.47.255; the last address is the broadcast.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -278,7 +287,8 @@
         "en": {
           "question": "How many usable host addresses does a /29 subnet provide?",
           "answer": "6 (2³ = 8 addresses minus network and broadcast address)",
-          "explanation": "/29 leaves 3 host bits: 8 addresses − 2 = 6 usable hosts. A typical size for small transfer networks."
+          "explanation": "/29 leaves 3 host bits: 8 addresses − 2 = 6 usable hosts. A typical size for small transfer networks.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -293,7 +303,8 @@
         "en": {
           "question": "The network 10.20.0.0/16 is to be divided into equally sized subnets with at least 1000 hosts each. What prefix length must the subnets have?",
           "answer": "/22 (1022 usable host addresses per subnet)",
-          "explanation": "1000 hosts + 2 → at least 1024 addresses → 10 host bits → 32 − 10 = /22. A /23 would only offer 510 hosts."
+          "explanation": "1000 hosts + 2 → at least 1024 addresses → 10 host bits → 32 − 10 = /22. A /23 would only offer 510 hosts.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -308,7 +319,8 @@
         "en": {
           "question": "What does the traceroute command (Windows: tracert) do, and what is it used for?",
           "answer": "It shows the individual router hops on the way to the target host including round-trip times — used to localize network problems along the path",
-          "explanation": "Traceroute uses increasing TTL values: each router that decrements the TTL to 0 responds with an ICMP Time Exceeded message."
+          "explanation": "Traceroute uses increasing TTL values: each router that decrements the TTL to 0 responds with an ICMP Time Exceeded message.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -321,9 +333,10 @@
       "explanation": "OSPF ist ein Link-State-Routingprotokoll. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of OSPF in Netzwerke & Subnetting?",
+          "question": "What is the purpose of OSPF in Networking & Subnetting?",
           "answer": "OSPF is a link-state routing protocol.",
-          "explanation": "OSPF is a link-state routing protocol. This is a common exam building block because it separates function from use case."
+          "explanation": "OSPF is a link-state routing protocol. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -336,9 +349,10 @@
       "explanation": "BGP ist das zentrale Routingprotokoll zwischen autonomen Systemen im Internet. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of BGP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of BGP in Networking & Subnetting?",
           "answer": "BGP is the central routing protocol between autonomous systems on the Internet.",
-          "explanation": "BGP is the central routing protocol between autonomous systems on the Internet. This is a common exam building block because it separates function from use case."
+          "explanation": "BGP is the central routing protocol between autonomous systems on the Internet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -351,9 +365,10 @@
       "explanation": "RIP ist ein Distance-Vector-Routingprotokoll mit Hop-Count-Metrik. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RIP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of RIP in Networking & Subnetting?",
           "answer": "RIP is a distance-vector routing protocol with hop-count metric.",
-          "explanation": "RIP is a distance-vector routing protocol with hop-count metric. This is a common exam building block because it separates function from use case."
+          "explanation": "RIP is a distance-vector routing protocol with hop-count metric. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -366,9 +381,10 @@
       "explanation": "Metrik bewertet die Güte einer Route. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Metrik in Netzwerke & Subnetting?",
-          "answer": "Metrik rates the quality of a route.",
-          "explanation": "Metrik rates the quality of a route. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Metric in Networking & Subnetting?",
+          "answer": "Metric rates the quality of a route.",
+          "explanation": "Metric rates the quality of a route. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -381,9 +397,10 @@
       "explanation": "Default Route wird genutzt, wenn keine spezifischere Route passt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Default Route in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Default Route in Networking & Subnetting?",
           "answer": "Default Route is used when no more specific route matches.",
-          "explanation": "Default Route is used when no more specific route matches. This is a common exam building block because it separates function from use case."
+          "explanation": "Default Route is used when no more specific route matches. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -396,9 +413,10 @@
       "explanation": "Longest Prefix Match wählt die Route mit dem längsten passenden Präfix. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Longest Prefix Match in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Longest Prefix Match in Networking & Subnetting?",
           "answer": "Longest Prefix Match selects the route with the longest matching prefix.",
-          "explanation": "Longest Prefix Match selects the route with the longest matching prefix. This is a common exam building block because it separates function from use case."
+          "explanation": "Longest Prefix Match selects the route with the longest matching prefix. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -411,9 +429,10 @@
       "explanation": "CIDR beschreibt Netzpräfixe ohne Klassenmodell. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CIDR in Netzwerke & Subnetting?",
+          "question": "What is the purpose of CIDR in Networking & Subnetting?",
           "answer": "CIDR describes network prefixes without classful addressing.",
-          "explanation": "CIDR describes network prefixes without classful addressing. This is a common exam building block because it separates function from use case."
+          "explanation": "CIDR describes network prefixes without classful addressing. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -426,9 +445,10 @@
       "explanation": "VLSM nutzt unterschiedlich große Subnetze innerhalb eines Adressbereichs. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VLSM in Netzwerke & Subnetting?",
+          "question": "What is the purpose of VLSM in Networking & Subnetting?",
           "answer": "VLSM uses differently sized subnets within an address range.",
-          "explanation": "VLSM uses differently sized subnets within an address range. This is a common exam building block because it separates function from use case."
+          "explanation": "VLSM uses differently sized subnets within an address range. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -441,9 +461,10 @@
       "explanation": "Supernetting fasst mehrere Netze zu einem größeren Präfix zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Supernetting in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Supernetting in Networking & Subnetting?",
           "answer": "Supernetting summarizes several networks into a larger prefix.",
-          "explanation": "Supernetting summarizes several networks into a larger prefix. This is a common exam building block because it separates function from use case."
+          "explanation": "Supernetting summarizes several networks into a larger prefix. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -456,9 +477,10 @@
       "explanation": "Broadcast-Adresse adressiert alle Hosts eines IPv4-Subnetzes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Broadcast-Adresse in Netzwerke & Subnetting?",
-          "answer": "Broadcast-Adresse addresses all hosts in an IPv4 subnet.",
-          "explanation": "Broadcast-Adresse addresses all hosts in an IPv4 subnet. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Broadcast address in Networking & Subnetting?",
+          "answer": "Broadcast address addresses all hosts in an IPv4 subnet.",
+          "explanation": "Broadcast address addresses all hosts in an IPv4 subnet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -471,9 +493,10 @@
       "explanation": "Netzadresse kennzeichnet das Subnetz selbst. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Netzadresse in Netzwerke & Subnetting?",
-          "answer": "Netzadresse identifies the subnet itself.",
-          "explanation": "Netzadresse identifies the subnet itself. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Network address in Networking & Subnetting?",
+          "answer": "Network address identifies the subnet itself.",
+          "explanation": "Network address identifies the subnet itself. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -486,9 +509,10 @@
       "explanation": "Hostanteil kennzeichnet den einzelnen Host innerhalb eines Netzes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Hostanteil in Netzwerke & Subnetting?",
-          "answer": "Hostanteil identifies the individual host inside a network.",
-          "explanation": "Hostanteil identifies the individual host inside a network. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Host portion in Networking & Subnetting?",
+          "answer": "Host portion identifies the individual host inside a network.",
+          "explanation": "Host portion identifies the individual host inside a network. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -501,9 +525,10 @@
       "explanation": "Präfixlänge gibt die Anzahl der Netzbits an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Präfixlänge in Netzwerke & Subnetting?",
-          "answer": "Präfixlänge states the number of network bits.",
-          "explanation": "Präfixlänge states the number of network bits. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Prefix length in Networking & Subnetting?",
+          "answer": "Prefix length states the number of network bits.",
+          "explanation": "Prefix length states the number of network bits. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -516,9 +541,10 @@
       "explanation": "/24 bietet 254 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /24 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /24 in Networking & Subnetting?",
           "answer": "/24 provides 254 usable IPv4 host addresses.",
-          "explanation": "/24 provides 254 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/24 provides 254 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -531,9 +557,10 @@
       "explanation": "/25 bietet 126 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /25 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /25 in Networking & Subnetting?",
           "answer": "/25 provides 126 usable IPv4 host addresses.",
-          "explanation": "/25 provides 126 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/25 provides 126 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -546,9 +573,10 @@
       "explanation": "/26 bietet 62 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /26 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /26 in Networking & Subnetting?",
           "answer": "/26 provides 62 usable IPv4 host addresses.",
-          "explanation": "/26 provides 62 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/26 provides 62 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -561,9 +589,10 @@
       "explanation": "/27 bietet 30 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /27 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /27 in Networking & Subnetting?",
           "answer": "/27 provides 30 usable IPv4 host addresses.",
-          "explanation": "/27 provides 30 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/27 provides 30 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -576,9 +605,10 @@
       "explanation": "/28 bietet 14 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /28 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /28 in Networking & Subnetting?",
           "answer": "/28 provides 14 usable IPv4 host addresses.",
-          "explanation": "/28 provides 14 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/28 provides 14 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -591,9 +621,10 @@
       "explanation": "/29 bietet 6 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /29 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /29 in Networking & Subnetting?",
           "answer": "/29 provides 6 usable IPv4 host addresses.",
-          "explanation": "/29 provides 6 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/29 provides 6 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -606,9 +637,10 @@
       "explanation": "/30 bietet 2 nutzbare IPv4-Hostadressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of /30 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of /30 in Networking & Subnetting?",
           "answer": "/30 provides 2 usable IPv4 host addresses.",
-          "explanation": "/30 provides 2 usable IPv4 host addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "/30 provides 2 usable IPv4 host addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -621,9 +653,10 @@
       "explanation": "IPv6-Link-Local beginnt mit fe80::/10. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IPv6-Link-Local in Netzwerke & Subnetting?",
+          "question": "What is the purpose of IPv6-Link-Local in Networking & Subnetting?",
           "answer": "IPv6-Link-Local starts with fe80::/10.",
-          "explanation": "IPv6-Link-Local starts with fe80::/10. This is a common exam building block because it separates function from use case."
+          "explanation": "IPv6-Link-Local starts with fe80::/10. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -636,9 +669,10 @@
       "explanation": "IPv6-Unique-Local beginnt mit fc00::/7. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IPv6-Unique-Local in Netzwerke & Subnetting?",
+          "question": "What is the purpose of IPv6-Unique-Local in Networking & Subnetting?",
           "answer": "IPv6-Unique-Local starts with fc00::/7.",
-          "explanation": "IPv6-Unique-Local starts with fc00::/7. This is a common exam building block because it separates function from use case."
+          "explanation": "IPv6-Unique-Local starts with fc00::/7. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -651,9 +685,10 @@
       "explanation": "IPv6-Global-Unicast liegt typischerweise in 2000::/3. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IPv6-Global-Unicast in Netzwerke & Subnetting?",
+          "question": "What is the purpose of IPv6-Global-Unicast in Networking & Subnetting?",
           "answer": "IPv6-Global-Unicast typically lies in 2000::/3.",
-          "explanation": "IPv6-Global-Unicast typically lies in 2000::/3. This is a common exam building block because it separates function from use case."
+          "explanation": "IPv6-Global-Unicast typically lies in 2000::/3. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -666,9 +701,10 @@
       "explanation": "SLAAC ermöglicht automatische IPv6-Adresskonfiguration. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SLAAC in Netzwerke & Subnetting?",
+          "question": "What is the purpose of SLAAC in Networking & Subnetting?",
           "answer": "SLAAC enables automatic IPv6 address configuration.",
-          "explanation": "SLAAC enables automatic IPv6 address configuration. This is a common exam building block because it separates function from use case."
+          "explanation": "SLAAC enables automatic IPv6 address configuration. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -681,9 +717,10 @@
       "explanation": "NDP ersetzt bei IPv6 unter anderem ARP-Funktionen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NDP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of NDP in Networking & Subnetting?",
           "answer": "NDP replaces ARP functions in IPv6 among others.",
-          "explanation": "NDP replaces ARP functions in IPv6 among others. This is a common exam building block because it separates function from use case."
+          "explanation": "NDP replaces ARP functions in IPv6 among others. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -696,9 +733,10 @@
       "explanation": "Router Advertisement informiert IPv6-Hosts über Präfixe und Gateway. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Router Advertisement in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Router Advertisement in Networking & Subnetting?",
           "answer": "Router Advertisement informs IPv6 hosts about prefixes and gateway.",
-          "explanation": "Router Advertisement informs IPv6 hosts about prefixes and gateway. This is a common exam building block because it separates function from use case."
+          "explanation": "Router Advertisement informs IPv6 hosts about prefixes and gateway. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -711,9 +749,10 @@
       "explanation": "DHCPv6 verteilt IPv6-Konfigurationsdaten zentral. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCPv6 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of DHCPv6 in Networking & Subnetting?",
           "answer": "DHCPv6 centrally distributes IPv6 configuration data.",
-          "explanation": "DHCPv6 centrally distributes IPv6 configuration data. This is a common exam building block because it separates function from use case."
+          "explanation": "DHCPv6 centrally distributes IPv6 configuration data. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -726,9 +765,10 @@
       "explanation": "Dual Stack betreibt IPv4 und IPv6 parallel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dual Stack in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Dual Stack in Networking & Subnetting?",
           "answer": "Dual Stack runs IPv4 and IPv6 in parallel.",
-          "explanation": "Dual Stack runs IPv4 and IPv6 in parallel. This is a common exam building block because it separates function from use case."
+          "explanation": "Dual Stack runs IPv4 and IPv6 in parallel. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -741,9 +781,10 @@
       "explanation": "NAT übersetzt IP-Adressen zwischen Netzen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NAT in Netzwerke & Subnetting?",
+          "question": "What is the purpose of NAT in Networking & Subnetting?",
           "answer": "NAT translates IP addresses between networks.",
-          "explanation": "NAT translates IP addresses between networks. This is a common exam building block because it separates function from use case."
+          "explanation": "NAT translates IP addresses between networks. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -756,9 +797,10 @@
       "explanation": "PAT ordnet viele interne Verbindungen über Ports einer öffentlichen Adresse zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PAT in Netzwerke & Subnetting?",
+          "question": "What is the purpose of PAT in Networking & Subnetting?",
           "answer": "PAT maps many internal connections through ports to one public address.",
-          "explanation": "PAT maps many internal connections through ports to one public address. This is a common exam building block because it separates function from use case."
+          "explanation": "PAT maps many internal connections through ports to one public address. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -771,9 +813,10 @@
       "explanation": "SNAT ändert die Quelladresse eines Pakets. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SNAT in Netzwerke & Subnetting?",
+          "question": "What is the purpose of SNAT in Networking & Subnetting?",
           "answer": "SNAT changes the source address of a packet.",
-          "explanation": "SNAT changes the source address of a packet. This is a common exam building block because it separates function from use case."
+          "explanation": "SNAT changes the source address of a packet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -786,9 +829,10 @@
       "explanation": "DNAT ändert die Zieladresse eines Pakets. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DNAT in Netzwerke & Subnetting?",
+          "question": "What is the purpose of DNAT in Networking & Subnetting?",
           "answer": "DNAT changes the destination address of a packet.",
-          "explanation": "DNAT changes the destination address of a packet. This is a common exam building block because it separates function from use case."
+          "explanation": "DNAT changes the destination address of a packet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -801,9 +845,10 @@
       "explanation": "Portweiterleitung leitet Verbindungen an interne Systeme weiter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Portweiterleitung in Netzwerke & Subnetting?",
-          "answer": "Portweiterleitung forwards connections to internal systems.",
-          "explanation": "Portweiterleitung forwards connections to internal systems. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Port forwarding in Networking & Subnetting?",
+          "answer": "Port forwarding forwards connections to internal systems.",
+          "explanation": "Port forwarding forwards connections to internal systems. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -816,9 +861,10 @@
       "explanation": "VLAN teilt ein physisches Netz logisch in Broadcast-Domänen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VLAN in Netzwerke & Subnetting?",
+          "question": "What is the purpose of VLAN in Networking & Subnetting?",
           "answer": "VLAN logically splits a physical network into broadcast domains.",
-          "explanation": "VLAN logically splits a physical network into broadcast domains. This is a common exam building block because it separates function from use case."
+          "explanation": "VLAN logically splits a physical network into broadcast domains. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -831,9 +877,10 @@
       "explanation": "Access-Port führt ungetaggten Verkehr eines VLANs. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Access-Port in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Access-Port in Networking & Subnetting?",
           "answer": "Access-Port carries untagged traffic of one VLAN.",
-          "explanation": "Access-Port carries untagged traffic of one VLAN. This is a common exam building block because it separates function from use case."
+          "explanation": "Access-Port carries untagged traffic of one VLAN. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -846,9 +893,10 @@
       "explanation": "Trunk-Port transportiert mehrere VLANs mit Tags. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Trunk-Port in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Trunk-Port in Networking & Subnetting?",
           "answer": "Trunk-Port carries multiple VLANs with tags.",
-          "explanation": "Trunk-Port carries multiple VLANs with tags. This is a common exam building block because it separates function from use case."
+          "explanation": "Trunk-Port carries multiple VLANs with tags. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -861,9 +909,10 @@
       "explanation": "802.1Q kennzeichnet VLAN-Tags in Ethernet-Frames. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 802.1Q in Netzwerke & Subnetting?",
+          "question": "What is the purpose of 802.1Q in Networking & Subnetting?",
           "answer": "802.1Q defines VLAN tags in Ethernet frames.",
-          "explanation": "802.1Q defines VLAN tags in Ethernet frames. This is a common exam building block because it separates function from use case."
+          "explanation": "802.1Q defines VLAN tags in Ethernet frames. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -876,9 +925,10 @@
       "explanation": "Native VLAN ist das ungetaggte VLAN auf einem Trunk. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Native VLAN in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Native VLAN in Networking & Subnetting?",
           "answer": "Native VLAN is the untagged VLAN on a trunk.",
-          "explanation": "Native VLAN is the untagged VLAN on a trunk. This is a common exam building block because it separates function from use case."
+          "explanation": "Native VLAN is the untagged VLAN on a trunk. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -891,9 +941,10 @@
       "explanation": "Inter-VLAN-Routing ermöglicht Kommunikation zwischen VLANs. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Inter-VLAN-Routing in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Inter-VLAN-Routing in Networking & Subnetting?",
           "answer": "Inter-VLAN-Routing enables communication between VLANs.",
-          "explanation": "Inter-VLAN-Routing enables communication between VLANs. This is a common exam building block because it separates function from use case."
+          "explanation": "Inter-VLAN-Routing enables communication between VLANs. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -906,9 +957,10 @@
       "explanation": "STP verhindert Schleifen in geswitchten Netzen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of STP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of STP in Networking & Subnetting?",
           "answer": "STP prevents loops in switched networks.",
-          "explanation": "STP prevents loops in switched networks. This is a common exam building block because it separates function from use case."
+          "explanation": "STP prevents loops in switched networks. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -921,9 +973,10 @@
       "explanation": "RSTP ist eine schnellere Weiterentwicklung von STP. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RSTP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of RSTP in Networking & Subnetting?",
           "answer": "RSTP is a faster evolution of STP.",
-          "explanation": "RSTP is a faster evolution of STP. This is a common exam building block because it separates function from use case."
+          "explanation": "RSTP is a faster evolution of STP. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -936,9 +989,10 @@
       "explanation": "Root Bridge ist der Bezugspunkt im Spanning Tree. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Root Bridge in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Root Bridge in Networking & Subnetting?",
           "answer": "Root Bridge is the reference point in the spanning tree.",
-          "explanation": "Root Bridge is the reference point in the spanning tree. This is a common exam building block because it separates function from use case."
+          "explanation": "Root Bridge is the reference point in the spanning tree. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -951,9 +1005,10 @@
       "explanation": "LACP bündelt mehrere physische Links logisch. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of LACP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of LACP in Networking & Subnetting?",
           "answer": "LACP bundles several physical links logically.",
-          "explanation": "LACP bundles several physical links logically. This is a common exam building block because it separates function from use case."
+          "explanation": "LACP bundles several physical links logically. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -966,9 +1021,10 @@
       "explanation": "EtherChannel fasst mehrere Ethernet-Verbindungen zu einem Kanal zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of EtherChannel in Netzwerke & Subnetting?",
+          "question": "What is the purpose of EtherChannel in Networking & Subnetting?",
           "answer": "EtherChannel combines several Ethernet links into one channel.",
-          "explanation": "EtherChannel combines several Ethernet links into one channel. This is a common exam building block because it separates function from use case."
+          "explanation": "EtherChannel combines several Ethernet links into one channel. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -981,9 +1037,10 @@
       "explanation": "QoS priorisiert Verkehr nach Dienstgüteanforderungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of QoS in Netzwerke & Subnetting?",
+          "question": "What is the purpose of QoS in Networking & Subnetting?",
           "answer": "QoS prioritizes traffic by quality requirements.",
-          "explanation": "QoS prioritizes traffic by quality requirements. This is a common exam building block because it separates function from use case."
+          "explanation": "QoS prioritizes traffic by quality requirements. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -996,9 +1053,10 @@
       "explanation": "Latenz beschreibt Verzögerung einer Übertragung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Latenz in Netzwerke & Subnetting?",
-          "answer": "Latenz describes transmission delay.",
-          "explanation": "Latenz describes transmission delay. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Latency in Networking & Subnetting?",
+          "answer": "Latency describes transmission delay.",
+          "explanation": "Latency describes transmission delay. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1011,9 +1069,10 @@
       "explanation": "Jitter beschreibt Schwankungen der Paketlaufzeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Jitter in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Jitter in Networking & Subnetting?",
           "answer": "Jitter describes variation in packet delay.",
-          "explanation": "Jitter describes variation in packet delay. This is a common exam building block because it separates function from use case."
+          "explanation": "Jitter describes variation in packet delay. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1026,9 +1085,10 @@
       "explanation": "Paketverlust tritt auf, wenn Pakete unterwegs verworfen werden. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Paketverlust in Netzwerke & Subnetting?",
-          "answer": "Paketverlust occurs when packets are dropped in transit.",
-          "explanation": "Paketverlust occurs when packets are dropped in transit. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Packet loss in Networking & Subnetting?",
+          "answer": "Packet loss occurs when packets are dropped in transit.",
+          "explanation": "Packet loss occurs when packets are dropped in transit. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1057,9 +1117,10 @@
       "explanation": "Bandbreite ist die theoretische oder verfügbare Übertragungskapazität. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Bandbreite in Netzwerke & Subnetting?",
-          "answer": "Bandbreite is the theoretical or available transmission capacity.",
-          "explanation": "Bandbreite is the theoretical or available transmission capacity. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Bandwidth in Networking & Subnetting?",
+          "answer": "Bandwidth is the theoretical or available transmission capacity.",
+          "explanation": "Bandwidth is the theoretical or available transmission capacity. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1072,9 +1133,10 @@
       "explanation": "TCP stellt verbindungsorientierte zuverlässige Übertragung bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TCP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of TCP in Networking & Subnetting?",
           "answer": "TCP provides connection-oriented reliable transport.",
-          "explanation": "TCP provides connection-oriented reliable transport. This is a common exam building block because it separates function from use case."
+          "explanation": "TCP provides connection-oriented reliable transport. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1087,9 +1149,10 @@
       "explanation": "UDP stellt verbindungslose schnelle Übertragung ohne Zustellgarantie bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of UDP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of UDP in Networking & Subnetting?",
           "answer": "UDP provides connectionless fast transport without delivery guarantee.",
-          "explanation": "UDP provides connectionless fast transport without delivery guarantee. This is a common exam building block because it separates function from use case."
+          "explanation": "UDP provides connectionless fast transport without delivery guarantee. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1102,9 +1165,10 @@
       "explanation": "Three-Way-Handshake baut eine TCP-Verbindung mit SYN, SYN-ACK und ACK auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Three-Way-Handshake in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Three-Way-Handshake in Networking & Subnetting?",
           "answer": "Three-Way-Handshake establishes TCP with SYN, SYN-ACK and ACK.",
-          "explanation": "Three-Way-Handshake establishes TCP with SYN, SYN-ACK and ACK. This is a common exam building block because it separates function from use case."
+          "explanation": "Three-Way-Handshake establishes TCP with SYN, SYN-ACK and ACK. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1117,9 +1181,10 @@
       "explanation": "MSS beschreibt die maximale TCP-Nutzlast pro Segment. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MSS in Netzwerke & Subnetting?",
+          "question": "What is the purpose of MSS in Networking & Subnetting?",
           "answer": "MSS describes maximum TCP payload per segment.",
-          "explanation": "MSS describes maximum TCP payload per segment. This is a common exam building block because it separates function from use case."
+          "explanation": "MSS describes maximum TCP payload per segment. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1132,9 +1197,10 @@
       "explanation": "MTU beschreibt die maximale Paketgröße auf einem Link. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MTU in Netzwerke & Subnetting?",
+          "question": "What is the purpose of MTU in Networking & Subnetting?",
           "answer": "MTU describes maximum packet size on a link.",
-          "explanation": "MTU describes maximum packet size on a link. This is a common exam building block because it separates function from use case."
+          "explanation": "MTU describes maximum packet size on a link. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1147,9 +1213,10 @@
       "explanation": "Fragmentierung zerlegt Pakete in kleinere Teile. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Fragmentierung in Netzwerke & Subnetting?",
-          "answer": "Fragmentierung splits packets into smaller parts.",
-          "explanation": "Fragmentierung splits packets into smaller parts. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Fragmentation in Networking & Subnetting?",
+          "answer": "Fragmentation splits packets into smaller parts.",
+          "explanation": "Fragmentation splits packets into smaller parts. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1162,9 +1229,10 @@
       "explanation": "ICMP überträgt Fehler- und Statusmeldungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ICMP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of ICMP in Networking & Subnetting?",
           "answer": "ICMP carries error and status messages.",
-          "explanation": "ICMP carries error and status messages. This is a common exam building block because it separates function from use case."
+          "explanation": "ICMP carries error and status messages. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1177,9 +1245,10 @@
       "explanation": "Ping prüft Erreichbarkeit mit ICMP Echo. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Ping in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Ping in Networking & Subnetting?",
           "answer": "Ping checks reachability with ICMP echo.",
-          "explanation": "Ping checks reachability with ICMP echo. This is a common exam building block because it separates function from use case."
+          "explanation": "Ping checks reachability with ICMP echo. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1192,9 +1261,10 @@
       "explanation": "Traceroute ermittelt Zwischenstationen über steigende TTL-Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Traceroute in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Traceroute in Networking & Subnetting?",
           "answer": "Traceroute determines hops using increasing TTL values.",
-          "explanation": "Traceroute determines hops using increasing TTL values. This is a common exam building block because it separates function from use case."
+          "explanation": "Traceroute determines hops using increasing TTL values. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1207,9 +1277,10 @@
       "explanation": "TTL begrenzt die Lebensdauer eines IP-Pakets. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TTL in Netzwerke & Subnetting?",
+          "question": "What is the purpose of TTL in Networking & Subnetting?",
           "answer": "TTL limits the lifetime of an IP packet.",
-          "explanation": "TTL limits the lifetime of an IP packet. This is a common exam building block because it separates function from use case."
+          "explanation": "TTL limits the lifetime of an IP packet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1222,9 +1293,10 @@
       "explanation": "ARP löst IPv4-Adressen zu MAC-Adressen im lokalen Netz auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ARP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of ARP in Networking & Subnetting?",
           "answer": "ARP resolves IPv4 addresses to MAC addresses in the local network.",
-          "explanation": "ARP resolves IPv4 addresses to MAC addresses in the local network. This is a common exam building block because it separates function from use case."
+          "explanation": "ARP resolves IPv4 addresses to MAC addresses in the local network. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1237,9 +1309,10 @@
       "explanation": "MAC-Adresse ist eine Layer-2-Adresse einer Netzwerkschnittstelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MAC-Adresse in Netzwerke & Subnetting?",
-          "answer": "MAC-Adresse is a layer-2 address of a network interface.",
-          "explanation": "MAC-Adresse is a layer-2 address of a network interface. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of MAC address in Networking & Subnetting?",
+          "answer": "MAC address is a layer-2 address of a network interface.",
+          "explanation": "MAC address is a layer-2 address of a network interface. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1252,9 +1325,10 @@
       "explanation": "Broadcast-Domäne ist der Bereich, in dem Broadcasts weitergeleitet werden. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Broadcast-Domäne in Netzwerke & Subnetting?",
-          "answer": "Broadcast-Domäne is the area in which broadcasts are forwarded.",
-          "explanation": "Broadcast-Domäne is the area in which broadcasts are forwarded. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Broadcast domain in Networking & Subnetting?",
+          "answer": "Broadcast domain is the area in which broadcasts are forwarded.",
+          "explanation": "Broadcast domain is the area in which broadcasts are forwarded. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1267,9 +1341,10 @@
       "explanation": "Kollisionsdomäne ist der Bereich möglicher Ethernet-Kollisionen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Kollisionsdomäne in Netzwerke & Subnetting?",
-          "answer": "Kollisionsdomäne is the area of possible Ethernet collisions.",
-          "explanation": "Kollisionsdomäne is the area of possible Ethernet collisions. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Collision domain in Networking & Subnetting?",
+          "answer": "Collision domain is the area of possible Ethernet collisions.",
+          "explanation": "Collision domain is the area of possible Ethernet collisions. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1282,9 +1357,10 @@
       "explanation": "Switch leitet Frames anhand von MAC-Adressen weiter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Switch in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Switch in Networking & Subnetting?",
           "answer": "Switch forwards frames based on MAC addresses.",
-          "explanation": "Switch forwards frames based on MAC addresses. This is a common exam building block because it separates function from use case."
+          "explanation": "Switch forwards frames based on MAC addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1297,9 +1373,10 @@
       "explanation": "Router verbindet IP-Netze und trifft Routingentscheidungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Router in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Router in Networking & Subnetting?",
           "answer": "Router connects IP networks and makes routing decisions.",
-          "explanation": "Router connects IP networks and makes routing decisions. This is a common exam building block because it separates function from use case."
+          "explanation": "Router connects IP networks and makes routing decisions. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1312,9 +1389,10 @@
       "explanation": "Firewall filtert Verkehr nach definierten Regeln. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Firewall in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Firewall in Networking & Subnetting?",
           "answer": "Firewall filters traffic according to defined rules.",
-          "explanation": "Firewall filters traffic according to defined rules. This is a common exam building block because it separates function from use case."
+          "explanation": "Firewall filters traffic according to defined rules. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1327,9 +1405,10 @@
       "explanation": "Proxy vermittelt Anfragen stellvertretend für Clients. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Proxy in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Proxy in Networking & Subnetting?",
           "answer": "Proxy forwards requests on behalf of clients.",
-          "explanation": "Proxy forwards requests on behalf of clients. This is a common exam building block because it separates function from use case."
+          "explanation": "Proxy forwards requests on behalf of clients. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1342,9 +1421,10 @@
       "explanation": "Reverse Proxy nimmt Anfragen für Server entgegen und leitet sie weiter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Reverse Proxy in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Reverse Proxy in Networking & Subnetting?",
           "answer": "Reverse Proxy receives requests for servers and forwards them.",
-          "explanation": "Reverse Proxy receives requests for servers and forwards them. This is a common exam building block because it separates function from use case."
+          "explanation": "Reverse Proxy receives requests for servers and forwards them. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1357,9 +1437,10 @@
       "explanation": "Load Balancer verteilt Anfragen auf mehrere Backend-Systeme. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Load Balancer in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Load Balancer in Networking & Subnetting?",
           "answer": "Load Balancer distributes requests across several backend systems.",
-          "explanation": "Load Balancer distributes requests across several backend systems. This is a common exam building block because it separates function from use case."
+          "explanation": "Load Balancer distributes requests across several backend systems. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1372,9 +1453,10 @@
       "explanation": "VRRP stellt ein redundantes virtuelles Gateway bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VRRP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of VRRP in Networking & Subnetting?",
           "answer": "VRRP provides a redundant virtual gateway.",
-          "explanation": "VRRP provides a redundant virtual gateway. This is a common exam building block because it separates function from use case."
+          "explanation": "VRRP provides a redundant virtual gateway. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1387,9 +1469,10 @@
       "explanation": "HSRP stellt Cisco-spezifisch Gateway-Redundanz bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of HSRP in Netzwerke & Subnetting?",
+          "question": "What is the purpose of HSRP in Networking & Subnetting?",
           "answer": "HSRP provides Cisco-specific gateway redundancy.",
-          "explanation": "HSRP provides Cisco-specific gateway redundancy. This is a common exam building block because it separates function from use case."
+          "explanation": "HSRP provides Cisco-specific gateway redundancy. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1402,9 +1485,10 @@
       "explanation": "Anycast nutzt dieselbe Adresse an mehreren Standorten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Anycast in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Anycast in Networking & Subnetting?",
           "answer": "Anycast uses the same address at multiple locations.",
-          "explanation": "Anycast uses the same address at multiple locations. This is a common exam building block because it separates function from use case."
+          "explanation": "Anycast uses the same address at multiple locations. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1417,9 +1501,10 @@
       "explanation": "Unicast sendet an genau einen Empfänger. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Unicast in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Unicast in Networking & Subnetting?",
           "answer": "Unicast sends to exactly one receiver.",
-          "explanation": "Unicast sends to exactly one receiver. This is a common exam building block because it separates function from use case."
+          "explanation": "Unicast sends to exactly one receiver. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1432,9 +1517,10 @@
       "explanation": "Multicast sendet an eine definierte Empfängergruppe. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Multicast in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Multicast in Networking & Subnetting?",
           "answer": "Multicast sends to a defined receiver group.",
-          "explanation": "Multicast sends to a defined receiver group. This is a common exam building block because it separates function from use case."
+          "explanation": "Multicast sends to a defined receiver group. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1447,9 +1533,10 @@
       "explanation": "Broadcast sendet an alle Hosts eines Netzes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Broadcast in Netzwerke & Subnetting?",
+          "question": "What is the purpose of Broadcast in Networking & Subnetting?",
           "answer": "Broadcast sends to all hosts of a network.",
-          "explanation": "Broadcast sends to all hosts of a network. This is a common exam building block because it separates function from use case."
+          "explanation": "Broadcast sends to all hosts of a network. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1462,9 +1549,10 @@
       "explanation": "WLAN-Roaming wechselt zwischen Access Points desselben WLANs. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of WLAN-Roaming in Netzwerke & Subnetting?",
+          "question": "What is the purpose of WLAN-Roaming in Networking & Subnetting?",
           "answer": "WLAN-Roaming switches between access points of the same WLAN.",
-          "explanation": "WLAN-Roaming switches between access points of the same WLAN. This is a common exam building block because it separates function from use case."
+          "explanation": "WLAN-Roaming switches between access points of the same WLAN. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1477,9 +1565,10 @@
       "explanation": "SSID ist der sichtbare oder konfigurierte WLAN-Netzname. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SSID in Netzwerke & Subnetting?",
+          "question": "What is the purpose of SSID in Networking & Subnetting?",
           "answer": "SSID is the visible or configured WLAN network name.",
-          "explanation": "SSID is the visible or configured WLAN network name. This is a common exam building block because it separates function from use case."
+          "explanation": "SSID is the visible or configured WLAN network name. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1492,9 +1581,10 @@
       "explanation": "WPA3 ist ein moderner WLAN-Sicherheitsstandard. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of WPA3 in Netzwerke & Subnetting?",
+          "question": "What is the purpose of WPA3 in Networking & Subnetting?",
           "answer": "WPA3 is a modern Wi-Fi security standard.",
-          "explanation": "WPA3 is a modern Wi-Fi security standard. This is a common exam building block because it separates function from use case."
+          "explanation": "WPA3 is a modern Wi-Fi security standard. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1507,9 +1597,10 @@
       "explanation": "5-GHz-Band bietet oft mehr Kanäle und weniger Störungen als 2,4 GHz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 5-GHz-Band in Netzwerke & Subnetting?",
+          "question": "What is the purpose of 5-GHz-Band in Networking & Subnetting?",
           "answer": "5-GHz-Band often offers more channels and less interference than 2.4 GHz.",
-          "explanation": "5-GHz-Band often offers more channels and less interference than 2.4 GHz. This is a common exam building block because it separates function from use case."
+          "explanation": "5-GHz-Band often offers more channels and less interference than 2.4 GHz. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1522,9 +1613,10 @@
       "explanation": "PoE versorgt Netzwerkgeräte über Ethernet mit Strom. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PoE in Netzwerke & Subnetting?",
+          "question": "What is the purpose of PoE in Networking & Subnetting?",
           "answer": "PoE powers network devices over Ethernet.",
-          "explanation": "PoE powers network devices over Ethernet. This is a common exam building block because it separates function from use case."
+          "explanation": "PoE powers network devices over Ethernet. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1537,9 +1629,10 @@
       "explanation": "Glasfaser überträgt Daten optisch und ist unempfindlich gegen EMV. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Glasfaser in Netzwerke & Subnetting?",
-          "answer": "Glasfaser transmits data optically and is resistant to EMI.",
-          "explanation": "Glasfaser transmits data optically and is resistant to EMI. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Fiber optic in Networking & Subnetting?",
+          "answer": "Fiber optic transmits data optically and is resistant to EMI.",
+          "explanation": "Fiber optic transmits data optically and is resistant to EMI. This is a common exam building block because it separates function from use case.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1554,7 +1647,8 @@
         "en": {
           "question": "What is a routing table?",
           "answer": "A table of known destination networks and their next hops or interfaces.",
-          "explanation": "Routers use routing tables to choose the forwarding path for each packet."
+          "explanation": "Routers use routing tables to choose the forwarding path for each packet.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1569,7 +1663,8 @@
         "en": {
           "question": "What does next hop mean?",
           "answer": "The next router or gateway on the way to the destination network.",
-          "explanation": "The next hop is the immediate forwarding address, not necessarily the final destination."
+          "explanation": "The next hop is the immediate forwarding address, not necessarily the final destination.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1584,7 +1679,8 @@
         "en": {
           "question": "What is a static route?",
           "answer": "A manually configured route.",
-          "explanation": "Static routes are simple and predictable but do not automatically adapt to failures."
+          "explanation": "Static routes are simple and predictable but do not automatically adapt to failures.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1599,7 +1695,8 @@
         "en": {
           "question": "What is a dynamic route?",
           "answer": "A route learned through a routing protocol.",
-          "explanation": "Dynamic routing can automatically account for topology changes."
+          "explanation": "Dynamic routing can automatically account for topology changes.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1614,7 +1711,8 @@
         "en": {
           "question": "What is an autonomous system?",
           "answer": "A network under common administrative control with its own AS number.",
-          "explanation": "Autonomous systems are especially relevant for BGP routing on the Internet."
+          "explanation": "Autonomous systems are especially relevant for BGP routing on the Internet.",
+          "category": "Networking & Subnetting"
         }
       }
     },
@@ -1629,7 +1727,8 @@
         "en": {
           "question": "What is a loopback interface?",
           "answer": "A logical interface available independently of physical cabling.",
-          "explanation": "Loopback interfaces are often used for management, router IDs or tests."
+          "explanation": "Loopback interfaces are often used for management, router IDs or tests.",
+          "category": "Networking & Subnetting"
         }
       }
     }

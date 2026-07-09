@@ -23,7 +23,8 @@
             "€2,040"
           ],
           "answer": "€1,960",
-          "explanation": "2% of €2,000 = €40 deduction → €2,000 − €40 = €1,960. A cash discount (Skonto) rewards fast payment."
+          "explanation": "2% of €2,000 = €40 deduction → €2,000 − €40 = €1,960. A cash discount (Skonto) rewards fast payment.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -50,7 +51,8 @@
             "4.5"
           ],
           "answer": "4.2",
-          "explanation": "Weighted sum: 0.4 × 3 + 0.6 × 5 = 1.2 + 3.0 = 4.2. A utility analysis makes qualitative criteria comparable through weighting and scoring."
+          "explanation": "Weighted sum: 0.4 × 3 + 0.6 × 5 = 1.2 + 3.0 = 4.2. A utility analysis makes qualitative criteria comparable through weighting and scoring.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -77,7 +79,8 @@
             "€4,800"
           ],
           "answer": "€1,600",
-          "explanation": "Straight-line depreciation: acquisition cost ÷ useful life = €4,800 ÷ 3 years = €1,600 per year."
+          "explanation": "Straight-line depreciation: acquisition cost ÷ useful life = €4,800 ÷ 3 years = €1,600 per year.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -104,7 +107,8 @@
             "The cost of the activity per day"
           ],
           "answer": "The amount of time the activity can be delayed without endangering the project end date",
-          "explanation": "Total float = latest start − earliest start. Activities with zero float lie on the critical path."
+          "explanation": "Total float = latest start − earliest start. Activities with zero float lie on the critical path.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -137,7 +141,8 @@
             "It is written by the customer/client",
             "It describes WHAT is required"
           ],
-          "explanation": "Lastenheft: the client describes WHAT and WHY. Pflichtenheft: the contractor describes HOW and WITH WHAT the requirements will be implemented."
+          "explanation": "Lastenheft: the client describes WHAT and WHY. Pflichtenheft: the contractor describes HOW and WITH WHAT the requirements will be implemented.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -174,7 +179,8 @@
             "It describes HOW the requirements will be implemented",
             "It is based on the requirements specification (Lastenheft)"
           ],
-          "explanation": "Order: first the client writes the Lastenheft (WHAT), then the contractor responds with the Pflichtenheft (HOW) as the implementation concept."
+          "explanation": "Order: first the client writes the Lastenheft (WHAT), then the contractor responds with the Pflichtenheft (HOW) as the implementation concept.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -211,7 +217,8 @@
             "Cost",
             "Quality/scope"
           ],
-          "explanation": "The three factors compete with each other: shortening the schedule usually means higher costs or lower quality."
+          "explanation": "The three factors compete with each other: shortening the schedule usually means higher costs or lower quality.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -250,7 +257,8 @@
             "Maintenance and support costs",
             "Employee training costs"
           ],
-          "explanation": "TCO covers all direct and indirect costs over the entire life cycle — not just the purchase price."
+          "explanation": "TCO covers all direct and indirect costs over the entire life cycle — not just the purchase price.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -265,7 +273,8 @@
         "en": {
           "question": "What is the difference between a net price and a gross price?",
           "answer": "The net price excludes VAT, the gross price includes VAT (usually 19% in Germany)",
-          "explanation": "Gross = net + VAT. B2B pricing is usually net, consumer prices are gross."
+          "explanation": "Gross = net + VAT. B2B pricing is usually net, consumer prices are gross.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -280,7 +289,8 @@
         "en": {
           "question": "What is the critical path in a project network diagram?",
           "answer": "The longest chain of dependent activities with zero float — it determines the minimum project duration",
-          "explanation": "If an activity on the critical path is delayed, the whole project end date shifts, because these activities have zero total float."
+          "explanation": "If an activity on the critical path is delayed, the whole project end date shifts, because these activities have zero total float.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -295,7 +305,8 @@
         "en": {
           "question": "Name two advantages of leasing IT hardware compared to buying it.",
           "answer": "Preserves liquidity (no large one-off payment), predictable monthly costs, regularly up-to-date hardware, installments are tax-deductible operating expenses",
-          "explanation": "Any two of these points are sufficient. Downside: over the full term leasing is usually more expensive, and you never own the hardware."
+          "explanation": "Any two of these points are sufficient. Downside: over the full term leasing is usually more expensive, and you never own the hardware.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -310,7 +321,8 @@
         "en": {
           "question": "What does the abbreviation SMART stand for when formulating (project) goals?",
           "answer": "Specific, Measurable, Achievable (or Accepted), Realistic, Time-bound",
-          "explanation": "SMART goals are unambiguously verifiable. Example: \"Reduce ticket response time to under 4 hours by Dec 31\" instead of \"provide better support\"."
+          "explanation": "SMART goals are unambiguously verifiable. Example: \"Reduce ticket response time to under 4 hours by Dec 31\" instead of \"provide better support\".",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -337,7 +349,8 @@
             "Initiation, execution, planning, closure"
           ],
           "answer": "Initiation, planning, execution, closure",
-          "explanation": "Project control/monitoring runs alongside execution and is a cross-cutting task rather than a separate sequential step."
+          "explanation": "Project control/monitoring runs alongside execution and is a cross-cutting task rather than a separate sequential step.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -364,7 +377,8 @@
             "11"
           ],
           "answer": "7",
-          "explanation": "ES(B) = EF(A) = 0 + 4 = 4. EF(B) = ES(B) + duration(B) = 4 + 3 = 7."
+          "explanation": "ES(B) = EF(A) = 0 + 4 = 4. EF(B) = ES(B) + duration(B) = 4 + 3 = 7.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -391,7 +405,8 @@
             "The hierarchy of the project organization"
           ],
           "answer": "The timing of activities as bars on a time axis",
-          "explanation": "In a Gantt chart, bar length represents activity duration, and its position on the time axis represents the planned start and end dates."
+          "explanation": "In a Gantt chart, bar length represents activity duration, and its position on the time axis represents the planned start and end dates.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -418,7 +433,8 @@
             "They rise degressively"
           ],
           "answer": "They stay constant",
-          "explanation": "Fixed costs (e.g. rent, salaries) are incurred regardless of output volume as long as the capacity limit is not exceeded."
+          "explanation": "Fixed costs (e.g. rent, salaries) are incurred regardless of output volume as long as the capacity limit is not exceeded.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -445,7 +461,8 @@
             "€80"
           ],
           "answer": "€20",
-          "explanation": "Contribution margin per unit = selling price − variable cost per unit = €50 − €30 = €20."
+          "explanation": "Contribution margin per unit = selling price − variable cost per unit = €50 − €30 = €20.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -472,7 +489,8 @@
             "1,000"
           ],
           "answer": "400",
-          "explanation": "Break-even quantity = fixed costs ÷ contribution margin per unit = €10,000 ÷ €25 = 400 units."
+          "explanation": "Break-even quantity = fixed costs ÷ contribution margin per unit = €10,000 ÷ €25 = 400 units.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -499,7 +517,8 @@
             "€120"
           ],
           "answer": "€100",
-          "explanation": "Selling price = cost price × (1 + markup rate) = €80 × 1.25 = €100."
+          "explanation": "Selling price = cost price × (1 + markup rate) = €80 × 1.25 = €100.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -526,7 +545,8 @@
             "€198.00"
           ],
           "answer": "€176.40",
-          "explanation": "Target price = €200 × 0.90 = €180. Cash purchase price = €180 × 0.98 = €176.40."
+          "explanation": "Target price = €200 × 0.90 = €180. Cash purchase price = €180 × 0.98 = €176.40.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -553,7 +573,8 @@
             "Customer cash discount"
           ],
           "answer": "Procurement costs (e.g. freight charges, transport insurance)",
-          "explanation": "Cost price = cash purchase price + procurement costs. Profit markup and customer discount only apply in the sales-price calculation."
+          "explanation": "Cost price = cash purchase price + procurement costs. Profit markup and customer discount only apply in the sales-price calculation.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -580,7 +601,8 @@
             "€50,000"
           ],
           "answer": "€25,000",
-          "explanation": "Under the GmbH Act, the minimum share capital is €25,000; at least half must be paid in upon formation."
+          "explanation": "Under the GmbH Act, the minimum share capital is €25,000; at least half must be paid in upon formation.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -607,7 +629,8 @@
             "€500,000"
           ],
           "answer": "€50,000",
-          "explanation": "Under the German Stock Corporation Act, the minimum share capital for an AG is €50,000, divided into shares."
+          "explanation": "Under the German Stock Corporation Act, the minimum share capital for an AG is €50,000, divided into shares.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -634,7 +657,8 @@
             "Only the managing partner is liable"
           ],
           "answer": "All partners are liable unlimitedly, directly, and jointly with their entire personal assets",
-          "explanation": "Unlimited personal liability is a defining feature of the OHG, distinguishing it from corporations."
+          "explanation": "Unlimited personal liability is a defining feature of the OHG, distinguishing it from corporations.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -661,7 +685,8 @@
             "The limited partner is liable without limit, the general partner only up to their contribution"
           ],
           "answer": "The general partner is liable without limit, the limited partner only up to their capital contribution",
-          "explanation": "The general partner manages the business and bears unlimited liability; the limited partner is excluded from management and has limited liability."
+          "explanation": "The general partner manages the business and bears unlimited liability; the limited partner is excluded from management and has limited liability.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -688,7 +713,8 @@
             "Not liable at all"
           ],
           "answer": "Without limit, with all private and business assets",
-          "explanation": "A sole proprietorship has no separation between private and business assets when it comes to liability."
+          "explanation": "A sole proprietorship has no separation between private and business assets when it comes to liability.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -715,7 +741,8 @@
             "6 weeks to the end of the quarter"
           ],
           "answer": "4 weeks to the 15th or the end of a calendar month",
-          "explanation": "This basic period applies to both contracting parties unless a longer contractual or collectively agreed period applies."
+          "explanation": "This basic period applies to both contracting parties unless a longer contractual or collectively agreed period applies.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -742,7 +769,8 @@
             "no statutory maximum"
           ],
           "answer": "6 months",
-          "explanation": "Under § 622(3) BGB, during an agreed probationary period of up to 6 months, a shortened notice period of 2 weeks applies."
+          "explanation": "Under § 622(3) BGB, during an agreed probationary period of up to 6 months, a shortened notice period of 2 weeks applies.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -769,7 +797,8 @@
             "5 years"
           ],
           "answer": "2 years",
-          "explanation": "Under § 438 BGB, the standard limitation period for defect claims on movable goods is 2 years from delivery."
+          "explanation": "Under § 438 BGB, the standard limitation period for defect claims on movable goods is 2 years from delivery.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -796,7 +825,8 @@
             "The goods belong jointly to both parties from the moment the contract is signed"
           ],
           "answer": "The seller remains the owner of the goods until full payment is made",
-          "explanation": "Retention of title protects the seller: ownership only transfers to the buyer once the purchase price has been paid in full."
+          "explanation": "Retention of title protects the seller: ownership only transfers to the buyer once the purchase price has been paid in full.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -823,7 +853,8 @@
             "Personnel"
           ],
           "answer": "Personnel",
-          "explanation": "The classic 4 Ps are Product, Price, Place, and Promotion. \"People/Personnel\" is only added in the extended 7-Ps model for services."
+          "explanation": "The classic 4 Ps are Product, Price, Place, and Promotion. \"People/Personnel\" is only added in the extended 7-Ps model for services.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -850,7 +881,8 @@
             "Outcome"
           ],
           "answer": "Opportunities",
-          "explanation": "SWOT stands for Strengths, Weaknesses, Opportunities, and Threats."
+          "explanation": "SWOT stands for Strengths, Weaknesses, Opportunities, and Threats.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -877,7 +909,8 @@
             "25%"
           ],
           "answer": "20%",
-          "explanation": "ROI = profit ÷ invested capital × 100 = €4,000 ÷ €20,000 × 100 = 20%."
+          "explanation": "ROI = profit ÷ invested capital × 100 = €4,000 ÷ €20,000 × 100 = 20%.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -904,7 +937,8 @@
             "Profit ÷ revenue × 100"
           ],
           "answer": "Cash and cash equivalents ÷ current liabilities × 100",
-          "explanation": "The cash ratio shows what proportion of current liabilities can be covered immediately with available cash."
+          "explanation": "The cash ratio shows what proportion of current liabilities can be covered immediately with available cash.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -931,7 +965,8 @@
             "From 50 employees"
           ],
           "answer": "From 5 employees",
-          "explanation": "Under German works council law, a works council can be elected once a company permanently employs at least 5 eligible employees, 3 of whom are eligible to stand."
+          "explanation": "Under German works council law, a works council can be elected once a company permanently employs at least 5 eligible employees, 3 of whom are eligible to stand.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -958,7 +993,8 @@
             "The technical specification of a product"
           ],
           "answer": "Wages, working hours, and other working conditions between a union and an employer/employer association",
-          "explanation": "Collective bargaining agreements are negotiated between unions and individual employers or employer associations and set collective working conditions."
+          "explanation": "Collective bargaining agreements are negotiated between unions and individual employers or employer associations and set collective working conditions.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -985,7 +1021,8 @@
             "6 months"
           ],
           "answer": "1 month",
-          "explanation": "Under § 20 BBiG, the probationary period must be at least 1 month and at most 4 months."
+          "explanation": "Under § 20 BBiG, the probationary period must be at least 1 month and at most 4 months.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1012,7 +1049,8 @@
             "The project is handled entirely outside the line organization"
           ],
           "answer": "Employees still report to their line manager but also receive instructions from the project manager",
-          "explanation": "Matrix project organization creates dual reporting lines (functional and project), which can foster conflicts of authority."
+          "explanation": "Matrix project organization creates dual reporting lines (functional and project), which can foster conflicts of authority.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1051,7 +1089,8 @@
             "Execution",
             "Closure"
           ],
-          "explanation": "Sales is a business function, not a phase of the project life cycle."
+          "explanation": "Sales is a business function, not a phase of the project life cycle.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1088,7 +1127,8 @@
             "Latest finish (LF)",
             "Total float (TF)"
           ],
-          "explanation": "Contribution margin and markup rate are cost/pricing terms, not network diagram terms."
+          "explanation": "Contribution margin and markup rate are cost/pricing terms, not network diagram terms.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1125,7 +1165,8 @@
             "Dependencies between activities can be shown with arrows",
             "They are well-suited for visual schedule planning"
           ],
-          "explanation": "Gantt charts are primarily a visualization tool for scheduling; calculating float times is the job of network diagram technique."
+          "explanation": "Gantt charts are primarily a visualization tool for scheduling; calculating float times is the job of network diagram technique.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1162,7 +1203,8 @@
             "Salaries of permanent employees",
             "Depreciation on fixed assets"
           ],
-          "explanation": "License fees per copy and material cost per unit depend on volume and are therefore variable costs."
+          "explanation": "License fees per copy and material cost per unit depend on volume and are therefore variable costs.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1199,7 +1241,8 @@
             "Piece-rate production wages (volume-dependent)",
             "Shipping cost per order"
           ],
-          "explanation": "Rent and time-based depreciation are incurred regardless of the quantity produced and are therefore fixed costs."
+          "explanation": "Rent and time-based depreciation are incurred regardless of the quantity produced and are therefore fixed costs.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1236,7 +1279,8 @@
             "Profit comparison method",
             "Profitability comparison method"
           ],
-          "explanation": "Net present value and internal rate of return are dynamic methods because they account for the time value of money (discounting)."
+          "explanation": "Net present value and internal rate of return are dynamic methods because they account for the time value of money (discounting).",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1275,7 +1319,8 @@
             "Warranty and service offerings",
             "Quality/technical specification"
           ],
-          "explanation": "A sound quote comparison weighs multiple criteria, not just the nominal price."
+          "explanation": "A sound quote comparison weighs multiple criteria, not just the nominal price.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1312,7 +1357,8 @@
             "AG",
             "UG (limited liability entrepreneurial company)"
           ],
-          "explanation": "OHG and sole proprietorship involve unlimited personal liability of the owner(s)/partners."
+          "explanation": "OHG and sole proprietorship involve unlimited personal liability of the owner(s)/partners.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1349,7 +1395,8 @@
             "KG",
             "GbR (civil law partnership)"
           ],
-          "explanation": "GmbH and AG are corporations with their own legal personality; OHG, KG, and GbR are partnerships."
+          "explanation": "GmbH and AG are corporations with their own legal personality; OHG, KG, and GbR are partnerships.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1386,7 +1433,8 @@
             "AG",
             "UG (limited liability entrepreneurial company)"
           ],
-          "explanation": "Corporations are legal entities with their own assets, separate from the private assets of the shareholders."
+          "explanation": "Corporations are legal entities with their own assets, separate from the private assets of the shareholders.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1425,7 +1473,8 @@
             "Agreed working hours",
             "Notice periods"
           ],
-          "explanation": "The Documentation of Employment Conditions Act requires essential contract terms to be recorded in writing."
+          "explanation": "The Documentation of Employment Conditions Act requires essential contract terms to be recorded in writing.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1462,7 +1511,8 @@
             "Extraordinary (immediate) termination",
             "Termination with change offer"
           ],
-          "explanation": "\"Quiet quitting\" and \"automatic termination\" are not legally defined types of termination."
+          "explanation": "\"Quiet quitting\" and \"automatic termination\" are not legally defined types of termination.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1501,7 +1551,8 @@
             "Reduction of the purchase price",
             "Damages (under certain conditions)"
           ],
-          "explanation": "The seller generally has a right to attempt supplementary performance first; only then can withdrawal, price reduction, or damages come into play."
+          "explanation": "The seller generally has a right to attempt supplementary performance first; only then can withdrawal, price reduction, or damages come into play.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1540,7 +1591,8 @@
             "Place",
             "Promotion"
           ],
-          "explanation": "The 4 Ps come from the classic marketing model; \"People\" only belongs to the extended 7-Ps model for services."
+          "explanation": "The 4 Ps come from the classic marketing model; \"People\" only belongs to the extended 7-Ps model for services.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1579,7 +1631,8 @@
             "Opportunities",
             "Threats"
           ],
-          "explanation": "\"Solutions\" is not part of a SWOT analysis; the acronym stands for Strengths, Weaknesses, Opportunities, and Threats."
+          "explanation": "\"Solutions\" is not part of a SWOT analysis; the acronym stands for Strengths, Weaknesses, Opportunities, and Threats.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1616,7 +1669,8 @@
             "Return on total capital",
             "Return on sales"
           ],
-          "explanation": "Cash ratio and fixed asset coverage ratio are liquidity/capital structure ratios, not profitability ratios."
+          "explanation": "Cash ratio and fixed asset coverage ratio are liquidity/capital structure ratios, not profitability ratios.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1655,7 +1709,8 @@
             "General principles of vacation scheduling",
             "Matters of company pay structure"
           ],
-          "explanation": "Determining corporate strategy falls within entrepreneurial decision-making freedom and is not subject to co-determination."
+          "explanation": "Determining corporate strategy falls within entrepreneurial decision-making freedom and is not subject to co-determination.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1694,7 +1749,8 @@
             "Company-level agreement",
             "Sector/regional agreement"
           ],
-          "explanation": "An \"individual bargaining agreement\" does not exist — collective agreements are by definition collective arrangements."
+          "explanation": "An \"individual bargaining agreement\" does not exist — collective agreements are by definition collective arrangements.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1733,7 +1789,8 @@
             "Length of the probationary period",
             "Amount of the training allowance"
           ],
-          "explanation": "The grade average of the final certificate is naturally only known after training ends and is not a contract element."
+          "explanation": "The grade average of the final certificate is naturally only known after training ends and is not a contract element.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1770,7 +1827,8 @@
             "Matrix project organization",
             "Staff/influence project organization"
           ],
-          "explanation": "\"Linear\" and \"divisional organization\" are general corporate organization forms, not specific project organization forms."
+          "explanation": "\"Linear\" and \"divisional organization\" are general corporate organization forms, not specific project organization forms.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1809,7 +1867,8 @@
             "Plan countermeasures",
             "Continuously monitor risks"
           ],
-          "explanation": "Risk management is a continuous process of identification, assessment, control, and monitoring — ignoring risks is the opposite."
+          "explanation": "Risk management is a continuous process of identification, assessment, control, and monitoring — ignoring risks is the opposite.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1848,7 +1907,8 @@
             "Risk transfer (e.g. via insurance)",
             "Risk acceptance"
           ],
-          "explanation": "\"Risk denial\" is not a recognized strategy — it represents a failure to practice risk management at all."
+          "explanation": "\"Risk denial\" is not a recognized strategy — it represents a failure to practice risk management at all.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1885,7 +1945,8 @@
             "Both documents can be updated when changes occur during the project",
             "Changes should be documented through a change management process"
           ],
-          "explanation": "Both documents are written, living documents whose changes should be traceably documented."
+          "explanation": "Both documents are written, living documents whose changes should be traceably documented.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1924,7 +1985,8 @@
             "Goals should include a concrete deadline",
             "Goals must be accepted by the project team"
           ],
-          "explanation": "Vague wording contradicts the core idea of SMART goals — they should instead be as specific as possible."
+          "explanation": "Vague wording contradicts the core idea of SMART goals — they should instead be as specific as possible.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -1963,7 +2025,8 @@
             "It helps identify expectations and possible resistance early on",
             "The result is often a classification by influence and interest (stakeholder matrix)"
           ],
-          "explanation": "Stakeholder analysis is typically carried out early in the project (initiation/planning) and updated as needed, not only at the end."
+          "explanation": "Stakeholder analysis is typically carried out early in the project (initiation/planning) and updated as needed, not only at the end.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2002,7 +2065,8 @@
             "Conducting a lessons-learned workshop",
             "Disbanding the project team"
           ],
-          "explanation": "The requirements specification is created during initiation/planning, long before project closure."
+          "explanation": "The requirements specification is created during initiation/planning, long before project closure.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2017,7 +2081,8 @@
         "en": {
           "question": "What is the central goal of the initiation phase of a project?",
           "answer": "Clarifying the project mandate, rough goals, feasibility, and resource framework, and formally approving the project",
-          "explanation": "The initiation phase decides whether and within what framework a project is started at all."
+          "explanation": "The initiation phase decides whether and within what framework a project is started at all.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2032,7 +2097,8 @@
         "en": {
           "question": "What tasks are central to the project planning phase?",
           "answer": "Schedule, cost, resource, and workflow planning, along with defining milestones and responsibilities",
-          "explanation": "Planning creates the binding baseline against which later execution is measured."
+          "explanation": "Planning creates the binding baseline against which later execution is measured.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2047,7 +2113,8 @@
         "en": {
           "question": "What is meant by project control (project controlling)?",
           "answer": "The ongoing comparison of planned versus actual schedule, cost, and quality during execution, so deviations can be corrected in time",
-          "explanation": "Project control runs alongside execution and enables early detection and correction of deviations."
+          "explanation": "Project control runs alongside execution and enables early detection and correction of deviations.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2062,7 +2129,8 @@
         "en": {
           "question": "What activities are characteristic of the project closure phase?",
           "answer": "Acceptance of the results by the client, documentation of the results, and a closing/lessons-learned report",
-          "explanation": "Formal closure ensures results are handed over, lessons are captured, and resources are released."
+          "explanation": "Formal closure ensures results are handed over, lessons are captured, and resources are released.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2077,7 +2145,8 @@
         "en": {
           "question": "How is the earliest finish (EF) of an activity in a network diagram calculated?",
           "answer": "EF = ES (earliest start) + duration of the activity",
-          "explanation": "This formula is used in the forward pass of network diagram calculations to determine earliest times step by step."
+          "explanation": "This formula is used in the forward pass of network diagram calculations to determine earliest times step by step.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2092,7 +2161,8 @@
         "en": {
           "question": "What is the free float (FF) of an activity in a network diagram?",
           "answer": "The amount of time an activity can be delayed without affecting the earliest start of its immediate successor",
-          "explanation": "Free float is always less than or equal to total float, and only considers the direct successor activity."
+          "explanation": "Free float is always less than or equal to total float, and only considers the direct successor activity.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2107,7 +2177,8 @@
         "en": {
           "question": "How is the contribution margin defined?",
           "answer": "Selling price minus variable cost per unit (or revenue minus total variable costs) — the amount left over to cover fixed costs and generate profit",
-          "explanation": "The contribution margin is a key figure in cost accounting, especially for price floors and break-even analysis."
+          "explanation": "The contribution margin is a key figure in cost accounting, especially for price floors and break-even analysis.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2122,7 +2193,8 @@
         "en": {
           "question": "What does the break-even point describe?",
           "answer": "The sales volume or revenue at which revenue exactly covers total costs — beyond this point a profit is generated",
-          "explanation": "Below the break-even point there is a loss, above it a profit."
+          "explanation": "Below the break-even point there is a loss, above it a profit.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2137,7 +2209,8 @@
         "en": {
           "question": "How is the selling price determined from the cost price using the markup rate (Kalkulationszuschlag)?",
           "answer": "Selling price = cost price + (cost price × markup rate), i.e. cost price × (1 + markup rate)",
-          "explanation": "The markup covers profit, distribution costs, and other surcharges."
+          "explanation": "The markup covers profit, distribution costs, and other surcharges.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2152,7 +2225,8 @@
         "en": {
           "question": "What steps does a trade price calculation typically include, from the list purchase price to the selling price?",
           "answer": "List purchase price, minus supplier discount = target purchase price, minus cash discount = cash purchase price, plus procurement costs = cost price, plus profit markup = cash selling price, plus customer discount/rebate and VAT = selling price",
-          "explanation": "This calculation scheme is a key tool for commercial price determination in trade."
+          "explanation": "This calculation scheme is a key tool for commercial price determination in trade.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2167,7 +2241,8 @@
         "en": {
           "question": "What criteria are relevant when choosing a company's legal form?",
           "answer": "Liability, required start-up capital, tax burden, disclosure obligations, co-determination rights, and the cost and effort of formation",
-          "explanation": "The choice of legal form significantly affects liability risk, capital requirements, and ongoing obligations of the company."
+          "explanation": "The choice of legal form significantly affects liability risk, capital requirements, and ongoing obligations of the company.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2182,7 +2257,8 @@
         "en": {
           "question": "What formal requirements must be met to establish a GmbH?",
           "answer": "A notarized articles of association, raising the minimum share capital of €25,000 (at least half paid in upon registration), and registration in the commercial register",
-          "explanation": "The GmbH only becomes a legal entity with limited liability once it is entered in the commercial register."
+          "explanation": "The GmbH only becomes a legal entity with limited liability once it is entered in the commercial register.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2197,7 +2273,8 @@
         "en": {
           "question": "An employee has worked at the company for 6 years. What minimum statutory notice period must the employer observe under § 622 BGB?",
           "answer": "2 months to the end of a calendar month",
-          "explanation": "Under § 622(2) BGB, after at least 5 years of employment, a notice period of 2 months to the end of the month applies."
+          "explanation": "Under § 622(2) BGB, after at least 5 years of employment, a notice period of 2 months to the end of the month applies.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2212,7 +2289,8 @@
         "en": {
           "question": "What is the difference between ordinary and extraordinary termination?",
           "answer": "Ordinary termination follows the applicable notice period, while extraordinary (immediate) termination ends the employment relationship at once and requires good cause",
-          "explanation": "Good cause for extraordinary termination exists when continuing the employment relationship until the end of the ordinary notice period is unreasonable for the party giving notice."
+          "explanation": "Good cause for extraordinary termination exists when continuing the employment relationship until the end of the ordinary notice period is unreasonable for the party giving notice.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2227,7 +2305,8 @@
         "en": {
           "question": "What is the difference between a material defect and a defect in title when purchasing goods?",
           "answer": "A material defect concerns the condition or suitability of the item itself, while a defect in title exists when third parties hold rights to the item that the buyer did not agree to assume",
-          "explanation": "Both types of defect generally give rise to the same warranty rights for the buyer."
+          "explanation": "Both types of defect generally give rise to the same warranty rights for the buyer.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2242,7 +2321,8 @@
         "en": {
           "question": "What purpose does a retention of title serve from the seller's point of view?",
           "answer": "It protects the seller if the buyer fails to pay: since ownership of the goods remains with the seller until full payment, they can reclaim the goods in case of default",
-          "explanation": "Retention of title is a simple and widely used security instrument in goods financed on credit."
+          "explanation": "Retention of title is a simple and widely used security instrument in goods financed on credit.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2257,7 +2337,8 @@
         "en": {
           "question": "What is meant by the marketing mix?",
           "answer": "The full set of sales-related instruments of a company (product, price, distribution, and communication policy), combined to achieve marketing goals",
-          "explanation": "The individual instruments of the marketing mix need to be coordinated with each other to be effective."
+          "explanation": "The individual instruments of the marketing mix need to be coordinated with each other to be effective.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2272,7 +2353,8 @@
         "en": {
           "question": "What purpose does a SWOT analysis serve in a company?",
           "answer": "It compares internal strengths and weaknesses against external opportunities and threats in order to derive strategic options",
-          "explanation": "A SWOT analysis combines an internal perspective (the company) with an external perspective (market/environment)."
+          "explanation": "A SWOT analysis combines an internal perspective (the company) with an external perspective (market/environment).",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2287,7 +2369,8 @@
         "en": {
           "question": "What is the formula for calculating ROI (Return on Investment)?",
           "answer": "ROI = profit ÷ invested capital × 100%",
-          "explanation": "ROI shows how efficiently invested capital is converted into profit and allows comparison of different investments."
+          "explanation": "ROI shows how efficiently invested capital is converted into profit and allows comparison of different investments.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2302,7 +2385,8 @@
         "en": {
           "question": "What does a company's liquidity generally indicate?",
           "answer": "A company's ability to meet its short-term payment obligations on time at all times",
-          "explanation": "A lack of liquidity can force even a fundamentally profitable company into insolvency."
+          "explanation": "A lack of liquidity can force even a fundamentally profitable company into insolvency.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2317,7 +2401,8 @@
         "en": {
           "question": "What are the works council's central tasks toward the workforce?",
           "answer": "Representing employee interests, monitoring compliance with laws, collective agreements, and works agreements, and co-determination in social, personnel, and economic matters",
-          "explanation": "The works council is elected by the workforce and represents their interests to the employer."
+          "explanation": "The works council is elected by the workforce and represents their interests to the employer.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2332,7 +2417,8 @@
         "en": {
           "question": "Who are the contracting parties of a collective bargaining agreement?",
           "answer": "On the employee side, the trade union; on the employer side, an individual employer or an employer association",
-          "explanation": "Individual employees or the works council are not contracting parties to a collective bargaining agreement."
+          "explanation": "Individual employees or the works council are not contracting parties to a collective bargaining agreement.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2347,7 +2433,8 @@
         "en": {
           "question": "What statutory limits apply to the probationary period in an apprenticeship under the BBiG?",
           "answer": "At least 1 month and at most 4 months",
-          "explanation": "During the probationary period, either side can terminate the apprenticeship without giving reasons and without a notice period."
+          "explanation": "During the probationary period, either side can terminate the apprenticeship without giving reasons and without a notice period.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2362,7 +2449,8 @@
         "en": {
           "question": "What characterizes the staff/influence project organization?",
           "answer": "The project manager has a purely coordinating and advisory role with no formal authority to issue instructions; decision-making and instruction authority stay with the line managers",
-          "explanation": "This organizational form suits smaller projects but has the drawback of leaving the project manager in a weak position."
+          "explanation": "This organizational form suits smaller projects but has the drawback of leaving the project manager in a weak position.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2377,7 +2465,8 @@
         "en": {
           "question": "What purpose does risk management serve in an IT project?",
           "answer": "It serves to identify and assess project-threatening risks early on and to avoid, reduce, or mitigate them through suitable measures in order to protect the project goals",
-          "explanation": "Without systematic risk management, risks are often only recognized once they have already had a negative impact on the project."
+          "explanation": "Without systematic risk management, risks are often only recognized once they have already had a negative impact on the project.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2392,7 +2481,8 @@
         "en": {
           "question": "Why are SMART-formulated goals advantageous in projects?",
           "answer": "They are clear, measurable, and time-bound, making success objectively verifiable, reducing misunderstandings, and giving everyone involved a shared understanding of goal achievement",
-          "explanation": "Vague goals like \"achieve better quality\" are hard to verify objectively, unlike SMART goals."
+          "explanation": "Vague goals like \"achieve better quality\" are hard to verify objectively, unlike SMART goals.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2407,7 +2497,8 @@
         "en": {
           "question": "What is a requirements specification from the customer side?",
           "answer": "The client-side description of what is required.",
-          "explanation": "It describes requirements from the customer perspective."
+          "explanation": "It describes requirements from the customer perspective.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2422,7 +2513,8 @@
         "en": {
           "question": "What is a functional specification from the supplier side?",
           "answer": "The supplier-side description of how requirements will be implemented.",
-          "explanation": "It specifies the solution and often serves as a contractual basis."
+          "explanation": "It specifies the solution and often serves as a contractual basis.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2437,7 +2529,8 @@
         "en": {
           "question": "What does break-even point mean?",
           "answer": "The point where revenues and costs are equal.",
-          "explanation": "After break-even, a product or project generates profit."
+          "explanation": "After break-even, a product or project generates profit.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2452,7 +2545,8 @@
         "en": {
           "question": "What is a utility analysis?",
           "answer": "An evaluation method that compares alternatives using weighted criteria.",
-          "explanation": "It is useful when qualitative and quantitative criteria are evaluated together."
+          "explanation": "It is useful when qualitative and quantitative criteria are evaluated together.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2467,7 +2561,8 @@
         "en": {
           "question": "What is a milestone in a project?",
           "answer": "An important date or intermediate result without its own duration.",
-          "explanation": "Milestones mark control points and decision points in the project plan."
+          "explanation": "Milestones mark control points and decision points in the project plan.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2482,7 +2577,8 @@
         "en": {
           "question": "What does straight-line depreciation mean?",
           "answer": "Acquisition costs are distributed evenly over the useful life.",
-          "explanation": "With straight-line depreciation, the annual depreciation amount is constant."
+          "explanation": "With straight-line depreciation, the annual depreciation amount is constant.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2497,7 +2593,8 @@
         "en": {
           "question": "What is a cash discount?",
           "answer": "A price reduction for payment within a short period.",
-          "explanation": "It encourages quick payment and is deducted from the invoice amount."
+          "explanation": "It encourages quick payment and is deducted from the invoice amount.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2512,7 +2609,8 @@
         "en": {
           "question": "What is stakeholder analysis?",
           "answer": "Identifying and assessing affected or influential people and groups.",
-          "explanation": "It helps identify interests, influence and communication needs in a project."
+          "explanation": "It helps identify interests, influence and communication needs in a project.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2527,7 +2625,8 @@
         "en": {
           "question": "What does ROI stand for?",
           "answer": "Return on Investment",
-          "explanation": "ROI relates profit or benefit to the capital invested."
+          "explanation": "ROI relates profit or benefit to the capital invested.",
+          "category": "Business & Project Management"
         }
       }
     },
@@ -2542,7 +2641,8 @@
         "en": {
           "question": "What is a work breakdown structure?",
           "answer": "A hierarchical decomposition of the project into subtasks and work packages.",
-          "explanation": "The WBS provides an overview of project scope."
+          "explanation": "The WBS provides an overview of project scope.",
+          "category": "Business & Project Management"
         }
       }
     }

@@ -23,7 +23,8 @@
             "Power supply"
           ],
           "answer": "Processor (CPU)",
-          "explanation": "The CPU (Central Processing Unit) is the computer's arithmetic and control unit. RAM only holds data temporarily, the SSD stores persistently, the PSU provides power."
+          "explanation": "The CPU (Central Processing Unit) is the computer's arithmetic and control unit. RAM only holds data temporarily, the SSD stores persistently, the PSU provides power.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -50,7 +51,8 @@
             "USB flash drive"
           ],
           "answer": "Main memory (RAM)",
-          "explanation": "RAM is volatile memory — without power the data is lost. SSD, HDD and USB drives store data persistently."
+          "explanation": "RAM is volatile memory — without power the data is lost. SSD, HDD and USB drives store data persistently.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -77,7 +79,8 @@
             "€1,800"
           ],
           "answer": "€180",
-          "explanation": "0.3 kW × 8 h × 250 days = 600 kWh per year. 600 kWh × €0.30/kWh = €180."
+          "explanation": "0.3 kW × 8 h × 250 days = 600 kWh per year. 600 kWh × €0.30/kWh = €180.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -104,7 +107,8 @@
             "RAID 10"
           ],
           "answer": "RAID 1",
-          "explanation": "RAID 1 = mirroring: if one disk fails, all data is still on the second one. RAID 0 stripes without redundancy, RAID 5 uses distributed parity."
+          "explanation": "RAID 1 = mirroring: if one disk fails, all data is still on the second one. RAID 0 stripes without redundancy, RAID 5 uses distributed parity.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -141,7 +145,8 @@
             "Scanner",
             "Mouse"
           ],
-          "explanation": "Input devices deliver data TO the computer (keyboard, mouse, scanner). Monitor and printer are output devices."
+          "explanation": "Input devices deliver data TO the computer (keyboard, mouse, scanner). Monitor and printer are output devices.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -178,7 +183,8 @@
             "Monitor positioned glare-free, sideways to the window",
             "Sufficient, flicker-free lighting"
           ],
-          "explanation": "A viewing direction parallel to the window avoids glare and reflections. Backlight and tiny fonts strain the eyes."
+          "explanation": "A viewing direction parallel to the window avoids glare and reflections. Backlight and tiny fonts strain the eyes.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -215,7 +221,8 @@
             "It allows servers to shut down gracefully",
             "An online UPS also protects against voltage fluctuations"
           ],
-          "explanation": "A UPS secures the power supply, but it neither replaces backups nor affects the network. Online (double-conversion) UPSs continuously deliver clean power."
+          "explanation": "A UPS secures the power supply, but it neither replaces backups nor affects the network. Online (double-conversion) UPSs continuously deliver clean power.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -252,7 +259,8 @@
             "DisplayPort",
             "VGA"
           ],
-          "explanation": "HDMI and DisplayPort are current digital video interfaces, VGA is the old analog one. SATA connects drives, RJ45 is the network port."
+          "explanation": "HDMI and DisplayPort are current digital video interfaces, VGA is the old analog one. SATA connects drives, RJ45 is the network port.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -267,7 +275,8 @@
         "en": {
           "question": "How do you calculate electrical power P from voltage and current?",
           "answer": "P = U × I (power = voltage times current)",
-          "explanation": "Example: 230 V × 2 A = 460 W. You need this formula in AP1 e.g. for sizing power supplies and UPS units."
+          "explanation": "Example: 230 V × 2 A = 460 W. You need this formula in AP1 e.g. for sizing power supplies and UPS units.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -282,7 +291,8 @@
         "en": {
           "question": "What does the abbreviation SSD stand for, and what is its key advantage over an HDD?",
           "answer": "Solid State Drive — no moving parts, therefore much faster access, more robust and silent",
-          "explanation": "HDDs store data on rotating magnetic platters, SSDs in flash cells. The HDD's advantage: lower price per terabyte."
+          "explanation": "HDDs store data on rotating magnetic platters, SSDs in flash cells. The HDD's advantage: lower price per terabyte.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -297,7 +307,8 @@
         "en": {
           "question": "What does a data center's PUE value measure, and what value would be ideal?",
           "answer": "Power Usage Effectiveness: the ratio of the data center's total energy consumption to the energy consumed by the IT systems; the ideal value would be 1.0",
-          "explanation": "PUE = total energy ÷ IT energy. A PUE of 1.5 means: for every kWh of IT load, an extra 0.5 kWh is spent on cooling, UPS and infrastructure."
+          "explanation": "PUE = total energy ÷ IT energy. A PUE of 1.5 means: for every kWh of IT load, an extra 0.5 kWh is spent on cooling, UPS and infrastructure.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -312,7 +323,8 @@
         "en": {
           "question": "Name two protective measures against electrostatic discharge (ESD) when working on hardware components.",
           "answer": "Wear a grounding wrist strap, work on an ESD mat, touch grounded metal (e.g. the case) before working, store components in antistatic bags",
-          "explanation": "Even discharges below the human perception threshold (~3000 V) can permanently damage semiconductors. Any two measures are a sufficient answer."
+          "explanation": "Even discharges below the human perception threshold (~3000 V) can permanently damage semiconductors. Any two measures are a sufficient answer.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -339,7 +351,8 @@
             "Nano-ITX"
           ],
           "answer": "ATX",
-          "explanation": "ATX is the largest common standard form factor at 305 × 244 mm. Micro-ATX is smaller (244 × 244 mm), and Mini-ITX (170 × 170 mm) and Nano-ITX (120 × 120 mm) are even more compact."
+          "explanation": "ATX is the largest common standard form factor at 305 × 244 mm. Micro-ATX is smaller (244 × 244 mm), and Mini-ITX (170 × 170 mm) and Nano-ITX (120 × 120 mm) are even more compact.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -366,7 +379,8 @@
             "Seven"
           ],
           "answer": "One",
-          "explanation": "Mini-ITX boards are optimized for minimal size and therefore have only a single expansion slot (usually PCIe x16). ATX boards, by contrast, offer up to seven."
+          "explanation": "Mini-ITX boards are optimized for minimal size and therefore have only a single expansion slot (usually PCIe x16). ATX boards, by contrast, offer up to seven.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -403,7 +417,8 @@
             "CPU socket",
             "RAM slots (DIMM slots)"
           ],
-          "explanation": "The chipset, CPU socket and DIMM slots are fixed parts of the motherboard. The power supply is a separate component, and a graphics card is only plugged in, not permanently installed."
+          "explanation": "The chipset, CPU socket and DIMM slots are fixed parts of the motherboard. The power supply is a separate component, and a graphics card is only plugged in, not permanently installed.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -418,7 +433,8 @@
         "en": {
           "question": "What is the central function of the chipset on a motherboard?",
           "answer": "It manages communication between CPU, RAM, peripherals and ports (e.g. USB, SATA) and controls data flow between components.",
-          "explanation": "The chipset (in modern systems often taking on the southbridge role) connects the CPU to the rest of the components and determines which interfaces and expansions are supported."
+          "explanation": "The chipset (in modern systems often taking on the southbridge role) connects the CPU to the rest of the components and determines which interfaces and expansions are supported.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -445,7 +461,8 @@
             "SSI-EEB"
           ],
           "answer": "Mini-ITX",
-          "explanation": "Mini-ITX boards are specifically designed for compact cases. E-ATX and SSI-EEB are larger server formats, while ATX is the standard desktop form factor."
+          "explanation": "Mini-ITX boards are specifically designed for compact cases. E-ATX and SSI-EEB are larger server formats, while ATX is the standard desktop form factor.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -472,7 +489,8 @@
             "The number of supported PCIe lanes"
           ],
           "answer": "The number of processing cycles per second",
-          "explanation": "The clock frequency indicates how many cycles the CPU can execute per second (1 GHz = 1 billion cycles/second). It is independent of core count and cache size."
+          "explanation": "The clock frequency indicates how many cycles the CPU can execute per second (1 GHz = 1 billion cycles/second). It is independent of core count and cache size.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -499,7 +517,8 @@
             "Main memory"
           ],
           "answer": "L1 cache",
-          "explanation": "L1 cache is directly assigned to each core, very small (usually a few KB) and extremely fast. L2 is larger but slower, and L3 is shared among multiple cores and is the largest of the caches."
+          "explanation": "L1 cache is directly assigned to each core, very small (usually a few KB) and extremely fast. L2 is larger but slower, and L3 is shared among multiple cores and is the largest of the caches.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -514,7 +533,8 @@
         "en": {
           "question": "Why must the CPU socket exactly match the motherboard chipset and the chosen CPU?",
           "answer": "The socket defines the physical pin/contact layout and electrical communication; if the socket type doesn't match, the CPU can neither be mechanically installed nor electrically operated.",
-          "explanation": "Examples: Intel LGA1700 and AMD AM5 are completely different socket shapes with different pin counts and arrangements — a CPU only fits the socket it was designed for."
+          "explanation": "Examples: Intel LGA1700 and AMD AM5 are completely different socket shapes with different pin counts and arrangements — a CPU only fits the socket it was designed for.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -553,7 +573,8 @@
             "Cache size",
             "Architecture/IPC (instructions per cycle)"
           ],
-          "explanation": "Core count, clock speed, cache and the underlying architecture (IPC) together determine computing performance. Monitor resolution has no effect on CPU performance."
+          "explanation": "Core count, clock speed, cache and the underlying architecture (IPC) together determine computing performance. Monitor resolution has no effect on CPU performance.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -580,7 +601,8 @@
             "The cache is split across two cores"
           ],
           "answer": "A single physical core can process two threads simultaneously",
-          "explanation": "SMT/Hyper-Threading allows one physical core to handle two logical threads in parallel by better utilizing idle execution units — however, no second physical core is actually created."
+          "explanation": "SMT/Hyper-Threading allows one physical core to handle two logical threads in parallel by better utilizing idle execution units — however, no second physical core is actually created.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -595,7 +617,8 @@
         "en": {
           "question": "What does \"thermal throttling\" mean for a CPU?",
           "answer": "When overheating, the CPU automatically reduces its clock frequency to lower the temperature and prevent damage.",
-          "explanation": "Thermal throttling is a protective mechanism: if a critical temperature is exceeded, the CPU lowers its clock speed (and possibly voltage), reducing performance but protecting the hardware."
+          "explanation": "Thermal throttling is a protective mechanism: if a critical temperature is exceeded, the CPU lowers its clock speed (and possibly voltage), reducing performance but protecting the hardware.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -622,7 +645,8 @@
             "SDRAM"
           ],
           "answer": "DDR5",
-          "explanation": "DDR5 is the newest generation and offers higher data rates and per-module capacities than DDR4. SDRAM is an outdated predecessor standard."
+          "explanation": "DDR5 is the newest generation and offers higher data rates and per-module capacities than DDR4. SDRAM is an outdated predecessor standard.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -649,7 +673,8 @@
             "Electronic Component Cooling"
           ],
           "answer": "Error Correcting Code",
-          "explanation": "ECC RAM can detect and correct small bit errors on its own. It is mainly used in servers, where data integrity is critical."
+          "explanation": "ECC RAM can detect and correct small bit errors on its own. It is mainly used in servers, where data integrity is critical.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -664,7 +689,8 @@
         "en": {
           "question": "What is the advantage of dual-channel RAM operation over single-channel?",
           "answer": "By addressing two RAM modules in parallel, memory bandwidth is theoretically doubled, speeding up data transfer between CPU and RAM.",
-          "explanation": "Dual-channel requires two (or a multiple of two) identical or compatible RAM modules installed in the correspondingly marked slots to achieve the bandwidth benefit."
+          "explanation": "Dual-channel requires two (or a multiple of two) identical or compatible RAM modules installed in the correspondingly marked slots to achieve the bandwidth benefit.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -699,7 +725,8 @@
             "At the same clock frequency, DDR5 generally offers higher bandwidth than DDR4",
             "DDR5 modules require a compatible motherboard with a matching memory controller"
           ],
-          "explanation": "DDR4 and DDR5 are physically and electrically incompatible — the different notch position prevents incorrect insertion. There is no backward compatibility between the standards."
+          "explanation": "DDR4 and DDR5 are physically and electrically incompatible — the different notch position prevents incorrect insertion. There is no backward compatibility between the standards.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -726,7 +753,8 @@
             "32 GB"
           ],
           "answer": "8 GB",
-          "explanation": "16 GB is already installed, leaving 16 GB needed to reach 32 GB. With 2 free slots, that means 2 × 8 GB, keeping all four modules identical (recommended for stable dual-channel operation)."
+          "explanation": "16 GB is already installed, leaving 16 GB needed to reach 32 GB. With 2 free slots, that means 2 × 8 GB, keeping all four modules identical (recommended for stable dual-channel operation).",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -753,7 +781,8 @@
             "eSATA"
           ],
           "answer": "PCIe",
-          "explanation": "NVMe SSDs use the PCIe protocol and are usually connected via M.2 slots, achieving significantly higher speeds than SATA SSDs."
+          "explanation": "NVMe SSDs use the PCIe protocol and are usually connected via M.2 slots, achieving significantly higher speeds than SATA SSDs.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -780,7 +809,8 @@
             "10 Gbit/s"
           ],
           "answer": "6 Gbit/s",
-          "explanation": "SATA III (SATA 6G) offers up to 6 Gbit/s (about 600 MB/s net). SATA I provides 1.5 Gbit/s, SATA II 3 Gbit/s."
+          "explanation": "SATA III (SATA 6G) offers up to 6 Gbit/s (about 600 MB/s net). SATA I provides 1.5 Gbit/s, SATA II 3 Gbit/s.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -817,7 +847,8 @@
             "Lower susceptibility to shocks",
             "Silent operation"
           ],
-          "explanation": "SSDs are faster, more resistant to shock and silent, since they have no mechanical parts. HDDs are currently still cheaper per GB and available at very high capacities (multiple TB)."
+          "explanation": "SSDs are faster, more resistant to shock and silent, since they have no mechanical parts. HDDs are currently still cheaper per GB and available at very high capacities (multiple TB).",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -844,7 +875,8 @@
             "0 TB (no usable capacity)"
           ],
           "answer": "4 TB",
-          "explanation": "RAID 0 (striping) sums the capacities of all drives without redundancy: 2 TB + 2 TB = 4 TB of usable storage, but with no failure protection."
+          "explanation": "RAID 0 (striping) sums the capacities of all drives without redundancy: 2 TB + 2 TB = 4 TB of usable storage, but with no failure protection.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -871,7 +903,8 @@
             "8 TB"
           ],
           "answer": "6 TB",
-          "explanation": "In RAID 5, the capacity of one drive is used for distributed parity: (4 - 1) × 2 TB = 6 TB of usable storage, with protection against the failure of one drive."
+          "explanation": "In RAID 5, the capacity of one drive is used for distributed parity: (4 - 1) × 2 TB = 6 TB of usable storage, with protection against the failure of one drive.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -886,7 +919,8 @@
         "en": {
           "question": "What distinguishes RAID 10 from RAID 0 and RAID 1?",
           "answer": "RAID 10 combines striping (RAID 0) and mirroring (RAID 1): data is distributed across mirrored disk pairs, achieving both speed and redundancy — requires at least 4 drives.",
-          "explanation": "RAID 10 combines the speed benefits of RAID 0 with the fault tolerance of RAID 1, at the cost of only having half of the raw capacity available as usable capacity."
+          "explanation": "RAID 10 combines the speed benefits of RAID 0 with the fault tolerance of RAID 1, at the cost of only having half of the raw capacity available as usable capacity.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -901,7 +935,8 @@
         "en": {
           "question": "Why is RAID not a substitute for a proper data backup?",
           "answer": "RAID only protects against the failure of individual physical drives, not against accidental deletion, ransomware, software errors, or the simultaneous failure of multiple drives — such errors are mirrored or distributed across all drives in the array.",
-          "explanation": "A classic example: if a user accidentally deletes a file, it is also deleted on the RAID 1 mirror, since both drives reflect the same (now erroneous) state."
+          "explanation": "A classic example: if a user accidentally deletes a file, it is also deleted on the RAID 1 mirror, since both drives reflect the same (now erroneous) state.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -928,7 +963,8 @@
             "M.2 22110"
           ],
           "answer": "M.2 2280",
-          "explanation": "The number designation gives width and length in millimeters: 2280 = 22 mm wide, 80 mm long. This is the most common M.2 SSD size for desktops and notebooks."
+          "explanation": "The number designation gives width and length in millimeters: 2280 = 22 mm wide, 80 mm long. This is the most common M.2 SSD size for desktops and notebooks.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -955,7 +991,8 @@
             "94%"
           ],
           "answer": "90%",
-          "explanation": "80+ Gold guarantees at least 90% efficiency at 50% load (87% at 20% or 100% load). Higher efficiency classes (Platinum, Titanium) require even higher values."
+          "explanation": "80+ Gold guarantees at least 90% efficiency at 50% load (87% at 20% or 100% load). Higher efficiency classes (Platinum, Titanium) require even higher values.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -982,7 +1019,8 @@
             "500 W"
           ],
           "answer": "400 W",
-          "explanation": "Output power = input power × efficiency = 500 W × 0.8 = 400 W. The remaining 100 W is lost as heat."
+          "explanation": "Output power = input power × efficiency = 500 W × 0.8 = 400 W. The remaining 100 W is lost as heat.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -997,7 +1035,8 @@
         "en": {
           "question": "By what criterion should a PC power supply's rated wattage be sized when purchasing a new one?",
           "answer": "Based on the sum of the maximum power draw of all installed components (CPU, GPU, drives, fans, etc.) plus a safety margin (typically around 20-30%) for load spikes and future upgrades.",
-          "explanation": "An undersized power supply can become unstable or shut down under load spikes (e.g. gaming, rendering); a significantly oversized power supply, on the other hand, often runs inefficiently at low load."
+          "explanation": "An undersized power supply can become unstable or shut down under load spikes (e.g. gaming, rendering); a significantly oversized power supply, on the other hand, often runs inefficiently at low load.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1036,7 +1075,8 @@
             "PCIe power connector for graphics cards",
             "4/8-pin CPU connector (EPS)"
           ],
-          "explanation": "ATX power supplies deliver power via 24-pin motherboard, SATA, PCIe and EPS (CPU) connectors. RJ45 is a network connector and has nothing to do with power delivery."
+          "explanation": "ATX power supplies deliver power via 24-pin motherboard, SATA, PCIe and EPS (CPU) connectors. RJ45 is a network connector and has nothing to do with power delivery.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1063,7 +1103,8 @@
             "The lifespan of the power supply in hours"
           ],
           "answer": "The ratio of delivered to consumed electrical power",
-          "explanation": "Efficiency = output power ÷ input power. The higher the efficiency, the less energy is wasted as heat."
+          "explanation": "Efficiency = output power ÷ input power. The higher the efficiency, the less energy is wasted as heat.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1090,7 +1131,8 @@
             "3840 × 2160"
           ],
           "answer": "1920 × 1080",
-          "explanation": "1920 × 1080 pixels is the Full HD resolution (also called 1080p). 1280 × 720 is HD/720p, 2560 × 1440 is QHD, and 3840 × 2160 is 4K/UHD."
+          "explanation": "1920 × 1080 pixels is the Full HD resolution (also called 1080p). 1280 × 720 is HD/720p, 2560 × 1440 is QHD, and 3840 × 2160 is 4K/UHD.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1117,7 +1159,8 @@
             "The panel's contrast range"
           ],
           "answer": "How often the image is redrawn per second",
-          "explanation": "60 Hz means 60 image updates per second. Higher values (e.g. 144 Hz) result in smoother motion display, especially for fast-moving content."
+          "explanation": "60 Hz means 60 image updates per second. Higher values (e.g. 144 Hz) result in smoother motion display, especially for fast-moving content.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1156,7 +1199,8 @@
             "USB-C (with DisplayPort Alt Mode)",
             "Thunderbolt"
           ],
-          "explanation": "PS/2 is purely a keyboard/mouse connector and does not carry video signals. All the other interfaces listed support video transmission."
+          "explanation": "PS/2 is purely a keyboard/mouse connector and does not carry video signals. All the other interfaces listed support video transmission.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1171,7 +1215,8 @@
         "en": {
           "question": "What is meant by a monitor's \"response time\" and in what unit is it specified?",
           "answer": "The time a pixel needs to switch from one color/brightness to another; specified in milliseconds (ms).",
-          "explanation": "A low response time (e.g. 1 ms) reduces motion blur (ghosting) with fast-moving content, which is especially relevant for gaming and video."
+          "explanation": "A low response time (e.g. 1 ms) reduces motion blur (ghosting) with fast-moving content, which is especially relevant for gaming and video.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1198,7 +1243,8 @@
             "OLED backlight"
           ],
           "answer": "IPS",
-          "explanation": "IPS panels offer excellent color accuracy and wide viewing angles but are traditionally somewhat slower than TN panels. VA often falls in between in terms of contrast and viewing angle."
+          "explanation": "IPS panels offer excellent color accuracy and wide viewing angles but are traditionally somewhat slower than TN panels. VA often falls in between in terms of contrast and viewing angle.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1225,7 +1271,8 @@
             "BetrVG (Works Constitution Act)"
           ],
           "answer": "Display Screen Equipment Regulation (ArbStättV/BildscharbV)",
-          "explanation": "The Display Screen Equipment Regulation (now integrated into the Workplace Ordinance) governs, among other things, requirements for monitors, lighting and breaks at computer workstations."
+          "explanation": "The Display Screen Equipment Regulation (now integrated into the Workplace Ordinance) governs, among other things, requirements for monitors, lighting and breaks at computer workstations.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1252,7 +1299,8 @@
             "It doesn't matter"
           ],
           "answer": "Parallel/sideways to the window",
-          "explanation": "A sideways orientation to the window avoids both direct glare (facing the window) and reflections on the monitor (window behind the back)."
+          "explanation": "A sideways orientation to the window avoids both direct glare (facing the window) and reflections on the monitor (window behind the back).",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1291,7 +1339,8 @@
             "The top edge of the screen is roughly at eye level",
             "The backrest supports the spine's natural curvature"
           ],
-          "explanation": "Chair and desk height must be coordinated with each other — setting the chair uniformly low without regard to desk height is not ergonomically correct."
+          "explanation": "Chair and desk height must be coordinated with each other — setting the chair uniformly low without regard to desk height is not ergonomically correct.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1306,7 +1355,8 @@
         "en": {
           "question": "What minimum distance to the screen is generally recommended for computer workstations?",
           "answer": "Approximately 50 to 70 cm between the eyes and the screen, depending on screen size and font size.",
-          "explanation": "A distance that is too short puts additional strain on the eyes; the exact recommended distance depends on the screen diagonal and resolution."
+          "explanation": "A distance that is too short puts additional strain on the eyes; the exact recommended distance depends on the screen diagonal and resolution.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1321,7 +1371,8 @@
         "en": {
           "question": "Name two accessibility measures that can be implemented at an IT workstation for people with visual impairments.",
           "answer": "For example: screen magnification software, screen readers with speech output, high-contrast mode, Braille display, increasing font sizes.",
-          "explanation": "Accessible workstation design is part of an employer's duty of care and can include both software solutions (screen readers, contrast modes) and hardware solutions (Braille displays, special input devices)."
+          "explanation": "Accessible workstation design is part of an employer's duty of care and can include both software solutions (screen readers, contrast modes) and hardware solutions (Braille displays, special input devices).",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1348,7 +1399,8 @@
             "Only once a day"
           ],
           "answer": "Roughly every hour",
-          "explanation": "Regular short breaks (roughly hourly) help relieve strain on eyes, back and concentration. Additionally, the gaze should regularly shift from near to distant viewing."
+          "explanation": "Regular short breaks (roughly hourly) help relieve strain on eyes, back and concentration. Additionally, the gaze should regularly shift from near to distant viewing.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1375,7 +1427,8 @@
             "40 Gbit/s"
           ],
           "answer": "10 Gbit/s",
-          "explanation": "USB 3.2 Gen 2 (formerly USB 3.1 Gen 2) reaches 10 Gbit/s. USB 2.0 delivers 480 Mbit/s, USB 3.2 Gen 1 (formerly USB 3.0) 5 Gbit/s, and Thunderbolt 3/4 up to 40 Gbit/s."
+          "explanation": "USB 3.2 Gen 2 (formerly USB 3.1 Gen 2) reaches 10 Gbit/s. USB 2.0 delivers 480 Mbit/s, USB 3.2 Gen 1 (formerly USB 3.0) 5 Gbit/s, and Thunderbolt 3/4 up to 40 Gbit/s.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1402,7 +1455,8 @@
             "Square like older printer cables"
           ],
           "answer": "Oval, symmetric and reversible (can be plugged in either way)",
-          "explanation": "USB-C connectors are designed symmetrically and can be plugged in either orientation — a clear advantage over the older USB-A connector."
+          "explanation": "USB-C connectors are designed symmetrically and can be plugged in either orientation — a clear advantage over the older USB-A connector.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1441,7 +1495,8 @@
             "Thunderbolt devices can be daisy-chained",
             "Thunderbolt can also be used for charging on suitable devices"
           ],
-          "explanation": "Thunderbolt is a very flexible interface for data, video and power delivery over the USB-C connector and supports daisy-chaining multiple devices. It is not a pure network interface."
+          "explanation": "Thunderbolt is a very flexible interface for data, video and power delivery over the USB-C connector and supports daisy-chaining multiple devices. It is not a pure network interface.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1456,7 +1511,8 @@
         "en": {
           "question": "What is the main difference between HDMI and DisplayPort in terms of their original target application?",
           "answer": "HDMI was primarily developed for consumer electronics (TV, Blu-ray, home theater), while DisplayPort was primarily developed for computer and monitor applications (including multi-monitor setups via daisy-chaining/MST).",
-          "explanation": "Both now carry video and audio, but DisplayPort additionally supports Multi-Stream Transport (MST), which allows multiple monitors to be driven over a single connection."
+          "explanation": "Both now carry video and audio, but DisplayPort additionally supports Multi-Stream Transport (MST), which allows multiple monitors to be driven over a single connection.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1483,7 +1539,8 @@
             "RJ11 cable"
           ],
           "answer": "SATA data cable",
-          "explanation": "SATA data cables connect the drive and motherboard for data transfer; power is supplied separately via SATA power connectors. Molex is an older power connector, while PS/2 and RJ11 serve different purposes."
+          "explanation": "SATA data cables connect the drive and motherboard for data transfer; power is supplied separately via SATA power connectors. Molex is an older power connector, while PS/2 and RJ11 serve different purposes.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1510,7 +1567,8 @@
             "Thermal sublimation printing"
           ],
           "answer": "Laser printing",
-          "explanation": "In laser printing, toner powder is electrostatically transferred onto an imaging drum and then permanently fused onto the paper using heat (the fuser unit)."
+          "explanation": "In laser printing, toner powder is electrostatically transferred onto an imaging drum and then permanently fused onto the paper using heat (the fuser unit).",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1547,7 +1605,8 @@
             "Imaging drum",
             "Fuser unit"
           ],
-          "explanation": "Toner, imaging drum and fuser unit are typical wear/consumable parts in laser printing. Ink cartridges belong to inkjet printing, and ribbons to dot matrix printers."
+          "explanation": "Toner, imaging drum and fuser unit are typical wear/consumable parts in laser printing. Ink cartridges belong to inkjet printing, and ribbons to dot matrix printers.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1562,7 +1621,8 @@
         "en": {
           "question": "For which use case does inkjet printing often have an advantage over laser printing?",
           "answer": "For high-quality photo printing or printing with fine color gradients, since inkjet printers can generally achieve higher color accuracy and finer color gradations.",
-          "explanation": "Laser printers, on the other hand, are usually preferable for high-volume text printing, since they print faster and have lower cost per page."
+          "explanation": "Laser printers, on the other hand, are usually preferable for high-volume text printing, since they print faster and have lower cost per page.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1589,7 +1649,8 @@
             "Missing fuser unit"
           ],
           "answer": "Clogged print head nozzles",
-          "explanation": "Dried ink can clog nozzles in the print head. A print head cleaning function in the printer software usually resolves the issue. Imaging drum and fuser unit are laser-printer-specific components."
+          "explanation": "Dried ink can clog nozzles in the print head. A print head cleaning function in the printer software usually resolves the issue. Imaging drum and fuser unit are laser-printer-specific components.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1616,7 +1677,8 @@
             "It dampens fan vibrations"
           ],
           "answer": "It fills microscopic air gaps and improves heat transfer",
-          "explanation": "Even flat surfaces retain microscopic air gaps, which conduct heat poorly. Thermal paste displaces the air and thereby improves heat transfer between the CPU and heat sink."
+          "explanation": "Even flat surfaces retain microscopic air gaps, which conduct heat poorly. Thermal paste displaces the air and thereby improves heat transfer between the CPU and heat sink.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1653,7 +1715,8 @@
             "Often lower noise levels at comparable cooling performance",
             "Ability to dissipate heat via larger radiator surface areas"
           ],
-          "explanation": "Liquid cooling can dissipate heat more efficiently via large radiators with slowly spinning fans. It still requires occasional maintenance/inspection and carries a (small) risk of leakage."
+          "explanation": "Liquid cooling can dissipate heat more efficiently via large radiators with slowly spinning fans. It still requires occasional maintenance/inspection and carries a (small) risk of leakage.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1668,7 +1731,8 @@
         "en": {
           "question": "What long-term consequence can insufficient case ventilation (airflow) have for installed hardware?",
           "answer": "Overheating of components, which can lead to thermal throttling (performance loss), unstable system behavior (crashes), and a shortened component lifespan.",
-          "explanation": "A well-thought-out airflow concept with fresh-air intake and exhaust routing is crucial so that heat is continuously removed from the case."
+          "explanation": "A well-thought-out airflow concept with fresh-air intake and exhaust routing is crucial so that heat is continuously removed from the case.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1695,7 +1759,8 @@
             "AiO coolers use air instead of liquid"
           ],
           "answer": "AiO coolers are factory pre-assembled and sealed, while custom loops are individually built",
-          "explanation": "AiO systems are pre-filled, sealed and maintenance-free. Custom loops are individually built from separate components (pump, radiator, tubing, cooling blocks) and can, for example, also include the GPU."
+          "explanation": "AiO systems are pre-filled, sealed and maintenance-free. Custom loops are individually built from separate components (pump, radiator, tubing, cooling blocks) and can, for example, also include the GPU.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1722,7 +1787,8 @@
             "ACPI"
           ],
           "answer": "UEFI",
-          "explanation": "UEFI (Unified Extensible Firmware Interface) replaces the classic BIOS and supports larger hard drives (GPT partitioning), faster booting and graphical interfaces."
+          "explanation": "UEFI (Unified Extensible Firmware Interface) replaces the classic BIOS and supports larger hard drives (GPT partitioning), faster booting and graphical interfaces.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1749,7 +1815,8 @@
             "Primary Operating System Trigger"
           ],
           "answer": "Power-On Self-Test",
-          "explanation": "The POST checks basic hardware components (RAM, CPU, graphics card, etc.) for proper function when the system is powered on, before the operating system starts."
+          "explanation": "The POST checks basic hardware components (RAM, CPU, graphics card, etc.) for proper function when the system is powered on, before the operating system starts.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1764,7 +1831,8 @@
         "en": {
           "question": "What is the purpose of the boot order in BIOS/UEFI?",
           "answer": "It determines the sequence in which the system searches for a bootable device (e.g. internal SSD, USB drive, network) to load the operating system.",
-          "explanation": "The boot order matters, for example, when booting from a USB installation medium without altering the internal system drive."
+          "explanation": "The boot order matters, for example, when booting from a USB installation medium without altering the internal system drive.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1803,7 +1871,8 @@
             "Enable RAM timings/XMP profiles",
             "Enable/disable Secure Boot"
           ],
-          "explanation": "Windows updates are installed within the operating system, not in the BIOS/UEFI. Boot order, system time, RAM profiles and Secure Boot are classic firmware settings."
+          "explanation": "Windows updates are installed within the operating system, not in the BIOS/UEFI. Boot order, system time, RAM profiles and Secure Boot are classic firmware settings.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1830,7 +1899,8 @@
             "Li-ion battery pack"
           ],
           "answer": "CMOS battery (usually CR2032)",
-          "explanation": "A small coin cell (often type CR2032) powers the CMOS memory so that the clock and BIOS settings are retained even without mains power."
+          "explanation": "A small coin cell (often type CR2032) powers the CMOS memory so that the clock and BIOS settings are retained even without mains power.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1857,7 +1927,8 @@
             "A defective printer"
           ],
           "answer": "A hardware problem detected by the POST (e.g. RAM or graphics card)",
-          "explanation": "Beep codes are emitted by the POST when basic hardware such as RAM or the graphics card is not detected correctly — before an operating system could even start."
+          "explanation": "Beep codes are emitted by the POST when basic hardware such as RAM or the graphics card is not detected correctly — before an operating system could even start.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1894,7 +1965,8 @@
             "Is the monitor turned on and is the correct input selected?",
             "Is the RAM properly seated in its slots?"
           ],
-          "explanation": "Classic causes for no display include incorrect cable connections, the wrong monitor input, or improperly seated RAM. The network card and printer have no bearing on video output."
+          "explanation": "Classic causes for no display include incorrect cable connections, the wrong monitor input, or improperly seated RAM. The network card and printer have no bearing on video output.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1909,7 +1981,8 @@
         "en": {
           "question": "A system runs unstably and crashes especially under high load. Which two possible hardware causes should be checked?",
           "answer": "For example: insufficient cooling/overheating, a defective or undersized power supply, faulty RAM, dust buildup blocking airflow.",
-          "explanation": "Load-dependent crashes often point to thermal issues or an overloaded power supply; checking temperature monitoring and running a RAM test (e.g. MemTest) help narrow down the cause."
+          "explanation": "Load-dependent crashes often point to thermal issues or an overloaded power supply; checking temperature monitoring and running a RAM test (e.g. MemTest) help narrow down the cause.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1936,7 +2009,8 @@
             "Wireshark"
           ],
           "answer": "MemTest86",
-          "explanation": "MemTest86 performs intensive read/write tests on RAM and reveals bit errors. CrystalDiskInfo checks drives, CPU-Z shows system information, and Wireshark analyzes network traffic."
+          "explanation": "MemTest86 performs intensive read/write tests on RAM and reveals bit errors. CrystalDiskInfo checks drives, CPU-Z shows system information, and Wireshark analyzes network traffic.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1951,7 +2025,8 @@
         "en": {
           "question": "In systematic hardware troubleshooting, what is the usual first step before swapping components?",
           "answer": "Narrowing down the fault by observing symptoms, checking cable connections and component seating, and if necessary testing a minimal configuration (only PSU, motherboard, CPU, one RAM module) to rule out interactions.",
-          "explanation": "Only after this systematic narrowing down should components be swapped individually or tested in another system, to keep cost and time expenditure low."
+          "explanation": "Only after this systematic narrowing down should components be swapped individually or tested in another system, to keep cost and time expenditure low.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -1978,7 +2053,8 @@
             "only from 100,000 V"
           ],
           "answer": "from approx. 100 V",
-          "explanation": "Sensitive semiconductor components can already be damaged from around 100 V — well below the human perception threshold of about 3000 V, above which a person can even feel the discharge."
+          "explanation": "Sensitive semiconductor components can already be damaged from around 100 V — well below the human perception threshold of about 3000 V, above which a person can even feel the discharge.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2017,7 +2093,8 @@
             "Hold components by their edges instead of contacts/chips",
             "Transport components in antistatic bags"
           ],
-          "explanation": "Carpeted floors and wool socks promote electrostatic charging and are therefore counterproductive for ESD protection. The other measures reduce the risk of discharge."
+          "explanation": "Carpeted floors and wool socks promote electrostatic charging and are therefore counterproductive for ESD protection. The other measures reduce the risk of discharge.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2032,7 +2109,8 @@
         "en": {
           "question": "Why are ESD-related damages to components particularly problematic in fault diagnosis?",
           "answer": "Because ESD damage often does not cause immediate total failure but instead latently pre-damages components, leading to sporadic errors or complete failure only later (e.g. after weeks).",
-          "explanation": "Such delayed failures are hard to trace back to their actual cause, since the connection to the original ESD event is usually no longer recognizable."
+          "explanation": "Such delayed failures are hard to trace back to their actual cause, since the connection to the original ESD event is usually no longer recognizable.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2059,7 +2137,8 @@
             "Alkaline"
           ],
           "answer": "Lithium-ion (Li-ion) / lithium-polymer (LiPo)",
-          "explanation": "Li-ion and LiPo batteries offer high energy density at low weight and no memory effect, which is why they are now standard in notebooks and mobile devices."
+          "explanation": "Li-ion and LiPo batteries offer high energy density at low weight and no memory effect, which is why they are now standard in notebooks and mobile devices.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2074,7 +2153,8 @@
         "en": {
           "question": "Why should notebook batteries not be permanently kept at or stored at 100% charge?",
           "answer": "Constant full charging increases the chemical stress on lithium-ion cells and accelerates aging, causing the battery's overall lifespan and capacity to decline faster.",
-          "explanation": "Many manufacturers therefore offer charge modes that cap charging at, e.g., 80% to extend battery life during continuous operation on mains power."
+          "explanation": "Many manufacturers therefore offer charge modes that cap charging at, e.g., 80% to extend battery life during continuous operation on mains power.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2101,7 +2181,8 @@
             "Connecting the power adapter"
           ],
           "answer": "Connecting an NVMe SSD or Wi-Fi card",
-          "explanation": "M.2 slots in notebooks are mostly used for compact NVMe SSDs or Wi-Fi/Bluetooth modules, since they are very space-efficient."
+          "explanation": "M.2 slots in notebooks are mostly used for compact NVMe SSDs or Wi-Fi/Bluetooth modules, since they are very space-efficient.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2136,7 +2217,8 @@
             "Main memory (RAM)",
             "CPU"
           ],
-          "explanation": "In many ultrabooks, RAM and CPU are soldered directly onto the motherboard to save on thickness. M.2 SSDs are usually still socketed, the display is fixed but generally replaceable, and the external power adapter is loose anyway."
+          "explanation": "In many ultrabooks, RAM and CPU are soldered directly onto the motherboard to save on thickness. M.2 SSDs are usually still socketed, the display is fixed but generally replaceable, and the external power adapter is loose anyway.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2163,7 +2245,8 @@
             "It manages user accounts"
           ],
           "answer": "It translates operating system commands into signals the hardware can understand",
-          "explanation": "A driver acts as an intermediary between the operating system and a hardware component, allowing the OS to send generic commands without knowing the specific hardware implementation."
+          "explanation": "A driver acts as an intermediary between the operating system and a hardware component, allowing the OS to send generic commands without knowing the specific hardware implementation.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2178,7 +2261,8 @@
         "en": {
           "question": "A newly installed device shows a yellow exclamation mark in the Device Manager. What does this usually indicate?",
           "answer": "There is a driver problem: either the correct driver is missing, outdated, or incorrectly installed — as a result, the device does not function properly.",
-          "explanation": "Common fix: download and install the current driver from the manufacturer, or uninstall the driver in Device Manager and let it be redetected."
+          "explanation": "Common fix: download and install the current driver from the manufacturer, or uninstall the driver in Device Manager and let it be redetected.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2205,7 +2289,8 @@
             "Disk Management"
           ],
           "answer": "Device Manager",
-          "explanation": "Device Manager (devmgmt.msc) displays all detected hardware components along with their driver status. Task Manager shows running processes, Event Viewer shows system logs, and Disk Management shows partitions."
+          "explanation": "Device Manager (devmgmt.msc) displays all detected hardware components along with their driver status. Task Manager shows running processes, Event Viewer shows system logs, and Disk Management shows partitions.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2232,7 +2317,8 @@
             "Exclusively using second-hand hardware"
           ],
           "answer": "Reducing the energy consumption and environmental impact of IT systems across their entire life cycle",
-          "explanation": "Green IT includes measures such as energy-efficient hardware, virtualization, optimized cooling, and sustainable disposal/recycling to reduce IT's ecological footprint."
+          "explanation": "Green IT includes measures such as energy-efficient hardware, virtualization, optimized cooling, and sustainable disposal/recycling to reduce IT's ecological footprint.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2269,7 +2355,8 @@
             "Automatically turning off the monitor after prolonged inactivity",
             "Using power supplies with high 80+ certification"
           ],
-          "explanation": "Power-saving modes, automatic shutdown, and efficient power supplies reduce consumption. Permanent full-load operation and unnecessarily high brightness needlessly increase energy demand."
+          "explanation": "Power-saving modes, automatic shutdown, and efficient power supplies reduce consumption. Permanent full-load operation and unnecessarily high brightness needlessly increase energy demand.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2284,7 +2371,8 @@
         "en": {
           "question": "What is meant by the \"Total Cost of Ownership\" (TCO) of an IT hardware purchase?",
           "answer": "The total costs of a piece of hardware over its entire useful life, including acquisition costs, operating costs (e.g. electricity, maintenance, support) and disposal costs — not just the purchase price alone.",
-          "explanation": "Energy-efficient hardware that is more expensive to purchase can still be cheaper over its lifetime if operating costs (power consumption, cooling) turn out significantly lower."
+          "explanation": "Energy-efficient hardware that is more expensive to purchase can still be cheaper over its lifetime if operating costs (power consumption, cooling) turn out significantly lower.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2311,7 +2399,8 @@
             "TÜV Red"
           ],
           "answer": "Blue Angel (Blauer Engel)",
-          "explanation": "The \"Blue Angel\" is a German environmental label awarded, among other things, for energy efficiency, low pollutant content, and recyclability of IT devices. The CE marking only confirms compliance with EU safety regulations."
+          "explanation": "The \"Blue Angel\" is a German environmental label awarded, among other things, for energy efficiency, low pollutant content, and recyclability of IT devices. The CE marking only confirms compliance with EU safety regulations.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2326,7 +2415,8 @@
         "en": {
           "question": "Name one way server virtualization can contribute to energy efficiency in a data center.",
           "answer": "Virtualization allows multiple virtual servers to be consolidated onto one physical machine, requiring less physical hardware and achieving better utilization of existing hardware — this lowers energy and cooling demand.",
-          "explanation": "Instead of running a separate, often lightly utilized physical server for each application, multiple workloads can be consolidated onto fewer, better-utilized servers."
+          "explanation": "Instead of running a separate, often lightly utilized physical server for each application, multiple workloads can be consolidated onto fewer, better-utilized servers.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2341,7 +2431,8 @@
         "en": {
           "question": "What is the purpose of a PC power supply?",
           "answer": "It converts mains voltage into the DC voltages required by the components.",
-          "explanation": "PC components need stable DC voltages, for example 12 V, 5 V and 3.3 V."
+          "explanation": "PC components need stable DC voltages, for example 12 V, 5 V and 3.3 V.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2356,7 +2447,8 @@
         "en": {
           "question": "What does motherboard form factor mean?",
           "answer": "The standardized size and layout of holes, connectors and slots.",
-          "explanation": "ATX, Micro-ATX and Mini-ITX are typical motherboard form factors."
+          "explanation": "ATX, Micro-ATX and Mini-ITX are typical motherboard form factors.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2371,7 +2463,8 @@
         "en": {
           "question": "What is the purpose of thermal paste?",
           "answer": "It improves heat transfer between CPU and cooler.",
-          "explanation": "Thermal paste fills microscopic gaps and lowers thermal resistance."
+          "explanation": "Thermal paste fills microscopic gaps and lowers thermal resistance.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2386,7 +2479,8 @@
         "en": {
           "question": "What is a docking station?",
           "answer": "An expansion station that provides notebook connections centrally.",
-          "explanation": "Docking stations make switching between mobile and desk work easier."
+          "explanation": "Docking stations make switching between mobile and desk work easier.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2401,7 +2495,8 @@
         "en": {
           "question": "What is the access difference between HDD and SSD?",
           "answer": "SSDs access data electronically without moving parts, HDDs mechanically with spinning platters.",
-          "explanation": "This usually makes SSDs faster, quieter and more shock-resistant."
+          "explanation": "This usually makes SSDs faster, quieter and more shock-resistant.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2416,7 +2511,8 @@
         "en": {
           "question": "What is the purpose of main memory?",
           "answer": "It temporarily holds currently needed programs and data for fast access.",
-          "explanation": "RAM is much faster than mass storage but loses its contents without power."
+          "explanation": "RAM is much faster than mass storage but loses its contents without power.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2431,7 +2527,8 @@
         "en": {
           "question": "What does hot swap mean?",
           "answer": "Components can be replaced while the system is running.",
-          "explanation": "Hot swap is common for server drive bays or redundant power supplies."
+          "explanation": "Hot swap is common for server drive bays or redundant power supplies.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2446,7 +2543,8 @@
         "en": {
           "question": "What is a thin client?",
           "answer": "A lightweight endpoint that usually runs applications centrally on servers.",
-          "explanation": "Thin clients need little local performance and are often used in VDI environments."
+          "explanation": "Thin clients need little local performance and are often used in VDI environments.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2461,7 +2559,8 @@
         "en": {
           "question": "What is the purpose of a KVM switch?",
           "answer": "Several computers can be operated using one keyboard, monitor and mouse.",
-          "explanation": "KVM stands for keyboard, video, mouse."
+          "explanation": "KVM stands for keyboard, video, mouse.",
+          "category": "Hardware & Workstation"
         }
       }
     },
@@ -2476,7 +2575,8 @@
         "en": {
           "question": "What does EPEAT mean?",
           "answer": "A rating system for environmentally preferable IT products.",
-          "explanation": "EPEAT considers criteria such as energy efficiency, materials and recyclability."
+          "explanation": "EPEAT considers criteria such as energy efficiency, materials and recyclability.",
+          "category": "Hardware & Workstation"
         }
       }
     }

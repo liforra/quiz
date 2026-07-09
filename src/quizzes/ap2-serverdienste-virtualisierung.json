@@ -23,7 +23,8 @@
             "Port 443"
           ],
           "answer": "Port 53",
-          "explanation": "DNS uses port 53 (UDP for normal queries, TCP e.g. for zone transfers). Port 25 is SMTP, 67 is DHCP, 443 is HTTPS."
+          "explanation": "DNS uses port 53 (UDP for normal queries, TCP e.g. for zone transfers). Port 25 is SMTP, 67 is DHCP, 443 is HTTPS.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -50,7 +51,8 @@
             "It only works with Linux guests"
           ],
           "answer": "It runs directly on the hardware (bare metal)",
-          "explanation": "Type 1 (e.g. VMware ESXi, Proxmox VE, Hyper-V) runs directly on the hardware — efficient and standard for servers. Type 2 (e.g. VirtualBox) runs as a program inside a host OS."
+          "explanation": "Type 1 (e.g. VMware ESXi, Proxmox VE, Hyper-V) runs directly on the hardware — efficient and standard for servers. Type 2 (e.g. VirtualBox) runs as a program inside a host OS.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -77,7 +79,8 @@
             "FTP"
           ],
           "answer": "NTP",
-          "explanation": "NTP (Network Time Protocol) keeps system clocks in sync — important for Kerberos, log analysis and certificate validation. SNMP is monitoring, ARP resolves IP→MAC."
+          "explanation": "NTP (Network Time Protocol) keeps system clocks in sync — important for Kerberos, log analysis and certificate validation. SNMP is monitoring, ARP resolves IP→MAC.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -104,7 +107,8 @@
             "920 VA"
           ],
           "answer": "750 VA",
-          "explanation": "Apparent power S = real power P ÷ power factor cos φ = 690 W ÷ 0.92 = 750 VA."
+          "explanation": "Apparent power S = real power P ÷ power factor cos φ = 690 W ÷ 0.92 = 750 VA.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -141,7 +145,8 @@
             "Provide the subnet mask",
             "Communicate the default gateway and DNS server"
           ],
-          "explanation": "DHCP hands out the complete IP configuration via leases. Name resolution itself is done by the DNS server; web pages are served by a web server."
+          "explanation": "DHCP hands out the complete IP configuration via leases. Name resolution itself is done by the DNS server; web pages are served by a web server.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -178,7 +183,8 @@
             "Snapshots enable quick rollbacks",
             "Fast provisioning of new systems"
           ],
-          "explanation": "Consolidation, snapshots and templates are the core benefits. Backups remain necessary (snapshots are not backups!), and virtualization even costs a little performance."
+          "explanation": "Consolidation, snapshots and templates are the core benefits. Backups remain necessary (snapshots are not backups!), and virtualization even costs a little performance.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -215,7 +221,8 @@
             "Containers usually start faster than VMs",
             "VMs provide stronger isolation than containers"
           ],
-          "explanation": "Containers (e.g. Docker) virtualize at OS level and share the host kernel — lightweight but less isolated. Each VM brings a complete OS including its own kernel."
+          "explanation": "Containers (e.g. Docker) virtualize at OS level and share the host kernel — lightweight but less isolated. Each VM brings a complete OS including its own kernel.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -252,7 +259,8 @@
             "Billing is usually subscription-based",
             "Microsoft 365 is a typical example"
           ],
-          "explanation": "With SaaS, the entire operation (servers, updates, availability) is the provider's job. With IaaS, in contrast, the customer manages OS and applications themselves."
+          "explanation": "With SaaS, the entire operation (servers, updates, availability) is the provider's job. With IaaS, in contrast, the customer manages OS and applications themselves.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -267,7 +275,8 @@
         "en": {
           "question": "Which DNS record type resolves a hostname to an IPv4 address?",
           "answer": "A record",
-          "explanation": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail server, PTR = reverse resolution (IP → name)."
+          "explanation": "A = IPv4, AAAA = IPv6, CNAME = alias, MX = mail server, PTR = reverse resolution (IP → name).",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -282,7 +291,8 @@
         "en": {
           "question": "What is a snapshot of a virtual machine, and what is it typically used for?",
           "answer": "A frozen state of the VM at a specific point in time that you can revert to — typically taken before updates or risky changes",
-          "explanation": "Important: snapshots are not a backup replacement — they live on the same storage as the VM and cost performance and space when kept for long."
+          "explanation": "Important: snapshots are not a backup replacement — they live on the same storage as the VM and cost performance and space when kept for long.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -297,7 +307,8 @@
         "en": {
           "question": "What is a DHCP relay agent for?",
           "answer": "It forwards clients' DHCP broadcasts across network boundaries as unicast to a central DHCP server in another subnet",
-          "explanation": "Broadcasts do not cross routers. Without a relay, every subnet/VLAN would need its own DHCP server."
+          "explanation": "Broadcasts do not cross routers. Without a relay, every subnet/VLAN would need its own DHCP server.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -312,7 +323,8 @@
         "en": {
           "question": "What does the abbreviation SLA stand for, and what does it regulate?",
           "answer": "Service Level Agreement — a contract defining the guaranteed quality of service, e.g. availability, response times and penalties for non-compliance",
-          "explanation": "Example: 99.9% availability corresponds to a maximum of about 8.8 hours of downtime per year. SLA metrics must be measurable."
+          "explanation": "Example: 99.9% availability corresponds to a maximum of about 8.8 hours of downtime per year. SLA metrics must be measurable.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -325,9 +337,10 @@
       "explanation": "DNS löst Namen in IP-Adressen und weitere Ressourcendaten auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DNS in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of DNS in Server Services & Virtualization?",
           "answer": "DNS resolves names to IP addresses and other resource data.",
-          "explanation": "DNS resolves names to IP addresses and other resource data. This is a common exam building block because it separates function from use case."
+          "explanation": "DNS resolves names to IP addresses and other resource data. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -340,9 +353,10 @@
       "explanation": "A-Record ordnet einen Hostnamen einer IPv4-Adresse zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of A-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of A-Record in Server Services & Virtualization?",
           "answer": "A-Record maps a host name to an IPv4 address.",
-          "explanation": "A-Record maps a host name to an IPv4 address. This is a common exam building block because it separates function from use case."
+          "explanation": "A-Record maps a host name to an IPv4 address. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -355,9 +369,10 @@
       "explanation": "AAAA-Record ordnet einen Hostnamen einer IPv6-Adresse zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of AAAA-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of AAAA-Record in Server Services & Virtualization?",
           "answer": "AAAA-Record maps a host name to an IPv6 address.",
-          "explanation": "AAAA-Record maps a host name to an IPv6 address. This is a common exam building block because it separates function from use case."
+          "explanation": "AAAA-Record maps a host name to an IPv6 address. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -370,9 +385,10 @@
       "explanation": "CNAME legt einen Alias auf einen kanonischen Namen an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CNAME in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of CNAME in Server Services & Virtualization?",
           "answer": "CNAME creates an alias to a canonical name.",
-          "explanation": "CNAME creates an alias to a canonical name. This is a common exam building block because it separates function from use case."
+          "explanation": "CNAME creates an alias to a canonical name. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -385,9 +401,10 @@
       "explanation": "MX-Record definiert Mailserver für eine Domain. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MX-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of MX-Record in Server Services & Virtualization?",
           "answer": "MX-Record defines mail servers for a domain.",
-          "explanation": "MX-Record defines mail servers for a domain. This is a common exam building block because it separates function from use case."
+          "explanation": "MX-Record defines mail servers for a domain. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -400,9 +417,10 @@
       "explanation": "PTR-Record ermöglicht Reverse-DNS-Auflösung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PTR-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of PTR-Record in Server Services & Virtualization?",
           "answer": "PTR-Record enables reverse DNS lookup.",
-          "explanation": "PTR-Record enables reverse DNS lookup. This is a common exam building block because it separates function from use case."
+          "explanation": "PTR-Record enables reverse DNS lookup. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -415,9 +433,10 @@
       "explanation": "TXT-Record speichert Textinformationen wie SPF oder DKIM-Hinweise. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TXT-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of TXT-Record in Server Services & Virtualization?",
           "answer": "TXT-Record stores text information such as SPF or DKIM data.",
-          "explanation": "TXT-Record stores text information such as SPF or DKIM data. This is a common exam building block because it separates function from use case."
+          "explanation": "TXT-Record stores text information such as SPF or DKIM data. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -430,9 +449,10 @@
       "explanation": "SOA-Record enthält Verwaltungsinformationen einer DNS-Zone. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SOA-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SOA-Record in Server Services & Virtualization?",
           "answer": "SOA-Record contains administrative information for a DNS zone.",
-          "explanation": "SOA-Record contains administrative information for a DNS zone. This is a common exam building block because it separates function from use case."
+          "explanation": "SOA-Record contains administrative information for a DNS zone. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -445,9 +465,10 @@
       "explanation": "NS-Record benennt autoritative Nameserver einer Zone. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NS-Record in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of NS-Record in Server Services & Virtualization?",
           "answer": "NS-Record names authoritative name servers of a zone.",
-          "explanation": "NS-Record names authoritative name servers of a zone. This is a common exam building block because it separates function from use case."
+          "explanation": "NS-Record names authoritative name servers of a zone. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -460,9 +481,10 @@
       "explanation": "TTL im DNS bestimmt, wie lange Antworten gecacht werden dürfen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TTL im DNS in Serverdienste & Virtualisierung?",
-          "answer": "TTL im DNS defines how long responses may be cached.",
-          "explanation": "TTL im DNS defines how long responses may be cached. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of TTL in DNS in Server Services & Virtualization?",
+          "answer": "TTL in DNS defines how long responses may be cached.",
+          "explanation": "TTL in DNS defines how long responses may be cached. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -475,9 +497,10 @@
       "explanation": "DHCP vergibt IP-Konfiguration automatisch an Clients. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCP in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of DHCP in Server Services & Virtualization?",
           "answer": "DHCP automatically assigns IP configuration to clients.",
-          "explanation": "DHCP automatically assigns IP configuration to clients. This is a common exam building block because it separates function from use case."
+          "explanation": "DHCP automatically assigns IP configuration to clients. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -490,9 +513,10 @@
       "explanation": "DHCP-Scope ist ein Bereich vergebbarer IP-Adressen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCP-Scope in Serverdienste & Virtualisierung?",
-          "answer": "DHCP-Scope is a range of assignable IP addresses.",
-          "explanation": "DHCP-Scope is a range of assignable IP addresses. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of DHCP scope in Server Services & Virtualization?",
+          "answer": "DHCP scope is a range of assignable IP addresses.",
+          "explanation": "DHCP scope is a range of assignable IP addresses. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -505,9 +529,10 @@
       "explanation": "DHCP-Option liefert Zusatzinformationen wie Gateway oder DNS-Server. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCP-Option in Serverdienste & Virtualisierung?",
-          "answer": "DHCP-Option provides additional information such as gateway or DNS server.",
-          "explanation": "DHCP-Option provides additional information such as gateway or DNS server. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of DHCP option in Server Services & Virtualization?",
+          "answer": "DHCP option provides additional information such as gateway or DNS server.",
+          "explanation": "DHCP option provides additional information such as gateway or DNS server. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -520,9 +545,10 @@
       "explanation": "DHCP-Relay leitet DHCP-Anfragen über Routergrenzen weiter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCP-Relay in Serverdienste & Virtualisierung?",
-          "answer": "DHCP-Relay forwards DHCP requests across router boundaries.",
-          "explanation": "DHCP-Relay forwards DHCP requests across router boundaries. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of DHCP relay in Server Services & Virtualization?",
+          "answer": "DHCP relay forwards DHCP requests across router boundaries.",
+          "explanation": "DHCP relay forwards DHCP requests across router boundaries. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -535,9 +561,10 @@
       "explanation": "Lease Time bestimmt die Gültigkeitsdauer einer DHCP-Zuordnung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Lease Time in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Lease Time in Server Services & Virtualization?",
           "answer": "Lease Time defines the validity period of a DHCP assignment.",
-          "explanation": "Lease Time defines the validity period of a DHCP assignment. This is a common exam building block because it separates function from use case."
+          "explanation": "Lease Time defines the validity period of a DHCP assignment. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -550,9 +577,10 @@
       "explanation": "NTP synchronisiert Systemuhren über das Netzwerk. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NTP in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of NTP in Server Services & Virtualization?",
           "answer": "NTP synchronizes system clocks over the network.",
-          "explanation": "NTP synchronizes system clocks over the network. This is a common exam building block because it separates function from use case."
+          "explanation": "NTP synchronizes system clocks over the network. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -565,9 +593,10 @@
       "explanation": "LDAP stellt Verzeichnisdienste für Benutzer und Objekte bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of LDAP in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of LDAP in Server Services & Virtualization?",
           "answer": "LDAP provides directory services for users and objects.",
-          "explanation": "LDAP provides directory services for users and objects. This is a common exam building block because it separates function from use case."
+          "explanation": "LDAP provides directory services for users and objects. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -580,9 +609,10 @@
       "explanation": "Active Directory kombiniert Verzeichnisdienst, Authentifizierung und Richtlinienverwaltung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Active Directory in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Active Directory in Server Services & Virtualization?",
           "answer": "Active Directory combines directory service, authentication and policy management.",
-          "explanation": "Active Directory combines directory service, authentication and policy management. This is a common exam building block because it separates function from use case."
+          "explanation": "Active Directory combines directory service, authentication and policy management. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -595,9 +625,10 @@
       "explanation": "Kerberos authentifiziert Benutzer mit Tickets. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Kerberos in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Kerberos in Server Services & Virtualization?",
           "answer": "Kerberos authenticates users with tickets.",
-          "explanation": "Kerberos authenticates users with tickets. This is a common exam building block because it separates function from use case."
+          "explanation": "Kerberos authenticates users with tickets. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -610,9 +641,10 @@
       "explanation": "GPO verteilt Richtlinien in Windows-Domänen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of GPO in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of GPO in Server Services & Virtualization?",
           "answer": "GPO distributes policies in Windows domains.",
-          "explanation": "GPO distributes policies in Windows domains. This is a common exam building block because it separates function from use case."
+          "explanation": "GPO distributes policies in Windows domains. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -625,9 +657,10 @@
       "explanation": "Dateiserver stellt Dateien zentral im Netzwerk bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dateiserver in Serverdienste & Virtualisierung?",
-          "answer": "Dateiserver provides files centrally in the network.",
-          "explanation": "Dateiserver provides files centrally in the network. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of a file server in Server Services & Virtualization?",
+          "answer": "A file server provides files centrally in the network.",
+          "explanation": "A file server provides files centrally in the network. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -640,9 +673,10 @@
       "explanation": "SMB ist ein Protokoll für Datei- und Druckfreigaben. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SMB in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SMB in Server Services & Virtualization?",
           "answer": "SMB is a protocol for file and print sharing.",
-          "explanation": "SMB is a protocol for file and print sharing. This is a common exam building block because it separates function from use case."
+          "explanation": "SMB is a protocol for file and print sharing. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -655,9 +689,10 @@
       "explanation": "NFS stellt Dateifreigaben vor allem in Unix/Linux-Umgebungen bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NFS in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of NFS in Server Services & Virtualization?",
           "answer": "NFS provides file shares especially in Unix/Linux environments.",
-          "explanation": "NFS provides file shares especially in Unix/Linux environments. This is a common exam building block because it separates function from use case."
+          "explanation": "NFS provides file shares especially in Unix/Linux environments. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -670,9 +705,10 @@
       "explanation": "Druckserver verwaltet Drucker und Druckaufträge zentral. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Druckserver in Serverdienste & Virtualisierung?",
-          "answer": "Druckserver centrally manages printers and print jobs.",
-          "explanation": "Druckserver centrally manages printers and print jobs. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Print server in Server Services & Virtualization?",
+          "answer": "Print server centrally manages printers and print jobs.",
+          "explanation": "Print server centrally manages printers and print jobs. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -685,9 +721,10 @@
       "explanation": "Webserver liefert Webseiten und Webanwendungen aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Webserver in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Webserver in Server Services & Virtualization?",
           "answer": "Webserver serves websites and web applications.",
-          "explanation": "Webserver serves websites and web applications. This is a common exam building block because it separates function from use case."
+          "explanation": "Webserver serves websites and web applications. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -700,9 +737,10 @@
       "explanation": "Apache HTTP Server ist ein verbreiteter Webserver. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Apache HTTP Server in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Apache HTTP Server in Server Services & Virtualization?",
           "answer": "Apache HTTP Server is a widely used web server.",
-          "explanation": "Apache HTTP Server is a widely used web server. This is a common exam building block because it separates function from use case."
+          "explanation": "Apache HTTP Server is a widely used web server. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -715,9 +753,10 @@
       "explanation": "Nginx wird als Webserver und Reverse Proxy eingesetzt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Nginx in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Nginx in Server Services & Virtualization?",
           "answer": "Nginx is used as a web server and reverse proxy.",
-          "explanation": "Nginx is used as a web server and reverse proxy. This is a common exam building block because it separates function from use case."
+          "explanation": "Nginx is used as a web server and reverse proxy. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -730,9 +769,10 @@
       "explanation": "Reverse Proxy nimmt Clientanfragen entgegen und leitet sie an Backend-Server weiter. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Reverse Proxy in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Reverse Proxy in Server Services & Virtualization?",
           "answer": "Reverse Proxy receives client requests and forwards them to backend servers.",
-          "explanation": "Reverse Proxy receives client requests and forwards them to backend servers. This is a common exam building block because it separates function from use case."
+          "explanation": "Reverse Proxy receives client requests and forwards them to backend servers. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -745,9 +785,10 @@
       "explanation": "Load Balancer verteilt Last auf mehrere Server. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Load Balancer in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Load Balancer in Server Services & Virtualization?",
           "answer": "Load Balancer distributes load across several servers.",
-          "explanation": "Load Balancer distributes load across several servers. This is a common exam building block because it separates function from use case."
+          "explanation": "Load Balancer distributes load across several servers. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -760,9 +801,10 @@
       "explanation": "Health Check prüft die Verfügbarkeit eines Dienstes automatisch. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Health Check in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Health Check in Server Services & Virtualization?",
           "answer": "Health Check automatically checks service availability.",
-          "explanation": "Health Check automatically checks service availability. This is a common exam building block because it separates function from use case."
+          "explanation": "Health Check automatically checks service availability. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -775,9 +817,10 @@
       "explanation": "Failover schaltet bei Ausfall auf ein Ersatzsystem um. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Failover in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Failover in Server Services & Virtualization?",
           "answer": "Failover switches to a standby system on failure.",
-          "explanation": "Failover switches to a standby system on failure. This is a common exam building block because it separates function from use case."
+          "explanation": "Failover switches to a standby system on failure. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -790,9 +833,10 @@
       "explanation": "Cluster fasst mehrere Systeme für Verfügbarkeit oder Leistung zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Cluster in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Cluster in Server Services & Virtualization?",
           "answer": "Cluster combines several systems for availability or performance.",
-          "explanation": "Cluster combines several systems for availability or performance. This is a common exam building block because it separates function from use case."
+          "explanation": "Cluster combines several systems for availability or performance. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -805,9 +849,10 @@
       "explanation": "HA steht für hohe Verfügbarkeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of HA in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of HA in Server Services & Virtualization?",
           "answer": "HA stands for high availability.",
-          "explanation": "HA stands for high availability. This is a common exam building block because it separates function from use case."
+          "explanation": "HA stands for high availability. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -820,9 +865,10 @@
       "explanation": "SPOF ist eine einzelne Ausfallstelle ohne Redundanz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SPOF in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SPOF in Server Services & Virtualization?",
           "answer": "SPOF is a single point of failure without redundancy.",
-          "explanation": "SPOF is a single point of failure without redundancy. This is a common exam building block because it separates function from use case."
+          "explanation": "SPOF is a single point of failure without redundancy. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -835,9 +881,10 @@
       "explanation": "Monitoring überwacht Zustände, Kennzahlen und Alarme. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Monitoring in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Monitoring in Server Services & Virtualization?",
           "answer": "Monitoring monitors states, metrics and alerts.",
-          "explanation": "Monitoring monitors states, metrics and alerts. This is a common exam building block because it separates function from use case."
+          "explanation": "Monitoring monitors states, metrics and alerts. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -850,9 +897,10 @@
       "explanation": "Logging zeichnet Ereignisse zur Analyse auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Logging in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Logging in Server Services & Virtualization?",
           "answer": "Logging records events for analysis.",
-          "explanation": "Logging records events for analysis. This is a common exam building block because it separates function from use case."
+          "explanation": "Logging records events for analysis. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -865,9 +913,10 @@
       "explanation": "Metrik ist ein messbarer Wert wie CPU-Last oder Antwortzeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Metrik in Serverdienste & Virtualisierung?",
-          "answer": "Metrik is a measurable value such as CPU load or response time.",
-          "explanation": "Metrik is a measurable value such as CPU load or response time. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Metric in Server Services & Virtualization?",
+          "answer": "Metric is a measurable value such as CPU load or response time.",
+          "explanation": "Metric is a measurable value such as CPU load or response time. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -880,9 +929,10 @@
       "explanation": "Alerting benachrichtigt bei Grenzwertverletzungen oder Fehlern. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Alerting in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Alerting in Server Services & Virtualization?",
           "answer": "Alerting notifies on threshold violations or errors.",
-          "explanation": "Alerting notifies on threshold violations or errors. This is a common exam building block because it separates function from use case."
+          "explanation": "Alerting notifies on threshold violations or errors. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -895,9 +945,10 @@
       "explanation": "SLA regelt zugesicherte Leistungen und Verfügbarkeiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SLA in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SLA in Server Services & Virtualization?",
           "answer": "SLA defines agreed services and availability.",
-          "explanation": "SLA defines agreed services and availability. This is a common exam building block because it separates function from use case."
+          "explanation": "SLA defines agreed services and availability. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -910,9 +961,10 @@
       "explanation": "SLO ist ein konkretes messbares Serviceziel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SLO in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SLO in Server Services & Virtualization?",
           "answer": "SLO is a concrete measurable service objective.",
-          "explanation": "SLO is a concrete measurable service objective. This is a common exam building block because it separates function from use case."
+          "explanation": "SLO is a concrete measurable service objective. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -925,9 +977,10 @@
       "explanation": "SLI ist eine Kennzahl zur Messung eines Serviceziels. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SLI in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SLI in Server Services & Virtualization?",
           "answer": "SLI is a metric for measuring a service objective.",
-          "explanation": "SLI is a metric for measuring a service objective. This is a common exam building block because it separates function from use case."
+          "explanation": "SLI is a metric for measuring a service objective. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -940,9 +993,10 @@
       "explanation": "Virtualisierung abstrahiert Hardware für mehrere virtuelle Systeme. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Virtualisierung in Serverdienste & Virtualisierung?",
-          "answer": "Virtualisierung abstracts hardware for multiple virtual systems.",
-          "explanation": "Virtualisierung abstracts hardware for multiple virtual systems. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Virtualization in Server Services & Virtualization?",
+          "answer": "Virtualization abstracts hardware for multiple virtual systems.",
+          "explanation": "Virtualization abstracts hardware for multiple virtual systems. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -955,9 +1009,10 @@
       "explanation": "Hypervisor verwaltet virtuelle Maschinen auf physischer Hardware. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Hypervisor in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Hypervisor in Server Services & Virtualization?",
           "answer": "Hypervisor manages virtual machines on physical hardware.",
-          "explanation": "Hypervisor manages virtual machines on physical hardware. This is a common exam building block because it separates function from use case."
+          "explanation": "Hypervisor manages virtual machines on physical hardware. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -970,9 +1025,10 @@
       "explanation": "Typ-1-Hypervisor läuft direkt auf der Hardware. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Typ-1-Hypervisor in Serverdienste & Virtualisierung?",
-          "answer": "Typ-1-Hypervisor runs directly on hardware.",
-          "explanation": "Typ-1-Hypervisor runs directly on hardware. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Type 1 hypervisor in Server Services & Virtualization?",
+          "answer": "Type 1 hypervisor runs directly on hardware.",
+          "explanation": "Type 1 hypervisor runs directly on hardware. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -985,9 +1041,10 @@
       "explanation": "Typ-2-Hypervisor läuft auf einem Host-Betriebssystem. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Typ-2-Hypervisor in Serverdienste & Virtualisierung?",
-          "answer": "Typ-2-Hypervisor runs on a host operating system.",
-          "explanation": "Typ-2-Hypervisor runs on a host operating system. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Type 2 hypervisor in Server Services & Virtualization?",
+          "answer": "Type 2 hypervisor runs on a host operating system.",
+          "explanation": "Type 2 hypervisor runs on a host operating system. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1000,9 +1057,10 @@
       "explanation": "VM ist ein vollständig virtualisierter Rechner. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VM in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of VM in Server Services & Virtualization?",
           "answer": "VM is a fully virtualized computer.",
-          "explanation": "VM is a fully virtualized computer. This is a common exam building block because it separates function from use case."
+          "explanation": "VM is a fully virtualized computer. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1015,9 +1073,10 @@
       "explanation": "vCPU ist eine virtuelle CPU-Zuordnung an eine VM. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of vCPU in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of vCPU in Server Services & Virtualization?",
           "answer": "vCPU is a virtual CPU allocation to a VM.",
-          "explanation": "vCPU is a virtual CPU allocation to a VM. This is a common exam building block because it separates function from use case."
+          "explanation": "vCPU is a virtual CPU allocation to a VM. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1030,9 +1089,10 @@
       "explanation": "Overcommitment weist mehr virtuelle Ressourcen zu als physisch garantiert sind. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Overcommitment in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Overcommitment in Server Services & Virtualization?",
           "answer": "Overcommitment assigns more virtual resources than physically guaranteed.",
-          "explanation": "Overcommitment assigns more virtual resources than physically guaranteed. This is a common exam building block because it separates function from use case."
+          "explanation": "Overcommitment assigns more virtual resources than physically guaranteed. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1045,9 +1105,10 @@
       "explanation": "Snapshot hält den Zustand einer VM zu einem Zeitpunkt fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Snapshot in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Snapshot in Server Services & Virtualization?",
           "answer": "Snapshot captures VM state at a point in time.",
-          "explanation": "Snapshot captures VM state at a point in time. This is a common exam building block because it separates function from use case."
+          "explanation": "Snapshot captures VM state at a point in time. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1060,9 +1121,10 @@
       "explanation": "Template dient als Vorlage für neue virtuelle Maschinen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Template in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Template in Server Services & Virtualization?",
           "answer": "Template serves as a template for new virtual machines.",
-          "explanation": "Template serves as a template for new virtual machines. This is a common exam building block because it separates function from use case."
+          "explanation": "Template serves as a template for new virtual machines. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1075,9 +1137,10 @@
       "explanation": "Live Migration verschiebt laufende VMs zwischen Hosts. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Live Migration in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Live Migration in Server Services & Virtualization?",
           "answer": "Live Migration moves running VMs between hosts.",
-          "explanation": "Live Migration moves running VMs between hosts. This is a common exam building block because it separates function from use case."
+          "explanation": "Live Migration moves running VMs between hosts. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1090,9 +1153,10 @@
       "explanation": "Container virtualisiert auf Betriebssystemebene Prozesse und Abhängigkeiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Container in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Container in Server Services & Virtualization?",
           "answer": "Container virtualizes processes and dependencies at OS level.",
-          "explanation": "Container virtualizes processes and dependencies at OS level. This is a common exam building block because it separates function from use case."
+          "explanation": "Container virtualizes processes and dependencies at OS level. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1105,9 +1169,10 @@
       "explanation": "Image ist die unveränderliche Vorlage eines Containers. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Image in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Image in Server Services & Virtualization?",
           "answer": "Image is the immutable template of a container.",
-          "explanation": "Image is the immutable template of a container. This is a common exam building block because it separates function from use case."
+          "explanation": "Image is the immutable template of a container. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1120,9 +1185,10 @@
       "explanation": "Registry speichert und verteilt Container-Images. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Registry in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Registry in Server Services & Virtualization?",
           "answer": "Registry stores and distributes container images.",
-          "explanation": "Registry stores and distributes container images. This is a common exam building block because it separates function from use case."
+          "explanation": "Registry stores and distributes container images. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1135,9 +1201,10 @@
       "explanation": "Dockerfile beschreibt den Bau eines Container-Images. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dockerfile in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Dockerfile in Server Services & Virtualization?",
           "answer": "Dockerfile describes how to build a container image.",
-          "explanation": "Dockerfile describes how to build a container image. This is a common exam building block because it separates function from use case."
+          "explanation": "Dockerfile describes how to build a container image. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1150,9 +1217,10 @@
       "explanation": "Kubernetes orchestriert Container über mehrere Hosts. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Kubernetes in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Kubernetes in Server Services & Virtualization?",
           "answer": "Kubernetes orchestrates containers across several hosts.",
-          "explanation": "Kubernetes orchestrates containers across several hosts. This is a common exam building block because it separates function from use case."
+          "explanation": "Kubernetes orchestrates containers across several hosts. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1165,9 +1233,10 @@
       "explanation": "Pod ist die kleinste deploybare Einheit in Kubernetes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Pod in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Pod in Server Services & Virtualization?",
           "answer": "Pod is the smallest deployable unit in Kubernetes.",
-          "explanation": "Pod is the smallest deployable unit in Kubernetes. This is a common exam building block because it separates function from use case."
+          "explanation": "Pod is the smallest deployable unit in Kubernetes. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1180,9 +1249,10 @@
       "explanation": "Service in Kubernetes stellt Pods über eine stabile Adresse bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Service in Kubernetes in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Service in Kubernetes in Server Services & Virtualization?",
           "answer": "Service in Kubernetes exposes pods through a stable address.",
-          "explanation": "Service in Kubernetes exposes pods through a stable address. This is a common exam building block because it separates function from use case."
+          "explanation": "Service in Kubernetes exposes pods through a stable address. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1195,9 +1265,10 @@
       "explanation": "Ingress steuert externen HTTP/HTTPS-Zugriff auf Services. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Ingress in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Ingress in Server Services & Virtualization?",
           "answer": "Ingress controls external HTTP/HTTPS access to services.",
-          "explanation": "Ingress controls external HTTP/HTTPS access to services. This is a common exam building block because it separates function from use case."
+          "explanation": "Ingress controls external HTTP/HTTPS access to services. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1210,9 +1281,10 @@
       "explanation": "IaaS stellt virtuelle Infrastruktur bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IaaS in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of IaaS in Server Services & Virtualization?",
           "answer": "IaaS provides virtual infrastructure.",
-          "explanation": "IaaS provides virtual infrastructure. This is a common exam building block because it separates function from use case."
+          "explanation": "IaaS provides virtual infrastructure. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1225,9 +1297,10 @@
       "explanation": "PaaS stellt eine Plattform für Anwendungen bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PaaS in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of PaaS in Server Services & Virtualization?",
           "answer": "PaaS provides a platform for applications.",
-          "explanation": "PaaS provides a platform for applications. This is a common exam building block because it separates function from use case."
+          "explanation": "PaaS provides a platform for applications. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1240,9 +1313,10 @@
       "explanation": "SaaS stellt fertige Software als Dienst bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SaaS in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SaaS in Server Services & Virtualization?",
           "answer": "SaaS provides ready-to-use software as a service.",
-          "explanation": "SaaS provides ready-to-use software as a service. This is a common exam building block because it separates function from use case."
+          "explanation": "SaaS provides ready-to-use software as a service. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1255,9 +1329,10 @@
       "explanation": "Private Cloud wird exklusiv für eine Organisation betrieben. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Private Cloud in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Private Cloud in Server Services & Virtualization?",
           "answer": "Private Cloud is operated exclusively for one organization.",
-          "explanation": "Private Cloud is operated exclusively for one organization. This is a common exam building block because it separates function from use case."
+          "explanation": "Private Cloud is operated exclusively for one organization. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1270,9 +1345,10 @@
       "explanation": "Public Cloud wird von einem Anbieter für viele Kunden bereitgestellt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Public Cloud in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Public Cloud in Server Services & Virtualization?",
           "answer": "Public Cloud is provided by a vendor for many customers.",
-          "explanation": "Public Cloud is provided by a vendor for many customers. This is a common exam building block because it separates function from use case."
+          "explanation": "Public Cloud is provided by a vendor for many customers. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1285,9 +1361,10 @@
       "explanation": "Hybrid Cloud kombiniert private und öffentliche Cloud-Ressourcen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Hybrid Cloud in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Hybrid Cloud in Server Services & Virtualization?",
           "answer": "Hybrid Cloud combines private and public cloud resources.",
-          "explanation": "Hybrid Cloud combines private and public cloud resources. This is a common exam building block because it separates function from use case."
+          "explanation": "Hybrid Cloud combines private and public cloud resources. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1300,9 +1377,10 @@
       "explanation": "On-Premises betreibt Systeme in eigener Umgebung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of On-Premises in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of On-Premises in Server Services & Virtualization?",
           "answer": "On-Premises runs systems in one’s own environment.",
-          "explanation": "On-Premises runs systems in one’s own environment. This is a common exam building block because it separates function from use case."
+          "explanation": "On-Premises runs systems in one’s own environment. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1315,9 +1393,10 @@
       "explanation": "Provisionierung stellt Systeme oder Ressourcen bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Provisionierung in Serverdienste & Virtualisierung?",
-          "answer": "Provisionierung provides systems or resources.",
-          "explanation": "Provisionierung provides systems or resources. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Provisioning in Server Services & Virtualization?",
+          "answer": "Provisioning provides systems or resources.",
+          "explanation": "Provisioning provides systems or resources. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1330,9 +1409,10 @@
       "explanation": "Automatisierung führt wiederkehrende Aufgaben ohne manuelle Einzelschritte aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Automatisierung in Serverdienste & Virtualisierung?",
-          "answer": "Automatisierung performs recurring tasks without manual single steps.",
-          "explanation": "Automatisierung performs recurring tasks without manual single steps. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Automation in Server Services & Virtualization?",
+          "answer": "Automation performs recurring tasks without manual single steps.",
+          "explanation": "Automation performs recurring tasks without manual single steps. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1345,9 +1425,10 @@
       "explanation": "Infrastructure as Code beschreibt Infrastruktur versionierbar in Code. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Infrastructure as Code in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Infrastructure as Code in Server Services & Virtualization?",
           "answer": "Infrastructure as Code describes infrastructure as versionable code.",
-          "explanation": "Infrastructure as Code describes infrastructure as versionable code. This is a common exam building block because it separates function from use case."
+          "explanation": "Infrastructure as Code describes infrastructure as versionable code. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1360,9 +1441,10 @@
       "explanation": "Konfigurationsmanagement hält Systemkonfigurationen konsistent und nachvollziehbar. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Konfigurationsmanagement in Serverdienste & Virtualisierung?",
-          "answer": "Konfigurationsmanagement keeps system configurations consistent and traceable.",
-          "explanation": "Konfigurationsmanagement keeps system configurations consistent and traceable. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Configuration management in Server Services & Virtualization?",
+          "answer": "Configuration management keeps system configurations consistent and traceable.",
+          "explanation": "Configuration management keeps system configurations consistent and traceable. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1375,9 +1457,10 @@
       "explanation": "Patchmanagement plant und installiert Updates kontrolliert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Patchmanagement in Serverdienste & Virtualisierung?",
-          "answer": "Patchmanagement plans and installs updates in a controlled way.",
-          "explanation": "Patchmanagement plans and installs updates in a controlled way. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Patch management in Server Services & Virtualization?",
+          "answer": "Patch management plans and installs updates in a controlled way.",
+          "explanation": "Patch management plans and installs updates in a controlled way. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1390,9 +1473,10 @@
       "explanation": "Paketmanager installiert und aktualisiert Softwarepakete. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Paketmanager in Serverdienste & Virtualisierung?",
-          "answer": "Paketmanager installs and updates software packages.",
-          "explanation": "Paketmanager installs and updates software packages. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Package manager in Server Services & Virtualization?",
+          "answer": "Package manager installs and updates software packages.",
+          "explanation": "Package manager installs and updates software packages. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1405,9 +1489,10 @@
       "explanation": "Dienstverwaltung startet, stoppt und überwacht Systemdienste. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dienstverwaltung in Serverdienste & Virtualisierung?",
-          "answer": "Dienstverwaltung starts, stops and monitors system services.",
-          "explanation": "Dienstverwaltung starts, stops and monitors system services. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Service management in Server Services & Virtualization?",
+          "answer": "Service management starts, stops and monitors system services.",
+          "explanation": "Service management starts, stops and monitors system services. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1420,9 +1505,10 @@
       "explanation": "systemd verwaltet Dienste auf vielen Linux-Systemen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of systemd in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of systemd in Server Services & Virtualization?",
           "answer": "systemd manages services on many Linux systems.",
-          "explanation": "systemd manages services on many Linux systems. This is a common exam building block because it separates function from use case."
+          "explanation": "systemd manages services on many Linux systems. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1435,9 +1521,10 @@
       "explanation": "SSH ermöglicht verschlüsselte Fernadministration. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SSH in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of SSH in Server Services & Virtualization?",
           "answer": "SSH enables encrypted remote administration.",
-          "explanation": "SSH enables encrypted remote administration. This is a common exam building block because it separates function from use case."
+          "explanation": "SSH enables encrypted remote administration. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1450,9 +1537,10 @@
       "explanation": "RDP ermöglicht grafische Fernzugriffe auf Windows-Systeme. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RDP in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of RDP in Server Services & Virtualization?",
           "answer": "RDP enables graphical remote access to Windows systems.",
-          "explanation": "RDP enables graphical remote access to Windows systems. This is a common exam building block because it separates function from use case."
+          "explanation": "RDP enables graphical remote access to Windows systems. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1465,9 +1553,10 @@
       "explanation": "Backup Agent überträgt Sicherungsdaten eines Servers an ein Backup-System. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Backup Agent in Serverdienste & Virtualisierung?",
+          "question": "What is the purpose of Backup Agent in Server Services & Virtualization?",
           "answer": "Backup Agent transfers server backup data to a backup system.",
-          "explanation": "Backup Agent transfers server backup data to a backup system. This is a common exam building block because it separates function from use case."
+          "explanation": "Backup Agent transfers server backup data to a backup system. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1480,9 +1569,10 @@
       "explanation": "USV überbrückt Stromausfälle und ermöglicht geordnetes Herunterfahren. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of USV in Serverdienste & Virtualisierung?",
-          "answer": "USV bridges power outages and enables orderly shutdown.",
-          "explanation": "USV bridges power outages and enables orderly shutdown. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of UPS in Server Services & Virtualization?",
+          "answer": "UPS bridges power outages and enables orderly shutdown.",
+          "explanation": "UPS bridges power outages and enables orderly shutdown. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1495,9 +1585,10 @@
       "explanation": "Kapazitätsplanung schätzt zukünftigen Ressourcenbedarf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Kapazitätsplanung in Serverdienste & Virtualisierung?",
-          "answer": "Kapazitätsplanung estimates future resource demand.",
-          "explanation": "Kapazitätsplanung estimates future resource demand. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Capacity planning in Server Services & Virtualization?",
+          "answer": "Capacity planning estimates future resource demand.",
+          "explanation": "Capacity planning estimates future resource demand. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1510,9 +1601,10 @@
       "explanation": "Skalierung passt Ressourcen an Lastanforderungen an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Skalierung in Serverdienste & Virtualisierung?",
-          "answer": "Skalierung adjusts resources to load requirements.",
-          "explanation": "Skalierung adjusts resources to load requirements. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Scaling in Server Services & Virtualization?",
+          "answer": "Scaling adjusts resources to load requirements.",
+          "explanation": "Scaling adjusts resources to load requirements. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1525,9 +1617,10 @@
       "explanation": "Horizontale Skalierung fügt weitere Instanzen hinzu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Horizontale Skalierung in Serverdienste & Virtualisierung?",
-          "answer": "Horizontale Skalierung adds more instances.",
-          "explanation": "Horizontale Skalierung adds more instances. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Horizontal scaling in Server Services & Virtualization?",
+          "answer": "Horizontal scaling adds more instances.",
+          "explanation": "Horizontal scaling adds more instances. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1540,9 +1633,10 @@
       "explanation": "Vertikale Skalierung erhöht Ressourcen einer bestehenden Instanz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Vertikale Skalierung in Serverdienste & Virtualisierung?",
-          "answer": "Vertikale Skalierung increases resources of an existing instance.",
-          "explanation": "Vertikale Skalierung increases resources of an existing instance. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Vertical scaling in Server Services & Virtualization?",
+          "answer": "Vertical scaling increases resources of an existing instance.",
+          "explanation": "Vertical scaling increases resources of an existing instance. This is a common exam building block because it separates function from use case.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1557,7 +1651,8 @@
         "en": {
           "question": "What is a service account?",
           "answer": "A user account for applications or services rather than people.",
-          "explanation": "Service accounts should receive only necessary permissions and be protected carefully."
+          "explanation": "Service accounts should receive only necessary permissions and be protected carefully.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1572,7 +1667,8 @@
         "en": {
           "question": "What is a maintenance window?",
           "answer": "A planned time period for changes, updates or restarts.",
-          "explanation": "Maintenance windows reduce the risk of unexpected impact in production."
+          "explanation": "Maintenance windows reduce the risk of unexpected impact in production.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1587,7 +1683,8 @@
         "en": {
           "question": "What does rolling update mean?",
           "answer": "Instances are updated one after another instead of all at once.",
-          "explanation": "Rolling updates can maintain availability during an update."
+          "explanation": "Rolling updates can maintain availability during an update.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1602,7 +1699,8 @@
         "en": {
           "question": "What is blue-green deployment?",
           "answer": "Two environments are kept and traffic is switched to the new version.",
-          "explanation": "The approach makes it easier to return quickly to the old version if problems occur."
+          "explanation": "The approach makes it easier to return quickly to the old version if problems occur.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1617,7 +1715,8 @@
         "en": {
           "question": "What is a reverse DNS entry?",
           "answer": "A PTR record that maps an IP address back to a name.",
-          "explanation": "Reverse DNS is relevant for mail servers and troubleshooting, among other things."
+          "explanation": "Reverse DNS is relevant for mail servers and troubleshooting, among other things.",
+          "category": "Server Services & Virtualization"
         }
       }
     },
@@ -1632,7 +1731,8 @@
         "en": {
           "question": "What is a runbook?",
           "answer": "A documented sequence of steps for operation, maintenance or incident handling.",
-          "explanation": "Runbooks make recurring administration tasks traceable and less dependent on one person."
+          "explanation": "Runbooks make recurring administration tasks traceable and less dependent on one person.",
+          "category": "Server Services & Virtualization"
         }
       }
     }
