@@ -1760,10 +1760,10 @@ export default function App() {
           {/* --- VIEW: PLAYING --- */}
           {view === 'playing' && displayQ && (
             <div className={isFocused
-              ? "min-h-full flex flex-col items-center justify-center p-4"
+              ? "min-h-full flex flex-col items-center p-4"
               : "min-h-full flex flex-col items-center p-4 py-10"
             }>
-              <div className={isFocused ? "max-w-6xl w-full" : "max-w-2xl w-full"}>
+              <div className={isFocused ? "max-w-6xl w-full my-auto" : "max-w-2xl w-full"}>
                 {/* Header */}
                 <div className="flex justify-between items-end mb-4 px-1">
                   <div>
