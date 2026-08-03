@@ -52,7 +52,7 @@ export default function ExplainPopover({ context, onClose, uiLang, onAiError }: 
   if (!context) return null;
 
   return (
-    <div className="absolute top-10 right-0 z-30 w-72 bg-white dark:bg-[#18161F] rounded-xl shadow-2xl border border-zinc-200 dark:border-[#2A2633] p-4 animate-in fade-in zoom-in-95 duration-150">
+    <div className="absolute top-10 right-0 z-30 w-72 max-w-[calc(100vw-2.5rem)] bg-white dark:bg-[#18161F] rounded-xl shadow-2xl border border-zinc-200 dark:border-[#2A2633] p-4 animate-in fade-in zoom-in-95 duration-150">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wide">
           <Lightbulb size={14} /> {t(uiLang, 'explanation')}

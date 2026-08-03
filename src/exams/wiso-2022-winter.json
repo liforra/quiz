@@ -1,0 +1,1017 @@
+{
+  "id": "wiso-2022-winter",
+  "title": "Wirtschafts- und Sozialkunde – Winter 2022/23",
+  "profession": "WISO",
+  "period": {
+    "year": 2022,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 60,
+  "totalPoints": 99.96,
+  "sourceNote": "IHK Abschlussprüfung Winter 2022/23, ZPA Nord-West — Teil 2 der Abschlussprüfung, Wirtschafts- und Sozialkunde (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 3.33,
+      "intro": "Ausgangssituation: Die MarSi-IT GmbH ist ein mittelständisches Unternehmen im IT-Bereich. Die folgenden Aufgaben beziehen sich auf dieses Unternehmen.\n\nDaniel Koroki macht eine Ausbildung bei der MarSi-IT GmbH. Ein Ausbilder begleitet Herrn Koroki durch seine Ausbildung. Um als Ausbilder tätig sein zu dürfen, muss er bestimmte Voraussetzungen erfüllen. Welche der folgenden Anforderungen muss ein Mitarbeiter erfüllen, um als Ausbilder tätig sein zu können?",
+      "parts": [
+        {
+          "id": "1",
+          "prompt": "Der Ausbilder muss …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "eine Berufsausbildung vorweisen.",
+            "sicherstellen, dass bei der MarSi-IT GmbH eine angemessene Anzahl von Mitarbeitern tätig ist.",
+            "fachlich und persönlich geeignet sein.",
+            "persönlich die notwendigen Räumlichkeiten und Gerätschaften besitzen.",
+            "seit 2009 keinen Nachweis über eine Ausbildereignungsprüfung mehr vorlegen."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 637,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 3.33,
+      "intro": "Die MarSi-IT GmbH ist als Gesellschaft mit beschränkter Haftung organisiert. Welche der folgenden Angaben trifft auf eine GmbH zu?",
+      "parts": [
+        {
+          "id": "2",
+          "prompt": "Eine GmbH ist …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "eine Kapitalgesellschaft.",
+            "ein Monopolist in der jeweiligen Region und Branche.",
+            "eine juristische Person des öffentlichen Rechts.",
+            "eine Körperschaft des öffentlichen Rechts.",
+            "ein legales Kartell."
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 637,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 3.33,
+      "intro": "Der Gesellschafter Achim Klausen der MarSi-IT GmbH hat eine Stammeinlage von 375.000 EUR in die GmbH eingebracht. Laut Beschluss der Gesellschafterversammlung erhielt er im Geschäftsjahr 2021 einen Gewinnanteil von 28.125 EUR.",
+      "parts": [
+        {
+          "id": "3",
+          "prompt": "Ermitteln Sie die Eigenkapitalrentabilität von Herrn Klausen im Jahr 2021 in Prozent.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 7.5,
+          "tolerance": 0.05,
+          "modelAnswer": "28.125 EUR / 375.000 EUR * 100 = 7,5 %.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 182,
+            "y": 637,
+            "fontSize": 8,
+            "maxWidth": 22
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 3.33,
+      "intro": "Noch vor dem Ende der Ausbildung wird Herrn Koroki von der MarSi-IT GmbH ein befristeter Arbeitsvertrag angeboten. Welche der folgenden Aussagen zu befristeten Arbeitsverhältnissen ist zutreffend?",
+      "parts": [
+        {
+          "id": "4",
+          "prompt": "Welche Aussage zu befristeten Arbeitsverhältnissen ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Befristete Arbeitsverhältnisse sind immer unzulässig.",
+            "Eine befristete Einstellung ist höchstens für eine Dauer von zwei Monaten zulässig.",
+            "Die Befristung eines Arbeitsvertrages ist auch dann zulässig, wenn sie durch keinen sachlichen Grund gerechtfertigt ist und länger als drei Jahre andauert.",
+            "Die Befristung eines Arbeitsvertrages ist nur wirksam, wenn sie schriftlich vereinbart wurde.",
+            "Befristete Arbeitsverhältnisse sollen Arbeitssuchende schützen."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 232,
+            "y": 637,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Aufgabe",
+      "points": 3.33,
+      "intro": "Die MarSi-IT GmbH schließt mit Herrn Koroki einen Arbeitsvertrag als Fachinformatiker Anwendungsentwicklung ab. Mit diesem Arbeitsvertrag geht Herr Koroki bestimmte Pflichten gegenüber seinem Arbeitgeber ein. Welche der folgenden Pflichten übernimmt ein Arbeitnehmer mit der Unterzeichnung des Arbeitsvertrages?",
+      "parts": [
+        {
+          "id": "5",
+          "prompt": "Welche Pflicht übernimmt ein Arbeitnehmer mit der Unterzeichnung des Arbeitsvertrages?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Pflicht zur Übernahme jeder Haftung",
+            "Fürsorgepflicht",
+            "Beschäftigungspflicht",
+            "Verschwiegenheitspflicht",
+            "Gleichbehandlungspflicht"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 596,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. Aufgabe",
+      "points": 3.33,
+      "intro": "In den ersten Monaten nach Antritt der Beschäftigung von Herrn Koroki bei der MarSi-IT GmbH findet ein Umbau der Verkaufsräume statt. Dazu hat die Unternehmensleitung entschieden, Zeitarbeitnehmer (Arbeitnehmerüberlassung) für das Ein- und Ausräumen der Ware zu beschäftigen. Eine Auszubildende aus dem ersten Lehrjahr fragt Herrn Koroki, was es mit Arbeitnehmerüberlassung auf sich hat. Welche der folgenden Aussagen zur Arbeitnehmerüberlassung ist zutreffend?",
+      "parts": [
+        {
+          "id": "6",
+          "prompt": "Welche Aussage zur Arbeitnehmerüberlassung ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Entlohnung eines Zeitarbeitnehmers erfolgt ausschließlich für das erbrachte Werk.",
+            "Die Entlohnung eines Zeitarbeitnehmers bestimmt der Verleiher.",
+            "Die Entlohnung eines Zeitarbeitnehmers bestimmt der Betrieb, in dem der Zeitarbeitnehmer tätig ist.",
+            "Zeitarbeitnehmer haben keinen Urlaubsanspruch.",
+            "Zeitarbeitnehmer werden ausschließlich unbefristet eingestellt."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 596,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Aufgabe",
+      "points": 3.33,
+      "intro": "Für die MarSi-IT GmbH gelten als Arbeitgeber verschiedene arbeitsrechtliche Bestimmungen. Das Arbeitsrecht kann in verschiedene Bereiche gegliedert werden. Welche der folgenden Regelungen gehört zum Individualarbeitsrecht?",
+      "parts": [
+        {
+          "id": "7",
+          "prompt": "Welche Regelung gehört zum Individualarbeitsrecht?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Betriebsvereinbarungen",
+            "Unfallverhütungsvorschriften",
+            "Übertarifliche Gehaltsvereinbarungen",
+            "Betriebliche Überstundenregelungen",
+            "Urlaubsregelungen nach dem Bundesurlaubsgesetz"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 179,
+            "y": 596,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Koroki hat Fragen zu seinem Urlaubsanspruch. Die Urlaubsdauer ist u. a. im Bundesurlaubsgesetz geregelt. Welche der folgenden Aussagen zum Bundesurlaubsgesetz ist zutreffend?",
+      "parts": [
+        {
+          "id": "8",
+          "prompt": "Welche Aussage zum Bundesurlaubsgesetz ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Erkrankt ein Arbeitnehmer in seinem Urlaub, verfällt sein Urlaubsanspruch.",
+            "Der volle Urlaubsanspruch besteht erst nach sechsmonatigem Bestehen des Arbeitsverhältnisses.",
+            "Nicht beanspruchter Urlaub kann bis zu sechs Monate lang in das nächste Kalenderjahr übertragen werden.",
+            "Jeder Arbeitnehmer hat Anspruch auf 30 Werktage Urlaub.",
+            "Alleinerziehende Mütter haben einen Anspruch auf Urlaub in den Schulferien."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 219,
+            "y": 596,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Anwendungsentwicklerin Frau Menedi ist schwanger. Für sie gilt das Mutterschutzgesetz, dieses soll Mutter und Kind vor Risiken beschützen. Welche der folgenden Regelungen findet sich im Mutterschutzgesetz?",
+      "parts": [
+        {
+          "id": "9",
+          "prompt": "Welche Regelung findet sich im Mutterschutzgesetz?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Erforderliche Untersuchungen während der Schwangerschaft müssen außerhalb der Arbeitszeit stattfinden.",
+            "Das Mutterschaftsgeld wird während der gesamten Schwangerschaft gezahlt.",
+            "Im Normalfall dürfen Frauen zehn Wochen vor und fünfzehn Wochen nach der Entbindung nicht beschäftigt werden.",
+            "Mütter haben bis zur Vollendung des sechsten Lebensjahres des Kindes einen Rechtsanspruch auf Elternzeit.",
+            "Es besteht Kündigungsschutz während der gesamten Schwangerschaft und bis zum Ablauf von vier Monaten nach der Entbindung."
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 555,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Aufgabe",
+      "points": 3.35,
+      "intro": "Einem Arbeitnehmer der MarSi-IT GmbH soll gekündigt werden. Erforderlich ist ein Kündigungsgrund. Welche der folgenden Kündigungsgründe (1 = Personenbedingte Kündigung, 2 = Verhaltensbedingte Kündigung, 3 = Betriebsbedingte Kündigung) sind den nachstehenden Beispielen zuzuordnen?",
+      "parts": [
+        {
+          "id": "10.a",
+          "label": "a)",
+          "prompt": "Wiederholte Nichtbeachtung des Alkoholverbotes während der Arbeitszeit",
+          "points": 0.67,
+          "type": "number",
+          "correctValue": 2,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 555,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "10.b",
+          "label": "b)",
+          "prompt": "Krankheit über langen Zeitraum",
+          "points": 0.67,
+          "type": "number",
+          "correctValue": 1,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 163,
+            "y": 555,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "10.c",
+          "label": "c)",
+          "prompt": "Gewinnrückgang im Unternehmen",
+          "points": 0.67,
+          "type": "number",
+          "correctValue": 3,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 187,
+            "y": 555,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "10.d",
+          "label": "d)",
+          "prompt": "Wiederholter Verstoß gegen das strenge Rauchverbot auf dem Betriebsgelände",
+          "points": 0.67,
+          "type": "number",
+          "correctValue": 2,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 210,
+            "y": 555,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "10.e",
+          "label": "e)",
+          "prompt": "Schließung einer Abteilung",
+          "points": 0.67,
+          "type": "number",
+          "correctValue": 3,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 248,
+            "y": 555,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Aufgabe",
+      "points": 3.33,
+      "intro": "Ulrich Schossauer hat seine Ausbildung bei der MarSi-IT GmbH beendet und wird nach der Ausbildung nicht weiter beschäftigt. Er möchte ein qualifiziertes Zeugnis seines Ausbildungsbetriebs erhalten. Welche der folgenden Formulierungen in einem Arbeitszeugnis entspricht einer sehr guten Beurteilung?",
+      "parts": [
+        {
+          "id": "11",
+          "prompt": "Welche Formulierung in einem Arbeitszeugnis entspricht einer sehr guten Beurteilung? „Er hat …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "die übertragenen Arbeiten zu unserer Zufriedenheit erledigt.\"",
+            "die übertragenen Arbeiten stets zu unserer vollsten Zufriedenheit erledigt.\"",
+            "sich bemüht, die übertragenen Arbeiten zu unserer Zufriedenheit zu erledigen.\"",
+            "die übertragenen Arbeiten stets zu unserer vollen Zufriedenheit erledigt.\"",
+            "die übertragenen Arbeiten im Großen und Ganzen zu unserer Zufriedenheit erledigt.\""
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 268,
+            "y": 555,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Aufgabe",
+      "points": 3.33,
+      "intro": "Bei der MarSi-IT GmbH stehen Betriebsratswahlen an. Die Anzahl der zu wählenden Betriebsräte hängt jeweils von der Anzahl der Wahlberechtigten Arbeitnehmer ab. Herr Koroki ist im Wahlvorstand der MarSi-IT GmbH und soll mithilfe eines Auszugs aus dem Betriebsverfassungsgesetz ermitteln, wie viele Betriebsratsmitglieder gewählt werden können. Bei der MarSi-IT GmbH gibt es: 537 Arbeitnehmer, die das 18. Lebensjahr vollendet haben, hiervon sind 250 Mitarbeiter seit einem halben Jahr befristet eingestellt; 17 volljährige und 2 minderjährige Auszubildende. Auszug § 9 Betriebsverfassungsgesetz (Betriebsratsgröße nach Anzahl wahlberechtigter Arbeitnehmer): 5–20 aus 1 Person, 21–50 aus 3 Mitgliedern, 51–100 aus 5 Mitgliedern, 101–200 aus 7 Mitgliedern, 201–400 aus 9 Mitgliedern, 401–700 aus 11 Mitgliedern, 701–1.000 aus 13 Mitgliedern, 1.001–1.500 aus 15 Mitgliedern. § 7 Wahlberechtigung: Wahlberechtigt sind alle Arbeitnehmer des Betriebs, die das 16. Lebensjahr vollendet haben.",
+      "parts": [
+        {
+          "id": "12",
+          "prompt": "Ermitteln Sie, wie viele Betriebsratsmitglieder gewählt werden können.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 11,
+          "tolerance": 0,
+          "modelAnswer": "537 volljährige Arbeitnehmer + 17 volljährige Azubis + 2 minderjährige Azubis (wahlberechtigt ab 16 Jahren) = 556 wahlberechtigte Arbeitnehmer. Das liegt im Bereich 401 bis 700 → 11 Mitglieder.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 515,
+            "fontSize": 8,
+            "maxWidth": 20
+          }
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Aufgabe",
+      "points": 3.33,
+      "intro": "Nach dem Betriebsverfassungsgesetz hat der Betriebsrat der MarSi-IT GmbH je nach Angelegenheit unterschiedliche Beteiligungsrechte. Bei welcher der folgenden Angelegenheiten hat der Betriebsrat ein Mitbestimmungsrecht?",
+      "parts": [
+        {
+          "id": "13",
+          "prompt": "Bei welcher Angelegenheit hat der Betriebsrat ein Mitbestimmungsrecht?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Umbaupläne des Betriebsgeländes",
+            "Personalbedarf des Betriebs",
+            "Betriebsferien",
+            "Umweltschutz",
+            "Einstellung von leitenden Mitarbeitern"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 151,
+            "y": 515,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. Aufgabe",
+      "points": 3.33,
+      "intro": "Für besondere Interessengruppen können bei der MarSi-IT GmbH spezielle Vertretungen gewählt werden, z. B. die Jugend- und Auszubildendenvertretung (JAV). Welche der folgenden Aussagen zur JAV ist zutreffend?",
+      "parts": [
+        {
+          "id": "14",
+          "prompt": "Welche Aussage zur JAV ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "In einem Betrieb kann eine JAV gewählt werden, wenn mindestens zehn jugendliche Arbeitnehmer unter 18 Jahren dort beschäftigt sind.",
+            "Die JAV wird gegenüber der Geschäftsleitung selbstständig tätig.",
+            "Auszubildende bis zu einem Alter von 27 Jahren dürfen die JAV wählen.",
+            "Nur in einem Betrieb mit Betriebsrat kann auch eine JAV gewählt werden.",
+            "Wer in die JAV gewählt wird, wird nach der Ausbildung automatisch übernommen."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 190,
+            "y": 515,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. Aufgabe",
+      "points": 3.33,
+      "intro": "Nicht alle beruflichen Bildungsmaßnahmen finden innerhalb eines bestehenden Arbeitsverhältnisses statt. Außerbetriebliche Fort- und Weiterbildungen oder Umschulungen können von bestimmten Stellen finanziell gefördert werden. Bei welchen der folgenden Stellen kann eine arbeitssuchende Anwendungsentwicklerin finanzielle Förderung für eine Fort- und Weiterbildungsmaßnahme bzw. eine Umschulung erhalten?",
+      "parts": [
+        {
+          "id": "15",
+          "prompt": "Bei welchen Stellen kann eine arbeitssuchende Anwendungsentwicklerin finanzielle Förderung erhalten?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "IHK und Krankenkassen",
+            "IHK und Handwerkskammern",
+            "Rentenversicherungsträger und Krankenkassen",
+            "Arbeitsagenturen und Rentenversicherungsträger",
+            "Arbeitsagenturen und IHK"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 474,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. Aufgabe",
+      "points": 3.33,
+      "intro": "Die gesetzliche Sozialversicherung ist in Deutschland die wichtigste Institution der sozialen Sicherung. Sie folgt dem Solidarprinzip. Welche der folgenden Aussagen zur Sozialversicherung ist zutreffend?",
+      "parts": [
+        {
+          "id": "16",
+          "prompt": "Welche Aussage zur Sozialversicherung ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Nur Arbeitnehmer werden zur Zahlung der Sozialversicherungsbeiträge herangezogen.",
+            "Bei geringfügig Beschäftigten zahlt der Arbeitgeber in der Regel alle Beiträge.",
+            "Die Gemeinschaft sichert dem Einzelnen ein Tarifgehalt.",
+            "Nur Arbeitgeber werden zur Zahlung der Sozialversicherungsbeiträge herangezogen.",
+            "Wer sehr gut verdient, ist nicht mehr zur Solidarität verpflichtet und wird nicht mehr zur Zahlung von Sozialversicherungsbeiträgen herangezogen."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 474,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Aufgabe",
+      "points": 3.33,
+      "intro": "Die MarSi-IT GmbH ist Mitglied der örtlich zuständigen Industrie- und Handelskammer (IHK). Welche der folgenden Aufgaben wird von der IHK u. a. wahrgenommen?",
+      "parts": [
+        {
+          "id": "17",
+          "prompt": "Die IHK …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "wird zur Überwachung der verschiedenen Schutzgesetze eingesetzt. Ihre Zuordnung ist länderspezifisch.",
+            "nimmt Meldungen von Betriebsunfällen entgegen und leitet sie an die zuständigen Stellen weiter.",
+            "nimmt als Interessenvertretung der Arbeitnehmer beratende Aufgaben für ihre Mitglieder wahr. Ihre Stimme ist beim Abschluss von Tarifverträgen entscheidend.",
+            "ist als eingetragener Verein organisiert und hat das Ziel, die beruflichen, wirtschaftlichen und sozialen Belange ihrer Mitglieder zu fördern.",
+            "nimmt als Interessenvertreter der gewerblichen Wirtschaft/des Handels Aufgaben in der Beratung und der Aus- und Weiterbildung wahr."
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 179,
+            "y": 474,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Aufgabe",
+      "points": 3.33,
+      "intro": "Eine Praktikantin der MarSi-IT GmbH hat in einer Zeitung von der gesetzlichen Unfallversicherung gelesen. Sie hatte vorher noch nie davon gehört und fragt Herrn Koroki dazu einige Dinge. Welche der folgenden Aussagen über die gesetzliche Unfallversicherung ist zutreffend?",
+      "parts": [
+        {
+          "id": "18",
+          "prompt": "Welche Aussage über die gesetzliche Unfallversicherung ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "In der gesetzlichen Unfallversicherung sind nur leitende Angestellte versichert.",
+            "Wenn ein Arbeitnehmer bei einem Arbeitsunfall Erste Hilfe leistet, ist er nicht versichert.",
+            "Alle Versicherten sind direkt bei der gesetzlichen Unfallversicherung versichert.",
+            "Träger der gesetzlichen Unfallversicherung sind die zuständigen Berufsgenossenschaften.",
+            "Die gesetzliche Unfallversicherung bietet auch einen Schutz bei Unfällen in der Freizeit."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 219,
+            "y": 474,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Aufgabe",
+      "points": 3.33,
+      "intro": "Ein Freund von Herrn Koroki ist kurzfristig arbeitslos geworden und möchte nun Arbeitslosengeld beantragen. Er hat einige Fragen und bittet Herrn Koroki um Hilfe. Welche der folgenden Aussagen über das Arbeitslosengeld ist zutreffend?",
+      "parts": [
+        {
+          "id": "19",
+          "prompt": "Welche Aussage über das Arbeitslosengeld ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Höhe des Arbeitslosengeldes ist unabhängig von dem vorherigen Arbeitsentgelt immer gleich.",
+            "Das Arbeitslosengeld wird nur an diejenigen ausgezahlt, die bedürftig und arbeitsunfähig sind.",
+            "Zur Berechnung des Arbeitslosengeldes wird das Bruttoentgelt der vergangenen zwölf Monate zugrunde gelegt.",
+            "Die Höhe des Arbeitslosengeldes berechnet sich ausschließlich aus dem Arbeitsentgelt, das in den letzten drei Monaten vor dem Eintritt der Arbeitslosigkeit erzielt wurde.",
+            "Bevor ein Anspruch auf Arbeitslosengeld besteht, müssen erst alle Ersparnisse aufgebraucht werden."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 433,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Aufgabe",
+      "points": 3.33,
+      "intro": "Herrn Koroki fällt bei der Kontrolle seiner Lohnabrechnung der Beitrag zur Pflegeversicherung auf. Welche der folgenden Aussagen über die Pflegeversicherung ist zutreffend?",
+      "parts": [
+        {
+          "id": "20",
+          "prompt": "Welche Aussage über die Pflegeversicherung ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Pflegeversicherungsträger sind eigenständige staatliche Institutionen.",
+            "Rentner, Studenten und Arbeitslosengeldempfänger sind nicht versichert.",
+            "Die Pflegeversicherung wird allein vom Arbeitnehmer gezahlt.",
+            "Kinderlose Arbeitnehmer über 23 Jahre zahlen einen höheren Beitrag als Arbeitnehmer mit Kindern.",
+            "Die Pflegeversicherung zahlt nur ambulante Pflege durch Angehörige."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 433,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21. Aufgabe",
+      "points": 3.33,
+      "intro": "Beim Aufbau eines neuen Serverschrankes hat sich ein Kollege von Herrn Koroki einen Finger eingeklemmt. Die Quetschung ist so stark, dass der Finger ärztlich versorgt werden muss. Welcher der folgenden Stellen muss die MarSi-IT GmbH die entsprechende Unfallmeldung unverzüglich zustellen?",
+      "parts": [
+        {
+          "id": "21",
+          "prompt": "Welcher Stelle muss die MarSi-IT GmbH die Unfallmeldung unverzüglich zustellen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Haftpflichtversicherung",
+            "Berufsgenossenschaft",
+            "Gewerbeaufsichtsbehörde",
+            "Krankenkasse",
+            "Private Unfallversicherung"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 179,
+            "y": 433,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22. Aufgabe",
+      "points": 3.34,
+      "intro": "In der Tageszeitung sehen Sie die folgende Statistik zu Arbeits- und Wegeunfällen (Unfallversicherung der gewerblichen Wirtschaft und Unfallversicherung der öffentlichen Hand): Meldepflichtige Arbeitsunfälle: Vorjahr 954.459, aktuelles Jahr 919.025 (−3,71 %). Je 1.000 Vollarbeiter: Vorjahr 25,84, aktuelles Jahr 24,52 (−5,09 %). Meldepflichtige Wegeunfälle: Vorjahr 223.973, aktuelles Jahr 188.452 (−15,86 %). Je 1.000 Versicherungsverhältnisse: Vorjahr 5,25, aktuelles Jahr 4,34 (−17,16 %). Meldepflichtige Unfälle zusammen: Vorjahr 1.178.432, aktuelles Jahr 1.107.477 (−6,02 %). Tödliche Arbeitsunfälle: Vorjahr 519, aktuelles Jahr 498 (−4,05 %). Tödliche Wegeunfälle: Vorjahr 367, aktuelles Jahr 394 (+7,36 %). Tödliche Unfälle zusammen: Vorjahr 886, aktuelles Jahr 892 (+0,68 %). Welche unten aufgeführten Aussagen lassen sich mit der Statistik belegen?",
+      "parts": [
+        {
+          "id": "22",
+          "prompt": "Wählen Sie die zwei zutreffenden Aussagen.",
+          "points": 3.34,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Die Zahl der meldepflichtigen Arbeitsunfälle hat im Jahresvergleich vom Vorjahr zum aktuellen Jahr zugenommen.",
+            "Im Vorjahr gab es mehr meldepflichtige Wegeunfälle als im aktuellen Jahr.",
+            "Die Zahl der tödlichen Arbeitsunfälle hat zugenommen.",
+            "Die Gesamtzahl der tödlichen Unfälle hat abgenommen.",
+            "Je 1.000 Versicherungsverhältnisse hat die Zahl der meldepflichtigen Wegeunfälle im aktuellen Jahr zugenommen.",
+            "Die Anzahl der tödlichen Wegeunfälle ist im aktuellen Jahr gestiegen."
+          ],
+          "correctIndices": [
+            1,
+            5
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 100,
+            "y": 392,
+            "fontSize": 8,
+            "maxWidth": 40
+          }
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23. Aufgabe",
+      "points": 3.33,
+      "intro": "Nils Singer überlegt, sich nach seiner Berufsausbildung zum Fachinformatiker Systemintegration bei der MarSi-IT GmbH selbstständig zu machen. Bei einer Existenzgründung muss er bestimmte Dinge beachten. Welche der folgenden Aussagen zur Existenzgründung ist zutreffend?",
+      "parts": [
+        {
+          "id": "23",
+          "prompt": "Welche Aussage zur Existenzgründung ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Sich in der heutigen Zeit selbstständig zu machen, bedeutet kein großes finanzielles Risiko.",
+            "Für den Erfolg der Existenzgründung sind Kenntnisse über den Markt und die Kundenwünsche wichtig.",
+            "Für den Erfolg der Existenzgründung ist ausschlaggebend, dass höchstens durchschnittliche Markt- und Fachkenntnisse vorhanden sind.",
+            "In der Gründungsphase kann der Gründer immer von einem „guten Verdienst\" ausgehen.",
+            "Gegen Risiken wie Krankheit und Alter ist ein Existenzgründer automatisch durch die Sozialversicherung abgesichert."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 160,
+            "y": 392,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Singer überlegt, sein Unternehmen als Ist-Kaufmann zu betreiben. Welche der folgenden Aussagen zum angedachten Unternehmen ist zutreffend?",
+      "parts": [
+        {
+          "id": "24",
+          "prompt": "Welche Aussage zum angedachten Unternehmen ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Zur Absicherung von Krediten muss Herr Singer zwingend die Unternehmensform der GmbH wählen.",
+            "Die zuständige IHK verlangt von Herrn Singer vor der Gründung den Nachweis seiner fachlichen Qualifikation zum Betrieb eines kaufmännisch zu führenden Unternehmens.",
+            "Die Eintragung von Herrn Singer als Ist-Kaufmann im Handelsregister hat rein deklaratorische Wirkung.",
+            "Herr Singer ist im ersten Jahr von der Einkommensteuerpflicht befreit, wenn er Gewerbesteuer zahlt.",
+            "Als selbstständiger Ist-Kaufmann benötigt Herr Singer keine Krankenversicherung."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 200,
+            "y": 392,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "25. Aufgabe",
+      "points": 3.33,
+      "intro": "Beim Betreten des Lagers der MarSi-IT GmbH stellt Herr Koroki fest, dass Verpackungsmaterialien Feuer gefangen haben. Welche der folgenden Aktionen sollte Herr Koroki auf keinen Fall durchführen?",
+      "parts": [
+        {
+          "id": "25",
+          "prompt": "Welche Aktion sollte Herr Koroki auf keinen Fall durchführen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Ein zweites Fenster öffnen, damit der Rauch besser abziehen kann.",
+            "Die Mitarbeitenden durch lautes Rufen warnen.",
+            "Die Tür zum Lager schließen, nachdem Herr Koroki sich sicher ist, dass sich keine weiteren Mitarbeiter im Raum aufhalten.",
+            "Den Brand durch Wahl der Notrufnummer 112 melden.",
+            "Den nächstgelegenen Feuermelder einschlagen und den Meldeknopf drücken."
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 351,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "26. Aufgabe",
+      "points": 3.36,
+      "intro": "Im Rahmen eines Schulpraktikums führt Herr Koroki eine Schülerin durch die MarSi-IT GmbH. Diese fragt Herrn Koroki nach der Bedeutung diverser Zeichen und Symbole, die sie im Betrieb sieht. Sechs Zeichen/Symbole (mit Farbgebung) sind gegeben: 1 = Gabelstapler-Warnsymbol, gelb/schwarz. 2 = Handschuhe tragen (Gebotszeichen), blau/weiß. 3 = Sammelpunkt/Fluchtsymbol, grün/weiß. 4 = Feuerlöscher (Brandschutzzeichen), rot/weiß. 5 = Umwelt-Gefahrenpiktogramm, weiß/rot/schwarz. 6 = Gabelstapler durchgestrichen (Verbotszeichen), weiß/rot/schwarz. Ordnen Sie den folgenden Begriffen jeweils die Nummer des zutreffenden Zeichens/Symbols zu.",
+      "parts": [
+        {
+          "id": "26.a",
+          "label": "a)",
+          "prompt": "Verbotszeichen",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 6,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 351,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.b",
+          "label": "b)",
+          "prompt": "Rettungszeichen",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 3,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 163,
+            "y": 351,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.c",
+          "label": "c)",
+          "prompt": "Brandschutzzeichen",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 4,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 187,
+            "y": 351,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.d",
+          "label": "d)",
+          "prompt": "Gebotszeichen",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 2,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 210,
+            "y": 351,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.e",
+          "label": "e)",
+          "prompt": "Warnzeichen",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 1,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 234,
+            "y": 351,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.f",
+          "label": "f)",
+          "prompt": "Gefahrensymbol/Gefahrenpiktogramm",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 5,
+          "pdfAnchor": {
+            "page": 10,
+            "x": 258,
+            "y": 351,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "27. Aufgabe",
+      "points": 3.33,
+      "intro": "Worauf weist das in der 26. Aufgabe aufgeführte Zeichen Nr. 3 hin (Sammelpunkt/Fluchtsymbol, grün/weiß)?",
+      "parts": [
+        {
+          "id": "27",
+          "prompt": "Worauf weist das Zeichen Nr. 3 hin?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Gemeinschaftsraum",
+            "Belastung bis maximal vier Personen",
+            "Menschenansammlungen vermeiden",
+            "Gendertoilette",
+            "Sammelpunkt im Gefahrenfall"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 285,
+            "y": 351,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "28. Aufgabe",
+      "points": 3.33,
+      "intro": "Die MarSi-IT GmbH plant, zwei Anwendungsentwickler (m/w/d) einzustellen. Welche der folgenden Formulierungen in einer Stellenanzeige verstößt gegen das Allgemeine Gleichbehandlungsgesetz (AGG)?",
+      "parts": [
+        {
+          "id": "28",
+          "prompt": "Welche Formulierung verstößt gegen das AGG?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Sie verfügen über hervorragende Kenntnisse in JAVA.",
+            "Sie beherrschen die englische Sprache verhandlungssicher in Wort und Schrift.",
+            "Sie sind mobil und bereit, auch längere Reisen ins Ausland zu unternehmen.",
+            "Sie passen in unser junges dynamisches Team, wenn Sie deutscher Herkunft sind.",
+            "Sie sind an flexible Arbeitszeiten gewöhnt und können gelegentlich abends länger arbeiten."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 99,
+            "y": 311,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "29. Aufgabe",
+      "points": 3.33,
+      "intro": "Situation zur 29. und 30. Aufgabe: Die MarSi-IT GmbH hat festgestellt, dass es bei den Kunden oft zu Änderungswünschen im laufenden Prozess bzw. während der fortgeschrittenen Planungsphase kommt. Um maximal auf die sich ändernden Kundenwünsche eingehen zu können, sollen Daniel Koroki und sein Team im nächsten Projekt „agil\" arbeiten. Welcher der folgenden Gesichtspunkte gehört nicht zu einem „agilen Prozess\"?",
+      "parts": [
+        {
+          "id": "29",
+          "prompt": "Welcher Gesichtspunkt gehört nicht zu einem „agilen Prozess\"?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Transparente Organisation, bei der Wissen offen weitergegeben wird",
+            "Hohe Flexibilität/Agilität durch adaptives Planen",
+            "Transparente Darstellung des Fortschritts mithilfe von sogenannten Boards",
+            "Eigenverantwortliche Selbstorganisation der agil arbeitenden Teams",
+            "Die Lösung und der Weg dahin wird vom Vorgesetzten im Rahmen der Hierarchie vorgegeben"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 139,
+            "y": 311,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "30. Aufgabe",
+      "points": 3.33,
+      "intro": "Bei welchem der folgenden Punkte handelt es sich um einen Vorteil des agilen Projektmanagements?",
+      "parts": [
+        {
+          "id": "30",
+          "prompt": "Welcher Punkt ist ein Vorteil des agilen Projektmanagements?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Erschwerte Kommunikation innerhalb des Teams",
+            "Zeitnahe Anpassung neuer Kundenwünsche",
+            "Langfristige Problemidentifikation und Reaktion",
+            "Erschwerter Verbesserungsprozess",
+            "Hoher Kommunikations- und Abstimmungsaufwand"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 10,
+            "x": 179,
+            "y": 311,
+            "fontSize": 8
+          }
+        }
+      ]
+    }
+  ]
+}

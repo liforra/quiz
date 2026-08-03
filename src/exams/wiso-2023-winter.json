@@ -1,0 +1,1239 @@
+{
+  "id": "wiso-2023-winter",
+  "title": "Wirtschafts- und Sozialkunde – Winter 2023/24",
+  "profession": "WISO",
+  "period": {
+    "year": 2023,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 60,
+  "totalPoints": 99.96,
+  "sourceNote": "IHK Abschlussprüfung Winter 2023/24, ZPA Nord-West — Teil 2 der Abschlussprüfung, Wirtschafts- und Sozialkunde (1201)",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 3.36,
+      "intro": "Ausgangssituation: Sie sind Mitarbeiter der Ecotec GmbH, einem IT-Dienstleistungsunternehmen in Erfurt. Die folgenden Aufgaben beziehen sich auf dieses Unternehmen.\n\nSabine Medstein hat sich nach erfolgreichem Abschluss ihrer Berufsausbildung zur Fachinformatikerin Anwendungsentwicklung bei der Ecotec GmbH beworben und soll zum 1. Oktober 2023 eingestellt werden. Bringen Sie die folgenden Schritte bei der Einstellung von Frau Medstein in die richtige Reihenfolge (1 = erster Schritt).",
+      "parts": [
+        {
+          "id": "1.a",
+          "label": "a)",
+          "prompt": "Vorstellungsgespräch",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 2,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 95,
+            "y": 644,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b",
+          "label": "b)",
+          "prompt": "Digitale Bewerbung um einen Arbeitsplatz",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 1,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 119,
+            "y": 644,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.c",
+          "label": "c)",
+          "prompt": "Abschluss des Arbeitsvertrages",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 3,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 142,
+            "y": 644,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.d",
+          "label": "d)",
+          "prompt": "Erster Arbeitstag",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 4,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 165,
+            "y": 644,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.e",
+          "label": "e)",
+          "prompt": "Ende der Probezeit",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 6,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 187,
+            "y": 644,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.f",
+          "label": "f)",
+          "prompt": "Überweisung der ersten Vergütung",
+          "points": 0.56,
+          "type": "number",
+          "correctValue": 5,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 206,
+            "y": 644,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 3.33,
+      "intro": "Frau Medstein hatte auch ein Vorstellungsgespräch bei der Leuchtturm-IT GmbH.",
+      "parts": [
+        {
+          "id": "2",
+          "prompt": "Welche der folgenden Fragen ist in einem solchen Gespräch unzulässig? Die Frage nach …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "der Mitgliedschaft bei einer Gewerkschaft.",
+            "den Zusatzqualifikationen.",
+            "der Schulbildung.",
+            "den Vorbeschäftigungen und der letzten Tätigkeit.",
+            "der Gehaltsvorstellung."
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 242,
+            "y": 644,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 3.33,
+      "intro": "Welche der folgenden Unterlagen muss Frau Medstein ihrem neuen Arbeitgeber auf Anforderung zukommen lassen? Wählen Sie die zwei zutreffenden Unterlagen.",
+      "parts": [
+        {
+          "id": "3",
+          "prompt": "Zutreffende Unterlagen:",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Nachweis über die private Unfallversicherung",
+            "Geburtsurkunde",
+            "Urlaubsbescheinigung des letzten Arbeitgebers",
+            "Nachweis über eine abgeschlossene Berufsunfähigkeitsversicherung",
+            "Steuerliche Identifikationsnummer (IdNr/TIN/eTIN)",
+            "Nachweis über private Krankenzusatzversicherung"
+          ],
+          "correctIndices": [
+            2,
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 277,
+            "y": 644,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 3.34,
+      "intro": "Für den Monat November 2023 erhält Frau Medstein von der Personalabteilung der Ecotec GmbH die folgende Abrechnung: Stundenlohn 15,80 EUR; im vergangenen Monat 170 Stunden gearbeitet, davon 12 Stunden an Samstagen; für Samstagsarbeit zusätzlich 30 % auf den Stundenlohn; zusätzlich eine freiwillige Sonderzahlung als Urlaubsgeld in Höhe von 250,00 EUR brutto.",
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Berechnen Sie den Bruttolohn von Frau Medstein für den Monat November 2023.",
+          "points": 1.67,
+          "type": "number",
+          "correctValue": 2992.88,
+          "tolerance": 0.02,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 98,
+            "y": 603,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b",
+          "label": "b)",
+          "prompt": "Berechnen Sie den Beitrag von Frau Medstein zur gesetzlichen Rentenversicherung (Arbeitnehmeranteil, Beitragssatz 2023: 18,6 %, davon 9,3 % Arbeitnehmeranteil) auf Basis des Bruttolohns aus a).",
+          "points": 1.67,
+          "type": "number",
+          "correctValue": 278.34,
+          "tolerance": 0.02,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 191,
+            "y": 603,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Ecotec GmbH wird im Handelsregister geführt.",
+      "parts": [
+        {
+          "id": "5",
+          "prompt": "Welche der folgenden Aussagen über das Handelsregister trifft zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "In der Abteilung A werden Großunternehmen, in Abteilung B alle anderen Unternehmen geführt.",
+            "Im Handelsregister werden nur Unternehmen geführt, die in Deutschland tätig sind.",
+            "In Abteilung A werden die Personengesellschaften, in Abteilung B die Kapitalgesellschaften geführt.",
+            "Das Handelsregister wird von der zuständigen Handelskammer verwaltet.",
+            "Kleinunternehmen können wählen, ob sie lieber in Abteilung A oder B eingetragen werden wollen."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 258,
+            "y": 603,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. Aufgabe",
+      "points": 3.33,
+      "intro": "Frau Medstein soll die Aufgabe einer Sicherheitsbeauftragten in ihrer Abteilung übernehmen.",
+      "parts": [
+        {
+          "id": "6",
+          "prompt": "An welche der folgenden für die Unfallverhütung zuständige Einrichtung muss sie sich wenden, um genauere Informationen zu diesem Thema zu erhalten?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Gewerbeaufsichtsbehörde",
+            "Berufsgenossenschaft",
+            "Fachverband",
+            "Deutschen Gewerkschaftsbund",
+            "Industrie- und Handelskammer"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 291,
+            "y": 603,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Aufgabe",
+      "points": 3.33,
+      "intro": "In der Ecotec GmbH soll ein neuer Betriebsrat gewählt werden. Insgesamt sind dort 61 Arbeitnehmer beschäftigt, die sich wie folgt zusammensetzen: 45 volljährige Mitarbeiter (ohne Auszubildende); 8 volljährige Auszubildende; 3 volljährige Mitarbeiter aus Arbeitnehmerüberlassung (Zeitarbeit), seit einem Monat in der Ecotec GmbH eingesetzt; 3 jugendliche Auszubildende (16 Jahre alt); 2 jugendliche Auszubildende (17 Jahre alt).\n\n§ 7 Wahlberechtigung: Wahlberechtigt sind alle Arbeitnehmer des Betriebs, die das 16. Lebensjahr vollendet haben. Werden Arbeitnehmer eines anderen Arbeitgebers zur Arbeitsleistung überlassen, so sind sie wahlberechtigt, wenn sie länger als drei Monate im Betrieb eingesetzt werden.",
+      "parts": [
+        {
+          "id": "7",
+          "prompt": "Ermitteln Sie, wie viele Mitarbeiter der Ecotec GmbH insgesamt bei der Betriebsratswahl wählen können.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 58,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 93,
+            "y": 563,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Betriebsratswahl soll zwei Monate nachdem Frau Medstein ihren neuen Arbeitsplatz bei der Ecotec GmbH angetreten hat, stattfinden. Frau Medstein überlegt, sich für die Wahlen aufstellen zu lassen. Sie ist sich aber nicht sicher, ob dies möglich ist.",
+      "parts": [
+        {
+          "id": "8",
+          "prompt": "Welche der folgenden Aussagen über die Wählbarkeit von Frau Medstein trifft zu? Frau Medstein ist …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "wählbar, weil jeder Arbeitnehmer sofort bei Eintritt in den Betrieb wählbar ist.",
+            "wählbar, weil sie volljährig ist.",
+            "wählbar, weil sie eine abgeschlossene Berufsausbildung hat.",
+            "nicht wählbar, weil sie noch keine sechs Monate bei der Ecotec GmbH beschäftigt ist.",
+            "nicht wählbar, weil sie kein Gewerkschaftsmitglied ist."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 522,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Aufgabe",
+      "points": 3.33,
+      "intro": "In der Ecotec GmbH wurde der Betriebsrat gewählt.",
+      "parts": [
+        {
+          "id": "9",
+          "prompt": "Welche der folgenden Aussagen über die Wahl des Betriebsrats ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Ein Betriebsrat muss alle vier Jahre neu gewählt werden.",
+            "Ein Betriebsrat muss je zur Hälfte aus Arbeitnehmern und Arbeitnehmerinnen gebildet werden.",
+            "In einen Betriebsrat können nur Arbeitnehmer gewählt werden, die mindestens eine zweijährige Betriebszugehörigkeit nachweisen können.",
+            "Ein Betriebsrat muss in Kapitalgesellschaften mit mehr als 500 Mitarbeitern gewählt werden.",
+            "Ein Betriebsrat kann von allen Arbeitnehmern eines Betriebs gewählt werden, die das 25. Lebensjahr vollendet haben."
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 133,
+            "y": 522,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Geschäftsleitung der Ecotec GmbH arbeitet eng mit dem Betriebsrat zusammen. In welchen der folgenden Angelegenheiten hat der Betriebsrat laut Betriebsverfassungsgesetz ein Mitbestimmungsrecht? Wählen Sie die zwei zutreffenden Angelegenheiten.",
+      "parts": [
+        {
+          "id": "10",
+          "prompt": "Zutreffende Angelegenheiten:",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Einführung von Überwachungskameras im Warenlager",
+            "Planung des Personalbedarfs",
+            "Festlegung von Beginn und Ende der täglichen Arbeitszeit",
+            "Errichtung einer neuen Lagerhalle",
+            "Gründung einer Filiale",
+            "Umwandlung der Rechtsform"
+          ],
+          "correctIndices": [
+            0,
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 176,
+            "y": 522,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Aufgabe",
+      "points": 3.33,
+      "intro": "Heiko Pateria, 17 Jahre alt, ist Auszubildender bei der Ecotec GmbH. Er erhält den folgenden Dienstplan. Er ist der Meinung, dass an einem Tag der Beginn der ersten Pause gegen das Jugendarbeitsschutzgesetz verstößt.\n\n§ 11 Ruhepausen: Jugendlichen müssen im voraus feststehende Ruhepausen von angemessener Dauer gewährt werden — mindestens 30 Minuten bei einer Arbeitszeit von mehr als viereinhalb bis zu sechs Stunden, 60 Minuten bei einer Arbeitszeit von mehr als sechs Stunden. Die Ruhepausen müssen frühestens eine Stunde nach Beginn und spätestens eine Stunde vor Ende der Arbeitszeit gewährt werden. Länger als viereinhalb Stunden hintereinander dürfen Jugendliche nicht ohne Ruhepause beschäftigt werden.",
+      "referenceTable": {
+        "headers": [
+          "Kennziffer",
+          "Wochentag",
+          "Beginn und Ende der Arbeitszeit",
+          "Beginn der ersten Pause"
+        ],
+        "rows": [
+          [
+            "1",
+            "Montag",
+            "08:00 bis 15:00 Uhr",
+            "11:30 Uhr"
+          ],
+          [
+            "2",
+            "Dienstag",
+            "09:00 bis 17:00 Uhr",
+            "12:00 Uhr"
+          ],
+          [
+            "3",
+            "Mittwoch",
+            "09:00 bis 17:00 Uhr",
+            "12:30 Uhr"
+          ],
+          [
+            "4",
+            "Donnerstag",
+            "09:30 bis 17:00 Uhr",
+            "13:00 Uhr"
+          ],
+          [
+            "5",
+            "Freitag",
+            "09:00 bis 17:30 Uhr",
+            "14:00 Uhr"
+          ]
+        ]
+      },
+      "parts": [
+        {
+          "id": "11",
+          "prompt": "An welchem der folgenden Wochentage verstößt die Pausenregelung gegen das JArbSchG?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Montag",
+            "Dienstag",
+            "Mittwoch",
+            "Donnerstag",
+            "Freitag"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 85,
+            "y": 479,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Ausbildungsleiterin der Ecotec GmbH, Sandra Wilke, schlägt vor, dass Frau Medstein mittelfristig als Ausbilderin arbeiten soll.",
+      "parts": [
+        {
+          "id": "12",
+          "prompt": "Welche der folgenden Voraussetzungen muss ein Ausbilder nach den gesetzlichen Regelungen u. a. erfüllen? Er muss …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Mitglied im zuständigen Prüfungsausschuss sein.",
+            "über eine notwendige persönliche und fachliche Eignung verfügen.",
+            "jährlich ein Weiterbildungsseminar der IHK besuchen.",
+            "Mitglied der Geschäftsleitung sein.",
+            "Mitglied einer Gewerkschaft sein."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 131,
+            "y": 479,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Aufgabe",
+      "points": 3.33,
+      "intro": "Sven Moritz, einem Mitarbeiter der Ecotec GmbH, wurde außerordentlich (fristlos) gekündigt.",
+      "parts": [
+        {
+          "id": "13",
+          "prompt": "Welche der folgenden Ursachen rechtfertigt eine außerordentliche (fristlose) Kündigung? Die außerordentliche Kündigung eines Arbeitnehmers kann u. a. erfolgen bei …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Arbeitsmangel.",
+            "Diebstahl von Eigentum der Ecotec GmbH.",
+            "eintägigem unentschuldigten Fehlen.",
+            "Tod eines Gesellschafters der Ecotec GmbH.",
+            "unverschuldeter Krankheit."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 177,
+            "y": 479,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. Aufgabe",
+      "points": 3.33,
+      "intro": "In der Ecotec GmbH sollen noch weiteren Mitarbeitern gekündigt werden. Nach Kündigungsschutzgesetz ist eine Kündigung nur möglich, wenn sie sozial gerechtfertigt ist. Bei den Kündigungsgründen wird unterschieden zwischen: 1 betriebsbedingter Kündigung, 2 personenbedingter Kündigung, 3 verhaltensbedingter Kündigung. Ordnen Sie die folgenden Fälle den Kündigungsgründen zu.",
+      "parts": [
+        {
+          "id": "14.a",
+          "label": "a)",
+          "prompt": "Ein Mitarbeiter hat heimlich Kundendaten kopiert und an einen Konkurrenten der Ecotec GmbH weiterverkauft.",
+          "points": 1.11,
+          "type": "choice",
+          "options": [
+            "betriebsbedingte Kündigung",
+            "personenbedingte Kündigung",
+            "verhaltensbedingte Kündigung"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 91,
+            "y": 436,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "14.b",
+          "label": "b)",
+          "prompt": "Der Lohnbuchhalterin wird gekündigt, weil der Standort geschlossen und der Aufgabenbereich an das Steuerberatungsbüro der Ecotec GmbH abgegeben wird.",
+          "points": 1.11,
+          "type": "choice",
+          "options": [
+            "betriebsbedingte Kündigung",
+            "personenbedingte Kündigung",
+            "verhaltensbedingte Kündigung"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 113,
+            "y": 436,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "14.c",
+          "label": "c)",
+          "prompt": "Ein Programmierer erfüllt nicht mehr die Anforderungen an seine Stelle. Seine Arbeit ist häufig fehlerhaft. Eine Fortbildung lehnt er ab.",
+          "points": 1.11,
+          "type": "choice",
+          "options": [
+            "betriebsbedingte Kündigung",
+            "personenbedingte Kündigung",
+            "verhaltensbedingte Kündigung"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 134,
+            "y": 436,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. Aufgabe",
+      "points": 3.33,
+      "intro": "Situation zur 15. und 16. Aufgabe: Die Freunde Robert Meyer und Julia Dango wollen ein IT-Serviceunternehmen gründen. Beide wollen gleichberechtigte Geschäftsführer sein. Die Haftung soll sich auf das Gesellschaftsvermögen beschränken. Beide haben jeweils 20.000,00 EUR Eigenkapital, das sie in das Unternehmen einbringen können.",
+      "parts": [
+        {
+          "id": "15",
+          "prompt": "Welche der folgenden Rechtsformen ist für das Unternehmen als Rechtsform unter den genannten Bedingungen geeignet?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "AG",
+            "KG",
+            "GmbH",
+            "eG",
+            "GbR"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 170,
+            "y": 436,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. Aufgabe",
+      "points": 3.33,
+      "intro": "Im ersten Geschäftsjahr hat das Unternehmen einen Gewinn von 3.140,00 EUR erzielt. Das eingesetzte Eigenkapital beträgt 40.000,00 EUR.",
+      "parts": [
+        {
+          "id": "16",
+          "prompt": "Ermitteln Sie die Eigenkapitalrentabilität in Prozent.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 7.85,
+          "tolerance": 0.02,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 211,
+            "y": 436,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Meyer und Frau Dango haben Fragen bezüglich des gesetzlichen Kündigungsschutzes.",
+      "parts": [
+        {
+          "id": "17",
+          "prompt": "Welche der folgenden Personengruppen genießt keinen besonderen Kündigungsschutz?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Betriebsratsmitglieder",
+            "Schwerbehinderte",
+            "Werdende Mütter",
+            "Leitende Angestellte",
+            "Auszubildende nach der Probezeit"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 272,
+            "y": 436,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Aufgabe",
+      "points": 3.33,
+      "intro": "Frau Dango bringt nach einer Schwangerschaft ein gesundes Kind zur Welt.",
+      "parts": [
+        {
+          "id": "18",
+          "prompt": "Wie viele Wochen Mutterschutz stehen Frau Dango nach der Entbindung laut Mutterschutzgesetz zu?",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 8,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 88,
+            "y": 394,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Aufgabe",
+      "points": 3.33,
+      "intro": "Bei der Gründung des Unternehmens wurde von Herrn Meyer und Frau Dango die Rechtsform GmbH gewählt.",
+      "parts": [
+        {
+          "id": "19",
+          "prompt": "Welche der folgenden Aussagen trifft auf eine GmbH zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "GmbH-Anteile werden an der Börse gehandelt.",
+            "Das Stammkapital der GmbH muss bei Gründung mindestens 25.000 EUR betragen.",
+            "Alle Gesellschafter der GmbH sind jederzeit zur Geschäftsführung berechtigt.",
+            "Die Gesellschafter der GmbH haften für Verbindlichkeiten mit ihrem Privatvermögen.",
+            "Der Aufsichtsrat leitet die GmbH."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 131,
+            "y": 394,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Aufgabe",
+      "points": 3.33,
+      "intro": "Für vier durchgeführte Aufträge des Unternehmens liegen folgende Zahlen vor:",
+      "referenceTable": {
+        "headers": [
+          "",
+          "Auftrag 1",
+          "Auftrag 2",
+          "Auftrag 3",
+          "Auftrag 4"
+        ],
+        "rows": [
+          [
+            "Aufwand (EUR)",
+            "300.000",
+            "80.000",
+            "80.000",
+            "100.000"
+          ],
+          [
+            "Ertrag (EUR)",
+            "360.000",
+            "100.000",
+            "104.000",
+            "124.000"
+          ]
+        ]
+      },
+      "parts": [
+        {
+          "id": "20",
+          "prompt": "Welcher Auftrag wurde am wirtschaftlichsten abgewickelt?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Auftrag 1",
+            "Auftrag 2",
+            "Auftrag 3",
+            "Auftrag 4"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 170,
+            "y": 394,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21. Aufgabe",
+      "points": 3.33,
+      "intro": "Das folgende Schema zeigt das Leitungssystem des neuen Unternehmens (drei obere Boxen jeweils mit allen vier unteren Boxen kreuzweise verbunden).",
+      "referenceImage": "/exams/wiso-2023-winter/page-08.png",
+      "parts": [
+        {
+          "id": "21",
+          "prompt": "Nach welchem der folgenden Leitungssysteme arbeitet das neue Unternehmen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Einliniensystem",
+            "Matrixsystem",
+            "Mehrliniensystem",
+            "Stabliniensystem",
+            "Abteilungssystem"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 213,
+            "y": 394,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22. Aufgabe",
+      "points": 3.33,
+      "intro": "Die finanzierende Bank erwartet von Existenzgründern die Vorlage eines Businessplanes.",
+      "parts": [
+        {
+          "id": "22",
+          "prompt": "Welche der folgenden Aussagen über einen Businessplan trifft zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Der Businessplan wird von der zuständigen IHK ausgestellt, in dem das Unternehmen gegründet wurde.",
+            "Der Businessplan wird im Handelsregister hinterlegt.",
+            "Der Businessplan muss nur bei der Gründung von Kapitalgesellschaften erstellt werden.",
+            "Der Businessplan ist nur bei der Aufnahme von Darlehen notwendig.",
+            "Im Businessplan werden u. a. die strategischen Ziele eines Unternehmens festgelegt."
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 88,
+            "y": 352,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Ecotec GmbH hat Probleme mit einem vermeintlichen Kartell.",
+      "parts": [
+        {
+          "id": "23",
+          "prompt": "Welche der folgenden Aussagen trifft auf Kartelle zu? Kartelle …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "sind Absprachen auf gleicher Produktionsstufe, um durch Beschränkung des Wettbewerbs, wirtschaftlich stärker zu sein.",
+            "schaffen günstigere Preise durch bessere Produktionsbedingungen.",
+            "sorgen für eine Sanierung des Betriebes durch eine innerbetriebliche Neuorganisation.",
+            "sorgen für eine völlige Haftungsbeschränkung.",
+            "werden von den zuständigen Handelskammern überprüft."
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 131,
+            "y": 352,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24. Aufgabe",
+      "points": 3.33,
+      "intro": "Der Tarifvertrag für die IT-Branche wurde fristgemäß gekündigt. Es finden daraufhin Tarifverhandlungen statt. Welche der folgenden Vertragsparteien schließen den Tarifvertrag ab? Wählen Sie die zwei zutreffenden Parteien.",
+      "parts": [
+        {
+          "id": "24",
+          "prompt": "Zutreffende Parteien:",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Bundesministerium für Arbeit und Soziales",
+            "Arbeitgeberverband",
+            "Industrie- und Handelskammer",
+            "Berufsgenossenschaft",
+            "Gewerkschaft",
+            "Bundesagentur für Arbeit"
+          ],
+          "correctIndices": [
+            1,
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 171,
+            "y": 352,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "25. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Tarifvertragsparteien haben das Recht, Löhne, Gehälter und andere Arbeitsbedingungen unter Beachtung der gesetzlichen Vorschriften selbstständig zu regeln.",
+      "parts": [
+        {
+          "id": "25",
+          "prompt": "Welcher der folgenden Fachbegriffe beschreibt dieses Recht zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Generationenvertrag",
+            "Allgemeinverbindlichkeit",
+            "Freizügigkeit",
+            "Tarifautonomie",
+            "Tarifbindung"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 226,
+            "y": 352,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "26. Aufgabe",
+      "points": 3.36,
+      "intro": "Eine Tarifvertragspartei beabsichtigt, nach verbindlicher Laufzeit des Tarifvertrages die Löhne neu zu verhandeln. Bringen Sie die folgenden Schritte, die erfolgen müssen, damit ein Tarifvertrag zustande kommt, in die richtige Reihenfolge (1 = erster Schritt).",
+      "parts": [
+        {
+          "id": "26.a",
+          "label": "a)",
+          "prompt": "Schlichtung empfiehlt 3,5 % Lohnerhöhung",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 6,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.b",
+          "label": "b)",
+          "prompt": "Urabstimmung – Streik",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 4,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 104,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.c",
+          "label": "c)",
+          "prompt": "Ein Tarifvertragspartner kündigt den Gehaltstarifvertrag.",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 1,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 121,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.d",
+          "label": "d)",
+          "prompt": "Schlichter wird angerufen, Schlichtung",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 5,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 137,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.e",
+          "label": "e)",
+          "prompt": "Erste Tarifverhandlungen",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 2,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 153,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.f",
+          "label": "f)",
+          "prompt": "Der andere Tarifvertragspartner erklärt die Tarifverhandlungen für gescheitert.",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 3,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 170,
+            "y": 306,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "26.g",
+          "label": "g)",
+          "prompt": "Schlichtung wird von den Tarifparteien angenommen",
+          "points": 0.48,
+          "type": "number",
+          "correctValue": 7,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 186,
+            "y": 306,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "27. Aufgabe",
+      "points": 3.33,
+      "intro": "Ein Bekannter von Frau Medstein, Matthias Räwer, will sich beruflich verändern und hat sich daher bei der Ecotec GmbH beworben. Nach der Zusage seitens der Ecotec GmbH kündigt er sein altes Arbeitsverhältnis am 06.05.2023 schriftlich.\n\n§ 622 BGB: Das Arbeitsverhältnis eines Arbeiters oder eines Angestellten (Arbeitnehmers) kann mit einer Frist von vier Wochen zum Fünfzehnten oder zum Ende eines Kalendermonats gekündigt werden.",
+      "parts": [
+        {
+          "id": "27",
+          "prompt": "Mit welchem Datum endet das alte Arbeitsverhältnis von Herrn Räwer frühestens? (Es gelten die gesetzlichen Regelungen.)",
+          "points": 3.33,
+          "type": "text",
+          "modelAnswer": "15.06.2023 (vier Wochen nach dem 06.05.2023 endet frühestens am 03.06., der nächste gesetzlich zulässige Termin — 15. oder Monatsende — danach ist der 15.06.2023).",
+          "pdfAnchor": {
+            "page": 0,
+            "x": 252,
+            "y": 306,
+            "maxWidth": 90,
+            "fontSize": 7
+          }
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "28. Aufgabe",
+      "points": 3.32,
+      "intro": "Die gesetzliche Unfallversicherung bietet den Versicherten, wie auch Frau Medstein, verschiedene Leistungen. Ordnen Sie den folgenden Beispielen die nachstehenden Leistungen der gesetzlichen Unfallversicherung zu.\n\nBeispiele: 1 Übernahme der Reha-Kosten nach einem Unfall auf dem direkten Weg zur Arbeit. 2 Finanzielle Unterstützung zum Lebensunterhalt des Versicherten im Fall der Arbeitsunfähigkeit wegen eines Arbeitsunfalls. 3 Finanzielle Unterstützung der Pflegebedürftigkeit nach einem Arbeitsunfall. 4 Rente bei einem dauerhaften Gesundheitsschaden durch einen Arbeitsunfall, wenn die Erwerbsfähigkeit um mindestens 20 % gemindert ist.",
+      "parts": [
+        {
+          "id": "28.a",
+          "label": "a)",
+          "prompt": "Verletztengeld",
+          "points": 0.83,
+          "type": "choice",
+          "options": [
+            "Beispiel 1",
+            "Beispiel 2",
+            "Beispiel 3",
+            "Beispiel 4"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 365,
+            "y": 306,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "28.b",
+          "label": "b)",
+          "prompt": "Heilbehandlungen",
+          "points": 0.83,
+          "type": "choice",
+          "options": [
+            "Beispiel 1",
+            "Beispiel 2",
+            "Beispiel 3",
+            "Beispiel 4"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 384,
+            "y": 306,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "28.c",
+          "label": "c)",
+          "prompt": "Rente",
+          "points": 0.83,
+          "type": "choice",
+          "options": [
+            "Beispiel 1",
+            "Beispiel 2",
+            "Beispiel 3",
+            "Beispiel 4"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 403,
+            "y": 306,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "28.d",
+          "label": "d)",
+          "prompt": "Pflegegeld",
+          "points": 0.83,
+          "type": "choice",
+          "options": [
+            "Beispiel 1",
+            "Beispiel 2",
+            "Beispiel 3",
+            "Beispiel 4"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 423,
+            "y": 306,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "29. Aufgabe",
+      "points": 3.33,
+      "intro": "Auch für die Ecotec GmbH ist ein nachhaltiges Konzept wichtig. Welche der folgenden Maßnahmen unterstützen Nachhaltigkeit? Wählen Sie die zwei zutreffenden Maßnahmen.",
+      "parts": [
+        {
+          "id": "29",
+          "prompt": "Zutreffende Maßnahmen:",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Die Ecotec GmbH stellt für Mitarbeiter und Kunden Ladesäulen bereit.",
+            "Geschäftsreisen werden aufgrund der Zeitersparnis künftig nur noch mit dem Flugzeug erledigt.",
+            "Beim Einkauf werden die günstigsten Produkte bevorzugt, unabhängig von der Herkunft.",
+            "Dokumente sollen möglichst immer auf schweren Hochglanzpapieren ausgedruckt werden.",
+            "Bewerber werden nur eingestellt, wenn sie über 30 Jahre alt sind.",
+            "In der Kantine müssen Behälter für Getränke und Speisen „to go\" (zum Mitnehmen) aus nachwachsenden Rohstoffen hergestellt sein."
+          ],
+          "correctIndices": [
+            0,
+            5
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 269,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "30. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Ecotec GmbH möchte nachhaltiger wirtschaften und die Umwelt weniger belasten.",
+      "parts": [
+        {
+          "id": "30",
+          "prompt": "Welche der folgenden Maßnahmen dient der Vermeidung bzw. Verringerung von Umweltbelastungen durch die Ecotec GmbH?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die fällige Sanierung des Lagerdaches wird nicht zum Anlass genommen, eine moderne Photovoltaik-Anlage zu installieren.",
+            "Statt Kartons verwendet die Ecotec GmbH mehrlagiges Einwegplastik als Umverpackung.",
+            "Für den Konferenzraum wird extra flauschiger Teppich angeschafft, der hochwertig, aber nicht sehr robust oder langlebig ist.",
+            "Der Fuhrpark der Ecotec GmbH wird von Batterie-Elektrischen- und Hybrid-Fahrzeugen auf Dieselfahrzeuge umgestellt.",
+            "Die aus recyceltem Papier hergestellten Verpackungen werden nicht mehr aus dem europäischen Ausland bezogen, sondern von einem lokalen Hersteller."
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 134,
+            "y": 269,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    }
+  ]
+}

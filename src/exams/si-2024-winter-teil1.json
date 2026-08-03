@@ -1,0 +1,457 @@
+{
+  "id": "si-2024-winter-teil1",
+  "title": "Systemintegration – Winter 2024/25 (Aufgabensatz 1)",
+  "profession": "SI",
+  "period": {
+    "year": 2024,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Winter 2024/25, ZPA Nord-West — Konzeption und Administration von IT-Systemen, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 24,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie arbeiten als Fachinformatiker (Systemintegration) bei der Retailers GmbH, einem mittelständischen IT-Dienstleister, zu dessen Angeboten der Vertrieb von Servern und Cloud-Lösungen gehören. Das Unternehmen besitzt mehrere Standorte in Deutschland.\n\nIhr Unternehmen will das Rechenzentrum erweitern. Im Zuge dessen sind Sie beauftragt, bei der Planung und Umsetzung zu unterstützen.",
+      "referenceTable": {
+        "headers": [
+          "Server",
+          "Prozessor",
+          "RAM",
+          "Speicher",
+          "Netzwerkschnittstellen",
+          "Taktrate",
+          "Kerne",
+          "Preis"
+        ],
+        "rows": [
+          [
+            "Dall PowerEcke T420",
+            "1 CPU",
+            "32 GB",
+            "240 GB SSD (max. 8 x 2,5\" à 960 GB)",
+            "2 x 1 GbE",
+            "2,6 GHz",
+            "10",
+            "4.500 EUR"
+          ],
+          [
+            "Hapé Proviant L560",
+            "3 CPU",
+            "64 GB",
+            "2 x 240 GB SSD (max. 12 x 2,5\" à 960GB)",
+            "4 x 1 GbE + 2 x 10 GbE",
+            "2,3 GHz",
+            "36",
+            "6.000 EUR"
+          ],
+          [
+            "Renovo DenkSystem RS650",
+            "2 CPU",
+            "64 GB",
+            "2 x 480 GB SSD (max. 8 x 2,5\" à 960 GB)",
+            "6 x 1 GbE",
+            "2,2 GHz",
+            "20",
+            "6.500 EUR"
+          ]
+        ]
+      },
+      "parts": [
+        {
+          "id": "1.a.aa",
+          "label": "a) aa)",
+          "prompt": "Es soll geprüft werden, ob es sinnvoll ist, den Mailserver in die Cloud auszulagern. Erläutern Sie drei organisatorische Vorteile, die eine Cloud-Lösung im Vergleich zur bisherigen On-Premises-Lösung bietet.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Cloudlösungen bieten eine hohe und schnelle Skalierbarkeit. Cloudlösungen bieten Flexibilität im Hinblick auf die Provider (gegenüber Herstellerabhängigkeit im eigenen Rechenzentrum). Die Daten sind jederzeit von überall verfügbar (abhängig von evtl. SLA). Cloudlösungen haben einen geringeren Investitionsbedarf (in Hardware, Personal etc.).",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 553,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.a.ab",
+          "label": "ab)",
+          "prompt": "Erläutern Sie zwei Aspekte, die vor der Auslagerung von IT-Systemen in die Cloud berücksichtigt werden sollten.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Man könnte in eine Abhängigkeit von einem externen Dienstleister geraten (SLA/Netzanbindung). Ein entsprechendes Abrechnungsmodell muss beachtet werden (pay per use, pay as you grow, flatrate etc.). Weitere mögliche Faktoren: Sicherheitsrisiken, Verfügbarkeit, mögliche schlechtere Performance, vertragliche Einschränkungen, Speicherbedarfe der Anwendungen, benötigte Zugriffsgeschwindigkeiten.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 383,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "Wichtige Gründe haben die Firma überzeugt, doch am On-Premises-Konzept festzuhalten. Bisher wurde der Mailserver auf einem mittlerweile veralteten System betrieben, welches nun zu erneuern gilt. Es wird erwartet, dass der Bedarf an Mailkonten für neue Mitarbeiter in den nächsten Jahren wachsen wird. Erläutern Sie anhand der Tabelle und unter der Maßgabe, dass der Server auch in Zukunft den höchsten Anforderungen genügt, welcher Server am besten für den Einsatz als Mailserver geeignet ist.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Der Hapé Proviant L560 ist aus technischer Sicht am besten geeignet. Der Hinweis, dass der Bedarf in den nächsten Jahren steigt, soll auf die (Höher-)Skalierbarkeit des Systems hinweisen. Zusätzlich ist es der einzige Server mit 10 GbE Schnittstellen und sowohl RAM als auch die Anzahl der Kerne prädestinieren ihn für den Einsatz als Mailserver im genannten Fall.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 52,
+            "y": 553,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Nennen Sie sechs technisch-organisatorische Maßnahmen (TOM), um die E-Mails vor Kompromittierung oder Verlust zu bewahren.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Redundante Hardware, USV, RAID, regelmäßiges Backup, Firewalls (Schutz vor unbefugtem Zugang), Monitoring, Schulung und Sensibilisierung der Mitarbeitenden, Zugangskontrolle und Berechtigungsmanagement, physische Sicherheit (Schutz vor unbefugtem Zutritt), Erstellung und Umsetzung von Notfallplänen.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 52,
+            "y": 446,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bc",
+          "label": "bc)",
+          "prompt": "Beim Einbau des Mailservers im Rechenzentrum kommt nun die Frage auf, wie der Server zukünftig im Netzwerk angebunden sein soll. Erläutern Sie einen Aspekt, der für den Einsatz von Lichtwellenleitern gegenüber Kupferkabeln in oder zwischen Rechenzentren spricht.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "LWL bieten höhere Übertragungsraten und längere Übertragungsdistanzen ohne verstärkt werden zu müssen. Optische Signale sind gegen elektromagnetische Störungen unempfindlich, erzeugen kein eigenes Magnetfeld und sind dadurch abhörsicherer. LWL-Kabel können zudem in Umgebungen mit speziellen Anforderungen eingesetzt werden.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 52,
+            "y": 240,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 26,
+      "intro": "Die Retailers GmbH wird ihre neue Mail-Infrastruktur im hauseigenen Rechenzentrum betreiben. Die Mail-Infrastruktur besteht aus zwei Servern in einem Clusterverbund. Die Retailers GmbH empfängt täglich viele Spam- und Phishing-Mails.",
+      "parts": [
+        {
+          "id": "2.a",
+          "label": "a)",
+          "prompt": "Erläutern Sie den Unterschied zwischen „Spam\" und „Phishing\".",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Spam sind E-Mails, die in der Regel unaufgefordert an eine große Anzahl von Empfängern gesendet werden und Werbung, Nachrichten, Angebote oder Informationen enthalten können, die nicht angefordert wurden. Phishing ist eine Form von Betrug, bei der E-Mails oder andere Kommunikationsmittel verwendet werden, um sich als vertrauenswürdige Entität auszugeben und persönliche Informationen wie Passwörter, Kreditkartendaten oder Finanzdaten von ahnungslosen Opfern zu stehlen.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 710,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.ba",
+          "label": "b) ba)",
+          "prompt": "Für den Einsatz von Sicherheitsmaßnahmen (z. B. Abwehrmaßnahmen gegen Phishingangriffe) sollen DKIM und SPF zum Einsatz kommen. Auszug DKIM (RFC 6376): \"DKIM separates the question of the identity of the Signer of the message from the purported author of the message. In particular, a signature includes the identity of the Signer. Verifiers can request the public key from a repository in the domain of the claimed Signer directly rather than from a third party. The DNS is proposed as the initial mechanism for the public keys.\" Nennen Sie die Stelle, an der die Signaturidentität in einer Mail enthalten ist.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Signaturidentität ist als Teil des Signatur-Header-Felds enthalten. (Keine wörtliche Übersetzung erforderlich.)",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 366,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bb",
+          "label": "bb)",
+          "prompt": "Nennen Sie den aktuellen Mechanismus, wie der öffentliche Schlüssel zu finden ist.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Als erster Mechanismus für die öffentlichen Schlüssel wird das DNS vorgeschlagen.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 314,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bc",
+          "label": "bc)",
+          "prompt": "Auszug SPF (RFC 7208): \"An SPF record is a DNS record that declares which hosts are, and are not, authorized to use a domain name for the 'HELO' and 'MAIL FROM' identities.\" Nennen Sie die Stelle, an der ein SPF-Eintrag gesetzt wird.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Domain Name System (DNS).",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 260,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bd",
+          "label": "bd)",
+          "prompt": "Nennen Sie die Aufgabe des SPF-Eintrages.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Gibt an, welche Hosts berechtigt sind und welche nicht, einen Domänennamen für die Identitäten „HELO\" und „MAIL FROM\" zu verwenden.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 207,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.ca",
+          "label": "c) ca)",
+          "prompt": "Ein Mitarbeiter meldet an der zentralen IT-Hotline, dass eine E-Mail von einer externen Mailadresse in seinen Spam-Ordner einsortiert wurde. Nach einer Analyse finden Sie folgenden Fehler im Log-File: \"DKIM Verification Failed\". Nennen Sie einen Grund für diese Fehlermeldung.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die DKIM-Signatur in der empfangenen E-Mail konnte nicht erfolgreich überprüft werden — das kann auf eine fehlerhafte oder fehlende Signatur, oder eine Änderung der E-Mail-Inhalte nach der Signierung hinweisen.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 692,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cb",
+          "label": "cb)",
+          "prompt": "Für eine bessere Filterung von Spam-Mails wurde zusätzlich ein Spam-Filter installiert und konfiguriert. Ein externer Geschäftspartner hat eine E-Mail an Ihren Mitarbeiter Herrn Anton gesendet und meldet sich per Handy mit folgendem Fehler-Screenshot: \"This message was created automatically by mail delivery software. A message that you sent could not be delivered... 554 5.7.1 Matched map: BLOCKLIST_SENDER_DOMAIN\". Nennen Sie den Grund für diese Fehlermeldung.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Absender-Maildomain des Geschäftspartners ist im Spam-Filter geblockt.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 446,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.d.da",
+          "label": "d) da)",
+          "prompt": "Die Retailers GmbH hat für ihre Mitarbeiter die Regelung zum Einsatz von persönlichen Zertifikaten sowie zur Signierung und Verschlüsselung von Mails erlassen. Jeder Mitarbeiter hat ein persönliches X.509-Zertifikat erhalten. Nennen Sie zwei Eigenschaften von persönlichen X.509-Zertifikaten.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Name des Inhabers, öffentlicher Schlüssel, Seriennummer, Ablaufdatum/Gültigkeitsdauer, ausstellende Zertifizierungsstelle.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 323,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.d.db",
+          "label": "db)",
+          "prompt": "Herr Meier und Herr Anton besitzen jeweils einen öffentlichen und einen privaten Schlüssel, welche bereits korrekt auf ihren PC-Arbeitsplätzen installiert sind. Ergänzen Sie die vier unvollständigen Schritte in der Darstellung mit Angaben darüber, welcher Schlüssel von welchem Schlüsseleigentümer jeweils verwendet wird. Ablauf: 1) Herr Meier und Herr Anton tauschen ihre öffentlichen Schlüssel aus. 2) Herr Meier verfasst eine E-Mail und signiert diese mit ___. 3) Herr Meier verschlüsselt diese E-Mail mit ___. 4) Herr Meier sendet die signierte und verschlüsselte E-Mail an Herrn Anton. 5) Herr Anton entschlüsselt die empfangene E-Mail mit ___. 6) Herr Anton überprüft die empfangene E-Mail mit ___. Tragen Sie für die vier Lücken jeweils an, welcher Schlüssel (privater/öffentlicher Schlüssel von Herrn Meier oder Herrn Anton) verwendet wird.",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "Schritt 2 (signieren): seinem privaten Schlüssel (Herr Meier). Schritt 3 (verschlüsseln): dem öffentlichen Schlüssel von Herrn Anton. Schritt 5 (entschlüsseln): seinem privaten Schlüssel (Herr Anton). Schritt 6 (prüfen): dem öffentlichen Schlüssel von Herrn Meier. (2 Punkte pro korrektem Eintrag)",
+          "referenceImage": "/exams/si-2024-winter-teil1/page-06.png",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 380,
+            "y": 588,
+            "maxWidth": 180,
+            "fontSize": 7
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 25,
+      "intro": "Die Retailers GmbH soll für die Datensicherung, die Archivierung und das Datenrestore entsprechende Maßnahmen treffen. Sie haben für die Nutzung in der Firma ein logisches Laufwerk mit einem RAID 15-Verbund eingerichtet. Dazu standen Ihnen folgende sechs Festplatten zur Verfügung: 4 x Xconnext GD35612, Festplatte mit jeweils 2,5 TiB; 2 x Xconnext GD36442, Festplatte mit jeweils 3,5 TiB. Der RAID 15-Verbund besteht aus drei gespiegelten Paaren (RAID 1), die per RAID 5 zu einem Verbund zusammengefasst werden.",
+      "referenceImage": "/exams/si-2024-winter-teil1/page-07.png",
+      "parts": [
+        {
+          "id": "3.a.aa",
+          "label": "a) aa)",
+          "prompt": "Berechnen Sie die Nettospeicherkapazität dieses RAID 15-Verbunds. Der Rechenweg ist anzugeben.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "(6 - 4) HD x 2,5 TiB/HD = 5 TiB (HD = Harddisk; von den 6 Festplatten stehen effektiv nur 4 als Nettokapazität zur Verfügung, da RAID 15 aus drei gespiegelten Paaren mit anschließender RAID-5-Parität über die 3 Paare besteht).",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 528,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ab",
+          "label": "ab)",
+          "prompt": "Ermitteln Sie die RAID-Konfiguration, mit der bei Verwendung der gegebenen Festplatten die größte Nettospeicherkapazität erzielt wird. Bedingung: Das RAID-System muss Ausfallsicherheit gewährleisten. Berechnen Sie diese Nettospeicherkapazität in GiB unter Angabe des Rechenwegs.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "RAID 5: 2,5 TiB * 6 = 15 TiB; 15 TiB – 2,5 TiB (Parität) = 12,5 TiB.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 405,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ac",
+          "label": "ac)",
+          "prompt": "Der RAID 15-Verbund soll zusätzlich noch mit einer Hot-Spare-Festplatte betrieben werden. Erläutern Sie die Funktion einer Hot-Spare-Festplatte.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Eine Hot-Spare-Festplatte ist eine im System laufende, aber nicht verwendete Festplatte. Fällt eine andere Platte aus, wird die Hot-Spare-Platte im laufenden Betrieb automatisch anstelle der defekten Platte eingebunden.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 296,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ad",
+          "label": "ad)",
+          "prompt": "Es wird diskutiert, alle aufgeführten Festplatten als JBOD (Just a Bunch of Disks) zu nutzen. Erläutern Sie anhand von drei Aspekten, warum der Einsatz von JBOD nicht praktikabel ist.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Begrenzte Ausfallsicherheit (kein RAID-Schutz), mangelnde Datenredundanz (Ausfall einer Platte gefährdet das gesamte logische Volume), Leistungseinbußen bei großen Datensätzen (kein Striping), keine Lastverteilung über die Platten, keine Erweiterbarkeit durch Hinzufügen weiterer Platten.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 180,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "Bei der Speicherung von Daten soll der Prozess der Datendeduplizierung eingeführt werden. Auszug (Quelle: dell.com): \"Deduplication segments an incoming data stream, uniquely identifies data segments, and then compares the segments to previously stored data... This process can provide an average of 10 to 30 times reduction in storage capacity requirements... This means that companies can store 10 TB to 30 TB of backup data on 1 TB of physical disk capacity.\" Nennen Sie anhand des Textes zwei Vorteile, die für den Einsatz sprechen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Geringere Anzahl von doppelten Daten, Reduktion von bereitgestelltem Speicherplatz, enorme wirtschaftliche Einsparungen.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 620,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c",
+          "label": "c)",
+          "prompt": "Die Firmendaten werden zurzeit auf einem veralteten SAN mit einer Nettospeicherkapazität von 12 TiB gespeichert. Aufgrund des Alters und der Kapazitätsauslastung des Systems von 90 % hat man sich entschlossen, ein neues SAN-System zu beschaffen. Im neuen SAN-System können maximal 30 Festplatten vom Typ SAS 2100X mit einer Speicherkapazität von je 2,5 TiB verbaut werden. Der jährliche Datenzuwachs beträgt 650 GiB. Berechnen Sie die benötigte Nettospeicherkapazität bei einer Übernahme des Altdatenbestands und einer geplanten Laufzeit des neuen SAN von drei Jahren unter Angabe des Rechenwegs. Das Ergebnis ist in TiB und auf eine Stelle nach dem Komma anzugeben.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Altdatenbestand: 12 TiB * 0,90 * 1.024 = 11.059,2 GiB. Datenzuwachs in 3 Jahren: 650 GiB/Jahr x 3 Jahre = 1.950 GiB. Benötigter Speicherplatz: 11.059,2 GiB + 1.950 GiB = 13.009,2 GiB. Umrechnung in TiB: 13.009,2 GiB / 1.024 = 12,704... TiB, gerundet 12,8 TiB.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 370,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 25,
+      "intro": "Sie wirken bei der Entwicklung von Skripten zur Systemverwaltung mit. Ein Monitoring-Programm soll um die Methode „Mittelwerte\" erweitert werden, welche von jeweils drei aufeinanderfolgenden Werten im Array PerfCPU den Mittelwert berechnet. Gestartet wird mit den ersten drei Werten „40, 42, 47\" in PerfCPU. Der Mittelwert beträgt „43\" und ersetzt die „42\", die Werte „40\" und „47\" werden mit „0\" überschrieben: aus \"40, 42, 47\" wird somit \"0, 43, 0\". Danach wird mit den jeweils nächsten drei Werten bis zum Ende des Arrays entsprechend verfahren.\n\nArray PerfCPU vor Durchlauf — Index: 0 1 2 3 4 5 6 7 8 — Wert: 40 42 47 52 50 60 76 77 81\n\nQuellcode:\nZeile1  //Test-Array anlegen und mit Test-Daten füllen\nZeile2  int[] PerfCPU = new int[] {40,42,47,52,50,60,76,77,81};\nZeile3  //Variable deklarieren\nZeile4  int temp = 0;\nZeile5  //Schleife zum Berechnen und Speichern der Mittelwerte\nZeile6  for (int i = 1; i < 6; i += 3)\nZeile7  {\nZeile8    temp = ((PerfCPU[i-1]) + (PerfCPU[i]) + (PerfCPU[i+1])) / 3;\nZeile9    PerfCPU[i] = 0; PerfCPU[i-1] = temp; PerfCPU[i+1] = 0;\nZeile10 }\n\nAnlage (Syntax-Referenz): while(number<5){...}; for(int i=0;i<number;i++){...}; do{...}while(number<5); i+=3 ist Kurzform für i=i+3; if(number<18){...}else{...}; // einzeiliger Kommentar; /* mehrzeiliger Kommentar */; Console.WriteLine(...) gibt Text oder eine Variable aus.",
+      "parts": [
+        {
+          "id": "4.a.aa",
+          "label": "a) aa)",
+          "prompt": "Stellen Sie fest, ob der Quellcode entsprechend der Beschreibung die gewünschten Ergebnisse liefert. Analysieren Sie dazu schrittweise den Quellcode und geben Sie den tatsächlichen Inhalt des Arrays PerfCPU nach Durchlauf der Methode „Mittelwerte\" an — für jeden der 9 Array-Indizes (0 bis 8) einen Wert.",
+          "points": 9,
+          "type": "text",
+          "modelAnswer": "Array-Index 0 1 2 3 4 5 6 7 8 → Array-Wert: 43, 0, 0, 54, 0, 0, 76, 77, 81 (1 Punkt je korrektem Feld).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 300,
+            "y": 331,
+            "maxWidth": 180,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.a.ab",
+          "label": "ab)",
+          "prompt": "Der Programmcode liefert offensichtlich nicht die gewünschten Werte. Dafür verantwortlich sind zwei fehlerhafte Anweisungen im Programmcode. Geben Sie die zwei Anweisungen in korrekter Form an (Programmzeile + korrigierte Anweisung).",
+          "points": 10,
+          "type": "text",
+          "modelAnswer": "Zeile 6: for (int i = 1; i < 9; i += 3) — der Fehler war \"i < 6\", wodurch nur ein Teil des Arrays bearbeitet wird. Zeile 8/9 (Zuweisung): PerfCPU[i-1] = 0; PerfCPU[i] = temp; PerfCPU[i+1] = 0; — der Mittelwert wurde an der falschen Stelle im Array gespeichert (5 Punkte je Fehlerkorrektur).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 226,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.ba",
+          "label": "b) ba)",
+          "prompt": "Die Daten des Arrays sollen zusammen mit weiteren Daten in einer CSV-Datei gespeichert werden. Erläutern Sie zwei Argumente, die für die Verwendung von CSV-Dateien sprechen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Plattformunabhängig, breite Unterstützung, einfache Textdatei, geeignet zum Datenaustausch (zwei der genannten Gründe genügen).",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 739,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.bb",
+          "label": "bb)",
+          "prompt": "Erläutern Sie ein Argument, das gegen die Verwendung von CSV-Dateien spricht.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Nicht genormt, unterschiedliche Trennzeichen, nicht für größere Datenmengen geeignet (einer der genannten Gründe genügt).",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 571,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ],
+      "externalReference": {
+        "page": 9,
+        "label": "Anlage zur 4. Aufgabe: Syntax-Referenz"
+      }
+    }
+  ]
+}

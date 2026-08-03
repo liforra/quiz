@@ -35,7 +35,9 @@ import {
   Edit2,
   Trash2,
   Settings,
-  Languages
+  Languages,
+  Trophy,
+  FileEdit
 } from 'lucide-react';
 import ModeSwitcher from './ModeSwitcher';
 import { t, Lang } from '../i18n';
@@ -46,7 +48,6 @@ interface SidebarProps {
   setView: (view: string) => void;
   theme: string;
   setTheme: (theme: void) => void;
-  user: any;
   appUser: any;
   defaultQuizzes: any[];
   privateQuizzes: any[];
@@ -80,7 +81,6 @@ export default function Sidebar({
   setView, 
   theme, 
   setTheme, 
-  user,
   appUser,
   defaultQuizzes,
   privateQuizzes,
@@ -129,9 +129,11 @@ export default function Sidebar({
             setView('dashboard'); // Fallback
         }
     }},
+    { id: 'exams', label: t(uiLang, 'apExams'), icon: FileEdit },
     { id: 'stats', label: t(uiLang, 'statistics'), icon: BarChart2 },
+    { id: 'leaderboards', label: t(uiLang, 'leaderboards'), icon: Trophy },
     { id: 'results', label: t(uiLang, 'lastResults'), icon: Award, condition: view === 'results' },
-    { id: 'admin', label: t(uiLang, 'adminPanel'), icon: Shield, condition: appUser?.username === 'liforra' },
+    { id: 'admin', label: t(uiLang, 'adminPanel'), icon: Shield, condition: !!appUser?.isAdmin },
   ];
 
   return (

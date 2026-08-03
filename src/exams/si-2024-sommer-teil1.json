@@ -1,0 +1,554 @@
+{
+  "id": "si-2024-sommer-teil1",
+  "title": "Systemintegration – Sommer 2024 (Aufgabensatz 1)",
+  "profession": "SI",
+  "period": {
+    "year": 2024,
+    "season": "Sommer"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Sommer 2024, ZPA Nord-West — Konzeption und Administration von IT-Systemen, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 24,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Nach Abschluss Ihrer Berufsausbildung zum Fachinformatiker Fachrichtung Systemintegration bei dem Bankhaus ZUMM in Frankfurt a. M. haben Sie ein reguläres Beschäftigungsverhältnis angeboten bekommen und angenommen. Sie wurden dem Team „Serverdienste\" zugeteilt.\n\nDas Bankhaus ZUMM prüft, ob es sinnvoll ist, einige seiner IT-Dienste in die Cloud auszulagern. Vor einer Entscheidung darüber sollen dazu wichtige Fragen geklärt werden.",
+      "parts": [
+        {
+          "id": "1.a.aa",
+          "label": "a) aa)",
+          "prompt": "Es werden Vor- und Nachteile einer Cloud-Lösung besprochen. Erläutern Sie zwei Vorteile und zwei Nachteile einer Cloud-Lösung.",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "Vorteile: Skalierbarkeit (schnelles Hinzufügen von Ressourcen ohne eigene Hardware), flexibler weltweiter Zugang zu Daten (24h Zugriff von jedem Standort), Kosteneinsparung bei eigener Hardware und Personal. Nachteile: Sicherheitsbedenken (Provider muss vereinbarte Datensicherheit gewährleisten), Zuverlässigkeit (Zugang/Betrieb/Ausfallsicherheit muss laut Vertrag gegeben sein), Ausfallsicherheit/Reaktionszeiten müssen vertraglich eingehalten werden.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 558,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.a.ab",
+          "label": "ab)",
+          "prompt": "Als erstes soll der Webauftritt in die Cloud migrieren. Erläutern Sie zwei Anforderungen, die Sie diesbezüglich an den Provider stellen.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Flexibilität (skalierbare Ressourcen/Dienste, Infrastruktur je nach Bedarf erweiterbar/reduzierbar), flexible Bezahlmöglichkeiten/Abrechnungsmodelle, Sicherheit und Compliance (z. B. ISO 27001, Verschlüsselung, Authentifizierung, Datenschutzregelung), zuverlässiger Support und klare SLAs (Verfügbarkeit, Reaktionszeiten, 24/7-Support/Ticketing).",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 294,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "Das Bankhaus ZUMM ist verpflichtet, die gesetzlichen Vorgaben zum Datenschutz einzuhalten und nachzuweisen. In diesem Zusammenhang überarbeitet das Bankhaus regelmäßig das vorhandene Datenschutzkonzept. Nennen Sie vier inhaltliche Anforderungen an ein Datenschutzkonzept.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Verantwortliche Stelle für den Datenschutz im Bankhaus, Nennung des Datenschutzbeauftragten, Verzeichnis der Verarbeitungstätigkeiten, Maßnahmen zur IT-Sicherheit (Updates, Firewalls, Antivirus, Verschlüsselung), Notfallplan für Datenschutzverletzungen, Einhaltung von Löschfristen.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 52,
+            "y": 734,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Es wurden versehentlich Kundendaten an einen unberechtigten Empfänger gesendet. Erläutern Sie drei Maßnahmen, die die Bank nach der Datenschutz-Grundverordnung unverzüglich einleiten muss.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Benachrichtigung der zuständigen Datenschutzbehörde, Kontaktaufnahme zum Empfänger mit Aufforderung zur Löschung der Daten, interne Kontrolle des Vorfalls und ggf. Maßnahmen ergreifen (z. B. Schulungen), Information an die betroffenen Bankkunden, Dokumentationspflicht — die Maßnahmen müssen unverzüglich ergriffen werden.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 52,
+            "y": 586,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 25,
+      "intro": "Sie führen eine Mitarbeiterschulung zur Informationssicherheit durch. Dabei gehen Sie auf mehrere Beispiele aus der Praxis ein. Zu Beginn der Schulung geht es um grundsätzliche Fragen zur Informationssicherheit: Ordnen Sie folgenden Situationen die jeweils zutreffende technische bzw. organisatorische Maßnahme (TOM) zu.",
+      "parts": [
+        {
+          "id": "2.a.aa.1",
+          "label": "aa) 1)",
+          "prompt": "RFID-Karten benutzen, um ins Firmengebäude zu gelangen",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Zutrittskontrolle",
+            "Zugangskontrolle",
+            "Zugriffskontrolle"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 2,
+            "x": 320,
+            "y": 279,
+            "maxWidth": 230,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.a.aa.2",
+          "label": "2)",
+          "prompt": "Benutzeridentifikation am PC mit biometrischen Merkmalen",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Zutrittskontrolle",
+            "Zugangskontrolle",
+            "Zugriffskontrolle"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 2,
+            "x": 320,
+            "y": 259,
+            "maxWidth": 230,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.a.aa.3",
+          "label": "3)",
+          "prompt": "Berechtigungskonzept auf Dateiebene implementieren",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Zutrittskontrolle",
+            "Zugangskontrolle",
+            "Zugriffskontrolle"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 2,
+            "x": 320,
+            "y": 234,
+            "maxWidth": 230,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.a.aa.4",
+          "label": "4)",
+          "prompt": "Datenträger verschlüsseln",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Zutrittskontrolle",
+            "Zugangskontrolle",
+            "Zugriffskontrolle"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 2,
+            "x": 320,
+            "y": 211,
+            "maxWidth": 230,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.a.aa.5",
+          "label": "5)",
+          "prompt": "Alarmanlage außerhalb der Geschäftszeiten aktivieren",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Zutrittskontrolle",
+            "Zugangskontrolle",
+            "Zugriffskontrolle"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 2,
+            "x": 320,
+            "y": 189,
+            "maxWidth": 230,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.a.ab.confidentiality",
+          "label": "ab) Confidentiality",
+          "prompt": "Sie besprechen grundsätzliche Schutzziele der Informationssicherheit. Erläutern Sie das Schutzziel Confidentiality.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Vertrauliche Informationen werden vor unberechtigtem Zugriff bzw. vor Weitergabe geschützt.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 718,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.ab.integrity",
+          "label": "Integrity",
+          "prompt": "Erläutern Sie das Schutzziel Integrity.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Informationen werden vor absichtlicher oder versehentlicher Änderung geschützt.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 642,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.ab.availability",
+          "label": "Availability",
+          "prompt": "Erläutern Sie das Schutzziel Availability.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Dienste oder Daten müssen in der zugesicherten Zeit verfügbar sein.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 568,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.ba",
+          "label": "b) ba)",
+          "prompt": "Der Mitarbeiter Paul Meier des Bankhauses ZUMM hat eine verdächtige E-Mail erhalten (Absender „BEST-IT <victorsavage@gmail.de>\", CC an paul.meier@zumm.de, Aufforderung binnen 12 Stunden die Mailsoftware über einen Link zu aktualisieren, angezeigter Link https://best.it/Update verweist tatsächlich auf https://jdj773.yahoo.ru/Update.exe). Analysieren Sie die E-Mail auf Merkmale, die darauf hindeuten, dass der Inhalt nicht vertrauenswürdig ist. Nennen Sie drei typische Merkmale.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Unspezifische Anrede, Empfänger nur im CC, Absendermailadresse @gmail.de statt Firmendomain, Rechtschreib-/Grammatikfehler, angezeigte URL ungleich der tatsächlich verlinkten URL, keine Signatur, keine Logos.",
+          "referenceImage": "/exams/si-2024-sommer-teil1/page-04.png",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 230,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bb",
+          "label": "bb)",
+          "prompt": "Herr Meier hat auf den Hyperlink in der E-Mail geklickt. Seitdem stellt er bei Arbeiten an seinem PC Unregelmäßigkeiten fest. Nennen Sie drei Unregelmäßigkeiten, die nach einem solchen Vorfall auftreten können.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Erhöhte CPU-Auslastung, Computer stürzt häufiger ab, abnehmende Geschwindigkeit beim Surfen, geänderte oder gelöschte Daten, unbekannte Programme/Desktop-Symbole, unbekannte laufende Prozesse, Programme starten/schalten sich selbst ab oder konfigurieren sich neu, E-Mails werden ohne Wissen verschickt.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 52,
+            "y": 102,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bc.1",
+          "label": "bc) 1)",
+          "prompt": "Ordnen Sie den folgenden Beschreibungen den jeweils entsprechenden Malware-Typ zu (ein Kreuz pro Zeile). Code, der sich selbst fortlaufend über das Netzwerk repliziert und weitere Betriebssysteme befällt.",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Virus",
+            "Wurm",
+            "Trojaner",
+            "Ransomware"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 4,
+            "x": 286,
+            "y": 700,
+            "maxWidth": 218,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.b.bc.2",
+          "label": "2)",
+          "prompt": "Code, der sich zusammen mit anderen Programmen installiert.",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Virus",
+            "Wurm",
+            "Trojaner",
+            "Ransomware"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 4,
+            "x": 286,
+            "y": 675,
+            "maxWidth": 218,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.b.bc.3",
+          "label": "3)",
+          "prompt": "Code, der die Daten verschlüsselt und zu einer Zahlung an den Angreifer auffordert.",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Virus",
+            "Wurm",
+            "Trojaner",
+            "Ransomware"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 4,
+            "x": 286,
+            "y": 645,
+            "maxWidth": 218,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.b.bc.4",
+          "label": "4)",
+          "prompt": "Code, der offensichtlich nützlich sein soll, aber im Hintergrund Systemressourcen freigibt.",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "Virus",
+            "Wurm",
+            "Trojaner",
+            "Ransomware"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 4,
+            "x": 286,
+            "y": 618,
+            "maxWidth": 218,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "2.c",
+          "label": "c)",
+          "prompt": "Im Verlauf der Schulung klären Sie die Mitarbeiter über „White-Hat-Hacker\" und „Black-Hat-Hacker\" auf. Erläutern Sie die jeweiligen Ziele der beiden Gruppierungen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "White-Hat-Hacker: dringen im Auftrag des Eigentümers in dessen Netze/Systeme ein, um Schwachstellen zu finden und die IT-Sicherheit zu verbessern; Ergebnisse werden dem Eigentümer mitgeteilt. Black-Hat-Hacker: machen sich Schwachstellen zunutze, um unbefugt in Netze/Systeme einzudringen und sich persönliche, finanzielle oder sonstige Vorteile zu verschaffen.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 555,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 26,
+      "intro": "Das Bankhaus ZUMM setzt für die Überwachung seiner IT-Infrastruktur vorzugsweise intern entwickelte Software ein. Sie werden mit einer Programmerweiterung beauftragt. Das Monitoring-Programm für die Server soll um die Methode „MaxMax2()\" erweitert werden, welche den höchsten (max) und zweithöchsten (max2) Wert der CPU-Auslastung eines Servers ermittelt. Die Werte der CPU-Auslastung sind im Array „CPULoad\" als ganzzahlige Prozentwerte gespeichert.\n\nQuellcode:\n1  //Definition der Methode MaxMax2()\n2  static void MaxMax2()\n3  {\n4    // Array CPULoad definieren und mit Testdaten füllen\n5    int[] CPULoad = new int[] { 12, 10, 40, 73, 33, 60 };\n6    int max = 0;   //Variable für die höchste CPU-Auslastung\n7    int max2 = 0;  //Variable für die zweithöchste CPU-Auslastung\n8    //Schleife zum Ermitteln von max und max2\n9    for (int i = 0; i < CPULoad.Length; i++)\n10   {\n11     if (CPULoad[i] > max)\n12     {\n13       max2 = max;\n14       max = CPULoad[i];\n15     }\n16     else if (CPULoad[i] > max2)\n17       max = CPULoad[i];\n18   }\n19 }\n\nNach Ausführung der Methode stellen Sie fest, dass die Variablen max und max2 nicht die richtigen Werte enthalten (max=73; max2=60, erwartet aber max=73, max2=40).",
+      "parts": [
+        {
+          "id": "3.a.aa",
+          "label": "a) aa)",
+          "prompt": "Sie vermuten den Fehler innerhalb der for-Schleife und analysieren diese schrittweise mit den Werten von „CPULoad\". Vervollständigen Sie für jeden Schleifendurchlauf i (0 bis 5) den tatsächlichen Wert von CPULoad[i] sowie von max und max2 bei Ende von Schritt i, wie ihn der gezeigte (fehlerhafte) Code tatsächlich produziert.",
+          "points": 10,
+          "type": "text",
+          "modelAnswer": "i=0: CPULoad=12, max=12, max2=0. i=1: CPULoad=10, max=10, max2=0. i=2: CPULoad=40, max=40, max2=10. i=3: CPULoad=73, max=73, max2=40. i=4: CPULoad=33, max=73, max2=40. i=5: CPULoad=60, max=60, max2=40. (1 Punkt je korrektem Feld; Folgefehler werden bei der Korrektur berücksichtigt.)",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 280,
+            "y": 258,
+            "maxWidth": 280,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "3.a.ab",
+          "label": "ab)",
+          "prompt": "Offensichtlich liefert die Methode MaxMax2() nicht die richtigen Werte für max und max2. Lokalisieren Sie die für die Fehlfunktion verantwortliche Stelle im Quellcode der Methode und erläutern Sie die Fehlerursache.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Die Variable „max\" für den Höchstwert der CPU-Auslastung wird in der Abfrage-Zeile 16/17 (else if (CPULoad[i] > max2)) fälschlicherweise mit dem zweithöchsten Wert überschrieben — dort müsste max2, nicht max, zugewiesen werden.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 737,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ac",
+          "label": "ac)",
+          "prompt": "Entwickeln Sie einen Vorschlag zur Fehlerbeseitigung. Geben Sie die korrigierte Programmzeile an.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Zeile 17: max2 = CPULoad[i]; (statt max = CPULoad[i];)",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 95,
+            "y": 582,
+            "maxWidth": 440,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b.ba",
+          "label": "b) ba)",
+          "prompt": "Sie überprüfen die Methode hinsichtlich sinnvoller Datentypen für die Variablen (sbyte: 8-Bit mit Vorzeichen, byte: 8-Bit ohne Vorzeichen, short: 16-Bit mit Vorzeichen, ushort: 16-Bit ohne Vorzeichen, int: 32-Bit mit Vorzeichen, uint: 32-Bit ohne Vorzeichen). Geben Sie für den Datentyp „int\" den dezimalen Wertebereich an.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "-2.147.483.648 bis 2.147.483.647",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 336,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b.bb",
+          "label": "bb)",
+          "prompt": "Erläutern Sie einen Grund, für die Variablen max und max2 den Datentyp „byte\" statt „int\" zu verwenden.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Der Wertebereich von „byte\" (0–255) ist ausreichend groß für die ganzzahligen Prozentwerte (0–100); da „byte\" nur positive Werte darstellt, ist zudem sichergestellt, dass nicht versehentlich negative Werte zu einer Fehlersituation führen.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 238,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ],
+      "externalReference": {
+        "page": 7,
+        "label": "Anlage zur 3. Aufgabe: Syntax-Referenz"
+      }
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 25,
+      "intro": "Das Bankhaus ZUMM stellt sehr hohe Anforderungen an die Verfügbarkeit ihrer IT-Dienste. Sie administrieren diese IT-Systeme und sollen in diesem Zusammenhang beraten.",
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Für die Client-Server-Umgebung sind Zugriffslizenzen (Client Access Licenses) erforderlich. Es gibt zwei alternative Lizenztypen: User CALs (pro Nutzer, der auf den Server zugreift) und Device CALs (pro Gerät, das auf den Server zugreift, unabhängig von der Nutzerzahl). Erläutern Sie für jeden der beiden Lizenztypen den empfohlenen Einsatzfall.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "User CALs: sinnvoll, wenn Mitarbeiter mit mehreren Geräten einen Roaming-Zugang zum Unternehmensnetzwerk benötigen oder wenn es mehr Geräte als Nutzer gibt. Device CALs: sinnvoll, wenn mehrere Nutzer sich Geräte teilen — wirtschaftlich und verwaltungstechnisch günstiger, da unabhängig von der Nutzerzahl.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 561,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b",
+          "label": "b)",
+          "prompt": "Mitarbeiter des Bankhauses nutzen bei Tätigkeiten im Außendienst firmeneigene Notebooks. Sollte ein solches Notebook verloren gehen oder gestohlen werden, möchte das Bankhaus sicher sein, dass ein Missbrauch des Notebooks ausgeschlossen ist. Erläutern Sie drei entsprechende Maßnahmen.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "2-Faktor-Authentifizierung mit biometrischer Komponente, mobiles Gerätemanagement mit Fernlöschmöglichkeit, Daten nicht lokal auf dem Gerät speichern (Cloud/Netzwerk), Aktivierung des TPM-Chips, weltweite Geräteerkennung, gehärtetes BIOS (eingeschränkte Bootoptionen, SecureBoot).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 723,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.c",
+          "label": "c)",
+          "prompt": "Erläutern Sie drei technische Maßnahmen, die geeignet sind, eine hohe Ausfallsicherheit von IT-Systemen zu gewährleisten.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Unterbrechungsfreie Stromversorgung (USV), Hochverfügbarkeitscluster, Load Balancing zur Verteilung von Anwendungs-/Netzwerkverkehr, redundante Datenspeicherung mittels RAID/SAN (Failover).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 546,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.d.da",
+          "label": "d) da)",
+          "prompt": "Die Speicherung der Geschäftsdaten soll auf einem NAS-System erfolgen. Es wird ein NAS mit einer Nettospeicherkapazität von 20 TiB benötigt. Zum Aufbau stehen Festplatten mit 4 TiB Kapazität zur Verfügung. Berechnen Sie für RAID 1, RAID 5 und RAID 6 jeweils die erforderliche Anzahl an Festplatten. Der Rechenweg soll nachvollziehbar sein.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "RAID 1: 20 TiB / 4 TiB = 5 Festplatten, wegen Datamirror * 2 = 10 Festplatten. RAID 5: 20 TiB / 4 TiB = 5 Festplatten, wegen Stripeset mit einfacher Parität +1 = 6 Festplatten. RAID 6: 20 TiB / 4 TiB = 5 Festplatten, wegen Stripeset mit doppelter Parität +2 = 7 Festplatten.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 305,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.d.db",
+          "label": "db)",
+          "prompt": "Nennen Sie für diesen Fall das RAID-Level mit der geringsten benötigten Anzahl an Festplatten.",
+          "points": 1,
+          "type": "text",
+          "modelAnswer": "RAID 5 (6 Festplatten).",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 753,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    }
+  ]
+}

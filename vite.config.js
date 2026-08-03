@@ -13,6 +13,7 @@ export default defineConfig({
     // to become a reverse-proxy rule at the hosting layer instead.
     proxy: {
       '/api': 'http://localhost:8787',
+      '/exam-sources': 'http://localhost:8787',
     },
     // The Prüfungen/ symlink points outside the project root to a large
     // reference archive — not app source, and it crashes chokidar's watcher

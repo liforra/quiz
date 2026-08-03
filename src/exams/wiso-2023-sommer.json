@@ -1,0 +1,1147 @@
+{
+  "id": "wiso-2023-sommer",
+  "title": "Wirtschafts- und Sozialkunde – Sommer 2023",
+  "profession": "WISO",
+  "period": {
+    "year": 2023,
+    "season": "Sommer"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 60,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Sommer 2023, ZPA Nord-West — Teil 2 der Abschlussprüfung, Wirtschafts- und Sozialkunde (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 3.34,
+      "intro": "Ausgangssituation: Die Korok-IT GmbH ist ein mittelständisches Unternehmen in Köln, welches IT-Dienstleistungen für klein- und mittelständische Unternehmen deutschlandweit anbietet. Die folgenden Aufgaben beziehen sich auf die Korok-IT GmbH.\n\nDie Korok-IT GmbH will eine Stelle neu besetzen. Mit einer Bewerberin soll ein Einstellungsgespräch geführt werden.",
+      "parts": [
+        {
+          "id": "1",
+          "prompt": "Welche der folgenden Fragen ist bei einem Einstellungsgespräch zulässig?",
+          "points": 3.34,
+          "type": "choice",
+          "options": [
+            "Was möchten Sie bei uns verdienen?",
+            "Möchten Sie in den nächsten zwei Jahren heiraten?",
+            "Gehören Sie einer politischen Partei an?",
+            "Wie hoch sind Ihre persönlichen Sparguthaben?",
+            "Welche Krankheiten haben Sie bisher gehabt?"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 637,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 3.34,
+      "intro": "Claudio Davidson, 17 Jahre alt, beginnt eine Ausbildung als Fachinformatiker bei der Korok-IT GmbH.",
+      "parts": [
+        {
+          "id": "2",
+          "prompt": "Welche der folgenden Unterlagen muss Herr Davidson vor Beginn seiner Berufsausbildung zwingend vorlegen?",
+          "points": 3.34,
+          "type": "choice",
+          "options": [
+            "Das letzte Schulzeugnis",
+            "Die Geburtsurkunde",
+            "Die Teilnahmebestätigung über ein Praktikum",
+            "Die notariell beglaubigte Kopie des Personalausweises",
+            "Den Nachweis über die ärztliche Erstuntersuchung nach dem Jugendarbeitsschutzgesetz"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 637,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 3.34,
+      "intro": "In den Ausbildungsverträgen der Korok-IT GmbH ist in der Regel eine Probezeit von drei Monaten eingetragen.",
+      "parts": [
+        {
+          "id": "3",
+          "prompt": "In welcher der folgenden Rechtsgrundlagen ist die Dauer der Probezeit geregelt?",
+          "points": 3.34,
+          "type": "choice",
+          "options": [
+            "Jugendschutzgesetz",
+            "Jugendarbeitsschutzgesetz",
+            "Berufsbildungsgesetz",
+            "Arbeitszeitgesetz",
+            "Verordnung über die Berufsausbildung (Ausbildungsordnung)"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 176,
+            "y": 637,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 3.34,
+      "intro": "Ein Kollege von Herrn Davidson überlegt, sich beruflich zu verändern.",
+      "parts": [
+        {
+          "id": "4",
+          "prompt": "Bei welcher der folgenden Maßnahmen handelt es sich um eine Umschulung?",
+          "points": 3.34,
+          "type": "choice",
+          "options": [
+            "Eine IT-System-Kauffrau besucht einen Lehrgang zum Erwerb der Ausbildereignung.",
+            "Ein angehender Fachinformatiker Systemintegration bricht seine Ausbildung ab und beginnt eine Berufsausbildung zum Tischler.",
+            "Eine Fachinformatikerin Systemintegration besucht ein Schulungsangebot zum Thema IT-Sicherheit.",
+            "Eine Friseurin macht aufgrund einer Allergie eine zweite Berufsausbildung zur Kauffrau für IT-System-Management.",
+            "Eine Auszubildende zieht um und setzt ihre Ausbildung zur Fachinformatikerin Anwendungsentwicklung in einem anderen Betrieb und in einer anderen Berufsschule fort."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 217,
+            "y": 637,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson stolpert während der Arbeitszeit und verletzt sich am Knie. Herr Davidson legt der Korok-IT GmbH eine Arbeitsunfähigkeitsbescheinigung über fünf Arbeitstage vor.",
+      "parts": [
+        {
+          "id": "5",
+          "prompt": "Welchen der folgenden Schritte muss die Korok-IT GmbH daraufhin unternehmen? Die Korok-IT GmbH muss …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "den Unfall dem Technischen Überwachungsverein (TÜV) melden.",
+            "den Unfall der Berufsgenossenschaft melden.",
+            "den Unfall dem Ordnungsamt melden.",
+            "Herrn Davidson Verletztengeld zahlen.",
+            "Herrn Davidson Schadenersatz zahlen."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 594,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. Aufgabe",
+      "points": 3.33,
+      "intro": "Ein Kollege von Herrn Davidson möchte wissen, wie hoch sein Beitrag zur Rentenversicherung nach der Gehaltserhöhung sein wird. Sein sozialversicherungspflichtiges Bruttoarbeitsentgelt beträgt zukünftig 3.500,00 EUR monatlich. Der Beitragssatz in der gesetzlichen Rentenversicherung beträgt 18,6 %.",
+      "parts": [
+        {
+          "id": "6",
+          "prompt": "Ermitteln Sie den Arbeitnehmeranteil an der gesetzlichen Rentenversicherung, der dem Kollegen in seiner Gehaltsabrechnung abgezogen wird, in EUR.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 325.5,
+          "tolerance": 0.02,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 594,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Aufgabe",
+      "points": 3.33,
+      "intro": "Aus dem Arbeitsverhältnis werden Beiträge zur gesetzlichen Arbeitslosenversicherung fällig.",
+      "parts": [
+        {
+          "id": "7",
+          "prompt": "Wer bringt diese Beiträge auf?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Nur der Arbeitnehmer",
+            "Nur der Arbeitgeber",
+            "Bundesagentur für Arbeit und Arbeitgeber zu gleichen Teilen",
+            "Arbeitgeberverband und Arbeitgeber zu gleichen Teilen",
+            "Arbeitgeber und Arbeitnehmer zu gleichen Teilen"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 219,
+            "y": 594,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson liest in den Mitteilungen seiner Krankenkasse, dass im Jahr 2023 in der gesetzlichen Krankenversicherung (GKV) die Versicherungspflichtgrenze auf monatlich 5.550,00 EUR bzw. jährlich 66.600,00 EUR angehoben wurde.",
+      "parts": [
+        {
+          "id": "8",
+          "prompt": "Welche der folgenden Aussagen über die Versicherungspflichtgrenze trifft zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Auf den Teil des Bruttolohns, der über der Versicherungspflichtgrenze liegt, wird kein Beitrag erhoben.",
+            "Versicherte, deren Bruttolohn über der Versicherungspflichtgrenze liegt, müssen die GKV verlassen und in die private Krankenversicherung wechseln.",
+            "Versicherte, deren Bruttolohn über der Versicherungspflichtgrenze liegt, können sich als freiwilliges Mitglied weiter in der GKV versichern.",
+            "Bei einem Bruttolohn über der Versicherungspflichtgrenze sind Kinder nicht mehr in der GKV mitversichert.",
+            "Bei einem Verdienst über der Versicherungspflichtgrenze muss der Arbeitnehmer die Beiträge zur GKV zu 100 % selbst tragen."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 260,
+            "y": 594,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson erhält eine Entgelterhöhung von monatlich 50,00 EUR. Obwohl sich sein Konsumverhalten nicht geändert hat, hat er am Monatsende weniger Geld zur Verfügung, weil die Preise gestiegen sind.",
+      "parts": [
+        {
+          "id": "9",
+          "prompt": "Welches der folgenden Einkommen ist gesunken?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Bruttoeinkommen",
+            "Zu versteuerndes Einkommen",
+            "Realeinkommen",
+            "Nettoeinkommen",
+            "Nominaleinkommen"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 552,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson hat vom Betriebsrat der Korok-IT GmbH eine Einladung zur Betriebsversammlung erhalten.",
+      "parts": [
+        {
+          "id": "10",
+          "prompt": "In welchem der folgenden Gesetze werden Betriebsversammlungen geregelt?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Bürgerliches Gesetzbuch",
+            "Berufsbildungsgesetz",
+            "Tarifvertragsgesetz",
+            "Betriebsverfassungsgesetz",
+            "Arbeitsschutzgesetz"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 552,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson möchte an der Betriebsversammlung teilnehmen. Die Betriebsversammlung findet während seiner Arbeitszeit statt.",
+      "parts": [
+        {
+          "id": "11",
+          "prompt": "Welche Folge ergibt sich daraus?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Herr Davidson muss die ausgefallene Arbeitszeit in den nächsten Tagen nachholen.",
+            "Er darf nur teilnehmen, wenn er seit mindestens einem halben Jahr bei Korok-IT GmbH beschäftigt ist.",
+            "Herr Davidson darf nur teilnehmen, wenn er Gewerkschaftsmitglied ist.",
+            "Die Teilnahme an der Versammlung gilt als Arbeitszeit und wird entsprechend vergütet.",
+            "Die Teilnahme zählt nur dann als Arbeitszeit, wenn sie von dem Vorgesetzten genehmigt wurde."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 176,
+            "y": 552,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Aufgabe",
+      "points": 3.33,
+      "intro": "Der Betriebsrat der Korok-IT GmbH hat verschiedene Rechte gegenüber dem Arbeitgeber.",
+      "parts": [
+        {
+          "id": "12",
+          "prompt": "In welchem der folgenden Fälle hat der Betriebsrat ein Mitbestimmungsrecht?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Eine neue Mitarbeiterin kündigt innerhalb der Probezeit fristgerecht, um eine besser bezahlte Stelle anzutreten.",
+            "Die Korok-IT GmbH möchte während der Ferienzeit die tägliche Arbeitszeit von acht auf zehn Stunden ändern.",
+            "Der gesetzliche Mindeststundenlohn wird vom Bundestag erhöht.",
+            "Ein Auszubildender hat die Abschlussprüfung nicht bestanden und verlangt vom Arbeitgeber die Verlängerung des Ausbildungsverhältnisses.",
+            "Eine Auszubildende hat die Abschlussprüfung bestanden und möchte zu einem anderen Arbeitgeber wechseln."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 217,
+            "y": 552,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Aufgabe",
+      "points": 3.33,
+      "intro": "Zu den Kunden der Korok-IT GmbH zählt unter anderem die Köhnken KG, Berlin.",
+      "parts": [
+        {
+          "id": "13",
+          "prompt": "Welche der folgenden Aussagen trifft auf die Rechtsform der KG zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Alle Gesellschafter haften unbeschränkt mit ihrem Privatvermögen.",
+            "Die Mindesteinlage der Gesellschafter beträgt 25.000 EUR.",
+            "Komplementäre der KG haften nicht für die Verluste der KG.",
+            "Kommanditisten haften maximal in Höhe ihrer Einlage.",
+            "Kommanditisten sind zur Geschäftsführung verpflichtet."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 510,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Fachinformatikerin Systemintegration Erika Schmitz möchte sich nach ihrer abgeschlossenen Berufsausbildung selbstständig machen. Sie möchte in Köln eine Werkstatt und ein Ladenlokal für IT-Dienstleistungen und dem Vertrieb von EDV-Zubehör eröffnen.",
+      "parts": [
+        {
+          "id": "14",
+          "prompt": "Welcher der folgenden Gesichtspunkte spielt bei der Standortwahl keine Rolle?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Anzahl und Größe der Konkurrenzbetriebe",
+            "Aktuelle Umsatzsteuersätze",
+            "Behördliche Auflagen, z. B. Bau- und Umweltvorschriften",
+            "Verkehrsanbindung für Kunden und Lieferanten",
+            "Höhe der Kosten für z. B. Miete/Pacht"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 510,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. Aufgabe",
+      "points": 3.33,
+      "intro": "Erika Schmitz hat die Schmitz-IT GmbH gegründet. Sie ist die einzige Gesellschafterin der GmbH. Das Startkapital in Höhe von 100.000,00 EUR hat sie als Stammkapital in voller Höhe in die GmbH eingebracht.",
+      "parts": [
+        {
+          "id": "15",
+          "prompt": "Welche der folgenden Regelungen zur gesetzlichen Haftung ist im Fall der Schmitz-IT GmbH zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Haftung der Schmitz-IT GmbH ist auf maximal 25.000,00 EUR begrenzt.",
+            "Die Schmitz-IT GmbH haftet nur bei grober Pflichtverletzung.",
+            "Die Schmitz-IT GmbH haftet mit ihrem Gesellschaftsvermögen.",
+            "Frau Schmitz haftet nur mit ihrem Privatvermögen.",
+            "Frau Schmitz haftet zusätzlich zu ihrer Stammeinlage von 100.000,00 EUR mit ihrem Privatvermögen."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 176,
+            "y": 510,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Geschäftsführerin der Schmitz-IT GmbH erhält die Nachricht, dass die Schmitz-IT GmbH Mitglied der örtlichen Industrie- und Handelskammer geworden ist.",
+      "parts": [
+        {
+          "id": "16",
+          "prompt": "Welche der folgenden Aussagen über die Aufgaben der Industrie- und Handelskammern trifft zu? Die Industrie- und Handelskammer …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "führt das Handelsregister.",
+            "überprüft die Bilanzen der Unternehmen.",
+            "unterstützt und berät die Arbeitgeber bei der Suche nach geeigneten Fachkräften.",
+            "legt die Gewerbesteuersätze des jeweiligen IHK-Bezirks fest.",
+            "muss in allen Arbeitsgerichtsverfahren angehört werden."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 217,
+            "y": 510,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Aufgabe",
+      "points": 3.34,
+      "intro": "Die Geschäftsleitung der Korok-IT GmbH möchte überprüfen, ob die Einstellung neuer Mitarbeiter sich positiv auf die Umsatzentwicklung ausgewirkt hat. Folgende Zahlen liegen der Geschäftsführung vor: Anzahl der Mitarbeiter im Jahr 2021: 40, Umsatz pro Mitarbeiter im Jahr 2021: 98.000 EUR. Geschäftsjahr 2022: Anzahl Mitarbeiter 45, Umsatz 4.590.000 EUR.",
+      "parts": [
+        {
+          "id": "17.a",
+          "label": "a)",
+          "prompt": "Berechnen Sie den Umsatz pro Mitarbeiter im Jahr 2022.",
+          "points": 1.67,
+          "type": "number",
+          "correctValue": 102000,
+          "tolerance": 1,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 103,
+            "y": 468,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "17.b",
+          "label": "b)",
+          "prompt": "Berechnen Sie die prozentuale Veränderung des Umsatzes pro Mitarbeiter von 2021 auf 2022. Runden Sie das Ergebnis auf die zweite Nachkommastelle.",
+          "points": 1.67,
+          "type": "number",
+          "correctValue": 4.08,
+          "tolerance": 0.02,
+          "pdfAnchor": {
+            "page": 0,
+            "x": 183,
+            "y": 468,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Aufgabe",
+      "points": 3.33,
+      "intro": "Die seit einem Jahr bei der Korok-IT GmbH angestellte Susanne Becker legt am 24.03.2023 der Personalabteilung ein Kündigungsschreiben vor. Es gelten die gesetzlichen Kündigungsfristen (§ 622 BGB: Arbeitnehmerkündigung mit einer Frist von vier Wochen zum Fünfzehnten oder zum Ende eines Kalendermonats). Im Kündigungsschreiben kündigt Frau Becker ihr Arbeitsverhältnis fristgerecht zum 30.04.2023, ihr letzter Arbeitstag soll dementsprechend der 28.04.2023 sein; am 01.05.2023 tritt sie ein Arbeitsverhältnis bei einem anderen Arbeitgeber an.",
+      "parts": [
+        {
+          "id": "18",
+          "prompt": "Ist die vorgelegte Kündigung zum genannten Zeitpunkt wirksam?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "wirksam, da Frau Becker schriftlich und mit Begründung gekündigt hat.",
+            "wirksam, weil Frau Becker schon einen neuen Arbeitsplatz hat.",
+            "unwirksam, weil Frau Becker die Kündigungsfrist von vier Wochen zum Fünfzehnten oder zum Ende des Kalendermonats einhalten muss.",
+            "unwirksam, weil Frau Becker die Kündigungsfrist von zwei Monaten zum Ende eines Kalendermonats einhalten muss.",
+            "unwirksam, weil Frau Becker ohne Zustimmung der Industrie- und Handelskammer gekündigt hat."
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 255,
+            "y": 468,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Korok-IT GmbH möchte aufgrund der wirtschaftlich schwierigen Lage dem Fachinformatiker Hans Baumgart, 38 Jahre, Vater von zwei Kindern, aus betriebsbedingten Gründen kündigen. Da er die Kündigung für sozial ungerechtfertigt hält, wendet er sich an den Betriebsrat.",
+      "parts": [
+        {
+          "id": "19",
+          "prompt": "Welche der folgenden Aussagen zu den Kündigungsmodalitäten ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Der Betriebsrat muss angehört werden. Hält der Betriebsrat die Kündigung für ungerechtfertigt, dann darf der Arbeitgeber nicht kündigen.",
+            "Der Betriebsrat muss angehört werden. Herr Baumgart kann innerhalb von drei Wochen nach Zugang der Kündigung Klage beim zuständigen Arbeitsgericht einreichen.",
+            "Der Betriebsrat muss in Kündigungsfragen nicht angehört werden.",
+            "Mit Zustimmung des Betriebsrats kann die Kündigungsfrist kürzer ausfallen.",
+            "Betriebsbedingte Kündigungen sind immer gültig. Hier braucht der Betriebsrat nicht angehört werden."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 425,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Aufgabe",
+      "points": 3.33,
+      "intro": "Nach erfolgter Kündigung erhält Frau Fürst von der Korok-IT GmbH ein Arbeitszeugnis, mit dem sie nicht einverstanden ist. Sie strebt eine gerichtliche Klärung an.",
+      "parts": [
+        {
+          "id": "20",
+          "prompt": "An welches der folgenden Gerichte muss sich Frau Fürst wenden?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Arbeitsgericht",
+            "Verwaltungsgericht",
+            "Amtsgericht",
+            "Sozialgericht",
+            "Finanzgericht"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 425,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21. Aufgabe",
+      "points": 3.33,
+      "intro": "Ein Mitbewerber der Korok-IT GmbH, die Grothe AG, bietet Dienstleistungen für IT-Unternehmen an. Die Aktionäre der Grothe AG sind Privatpersonen, die Dividenden erwarten.",
+      "parts": [
+        {
+          "id": "21",
+          "prompt": "Welche der folgenden Angaben treffen auf die Grothe AG zu? Die Grothe AG ist … (wählen Sie die zwei zutreffenden Angaben)",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "ein Unternehmen des primären Sektors.",
+            "ein Unternehmen des tertiären Sektors.",
+            "ein erwerbswirtschaftliches Unternehmen.",
+            "ein gemeinwirtschaftliches Unternehmen.",
+            "eine Personengesellschaft.",
+            "eine Gesellschaft bürgerlichen Rechts."
+          ],
+          "correctIndices": [
+            1,
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 176,
+            "y": 425,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Grothe AG ist ein börsennotiertes Unternehmen.",
+      "parts": [
+        {
+          "id": "22",
+          "prompt": "Welches der folgenden Ziele verfolgt die Grothe AG vorrangig? Die Grothe AG verfolgt primär das Ziel …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "der Kundenzufriedenheit.",
+            "der Kostenmaximierung.",
+            "der bestmöglichen Versorgung der Bevölkerung.",
+            "der Gewinnmaximierung.",
+            "der Bilanzverlängerung."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 236,
+            "y": 425,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23. Aufgabe",
+      "points": 3.35,
+      "intro": "Die Grothe AG hat einen weiten Kundenkreis. Einige Kunden werden hier beispielhaft genannt: 1) Bätje GmbH, 2) Von Lente AG, 3) Grabau OHG, 4) Bamann eG. Ordnen Sie die folgenden Unternehmen den nachstehenden Aussagen zu. Hinweis: Ein Unternehmen kann zwei Aussagen zugeordnet werden.",
+      "parts": [
+        {
+          "id": "23.a",
+          "label": "a)",
+          "prompt": "Alle Gesellschafter haften mit ihrem Privatvermögen und ihrer Einlage.",
+          "points": 0.67,
+          "type": "choice",
+          "options": [
+            "Bätje GmbH",
+            "Von Lente AG",
+            "Grabau OHG",
+            "Bamann eG"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 92,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "23.b",
+          "label": "b)",
+          "prompt": "Die Unternehmensanteile können an der Börse gehandelt werden.",
+          "points": 0.67,
+          "type": "choice",
+          "options": [
+            "Bätje GmbH",
+            "Von Lente AG",
+            "Grabau OHG",
+            "Bamann eG"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 112,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "23.c",
+          "label": "c)",
+          "prompt": "Die Gesellschafter haben Stimmrecht in der Gesellschafterversammlung.",
+          "points": 0.67,
+          "type": "choice",
+          "options": [
+            "Bätje GmbH",
+            "Von Lente AG",
+            "Grabau OHG",
+            "Bamann eG"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 131,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "23.d",
+          "label": "d)",
+          "prompt": "Dieses Unternehmen ist in das örtliche Genossenschaftsregister eingetragen.",
+          "points": 0.67,
+          "type": "choice",
+          "options": [
+            "Bätje GmbH",
+            "Von Lente AG",
+            "Grabau OHG",
+            "Bamann eG"
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 150,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "23.e",
+          "label": "e)",
+          "prompt": "Das Stammkapital beträgt mindestens 25.000 EUR.",
+          "points": 0.67,
+          "type": "choice",
+          "options": [
+            "Bätje GmbH",
+            "Von Lente AG",
+            "Grabau OHG",
+            "Bamann eG"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 170,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24. Aufgabe",
+      "points": 3.33,
+      "intro": "Der Umweltschutz liegt im Interesse der Allgemeinheit.",
+      "parts": [
+        {
+          "id": "24",
+          "prompt": "Welcher der folgenden Grundsätze bei der Verwendung von Verpackung sollte die Korok-IT GmbH daher berücksichtigen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Papierverpackungen sind immer umweltfreundlich.",
+            "Vermeidung unnötiger Verpackung ist besser als ihre Entsorgung.",
+            "Recycelte Plastikverpackungen sind immer umweltfreundlich.",
+            "Verpackung muss wiederverschließbar sein, um die Ware vor Verderb zu schützen.",
+            "Jede Verpackung muss nach dem Gebrauch grob gereinigt in den Restmüll gegeben werden."
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 215,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "25. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Korok-IT GmbH verwendet Kopierpapier mit dem Blauer-Engel-Zeichen (Umweltzeichen) auf der Verpackung.",
+      "parts": [
+        {
+          "id": "25",
+          "prompt": "Wie unterstützt die Korok-IT GmbH mit der Verwendung dieses Kopierpapiers den Umweltschutz?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Reduzierung des Kopierpapierverbrauchs bei der Korok-IT GmbH",
+            "Einsparung von Energie bei der Korok-IT GmbH",
+            "Reduzierung der Kosten für das Kopierpapier",
+            "Bessere Qualität des Kopierpapiers",
+            "Einsparung von Rohstoffen für die Papiererzeugung"
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 254,
+            "y": 383,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "26. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Konjunktur in Deutschland befindet sich in einer Rezession (Abschwung).",
+      "parts": [
+        {
+          "id": "26",
+          "prompt": "An welchem der folgenden Merkmale lässt sich dies u. a. erkennen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Zahl der Arbeitslosen sinkt.",
+            "Die Tarifparteien einigen sich auf deutlich höhere Löhne.",
+            "Güternachfrage und Güterproduktion steigen.",
+            "Die Verbraucherpreise steigen stark an.",
+            "Die Nachfrage nach Konsumgütern geht stark zurück."
+          ],
+          "correctIndices": [
+            4
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "27. Aufgabe",
+      "points": 3.36,
+      "intro": "Die Volkswirtschaft wird in drei Wirtschaftssektoren unterteilt: 1) Primärer Sektor, 2) Sekundärer Sektor, 3) Tertiärer Sektor. Ordnen Sie die folgenden Wirtschaftssektoren den nachstehenden Tätigkeiten zu.",
+      "parts": [
+        {
+          "id": "27.a",
+          "label": "a)",
+          "prompt": "Ein Fachinformatiker Systemintegration berät einen Kunden.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "27.b",
+          "label": "b)",
+          "prompt": "Ein Winzer erntet Trauben im Weinberg.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 150,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "27.c",
+          "label": "c)",
+          "prompt": "Ein Bankkaufmann bearbeitet einen Kreditantrag.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 168,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "27.d",
+          "label": "d)",
+          "prompt": "Ein Bäcker backt Brot.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 186,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "27.e",
+          "label": "e)",
+          "prompt": "Ein Gärtner baut Freiland-Rosen an.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 204,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "27.f",
+          "label": "f)",
+          "prompt": "Ein Schreiner baut einen Tisch.",
+          "points": 0.56,
+          "type": "choice",
+          "options": [
+            "Primärer Sektor",
+            "Sekundärer Sektor",
+            "Tertiärer Sektor"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 222,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "28. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Davidson muss im Rahmen seiner Ausbildung Tätigkeiten verrichten, die nach seiner Meinung im betrieblichen Ausbildungsplan nicht vorgesehen sind. Er möchte sich an die für die betriebliche Ausbildung zuständige Stelle wenden.",
+      "parts": [
+        {
+          "id": "28",
+          "prompt": "Welche der folgenden Stellen ist zuständige?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Berufsgenossenschaft",
+            "Industrie- und Handelskammer",
+            "Gewerbeaufsichtsbehörde",
+            "Berufsberatung",
+            "Gesundheitsamt"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 270,
+            "y": 340,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "29. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Korok-IT GmbH muss in ihren betrieblichen Abläufen das Allgemeine Gleichbehandlungsgesetz (AGG) beachten.",
+      "parts": [
+        {
+          "id": "29",
+          "prompt": "Welche der folgenden Aussagen trifft auf das Allgemeine Gleichbehandlungsgesetz (AGG) zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Das AGG gilt nicht für Auszubildende.",
+            "Bei Verstoß gegen das AGG hat der Betroffene keinen Anspruch auf Schadenersatz.",
+            "Das AGG erschwert die Einstellung von Arbeitnehmern aus Nicht-EU-Ländern.",
+            "Stellen müssen zwingend geschlechtsneutral ausgeschrieben werden.",
+            "Die Benachteiligungsverbote des AGG erstrecken sich nicht auf Ungleichbehandlungen bei dem beruflichen Aufstieg sowie bei den Arbeitsbedingungen."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 89,
+            "y": 298,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "30. Aufgabe",
+      "points": 3.33,
+      "intro": "Die Korok-IT GmbH hat sich selbst Grundsätze und Regeln gegeben, nach denen das Unternehmen sich verhält und wirtschaftet. Dazu gehören auch Regelungen, die die Bevorzugung einzelner Mitarbeiter aus sachfremden Gründen verhindern sollen.",
+      "parts": [
+        {
+          "id": "30",
+          "prompt": "In welchem der folgenden Fälle wurden diese Regeln beachtet?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Conny Toyson wurde eingestellt, weil sie die Nichte des Geschäftsführers ist.",
+            "Henriette Schmitz wird aufgrund ihrer Hautfarbe bevorzugt behandelt.",
+            "Andreas Brandtner wurde nicht ins Team aufgenommen, weil er offen homosexuell lebt.",
+            "Sandro Müller wurde wegen fehlender Qualifikation nicht ins Team aufgenommen.",
+            "Angelika Corleone wird bei einer internen Stellenausschreibung nicht berücksichtigt, weil sie gläubige Muslima ist."
+          ],
+          "correctIndices": [
+            3
+          ],
+          "pdfAnchor": {
+            "page": 0,
+            "x": 132,
+            "y": 298,
+            "maxWidth": 220,
+            "fontSize": 6
+          }
+        }
+      ]
+    }
+  ]
+}

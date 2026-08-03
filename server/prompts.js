@@ -56,6 +56,40 @@ export function buildExplainMessages({ question, options, correctAnswer, userAns
   ];
 }
 
+// Grades every free-text part of one exam task ("AP Prüfungen") against the
+// official Musterlösung, awarding partial credit, in a single Groq call —
+// unlike buildGradingMessages (plain quiz text questions, binary
+// correct/incorrect), real exam answers are scored out of a point value
+// based on how many of the model answer's key points the student covered.
+// Batched per task (not per part) because a single exam paper can have 20+
+// free-text parts — one call per part would blow through the shared
+// per-IP rate limit in a single submission.
+export function buildExamGradingMessages({ parts, lang }) {
+  const partsBlock = parts
+    .map(p => `- id: ${p.id}\n  prompt: ${p.prompt}\n  maxPoints: ${p.maxPoints}\n  modelSolution: ${p.modelAnswer}\n  studentAnswer: ${p.userAnswer || '(no answer given)'}`)
+    .join('\n');
+  return [
+    {
+      role: 'system',
+      content:
+        'You are a fair but rigorous grader for a real German IHK (Chamber of Commerce) IT vocational exam. ' +
+        'You will be given a list of exam sub-questions, each with its prompt, the official model solution ' +
+        "(Musterlösung), the maximum points available, and the student's answer. For EACH one, award partial credit " +
+        "proportional to how many of the model solution's distinct key points the answer correctly covers — do not " +
+        'require verbatim wording, but do require the same technical substance. A blank or off-topic answer gets 0. ' +
+        'A technically correct but incomplete answer gets partial credit. ' +
+        'Respond with ONLY a JSON object, no markdown, no extra text, in exactly this form: ' +
+        '{"results": [{"id": "<the given id>", "score": <number between 0 and maxPoints, one decimal place allowed>, "reasoning": "one short sentence"}, ...]}. ' +
+        'Include exactly one result per given id, in any order.' +
+        langInstruction(lang) + ' (Keep the JSON keys/ids in English, only "reasoning" values in that language.)'
+    },
+    {
+      role: 'user',
+      content: partsBlock
+    }
+  ];
+}
+
 export function buildHelpMessages({ question, options, history, lang }) {
   const system = {
     role: 'system',

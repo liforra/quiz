@@ -1,0 +1,234 @@
+{
+  "id": "si-2022-winter-teil2",
+  "title": "Systemintegration – Winter 2022/23 (Aufgabensatz 2)",
+  "profession": "SI",
+  "period": {
+    "year": 2022,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Winter 2022/23, ZPA Nord-West — Analyse und Entwicklung von Netzwerken, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 24,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie arbeiten als Fachinformatiker bei der 1234-IT-Systemhaus GmbH. Für Ihren Arbeitgeber beraten Sie u. a. das Möbelhaus Rusticus GmbH. Den Netzwerkplan des Möbelhauses finden Sie in der perforierten Anlage. Zwischen beiden Standorten existiert eine VPN-Verbindung. Außendienstmitarbeiter sind bereits teilweise mit Laptops ausgestattet, die über das Mobilfunknetz eine Datenverbindung zum Internet herstellen können. Für die Verbindung zum Hauptstandort soll zukünftig ebenfalls ein VPN eingesetzt werden.\n\nSie sind damit beauftragt, das Netzwerk der Rusticus GmbH zu betreuen.",
+      "externalReference": {
+        "page": 3,
+        "label": "Anlage 1: Netzwerkplan"
+      },
+      "parts": [
+        {
+          "id": "1.a.aa",
+          "label": "a) aa)",
+          "prompt": "Für die DMZ wird das Netzwerk 203.0.113.64/29 verwendet, welches Ihnen vom Provider zugewiesen wurde. Dieses Netzwerk soll überprüft werden. Der Router zum Internet (R-Rusticus-ext) soll die erste mögliche IP-Adresse im Netzwerk erhalten, der Router zum Firmennetz (R-Rusticus-int) die letzte mögliche IP-Adresse im Netzwerk. Ergänzen Sie die IP-Adressen für R-Rusticus-ext, ETH und R-Rusticus-int, ETH0.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "R-Rusticus-ext, ETH: 203.0.113.65. R-Rusticus-int, ETH0: 203.0.113.70."
+        },
+        {
+          "id": "1.a.ab",
+          "label": "ab)",
+          "prompt": "Geben Sie die vollständige Routingtabelle für den Router R-Rusticus-ext an. Die Subnetzmaske ist in Punkt-Dezimal-Schreibweise anzugeben. In der Spalte „Schnittstelle oder Next-Hop\" ist, wann immer möglich, die Next-Hop-Adresse zu verwenden. Hinweis: Die Anzahl der Zeilen der Tabelle ist keine Vorgabe für die Anzahl der notwendigen Einträge.",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "Netzwerk-ID / Subnetzmaske / Schnittstelle oder Next-Hop: 203.0.113.64 / 255.255.255.248 / ETH. 198.51.100.0 / 255.255.255.252 / LWL. 10.0.0.0 / 255.0.0.0 / 203.0.113.70. 0.0.0.0 / 0.0.0.0 / 198.51.100.1."
+        },
+        {
+          "id": "1.b",
+          "label": "b)",
+          "prompt": "Auf dem Router wird eine Firewall betrieben, zu deren Funktionsumfang auch SPI (Stateful Packet Inspection) zählt. Erläutern Sie die Unterschiede einer Firewall mit aktivierter SPI-Funktion im Vergleich zu einer Firewall mit deaktivierter SPI-Funktion.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "SPI sorgt dafür, dass Antworten für erlaubten Traffic für einen bestimmten Zeitraum automatisch ebenfalls die Firewall passieren dürfen, ohne dass der Admin dafür manuell Regeln aufstellen muss."
+        },
+        {
+          "id": "1.c",
+          "label": "c)",
+          "prompt": "Stellen Sie für folgende Situationen passende Regeln für die Firewall auf, die den Traffic aus dem Internet regulieren: Der Webserver soll von außen über HTTP erreichbar sein. Der Webserver soll von außen über HTTPS erreichbar sein. Andere Mailserver können Mails beim Mailserver über SMTP einliefern. Mails können mit dem Protokoll IMAP vom Mailserver abgerufen werden. Aller anderer Traffic aus dem Internet wird verworfen. (Spalten: Aktion, Protokoll, Quelle, Ziel, Quellport, Zielport, Von Interface, Nach Interface.)",
+          "points": 10,
+          "type": "text",
+          "modelAnswer": "Permit, TCP, any, 203.0.113.67/32, any, 80, LWL, ETH. Permit, TCP, any, 203.0.113.67/32, any, 443, LWL, ETH. Permit, TCP, any, 203.0.113.68/32, any, 25, LWL, ETH. Permit, TCP, any, 203.0.113.68/32, any, 143, LWL, ETH. Deny, IP, any, any."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 23,
+      "intro": "Der Provider bietet für die Internetverbindung der Rusticus GmbH die Adressierung mittels IPv6 an. Auf den Netzwerkkomponenten wird daher zusätzlich das Protokoll IPv6 aktiviert. Sie sollen die Netzwerkkonnektivität testen und zeichnen den Netzwerkverkehr für eine Überprüfung der Frames bzw. Pakete auf. Sie geben an einem Client den Befehl `ping -n 1 www.google.de` ein. Bildschirmausgabe: „Ping wird ausgeführt für www.google.de [2a00:1450:4001:812::2003] mit 32 Bytes Daten: Antwort von 2a00:1450:4001:812::2003: Zeit=13ms. Ping-Statistik für 2a00:1450:4001:812::2003: Pakete: Gesendet = 1, Empfangen = 1, Verloren = 0 (0% Verlust), Ca. Zeitangaben in Millisek.: Minimum = 13ms, Maximum = 13ms, Mittelwert = 13ms\". Sie analysieren den Netzwerkverkehr und kontrollieren die Aufzeichnung der dazugehörigen Frames No. 126 bis 135 (siehe Anlage 2: Mitschnitt des Netzwerkverkehrs).",
+      "referenceImage": "/exams/si-2022-winter-teil2/page-04.png",
+      "parts": [
+        {
+          "id": "2.a",
+          "label": "a)",
+          "prompt": "Beschreiben Sie den Grund, weshalb der Client zuerst eine DNS-query (DNS-Abfrage) startet.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Der Client hat keine IP-Adresse für www.google.de zwischengespeichert, darum muss erst die IP-Adresse für www.google.de abgefragt werden."
+        },
+        {
+          "id": "2.b",
+          "label": "b)",
+          "prompt": "Ermitteln Sie den Rückgabewert der Antwort auf die DNS-Anfrage aus Frame No. 126.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "In Zeile 126 wird ein A-Eintrag (IPv4) über einen IPv6-DNS-Server abgefragt. Die Antwort kommt mit Frame No. 132: A www.google.de A 142.250.184.227"
+        },
+        {
+          "id": "2.c",
+          "label": "c)",
+          "prompt": "Bestimmen Sie die lokale IPv4-Adresse und die genutzte IPv6-Adresse des Clients.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "IPv4: 10.0.0.101. IPv6: 2001:db8:3726:1a00:70cd:9f70:a8a8:4627."
+        },
+        {
+          "id": "2.d",
+          "label": "d)",
+          "prompt": "Ermitteln Sie die IP-Adresse des genutzten lokalen DNS-Servers.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "fd00::7642:7fff:fe0c:62f7 (die einzige neben der des Clients genutzten lokalen Adresse (8.8.4.4) ist öffentlich und nicht lokal)."
+        },
+        {
+          "id": "2.e",
+          "label": "e)",
+          "prompt": "Begründen Sie, warum der PING an die IP-Adresse 2a00:1450:4001:812::2003 und nicht an die Adresse 2a00:1450:4016:809::2003 gesendet wurde.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Die Antwort mit der Adresse 2a00:1450:4016:809::2003 ist erst nach dem abgesendeten ICMPv6-request eingetroffen. Der Zeitstempel (Time) ist höher, also später in der Zeit angesiedelt."
+        },
+        {
+          "id": "2.f",
+          "label": "f)",
+          "prompt": "Berechnen Sie mithilfe der Werte aus den aufgezeichneten Frames die Anzahl der Router (hops), über die die ping-Antwort gelaufen ist.",
+          "points": 3,
+          "type": "number",
+          "correctValue": 10,
+          "tolerance": 0,
+          "modelAnswer": "128 - 118 = 10. Gesendet werden ICMP-Nachrichten i. d. R. mit einem hop limit von 128. In der ping-Antwort (Echo reply Paket 135) ist das hop limit mit 118 angegeben. Die Differenz beträgt 10."
+        },
+        {
+          "id": "2.g",
+          "label": "g)",
+          "prompt": "Beschreiben Sie einen möglichen Grund, warum Sie mehrere IPv4- und IPv6-Adressen für www.google.de als Antworten erhalten haben.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Lastverteilung über DNS. Es wurden unterschiedliche DNS-Server angefragt (IPv4 und IPv6). Der lokale IPv6-DNS-Server (Forwarder) hat andere (ältere) DNS-Einträge zwischengespeichert. Der öffentliche IPv4-DNS-Server (8.8.4.4) hat andere (neuere) DNS-Einträge. Der lokale DNS-Server nutzt weitere DNS-Forwarder (z. B. beim Provider) für DNS-Abfragen."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 27,
+      "intro": "Der Zugriff der Außendienstmitarbeiter auf den Server der Rusticus GmbH soll über TLS-Verbindungen erfolgen.",
+      "parts": [
+        {
+          "id": "3.a",
+          "label": "a)",
+          "prompt": "Nennen Sie zwei Eigenschaften, welche eine TLS-Verbindung sicherer machen als eine normale TCP/IP-Verbindung.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Authentifizierung des Servers beim Client, Vertraulichkeit der übertragenen Daten, Schutz der übertragenen Daten vor Manipulation."
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "Im August 2018 wurde die Version TLS1.3 in RFC8446 verabschiedet. Innerhalb Ihres Teams wird zurzeit beraten, ob für die Zugänge der Rusticus-Außendienstmitarbeiter ausschließlich TLS1.3 zugelassen wird, oder ob auch Verbindungen nach TLS1.2 noch akzeptiert werden. Begründen Sie anhand von drei Argumenten aus dem RFC8446, warum Verbindungen nach TLS1.2 für den Online-Zugang bei der Rusticus GmbH nicht mehr zugelassen werden sollten. RFC8446 (Auszug) „Major Differences from TLS 1.2\": The following is a list of the major functional differences between TLS 1.2 and TLS 1.3. It is not intended to be exhaustive, and there are many minor differences. - The list of supported symmetric encryption algorithms has been pruned of all algorithms that are considered legacy. - Static RSA and Diffie-Hellman cipher suites have been removed; all public-key based key exchange mechanisms now provide forward secrecy. - All handshake messages after the ServerHello are now encrypted. - Session resumption has been replaced by a single new PSK exchange.",
+          "points": 9,
+          "type": "text",
+          "modelAnswer": "Nachteile von TLS 1.2: TLS 1.2 lässt Schlüsseltausch ohne PFS (Perfect Forward Secrecy) zu. TLS 1.2 enthält veraltete kryptografische Bibliotheken/Algorithmen. TLS 1.2 lässt Teile des Handshakes unverschlüsselt. TLS 1.2 ermöglicht Angriffe durch „session resumption\". (Drei der genannten Argumente genügen.)"
+        },
+        {
+          "id": "3.c",
+          "label": "c)",
+          "prompt": "Zur Authentifizierung des Servers werden bei SSL/TLS-Verbindungen Zertifikate nach X.509 eingesetzt, die von einer sogenannten CA (Certificate Authority) signiert sein müssen. Diese CA kann sowohl intern (self-signed), als auch von einer externen Zertifizierungsstelle betrieben werden. Entscheiden Sie sich für eines der beiden Verfahren (interne CA/externe CA), und begründen Sie die Entscheidung anhand von zwei Argumenten.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Intern: eigene Kontrolle über Root-Keys, Kontrolle des Verfahrens, Ausstellen von neuen Zertifikaten sofort möglich. Extern: wahrscheinlich mehr Erfahrung beim externen Anbieter, keine eigene Infrastruktur notwendig, Hinterlegen der Public Keys der CA erfolgt über SW-Updates. (Jede plausibel begründete Entscheidung für eine der beiden Optionen mit zwei Argumenten ist gültig.)"
+        },
+        {
+          "id": "3.d",
+          "label": "d)",
+          "prompt": "Nach erfolgreichem SSL/TLS-Verbindungsaufbau ist lediglich der Server der Rusticus GmbH gegenüber dem Endgerät des Mitarbeiters authentifiziert. Eine umgekehrte Authentifizierung steht noch aus. Diskutiert werden aktuell vier verschiedene Verfahren, um den Client gegenüber dem Server zu authentifizieren: 1. Username + Passwort, 2. Username + Passwort + Client-Zertifikat, 3. Username + Passwort + Krypto-Smart-Card, 4. Username + Passwort + OneTimePassword (Authenticator-App). Erläutern Sie zu jedem Verfahren einen Vorteil, der für den Einsatz des jeweiligen Verfahrens spricht.",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "1. Einfach zu implementieren; Anmeldung ist von beliebigen Endgeräten aus möglich. 2. 2FA; Anmeldung lediglich an Geräten möglich, die über die Zertifikatsdatei verfügen. 3. 2FA; zweiter Faktor an Hardware (= Besitz) gebunden. 4. 2FA, keine Anschaffungskosten für zweiten Faktor, einfacher zu implementieren, da jeder User die App selbst installieren kann."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 26,
+      "intro": "Im Möbelhaus Rusticus sind 100 VoIP-Telefonanschlüsse vorhanden. Der VoIP-Server befindet sich in der Cloud. Das bedeutet, dass auch interne Gespräche zwischen den Nebenstellen über den Internetanschluss laufen. Die Cloud-Telefonanlage nutzt standardmäßig den Codec G.722 (64 kBit/s). Der Protokolloverhead beträgt 10 %.",
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Berechnen Sie die benötigte Bandbreite in kBit/s, wenn gleichzeitig fünf Gespräche intern und fünfzehn Gespräche extern geführt werden.",
+          "points": 5,
+          "type": "number",
+          "correctValue": 1760,
+          "tolerance": 1,
+          "modelAnswer": "Fünf Gespräche intern = 10 Teilnehmer * 64 kBit/s = 640 kBit/s. Fünfzehn Gespräche extern = 15 Teilnehmer * 64 kBit/s = 960 kBit/s. Zusammen 1.600 kBit/s * 1,1 (Overhead) = 1.760 kBit/s."
+        },
+        {
+          "id": "4.b.ba",
+          "label": "b) ba)",
+          "prompt": "Für Videokonferenzen nutzt das Möbelhaus Rusticus Software, über die Sie im Datenblatt folgende Hinweise finden: „This software is designed to give the best audio, video, and content sharing experience regardless of your network conditions. That said, when bandwidth is insufficient, our product prioritizes audio quality over video quality...\" Erläutern Sie, was geschieht, wenn die Bandbreite für die gleichzeitige Audio- und Videoübertragung nicht ausreicht.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Das bedeutet, wenn die Bandbreite unzureichend ist, priorisiert die Software Audio-Qualität höher als Video-Qualität."
+        },
+        {
+          "id": "4.b.bb",
+          "label": "bb)",
+          "prompt": "Nennen Sie drei Faktoren, von denen die aktuell genutzte Bandbreite abhängt.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Video-Layout, Video-Auflösung, und Video frames per second (fps)."
+        },
+        {
+          "id": "4.c",
+          "label": "c)",
+          "prompt": "Das Möbelhaus Rusticus führt derzeit regelmäßig Videokonferenzen durch, an denen maximal zehn Personen teilnehmen. Wie hoch ist der hierbei entstehende zusätzliche Traffic auf dem Internetanschluss im Upload und Download, wenn die empfohlene Bandbreite (Recommended, Video Meetings: 2.500/4.000 kBit/s up/down) genutzt wird?",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "10 * 2.500 kbit/s upload = 25.000 kbit/s. 10 * 4.000 kbit/s download = 40.000 kbit/s."
+        },
+        {
+          "id": "4.d",
+          "label": "d)",
+          "prompt": "Das Möbelhaus Rusticus bietet seinen Kunden 3D-Animationsfilme an, die die fertige Küche zeigen. Die Filme dauern jeweils 5 Minuten und werden den Kunden zum Download angeboten. Die Videos haben durchschnittlich eine Größe von 34 MiB pro Minute. Der Kunde verfügt über einen ADSL-Anschluss (Download: 16 Mbit/s, Upload: 2 Mbit/s). Wie lange dauert die Übertragung eines solchen Videoclips mindestens? Das Ergebnis ist auf volle Sekunden aufzurunden.",
+          "points": 4,
+          "type": "number",
+          "correctValue": 90,
+          "tolerance": 0,
+          "modelAnswer": "34 MiB/min * 5 min = 170 MiB. 170 MiB * 1.024 (KB pro MB) = 174.080 KiB * 1.024 (Byte pro KB) = 178.257.920 Byte * 8 Bit pro Byte = 1.426.063.360 Bit. 1.426.063.360 Bit / 16.000.000 Bit/s = 89,12896 Sek. = 90 Sek. (aufgerundet)."
+        },
+        {
+          "id": "4.e",
+          "label": "e)",
+          "prompt": "Die Rusticus GmbH nutzt für die Datenübertragung QoS. Erläutern Sie die Funktionsweise von QoS und welche Auswirkungen für den Benutzer man sich durch den Einsatz von QoS bei der Übertragung von Telefonie- und Videodaten verspricht.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Quality of Service priorisiert die Daten von Echtzeitanwendungen. Auswirkungen: weniger Störungen, weniger Aussetzer."
+        },
+        {
+          "id": "4.f",
+          "label": "f)",
+          "prompt": "In der Kommunikation mit einem Zulieferer bedient sich das Möbelhaus Rusticus nach wie vor der Dokumentenübertragung per Telefax. Seit der Umstellung auf VoIP berichtet das mit dem Fax-Versand betraute Personal immer wieder von Schwierigkeiten beim Versand sowie dem Erhalt von Fax-Dokumenten, insbesondere von unvollständigen Übertragungen, wenn mehrere Seiten übermittelt werden sollen. Beschreiben Sie eine mögliche Ursache, die im Zusammenhang mit VoIP-Übertragungsprotokollen zu diesen Schwierigkeiten beim Versand bzw. Empfang von Fax-Dokumenten führen kann.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "VoIP ist auf Sprachübertragung optimiert, nicht auf Datenübertragung. Ein Sprach-Codec muss ggf. Datenverlust ausgleichen können, was bei Sprache ungehört bleibt, bei Fax aber zum Abbruch der Übertragung führen kann."
+        }
+      ]
+    }
+  ]
+}

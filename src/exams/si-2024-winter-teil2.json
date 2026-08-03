@@ -1,0 +1,517 @@
+{
+  "id": "si-2024-winter-teil2",
+  "title": "Systemintegration – Winter 2024/25 (Aufgabensatz 2, Analyse und Entwicklung von Netzwerken)",
+  "profession": "SI",
+  "period": {
+    "year": 2024,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Winter 2024/25, ZPA Nord-West — Analyse und Entwicklung von Netzwerken, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 25,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie arbeiten als Fachinformatiker (Systemintegration) bei der 1234-IT-Systemhaus GmbH. Dabei handelt es sich um einen mittelständischen IT-Dienstleister, der neben der Zentrale mehrere bundesweit verteilte Standorte hat.\n\nAktuell betreuen Sie für Ihren Arbeitgeber die „IHK-Med AG\", ein Unternehmen aus der Medizinforschung. Der Kunde plant aktuell den Umzug in ein neu errichtetes Gebäude, für das Sie das zukünftige Netzwerk planen sollen.\n\n1. Aufgabe: Konfigurieren des geswitchten Netzwerks. 2. Aufgabe: IP-Adressierung für das Netzwerk durchführen. 3. Aufgabe: Fehlersuche im Netzwerk. 4. Aufgabe: Einrichten einer Next Generation Firewall.\n\nBei der Netzwerkplanung für die IHK-Med AG sollen Sie einzelne Unternehmensbereiche in virtuelle LANs (VLANs) strukturieren.",
+      "parts": [
+        {
+          "id": "1.a.aa",
+          "label": "a) aa)",
+          "prompt": "Durch die Planung einer Netzwerkstruktur mit VLANs ergeben sich erhebliche Vorteile. Beschreiben Sie drei Vorteile für die IHK-Med AG, die sich durch eine Netzwerkstruktur mit VLANs ergeben.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Die Aufteilung eines Netzwerks in VLANs verkleinert die Broadcast-Domänen und reduziert damit unnötigen Datenverkehr. Benutzer oder Geräte können unabhängig von ihrer physischen Position flexibel im Netzwerk einem bestimmten VLAN zugeordnet werden. Die Sicherheit erhöht sich, da sich die Benutzer in verschiedenen Netzsegmenten befinden. Die Skalierung des Netzwerkes wird erleichtert. Dienste können priorisiert werden (QoS). Die vorhandenen Switche können Ports, Bandbreiten und Uplinks effizient nutzen und damit Kosten reduzieren. Die Verwaltung des Netzwerkes wird vereinfacht.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 572,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.a.ab",
+          "label": "ab)",
+          "prompt": "Portbasierte VLANs und dynamische VLANs sind zwei verschiedene Ansätze zur Zuordnung zu virtuellen LANs in einem Netzwerk. Erläutern Sie, wie in beiden Ansätzen Geräte zu einem VLAN zugeordnet werden können.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Portbasierte VLANs werden auf einem Switch konfiguriert und basieren auf den physischen Ports des Switches. Jeder Port ist einem bestimmten VLAN zugeordnet, unabhängig davon, welches Gerät an diesen Port angeschlossen ist. Dynamische VLANs sind flexibel und erlauben die Zuordnung von VLANs basierend auf den Merkmalen des Benutzers oder des Geräts, wie Anmeldeinformationen oder anderen Identifikationsmerkmalen, das an den Switch angeschlossen ist.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 351,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "In der weiteren Planung werden entsprechend der Unternehmensstruktur folgende VLANs festgelegt: VLAN 10 Verwaltung, VLAN 20 Forschung, VLAN 30 Labor, VLAN 40 Marketing, VLAN 99 IT. Die einzelnen Abteilungen der IHK-Med AG sind im gesamten Gebäude verteilt. Im Untergeschoss befindet sich zusätzlich das eigene Rechenzentrum (siehe Netzwerkskizze). Die Switche der IHK-Med AG bieten die Option, einen Port zu „taggen\" (802.1Q). Erläutern Sie, welche Auswirkungen die Aktivierung dieser Option jeweils für den ein- bzw. ausgehenden Datenverkehr hat.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Ausgehende Frames auf diesem Port werden um einen Tag erweitert, in dem unter anderem die VLAN-ID mitgesendet wird. Bei eingehenden Frames wird diese VLAN-ID ausgewertet und der Frame dem entsprechenden VLAN zugeordnet.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 618,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Markieren Sie in der folgenden Tabelle alle Ports auf dem Core-Switch, die „getaggt\" werden müssen (siehe Netzwerkskizze — Port 1, 2, 3 führen zu den Etagen-Switches in 2. OG, 1. OG und EG; Port 7 führt zum Switch im Rechenzentrum-Keller; Port 8 führt zum Router).",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Getaggt werden müssen Port 1, Port 2, Port 3 (Uplinks zu den Etagen-Switches mit mehreren VLANs) und Port 7 (Uplink zum Switch im Rechenzentrum). Port 8 (Uplink zum Router) darf nicht als tagged markiert werden.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 145,
+            "y": 483,
+            "maxWidth": 350,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "1.c.ca",
+          "label": "c) ca)",
+          "prompt": "In der Konfigurationsoberfläche des Switches finden Sie die Einstellungsmöglichkeiten für das „native VLAN\". Ein native VLAN ist ein spezielles VLAN, dessen Datenverkehr über einen 802.1Q-Trunk (tagged port) ohne VLAN-Tag übertragen wird; es ist standardmäßig VLAN 1, es wird aber empfohlen, es auf eine andere Nummer zu ändern, um das Risiko von „VLAN Hopping\" zu vermeiden. Erläutern Sie, welche Auswirkungen das native VLAN für den Transport eines Frames über einen „Trunk\" (tagged port) hat.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Auf dem Trunk werden Frames, die dem native VLAN zugeordnet sind, übertragen, ohne dass sie mit einem Tag versehen werden.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 308,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.c.cb",
+          "label": "cb)",
+          "prompt": "Erläutern Sie, warum das native VLAN nicht identisch mit dem default VLAN (VLAN 1) sein sollte.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Sind default VLAN und native VLAN identisch, so besteht die Gefahr, dass das Netzwerk durch VLAN-Hopping angegriffen wird.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 207,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.d",
+          "label": "d)",
+          "prompt": "Nach dem Einbau und der Verkabelung der Switche sollen diese über das Netzwerk administriert werden. Nennen Sie vier Einstellungen, die Sie vornehmen sollten, um den Zugriff auf den Switch zu ermöglichen und abzusichern.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Einrichtung eines Management VLANs für die Verwaltung und Überwachung der Netzwerkinfrastruktur. Zuweisen einer IP-Adresse auf dem Management VLAN des Switches. Einrichten eines geeigneten Netzwerkprotokolls wie SSH oder HTTPS auf dem Switch. Verwendung komplexer Kennwörter und sicherer Zugriffskontrolle (z. B. 2FA). Aktivitäten auf dem Switch loggen und protokollieren. Regelmäßige Firmware-Updates durchführen.",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 52,
+            "y": 731,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ],
+      "externalReference": {
+        "page": 3,
+        "label": "Netzwerkskizze der IHK-Med AG"
+      }
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 30,
+      "intro": "Für die festgelegten VLANs sollen im nächsten Arbeitsschritt passende IP-Netze definiert werden.",
+      "parts": [
+        {
+          "id": "2.a.aa",
+          "label": "a) aa)",
+          "prompt": "Für die VLANs 10, 20, 30 und 40 soll der private Adressbereich 172.16.0.0 / 12 verwendet und passend aufgeteilt werden. Teilen Sie den angegebenen Bereich in vier gleich große Subnetze auf und ergänzen Sie die Tabelle (VLAN, Netzwerk-ID, Subnetzmaske dezimal) in aufsteigender Reihenfolge.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "VLAN 10: Netzwerk-ID 172.16.0.0, Subnetzmaske 255.252.0.0. VLAN 20: Netzwerk-ID 172.20.0.0, Subnetzmaske 255.252.0.0. VLAN 30: Netzwerk-ID 172.24.0.0, Subnetzmaske 255.252.0.0. VLAN 40: Netzwerk-ID 172.28.0.0, Subnetzmaske 255.252.0.0.",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 305,
+            "y": 489,
+            "maxWidth": 230,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.a.ab",
+          "label": "ab)",
+          "prompt": "Die IP des Standardgateways soll jeweils die letzte mögliche IP-Adresse der in Aufgabe aa) ermittelten Netzwerke sein. Für das Rechenzentrum und die IT-Abteilung (VLAN 99) soll das komplette private Netzwerk 10.0.0.0 /8 verwendet werden. Auch hier soll das Standardgateway die letzte mögliche IP-Adresse im Netzwerk erhalten.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "VLAN 10: 172.19.255.254. VLAN 20: 172.23.255.254. VLAN 30: 172.27.255.254. VLAN 40: 172.31.255.254. VLAN 99: 10.255.255.254.",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 150,
+            "y": 345,
+            "maxWidth": 350,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.a.ac",
+          "label": "ac)",
+          "prompt": "Neben den beiden oben verwendeten privaten Bereichen existiert ein weiterer privater IP-Adressbereich, der für interne Netze genutzt werden kann (RFC 1918). Geben Sie für diesen Bereich die Netz-ID und Netzmaske in CIDR-Notation an.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "192.168.0.0 /16",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 52,
+            "y": 124,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.ba",
+          "label": "b) ba)",
+          "prompt": "Die Verteilung der IP-Adressen der einzelnen VLANs soll ein zentraler DHCP-Dienst auf dem Server1 im Rechenzentrum übernehmen. Für jedes VLAN wurde auf dem Server ein passender Bereich eingerichtet. Da die Internetverbindung an einem Client im VLAN 10 nicht funktioniert, überprüfen Sie die Netzwerkkonfiguration: IPv4-Adresse 169.254.134.79, Subnetzmaske 255.255.0.0. Beschreiben Sie, warum der Client diese IP-Adresse verwendet.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Der Client kann den DHCP-Server nicht erreichen und erzeugt sich dann selbstständig eine Adresse aus diesem Bereich (APIPA). Alternativ: Bei IPv4-Adresskonflikten kann ebenfalls diese Adresse zugeordnet werden.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 685,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bb",
+          "label": "bb)",
+          "prompt": "Bei einer genaueren Analyse des Problems stellen Sie fest, dass alle Clients in den VLANs 10-40 eine IP-Adresse aus diesem APIPA-Bereich verwenden. Lediglich die Clients im Rechenzentrum im VLAN 99 (IT) erhalten vom DHCP-Server eine IP-Adresse aus dem eigentlich vorgesehenen Bereich. Beschreiben Sie eine mögliche Ursache und Lösung dieses Problems.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Vermutlich ist keine DHCP-Weiterleitung eingerichtet. DHCP arbeitet mit Broadcast-Nachrichten, die nicht in ein anderes Netz weitergeleitet werden (nur die Clients im selben Netz wie der DHCP-Server, VLAN 99, funktionieren). Dies muss auf dem Core-Switch manuell aktiviert werden (DHCP-Relay/IP-Helper).",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 545,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.ca",
+          "label": "c) ca)",
+          "prompt": "Für die Verbindung zwischen den VLANs wird der Core-Switch verwendet, der für jedes VLAN als Standardgateway dient. Dieser ist über ein Verbindungsnetz (192.168.250.0 /30) mit dem Router des Unternehmens verbunden, der die Verbindung zum Internet herstellt. Erläutern Sie, warum Sie beim Core-Switch lediglich eine Default-Route in der Routingtabelle ergänzen müssen.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Alle internen Netze sind direkt mit dem Core-Switch verbunden. Nur Traffic, der in ein entferntes Netz (das Internet) geschickt werden muss, muss an den Router gesendet werden.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 335,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cb",
+          "label": "cb)",
+          "prompt": "Tragen Sie die notwendige Default-Route in die folgende Tabelle ein (Netzwerk-ID, Subnetzmaske dezimal, Next-Hop). Der Router ist über das Verbindungsnetz 192.168.250.0/30 erreichbar (Core-Switch: 192.168.250.1, Router: 192.168.250.2).",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Netzwerk-ID: 0.0.0.0. Subnetzmaske (dezimal): 0.0.0.0. Next-Hop: 192.168.250.2.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 200,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.d.da",
+          "label": "d) da)",
+          "prompt": "Aktuell erhält die Firma von ihrem Provider über einen DSL-Anschluss eine einzige öffentliche IPv4-Adresse. Erläutern Sie, wie es technisch realisiert wird, dass alle internen Geräte mit einer einzigen öffentlichen IP-Adresse mit dem Internet kommunizieren können.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Durch NAT und PAT wird beim Verlassen des Firmennetzes durch den Router die interne private Adresse und die Portnummer durch die öffentliche IPv4-Adresse und eine neue Portnummer ersetzt. Auf dem Rückweg des Traffics wird dieser Tausch rückgängig gemacht.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 124,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.d.db",
+          "label": "db)",
+          "prompt": "Nennen Sie einen Vor- und einen Nachteil einer solchen Konfiguration (NAT/PAT auf eine einzige öffentliche Adresse).",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Vorteil: Die interne Struktur des Netzes ist nach außen nicht sichtbar (Masquerading) — viele Geräte können über eine einzige öffentliche IPv4-Adresse mit dem Internet kommunizieren. Nachteil: Interne Geräte sind von außen nicht ohne Weiteres direkt adressierbar — keine echte Ende-zu-Ende-Verbindung bei der Kommunikation.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 758,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.e.ea",
+          "label": "e) ea)",
+          "prompt": "Die Firma erwägt, zukünftig auch über IPv6 auf das Internet zuzugreifen und erhält daher von ihrem Provider das öffentliche Präfix 2001:db8:1234:: /56. Intern möchte die Firma bei der Adressvergabe SLAAC verwenden. Berechnen Sie nachvollziehbar, wie viele Subnetze die Firma mit diesem Netzwerk maximal erstellen kann.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die letzten 64 Bit dürfen nicht verwendet werden (Interface-ID für SLAAC). Für das Subnetting steht der Bereich ab dem 56. Bit zur Verfügung: 64 − 56 = 8. Mit diesen 8 Bit können 256 Subnetze gebildet werden (2 hoch 8).",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 630,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.e.eb",
+          "label": "eb)",
+          "prompt": "Geben Sie die Netz-ID für das erste und das letzte dieser Subnetze in gekürzter Schreibweise an.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Erstes Netz: 2001:db8:1234::/64. Letztes Netz: 2001:db8:1234:ff::/64.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 530,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 22,
+      "intro": "Sie sind an der Inbetriebnahme des Netzwerks am neuen Standort beteiligt.",
+      "parts": [
+        {
+          "id": "3.a.aa",
+          "label": "a) aa)",
+          "prompt": "Sie prüfen intern die Erreichbarkeit des Internetgateways/Routers mittels ping (unter Linux und Windows: `ping router.ihk-med.de` bzw. `ping -c 4 router.ihk-med.de`, jeweils aufgelöst zu router.ihk-med.de(2001:db8:1234::1), 4 von 4 Paketen erfolgreich beantwortet, 0% Verlust). Nennen Sie den Rückschluss, den Sie aus den Ausgaben hinsichtlich der Erreichbarkeit und des verwendeten Protokolls ziehen können.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Der Router ist mit IPv6 erreichbar (weitere Lösungen möglich, z. B. ICMPv6).",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 74,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ab",
+          "label": "ab)",
+          "prompt": "Sie überprüfen die Namensauflösung im Netzwerk: `nslookup www.google.de` liefert die Ausgabe: (Zeile 2) Server: ns.ihk-med.de, (Zeile 3) Address: 2001:db8:1234::53, (Zeile 4) Nicht autorisierende Antwort:, (Zeile 5) Name: www.google.de, (Zeile 6) Addresses: 2a00:1450:4001:815::2003, (Zeile 7) 142.251.36.163. Beschreiben Sie stichwortartig die Zeilen 2 bis 7.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Zeile 2: Name des antwortenden DNS-Servers; hier ns.ihk-med.de. Zeile 3: IP-Adresse des DNS-Servers; hier IPv6-Adresse 2001:db8:1234::53. Zeile 4: „nicht autorisierende Antwort\" gibt an, dass es kein offizieller DNS-Server bzw. ein lokaler DNS-Server ist. Zeile 5: Name des abgefragten Servers; hier www.google.de. Zeile 6: IPv6-Adresse von www.google.de: 2a00:1450:4001:815::2003. Zeile 7: IPv4-Adresse von www.google.de: 142.251.36.163.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 175,
+            "y": 652,
+            "maxWidth": 380,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "Einer der Mitarbeiter klagt über die lange Übertragungsdauer bei der Speicherung von großen Dateien auf den Fileserver. Switch und Netzwerkkarte im Client sind Gigabitfähig! Am Client wird im Status von Ethernet eine Übertragungsrate von 100,0 MBit/s angezeigt. Nennen Sie zwei mögliche Ursachen für diesen Fehler.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Falsche Konfiguration der Netzwerkkarte, 100 Mbit/sec eingestellt. Falsche Konfiguration des Ports am Switch; 100 Mbit/sec eingestellt. Fehlerhafte Verbindung in der Netzwerkverkabelung.",
+          "referenceImage": "/exams/si-2024-winter-teil2/page-09.png",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 87,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c.ca",
+          "label": "c) ca)",
+          "prompt": "Der Webserver der IHK-Med AG funktioniert nicht zuverlässig. Sie prüfen die Erreichbarkeit des Servers von mehreren Geräten aus: ein Ping auf www.ihk-med.de (51.38.104.145) schlägt fehl (100% Verlust, Zeitüberschreitung der Anforderung), aber ein Test des HTTP-Dienstes über die Kommandozeile (telnet www.ihk-med.de 80 bzw. Test-NetConnection -port 80) funktioniert erfolgreich (TcpTestSucceeded: True). Beschreiben Sie eine mögliche Ursache, warum der Ping zu www.ihk-med.de keine Antwort liefert, der Test des HTTP-Dienstes über die Kommandozeile aber funktioniert.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Am Webserver ist das Protokoll ICMP abgeschaltet. Die Website www.ihk-med.de ist durch eine Firewall geschützt, die ICMP bzw. Ping blockiert. Die eigene Firewall blockiert ausgehende bzw. zurückkommende ICMP-Pakete.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 250,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c.cb",
+          "label": "cb)",
+          "prompt": "Beim Aufruf der Webseite www.ihk-med.de im Webbrowser erhalten Sie folgende Fehlermeldung: „404 - File not found, content parameter is null\". Beschreiben Sie eine mögliche Fehlerursache.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Im Webserver ist kein Default-Eintrag auf „index.html\" o. Ä. konfiguriert. Die Datei „index.html\" o. Ä. ist nicht vorhanden. Der Dateipfad zu „index.html\" o. Ä. ist nicht verfügbar.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 658,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.d",
+          "label": "d)",
+          "prompt": "Der Kunde betreibt am alten Standort einen FTP-Server. Am neuen Standort wird ein leistungsfähigerer Server mit dem FQDN ftp1.ihk-med.de aufgebaut. Für den alten FQDN ftp.ihk-med.de wurde eine Weiterleitung eingerichtet. Nun berichten externe Nutzer von Verbindungsproblemen beim Zugriff über den alten FQDN. Sie prüfen die DNS-Einträge: ihk-med.de A 203.0.113.80; ihk-med.de AAAA 2001:db8:1234::80; ftp1.ihk-med.de A 203.0.113.21; ftp1.ihk-med.de AAAA 2001:db8:1234::21; ftp.ihk-med.de CNAME ihk-med.de; ns.ihk-med.de A 203.0.113.53; ns.ihk-med.de AAAA 2001:db8:1234::53. Beschreiben Sie den Grund, warum der Server nicht erreichbar ist, und machen Sie einen Vorschlag zur Fehlerbeseitigung.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Grund: Der Alias-DNS-Eintrag CNAME für ftp.ihk-med.de zeigt auf den DNS-Namen ihk-med.de (IP 203.0.113.80) statt auf ftp1.ihk-med.de. Somit wird die Anfrage auf einen falschen Server weitergeleitet. Fehlerbeseitigung: Eintrag ändern auf „ftp.ihk-med.de. CNAME ftp1.ihk-med.de.\" — oder den CNAME-Eintrag löschen und stattdessen zwei eigene Einträge „ftp.ihk-med.de. A 203.0.113.21\" und „ftp.ihk-med.de. AAAA 2001:db8:1234::21\" anlegen.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 397,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 23,
+      "intro": "Die IHK-Med AG setzt zur Sicherung des internen Netzes eine sogenannte Next Generation Firewall (NGFW) ein. Auf dieser ist unter anderem das Feature „SSL/TLS Inspection\" vorhanden, über dessen Einsatz bei einer Besprechung entschieden werden soll.",
+      "parts": [
+        {
+          "id": "4.a.aa",
+          "label": "a) aa)",
+          "prompt": "Ihr Vorgesetzter bittet Sie, zur Vorbereitung auf die Besprechung einige Fragen zu beantworten. Erläutern Sie, wie es der NGFW gelingt, den HTTPS-Traffic eines internen Clients zu einer externen Webseite trotz der TLS-Verschlüsselung zu untersuchen.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Es kommt keine direkte Verbindung zwischen Client und Webseite zustande. Stattdessen wird eine HTTPS-Verbindung zwischen Client und NGFW mittels eines eigenen NGFW-Zertifikats aufgebaut, sowie eine weitere HTTPS-Verbindung zwischen NGFW und der externen Website. Dadurch kann die NGFW als (gewünschter) Man-in-the-Middle fungieren und die Daten der Website hinsichtlich der Vorgaben überprüfen.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 697,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.a.ab",
+          "label": "ab)",
+          "prompt": "Nennen Sie einen sicherheitsrelevanten Vorteil für die IHK-Med AG, welcher für den Einsatz von SSL/TLS Inspection spricht.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Überprüfen der Inhalte der Website trotz TLS/HTTPS-Verschlüsselung möglich (z. B. Erkennen von Malware oder Datenexfiltration in verschlüsseltem Verkehr).",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 496,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.a.ac",
+          "label": "ac)",
+          "prompt": "Nennen Sie zwei Nachteile für das Unternehmen, die gegen den Einsatz von SSL/TLS Inspection sprechen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Man-in-the-Middle- (MitM) Angriffe innerhalb der NGFW werden erst möglich. Der Datenschutz hinsichtlich des Mitarbeiters ist kompromittiert. Höhere Performance der NGFW notwendig. Bestimmte Dienste/Seiten im Internet sind ggf. nicht funktionsfähig. Die Ende-zu-Ende-Verbindung wird aufgebrochen.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 395,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.a.ad",
+          "label": "ad)",
+          "prompt": "Nennen Sie eine rechtliche bzw. organisatorische Maßnahme, welche Sie durchführen müssen, bevor Sie SSL/TLS Inspection durchführen dürfen.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Verbieten der privaten Nutzung des Internets — oder: Information des Mitarbeiters bzw. Einbindung des Betriebsrates.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 52,
+            "y": 240,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.ba",
+          "label": "b) ba)",
+          "prompt": "Nach Abwägen der Vor- und Nachteile hat sich die IHK-Med AG für den Einsatz der SSL/TLS Inspection entschieden und die notwendigen rechtlichen bzw. organisatorischen Maßnahmen wurden durchgeführt. Auf der NGFW wurde eine Intermediate CA eingerichtet, um die NGFW-Zertifikate zu signieren. Bei ersten Tests treten Probleme beim Zugriff auf HTTPS-Websites auf. Erläutern Sie die Fehlermeldung des Webbrowsers `SEC_ERROR_UNKNOWN_ISSUER` und machen Sie einen Vorschlag zur Fehlerbehebung bezogen auf die NGFW. Dabei soll die SSL/TLS Inspection weiterhin aktiv bleiben.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Fehler: Die (Intermediate) CA ist dem Browser nicht bekannt. Behebung: Intermediate CA im Browser oder Betriebssystem als vertrauenswürdig hinterlegen.",
+          "pdfAnchor": {
+            "page": 12,
+            "x": 52,
+            "y": 669,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.bb",
+          "label": "bb)",
+          "prompt": "Erläutern Sie die Fehlermeldung `SEC_ERROR_EXPIRED_ISSUER_CERTIFICATE` und machen Sie einen Vorschlag zur Fehlerbehebung bezogen auf die NGFW. Dabei soll die SSL/TLS Inspection weiterhin aktiv bleiben.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Fehler: Die Gültigkeitsdauer des (Intermediate) Zertifikats ist abgelaufen. Behebung: Neues Intermediate Zertifikat erstellen mit validem Gültigkeitszeitraum. (Alternativ: Fehler ist eine falsche Systemzeit des Clients; Behebung: Systemzeit aktualisieren.)",
+          "pdfAnchor": {
+            "page": 12,
+            "x": 52,
+            "y": 548,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.bc",
+          "label": "bc)",
+          "prompt": "Erläutern Sie die Fehlermeldung `SSL_ERROR_VERSION_OR_CIPHER_MISMATCH` und machen Sie einen Vorschlag zur Fehlerbehebung bezogen auf die NGFW. Dabei soll die SSL/TLS Inspection weiterhin aktiv bleiben.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Fehler: Die von der NGFW angebotene SSL/TLS-Version oder die vorgeschlagene Verschlüsselung stimmen nicht mit den im Browser erwarteten Versionen überein. Behebung: Browser aktualisieren — oder SSL/TLS-Cache löschen bzw. System neu starten — oder die NGFW-Firmware updaten.",
+          "pdfAnchor": {
+            "page": 12,
+            "x": 52,
+            "y": 427,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    }
+  ]
+}

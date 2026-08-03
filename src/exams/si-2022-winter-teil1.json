@@ -1,0 +1,214 @@
+{
+  "id": "si-2022-winter-teil1",
+  "title": "Systemintegration – Winter 2022/23 (Aufgabensatz 1)",
+  "profession": "SI",
+  "period": {
+    "year": 2022,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Winter 2022/23, ZPA Nord-West — Konzeption und Administration von IT-Systemen, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 27,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie sind bei dem IT-Systemhaus FUBA SE als Fachinformatiker für Systemintegration beschäftigt. Im Auftrag der FUBA SE betreuen Sie zurzeit die zentralen IT-Systeme bei dem Möbelhaus Rusticus GmbH. In diesem Zusammenhang sind folgende Aufgaben zu bearbeiten: 1. Einrichtung und Betrieb einer Datenbankinfrastruktur, 2. Die Kundendatenbank verwalten, 3. Backup und Restore, 4. Systeme überwachen.\n\nBei der Rusticus GmbH soll im Zuge der Digitalisierungsinitiative ein neuer Datenbankserver aufgebaut werden, da mit einem erhöhten Datenaufkommen zu rechnen ist. Sie werden mit der Planung und Durchführung der Migration beauftragt.",
+      "parts": [
+        {
+          "id": "1.a",
+          "label": "a)",
+          "prompt": "Sie prüfen die folgenden Alternativen für den Aufbau eines neuen Datenbankservers. Nennen Sie je drei Vorteile für ein Hosting On Premises und die Nutzung der Public Cloud.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Vorteile On Premises: 100 % Zugriff auf die Systeme, garantierte Datenhoheit, Flexibilität bei der Hardware, Nähe zu anderen On-Premises-Systemen. Vorteile der Public Cloud: flexible Bezahlmodelle (Pay-As-You-Go/Pay-per-Use oder langfristige Systemreservierungen), keine Update-, Plattform- oder Infrastrukturverantwortung bei der Nutzung von Services, Backup- und Recovery-Mechanismen als Service beziehbar. Weitere Lösungen sind möglich; „billiger\" allein ist als Argument zu unpräzise."
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "Mit einem virtuellen Datenbankserver in der Public Cloud testen Sie das Datenübertragungsverhalten von einer lokalen Anwendung in die Cloud und kommen zu schlechten Ergebnissen bezüglich der Latenz. Beschreiben Sie den Begriff der Latenz und geben Sie zwei Gründe für eine hohe Latenz an.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Die Latenz ist die Laufzeit eines Signals in einem technischen System (alternativ: die Verzögerung zwischen Senden und Empfangen eines Signals). Gründe für eine hohe Latenz: längere Leitungen, mehrere aktive Netzwerkkomponenten, überlastete Komponenten, Warteschlangen bei mehrfach belegten Leitungen, u. a."
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Beschreiben Sie einen Fall, in dem sich eine hohe Latenz besonders negativ auf die Performance auswirkt.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Besonders beim Austausch vieler kleiner Dateien oder seriellen SQL-Anfragen mit kleinen Ergebnismengen über verbindungsorientierte Protokolle wirkt sich die Latenz durch den im Verhältnis deutlichen Overhead an zu übermittelnden Informationen negativ auf die Systemperformanz aus."
+        },
+        {
+          "id": "1.c.ca",
+          "label": "c) ca)",
+          "prompt": "Sie entscheiden sich für einen lokalen Datenbankserver. Dieser soll eine hohe Verfügbarkeit aufweisen. In der Tabelle ist als Beispiel bereits „RAID-6-System verwenden\" (Erhöhung der System- und Datenverfügbarkeit durch Vermeidung von Datenverlust bei einem Plattenausfall) eingetragen. Vervollständigen Sie die Tabelle um drei weitere geeignete Maßnahmen (RAID-Variationen sind nicht zulässig).",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Redundante Netzteile: Erhöhung der Systemverfügbarkeit durch Vermeidung von Systemausfällen bei einem einfachen Netzteilausfall. Redundante Netzwerkkarten: Erhöhung der Systemverfügbarkeit durch Vermeidung von Systemausfällen bei einem einfachen Netzwerkkartenausfall. Server-Cluster: Erhöhung der Systemverfügbarkeit durch Vermeidung von Systemausfällen bei Ausfall einer Netzwerkkomponente. USV: Sicherstellung der Systemverfügbarkeit durch Vermeidung von Systemausfällen bei einem Stromausfall. (Drei der genannten Maßnahmen genügen; weitere Lösungen möglich.)"
+        },
+        {
+          "id": "1.c.cb",
+          "label": "cb)",
+          "prompt": "Als Datenspeicherlösung stehen zwei Storage Arrays mit je maximal acht Festplatten zu je 2 TiB zur Verfügung. Die Datenbank ist 5 TiB groß. Zusätzlich werden 3 TiB für Nutzdaten und 5 TiB als Puffer benötigt. Um die geforderte Verfügbarkeit sicherzustellen, entscheiden Sie sich unter anderem zur Nutzung von RAID 6 mit Hot-Spare-Festplatte. Berechnen Sie, wie viele Festplatten benötigt werden, um den Speicherbedarf zu decken und die Architekturanforderungen zu erfüllen.",
+          "points": 5,
+          "type": "number",
+          "correctValue": 10,
+          "tolerance": 0,
+          "modelAnswer": "5 TiB + 3 TiB + 5 TiB = 13 TiB benötigter Speicherplatz. 13 TiB / 2 TiB = 6,5 → 7 Festplatten zur Speicherung der Datenmenge. 7 + 2 (RAID-6-Parität) + 1 (Hot Spare) = 10 Festplatten."
+        },
+        {
+          "id": "1.d.da",
+          "label": "d) da)",
+          "prompt": "Einige Zulieferer erstellen weiterhin Lieferscheine, Angebote und Rechnungen in Papierform. Diese sollen digital archiviert werden. Pro Monat werden 30 GiB Dokumentendaten erzeugt. Diese werden mit einer Komprimierungsrate von 60 % gepackt und auf ein Archivsystem kopiert, auf dem 1 TiB Speicher für die Daten reserviert ist. Dort sollen Sie für zehn Jahre gespeichert werden. Berechnen Sie den Speicherplatz, der für die Speicherung der Daten für zehn Jahre benötigt wird.",
+          "points": 2,
+          "type": "number",
+          "correctValue": 1440,
+          "tolerance": 1,
+          "modelAnswer": "30 GiB * 0,4 (60 % Komprimierungsrate) * 12 Monate * 10 Jahre = 1.440 GiB Gesamt in 10 Jahren."
+        },
+        {
+          "id": "1.d.db",
+          "label": "db)",
+          "prompt": "Berechnen Sie, wie lange der reservierte Speicher reicht. Runden Sie auf ganze Jahre ab.",
+          "points": 2,
+          "type": "number",
+          "correctValue": 7,
+          "tolerance": 0,
+          "modelAnswer": "1.024 GiB / (30 GiB * 0,4 * 12 Monate) = 1.024 GiB / 144 GiB/Jahr = 7,1 Jahre. Der reservierte Speicher reicht für sieben Jahre."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 23,
+      "intro": "Sie werden mit Aufgaben im Zusammenhang mit dem Datenbanksystem bei der Rusticus GmbH beauftragt. Zur Speicherung der erfassten Kundendaten soll eine Datenbank zum Einsatz kommen. Als Hilfestellung zur Aufgabe können Sie die SQL-Syntax (siehe perforierte Anlage) benutzen. Es sind folgende Tabellen vorgesehen: Tabelle „Kunde\" (PK KundenNr, Vorname, Name, Straße, HausNr, PLZ, Ort, Kunde_Aktiv) in 1:n-Beziehung zur Tabelle „Werbeaktion\" (PK WerbungsID, Werbepartner, Werbung_verschickt, FK KundenNr).",
+      "referenceImage": "/exams/si-2022-winter-teil1/page-04.png",
+      "externalReference": {
+        "page": 5,
+        "label": "Anlage: SQL-Syntax (Auszug)"
+      },
+      "parts": [
+        {
+          "id": "2.a.aa",
+          "label": "a) aa)",
+          "prompt": "Für einige der Tabelleneinträge fehlen die hinsichtlich eines geringen Speicherbedarfs und einer digitalen Weiterverarbeitung am besten geeigneten SQL-Datentypen. In der Tabelle sind bereits vorgegeben: WerbungsID = int, Werbepartner = varchar(50), Werbung_verschickt = date. Tragen Sie diese SQL-Datentypen für die übrigen Musterwerte (KundenNr: 12345, PLZ: 01234, Telefonnummer: 0123/112233, Kunde_Aktiv: true, Erfasst am: 11.05.2022, IBAN: DE12123456780123456789) in die freien Felder der Spalte SQL-Datentyp ein.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "KundenNr: int. PLZ: char(5) (feste Länge, keinesfalls kürzer). Telefonnummer: varchar(16) (sinnvolle Begrenzung nötig). Kunde_Aktiv: boolean. Erfasst am: date. IBAN: char(22) (feste Länge)."
+        },
+        {
+          "id": "2.a.ab",
+          "label": "ab)",
+          "prompt": "Erstellen Sie eine SQL-Abfrage, um zu ermitteln, wie viele Kunden in Augsburg im Status aktiv sind.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "SELECT COUNT(*) FROM Kunde WHERE Ort = 'Augsburg' AND Kunde_Aktiv = 'true'"
+        },
+        {
+          "id": "2.a.ac",
+          "label": "ac)",
+          "prompt": "Erstellen Sie einen SQL-Befehl, der die Tabelle „Werbeaktion\" erstellt.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "CREATE TABLE Werbeaktion ( WerbungsID int NOT NULL, Werbepartner varchar(50), Werbung_verschickt date, KundenNr int, PRIMARY KEY (WerbungsID), FOREIGN KEY (KundenNr) REFERENCES Kunde(KundenNr) )"
+        },
+        {
+          "id": "2.a.ad",
+          "label": "ad)",
+          "prompt": "Erstellen Sie eine SQL-Abfrage, um zu ermitteln, wie viele Werbungen vor dem 31.12.2021 an Kunden versendet wurden, deren Postleitzahl mit der Ziffer 8 beginnt.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "SELECT COUNT(*) FROM Kunde INNER JOIN Werbeaktion ON Kunde.KundenNr = Werbeaktion.KundenNr WHERE Kunde.PLZ LIKE '8%' AND Werbung_verschickt < '2021-12-31'"
+        },
+        {
+          "id": "2.b",
+          "label": "b)",
+          "prompt": "Nennen Sie zwei nicht-relationale Datenbanktypen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Dokumentendatenbanken, Vektor-/Graphendatenbanken, Key-Value-Datenbanken, spaltenorientierte Datenbanken, Objektdatenbanken, u. a. (zwei genügen)."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 25,
+      "intro": "Im Möbelhaus Rusticus soll eine Datensicherung eingerichtet werden. Dabei müssen unter anderem Aspekte des Datenschutzes berücksichtigt werden.",
+      "parts": [
+        {
+          "id": "3.a",
+          "label": "a)",
+          "prompt": "Der Einsatz der LTO-Technologie mit dem „Linear Tape File System\" wird zur Datensicherung in Erwägung gezogen. Erklären Sie anhand der beiden folgenden Texte die jeweiligen Vorteile, die diesen Einsatz rechtfertigen können. Text 1: \"LTO tape technology is expected to remain significantly less expensive than hard disk storage for years to come, according to IDC. A separate Economic Validation Study by ESG found that an LTO-8 solution provides an expected total cost of ownership that is 86 % lower than an all-disk solution over a 10-year period.\" Text 2: \"LTFS (Linear Tape File System) is a free and easy-to-use software utility that allows LTO tape drives to connect and operate just like a large hard disk, in contrast to a standardized tape recovery solution. Users can drag and drop files at high speed directly from tape onto the desktop or vice-versa. LTFS is ideal for large data file transportation or archiving tasks.\"",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Über zehn Jahre ist die TCO (Total Cost of Ownership) mit 86 % geringer als bei üblichen Disk-Lösungen. Das Dateisystem LTFS erlaubt einfache Drag&Drop-Operationen auf dem Desktop."
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "Es kommen folgende Backupverfahren in Frage: Vollbackup, Differenzielles Backup, Inkrementelles Backup, Klonen. Erläutern Sie die genannten Backupverfahren unter Berücksichtigung des benötigten Speichervolumens und den Auswirkungen auf das Archivbit.",
+          "points": 10,
+          "type": "text",
+          "modelAnswer": "Vollbackup: komplettes Backup eines Laufwerks/einer Partition/eines Verzeichnisses; alle Informationen der Auswahl werden vollständig kopiert; Archivbit wird zurückgesetzt. Differenzielles Backup: sichert nach einem ersten Vollbackup ausschließlich die Dateien, die sich von diesem Vollbackup unterscheiden; benötigt im Vergleich wenig Speicherplatz, die differenziellen Backups bauen nicht aufeinander auf; Archivbit wird nicht zurückgesetzt. Inkrementelles Backup: sichert nach einem ersten Vollbackup ausschließlich die Dateien, die sich seit dem vorangegangenen inkrementellen Backup verändert haben oder neu hinzugekommen sind; benötigt am wenigsten Speicherplatz und ist am schnellsten; Archivbit wird zurückgesetzt. Klonen: 1-zu-1-Kopie in einer Datenträger-Abbild-Datei (Image), die alle Informationen inkl. Dateisystem und Benutzereinstellungen enthält und der Datenmenge des ursprünglichen Datenträgers entspricht; Archivbit wird nicht verändert."
+        },
+        {
+          "id": "3.c",
+          "label": "c)",
+          "prompt": "Im Möbelhaus Rusticus gibt es einen festen Backup-Plan. Nach einem Ausfall der Festplatten des Möbelhauses Rusticus am Samstag, dem 09.07.2022 um 10 Uhr, muss jedoch eine Datenwiederherstellung gemacht werden. Das letzte Backup ist vom 08.07.2022. Sicherungsplan: So 03.07. Band V2 (Vollsicherung), Mo 04.07. Band D1 (Differenziell), Di 05.07. Band D2 (Differenziell), Mi 06.07. Band D3 (Differenziell, sollte laut Plan sein, wurde aber aufgrund einer fehlerhaften Konfiguration fälschlicherweise als Inkrementell durchgeführt), Do 07.07. Band D4 (Differenziell), Fr 08.07. Band D5 (Differenziell), Sa 09.07. Band D6 (Differenziell), So 10.07. Band V3 (Vollsicherung). Sie bemerken bei der Datenwiederherstellung, dass aufgrund einer fehlerhaften Konfiguration des Datensicherungsprogramms jeden Mittwoch anstatt einer differenziellen Sicherung immer eine inkrementelle Sicherung durchgeführt wurde. Nennen Sie die Bandbezeichnung der Bänder in der richtigen Reihenfolge, die zur Wiederherstellung der Daten erforderlich sind.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "V2 & D3 & D5. Die letzte Vollsicherung wird immer benötigt (V2). Da aufgrund des Fehlers am Mittwoch fälschlicherweise eine inkrementelle Sicherung stattfand, wurde das Archivbit aller gesicherten Dateien auf „0\" gesetzt. Daher sichert die differenzielle Sicherung am Donnerstag nur die Dateien, die von Mittwoch auf Donnerstag geändert oder neu erzeugt wurden und deren Archivbit auf „1\" steht — das aktuellste (letzte) differenzielle Backup nach diesem Reset genügt somit, hier D5 vom Freitag."
+        },
+        {
+          "id": "3.d",
+          "label": "d)",
+          "prompt": "Im Möbelhaus Rusticus sollen die Zugangskontrolle und die Zugriffskontrolle im Hinblick auf die existierenden technisch organisatorischen Maßnahmen (TOM) überprüft werden. Vorgegebene Beispiele: Alarmanlagen = Zugangskontrolle, Passwortregeln = Zugriffskontrolle. Ordnen Sie die übrigen Maßnahmen (Chipkarten für verschlossene Bereiche, Besucheranmeldung am Empfang, Verschlüsselung von Datenträgern, Datenschutzkonforme Vernichtung von Datenträgern, Generierung von Benutzerprofilen) den jeweiligen Kontrollen zu. Mehrfachnennungen sind möglich.",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Chipkarten für verschlossene Bereiche: Zugangskontrolle. Besucheranmeldung am Empfang: Zugangskontrolle. Verschlüsselung von Datenträgern: Zugriffskontrolle. Datenschutzkonforme Vernichtung von Datenträgern: Zugriffskontrolle. Generierung von Benutzerprofilen: Zugangskontrolle und Zugriffskontrolle."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 25,
+      "intro": "Im Rahmen der Systembetreuung bei der Rusticus GmbH sollen Sie folgende Aufgaben erledigen. Das Programm zur Überwachung der Arbeitsspeicher-Auslastung des Webservers speichert den maximalen Wert der Arbeitsspeicher-Auslastung einer jeden Stunde in einem eindimensionalen Array als ganzzahligen Prozentwert. Darstellung der Werte im Array — Array-Index 0 bis 23 (Stunde 0 bis 1 Uhr ... 23 bis 0 Uhr), Array-Werte: 17,17,16,18,20,25,33,44,40,52,60,56,33,44,40,52,60,56,33,44,34,28,23,16.\n\nEine Programmerweiterung soll den Mittelwert von diesen Werten berechnen. Überschreitet der Mittelwert 75 %, soll eine Messagebox mit Titel „Warnung\" und dem Text „Wenig freier Speicher\" angezeigt werden.\n\nVorgegebener Programmentwurf: string message = \"Wenig freier Speicher\"; //Warnmeldung — string title = \"Warnung\"; //Titel der Messagebox — int avgUsedRam = 0; //Mittelwert Tag — int sumTemp = 0; //Summe der Stundenwerte — int[] usedRAM = new int[24] {17,17,16,18,20,25,33,44,40,52,60,56,33,44,40,52,60,56,33,44,34,28,23,16}; //Array mit Testdaten — dann folgen vier leere Bereiche, zu ergänzen mit: //Schleifenkopf, //Schleifenrumpf, //Berechnung Mittelwert, //Ausgabe Warnmeldung.",
+      "externalReference": {
+        "page": 11,
+        "label": "Anlage Syntax zu Aufgabe 4 a): Schleifenarten, Auswahlanweisung, Kommentare, Messagebox"
+      },
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Vervollständigen Sie den vorliegenden Programmentwurf entsprechend der Anforderung. Orientieren Sie sich dabei an den vorgegebenen Kommentaren und nutzen Sie die Anlage „Syntax\" (siehe Seite 11).",
+          "points": 16,
+          "type": "text",
+          "modelAnswer": "//Schleifenkopf: for (int i = 0; i < 24; i++) //Schleifenrumpf: sumTemp = sumTemp + usedRAM[i]; //Berechnung Mittelwert: avgUsedRAM = sumTemp / 24; //Ausgabe Warnmeldung: if (avgUsedRAM > 75) MessageBox.Show(message, title); (4 x 4 Punkte)"
+        },
+        {
+          "id": "4.b",
+          "label": "b)",
+          "prompt": "Die Programmentwicklung soll objektorientiert erfolgen, damit die Vorteile von Datenkapselung und Vererbung genutzt werden können. Erläutern Sie die Konzepte von Datenkapselung und Vererbung.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Datenkapselung: Bei der objektorientierten Programmierung wird mit sogenannten „Klassen\" gearbeitet. Diese bestehen aus Attributen und Methoden. Die Attribute und Methoden können für den Zugriff von anderen Programmteilen ganz oder teilweise gesperrt werden. Auf die Attribute soll nur über entsprechende Methoden zugegriffen werden können. Vererbung: Bei der objektorientierten Programmierung können Klassen aufeinander aufbauen. Eine abgeleitete Klasse kann Eigenschaften und Methoden von einer übergeordneten Klasse erben."
+        },
+        {
+          "id": "4.c",
+          "label": "c)",
+          "prompt": "Im Rahmen der Speichererweiterung überprüfen Sie die Angaben der verbauten Speichermodule im Datenbankserver. Die Speichermodule sind wie folgt gekennzeichnet: DDR4-3200 (PC4-25600), CAS Latency (CL) 16, ECC. Vervollständigen Sie die Tabelle mit den Werten für Effektiver Takt (MHz), Datenrate am 64-Bit-Bus (GB/s) und Verzögerung-Adressumschaltung (Taktzyklen).",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Effektiver Takt: 3.200 MHz. Datenrate am 64-Bit-Bus: 25,6 GB/s. Verzögerung-Adressumschaltung: 16 Taktzyklen."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "id": "wiso-2024-winter",
+  "title": "Wirtschafts- und Sozialkunde – Winter 2024/25",
+  "profession": "WISO",
+  "period": { "year": 2024, "season": "Winter" },
+  "examPart": "ap2",
+  "durationMinutes": 60,
+  "totalPoints": 99.92,
+  "sourceNote": "IHK Abschlussprüfung Winter 2024/25, ZPA Nord-West — Teil 2 der Abschlussprüfung, Wirtschafts- und Sozialkunde (1201)",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 3.33,
+      "intro": "Ausgangssituation: Die EcoTec GmbH ist ein IT-Service-Unternehmen und hat 25 Mitarbeiter. Die Aufgaben dieser Prüfung beziehen sich auf dieses Unternehmen.\n\nGesetz zum Schutze der arbeitenden Jugend (Jugendarbeitsschutzgesetz - JArbSchG) - § 19 Urlaub\n(1) Der Arbeitgeber hat Jugendlichen für jedes Kalenderjahr einen bezahlten Erholungsurlaub zu gewähren.\n(2) Der Urlaub beträgt jährlich\nmindestens 30 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 16 Jahre alt ist,\nmindestens 27 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 17 Jahre alt ist,\nmindestens 25 Werktage, wenn der Jugendliche zu Beginn des Kalenderjahrs noch nicht 18 Jahre alt ist.",
+      "parts": [
+        {
+          "id": "1",
+          "prompt": "Moritz Monion hat am 02.03. Geburtstag, ist 17 Jahre alt und beginnt am 01.08.2024 seine Ausbildung bei der EcoTec GmbH. 2025 erhält er 30 Urlaubstage. Ermitteln Sie, wie viele Werktage Herr Monion mehr erhält, als im Jugendarbeitsschutzgesetz als Mindesturlaub vorgeschrieben ist. Tragen Sie die Anzahl der Werktage ein.",
+          "points": 3.33,
+          "type": "number",
+          "correctValue": 5
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "2",
+          "prompt": "Die EcoTec GmbH schließt Ausbildungsverträge mit diversen Auszubildenden ab. Welcher der folgenden Punkte ist nicht zwingend vertraglich in Ausbildungsverträgen festzuhalten?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Art, sachliche und zeitliche Gliederung sowie Ziel der Berufsausbildung",
+            "Beginn und Dauer der Berufsausbildung",
+            "Dauer der regelmäßigen täglichen Ausbildungszeit",
+            "Regelungen zur Gleitzeit",
+            "Ausbildungsmaßnahmen außerhalb der Ausbildungsstätte"
+          ],
+          "correctIndices": [3]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "3",
+          "prompt": "Herr Monion hat Fragen bezüglich der Probezeit. Wie lang muss die Probezeit laut Berufsbildungsgesetz in der Ausbildung mindestens sein?",
+          "points": 3.33,
+          "type": "choice",
+          "options": ["1 Monat", "2 Monate", "3 Monate", "4 Monate", "Eine Probezeit ist nicht zwingend notwendig."],
+          "correctIndices": [0]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "4",
+          "prompt": "Justin Höhler, Mitauszubildender von Herrn Monion, kündigt seinen Ausbildungsvertrag während der Probezeit. Welche der folgenden Feststellung hierzu entspricht dem Berufsbildungsgesetz?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die Kündigung eines Ausbildungsverhältnisses kann mündlich erfolgen.",
+            "Beide Seiten können das Berufsausbildungsverhältnis nur in der ersten Hälfte der Probezeit und zwingend mit Einhaltung einer Kündigungsfrist kündigen.",
+            "Beide Seiten können das Berufsausbildungsverhältnis in der Probezeit ohne Angabe von Gründen und ohne Einhaltung einer Kündigungsfrist kündigen.",
+            "In Betrieben, in denen ein Betriebsrat besteht, muss dieser jeder Kündigung während der Probezeit durch den Arbeitgeber zustimmen.",
+            "Während einer Berufsausbildung kann vom Arbeitgeber nicht, auch nicht in der Probezeit, gekündigt werden."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "5. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "5",
+          "prompt": "In der EcoTec GmbH soll ein neuer Betriebsrat gewählt werden. Welche der folgenden Personengruppen ist nach dem Betriebsverfassungsgesetz (BetrVG) in den Betriebsrat wählbar (passives Wahlrecht)?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Alle Wahlberechtigten, die über 16 Jahre alt sind.",
+            "Alle Betriebsangehörigen",
+            "Alle Wahlberechtigten, die das 18. Lebensjahr vollendet haben und mindestens sechs Monate im Betrieb beschäftigt sind.",
+            "Alle Wahlberechtigten, die mindestens das 21. Lebensjahr vollendet haben und seit einem Monat im Betrieb beschäftigt sind.",
+            "Alle Wahlberechtigten, die der EcoTec GmbH seit mindestens sechs Wochen angehören."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "6. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "6",
+          "prompt": "Maike Schröder, eine Kollegin von Herrn Monion, beschäftigt sich mit dem Aufgabenbereich des Betriebsrats. Sie liest: „Der Betriebsrat sorgt in den Unternehmen für die Umsetzung und Einhaltung von Tarifverträgen.\" Sie hat bisher nur Gewerkschaften mit Tarifverträgen in Verbindung gebracht. Welche der folgenden Darstellungen von Gewerkschaften ist zutreffend? Gewerkschaften …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "sind in den Betrieben für die Schlichtung von Auseinandersetzungen zwischen Arbeitnehmern und Arbeitgebern zuständig.",
+            "handeln mit den Arbeitgeberverbänden auch Betriebsvereinbarungen aus.",
+            "können bei Streitigkeiten zwischen Arbeitgebern und Arbeitnehmern den organisierten Arbeitnehmern Rechtsbeistand leisten.",
+            "haben die Aufgabe, die Betriebsratswahlen zu kontrollieren.",
+            "haben bei Tarifverhandlungen für die Belange aller Arbeitnehmer einzutreten."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "7. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "7",
+          "prompt": "Herr Monion beschäftigt sich mit dem Zustandekommen von Tarifverträgen. Ihm liegt ein zeitlicher Ablaufplan vor. Er ist sich sicher, dass dort die Reihenfolge der Schritte durcheinandergeraten ist. Welche der folgenden Schritte wurden aus Versehen vertauscht? Wählen Sie die zwei zutreffenden Schritte.",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Fristgerechte Kündigung des bestehenden Tarifvertrags",
+            "Aufnahme der Tarifverhandlungen durch die Tarifparteien",
+            "Urabstimmung über einen Arbeitskampf mit nachfolgendem Streik",
+            "Erklärung des Scheiterns der Tarifverhandlungen durch eine der Tarifparteien",
+            "Neue Verhandlungen bei Aussetzung des Streiks",
+            "Urabstimmung über die Verhandlungsergebnisse",
+            "Zustimmung der Tarifparteien zum Ergebnis"
+          ],
+          "correctIndices": [2, 3]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "8",
+          "prompt": "In der EcoTec GmbH wird aktuell überlegt, die tariflich festgelegten Arbeitsbedingungen in einzelnen Punkten zu ändern. Wann sind solche Änderungen zulässig? Die Änderung ist zulässig, wenn …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "sie zugunsten der Arbeitnehmer erfolgt.",
+            "die Berufsgenossenschaft der Änderung zustimmt.",
+            "die Landesregierung der Änderung zustimmt.",
+            "sie zugunsten der EcoTec GmbH erfolgt.",
+            "sie von der Bundesagentur für Arbeit genehmigt wird."
+          ],
+          "correctIndices": [0]
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "9. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "9",
+          "prompt": "Die EcoTec GmbH veröffentlicht in ihrem Intranet die aktuell gültigen Betriebsvereinbarungen. Von wem werden diese Betriebsvereinbarungen abgeschlossen? Die Betriebsvereinbarungen werden abgeschlossen von …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "den Tarifparteien, also dem Arbeitgeberverband und der örtlich zuständigen Industrie- und Handelskammer.",
+            "der Industrie- und Handelskammer und dem Betriebsrat der EcoTec GmbH.",
+            "dem Betriebsrat der EcoTec GmbH und der zuständigen Arbeitsagentur.",
+            "dem Betriebsrat der EcoTec GmbH und der zuständigen Industrie- und Handelskammer.",
+            "der Geschäftsleitung der EcoTec GmbH und dem Betriebsrat."
+          ],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "10. Aufgabe",
+      "points": 3.33,
+      "intro": "Die 17-jährige Auszubildende Daniela Schubert bittet Herrn Monion um Informationen, in welchen Rechtsgrundlagen sie sich bezüglich der nachstehenden Angelegenheiten informieren kann. Ordnen Sie den folgenden Rechtsgrundlagen die jeweils passende Angelegenheit zu.\n\nRechtsgrundlagen: 1 Jugendarbeitsschutzgesetz — 2 Berufsbildungsgesetz — 3 Kündigungsschutzgesetz — 4 Betriebsverfassungsgesetz — 5 Bürgerliches Gesetzbuch",
+      "parts": [
+        {
+          "id": "10.a",
+          "label": "a)",
+          "prompt": "Frau Schubert möchte wissen, ob das Berufsausbildungsverhältnis gekündigt werden kann.",
+          "points": 1.11,
+          "type": "choice",
+          "options": ["Jugendarbeitsschutzgesetz", "Berufsbildungsgesetz", "Kündigungsschutzgesetz", "Betriebsverfassungsgesetz", "Bürgerliches Gesetzbuch"],
+          "correctIndices": [1]
+        },
+        {
+          "id": "10.b",
+          "label": "b)",
+          "prompt": "Frau Schubert möchte wissen, wie viel Pausenzeiten ihr zustehen.",
+          "points": 1.11,
+          "type": "choice",
+          "options": ["Jugendarbeitsschutzgesetz", "Berufsbildungsgesetz", "Kündigungsschutzgesetz", "Betriebsverfassungsgesetz", "Bürgerliches Gesetzbuch"],
+          "correctIndices": [0]
+        },
+        {
+          "id": "10.c",
+          "label": "c)",
+          "prompt": "Frau Schubert möchte wissen, welche Aufgaben die Jugend- und Auszubildendenvertretung hat.",
+          "points": 1.11,
+          "type": "choice",
+          "options": ["Jugendarbeitsschutzgesetz", "Berufsbildungsgesetz", "Kündigungsschutzgesetz", "Betriebsverfassungsgesetz", "Bürgerliches Gesetzbuch"],
+          "correctIndices": [3]
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "11. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "11",
+          "prompt": "Bei der EcoTec GmbH gibt es eine Jugend- und Auszubildendenvertretung (JAV), in der sich Herr Monion engagieren möchte. Welcher der folgenden Aussagen zur JAV ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die regelmäßige Amtszeit in der JAV beträgt vier Jahre.",
+            "Das passive Wahlrecht für die JAV endet mit Vollendung des 18. Lebensjahres.",
+            "Das Mindestalter für das aktive Wahlrecht beträgt 16 Jahre.",
+            "Das aktive Wahlrecht für die JAV endet immer mit Vollendung des 18. Lebensjahres.",
+            "Eine JAV kann nur gewählt werden, wenn bereits ein Betriebsrat besteht."
+          ],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "12. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "12",
+          "prompt": "Herr Monion möchte sich als Kandidat zur JAV aufstellen lassen. Welche der folgenden Voraussetzungen muss er u. a. dafür erfüllen? Herr Monion …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "darf nicht Mitglied des Betriebsrats sein.",
+            "muss die deutsche Staatsangehörigkeit besitzen.",
+            "muss im zweiten Ausbildungsjahr sein.",
+            "darf während der Amtszeit das 25. Lebensjahr nicht überschreiten.",
+            "muss bereits seit mindestens drei Monaten im Betrieb beschäftigt sein."
+          ],
+          "correctIndices": [0]
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "title": "13. Aufgabe",
+      "points": 3.33,
+      "intro": "Grafik zur 13. und 14. Aufgabe: Herr Monion zeigt Frau Schröder das Organigramm der EcoTec GmbH (siehe Abbildung).",
+      "referenceImage": "/exams/wiso-2024-winter/page-05.png",
+      "parts": [
+        {
+          "id": "13",
+          "prompt": "Welches der folgenden Leitungssysteme liegt diesem Organigramm zugrunde?",
+          "points": 3.33,
+          "type": "choice",
+          "options": ["Liniensystem", "Stabliniensystem", "Mehrliniensystem", "Matrixorganisation", "Spartenorganisation"],
+          "correctIndices": [1]
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "14. Aufgabe",
+      "points": 3.33,
+      "referenceImage": "/exams/wiso-2024-winter/page-05.png",
+      "parts": [
+        {
+          "id": "14",
+          "prompt": "Darüber hinaus erläutert Herr Monion Frau Schröder die Organisationsstruktur aus Aufgabe 13. Welche der folgenden Aussagen dazu ist zutreffend?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Die IT-Abteilung ist als Stabsstelle organisiert.",
+            "Stabsstellen kommen auf keiner der Leitungsebenen der EcoTec GmbH vor.",
+            "Das Nachhaltigkeitsmanagement der EcoTec GmbH untersteht der Sales-Abteilung.",
+            "Die Leitung Personalmanagement ist nicht an die Weisungen der Geschäftsführung gebunden.",
+            "Die Rechtsabteilung berät die Geschäftsführung, ist jedoch gegenüber den Angestellten der EcoTec GmbH nicht weisungsbefugt."
+          ],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "title": "15. Aufgabe",
+      "points": 3.33,
+      "intro": "Herrn Monion liegen folgende Zahlen bezüglich der aktuellen Entwicklung der wirtschaftlichen Situation in Europa vor.",
+      "referenceTable": {
+        "headers": ["Indikatoren", "1. Quartal", "2. Quartal", "3. Quartal", "4. Quartal"],
+        "rows": [
+          ["Bruttoinlandsprodukt in Billionen EUR", "3,87", "3,7", "3,5", "3,3"],
+          ["Arbeitslosenquote", "8,5 %", "9 %", "10 %", "11,5 %"],
+          ["Wirtschaftswachstum", "1 %", "-1,1 %", "-1,5 %", "-2 %"]
+        ]
+      },
+      "parts": [
+        {
+          "id": "15",
+          "prompt": "Mit welchem der folgenden Begriffe können Sie die gesamtwirtschaftliche Situation bezogen auf das ganze Jahr beschreiben?",
+          "points": 3.33,
+          "type": "choice",
+          "options": ["Aufschwung", "Stillstand (Stagnation)", "Höchststand (Boom)", "Inflation", "Abschwung (Rezession)"],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "title": "16. Aufgabe",
+      "points": 3.33,
+      "intro": "Situation zur 16. und 17. Aufgabe: Die EcoTec GmbH ist in den folgenden beiden Märkten tätig: spezielle IT-Dienstleistungen für Medikamentenabrechnungen. Hier gibt es vier Mitbewerber. Außerdem bietet die EcoTec GmbH für eine Vielzahl von Privathaushalten und Unternehmen allgemeine IT-Dienstleistungen für Steuerabrechnungen an. In diesem zweiten Bereich gibt es eine Vielzahl von Konkurrenten.",
+      "parts": [
+        {
+          "id": "16",
+          "prompt": "Welche der folgenden Aussagen beschreibt und begründet die vorliegenden Marktformen korrekt?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Bei den Medikamentenabrechnungen ist die Marktform des Polypols gegeben, da viele Unternehmen und Haushalte als Nachfrager auftreten.",
+            "Der Markt für allgemeine IT-Dienstleistungen für Steuerabrechnungen weist auf ein Polypol hin, da neben der EcoTec GmbH eine hohe Zahl an Anbietern auf eine Vielzahl von Nachfragern trifft.",
+            "Das Nachfrageoligopol kennzeichnet den Markt für Steuerabrechnungen, da mit Unternehmen und Haushalten nur zwei große Gruppen von Nachfragern auftreten.",
+            "Da neben der EcoTec GmbH nur wenige Anbieter auf dem Markt für Medikamentenabrechnungen zu finden sind, liegt die Marktform des Angebotsmonopols vor.",
+            "Es liegt ein Quasi-Monopol als Marktform vor, da es insgesamt lediglich vier Anbieter für Steuerabrechnungen gibt, die somit automatisch eine marktbeherrschende Stellung innehaben."
+          ],
+          "correctIndices": [1]
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "title": "17. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "17",
+          "prompt": "Welchen der folgenden Unterschiede weist der Markt für Steuerabrechnungen zu dem Modell des vollkommenen Marktes bzw. der vollständigen Konkurrenz auf?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "In dem Markt der vollständigen Konkurrenz kann der Staat zum Schutz der Verbraucher Mindestpreise und Höchstpreise festlegen. Dies ist für den Markt für Steuerabrechnungen nicht möglich.",
+            "Der Markt für Steuerabrechnungen stellt einen Verkäufermarkt dar. Im Modell der vollständigen Konkurrenz liegt dagegen nur der Käufermarkt vor.",
+            "Im Modell des vollkommenen Marktes wird von jedem Anbieter eine eigenständige und unabhängige Preispolitik betrieben.",
+            "Da es sich im vorliegenden Fall nur um wenige Anbieter von Steuerabrechnungen handelt, liegt auf der Nachfrageseite vollständige Markttransparenz vor. Diese ist im Modell der vollständigen Konkurrenz nicht gegeben.",
+            "Das Modell des vollkommenen Marktes unterstellt die Homogenität der Güter; dies ist im Fall des Marktes für Steuerabrechnungen jedoch nicht gegeben, da die Anbieter ihre Software mit verschiedenen Merkmalen und Eigenschaften auf den Markt bringen."
+          ],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "18. Aufgabe",
+      "points": 3.35,
+      "intro": "Die EcoTec GmbH stellt sich in ihrem Leitbild unter anderem auch als „lernende Organisation\" dar. Ein Aspekt hiervon ist die regelmäßige Anpassung und Aktualisierung der Unternehmensziele. Bei der Formulierung der Unternehmensziele kann es zu Konflikten zwischen einzelnen Zielen kommen. Welche der folgenden Zielarten lassen sich den nachstehenden Zielsetzungspaaren zuordnen?\n\nZielarten: 1 Komplementäre Ziele — 2 Konkurrierende Ziele — 3 Indifferente Ziele",
+      "parts": [
+        {
+          "id": "18.a",
+          "label": "a)",
+          "prompt": "Mitarbeiterzufriedenheit erhöhen ↔ erhöhte Ausgaben für Verpackungen vermeiden",
+          "points": 0.67,
+          "type": "choice",
+          "options": ["Komplementäre Ziele", "Konkurrierende Ziele", "Indifferente Ziele"],
+          "correctIndices": [2]
+        },
+        {
+          "id": "18.b",
+          "label": "b)",
+          "prompt": "Einkauf ausschließlich der preisgünstigsten Produkte ↔ Erlangung eines Gütesiegels in der Produktion",
+          "points": 0.67,
+          "type": "choice",
+          "options": ["Komplementäre Ziele", "Konkurrierende Ziele", "Indifferente Ziele"],
+          "correctIndices": [1]
+        },
+        {
+          "id": "18.c",
+          "label": "c)",
+          "prompt": "Gutes Arbeitsklima ↔ Recycling der Verpackungen",
+          "points": 0.67,
+          "type": "choice",
+          "options": ["Komplementäre Ziele", "Konkurrierende Ziele", "Indifferente Ziele"],
+          "correctIndices": [2]
+        },
+        {
+          "id": "18.d",
+          "label": "d)",
+          "prompt": "Kundenzufriedenheit durch kompetente Mitarbeitende ↔ Mitarbeiterqualifikationen durch Fortbildungen erhöhen",
+          "points": 0.67,
+          "type": "choice",
+          "options": ["Komplementäre Ziele", "Konkurrierende Ziele", "Indifferente Ziele"],
+          "correctIndices": [0]
+        },
+        {
+          "id": "18.e",
+          "label": "e)",
+          "prompt": "Bezugskosten minimieren ↔ Gewinnmaximierung",
+          "points": 0.67,
+          "type": "choice",
+          "options": ["Komplementäre Ziele", "Konkurrierende Ziele", "Indifferente Ziele"],
+          "correctIndices": [0]
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "title": "19. Aufgabe",
+      "points": 3.33,
+      "intro": "Die EcoTec GmbH verfolgt auch soziale Ziele.",
+      "parts": [
+        {
+          "id": "19",
+          "prompt": "Welche der folgenden Maßnahmen orientiert sich nicht an sozialen Zielen?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Verwenden von fair gehandelten Produkten",
+            "Verfolgung strenger Diversity- und Compliance-Regelungen",
+            "Beteiligung der Arbeitenden am Unternehmenserfolg",
+            "Einrichten eines betrieblichen Kindergartens",
+            "Sammeln der Verpackungsabfälle aus dem Wareneingang"
+          ],
+          "correctIndices": [4]
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "title": "20. Aufgabe",
+      "points": 3.33,
+      "intro": "Einem Mitarbeiter der EcoTec GmbH wurde nach dreijähriger Betriebszugehörigkeit betriebsbedingt gekündigt.",
+      "parts": [
+        {
+          "id": "20",
+          "prompt": "Welchen der folgenden Gründe kann eine betriebsbedingte Kündigung haben?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Zeitablauf des befristeten Arbeitsvertrages",
+            "Trunkenheit am Arbeitsplatz",
+            "Wegfall des Arbeitsplatzes durch Standortschließung",
+            "Mangelndes Fachwissen",
+            "Grobe Beleidigung eines Vorgesetzten"
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "title": "21. Aufgabe",
+      "points": 3.33,
+      "intro": "Situation zur 21. und 22. Aufgabe: Drei ehemalige Mitarbeitende der EcoTec GmbH wollen sich selbstständig machen und ein Unternehmen als GmbH gründen. Die Einlagen verteilen sich wie folgt: John Walsch 50.000 EUR, Susanne Venga 20.000 EUR, Denis Özgül 15.000 EUR. Als Geschäftsführerin für die neue GmbH wird Claudia Müller eingestellt. Im Gesellschaftsvertrag wird auf die gesetzlichen Bestimmungen bezüglich Haftung und Vertretung verwiesen.",
+      "parts": [
+        {
+          "id": "21",
+          "prompt": "Die drei Gesellschafter wollen die GmbH rechtswirksam gründen. Welcher der folgenden Sachverhalte entspricht den gesetzlichen Regelungen zur GmbH?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Eine Eintragung der GmbH ins Handelsregister muss nicht zwangsläufig beantragt werden.",
+            "Der Name des neuen Unternehmens in dem Antrag könnte auch auf „EcoTec GmbH\" lauten.",
+            "Die Geschäftsführung des neuen Unternehmens muss durch eine außenstehende Person erfolgen, da zur Vermeidung von Interessenkonflikten Gesellschafter einer GmbH nicht auch deren Geschäfte führen dürfen.",
+            "Die Einlagen der drei Gesellschafter übersteigen das gesetzlich geforderte Mindestkapital der neuen GmbH.",
+            "Der Gesellschaftsvertrag zwischen den drei Gesellschaftern kann auch mündlich abgeschlossen werden, um rechtswirksam sein zu können."
+          ],
+          "correctIndices": [3]
+        }
+      ]
+    },
+    {
+      "number": 22,
+      "title": "22. Aufgabe",
+      "points": 3.33,
+      "parts": [
+        {
+          "id": "22",
+          "prompt": "Die neu gegründete GmbH erwirbt einen neuen Server. Wie ist die Haftung der GmbH gegenüber dem Verkäufer geregelt?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Dem Verkäufer gegenüber haftet nur der Gesellschafter mit der höchsten Einlage.",
+            "Die GmbH haftet mit ihrem Stammkapital und die drei Gesellschafter zusätzlich auch mit ihrem Privatvermögen.",
+            "Die GmbH haftet gegenüber dem Verkäufer mit dem gesamten Betriebsvermögen.",
+            "Die GmbH haftet dem Verkäufer der Ware gegenüber nur bis zur Höhe des gesetzlich festgelegten und einzuzahlenden Mindestkapitals.",
+            "Die GmbH haftet gegenüber dem Verkäufer nur mit den liquiden Mitteln der Gesellschaft."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "title": "23. Aufgabe",
+      "points": 3.33,
+      "intro": "Situation zur 23. bis 25. Aufgabe: Die EcoTec GmbH formuliert interne Ziele bezüglich der Nachhaltigkeit und des Umweltschutzes im Unternehmen.",
+      "parts": [
+        {
+          "id": "23",
+          "prompt": "Welche der folgenden Aussagen stellt ein ökologisches Ziel dar?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Alle Produkte sollen von ökologisch zertifizierten Lieferanten bezogen werden, ohne Abstriche bei der Qualität und Funktionalität hinzunehmen.",
+            "Hohe Investitionen in neue Produktionsanlagen.",
+            "Die Verbesserung der Kundenzufriedenheit und damit der Kundenbindung.",
+            "Umstellung des Fuhrparks für die Geschäftsführung auf größere und leistungsstärkere Fahrzeuge mit Verbrennungsmotor.",
+            "Umsatzsteigerung durch stetige Erweiterung des Sortiments."
+          ],
+          "correctIndices": [0]
+        }
+      ]
+    },
+    {
+      "number": 24,
+      "title": "24. Aufgabe",
+      "points": 3.33,
+      "intro": "Im Lager der EcoTec GmbH werden zu hohe umweltbelastende Emissionen festgestellt.",
+      "parts": [
+        {
+          "id": "24",
+          "prompt": "Welche der folgenden Aussagen ist in diesem Zusammenhang richtig?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Emissionen entstehen in der EcoTec GmbH ausschließlich durch den Transport von Waren zwischen verschiedenen Lagerorten.",
+            "Zu den umweltbelastenden Emissionen gehören neben umweltschädlichen Abgasen auch mögliche Schallemissionen.",
+            "Emissionen können durch den Bau höherer Schornsteine für Abgase der EcoTec GmbH reduziert oder vermieden werden.",
+            "Für die Luftreinhaltung ist gemäß Bundesimmissionsschutzgesetz die Sicherheitsbeauftragte der EcoTec GmbH zuständig.",
+            "Die Verringerung der Emissionen in der EcoTec GmbH unterliegt keinerlei gesetzlichen Regelungen."
+          ],
+          "correctIndices": [1]
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "title": "25. Aufgabe",
+      "points": 3.33,
+      "intro": "Die EcoTec GmbH strebt die Verleihung des Umweltzeichens „Blauer Engel\" an.",
+      "referenceImage": "/exams/wiso-2024-winter/page-09.png",
+      "parts": [
+        {
+          "id": "25",
+          "prompt": "Welche der folgenden Aussagen zu der mit dem Umweltzeichen „Blauer Engel\" ausgezeichneten Ware ist zutreffend? Diese Ware …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "ist besonders haltbar.",
+            "ist besonders sicher in der Handhabung.",
+            "ist aus schadstoffarmen Rohstoffen und umweltschonend produziert worden.",
+            "hat bereits mehrere Umweltpreise gewonnen.",
+            "ist nach ihrer Benutzung ausschließlich über das Duale System zu entsorgen."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 26,
+      "title": "26. Aufgabe",
+      "points": 3.33,
+      "intro": "Herr Monion soll nach Beendigung seiner Ausbildung die Aufgaben des Arbeitsschutzbeauftragten bei der EcoTec GmbH übernehmen.",
+      "parts": [
+        {
+          "id": "26",
+          "prompt": "Welche der folgenden Aufgaben hat Herr Monion als Arbeitsschutzbeauftragter? Der Arbeitsschutzbeauftragte …",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "ist für die Sicherheit im Betrieb allein verantwortlich.",
+            "unterstützt den Arbeitgeber bei der Durchführung des Unfallschutzes.",
+            "ist ein selbstständiges Organ im Sinne der Betriebsverfassungsrechts.",
+            "ist verantwortlich für die Installation von Schließsystemen.",
+            "ist automatisch Mitglied im Arbeitssicherheitsausschuss des Betriebsrates."
+          ],
+          "correctIndices": [1]
+        }
+      ]
+    },
+    {
+      "number": 27,
+      "title": "27. Aufgabe",
+      "points": 3.33,
+      "intro": "In einem Seminar bei der EcoTec GmbH werden Sofortmaßnahmen im Brandfall thematisiert.",
+      "parts": [
+        {
+          "id": "27",
+          "prompt": "Welche der folgenden Maßnahmen müssen im Falle eines Brandes bei der EcoTec GmbH sofort ergriffen werden? Wählen Sie die zwei zutreffenden Maßnahmen.",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Alle Fenster öffnen, damit der Rauch abziehen kann",
+            "Den Notruf absetzen",
+            "Den Sicherheitsbeauftragten informieren, da er für die technischen Anlagen zuständig ist",
+            "Den Vorgesetzten informieren, da dieser die Verantwortung für die Abteilung hat",
+            "Alle gefährdeten Personen evakuieren",
+            "Alle erreichbaren Wasserstellen öffnen"
+          ],
+          "correctIndices": [1, 4]
+        }
+      ]
+    },
+    {
+      "number": 28,
+      "title": "28. Aufgabe",
+      "points": 3.33,
+      "intro": "Die EcoTec GmbH sucht nach geeigneten Maßnahmen, um die Gesundheit am Arbeitsplatz zu verbessern. Nach einer betrieblichen Umfrage steht der Wunsch nach Stressreduzierung an erster Stelle.",
+      "parts": [
+        {
+          "id": "28",
+          "prompt": "Welche der folgenden Maßnahmen sind dafür nicht geeignet? Wählen Sie die zwei nicht geeigneten Maßnahmen.",
+          "points": 3.33,
+          "type": "choice",
+          "pickCount": 2,
+          "options": [
+            "Kundenbeschwerden werden nicht mehr in persönlicher Gegenwart des Kunden, sondern ausschließlich am Telefon bearbeitet und am schwarzen Brett veröffentlicht.",
+            "Es werden Workshops zur Work-Life-Balance angeboten.",
+            "Es wird eine angenehme Arbeitsatmosphäre geschaffen.",
+            "Das Betriebssportangebot wird stark erweitert.",
+            "Misserfolge der Mitarbeitenden werden für alle und nicht nur für die Vorgesetzten bekanntgegeben.",
+            "Die Möglichkeit zum Homeoffice wird offener und flexibler gestaltet."
+          ],
+          "correctIndices": [0, 4]
+        }
+      ]
+    },
+    {
+      "number": 29,
+      "title": "29. Aufgabe",
+      "points": 3.33,
+      "intro": "Die EcoTec GmbH legt sowohl während des Einstellungsverfahrens als auch während der Beschäftigung großen Wert auf die Gleichbehandlung aller Mitarbeitenden.",
+      "parts": [
+        {
+          "id": "29",
+          "prompt": "Welche der folgenden Aussagen trifft auf das Allgemeine Gleichbehandlungsgesetz (AGG) zu?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Das AGG gilt nicht für Auszubildende.",
+            "Bei Verstoß gegen das AGG haben die Betroffenen keinen Anspruch auf Schadenersatz.",
+            "Das AGG regelt unter anderem, dass Benachteiligungen aus Gründen des Geschlechts, der Religion oder Weltanschauung nicht zulässig sind.",
+            "Stellenausschreibungen müssen nicht zwingend geschlechtsneutral ausgeschrieben werden.",
+            "Die Benachteiligungsverbote des AGG erstrecken sich nicht auf Ungleichbehandlungen bei dem beruflichen Aufstieg sowie bei den Arbeitsbedingungen."
+          ],
+          "correctIndices": [2]
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "30. Aufgabe",
+      "points": 3.33,
+      "intro": "Die EcoTec GmbH plant, zwei Fachinformatiker Anwendungsentwicklung (m/w/d) einzustellen.",
+      "parts": [
+        {
+          "id": "30",
+          "prompt": "Welche der folgenden Formulierungen in einer Stellenanzeige verstößt gegen das Allgemeine Gleichbehandlungsgesetz (AGG)?",
+          "points": 3.33,
+          "type": "choice",
+          "options": [
+            "Sie verfügen über hervorragende Kenntnisse in Webprogrammierung.",
+            "Sie passen in unser junges dynamisches Team, wenn Sie jünger als 30 Jahre sind.",
+            "Sie sind mobil und bereit, auch mehrtägige Geschäftsreisen zu unternehmen.",
+            "Sie sind an flexible Arbeitszeiten gewöhnt und können gelegentlich abends länger arbeiten.",
+            "Sie beherrschen die englische Sprache verhandlungssicher in Wort und Schrift."
+          ],
+          "correctIndices": [1]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,601 @@
+{
+  "id": "si-2024-sommer-teil2",
+  "title": "Systemintegration – Sommer 2024 (Aufgabensatz 2, Analyse und Entwicklung von Netzwerken)",
+  "profession": "SI",
+  "period": {
+    "year": 2024,
+    "season": "Sommer"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Sommer 2024, ZPA Nord-West — Analyse und Entwicklung von Netzwerken, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 28,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie arbeiten als Fachinformatiker (Systemintegration) bei der 1234-IT-Systemhaus GmbH, einem mittelständischen IT-Dienstleister mit mehreren bundesweit verteilten Standorten. Aktuell betreuen Sie für Ihren Arbeitgeber einen Kunden, die IHK-Multimedia-Agentur.\n\nDie IHK-Multimedia-Agentur betreibt ein eigenes Netzwerk, das aus einem LAN (mit WLAN) und einer DMZ besteht. Den Netzwerkplan finden Sie in der abgebildeten Anlage 1.",
+      "parts": [
+        {
+          "id": "1.a.aa",
+          "label": "a) aa)",
+          "prompt": "Der Router stellt die Verbindung zum Internetprovider her. Vervollständigen Sie die fehlende(n) Einträge und Route(n) in der Routing-Tabelle des Routers (Netz-ID, Subnetzmaske dezimal, Next-Hop oder Interface) anhand des Netzwerkplans.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "203.0.113.64 / 255.255.255.252 / WAN. 172.16.0.0 / 255.255.0.0 / LAN. 10.10.0.0 / 255.255.255.192 / DMZ. 0.0.0.0 / 0.0.0.0 / WAN (Default-Route, Next-Hop 203.0.113.66).",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 65,
+            "y": 520,
+            "maxWidth": 470,
+            "fontSize": 6
+          }
+        },
+        {
+          "id": "1.a.ab",
+          "label": "ab)",
+          "prompt": "Ermitteln Sie für die drei am Router angeschlossenen Netze jeweils die Broadcast-Adresse.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "WAN: 203.0.113.67. LAN: 172.16.255.255. DMZ: 10.10.0.63.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 363,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.a.ac",
+          "label": "ac)",
+          "prompt": "Im Netzwerk der IHK-Multimedia-Agentur kommen folgende Übertragungsarten zum Einsatz: Unicast, Multicast, Broadcast. Erläutern Sie diese drei Übertragungsarten jeweils anhand eines Beispiels.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Unicast: „1 zu 1\"-Kommunikation, ein Sender sendet an einen Empfänger, z. B. Abruf einer Internetseite. Multicast: „1 zu viele\"-Kommunikation, ein Sender sendet an eine definierte Gruppe, z. B. ein IPTV-Livestream. Broadcast: „1 zu alle\"-Kommunikation, ein Sender sendet an alle Geräte im Netzwerk, z. B. ein ARP-Request zur MAC-Adressermittlung.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 52,
+            "y": 235,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.a.ad",
+          "label": "ad)",
+          "prompt": "IPv4-Multicast-Adressen beginnen in binärer Schreibweise mit 1110 (früher: Klasse D). Geben Sie den Multicast-Adressbereich (Start- und Endadresse) in Punkt-Dezimal-Schreibweise an.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Start-Adresse: 224.0.0.0. End-Adresse: 239.255.255.255.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 752,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "Das Unternehmen betreibt eine eigene DMZ mit einem Web- und einem Mailserver (private Adressen laut Netzwerkplan). Der Webserver (Port 443) und der Mailserver (Port 465/SMTPS und 993/IMAPS) sollen von außen erreichbar sein. Erläutern Sie Ihrem Kunden, was am Router eingerichtet werden muss, um den Zugriff zu realisieren.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Der Webserver/Mailserver wird über Portforwarding/Destination-NAT von außen erreicht. Der Router wandelt Pakete, die auf der öffentlichen Adresse mit einem der definierten Ports ankommen, so um, dass sie an die interne Adresse weitergeschickt werden.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 606,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Ein Benutzer am Client 1 (172.16.10.1) möchte die Internetseite vom Server www.ihk.de (51.38.104.145) aufrufen. Das Paket von Client 1 kommt beim Router aus dem LAN an (Version 4, IHL 5, ToS 0, Length 52, Identification 58007, Flags 2, Fragment-Offset 0, TTL 127, Protocol 6, Header-Checksum 0). Ergänzen Sie die fehlenden Inhalte des Pakets (Source-IP-Address und Destination-IP-Address), nachdem es den Router in Richtung Internet verlassen hat — der Router führt dabei Source-NAT auf seine öffentliche WAN-Adresse durch.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Source-IP-Address: 203.0.113.65 (öffentliche WAN-Adresse des Routers nach NAT). Destination-IP-Address: 51.38.104.145 (www.ihk.de).",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 280,
+            "y": 397,
+            "maxWidth": 250,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "1.b.bc",
+          "label": "bc)",
+          "prompt": "Client 1 versucht, ein IPv4-Paket an den Webserver in der DMZ zu senden. Client 1 stellt fest, dass er das Paket zu seinem Default-Gateway (Router) senden muss. Erläutern Sie, wie der Client 1 zu dieser Entscheidung gekommen ist.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Client 1 vergleicht seine Netz-ID mit der (vermuteten) Netz-ID des Ziel-Rechners. Da diese in verschiedenen IP-Netzen liegen, wird das Paket an das Default-Gateway gesendet.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 294,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bd",
+          "label": "bd)",
+          "prompt": "Erläutern Sie, wie der Client 1 das ARP-Protokoll einsetzt, um das IPv4-Paket versenden zu können.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Der Client sendet einen ARP-Request als Broadcast ins lokale Netz und fragt darin nach der MAC-Adresse des Standard-Gateways. Dieses antwortet mit seiner MAC-Adresse.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 52,
+            "y": 197,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ],
+      "externalReference": {
+        "page": 3,
+        "label": "Anlage 1: Netzwerkplan der IHK-Multimedia-Agentur"
+      }
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 22,
+      "intro": "Sie sollen beim Kunden IHK-Multimedia-Agentur Konfigurationen im Netzwerk vornehmen und Fehler beseitigen.",
+      "parts": [
+        {
+          "id": "2.a.aa",
+          "label": "a) aa)",
+          "prompt": "Ein Nutzer meldet, dass an einem Client keine Netzwerkverbindung möglich ist. Die Netzwerkeinstellungen mittels ipconfig zeigen: IPv4-Adresse (Auto. Konfiguration): 169.254.93.253, Subnetzmaske 255.255.0.0, kein Standardgateway. Erläutern Sie einen möglichen Grund, warum die Schnittstelle diese IPv4-Adresse hat.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Der Client ist auf DHCP eingestellt. Wenn kein DHCP-Server antwortet, erstellt der Rechner automatisch eine APIPA-Adresse im Bereich 169.254.0.0/16. (Alternativ: IPv4-Adresskonflikt.)",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 52,
+            "y": 612,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.ab",
+          "label": "ab)",
+          "prompt": "Der Client zeigt außerdem die verbindungslokale IPv6-Adresse fe80::4257:a46c:5622:bb4 an. Beschreiben Sie, um welche IPv6-Adresse es sich handelt und wie diese gebildet wurde.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "„FE80\" kennzeichnet eine Link-Local-Address — gültig nur für Geräte am selben Netzwerksegment. Der Teil nach „::\" ist der Interface Identifier, der aus der MAC-Adresse generiert oder zufällig erzeugt wird.",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 52,
+            "y": 468,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.ac",
+          "label": "ac)",
+          "prompt": "Beschreiben Sie einen Lösungsweg, durch den der Client eine funktionierende Netzwerkkonfiguration erhält.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Manuelle Konfiguration der Netzwerkparameter (IP-Adresse, Netzmaske, Gateway, DNS) — oder, falls ein DHCP-Server verfügbar ist, mittels „ipconfig /renew\" die Netzwerkeinstellungen per DHCP neu anfordern.",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 52,
+            "y": 325,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.ba",
+          "label": "b) ba)",
+          "prompt": "Von einem Notebook ist eine Internetverbindung möglich, aber der User kann über den FQDN nicht auf den lokalen Dateiserver zugreifen. An anderen Clients funktioniert der Zugriff problemlos. Die Netzwerkkonfiguration (ipconfig /all) zeigt u. a. DNS-Server: 8.8.8.8. Erläutern Sie anhand der abgebildeten Konsolenausgabe die Fehlerursache.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Namensauflösung der IP des File-Servers schlägt fehl, da der eingetragene öffentliche DNS-Server (8.8.8.8) die interne Adresse des File-Servers nicht kennt.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 766,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b.bb",
+          "label": "bb)",
+          "prompt": "Beschreiben Sie einen Lösungsweg zur Behebung des Fehlers.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Die IP-Adresse des Domain-Controllers (172.16.1.11) als (ersten) DNS-Server eintragen — oder in den Netzwerkeinstellungen den fest eingetragenen DNS löschen und auf „DNS-Serveradresse automatisch beziehen\" umstellen.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 671,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.ca",
+          "label": "c) ca)",
+          "prompt": "Ein User meldet, dass die automatische Einrichtung eines Mail-Clients scheitert, obwohl Mailadresse und Passwort korrekt sind. Sie testen die Verbindung zum internen Mailserver (10.10.0.11) mittels Telnet auf Port 143 und erhalten: „* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN AUTH=LOGIN] Dovecot (Debian) ready.\" Bestimmen Sie mithilfe der Telnet-Ausgabe die richtige Auswahl für das Protokoll zum Posteingangsserver.",
+          "points": 1,
+          "type": "choice",
+          "options": [
+            "IMAP",
+            "POP3"
+          ],
+          "correctIndices": [
+            0
+          ],
+          "referenceImage": "/exams/si-2024-sommer-teil2/page-07.png",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 52,
+            "y": 88,
+            "maxWidth": 400,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cb",
+          "label": "cb)",
+          "prompt": "Bestimmen Sie anhand der Telnet-Ausgabe (die u. a. „STARTTLS\" in den CAPABILITY-Flags zeigt) die richtige Auswahl für die Verbindungssicherheit.",
+          "points": 2,
+          "type": "choice",
+          "options": [
+            "Automatisch erkennen",
+            "Keine Verbindungssicherheit",
+            "STARTTLS",
+            "SSL/TLS"
+          ],
+          "correctIndices": [
+            2
+          ],
+          "referenceImage": "/exams/si-2024-sommer-teil2/page-08.png",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 285,
+            "y": 673,
+            "maxWidth": 250,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cc",
+          "label": "cc)",
+          "prompt": "Bestimmen Sie anhand der Telnet-Ausgabe (die u. a. „AUTH=PLAIN AUTH=LOGIN\" zeigt) die richtige Auswahl für die Authentifizierungsmethode zum Posteingangsserver.",
+          "points": 3,
+          "type": "choice",
+          "options": [
+            "Automatisch erkennen",
+            "Passwort, normal",
+            "Verschlüsseltes Passwort",
+            "Kerberos / GSSAPI",
+            "NTLM"
+          ],
+          "correctIndices": [
+            1
+          ],
+          "pdfAnchor": {
+            "page": 7,
+            "x": 300,
+            "y": 543,
+            "maxWidth": 240,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 24,
+      "intro": "Der Internetprovider der IHK-Multimedia-Agentur hat angekündigt, dass der Internetzugang zukünftig auf IPv6 umgestellt werden soll.",
+      "parts": [
+        {
+          "id": "3.a.aa",
+          "label": "a) aa)",
+          "prompt": "Der Geschäftsführer fragt Sie nach dem Grund für die Umstellung. Beschreiben Sie, weshalb beim Provider zukunftsperspektivisch ein Wechsel auf IPv6 sinnvoll ist.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Anzahl generierbarer IPv4-Adressen ist durch die Limitierung auf 32 Bit begrenzt und reicht nicht mehr aus. IPv6 bietet mit 128 Bit Adressraum genügend IP-Adressen für den wachsenden Bedarf.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 424,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.a.ab",
+          "label": "ab)",
+          "prompt": "Erläutern Sie anhand von drei Merkmalen, welche weiteren Vorteile die Umstellung auf IPv6 mit sich bringt.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Höhere Skalierbarkeit für sehr viel mehr direkt verbundene Geräte, erhöhte Sicherheit durch eingebaute Verschlüsselungs-/Authentifizierungsfunktionen (IPsec), effizienteres Routing ohne Fragmentierung, eingebautes Quality of Service (QoS), Eliminierung von NAT, zustandslose Adressen-Autokonfiguration, schlankere Header-Struktur.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 328,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b.ba",
+          "label": "b) ba)",
+          "prompt": "Für die Standorte der IHK-Multimedia-Agentur sollen auch nach der Umstellung auf IPv6 wieder Subnetze eingerichtet werden. Nennen Sie zwei Gründe für die Einrichtung von Subnetzen.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Netzwerkverwaltung vereinfachen, Netzwerksicherheit erhöhen, Datenverkehr aufteilen, Zugriff auf Netzwerkressourcen steuern.",
+          "pdfAnchor": {
+            "page": 7,
+            "x": 52,
+            "y": 144,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b.bb",
+          "label": "bb)",
+          "prompt": "Vom Internet-Provider erhält die IHK-Multimedia-Agentur ein Schreiben, dass ihr der öffentliche Adressbereich 2001:DB8:CAFE::/48 zugewiesen wird. Bilden Sie aus diesem Bereich vier gleich große Subnetze. Nutzen Sie dabei den gesamten Adressbereich. Geben Sie jeweils die Netz-Adressen der vier Subnetze an.",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "Vier /50-Subnetze aus dem /48-Bereich: 2001:DB8:CAFE::/50, 2001:DB8:CAFE:4000::/50, 2001:DB8:CAFE:8000::/50, 2001:DB8:CAFE:C000::/50.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 730,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c.ca",
+          "label": "c) ca)",
+          "prompt": "Bei IPv6 ist es durch SLAAC möglich, eine „global unicast address\" für einen Client zu erzeugen. Erläutern Sie, wie diese Methode funktioniert.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Der Client erstellt zunächst eine selbst generierte link-local IPv6-Adresse. Über das Router-Advertisement erhält jeder Host dann den globalen Präfix sowie die IPv6-Adresse des DNS-Servers; die IPv6-Adresse des Standard-Gateways ist der Absender des Router-Advertisements.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 545,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c.cb",
+          "label": "cb)",
+          "prompt": "Nennen Sie drei Gründe, die dafür sprechen, dennoch einen DHCPv6-Server zu betreiben.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Verwaltet Adresspools und vergibt daraus IP-Adressen, protokolliert die Zuordnung der IP-Adressen zu Clients, weist zusätzlich Zeitserver/Druckserver/TFTP-Server/DNS-Server zu, ermöglicht die Adressvergabe für mehrere Subnetze.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 52,
+            "y": 355,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 26,
+      "intro": "Bei der IHK-Multimedia-Agentur ist ein WLAN-Netzwerk im Einsatz.",
+      "parts": [
+        {
+          "id": "4.a.aa",
+          "label": "a) aa)",
+          "prompt": "Die IHK-Multimedia-Agentur verwendet für ihr internes WLAN-Netzwerk aktuell die Verschlüsselungsmethode „WPA2 Personal\". Nennen Sie drei Nachteile dieser Verschlüsselungsmethode.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Der Pre-Shared-Key (PSK) könnte an externe Personen weitergegeben werden, ist anfällig für Brute-Force-Angriffe, bleibt bei Personalwechsel gültig solange er nicht geändert wird, ein entwendetes Endgerät kann für Angriffe genutzt werden, Datenverkehr kann ausgespäht werden.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 705,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.a.ab",
+          "label": "ab)",
+          "prompt": "Erläutern Sie eine Möglichkeit, wie die Sicherheit verbessert werden kann.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "WPA2-Enterprise mit eindeutiger Identifizierung jeder Person durch individuelle Anmeldeinformationen oder Zertifikate (alternativ: WPA3 verwenden).",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 607,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.ba",
+          "label": "b) ba)",
+          "prompt": "Aktuell dürfen nur firmeneigene Endgeräte das WLAN-Netzwerk nutzen. Begründen Sie anhand von drei Beispielen, weshalb es sinnvoll ist, für private mobile Endgeräte von Mitarbeitern und fremde Endgeräte von Gästen mindestens ein separates WLAN-Netzwerk aufzubauen.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Vermeidung der Kompromittierung des internen Netzwerks durch nicht-verwaltete Endgeräte, Priorisierung des Internetverkehrs für interne Anwendungen, zeitlich begrenzter Internetzugang für Gäste/Mitarbeiter möglich, Zugriff auf interne Anwendungen/Daten für persönliche und fremde Geräte kann unterbunden werden.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 456,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b.bb",
+          "label": "bb)",
+          "prompt": "Im Lager werden Kameras mit einem 2,4 GHz WLAN zur Überwachung eingesetzt. Nachdem neue Accesspoints installiert wurden, können sich die Kameras nicht mehr mit dem WLAN verbinden. Nennen Sie zwei mögliche Ursachen dafür.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die neuen Accesspoints strahlen nur noch 5 GHz WLAN aus (fehlerhafte Konfiguration), falsche Kanalauswahl, oder das Funksignal kommt bei der Kamera durch interne statt externer Antennen nicht mehr ausreichend an.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 52,
+            "y": 305,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.c.ca",
+          "label": "c) ca)",
+          "prompt": "Mitarbeiter bemängeln Performanceprobleme bei der Nutzung des internen WLAN-Netzwerkes. Ein WLAN-Scan ergab die Tabelle oben. Erläutern Sie drei der sechs Begriffe aus dem durchgeführten WLAN-Scan (SSID, BSSID, CHANNEL, BW[MHz], SECURITY, SIGNAL).",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "SSID: Service Set Identifier — Name des WLAN. BSSID: Basic Service Set Identifier — eindeutige Identifizierung des Access Points. CHANNEL: verwendeter WLAN-Kanal. BW[MHz]: Kanalbreite des WLANs. SECURITY: verwendete Verschlüsselungsmethode. SIGNAL: Empfangs-Signalstärke des WLANs.",
+          "referenceTable": {
+            "headers": [
+              "SSID",
+              "BSSID",
+              "CHANNEL",
+              "BW[MHz]",
+              "SECURITY",
+              "SIGNAL"
+            ],
+            "rows": [
+              [
+                "DRH",
+                "e6:55:b8:1b:cc:c1",
+                "106 (na)",
+                "80",
+                "WPA2-Personal (AES/CCMP)",
+                "-71 dBm"
+              ],
+              [
+                "iPhone von Thomas",
+                "1e:4a:3a:e8:2a:53",
+                "11 (ng)",
+                "20",
+                "WPA2-Personal (AES/CCMP)",
+                "-64 dBm"
+              ],
+              [
+                "<hidden>",
+                "be:fb:e4:f8:92:32",
+                "1 (ng)",
+                "20",
+                "WPA2+WPA3-Personal (AES/CCMP)",
+                "-52 dBm"
+              ],
+              [
+                "Hotspot1BFF",
+                "00:54:af:1a:1b:ff",
+                "10 (ng)",
+                "20",
+                "Open",
+                "-85 dBm"
+              ],
+              [
+                "blau",
+                "c8:84:a1:79:57:01",
+                "7 (ng)",
+                "40",
+                "WPA2-Enterprise (AES/CCMP)",
+                "-83 dBm"
+              ],
+              [
+                "MEDIA-AGENTUR",
+                "1e:ec:da:b1:60:ea",
+                "1 (ng)",
+                "20",
+                "WPA2-Enterprise (AES/CCMP)",
+                "-51 dBm"
+              ]
+            ]
+          },
+          "pdfAnchor": {
+            "page": 10,
+            "x": 280,
+            "y": 756,
+            "maxWidth": 430,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "4.c.cb",
+          "label": "cb)",
+          "prompt": "Nennen Sie Gründe für mögliche Performanceprobleme anhand der abgebildeten Ausgabe.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Netzwerke „<hidden>\" und „MEDIA-AGENTUR\" verwenden beide Kanal 1 (Kanalüberlappung/Interferenz).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 474,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.c.cc",
+          "label": "cc)",
+          "prompt": "Erläutern Sie, weshalb ein WLAN-Netzwerk als „<hidden>\" markiert ist.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Im Accesspoint ist das SSID-Broadcasting deaktiviert.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 375,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.d.da",
+          "label": "d) da)",
+          "prompt": "Für Gäste soll ein eigenes WLAN zur Verfügung gestellt werden. Der Zugriff darauf soll über ein WLAN-Ticketsystem (Voucher) mit Zugangsportal geregelt werden. Erläutern Sie, was man unter einem solchen System versteht.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Gäste erhalten einen Bon (Ticket/Voucher) mit Zugangsdaten in schriftlicher Form, die für einen bestimmten Zeitraum gültig sind. Diese müssen sie auf einer Website (Captive Portal) eingeben, die nach Verbindung mit der angegebenen SSID erscheint.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 248,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.d.db",
+          "label": "db)",
+          "prompt": "Mit einem solchen Ticketsystem kann der Gastgeber z. B. eine zeitliche Begrenzung des Zugriffs vornehmen. Nennen Sie drei weitere Möglichkeiten, die ein solches System dem Gastgeber bietet.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Einholen der Zustimmung zu Nutzungsbedingungen über das Captive Portal, volumenabhängige Begrenzung des Datenverkehrs, Freigabe von Diensten abhängig vom jeweiligen Ticket, Anzeige von Informationen/Werbung/Umfragen auf der Portalseite.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 52,
+            "y": 133,
+            "maxWidth": 495,
+            "fontSize": 8
+          }
+        }
+      ]
+    }
+  ]
+}

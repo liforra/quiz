@@ -8,7 +8,8 @@ Gravatar profile pictures, and optional AI-assisted grading/explanations/help
 ## Stack
 
 - **Frontend**: React + Vite + Tailwind, single-page app (`src/app.tsx`)
-- **Data**: Firebase Auth (username/password) + Firestore
+- **Auth**: Authentik (auth.liforra.de) via OIDC → own session cookie
+- **Data**: SQLite (`node:sqlite`, no native dependency) behind a REST API
 - **AI backend**: a small Express proxy (`server/index.js`) that holds the
   Groq API key server-side and injects the system prompts — the client only
   ever sends question/answer context, never sees the key or the prompts
@@ -17,15 +18,15 @@ Gravatar profile pictures, and optional AI-assisted grading/explanations/help
 
 ```bash
 npm install
-cp .env.example .env              # already filled in for this project's Firebase instance
-cp .env.local.example .env.local  # optional — only needed for AI features, see below
+cp .env.example .env              # public config, already filled in
+cp .env.local.example .env.local  # secrets: Authentik client + Groq key
 npm run dev
 ```
 
 This starts both processes together (via `concurrently`, `Ctrl+C` stops both):
 
 - Frontend: http://localhost:3849
-- AI backend: http://localhost:8787 (proxied under `/api/*` by Vite in dev)
+- Backend (auth + data + AI): http://localhost:8787 (proxied under `/api/*` by Vite in dev)
 
 Other scripts:
 
@@ -38,12 +39,64 @@ Other scripts:
 
 | File | Committed? | Contains |
 |---|---|---|
-| `.env` | Yes | Public Firebase client config (`VITE_*`). Not secret — protected by Firestore security rules, not by hiding these values. |
-| `.env.local` | **No** (git-ignored via `*.local`) | Real secrets, currently just `GROQ_API_KEY`. Read only by `server/index.js`, never bundled into the client. |
+| `.env` | Yes | Public Firebase web config (`VITE_*`), still read **server-side** for the legacy account import. Not secret. |
+| `.env.local` | **No** (git-ignored via `*.local`) | Real secrets: `GROQ_API_KEY`, the Authentik client secret. Read only by the backend, never bundled into the client. |
 
 Without `.env.local` / `GROQ_API_KEY`, the app works fully — AI features
 (graded text-answer input, "?" explanations, the Help? chat) just stay off,
 and text-input questions fall back to the old self-reported reveal flow.
+
+## Login (Authentik SSO)
+
+`auth.liforra.de` (Authentik) is the only login. `server/auth.js` runs the
+OIDC authorization-code flow (PKCE) and, on success, sets an **HttpOnly
+session cookie**; `sessionMiddleware` resolves it to a user row on every
+request. There is no token, uid or auth SDK in the browser at all.
+
+Access control that used to live in `firestore.rules` now lives in
+`server/data.js`: every route scopes its SQL by `req.user.uid`, and no route
+accepts a client-supplied uid.
+
+### Migrating from the old Firebase accounts
+
+While `LEGACY_MIGRATION=1`, the login screen offers "old account". That path
+does **not** sign anyone in — it:
+
+1. checks the old password against Firebase's REST API (public web API key,
+   no SDK, no service account),
+2. uses the ID token that comes back to read *that user's own* Firestore data
+   and import it into SQLite (`server/migrate.js`). This is allowed by the old
+   security rules precisely because it reads as the user, not as an admin.
+   Whoever migrates first also drags the public quizzes and leaderboards
+   across; entries belonging to users who haven't migrated get placeholder
+   rows that those users adopt when they eventually sign in.
+3. hands out a ticket that ties the following Authentik login to the imported
+   account.
+
+The imported account keeps its old uid, so every foreign key (stats,
+attempts, quizzes, leaderboard entries) stays attached. The fake
+`<name>@quiz.local` addresses are never carried over — a migrated account
+takes the real Authentik address.
+
+Set `LEGACY_MIGRATION=0` once everyone has moved; then `server/migrate.js`,
+the `/api/auth/legacy/*` routes and the `VITE_FIREBASE_*` values can all go.
+
+### Setup
+
+`.env.local`: `AUTHENTIK_ISSUER`, `AUTHENTIK_CLIENT_ID`,
+`AUTHENTIK_CLIENT_SECRET`, `PUBLIC_BASE_URL`, `ADMIN_USERNAMES`, `DATA_DIR`.
+In Authentik, register both redirect URIs:
+
+```
+https://quiz.liforra.de/api/auth/authentik/callback
+http://localhost:3849/api/auth/authentik/callback
+```
+
+## Database
+
+SQLite at `$DATA_DIR/quiz.db` (default `./data`, git-ignored). The schema is
+created on boot by `server/db.js` — no migration tool, no separate setup step.
+**Back this file up**; it is now the only copy of everyone's data.
 
 ## Deployment
 
@@ -62,7 +115,7 @@ layer instead, pointing at wherever `server/index.js` runs.
   tagged `ap1`/`ap2` via their `modes`, 12 questions each with an even
   single/multiple/text split, mixed difficulty, fully translated DE/EN.
   They always appear in the library, can't be edited or deleted from the UI,
-  and live in the repo instead of Firestore — question ids are stable strings
+  and live in the repo instead of the database — question ids are stable strings
   so per-question stats survive app updates. To change them, edit the JSON
   files; to add one, drop a new JSON file in `src/quizzes/` and register it
   in `DEFAULT_QUIZZES`.
@@ -128,4 +181,6 @@ Upload accepts either a bare array of questions, or `{ "questions": [...] }`.
 ## Admin
 
 The account with username `liforra` gets an Admin Panel (sidebar) that can
-browse every user's stats and private quizzes.
+browse every user's stats and private quizzes. Admin status is decided
+server-side from `ADMIN_USERNAMES` on every Authentik sign-in and enforced by
+`requireAdmin` — the sidebar entry only decides whether to show the link.

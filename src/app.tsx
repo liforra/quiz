@@ -9,55 +9,27 @@ import {
 } from 'lucide-react';
 import { BUILT_IN_MODES } from './modes';
 import { DEFAULT_QUIZZES } from './defaultQuizzes';
+import { DEFAULT_EXAMS, Exam } from './defaultExams';
 import { t, resolveQuestionLang, Lang } from './i18n';
 import { checkAiStatus, gradeAnswer } from './api';
 import HelpChat from './components/HelpChat';
 import ExplainPopover from './components/ExplainPopover';
 import StatsPanel from './components/StatsPanel';
 import Leaderboard from './components/Leaderboard';
+import LeaderboardHub from './components/LeaderboardHub';
+import ExamsHub from './components/ExamsHub';
+import ExamTaking, { ExamAnswers } from './components/ExamTaking';
+import ExamResults, { ExamGrading } from './components/ExamResults';
+import AdminExamSources from './components/AdminExamSources';
+import { exportExamToPdf, downloadPdfBlob } from './examPdfExport';
 import { computeCategoryBreakdown, pickBestCategory } from './stats';
 
-// --- FIREBASE IMPORTS ---
-import { initializeApp } from 'firebase/app';
-import {
-  getAuth,
-  signInWithCustomToken,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-  onAuthStateChanged,
-  signOut
-} from 'firebase/auth';
-import {
-  getFirestore,
-  doc,
-  setDoc,
-  getDoc,
-  addDoc,
-  collection,
-  onSnapshot,
-  increment,
-  arrayUnion,
-  updateDoc,
-  query,
-  getDocs,
-  deleteDoc
-} from 'firebase/firestore';
-
-// --- FIREBASE SETUP ---
-const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const appId = import.meta.env.VITE_APP_ID || 'default-app-id';
+// --- DATA LAYER ---
+// No Firebase on the client at all: authentication is a session cookie from
+// auth.liforra.de (server/auth.js) and all data goes through /api/data/*
+// (server/data.js), backed by SQLite.
+import * as api from './data';
+import { findLegacySession, clearLegacySession } from './legacySession';
 
 const ICON_KEYS = [
   "Cpu", "Cloud", "Code", "Database", "Terminal", "Shield", "Globe", "Lock",
@@ -101,12 +73,27 @@ function shuffleOptions(question) {
   return { ...question, options };
 }
 
+// Deterministic id for an ad-hoc "Custom Quiz" combo (a hand-picked mix of
+// source quizzes), so repeated plays of the *same* combo share one
+// leaderboard instead of every custom session being leaderboard-less. Order
+// of selection doesn't matter — the id is keyed on the sorted set of source
+// quiz ids, not the picking order or question count/timer settings.
+function hashQuizIds(ids: string[]): string {
+  const key = [...ids].sort().join('|');
+  let h = 5381;
+  for (let i = 0; i < key.length; i++) h = ((h << 5) + h + key.charCodeAt(i)) | 0;
+  return 'custom-' + Math.abs(h).toString(36);
+}
+
 export default function App() {
   // --- STATE ---
   const [theme, setTheme] = useState('dark');
   const [view, setView] = useState('auth'); // auth, dashboard, playing, results
-  const [user, setUser] = useState(null);
-  const [appUser, setAppUser] = useState(null);
+  // The signed-in user, or null. There is no separate "auth user" object any
+  // more — the session cookie is the whole story, and this is what the server
+  // says it belongs to.
+  const [appUser, setAppUser] = useState<api.AppUser | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
 
   // Scroll to top on view change
   useEffect(() => {
@@ -116,7 +103,7 @@ export default function App() {
   // Modes/Categories + UI Language
   const [activeMode, setActiveModeState] = useState<string | null>(() => localStorage.getItem('quiz_active_mode') || null);
   const [uiLang, setUiLangState] = useState<Lang>(() => (localStorage.getItem('quiz_ui_lang') as Lang) || 'de');
-  const [customModes, setCustomModes] = useState([]);
+  const [customModes, setCustomModes] = useState<api.CustomMode[]>([]);
 
   const setActiveMode = (mode: string | null) => {
     setActiveModeState(mode);
@@ -129,8 +116,8 @@ export default function App() {
   };
 
   // Library Data
-  const [privateQuizzes, setPrivateQuizzes] = useState([]);
-  const [publicQuizzes, setPublicQuizzes] = useState([]);
+  const [privateQuizzes, setPrivateQuizzes] = useState<any[]>([]);
+  const [publicQuizzes, setPublicQuizzes] = useState<any[]>([]);
   // Premade/library quizzes filtered by the active mode (untagged quizzes only show under "Alle").
   // Built-in default quizzes (shipped with the app, not stored in Firestore) come first.
   const premadeQuizzes = useMemo(() => [
@@ -139,16 +126,56 @@ export default function App() {
     ...publicQuizzes.map(q => ({ ...q, type: 'public' }))
   ].filter(q => activeMode == null || (q.modes || []).includes(activeMode)), [privateQuizzes, publicQuizzes, activeMode]);
 
+  // Currently active quiz session — id/title of what's being played, null for
+  // ad-hoc "Quick Test" sessions that draw from a whole mode instead of one quiz.
+  const [currentQuizId, setCurrentQuizId] = useState<string | null>(null);
+  const [currentQuizTitle, setCurrentQuizTitle] = useState<string | null>(null);
+
+  // AP Prüfungen — digitized real IHK exam papers (src/defaultExams.ts).
+  // Self-contained session state: which exam is active and its answer map,
+  // handed off to ExamTaking/ExamResults rather than threaded through the
+  // quiz gameplay state above (exams are structurally different: multi-part
+  // tasks with mixed choice/number/text parts and real point values).
+  const [activeExam, setActiveExam] = useState<Exam | null>(null);
+  const [examAnswers, setExamAnswers] = useState<ExamAnswers>({});
+  const startExam = (exam: Exam) => {
+    setActiveExam(exam);
+    setExamAnswers({});
+    setView('examTaking');
+  };
+  const submitExam = (answers: ExamAnswers) => {
+    setExamAnswers(answers);
+    setView('examResults');
+  };
+  const exportExamPdf = async (grading: ExamGrading) => {
+    if (!activeExam) return;
+    const blob = await exportExamToPdf(activeExam, examAnswers, grading, t(uiLang, 'skipped'), t(uiLang, 'points'));
+    downloadPdfBlob(blob, `${activeExam.id}.pdf`);
+  };
+
   // Leaderboard Data
   const [leaderboardQuizId, setLeaderboardQuizId] = useState<string | null>(null);
-  const openLeaderboard = (quizId: string) => {
+  // Where "Back" returns to — the dashboard normally, but the leaderboard hub
+  // when a leaderboard was opened from there instead.
+  const [leaderboardReturnView, setLeaderboardReturnView] = useState('dashboard');
+  // Title for leaderboards with no matching library entry (custom quiz combos) —
+  // passed in explicitly by whoever opened the leaderboard (the hub already
+  // knows every title; a just-played custom session falls back to currentQuizTitle below).
+  const [leaderboardTitleOverride, setLeaderboardTitleOverride] = useState<string | null>(null);
+  const openLeaderboard = (quizId: string, title: string | null = null, returnView: string = 'dashboard') => {
     setLeaderboardQuizId(quizId);
+    setLeaderboardTitleOverride(title);
+    setLeaderboardReturnView(returnView);
     setView('leaderboard');
   };
   const leaderboardQuizTitle = useMemo(() => {
     const all = [...DEFAULT_QUIZZES, ...privateQuizzes, ...publicQuizzes];
-    return all.find(q => q.id === leaderboardQuizId)?.title || 'Quiz';
-  }, [leaderboardQuizId, privateQuizzes, publicQuizzes]);
+    const libraryTitle = all.find(q => q.id === leaderboardQuizId)?.title;
+    return libraryTitle
+      || leaderboardTitleOverride
+      || (leaderboardQuizId === currentQuizId ? currentQuizTitle : null)
+      || 'Quiz';
+  }, [leaderboardQuizId, privateQuizzes, publicQuizzes, leaderboardTitleOverride, currentQuizId, currentQuizTitle]);
 
   // Custom Quiz Builder — lets the player hand-pick which quizzes to draw
   // from, how many questions, and an optional timer, instead of playing one
@@ -173,23 +200,28 @@ export default function App() {
     setCustomSelectedQuizIds(prev => prev.includes(quizId) ? prev.filter(id => id !== quizId) : [...prev, quizId]);
   };
   const startCustomQuiz = () => {
-    const pool = allQuizzesFlat.filter(q => customSelectedQuizIds.includes(q.id)).flatMap(q => q.questions || []);
+    const selected = allQuizzesFlat.filter(q => customSelectedQuizIds.includes(q.id));
+    const pool = selected.flatMap(q => q.questions || []);
     if (pool.length === 0) return;
     const timerConfig = customTimerEnabled
       ? { scope: customTimerScope, seconds: customTimerScope === 'quiz' ? customTimerSeconds * 60 : customTimerSeconds }
       : null;
-    generateSmartSession(pool, null, Math.min(customQuestionCount, pool.length), timerConfig);
+    // A stable id (hashed from the sorted source-quiz ids) so replaying the
+    // same combo shares one leaderboard/stat history instead of every custom
+    // session being anonymous and leaderboard-less.
+    const customQuizId = hashQuizIds(customSelectedQuizIds);
+    const customQuizTitle = selected.map(q => q.title).join(' + ');
+    generateSmartSession(pool, customQuizId, Math.min(customQuestionCount, pool.length), timerConfig, customQuizTitle);
     setShowCustomBuilder(false);
   };
 
   // Stats Data
-  const [currentQuizId, setCurrentQuizId] = useState(null);
-  const [globalStats, setGlobalStats] = useState({}); // Legacy/Global stats
-  const [currentQuizStats, setCurrentQuizStats] = useState({}); // Current active quiz stats
+  const [globalStats, setGlobalStats] = useState<Record<string, any>>({}); // Cross-quiz per-question tallies
+  const [currentQuizStats, setCurrentQuizStats] = useState<Record<string, any>>({}); // Current active quiz stats
   // Effective stats: Quiz stats override global stats (Forking pattern for legacy compatibility)
   const stats = useMemo(() => ({ ...globalStats, ...currentQuizStats }), [globalStats, currentQuizStats]);
 
-  const [attempts, setAttempts] = useState([]); // Per-answer history (for category breakdown + trend chart)
+  const [attempts, setAttempts] = useState<api.Attempt[]>([]); // Per-answer history (for category breakdown + trend chart)
   const categoryBreakdown = useMemo(
     () => computeCategoryBreakdown(stats, [...DEFAULT_QUIZZES, ...privateQuizzes, ...publicQuizzes]),
     [stats, privateQuizzes, publicQuizzes]
@@ -326,10 +358,20 @@ export default function App() {
   const fileInputRef = useRef(null);
 
   // Auth Form State
-  const [authMode, setAuthMode] = useState('login');
+  // authScreen: 'choose' (new vs. old account) → 'legacy' (the old
+  // username/password form) → 'link' (forced migration, see below).
+  const [authScreen, setAuthScreen] = useState('choose');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [authentikEnabled, setAuthentikEnabled] = useState(false);
+  const [legacyMigrationEnabled, setLegacyMigrationEnabled] = useState(false);
+  const [authBusy, setAuthBusy] = useState(false);
+  // Set once an old account's password has been verified: its data is already
+  // imported, and the ticket ties the next Authentik login to it.
+  const [migrationTicket, setMigrationTicket] = useState<string | null>(null);
+  const [migrationSummary, setMigrationSummary] = useState<Record<string, number> | null>(null);
+  const [legacyUsername, setLegacyUsername] = useState('');
 
   // Text/Multi Inputs
   const [textInputReveal, setTextInputReveal] = useState(false);
@@ -362,22 +404,10 @@ export default function App() {
 
   const saveProfileSettings = async () => {
     try {
-      await setDoc(doc(db, 'artifacts', appId, 'users', user.uid), {
-        gravatarEmail: gravatarEmailInput.trim(),
-        hideFromLeaderboard: hideFromLeaderboardInput
-      }, { merge: true });
-
-      // Opting out should also remove any leaderboard entries this user
-      // already has (not just block future ones) — otherwise "not included"
-      // would only apply going forward, leaving old scores visible to everyone.
-      if (hideFromLeaderboardInput) {
-        const freshUserDoc = await getDoc(doc(db, 'artifacts', appId, 'users', user.uid));
-        const quizIds: string[] = freshUserDoc.data()?.leaderboardQuizIds || [];
-        await Promise.all(quizIds.map((quizId) =>
-          deleteDoc(doc(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries', user.uid))
-        ));
-      }
-
+      // Opting out also erases the entries this user already has (not just
+      // future ones) — the server does that in the same call.
+      await api.saveProfile(gravatarEmailInput.trim(), hideFromLeaderboardInput);
+      await refresh();
       setShowSettingsModal(false);
     } catch (e) {
       setError("Failed to save settings: " + e.message);
@@ -385,7 +415,7 @@ export default function App() {
   };
 
   // Admin State
-  const [adminUsers, setAdminUsers] = useState([]);
+  const [adminUsers, setAdminUsers] = useState<api.AdminUserRow[]>([]);
   const [selectedAdminUser, setSelectedAdminUser] = useState(null);
   const [selectedAdminUserData, setSelectedAdminUserData] = useState(null);
 
@@ -394,110 +424,113 @@ export default function App() {
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
 
 
-  // --- FIREBASE AUTH INIT ---
+  // Turns a leftover Firebase session into a migration ticket, no password
+  // needed. Failure is silent on purpose: the user simply sees the normal
+  // login screen and can still migrate via username/password.
+  const offerLegacySessionMigration = async () => {
+    try {
+      const legacy = await findLegacySession();
+      if (!legacy) return;
+      const { ticket, username, imported } = await api.migrateLegacySession(legacy.refreshToken);
+      // NOT cleared here: the account isn't claimed until Authentik confirms
+      // who's taking it. Dropping the Firebase session now would strand anyone
+      // who abandons the last step without knowing their old password.
+      setMigrationTicket(ticket);
+      setMigrationSummary(imported);
+      setLegacyUsername(username || legacy.username);
+      setAuthScreen('link');
+    } catch (e) {
+      console.error('Could not migrate the old browser session', e);
+    }
+  };
+
+  // --- SESSION INIT ---
+  // Replaces onAuthStateChanged: one /api/auth/me call decides whether we
+  // show the login screen or the dashboard. The session lives in an HttpOnly
+  // cookie, so there is nothing to restore from localStorage and no token
+  // handling here at all.
   useEffect(() => {
-    const initAuth = async () => {
-      if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-        await signInWithCustomToken(auth, __initial_auth_token);
-      }
-    };
-    initAuth();
+    // The OIDC callback already set the cookie server-side and redirected
+    // back; only an error ever comes back in the URL.
+    const params = new URLSearchParams(window.location.search);
+    const errCode = params.get('auth_error');
+    if (errCode) {
+      const known = ['already_linked', 'account_has_other_identity', 'invalid_state', 'authentik_not_configured'];
+      setError(t(uiLang, known.includes(errCode) ? `authentikError_${errCode}` : 'authentikErrorGeneric'));
+      window.history.replaceState({}, '', window.location.pathname);
+    }
 
-    const unsubscribe = onAuthStateChanged(auth, (u) => {
-      setUser(u);
-      if (u) {
-        const username = u.displayName || u.email;
-        setAppUser({ username });
-        setView('dashboard');
-
-        // Ensure user doc exists for Admin listing (and self-repair)
-        try {
-          setDoc(doc(db, 'artifacts', appId, 'users', u.uid), {
-            username: username,
-            lastLogin: new Date().toISOString()
-          }, { merge: true });
-        } catch (e) {
-          console.error("Failed to update user doc", e);
-        }
-      } else {
-        setAppUser(null);
-        setView('auth');
-      }
+    api.fetchAuthStatus().then(s => {
+      setAuthentikEnabled(s.authentik);
+      setLegacyMigrationEnabled(s.legacyMigration);
     });
-    return () => unsubscribe();
+
+    api.fetchMe()
+      .then(async (me) => {
+        setAppUser(me);
+        setView(me ? 'dashboard' : 'auth');
+        // Signed in: the migration (if any) went through, so the old Firebase
+        // session has served its purpose and can go.
+        if (me) clearLegacySession();
+        // Nobody signed in — but this browser may still hold the Firebase
+        // session from before the switch. If so, migrate it right here instead
+        // of showing a login screen to someone who never logged out.
+        if (!me) await offerLegacySessionMigration();
+      })
+      .catch((e) => {
+        console.error('Session check failed', e);
+        setView('auth');
+      })
+      .finally(() => setAuthChecked(true));
+    // Runs once on mount — uiLang only affects the (rare) error text.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // --- DATA SYNC ---
+  // One request replaces the six realtime listeners this used to run. A
+  // user's own data only ever changes from their own tab, so refetching after
+  // a write (see refresh() below) is equivalent to a live subscription —
+  // without holding six open streams for the whole session.
+  const refresh = useCallback(async () => {
+    if (!appUser) return;
+    try {
+      const data = await api.fetchBootstrap();
+      setAppUser(data.user);
+      setGlobalStats(data.stats);
+      setAttempts(data.attempts);
+      setPrivateQuizzes(data.privateQuizzes);
+      setPublicQuizzes(data.publicQuizzes);
+      setCustomModes(data.customModes);
+    } catch (e) {
+      if (e instanceof api.UnauthenticatedError) {
+        setAppUser(null);
+        setView('auth');
+        return;
+      }
+      console.error('Data sync failed', e);
+    }
+  }, [appUser?.uid]);
+
   useEffect(() => {
-    if (!user) return;
+    if (appUser) refresh();
+    // Only on sign-in — refresh() is called explicitly after every write.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [appUser?.uid]);
 
-    // 0. Sync own user doc (profile prefs like gravatarEmail)
-    const userDocRef = doc(db, 'artifacts', appId, 'users', user.uid);
-    const unsubUserDoc = onSnapshot(userDocRef, (snap) => {
-      const data = snap.data();
-      setAppUser(prev => prev ? { ...prev, gravatarEmail: data?.gravatarEmail || '', hideFromLeaderboard: !!data?.hideFromLeaderboard } : prev);
-    }, (err) => console.error("User doc sync error", err));
-
-    // 1. Sync User Stats (Questions)
-    const statsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'stats');
-    const unsubStats = onSnapshot(statsRef, (snapshot) => {
-      const newStats = {};
-      snapshot.forEach(doc => {
-        newStats[doc.id] = doc.data();
-      });
-      setGlobalStats(newStats);
-    }, (err) => console.error("Stats sync error", err));
-
-    // 2. Sync Attempt History (per-answer log, feeds category breakdown + trend chart)
-    const attemptsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'attempts');
-    const unsubAttempts = onSnapshot(attemptsRef, (snapshot) => {
-      setAttempts(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    }, (err) => console.error("Attempts sync error", err));
-
-    // 3. Sync Private Quizzes
-    const privateRef = collection(db, 'artifacts', appId, 'users', user.uid, 'quizzes');
-    const unsubPrivate = onSnapshot(privateRef, (snapshot) => {
-      setPrivateQuizzes(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    }, (err) => console.error("Private quiz sync error", err));
-
-    // 4. Sync Public Quizzes
-    const publicRef = collection(db, 'artifacts', appId, 'public', 'data', 'quizzes');
-    const unsubPublic = onSnapshot(publicRef, (snapshot) => {
-      setPublicQuizzes(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    }, (err) => console.error("Public quiz sync error", err));
-
-    // 5. Sync Custom Modes (private to this user)
-    const modesRef = collection(db, 'artifacts', appId, 'users', user.uid, 'modes');
-    const unsubModes = onSnapshot(modesRef, (snapshot) => {
-      setCustomModes(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    }, (err) => console.error("Custom modes sync error", err));
-
-    return () => {
-      unsubUserDoc();
-      unsubStats();
-      unsubAttempts();
-      unsubPrivate();
-      unsubPublic();
-      unsubModes();
-    };
-  }, [user]);
-
-  // --- SYNC CURRENT QUIZ STATS ---
+  // --- CURRENT QUIZ STATS ---
+  // Fetched when a quiz opens rather than subscribed to: the numbers are only
+  // read when building a session, and they're refreshed by the answer path.
   useEffect(() => {
-    if (!user || !currentQuizId) {
+    if (!appUser || !currentQuizId) {
       setCurrentQuizStats({});
       return;
     }
-    const qStatsRef = collection(db, 'artifacts', appId, 'users', user.uid, 'quiz_stats', currentQuizId, 'stats');
-    const unsub = onSnapshot(qStatsRef, (snapshot) => {
-      const newStats = {};
-      snapshot.forEach(doc => {
-        newStats[doc.id] = doc.data();
-      });
-      setCurrentQuizStats(newStats);
-    }, (err) => console.error("Quiz stats sync error", err));
-    return () => unsub();
-  }, [user, currentQuizId]);
+    let cancelled = false;
+    api.fetchQuizStats(currentQuizId)
+      .then(({ stats }) => { if (!cancelled) setCurrentQuizStats(stats); })
+      .catch(e => console.error('Quiz stats fetch failed', e));
+    return () => { cancelled = true; };
+  }, [appUser?.uid, currentQuizId]);
 
   // --- TIMER LOGIC ---
   useEffect(() => {
@@ -520,7 +553,7 @@ export default function App() {
     );
   }, [showFeedback]);
 
-  const submitAnswer = useCallback(async (isCorrect, answerValue) => {
+  const submitAnswer = useCallback(async (isCorrect, answerValue, skipped = false) => {
     if (showFeedback || processingRef.current) return;
     processingRef.current = true;
 
@@ -538,56 +571,48 @@ export default function App() {
       playWrongSound();
     }
 
-    // Update Firestore Stats
-    if (user && appUser) {
-      // 1. Update Question Specific Stats
-      // If we have a currentQuizId, save to the quiz-specific path.
-      // Otherwise, save to the global/legacy path.
-      let statRef;
-      if (currentQuizId) {
-        statRef = doc(db, 'artifacts', appId, 'users', user.uid, 'quiz_stats', currentQuizId, 'stats', currentQ.id);
-      } else {
-        statRef = doc(db, 'artifacts', appId, 'users', user.uid, 'stats', currentQ.id);
-      }
-
-      try {
-        // Always update global stats
-        const globalStatRef = doc(db, 'artifacts', appId, 'users', user.uid, 'stats', currentQ.id);
-        await setDoc(globalStatRef, {
-          correct: increment(isCorrect ? 1 : 0),
-          wrong: increment(isCorrect ? 0 : 1),
-          lastPlayed: new Date().toISOString()
-        }, { merge: true });
-
-        // If playing a specific quiz, also update quiz-specific stats
-        if (currentQuizId) {
-          const quizStatRef = doc(db, 'artifacts', appId, 'users', user.uid, 'quiz_stats', currentQuizId, 'stats', currentQ.id);
-          await setDoc(quizStatRef, {
-            correct: increment(isCorrect ? 1 : 0),
-            wrong: increment(isCorrect ? 0 : 1),
+    // Persist the answer. What took three Firestore writes (global tally,
+    // per-quiz tally, attempt log) is one transactional call now. The local
+    // stats objects are updated optimistically so the UI doesn't wait on it.
+    if (appUser) {
+      const bump = (prev) => {
+        const cur = prev[currentQ.id] || { correct: 0, wrong: 0 };
+        return {
+          ...prev,
+          [currentQ.id]: {
+            correct: cur.correct + (isCorrect ? 1 : 0),
+            wrong: cur.wrong + (isCorrect ? 0 : 1),
             lastPlayed: new Date().toISOString()
-          }, { merge: true });
-        }
+          }
+        };
+      };
+      setGlobalStats(bump);
+      if (currentQuizId) setCurrentQuizStats(bump);
 
-        // 2. Log this attempt (feeds the category breakdown + trend chart;
-        // uncategorized questions land under "Unknown" rather than vanishing)
-        await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'attempts'), {
-          questionId: currentQ.id,
-          category: currentQ.category || 'Unknown',
-          correct: isCorrect,
-          quizId: currentQuizId || null,
-          timestamp: new Date().toISOString()
-        });
-      } catch (e) {
-        console.error("Failed to save stats", e);
-      }
+      api.recordAnswer({
+        questionId: currentQ.id,
+        quizId: currentQuizId || null,
+        category: currentQ.category || 'Unknown',
+        correct: isCorrect,
+        skipped: !!skipped
+      }).catch(e => console.error('Failed to save stats', e));
     }
 
     // Trigger Feedback UI
     setFeedbackType(isCorrect ? 'correct' : 'wrong');
     setShowFeedback(true);
     setCountdown(isCorrect ? 2 : 5);
-  }, [showFeedback, sessionQueue, currentQuestionIndex, user, appUser, playCorrectSound, playWrongSound]);
+  }, [showFeedback, sessionQueue, currentQuestionIndex, currentQuizId, appUser, playCorrectSound, playWrongSound]);
+
+  // "I don't know" — counts as a wrong answer (so the question resurfaces in
+  // review, same as getting it wrong outright) but is tagged `skipped: true`
+  // in the attempt log so it can be told apart from a genuine wrong guess.
+  // Passing no answerValue means no option renders as "your (wrong) pick" —
+  // the feedback view just shows the correct answer, nothing marked red.
+  const submitSkip = useCallback(() => {
+    setMultiSelection([]); // clear any partial multi-select pick so feedback shows a clean "skipped" state
+    submitAnswer(false, undefined, true);
+  }, [submitAnswer]);
 
   const submitTextAnswer = async (typedAnswer: string) => {
     if (showFeedback || processingRef.current || gradingAnswer || !typedAnswer.trim()) return;
@@ -611,31 +636,21 @@ export default function App() {
   // Speed is a secondary factor: at the same percentage, a faster completion
   // still counts as an improvement (see Leaderboard.tsx's sort, which ranks
   // by percentage first and completion time as the tiebreaker).
-  const submitLeaderboardResult = useCallback(async (quizId: string, correctCount: number, totalCount: number, elapsedSeconds: number) => {
-    if (!user || !appUser || !quizId || totalCount === 0 || appUser.hideFromLeaderboard) return;
-    const percentage = Math.round((correctCount / totalCount) * 100);
+  const submitLeaderboardResult = useCallback(async (quizId: string, correctCount: number, totalCount: number, elapsedSeconds: number, quizTitle: string) => {
+    if (!appUser || !quizId || totalCount === 0 || appUser.hideFromLeaderboard) return;
     try {
-      const entryRef = doc(db, 'artifacts', appId, 'public', 'data', 'leaderboards', quizId, 'entries', user.uid);
-      const existing = await getDoc(entryRef);
-      const prevData = existing.exists() ? existing.data() : null;
-      const prevBest = prevData?.bestPercentage ?? -1;
-      const prevBestTime = prevData?.bestTimeSeconds ?? Infinity;
-      const isImprovement = percentage > prevBest || (percentage === prevBest && elapsedSeconds < prevBestTime);
-      await setDoc(entryRef, {
-        username: appUser.username,
-        lastPlayed: new Date().toISOString(),
-        ...(isImprovement ? { bestScore: correctCount, bestTotal: totalCount, bestPercentage: percentage, bestTimeSeconds: Math.round(elapsedSeconds) } : {})
-      }, { merge: true });
-      // Track which quizzes this user has an entry in, on their own (private,
-      // owner-readable) doc — lets opt-out purge those entries by direct path
-      // instead of a collectionGroup query, which would need a composite index.
-      await setDoc(doc(db, 'artifacts', appId, 'users', user.uid), {
-        leaderboardQuizIds: arrayUnion(quizId)
-      }, { merge: true });
+      // Whether this beats the previous best is decided server-side now, so a
+      // worse retry can't overwrite a good result even from a patched client.
+      await api.submitLeaderboardResult(quizId, {
+        title: quizTitle || 'Quiz',
+        score: correctCount,
+        total: totalCount,
+        timeSeconds: Math.round(elapsedSeconds)
+      });
     } catch (e) {
       console.error("Failed to update leaderboard", e);
     }
-  }, [user, appUser]);
+  }, [appUser]);
 
   const handleNext = useCallback(() => {
     // Guards against a second handleNext firing (e.g. key-repeat, or the
@@ -654,11 +669,11 @@ export default function App() {
     } else {
       if (currentQuizId) {
         const elapsedSeconds = quizStartTimeRef.current ? (Date.now() - quizStartTimeRef.current) / 1000 : 0;
-        submitLeaderboardResult(currentQuizId, sessionScore, sessionQueue.length, elapsedSeconds);
+        submitLeaderboardResult(currentQuizId, sessionScore, sessionQueue.length, elapsedSeconds, currentQuizTitle);
       }
       setView('results');
     }
-  }, [currentQuestionIndex, sessionQueue, currentQuizId, sessionScore, submitLeaderboardResult]);
+  }, [currentQuestionIndex, sessionQueue, currentQuizId, currentQuizTitle, sessionScore, submitLeaderboardResult]);
 
   // Release the handleNext guard only once the question index has actually
   // advanced, so a legitimate next press isn't blocked by a prior one.
@@ -805,6 +820,10 @@ export default function App() {
           submitAnswer(isCorrectArr(multiSelection, displayQ.answer), multiSelection);
           return;
         }
+        if (key === '0') {
+          submitSkip();
+          return;
+        }
         // Toggle options 1-9
         if (!isNaN(num) && num > 0 && num <= 9) {
           const index = num - 1;
@@ -817,6 +836,10 @@ export default function App() {
 
       // --- 3. Single Choice Logic ---
       if (displayQ.type === 'single' || displayQ.type === 'single_choice') {
+        if (key === '0') {
+          submitSkip();
+          return;
+        }
         if (!isNaN(num) && num > 0 && num <= 9) {
           const index = num - 1;
           if (index < displayQ.options.length) {
@@ -831,54 +854,66 @@ export default function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [view, displayQ, showFeedback, textInputReveal, multiSelection, submitAnswer, toggleSelection, handleNext]);
+  }, [view, displayQ, showFeedback, textInputReveal, multiSelection, submitAnswer, submitSkip, toggleSelection, handleNext]);
 
 
   // --- AUTH HANDLERS ---
+
+  // Step one of the migration. This does not sign anyone in: it proves the old
+  // password server-side and pulls that account's data out of Firestore. The
+  // account only becomes usable once Authentik confirms who's claiming it.
   const handleAuthSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     if (!username || !password) {
-      setError("Please fill in all fields");
+      setError(t(uiLang, 'authFillAllFields'));
       return;
     }
 
-    // Create a virtual email for the username to satisfy Firebase Auth requirements
-    // This keeps the UI simple (Username only) but secure (Firebase backend)
-    const virtualEmail = `${username.toLowerCase().replace(/\s+/g, '')}@quiz.local`;
-
+    setAuthBusy(true);
     try {
-      if (authMode === 'register') {
-        const userCredential = await createUserWithEmailAndPassword(auth, virtualEmail, password);
-        await updateProfile(userCredential.user, {
-          displayName: username
-        });
-        // onAuthStateChanged fires as soon as the account is created — typically
-        // before the updateProfile call above has resolved — so it falls back to
-        // the virtual email as the username (see u.displayName || u.email below).
-        // Correct both the in-memory state and the persisted user doc now that
-        // displayName is actually set, so this session's username (and anything
-        // that reads it this session, e.g. leaderboard entries) is right immediately
-        // instead of only after the next sign-in.
-        setAppUser(prev => prev ? { ...prev, username } : prev);
-        await setDoc(doc(db, 'artifacts', appId, 'users', userCredential.user.uid), {
-          username
-        }, { merge: true });
-        // The onAuthStateChanged listener still handles the view redirect.
-      } else {
-        await signInWithEmailAndPassword(auth, virtualEmail, password);
-      }
+      const { ticket, imported, username: name } = await api.verifyLegacyAccount(username, password);
+      setMigrationTicket(ticket);
+      setMigrationSummary(imported);
+      setLegacyUsername(name || username);
+      setPassword('');
+      setAuthScreen('link');
     } catch (err) {
       console.error(err);
-      if (err.code === 'auth/email-already-in-use') {
-        setError("Username already taken.");
-      } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password') {
-        setError("Invalid username or password.");
-      } else {
-        setError("Authentication failed: " + err.message);
-      }
+      const known = ['invalid_credentials', 'account_has_other_identity', 'legacy_migration_disabled'];
+      setError(t(uiLang, known.includes(err.message) ? `authError_${err.message}` : 'authInvalidCredentials'));
+    } finally {
+      setAuthBusy(false);
     }
+  };
+
+  // Sends the browser to auth.liforra.de. The migration ticket (if any) tells
+  // the server which imported account the returning identity belongs to —
+  // that's what keeps all the stats, attempts and leaderboard entries.
+  const handleAuthentikLogin = () => {
+    setError('');
+    setAuthBusy(true);
+    api.startAuthentikLogin(migrationTicket || undefined);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const { ssoLogoutUrl } = await api.logout();
+      if (ssoLogoutUrl) {
+        // Full-page hand-off: Authentik ends its own session and sends the
+        // browser back here, where /api/auth/me now reports nobody.
+        window.location.href = ssoLogoutUrl;
+        return;
+      }
+    } catch (e) {
+      console.error('Logout failed', e);
+    }
+    setAppUser(null);
+    setMigrationTicket(null);
+    setMigrationSummary(null);
+    setAuthScreen('choose');
+    setView('auth');
   };
 
   // --- QUIZ LOGIC & ALGORITHM ---
@@ -929,24 +964,18 @@ export default function App() {
       return;
     }
 
-    const quizData = {
-      title: pendingFileName,
-      icon: selectedIcon,
-      modes: selectedModes,
-      questions: processed,
-      createdAt: new Date().toISOString(),
-      author: appUser.username,
-      authorId: user.uid
-    };
-
     try {
-      let docRef;
-      if (scope === 'private') {
-        docRef = await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'quizzes'), quizData);
-      } else if (scope === 'public') {
-        docRef = await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'quizzes'), quizData);
-      }
-      generateSmartSession(processed, docRef.id);
+      // author/authorId are set server-side from the session — the client
+      // can't claim someone else's authorship any more.
+      const { id } = await api.createQuiz({
+        scope: scope as 'private' | 'public',
+        title: pendingFileName,
+        icon: selectedIcon,
+        modes: selectedModes,
+        questions: processed
+      });
+      await refresh();
+      generateSmartSession(processed, id, null, null, pendingFileName);
       setShowSaveModal(false);
       setPendingUpload(null);
       setSelectedIcon("BookOpen");
@@ -961,11 +990,8 @@ export default function App() {
     if (!editingQuiz) return;
 
     try {
-      const quizRef = editingQuiz.type === 'private'
-        ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', editingQuiz.id)
-        : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', editingQuiz.id);
-
-      await updateDoc(quizRef, {
+      // Scope no longer decides the path — ownership is checked server-side.
+      await api.updateQuiz(editingQuiz.id, {
         title: editTitle,
         icon: selectedIcon,
         modes: selectedModes
@@ -990,11 +1016,7 @@ export default function App() {
   const handleDeleteQuiz = async (quiz) => {
     if (!window.confirm(`Are you sure you want to delete "${quiz.title}"?`)) return;
     try {
-      const quizRef = quiz.type === 'private'
-        ? doc(db, 'artifacts', appId, 'users', user.uid, 'quizzes', quiz.id)
-        : doc(db, 'artifacts', appId, 'public', 'data', 'quizzes', quiz.id);
-
-      await deleteDoc(quizRef);
+      await api.deleteQuiz(quiz.id);
 
       // Update local state
       if (quiz.type === 'private') {
@@ -1012,21 +1034,28 @@ export default function App() {
   };
 
   const saveCustomMode = async (label: string, icon: string) => {
-    if (!user) return;
+    if (!appUser) return;
     try {
-      await addDoc(collection(db, 'artifacts', appId, 'users', user.uid, 'modes'), {
-        label,
-        icon,
-        createdAt: new Date().toISOString()
-      });
+      await api.createMode(label, icon);
+      await refresh();
     } catch (e) {
       setError("Failed to create mode: " + e.message);
     }
   };
 
-  const generateSmartSession = (allQuestions, quizId = null, sessionSizeOverride: number | null = null, timerConfig: { scope: 'question' | 'quiz'; seconds: number } | null = null) => {
+  const generateSmartSession = (allQuestions, quizId = null, sessionSizeOverride: number | null = null, timerConfig: { scope: 'question' | 'quiz'; seconds: number } | null = null, quizTitle: string | null = null) => {
     setActiveQuizQuestions(allQuestions);
     setCurrentQuizId(quizId);
+    setCurrentQuizTitle(quizTitle);
+
+    // A "mastered" question that hasn't been seen in a while is treated as
+    // due for a refresher rather than staying mastered forever — otherwise
+    // once something crosses the 70% threshold it can vanish from rotation
+    // permanently and quietly bit-rot. 14 days is an arbitrary but
+    // reasonable refresh window for exam-prep material.
+    const RESURFACE_DAYS = 14;
+    const now = Date.now();
+    const daysSince = (iso: string | undefined) => iso ? (now - new Date(iso).getTime()) / 86_400_000 : Infinity;
 
     // Categorize Questions
     const unknowns = [];
@@ -1041,9 +1070,9 @@ export default function App() {
         const total = s.correct + s.wrong;
         const ratio = s.correct / total;
 
-        // Dopamine: High accuracy (>= 70%)
-        // Review: Low accuracy
-        if (ratio < 0.7) {
+        // Dopamine: high accuracy (>= 70%) AND seen recently.
+        // Review: low accuracy, or high accuracy but stale (due for a refresher).
+        if (ratio < 0.7 || daysSince(s.lastPlayed) > RESURFACE_DAYS) {
           review.push(q);
         } else {
           dopamine.push(q);
@@ -1051,11 +1080,44 @@ export default function App() {
       }
     });
 
-    const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
+    // Real Fisher-Yates — `.sort(() => Math.random() - 0.5)` is a classic
+    // trap that produces a biased, non-uniform shuffle (some permutations
+    // are far more likely than others depending on the sort implementation).
+    const shuffle = (arr) => {
+      const out = [...arr];
+      for (let i = out.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [out[i], out[j]] = [out[j], out[i]];
+      }
+      return out;
+    };
+
+    // Weighted shuffle (Efraimidis-Spirakis A-Res): each item gets a random
+    // key raised to 1/weight, then a plain sort by key reproduces a weighted
+    // sample-without-replacement ordering in one pass — higher weight biases
+    // an item toward the front without making the order deterministic.
+    const weightedShuffle = (arr, weightFn) =>
+      arr
+        .map(item => ({ item, key: Math.pow(Math.random(), 1 / Math.max(weightFn(item), 0.05)) }))
+        .sort((a, b) => b.key - a.key)
+        .map(({ item }) => item);
+
+    // Within "review", questions you tend to get wrong more often are
+    // weighted to surface earlier — the ones costing you the most points
+    // get more practice reps, not just an even mix with borderline ones.
+    const reviewWeight = (q) => {
+      const s = stats[q.id];
+      if (!s) return 1;
+      const total = s.correct + s.wrong;
+      return total ? 1 - s.correct / total : 1;
+    };
 
     // Base Queue: Mostly Unknowns and Review items
-    let baseQueue = [...shuffle(unknowns), ...shuffle(review)];
-    let dopaminePool = shuffle(dopamine);
+    let baseQueue = [...shuffle(unknowns), ...weightedShuffle(review, reviewWeight)];
+    // Dopamine sprinkles favor whichever mastered questions have gone
+    // longest without being seen, so "easy win" picks double as light,
+    // low-stakes spaced-repetition checks instead of always being random.
+    let dopaminePool = weightedShuffle(dopamine, (q) => Math.min(daysSince(stats[q.id]?.lastPlayed), 30) + 1);
 
     // If we have no learning items, just play the dopamine hits
     if (baseQueue.length === 0) {
@@ -1074,8 +1136,9 @@ export default function App() {
 
       // Sprinkle logic
       if (sinceLastDopamine >= nextDopamineTarget && dopaminePool.length > 0) {
-        // Insert Dopamine Hit
-        finalQueue.push(dopaminePool.pop()); // Take one from pool
+        // Insert Dopamine Hit — shift, not pop: dopaminePool is weight-sorted
+        // with the most overdue-for-a-refresher question first.
+        finalQueue.push(dopaminePool.shift());
 
         // Reset counters
         sinceLastDopamine = 0;
@@ -1134,22 +1197,17 @@ export default function App() {
   const handleQuickQuizSession = (quiz) => {
     const questions = quiz.questions || [];
     if (questions.length === 0) return;
-    generateSmartSession(questions, quiz.id);
+    generateSmartSession(questions, quiz.id, null, null, quiz.title);
   };
 
   // --- ADMIN LOGIC ---
   useEffect(() => {
-    if (view === 'admin' && appUser?.username === 'liforra') {
-      const fetchUsers = async () => {
-        try {
-          const q = query(collection(db, 'artifacts', appId, 'users'));
-          const snap = await getDocs(q);
-          setAdminUsers(snap.docs.map(d => ({ uid: d.id, ...d.data() })));
-        } catch (e) {
-          console.error("Admin fetch error", e);
-        }
-      };
-      fetchUsers();
+    // Admin access is enforced server-side (requireAdmin); this check only
+    // decides whether to bother asking.
+    if (view === 'admin' && appUser?.isAdmin) {
+      api.fetchAdminUsers()
+        .then(({ users }) => setAdminUsers(users))
+        .catch(e => console.error('Admin fetch error', e));
     }
   }, [view, appUser]);
 
@@ -1157,17 +1215,8 @@ export default function App() {
     setSelectedAdminUser(u);
     setSelectedAdminUserData(null);
     try {
-      const statsSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'stats'));
-      const s = {};
-      statsSnap.forEach(d => s[d.id] = d.data());
-
-      const quizzesSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'quizzes'));
-      const q = quizzesSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-
-      const attemptsSnap = await getDocs(collection(db, 'artifacts', appId, 'users', u.uid, 'attempts'));
-      const a = attemptsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
-
-      setSelectedAdminUserData({ stats: s, quizzes: q, attempts: a });
+      const data = await api.fetchAdminUser(u.uid);
+      setSelectedAdminUserData({ stats: data.stats, quizzes: data.quizzes, attempts: data.attempts });
     } catch (e) {
       console.error("Failed to fetch user details", e);
     }
@@ -1175,6 +1224,19 @@ export default function App() {
 
 
   // --- RENDER HELPERS ---
+  const renderIDontKnowButton = () => (
+    !showFeedback && (
+      <button
+        onClick={submitSkip}
+        className="w-full py-2.5 text-sm font-semibold text-zinc-500 dark:text-[#9D99A8] border border-dashed border-zinc-300 dark:border-[#3A3544] rounded-xl hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center justify-center gap-2"
+      >
+        <HelpCircle size={15} />
+        {t(uiLang, 'iDontKnow')}
+        <span className="text-xs bg-zinc-100 dark:bg-[#2A2633] px-2 py-0.5 rounded font-mono">0</span>
+      </button>
+    )
+  );
+
   const renderSingleChoice = () => (
     <div className="space-y-3">
       {displayQ.options.map((option, idx) => {
@@ -1230,6 +1292,7 @@ export default function App() {
           </div>
         );
       })}
+      {renderIDontKnowButton()}
     </div>
   );
 
@@ -1309,6 +1372,7 @@ export default function App() {
             <span className="text-xs bg-purple-500 px-2 py-0.5 rounded text-purple-100 font-mono">Enter</span>
           </button>
         )}
+        {renderIDontKnowButton()}
       </div>
     );
   };
@@ -1410,7 +1474,7 @@ export default function App() {
 
   // --- VIEWS ---
   const updateCard = updateAvailable && (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] flex items-center gap-3 px-4 py-3 bg-white dark:bg-[#18161F] border border-zinc-200 dark:border-[#2A2633] rounded-xl shadow-2xl">
+    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] flex flex-wrap items-center justify-center gap-3 px-4 py-3 w-[calc(100vw-2rem)] max-w-sm sm:w-auto sm:max-w-none bg-white dark:bg-[#18161F] border border-zinc-200 dark:border-[#2A2633] rounded-xl shadow-2xl text-center">
       <span className="text-sm text-zinc-700 dark:text-white font-medium">A new update is available</span>
       <button
         onClick={() => window.location.reload()}
@@ -1421,7 +1485,21 @@ export default function App() {
     </div>
   );
 
+  // Until /api/auth/me answers we don't know whether there's a session, so
+  // show nothing rather than flashing the login screen at a signed-in user.
+  if (!authChecked) {
+    return (
+      <div className={`${theme} min-h-screen flex items-center justify-center bg-purple-50 dark:bg-[#0F0E13]`}>
+        <Loader2 size={28} className="animate-spin text-purple-500" />
+      </div>
+    );
+  }
+
   if (view === 'auth') {
+    const errorBanner = error
+      ? <p className="text-red-500 text-sm text-center bg-red-50 dark:bg-red-900/20 p-2 rounded-lg mb-4">{error}</p>
+      : null;
+
     return (
       <div className={`${theme} min-h-screen flex items-center justify-center p-4 transition-colors font-sans relative overflow-hidden`}>
         {/* Background Layer */}
@@ -1430,61 +1508,146 @@ export default function App() {
           <div className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] rounded-full bg-indigo-300/30 dark:bg-indigo-900/10 blur-[100px] animate-pulse delay-1000" />
         </div>
 
-        <div className="max-w-md w-full bg-white/80 dark:bg-[#18161F]/80 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/50 dark:border-[#2A2633] relative z-10">
+        <div className="max-w-md w-full bg-white/80 dark:bg-[#18161F]/80 backdrop-blur-md rounded-3xl shadow-2xl p-6 sm:p-8 border border-white/50 dark:border-[#2A2633] relative z-10">
           <div className="text-center mb-8">
             <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-lg shadow-purple-200 dark:shadow-none">
-              <Lock size={32} />
+              {authScreen === 'link' ? <Shield size={32} /> : <Lock size={32} />}
             </div>
-            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">Login to Liforra Quiz</h1>
+            <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">
+              {authScreen === 'link' ? t(uiLang, 'authLinkTitle') : t(uiLang, 'authTitle')}
+            </h1>
+            {authScreen === 'choose' && (
+              <p className="text-sm text-zinc-500 dark:text-[#9D99A8] mt-2">{t(uiLang, 'authChooseSubtitle')}</p>
+            )}
           </div>
 
-          <form onSubmit={handleAuthSubmit} className="space-y-4">
-            <div>
-              <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">Username</label>
-              <div className="relative">
-                <User className="absolute left-3 top-3 text-zinc-400" size={20} />
-                <input
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
-                  placeholder="Enter username"
-                />
-              </div>
-            </div>
+          {errorBanner}
 
-            <div>
-              <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">Password</label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-3 text-zinc-400" size={20} />
-                <input
-                  type={showPassword ? "text" : "password"}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-10 pr-12 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
-                  placeholder="Enter password"
-                />
-                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3 text-zinc-400 hover:text-zinc-600">
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+          {/* Migration step two: the old password checked out and the data is
+              already imported — now the account needs an owner. */}
+          {authScreen === 'link' && (
+            <div className="space-y-4">
+              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/30 text-emerald-800 dark:text-emerald-300 text-sm">
+                <p className="font-bold mb-1 flex items-center gap-2"><CheckCircle size={16} /> {t(uiLang, 'authImportDone').replace('{user}', legacyUsername)}</p>
+                {migrationSummary && (
+                  <p className="text-xs opacity-90">
+                    {t(uiLang, 'authImportSummary')
+                      .replace('{stats}', String(migrationSummary.stats ?? 0))
+                      .replace('{attempts}', String(migrationSummary.attempts ?? 0))
+                      .replace('{quizzes}', String(migrationSummary.quizzes ?? 0))}
+                  </p>
+                )}
+              </div>
+              <div className="p-4 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/30 text-amber-800 dark:text-amber-300 text-sm">
+                <p className="font-bold mb-1">{t(uiLang, 'authLinkHeadline')}</p>
+                <p>{t(uiLang, 'authLinkBody')}</p>
+              </div>
+              <button
+                onClick={handleAuthentikLogin}
+                disabled={authBusy}
+                className="w-full py-4 bg-purple-600 hover:bg-purple-700 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none flex items-center justify-center gap-2"
+              >
+                {authBusy ? <Loader2 size={20} className="animate-spin" /> : <Shield size={20} />}
+                {t(uiLang, 'authLinkCta')}
+              </button>
+              <button
+                onClick={() => { setAuthScreen('choose'); setMigrationTicket(null); setMigrationSummary(null); setError(''); }}
+                className="w-full text-zinc-500 dark:text-[#9D99A8] text-sm font-semibold hover:underline"
+              >
+                {t(uiLang, 'authCancelAndSignOut')}
+              </button>
+            </div>
+          )}
+
+          {/* Entry point: new account (Authentik) vs. old account (migration). */}
+          {authScreen === 'choose' && (
+            <div className="space-y-3">
+              <button
+                onClick={handleAuthentikLogin}
+                disabled={authBusy || !authentikEnabled}
+                className="w-full p-4 bg-purple-600 hover:bg-purple-700 disabled:opacity-60 text-white rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none text-left flex items-center gap-3"
+              >
+                {authBusy ? <Loader2 size={22} className="animate-spin shrink-0" /> : <Shield size={22} className="shrink-0" />}
+                <span className="flex-1">
+                  <span className="block font-bold">{t(uiLang, 'authNewAccount')}</span>
+                  <span className="block text-xs text-purple-100">{t(uiLang, 'authNewAccountDesc')}</span>
+                </span>
+                <ChevronRight size={20} className="shrink-0" />
+              </button>
+
+              {legacyMigrationEnabled && (
+              <button
+                onClick={() => { setAuthScreen('legacy'); setError(''); }}
+                className="w-full p-4 bg-zinc-50 dark:bg-[#23202B] hover:bg-zinc-100 dark:hover:bg-[#2A2633] border border-zinc-200 dark:border-[#2A2633] rounded-xl transition-all text-left flex items-center gap-3 dark:text-white"
+              >
+                <User size={22} className="shrink-0 text-zinc-400" />
+                <span className="flex-1">
+                  <span className="block font-bold">{t(uiLang, 'authOldAccount')}</span>
+                  <span className="block text-xs text-zinc-500 dark:text-[#9D99A8]">{t(uiLang, 'authOldAccountDesc')}</span>
+                </span>
+                <ChevronRight size={20} className="shrink-0 text-zinc-400" />
+              </button>
+              )}
+
+              {!authentikEnabled && (
+                <p className="text-xs text-center text-zinc-500 dark:text-[#9D99A8]">{t(uiLang, 'authentikDisabledHint')}</p>
+              )}
+            </div>
+          )}
+
+          {/* Legacy username/password — sign-in only, no registration. */}
+          {authScreen === 'legacy' && (
+            <>
+              <form onSubmit={handleAuthSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">{t(uiLang, 'authUsername')}</label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-3 text-zinc-400" size={20} />
+                    <input
+                      type="text"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                      placeholder={t(uiLang, 'authUsernamePlaceholder')}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase text-zinc-400 dark:text-[#9D99A8] mb-1">{t(uiLang, 'authPassword')}</label>
+                  <div className="relative">
+                    <Lock className="absolute left-3 top-3 text-zinc-400" size={20} />
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="w-full pl-10 pr-12 py-3 bg-zinc-50 dark:bg-[#23202B] border border-zinc-200 dark:border-[#2A2633] rounded-xl focus:ring-2 focus:ring-purple-500 outline-none transition-all dark:text-white"
+                      placeholder={t(uiLang, 'authPasswordPlaceholder')}
+                    />
+                    <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-3 text-zinc-400 hover:text-zinc-600">
+                      {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </button>
+                  </div>
+                </div>
+
+                <p className="text-xs text-zinc-500 dark:text-[#9D99A8]">{t(uiLang, 'authLegacyHint')}</p>
+
+                <button type="submit" disabled={authBusy} className="w-full py-4 bg-purple-600 hover:bg-purple-700 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none mt-4 flex items-center justify-center gap-2">
+                  {authBusy && <Loader2 size={20} className="animate-spin" />}
+                  {authBusy ? t(uiLang, 'authImporting') : t(uiLang, 'authSignIn')}
+                </button>
+              </form>
+
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => { setAuthScreen('choose'); setError(''); }}
+                  className="text-purple-600 dark:text-purple-400 text-sm font-semibold hover:underline"
+                >
+                  {t(uiLang, 'authBack')}
                 </button>
               </div>
-            </div>
-
-            {error && <p className="text-red-500 text-sm text-center bg-red-50 dark:bg-red-900/20 p-2 rounded-lg">{error}</p>}
-
-            <button type="submit" className="w-full py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-purple-200 dark:shadow-none mt-4">
-              {authMode === 'login' ? 'Sign In' : 'Create Account'}
-            </button>
-          </form>
-
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => { setAuthMode(authMode === 'login' ? 'register' : 'login'); setError(''); }}
-              className="text-purple-600 dark:text-purple-400 text-sm font-semibold hover:underline"
-            >
-              {authMode === 'login' ? "Need an account? Register" : "Have an account? Login"}
-            </button>
-          </div>
+            </>
+          )}
         </div>
         {updateCard}
       </div>
@@ -1501,12 +1664,11 @@ export default function App() {
           setView={setView}
           theme={theme}
           setTheme={setTheme}
-          user={user}
           appUser={appUser}
           defaultQuizzes={DEFAULT_QUIZZES}
           privateQuizzes={privateQuizzes}
           publicQuizzes={publicQuizzes}
-          onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id)}
+          onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id, null, null, quiz.title)}
           onSelectQuickQuiz={handleQuickQuizSession}
           onEditQuiz={(quiz) => {
             setEditingQuiz(quiz);
@@ -1515,7 +1677,7 @@ export default function App() {
             setSelectedModes(quiz.modes || []);
           }}
           onDeleteQuiz={handleDeleteQuiz}
-          onLogout={() => auth.signOut()}
+          onLogout={handleLogout}
           isOpen={isSidebarOpen}
           toggleSidebar={toggleSidebar}
           gravatarUrl={gravatarUrl}
@@ -1590,7 +1752,7 @@ export default function App() {
                     return (
                       <div key={quiz.id} className="relative group">
                         <button
-                          onClick={() => generateSmartSession(quiz.questions, quiz.id)}
+                          onClick={() => generateSmartSession(quiz.questions, quiz.id, null, null, quiz.title)}
                           className="w-full text-left p-5 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] hover:border-purple-500 dark:hover:border-purple-400 hover:shadow-md transition-all"
                         >
                           <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
@@ -1616,7 +1778,7 @@ export default function App() {
               )}
 
               {/* STATS TEASER — full breakdown + trend chart lives on the Statistics page */}
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex flex-wrap justify-between items-center gap-2 mb-4">
                 <h2 className="text-xl font-bold text-zinc-800 dark:text-white">{t(uiLang, 'performanceStats')}</h2>
                 <button onClick={downloadStats} className="flex items-center gap-2 text-sm text-purple-600 dark:text-purple-400 hover:underline bg-purple-50 dark:bg-purple-900/10 px-3 py-1.5 rounded-lg border border-purple-100 dark:border-purple-800/30 transition-all">
                   <Download size={16} /> {t(uiLang, 'exportData')}
@@ -1662,10 +1824,10 @@ export default function App() {
           {/* --- MODAL: SAVE OPTIONS --- */}
           {showSaveModal && (
             <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-              <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+              <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633] max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-center mb-6">
                   <h2 className="text-xl font-bold dark:text-white">Upload Options</h2>
-                  <button onClick={() => setShowSaveModal(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+                  <button onClick={() => setShowSaveModal(false)} className="p-2 -m-2 text-zinc-400 hover:text-zinc-600"><X /></button>
                 </div>
 
                 <div className="bg-zinc-50 dark:bg-[#23202B] p-4 rounded-xl mb-6">
@@ -1750,7 +1912,7 @@ export default function App() {
             <div className="min-h-full flex flex-col items-center p-4 py-10">
               <div className="max-w-2xl w-full">
                 {/* Header */}
-                <div className="flex justify-between items-end mb-4 px-1">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-4 px-1">
                   <div>
                     <h2 className="text-zinc-500 dark:text-[#9D99A8] text-sm font-semibold uppercase tracking-wider">
                       Question {currentQuestionIndex + 1} of {sessionQueue.length}
@@ -1782,7 +1944,7 @@ export default function App() {
                       )}
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 shrink-0">
                     {activeTimer?.scope === 'question' && (
                       <span className={`flex items-center gap-1 text-sm font-bold tabular-nums px-2.5 py-1 rounded-lg ${questionTimeLeft <= 5 ? 'text-red-600 bg-red-50 dark:bg-red-900/20' : 'text-zinc-600 dark:text-zinc-300 bg-zinc-100 dark:bg-[#23202B]'}`}>
                         <Timer size={14} /> {questionTimeLeft}s
@@ -1802,9 +1964,9 @@ export default function App() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{displayQ.question}</h3>
+                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-5 sm:p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="flex-1 min-w-0 text-xl md:text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{displayQ.question}</h3>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
                         <Keyboard size={20} />
@@ -1830,8 +1992,8 @@ export default function App() {
                   {/* Feedback Footer */}
                   {showFeedback && (
                     <div className="mt-8 pt-6 border-t border-zinc-100 dark:border-[#2A2633] animate-in fade-in slide-in-from-bottom-4 duration-300">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div className="flex flex-wrap items-center gap-3">
                           {feedbackType === 'correct' ? (
                             <span className="text-green-600 dark:text-green-400 font-bold flex items-center gap-2"><CheckCircle size={18} /> Correct!</span>
                           ) : (
@@ -1839,21 +2001,21 @@ export default function App() {
                           )}
 
                           {!isPaused && (
-                            <div className="flex items-center gap-2 text-zinc-500 dark:text-[#9D99A8] text-sm ml-4 border-l border-zinc-200 dark:border-[#2A2633] pl-4">
+                            <div className="flex items-center gap-2 text-zinc-500 dark:text-[#9D99A8] text-sm sm:ml-4 sm:border-l border-zinc-200 dark:border-[#2A2633] sm:pl-4">
                               <Timer size={16} className="animate-pulse" />
                               <span>Next in {countdown}s</span>
-                              <span className="text-xs bg-zinc-100 dark:bg-[#23202B] px-1.5 py-0.5 rounded border border-zinc-300 dark:border-[#2A2633] font-mono">Space</span>
+                              <span className="text-xs bg-zinc-100 dark:bg-[#23202B] px-1.5 py-0.5 rounded border border-zinc-300 dark:border-[#2A2633] font-mono hidden sm:inline">Space</span>
                             </div>
                           )}
                         </div>
 
                         <div className="flex gap-2">
                           {!isPaused && currentQuestionIndex < sessionQueue.length - 1 && (
-                            <button onClick={() => setIsPaused(true)} className="px-4 py-2 bg-zinc-100 dark:bg-[#23202B] hover:bg-zinc-200 text-zinc-600 dark:text-[#9D99A8] rounded-lg text-sm font-semibold flex items-center gap-2">
+                            <button onClick={() => setIsPaused(true)} className="flex-1 sm:flex-none justify-center px-4 py-2.5 sm:py-2 bg-zinc-100 dark:bg-[#23202B] hover:bg-zinc-200 text-zinc-600 dark:text-[#9D99A8] rounded-lg text-sm font-semibold flex items-center gap-2">
                               <Pause size={16} /> Wait
                             </button>
                           )}
-                          <button onClick={handleNext} className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-semibold flex items-center gap-2 shadow-lg shadow-purple-200 dark:shadow-none">
+                          <button onClick={handleNext} className="flex-1 sm:flex-none justify-center px-5 py-2.5 sm:py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-semibold flex items-center gap-2 shadow-lg shadow-purple-200 dark:shadow-none">
                             {currentQuestionIndex === sessionQueue.length - 1 ? 'Finish' : 'Next'} <ChevronRight size={16} />
                           </button>
                         </div>
@@ -1883,7 +2045,7 @@ export default function App() {
           {view === 'results' && (
             <div className="min-h-screen flex items-start justify-center p-4 py-12">
               <div className="max-w-3xl w-full bg-white dark:bg-[#18161F] rounded-3xl shadow-2xl overflow-hidden border border-zinc-100 dark:border-[#2A2633]">
-                <div className="bg-purple-600 dark:bg-purple-700 p-10 text-center text-white relative">
+                <div className="bg-purple-600 dark:bg-purple-700 p-6 sm:p-10 text-center text-white relative">
                   <Award className="mx-auto mb-4 opacity-90" size={48} />
                   <h2 className="text-4xl font-bold mb-2">{Math.round((sessionScore / sessionQueue.length) * 100)}%</h2>
                   <p className="text-purple-200 font-medium text-lg">Good job, {appUser?.username}!</p>
@@ -1892,7 +2054,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="p-8 bg-purple-50 dark:bg-[#23202B]">
+                <div className="p-4 sm:p-8 bg-purple-50 dark:bg-[#23202B]">
                   <h3 className="text-zinc-800 dark:text-white font-bold text-lg mb-6">Session Review</h3>
                   <div className="space-y-4">
                     {sessionQueue.map((rawQ, index) => {
@@ -1916,11 +2078,11 @@ export default function App() {
                       }
 
                       return (
-                        <div key={index} className="bg-white dark:bg-[#18161F] p-5 rounded-xl border border-zinc-200 dark:border-[#2A2633] shadow-sm flex items-center gap-4">
-                          <div className={isCorrect ? "text-green-500" : "text-red-500"}>
+                        <div key={index} className="bg-white dark:bg-[#18161F] p-4 sm:p-5 rounded-xl border border-zinc-200 dark:border-[#2A2633] shadow-sm flex items-center gap-3 sm:gap-4">
+                          <div className={`shrink-0 ${isCorrect ? "text-green-500" : "text-red-500"}`}>
                             {isCorrect ? <CheckCircle /> : <XCircle />}
                           </div>
-                          <div>
+                          <div className="flex-1 min-w-0">
                             <p className="font-semibold text-zinc-800 dark:text-[#EBE9F0]">{q.question}</p>
                             <p className="text-xs text-zinc-500 mt-1">
                               {Array.isArray(ans) ? ans.join(", ") : ans || "Skipped"}
@@ -1940,7 +2102,7 @@ export default function App() {
                     <RotateCcw size={18} /> Back to Dashboard
                   </button>
                   {currentQuizId && (
-                    <button onClick={() => openLeaderboard(currentQuizId)} className="flex items-center gap-2 px-8 py-3 bg-zinc-100 dark:bg-[#23202B] text-zinc-700 dark:text-white rounded-xl font-bold hover:bg-zinc-200 dark:hover:bg-[#2A2633] transition-colors">
+                    <button onClick={() => openLeaderboard(currentQuizId, currentQuizTitle, 'dashboard')} className="flex items-center gap-2 px-8 py-3 bg-zinc-100 dark:bg-[#23202B] text-zinc-700 dark:text-white rounded-xl font-bold hover:bg-zinc-200 dark:hover:bg-[#2A2633] transition-colors">
                       <Trophy size={18} /> View Leaderboard
                     </button>
                   )}
@@ -1949,27 +2111,73 @@ export default function App() {
             </div>
           )}
 
-          {/* --- VIEW: LEADERBOARD --- */}
-          {view === 'leaderboard' && leaderboardQuizId && (
-            <Leaderboard
-              db={db}
-              appId={appId}
-              quizId={leaderboardQuizId}
-              quizTitle={leaderboardQuizTitle}
-              currentUserId={user.uid}
-              hideFromLeaderboard={!!appUser?.hideFromLeaderboard}
+          {/* --- VIEW: AP PRÜFUNGEN --- */}
+          {view === 'exams' && (
+            <ExamsHub
+              exams={DEFAULT_EXAMS}
+              uiLang={uiLang}
+              activeMode={activeMode}
+              onStart={startExam}
+              onBack={() => setView('dashboard')}
+              onManageSources={() => setView('examAdmin')}
+            />
+          )}
+
+          {view === 'examAdmin' && (
+            <AdminExamSources
+              exams={DEFAULT_EXAMS}
+              uiLang={uiLang}
+              onBack={() => setView('exams')}
+            />
+          )}
+
+          {view === 'examTaking' && activeExam && (
+            <ExamTaking
+              exam={activeExam}
+              uiLang={uiLang}
+              onSubmit={submitExam}
+              onExit={() => setView('exams')}
+            />
+          )}
+
+          {view === 'examResults' && activeExam && (
+            <ExamResults
+              exam={activeExam}
+              answers={examAnswers}
+              uiLang={uiLang}
+              onExit={() => setView('exams')}
+              onExportPdf={exportExamPdf}
+            />
+          )}
+
+          {/* --- VIEW: LEADERBOARD HUB --- */}
+          {view === 'leaderboards' && (
+            <LeaderboardHub
+              uiLang={uiLang}
+              onOpenLeaderboard={(quizId, title) => openLeaderboard(quizId, title, 'leaderboards')}
               onBack={() => setView('dashboard')}
             />
           )}
 
+          {/* --- VIEW: LEADERBOARD --- */}
+          {view === 'leaderboard' && leaderboardQuizId && (
+            <Leaderboard
+              quizId={leaderboardQuizId}
+              quizTitle={leaderboardQuizTitle}
+              currentUserId={appUser.uid}
+              hideFromLeaderboard={!!appUser?.hideFromLeaderboard}
+              onBack={() => setView(leaderboardReturnView)}
+            />
+          )}
+
           {/* --- VIEW: ADMIN --- */}
-          {view === 'admin' && appUser?.username === 'liforra' && (
-            <div className="min-h-screen p-8 max-w-6xl mx-auto">
-              <div className="flex justify-between items-center mb-8">
-                <h1 className="text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
+          {view === 'admin' && appUser?.isAdmin && (
+            <div className="min-h-screen p-4 md:p-8 max-w-6xl mx-auto">
+              <div className="flex justify-between items-center mb-8 gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white flex items-center gap-2">
                   <Shield className="text-red-500" /> Admin Dashboard
                 </h1>
-                <button onClick={() => setView('dashboard')} className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">Exit</button>
+                <button onClick={() => setView('dashboard')} className="text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white shrink-0">Exit</button>
               </div>
 
               <div className="grid md:grid-cols-3 gap-8">
@@ -2055,10 +2263,10 @@ export default function App() {
       {/* --- MODAL: EDIT QUIZ --- */}
       {editingQuiz && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633] max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold dark:text-white">Edit Quiz</h2>
-              <button onClick={() => setEditingQuiz(null)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+              <button onClick={() => setEditingQuiz(null)} className="p-2 -m-2 text-zinc-400 hover:text-zinc-600"><X /></button>
             </div>
 
             <form onSubmit={handleUpdateQuiz} className="space-y-4">
@@ -2124,10 +2332,10 @@ export default function App() {
       {/* --- MODAL: SETTINGS --- */}
       {showSettingsModal && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633]">
+          <div className="bg-white dark:bg-[#18161F] w-full max-w-md rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633] max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold dark:text-white">Profile Settings</h2>
-              <button onClick={() => setShowSettingsModal(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+              <button onClick={() => setShowSettingsModal(false)} className="p-2 -m-2 text-zinc-400 hover:text-zinc-600"><X /></button>
             </div>
 
             <div className="space-y-4">
@@ -2175,7 +2383,7 @@ export default function App() {
           <div className="bg-white dark:bg-[#18161F] w-full max-w-lg rounded-2xl shadow-2xl p-6 border border-zinc-200 dark:border-[#2A2633] max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-bold dark:text-white">Custom Quiz</h2>
-              <button onClick={() => setShowCustomBuilder(false)}><X className="text-zinc-400 hover:text-zinc-600" /></button>
+              <button onClick={() => setShowCustomBuilder(false)} className="p-2 -m-2 text-zinc-400 hover:text-zinc-600"><X /></button>
             </div>
 
             <div className="space-y-5">

@@ -1,0 +1,346 @@
+{
+  "id": "si-2023-sommer-teil1",
+  "title": "Systemintegration – Sommer 2023 (Aufgabensatz 1, Konzeption und Administration von IT-Systemen)",
+  "profession": "SI",
+  "period": {
+    "year": 2023,
+    "season": "Sommer"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Sommer 2023, ZPA Nord-West — Konzeption und Administration von IT-Systemen, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration (AO 2020)",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 26,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie sind bei der Best-IT GmbH als Fachinformatiker Systemintegration beschäftigt. Die Best-IT GmbH ist ein in Köln ansässiges bedeutendes Systemhaus, welches überwiegend für mittelständische Betriebe im Bereich IT-Services agiert.\n\nDas Autohaus Schnellinger hat die Best-IT GmbH beauftragt, verschiedene Verbesserungen an ihren IT-Systemen vorzunehmen. 1. Aufgabe: Server bereitstellen und administrieren. 2. Aufgabe: Systeme skalieren und aktualisieren. 3. Aufgabe: Programm zur Serverüberwachung erweitern. 4. Aufgabe: Datensicherung und Datenspeicher einrichten.\n\nIn dieser Aufgabe sollen Sie die Bereitstellung von lokalen Servern unter besonderer Berücksichtigung der Systemsicherheit planen.",
+      "parts": [
+        {
+          "id": "1.a",
+          "label": "a)",
+          "prompt": "Zur Vorbereitung der Installation und anschließenden Konfiguration soll eine Liste erstellt werden, welche — nach Bereichen gegliedert — sicherheitsrelevante Einstellungen an Servern beinhaltet. Ergänzen Sie in der Liste „Serverkonfiguration\" die vier freien Bereiche mit jeweils zwei entsprechenden Einstellungen (Bereich „Server-Hardware\" ist bereits mit den Beispielen „Boot-Reihenfolge ändern\" und „Secure-Boot aktivieren\" ausgefüllt).",
+          "points": 8,
+          "type": "text",
+          "modelAnswer": "Installation und Konfiguration des Betriebssystems (Grundlegende Betriebssysteminstallation und -konfiguration): Servernamen anonymisieren, System-Updates planen, Default-Konten umbenennen/deaktivieren, Firewall-Regeln einschränken, Partitionieren/Formatieren der Datenträger. Dienste und Features des Servers: Nicht benötigte Dienste deaktivieren, Auto-Start-Programme selektieren/deaktivieren, nur sichere Programme zulassen/installieren, unsichere Protokolle abschalten, bestimmte Skripte sperren. Anmelden am Server: Sichere Passwortregeln festlegen, Anmeldezeiten einschränken, Anmelden nur mit 2FA/MFA zulassen, Remoteverwaltung/-zugriff einschränken. Administrieren des Servers: Berechtigungen vergeben für Ändern von Systemeinstellungen, Installieren von Anwendungen, Zugriff auf Verzeichnisse, Zugriff auf Systemressourcen, Systemeinstellungen sichern, Logs maximale Einstellungen aufzeichnen lassen.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 173.76,
+            "y": 497.28,
+            "maxWidth": 335,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "1.ba",
+          "label": "b) ba)",
+          "prompt": "In IT-Systemen kommt an verschiedenen Stellen das asymmetrische Verschlüsselungsverfahren zum Einsatz. Erläutern Sie die prinzipielle Funktionsweise dieses Verfahrens.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Bei dem asymmetrischen Verschlüsselungsverfahren gibt es grundsätzlich zwei Schlüssel: den öffentlichen Schlüssel und den privaten Schlüssel. Der öffentliche Schlüssel wird den Stellen zur Verfügung gestellt, die die Daten vertraulich verschlüsseln möchten. Nach der Übertragung der Daten an den Besitzer des entsprechenden privaten Schlüssels kann nur dieser die Daten entschlüsseln. Somit ist zwecks Austauschs von verschlüsselten Daten kein vorheriger Schlüsselaustausch nötig.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 46.56,
+            "y": 184.32,
+            "maxWidth": 490,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.bb",
+          "label": "bb)",
+          "prompt": "Erläutern Sie einen Nachteil dieses Verfahrens gegenüber dem der symmetrischen Verschlüsselung.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Das Entschlüsseln der Daten ist rechenintensiv, daher langsamer. Zum Datenaustausch werden zwei Schlüsselpaare benötigt. Schlüsselverwaltung ist aufwendiger.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 46.56,
+            "y": 779.52,
+            "maxWidth": 490,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.c",
+          "label": "c)",
+          "prompt": "Zur Gewährleistung der IT-Sicherheit werden an verschiedenen Stellen digitale Zertifikate eingesetzt. Erläutern Sie in mindestens vier Schritten den Vorgang, einen Server mithilfe eines öffentlich bestätigten Zertifikats abzusichern.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Ein digitales Zertifikat bei einer kommerziellen Zertifizierungsstelle beantragen. Das digitale Zertifikat mit einem Passwort schützen. Das digitale Zertifikat auf dem Server installieren. Notwendige übergeordnete Zertifikate installieren.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 46.56,
+            "y": 654.72,
+            "maxWidth": 490,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.d",
+          "label": "d)",
+          "prompt": "Angriffe auf IT-Systeme erfolgen zu einem großen Teil im Rahmen der Kommunikation mit E-Mails. Beschreiben Sie zwei Sicherheitsmaßnahmen, die geeignet sind, solche Angriffe nicht wirksam werden zu lassen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Bestimmte Anlagen sperren. Text-Modus statt HTML benutzen. Benutzer wiederkehrend aufklären/schulen.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 46.56,
+            "y": 496.32,
+            "maxWidth": 490,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.e",
+          "label": "e)",
+          "prompt": "Falls ein Angriff auf ein IT-System nicht verhindert werden konnte, ist es besonders wichtig, diesen anhand bestimmter Symptome frühzeitig zu erkennen. Zum Beispiel könnte das Starten unbekannter Programme ein Hinweis auf eine Systemkompromittierung sein. Erläutern Sie zwei weitere mögliche Symptome einer Systemkompromittierung.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Auf veränderte, insbesondere verzögerte Systemleistung achten. Erhöhte Aufforderungen zur Eingabe von Passwörtern. Eine erhöhte Netzwerkaktivität wahrnehmen. Erhöhte Aufforderungen zum Herunterladen von Software. Änderungen an der Startseite des Browsers. Senden einer großen Anzahl von E-Mails. Häufige Abstürze. Programme stellen automatisch eine Internetverbindung her. Ungewöhnliche Aktivitäten wie Änderung des Kennworts.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 46.56,
+            "y": 304.32,
+            "maxWidth": 490,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 24,
+      "intro": "Die neue CarConfigurator-App der Schnellinger GmbH ist das Aushängeschild des Unternehmens. Sie soll zuverlässig zur Verfügung stehen und auch bei Marketingaktionen in der Lage sein, mit großer Last umzugehen. Das Autohaus betreibt dazu eine Webservice-Umgebung und ein Datenbanksystem, die lokal gehostet sind und auf virtuellen Servern laufen.",
+      "referenceImage": "/exams/si-2023-sommer-teil1/page-04.png",
+      "parts": [
+        {
+          "id": "2.a.aa",
+          "label": "a) aa)",
+          "prompt": "Um eine hohe Verfügbarkeit sicherzustellen, werden die Server unter anderem mit einer USV ausgestattet. Ordnen Sie den beiden abgebildeten Schaltskizzen die entsprechende Bezeichnung zu (zur Auswahl stehen: Offline, Online, Line-Interactive).",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Linke Schaltskizze (Bypass-Schalter im Normalbetrieb, Wechselrichter dauerhaft aktiv): Online. Rechte Schaltskizze (Umschalter, der im Fehlerfall auf Batterie/Wechselrichter umschaltet): Offline.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 110.4,
+            "y": 478.08,
+            "maxWidth": 250,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.ab",
+          "label": "ab)",
+          "prompt": "Die USV-Typen „Online, Offline und Line-Interactive\" werden abgekürzt auch als VI, VFI und VFD bezeichnet. Ordnen Sie diese Abkürzungen in der Tabelle entsprechend zu und geben Sie die Bedeutung der Abkürzungen an.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Online: Abkürzung VFI, Bedeutung „Voltage and Frequency Independent\". Offline: Abkürzung VFD, Bedeutung „Voltage and Frequency Dependent\". Line-Interactive: Abkürzung VI, Bedeutung „Voltage Independent\".",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 153.6,
+            "y": 405.6,
+            "maxWidth": 388,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.a.ac",
+          "label": "ac)",
+          "prompt": "Nennen Sie zwei Vorteile und zwei Nachteile einer Line-Interactive-USV im Vergleich zu einer Offline-USV.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Vorteile: Schützt vor Spannungsschwankungen. Sehr kurze Umschaltzeit. Nachteile: Teurer. Geringerer Wirkungsgrad.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 110.4,
+            "y": 317.28,
+            "maxWidth": 432,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.b",
+          "label": "b)",
+          "prompt": "Um den Anforderungen nach einer bestmöglichen Verfügbarkeit gerecht zu werden, soll die Webserverarchitektur mögliche Lastspitzen durch Skalierung der Ressourcen kompensieren. Beschreiben Sie die Konzepte der Skalierungsmethoden „Horizontale Skalierung\" und „Vertikale Skalierung\".",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Horizontale Skalierung (Scale out) ist die Fähigkeit, die Kapazität zu erhöhen, indem mehrere Komponenten gleichartige Anfragen erfüllen. Beim Skalieren werden weitere Komponenten hinzugefügt bzw. abgebaut. Die Idee ist, die Last zu verteilen. Dies kann dynamisch passieren, ohne Ausfallzeiten der bestehenden Systeme. Vertikale Skalierung (Scale up) wird durch Hinzufügen oder Entfernen von Ressourcen in einem System erreicht, z. B. RAM oder CPU. Das Ziel ist vor allem, prognostizierbare Lastspitzen durch ausreichende Performance bei einer festen Anzahl von Systemen bereitzustellen. Eine Bereitstellung bzw. ein Einbau ist oft mit einer Ausfallzeit verbunden.",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 30.24,
+            "y": 738.72,
+            "maxWidth": 512,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.c",
+          "label": "c)",
+          "prompt": "Um unterbrechungsfrei kontinuierlich neue Updates veröffentlichen zu können, haben Sie sich für Blue Green Deployments entschieden. Erläutern Sie die Methode des Blue Green Deployments anhand des Schaubilds (zwei Umgebungen hinter einem Loadbalancer: „Before Deployment\" zeigt Umgebung 1/Blue = Version 1.1/Staging und Umgebung 2/Green = Version 1.0/Live; „After Deployment\" zeigt Umgebung 1/Blue = Version 1.1/Live und Umgebung 2/Green = Version 1.0/Staging).",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Beim Blue Green Deployment existieren (mindestens) zwei Umgebungen. Im Schaubild sind das die Umgebungen Umgebung 1 und Umgebung 2. Eine der Umgebungen ist die Live-Umgebung. Im Schaubild „before Deployment\" ist das die Umgebung 2 (die grüne Umgebung). Die andere der Umgebungen wird mit der neuen Version vorbereitet (deployed). Im Schaubild „before Deployment\" ist das die Umgebung 1 (die blaue Umgebung). Dann wird unterbrechungsfrei ein Schwenk der Verbindungen durchgeführt, bis alle Nutzer auf der neuen Live-Umgebung (after Deployment/Blau) arbeiten. Die alte Umgebung kann kurzfristig als Fallback genutzt werden, und langfristig für einen neuerlichen Schwenk als Staging-Umgebung zur nächsten Version werden.",
+          "referenceImage": "/exams/si-2023-sommer-teil1/page-05.png",
+          "pdfAnchor": {
+            "page": 4,
+            "x": 30.24,
+            "y": 208.32,
+            "maxWidth": 512,
+            "fontSize": 7
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 26,
+      "intro": "Im Rahmen der Serverüberwachung sollen Sie eine Programmerweiterung vornehmen. Das Programm „MONCPU\" dient der täglichen Überwachung der CPU-Last des Datenbank-Servers. Es speichert für jede zurückliegende volle Stunde den Mittelwert der CPU-Last. Die Mittelwerte werden als ganzzahliger Prozentwert in einem eindimensionalen Array gespeichert (Array-Index 0-23 für die Stunden 0 Uhr bis 23 Uhr, Beispielwerte: 33, 44, 40, 52, 60, 56, ..., 40, 52, 60, 56 für die Indizes 0-5 und 20-23).\n\nSie sollen das vorhandene Programm so erweitern, dass die folgende Meldung (MessageBox „MONCPU\": „Die Systemauslastung war an mehr als 18 Stunden höher als 80 %.\") ausgegeben wird, sofern die CPU-Last am vergangenen Tag an mehr als 18 Stunden den Wert von 80 % überschritten hat.",
+      "externalReference": {
+        "page": 7,
+        "label": "Anlage: Syntaxregeln (C#-Schleifen, Auswahlanweisung, Kommentare, MessageBox)"
+      },
+      "parts": [
+        {
+          "id": "3.a",
+          "label": "a)",
+          "prompt": "Vervollständigen Sie den vorliegenden Programmentwurf entsprechend der Anforderung. Orientieren Sie sich dabei an den vorgegebenen Kommentaren und nutzen Sie die Anlage „Syntax\" (Schleifenarten while/for/do-while, Auswahlanweisung if/else, Kommentare, MessageBox-Aufruf). Vorgegeben ist: `string message = \"Die Systemauslastung war an mehr als 18 Stunden höher als 80 %.\"; string title = \"MONCPU\"; int cpuutil = 0; int cpulimit = 0; int sumstd = 0; int[] usedCPU = new int[24] {33,44,40,52,60,56,33,44,40,52,60,56,33,44,40,52,60,56,33,44,40,52,60,56};`",
+          "points": 15,
+          "type": "text",
+          "modelAnswer": "for (int i = 0; i < 24; i++)\n\tif (usedCPU[i] > 80) sumstd = sumstd + 1;\n\nif (sumstd > 18) MessageBox.Show(message,title);",
+          "pdfAnchor": {
+            "page": 5,
+            "x": 54.24,
+            "y": 333.12,
+            "maxWidth": 488,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "In der Programmdokumentation ist ein Klassendiagramm enthalten. Im Klassendiagramm sind die Beziehungstypen „Aggregation\" und „Komposition\" enthalten. Erläutern Sie die genannten Beziehungstypen und geben Sie zu jedem Beziehungstyp ein allgemeines Beispiel an.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Aggregation: Die Aggregation ist eine Form der Beziehung zwischen zwei Klassen, bei der eine sogenannte „Teil-Ganzes-Beziehung\" besteht. Beispiel: Die Klassen „Gebäude\" und „Mieter\", sofern auch nicht vermietete Gebäude berücksichtigt werden sollen. Komposition: Bei der Komposition gilt zusätzlich gegenüber der Aggregation die Einschränkung, dass die „Teil-Ganzes-Beziehung\" an die Existenz des „Ganzen\" geknüpft ist. Beispiel: Die Klassen „Gebäude\" und „Raum\". Ein Raum existiert nur, sofern auch das entsprechende Gebäude existiert.",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 96,
+            "y": 737.76,
+            "maxWidth": 446,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "3.c",
+          "label": "c)",
+          "prompt": "Das Programm „MONCPU.EXE\", welches sich in dem Verzeichnis d:\\util befindet, soll mithilfe des Task-Schedulers täglich um 16:10 Uhr automatisiert gestartet werden. Dazu soll ein entsprechender Aufruf mit dem Namen CPUMON erstellt werden. Vervollständigen Sie den entsprechenden Programmaufruf: `SCHTASKS ...`",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "SCHTASKS /Create /tn CPUMON /tr d:\\util\\moncpu.exe /sc DAILY /st 16:10",
+          "externalReference": {
+            "page": 8,
+            "label": "Anlage: Parameter Task-Scheduler (SCHTASKS)"
+          },
+          "pdfAnchor": {
+            "page": 8,
+            "x": 96,
+            "y": 353.28,
+            "maxWidth": 446,
+            "fontSize": 9
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 24,
+      "intro": "Im Zusammenhang mit der Datenspeicherung, Datensicherung und der Wiederherstellung der Daten bei der Schnellinger GmbH sollen Sie Verbesserungen vornehmen.",
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Die Tagessicherungen der Schnellinger GmbH werden aktuell inkrementell durchgeführt. Eine Vollsicherung wird sonntags durchgeführt. Die Datenvolumen der Tagessicherungen für die 21. Woche sind als Säulendiagramm dargestellt (inkrementelle Tagessicherung): Montag 25 GB, Dienstag 10 GB, Mittwoch 10 GB, Donnerstag 20 GB, Freitag 10 GB, Samstag 5 GB. Es wird überlegt, anstatt inkrementeller Datensicherungen differenzielle Datensicherungen durchzuführen. Berechnen Sie anhand der gegebenen Datenvolumen die sich daraus resultierenden Datenvolumen pro Tag für die differenzielle Tagessicherung.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Bei einer differenziellen Sicherung wird jeweils die kumulierte Änderung seit der letzten Vollsicherung (Sonntag) gespeichert: Montag 25 GB, Dienstag 35 GB (25+10), Mittwoch 45 GB (35+10), Donnerstag 65 GB (45+20), Freitag 75 GB (65+10), Samstag 80 GB (75+5).",
+          "referenceImage": "/exams/si-2023-sommer-teil1/page-10.png",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 48,
+            "y": 414.72,
+            "maxWidth": 494,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.ba",
+          "label": "b) ba)",
+          "prompt": "Die Daten der Schnellinger GmbH werden zurzeit auf einem SAN mit einer Nettospeicherkapazität von 8 TiB gespeichert. Aufgrund des Alters des SAN und einer Kapazitätsauslastung von 90 % wurde beschlossen, ein neues SAN zu beschaffen. In dem neuen SAN können maximal 24 Festplatten vom Typ SAS 3200A mit einer Speicherkapazität von je 1 TiB verbaut werden. Der jährliche Datenzuwachs der Schnellinger GmbH beträgt 450 GiB. Ermitteln Sie die benötigte Nettospeicherkapazität bei einer Übernahme des Altdatenbestands und einer geplanten Betriebszeit von fünf Jahren. Der Rechenweg ist anzugeben.",
+          "points": 4,
+          "type": "number",
+          "correctValue": 9.4,
+          "tolerance": 0.05,
+          "modelAnswer": "Altdatenbestand: 7.373 GiB = 8 TiB × 0,9 × 1.024. Datenzuwachs in 5 Jahren: 2.250 GiB = 450 GiB/Jahr × 5 Jahre. Benötigter Speicherplatz: 9.623 GiB = 7.373 GiB + 2.250 GiB. Umrechnung in TiB: 9,4 TiB = 9.623 GiB / 1.024.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 32.64,
+            "y": 698.32,
+            "maxWidth": 509,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.bb",
+          "label": "bb)",
+          "prompt": "Ermitteln Sie die Anzahl der benötigten Festplatten des SAN, wenn ein RAID-6-Verbund eingerichtet wird. Hinweis: Sollte ba) nicht bearbeitet worden sein, rechnen Sie mit dem alternativen Ausgangswert von 9,7 TiB weiter. Der Rechenweg ist anzugeben.",
+          "points": 4,
+          "type": "number",
+          "correctValue": 12,
+          "modelAnswer": "12 Festplatten: 10 × 1 TiB Festplatten für Daten + 2 × 1 TiB Festplatten für Parität (RAID-6 mit 2 Paritätsplatten, aufgerundet auf die benötigte Nettokapazität von ca. 9,4-9,7 TiB).",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 32.64,
+            "y": 511.12,
+            "maxWidth": 509,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.bc",
+          "label": "bc)",
+          "prompt": "Das SAN im RAID-6-Verbund soll zusätzlich mit einer Hot-Spare-Festplatte betrieben werden. Erläutern Sie die Funktion einer Hot-Spare-Festplatte.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Eine Hot-Spare-Festplatte ist eine im RAID-Verbund nicht verwendete Festplatte. Fällt eine Festplatte im RAID-Verbund aus, übernimmt die Hot-Spare-Festplatte im laufenden Betrieb die Rolle der defekten Festplatte.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 32.64,
+            "y": 337.92,
+            "maxWidth": 509,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.c",
+          "label": "c)",
+          "prompt": "Die Schnellinger GmbH hat für die Notfallwiederherstellung (Disaster Recovery) der Unternehmensdaten in ihren Service Level Agreements die Zielvorgaben Recovery Time Objective (RTO) und Recovery Point Objective (RPO) beschrieben (RTO: die geplante Dauer, innerhalb der ein Geschäftsprozess nach einer Störung wiederhergestellt werden muss, um inakzeptable Unterbrechungen der Geschäftskontinuität zu vermeiden. RPO: misst den maximalen Zeitraum, in dem zuletzt verfügbare Daten bei einem größeren Ausfall dauerhaft verloren gehen könnten — z. B. das maximale Intervall zwischen zwei sicher gespeicherten Backups). Erläutern Sie anhand des Textes die Zielvorgabe Recovery Time Objective (RTO) und die Zielvorgabe Recovery Point Objective (RPO).",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Recovery Time Objective (RTO): Bezeichnet die Zeitspanne, für die ein System ausfallen kann. Es handelt sich um die Zeit, die vom Zeitpunkt des Schadens bis zur vollständigen Wiederherstellung vergehen darf. Recovery Point Objective (RPO): Bezeichnet die Zeitspanne, für die ein Datenverlust in Kauf genommen werden kann. Bei der Recovery Point Objective handelt es sich um den Zeitraum, der zwischen zwei Datensicherungen liegen darf.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 79.92,
+            "y": 607.12,
+            "maxWidth": 492,
+            "fontSize": 7
+          }
+        }
+      ]
+    }
+  ]
+}

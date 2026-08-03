@@ -1,0 +1,434 @@
+{
+  "id": "si-2023-winter-teil1",
+  "title": "Systemintegration – Winter 2023/24 (Aufgabensatz 1)",
+  "profession": "SI",
+  "period": {
+    "year": 2023,
+    "season": "Winter"
+  },
+  "examPart": "ap2",
+  "durationMinutes": 90,
+  "totalPoints": 100,
+  "sourceNote": "IHK Abschlussprüfung Winter 2023/24, ZPA Nord-West — Konzeption und Administration von IT-Systemen, Teil 2 der Abschlussprüfung (1202), Fachinformatiker Systemintegration",
+  "tasks": [
+    {
+      "number": 1,
+      "title": "1. Aufgabe",
+      "points": 25,
+      "intro": "Die Aufgaben 1 bis 4 beziehen sich auf die folgende Ausgangssituation: Sie sind bei der Nort-IT GmbH als Fachinformatiker Systemintegration beschäftigt. Die Nort-IT GmbH ist ein in Hamburg ansässiges Systemhaus, welches überwiegend für mittelständische Betriebe im Bereich IT-Services agiert. Die Reederei IDA hat die Nort-IT damit beauftragt, verschiedene Systemerweiterungen und Optimierungen an ihren IT-Systemen vorzunehmen.\n\nIm Rahmen der Neustrukturierung der IT-Dienste der IDA AG sollen verschiedene Anwendungen in die Private Cloud der IDA AG migriert und als Software as a Service (SaaS) bereitgestellt werden.",
+      "parts": [
+        {
+          "id": "1.a",
+          "label": "a)",
+          "prompt": "Erläutern Sie drei Aspekte, die für eine Bereitstellung von Anwendungen in Form von SaaS sprechen.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Geringere Hardwareanforderungen an die lokalen Stationen, keine oder geringe Installationsarbeiten bei den lokalen Stationen nötig, Anwendungen kurzfristig verfügbar, Leistungsangebot skalierbar, stets aktuelle Softwareversion verfügbar, hohes Sicherheitsniveau durch zentrale Richtlinien.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 33.6,
+            "y": 572.88,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.ba",
+          "label": "b) ba)",
+          "prompt": "Es soll eine Private Cloud mit einem Server-Cluster aufgebaut werden. Der Server-Cluster setzt sich aus vier Servern zusammen und dient als Plattform für die virtuellen Server. Erläutern Sie zwei Sachverhalte, die beim Aufbau des Server-Clusters zu beachten sind.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Identische/zertifizierte Hardware, gleicher Firmware-Level, identische Konfiguration, gemeinsamer Speicher, gleiche Software, geeignetes Betriebssystem.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 44.64,
+            "y": 354.48,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bb",
+          "label": "bb)",
+          "prompt": "Bei der Server-Virtualisierung kommt ein Hypervisor (Virtual-Machine-Monitor) zum Einsatz. Erläutern Sie den Zweck eines Hypervisors.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Der Hypervisor ist eine Softwarekomponente, die zwischen der Hardware bzw. dem Betriebssystem und den einzelnen virtuellen Maschinen die Aufgabe übernimmt, die Hardware zu abstrahieren und den virtuellen Maschinen gegenüber vorzugeben, dass es sich um physische Maschinen handelt.",
+          "pdfAnchor": {
+            "page": 1,
+            "x": 44.64,
+            "y": 193.68,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bc",
+          "label": "bc)",
+          "prompt": "Einige Anwendungen sollen nicht mittels virtueller Maschinen bereitgestellt werden, sondern mittels Containerisierung. Erläutern Sie das Funktionsprinzip der Containerisierung. (Hinweis: Container sind voneinander isoliert und bündeln ihre eigene Software, Bibliotheken und Konfigurationsdateien; sie können über klar definierte Kanäle miteinander kommunizieren. Da alle Container die Dienste eines einzigen Betriebssystem-Kernels teilen, verbrauchen sie weniger Ressourcen als virtuelle Maschinen.)",
+          "points": 5,
+          "type": "text",
+          "modelAnswer": "Bei der Containerisierung werden Anwendungen virtualisiert, nicht ganze Maschinen (Server, PC). Auf einem Betriebssystem können so viele Container mit je einer Anwendung bereitgestellt werden. Da nur die jeweils benötigten Softwarekomponenten (z. B. Treiber) eingebunden werden, ergeben sich Vorteile wie kürzere Startzeit und bessere Portabilität gegenüber klassischer Virtualisierung.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 33.6,
+            "y": 678.48,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "1.b.bd",
+          "label": "bd)",
+          "prompt": "Vor der Umstellung auf den neuen Server-Cluster betrugen die monatlichen Stromkosten im vergangenen Jahr durchschnittlich 1.359,44 EUR inkl. Nebenkosten. Für jeden der vier neuen Server des Clusters wird mit einer durchschnittlichen Leistungsaufnahme von 600 W gerechnet. Der Preis für eine Kilowattstunde wird mit 40 ct veranschlagt. Dazu kommt eine monatliche Pauschale für die Nebenkosten in Höhe von 20 EUR. Berechnen Sie den Betrag der Reduzierung bzw. der Erhöhung, um den sich die jährlichen (365 Tage) Stromkosten voneinander unterscheiden. Rechnen Sie mit einem 24/7-Betrieb.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Stromkosten jährlich Cluster: 4 * 0,6 kW * 24 h * 365 * 0,40 EUR = 8.409,60 EUR. Nebenkosten jährlich: 12 x 20 EUR = 240,00 EUR. Gesamtkosten Cluster: 8.409,60 + 240,00 = 8.649,60 EUR. Vorherige Kosten jährlich: 1.359,44 EUR x 12 = 16.313,28 EUR. Einsparung: 16.313,28 − 8.649,60 = 7.663,68 EUR zugunsten des Cluster-Betriebs.",
+          "pdfAnchor": {
+            "page": 2,
+            "x": 33.6,
+            "y": 424.08,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "2. Aufgabe",
+      "points": 22,
+      "intro": "Die Reederei IDA hat ein streng vertrauliches Projekt an die Nort-IT GmbH vergeben. Alle Mitarbeiter, die an dem Projekt „Alster\" mitarbeiten, mussten strenge Datenschutzbestimmungen unterschreiben, die u. a. auch die Verschlüsselung jeglicher dezentral gehaltener Daten auf externen Datenträgern für dieses Projekt vorsehen.",
+      "externalReference": {
+        "page": 5,
+        "label": "Anlage 2: Aufbau von Zugriffsrechten (Unix-Dateirechte, chmod-Manpage)"
+      },
+      "parts": [
+        {
+          "id": "2.a.vertraulichkeit",
+          "label": "a) Vertraulichkeit",
+          "prompt": "Erläutern Sie das Ziel der Kryptographie „Vertraulichkeit\".",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Sicherstellung, dass Daten nur von berechtigten Personen gelesen werden können.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 43.68,
+            "y": 704.88,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.integritaet",
+          "label": "Integrität",
+          "prompt": "Erläutern Sie das Ziel der Kryptographie „Integrität\".",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Der Inhalt der Nachricht wurde nicht verändert.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 44.16,
+            "y": 611.28,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.a.authentizitaet",
+          "label": "Authentizität",
+          "prompt": "Erläutern Sie das Ziel der Kryptographie „Authentizität\".",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Identifizierung autorisierter Nutzer; Überprüfung, dass die Daten nur aus der autorisierten Quelle stammen.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 43.2,
+            "y": 515.28,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.b",
+          "label": "b)",
+          "prompt": "Zur Verschlüsselung der dezentral auf externen Datenträgern gehaltenen Daten des Projekts „Alster\" wird ein Verschlüsselungstool eingesetzt. In Bezug auf Verschlüsselung kommen folgende Algorithmen zum Einsatz: DES, AES, RSA. Beurteilen Sie die Eignung dieser Algorithmen im konkreten Anwendungsfall und sprechen Sie eine Empfehlung aus.",
+          "points": 7,
+          "type": "text",
+          "modelAnswer": "DES gilt aufgrund der geringen Schlüssellänge (56 Bit) bei Brute-Force-Attacken als nicht mehr sicher. AES ist ein Verschlüsselungsverfahren, das mit größeren Schlüssellängen Brute-Force-Attacken unattraktiv macht. RSA wird nicht im Zusammenhang mit der Verschlüsselung von Daten auf Datenträgern eingesetzt (asymmetrisches Verfahren, u. a. für Schlüsselaustausch/Signaturen). Empfehlung: AES ist einzusetzen.",
+          "pdfAnchor": {
+            "page": 3,
+            "x": 43.68,
+            "y": 368.88,
+            "maxWidth": 508.8,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.c.ca",
+          "label": "c) ca)",
+          "prompt": "Nach der Einbindung des verschlüsselten Datenträgers ins System möchte der Projektleiter und Dateieigentümer Herbert Meyer die Datei 2023-01-10_Aenderungen.txt mit den heute gesammelten Erkenntnissen füllen. Die Rechte lauten: `----rw-r--  1  hmeyer  alster  Jan 10 12:10  2023-01-10_Aenderungen.txt`. Beim Versuch, die Datei zu öffnen, um sie zu verändern, erhält Herr Meyer die Fehlermeldung „Keine Berechtigung\". Erläutern Sie die Ursache dieser Fehlermeldung und geben Sie einen Lösungsvorschlag an.",
+          "points": 3,
+          "type": "text",
+          "modelAnswer": "Herr Meyer hat als Eigentümer keine Lese- und Schreibrechte für diese Datei (die owner-Rechte sind „----\", nur die Gruppe „alster\" hat „rw-\"). Lösung: Dem Eigentümer „hmeyer\" das Lese- und Schreibrecht geben, oder Herrn Meyer in die Gruppe „alster\" hinzufügen.",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 134.4,
+            "y": 673.2,
+            "maxWidth": 408,
+            "fontSize": 7
+          }
+        },
+        {
+          "id": "2.c.cb.eigentuemer",
+          "label": "cb) Eigentümer",
+          "prompt": "Ein Administrator hat das Problem mit dem Befehl `chmod 664 2023-01-10_Aenderungen.txt` gelöst. Beschreiben Sie die Auswirkung der ersten Ziffer (6) auf den Eigentümer.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Der Dateieigentümer erhält Lese- und Schreibrecht (6 = rw-).",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 96,
+            "y": 465.84,
+            "maxWidth": 446.4,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cb.gruppe",
+          "label": "Gruppe",
+          "prompt": "Beschreiben Sie die Auswirkung der zweiten Ziffer (6) auf die Gruppe.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Die Gruppe erhält Lese- und Schreibrecht (6 = rw-).",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 96,
+            "y": 390.48,
+            "maxWidth": 446.4,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "2.c.cb.andere",
+          "label": "Andere",
+          "prompt": "Beschreiben Sie die Auswirkung der dritten Ziffer (4) auf alle anderen Benutzer.",
+          "points": 2,
+          "type": "text",
+          "modelAnswer": "Alle anderen erhalten nur das Leserecht (4 = r--).",
+          "pdfAnchor": {
+            "page": 6,
+            "x": 96,
+            "y": 316.08,
+            "maxWidth": 446.4,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "3. Aufgabe",
+      "points": 27,
+      "intro": "Im Rahmen der IT-Systemüberwachung bei der IDA AG sollen Sie eine Software-Erweiterung entwickeln: Das Programm „MemMon\" berechnet den Mittelwert der Speicherauslastung (RAM) des Web-Servers pro Tag. Die stündlichen Werte sind in einem eindimensionalen Array als ganzzahlige Prozentwerte gespeichert (Array „maxRAM20231119\" für den 19.11.2023, Index 0–23, Werte: 33,44,40,52,60,56,40,52,60,56,... [24 Stundenwerte, wiederholend]).\n\nDas Programm soll so erweitert werden, dass zusätzlich jeweils der Mittelwert der Speicherauslastung für die erste Tageshälfte (0-12 Uhr „Vormittag\") und für die zweite Tageshälfte (12-24 Uhr „Nachmittag\") berechnet und angezeigt wird. Die Tageshälfte mit dem kleineren Mittelwert soll in der dritten Zeile stehen, bei Gleichheit erst „Vormittag\", dann „Nachmittag\"!\n\nGegebener Programmanfang:\nint sumLast = 0;              //Summe der Stundenwerte\nint mwTag = 0;                //Mittelwert Tag\nint mwVormittag = 0;          //Mittelwert erste Tageshälfte\nint mwNachmittag = 0;         //Mittelwert zweite Tageshälfte\nint[] maxRAM20231119 = new int[24] {33,44,40,52,60,56,33,44,40,52,60,56,33,44,40,52,60,56,33,44,40,52,60,56};\nfor (int i = 0; i < 24; i++) { sumLast = sumLast + maxRAM20231119[i]; }\nmwTag = sumLast / 24;\nConsole.WriteLine(\"Mittelwert Tag: \" + mwTag);\n// Berechnung Mittelwert erste Tageshälfte — zu ergänzen\n// Berechnung Mittelwert zweite Tageshälfte — zu ergänzen\n// Mittelwerte für Tageshälften reihenfolgerichtig ausgeben — zu ergänzen",
+      "parts": [
+        {
+          "id": "3.a",
+          "label": "a)",
+          "prompt": "Vervollständigen Sie den vorliegenden Programmentwurf entsprechend der drei markierten Kommentarblöcke (Berechnung Mittelwert erste Tageshälfte, Berechnung Mittelwert zweite Tageshälfte, Mittelwerte für Tageshälften reihenfolgerichtig ausgeben).",
+          "points": 17,
+          "type": "text",
+          "modelAnswer": "int sumLast = 0; for (int i = 0; i < 12; i++) { sumLast = sumLast + maxRAM20231119[i]; } mwVormittag = sumLast / 12;\nint sumLast = 0; for (int i = 12; i < 24; i++) { sumLast = sumLast + maxRAM20231119[i]; } mwNachmittag = sumLast / 12;\nif (mwVormittag >= mwNachmittag) { Console.WriteLine(\"Mittelwert Vormittag: \" + mwVormittag); Console.WriteLine(\"Mittelwert Nachmittag: \" + mwNachmittag); } else { Console.WriteLine(\"Mittelwert Nachmittag: \" + mwNachmittag); Console.WriteLine(\"Mittelwert Vormittag: \" + mwVormittag); }\n(5 Punkte je Tageshälfte, 7 Punkte für die richtige Ausgabereihenfolge inkl. Gleichheitsfall.)",
+          "pdfAnchor": {
+            "page": 8,
+            "x": 36.48,
+            "y": 548.88,
+            "maxWidth": 505.92,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.b",
+          "label": "b)",
+          "prompt": "Der Entwurf eines Algorithmus kann auch mithilfe des sogenannten „Pseudocodes\" erfolgen. Erläutern Sie zwei Vorteile der Verwendung von Pseudocode im Vergleich zu realen Programmiersprachen.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Für Einsteiger leicht erlernbar, benutzt bekannte Wörter (daher intuitiv verständlich), kompakter und leichter lesbar als der Code von Programmiersprachen, universell einsetzbar da unabhängig von einer konkreten Programmiersprache.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 35.04,
+            "y": 728.88,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "3.c",
+          "label": "c)",
+          "prompt": "Bei der Ausführung eines Programms, insbesondere in der Entwicklungsphase, kann es zu einem Programmabbruch aufgrund einer Ausnahmebedingung (Exception) kommen. Erläutern Sie zwei Umstände, die Grund für das Auftreten einer „Exception\" sein können.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Es wird ein Array-Index außerhalb des definierten Bereichs verwendet, Teilen einer Zahl durch „0\", Lesen über das Ende einer Datei hinaus.",
+          "pdfAnchor": {
+            "page": 9,
+            "x": 35.04,
+            "y": 505.68,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "4. Aufgabe",
+      "points": 26,
+      "intro": "Im Rahmen der Datenhaltung und des Patch-Managements sollen Sie folgende Aufgaben bearbeiten. Nach dem Ausfall mehrerer Festplatten eines RAID-Systems am 18.10.2023 um 18:12 Uhr soll ein neues RAID-System aufgebaut werden. Die Daten der vorhandenen Sicherungsbänder sollen zur Datenwiederherstellung in das neue RAID-System übertragen werden. Das Backup findet jeweils um 23 Uhr des angegebenen Wochentags statt.",
+      "referenceTable": {
+        "headers": [
+          "Tag",
+          "Sa",
+          "So",
+          "Mo",
+          "Di",
+          "Mi",
+          "Do",
+          "Fr",
+          "Sa",
+          "So",
+          "Mo",
+          "Di",
+          "Mi",
+          "Do"
+        ],
+        "rows": [
+          [
+            "Datum",
+            "07.10.2023",
+            "08.10.2023",
+            "09.10.2023",
+            "10.10.2023",
+            "11.10.2023",
+            "12.10.2023",
+            "13.10.2023",
+            "14.10.2023",
+            "15.10.2023",
+            "16.10.2023",
+            "17.10.2023",
+            "18.10.2023",
+            "19.10.2023"
+          ],
+          [
+            "Bandbezeichnung",
+            "3D6",
+            "V4",
+            "4D1",
+            "4D2",
+            "4D3",
+            "4D4",
+            "4D5",
+            "4D6",
+            "V5",
+            "5D1",
+            "5D2",
+            "5D3",
+            "5D4"
+          ],
+          [
+            "Sicherungsmethode",
+            "Diff.",
+            "Voll.",
+            "Diff.",
+            "Diff.",
+            "Diff.",
+            "Diff.",
+            "Diff.",
+            "Diff.",
+            "Voll.",
+            "Diff.",
+            "Diff.",
+            "Diff.",
+            "Diff."
+          ]
+        ]
+      },
+      "parts": [
+        {
+          "id": "4.a",
+          "label": "a)",
+          "prompt": "Geben Sie die Bandbezeichnungen der entsprechenden Bänder in der korrekten Reihenfolge an, die für eine vollständige Wiederherstellung der Daten in dem neuen RAID-System benötigt werden (Ausfall am 18.10.2023 um 18:12 Uhr, Backup jeweils um 23 Uhr). Erläutern Sie Ihre Auswahl.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Es werden die Bänder V5 und 5D2 benötigt, in dieser Reihenfolge: zuerst die letzte Vollsicherung vom 15.10.2023 (Band V5), dann die letzte differenzielle Sicherung vor dem Ausfall vom 17.10.2023 (Band 5D2), da diese alle neuen und veränderten Daten seit der letzten Vollsicherung enthält. (Das Band vom 18.10. selbst, 23 Uhr, entstand nach dem Ausfall um 18:12 Uhr und wird nicht benötigt.)",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 31.68,
+            "y": 555.48,
+            "maxWidth": 510.72,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.b",
+          "label": "b)",
+          "prompt": "Die jeweiligen Vollbackups sollen archiviert werden. Erläutern Sie zwei Maßnahmen, die ergriffen werden müssen, um aus einer Datensicherung eine Archivierung zu erstellen.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Daten müssen längerfristig verfügbar aufbewahrt werden, Daten werden vor Manipulation (Veränderung bzw. Löschung) geschützt, gesetzliche Vorgaben und branchenspezifische Regelungen müssen eingehalten werden, Daten werden mit der WORM-Methode (Write Once Read Many) gespeichert.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 30.24,
+            "y": 359.28,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.c",
+          "label": "c)",
+          "prompt": "Beim Formatieren eines logischen Volumens auf dem RAID kann die Größe der Zuordnungseinheit auf einen der folgenden Werte festgelegt werden: 512 Byte, 1.024 Byte, 2.048 Byte, 4.096 Byte, 8.192 Byte, 16.384 Byte, 32.768 Byte und 65.536 Byte. Erläutern Sie je einen Anwendungsfall für kleinere und größere Zuordnungseinheiten.",
+          "points": 4,
+          "type": "text",
+          "modelAnswer": "Für kleinere Dateien (z. B. Textfiles) ist die Auswahl kleinerer Zuordnungseinheiten bezüglich des Speicherbedarfs effizienter. Für größere Dateien (z. B. Bilder, Video, Musik) sind dagegen größere Zuordnungseinheiten sinnvoll.",
+          "pdfAnchor": {
+            "page": 10,
+            "x": 29.28,
+            "y": 167.28,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.d",
+          "label": "d)",
+          "prompt": "Betriebssystem-, Anwendungs- und Treiberpatches sollen firmenintern verwaltet und bereitgestellt werden. Erläutern Sie drei Vorteile dieses Vorgehens.",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Sicherheitspatches können abhängig von der Schwere des Risikos priorisiert und in einem angemessenen Zeitrahmen ausgeliefert werden, gefährdende Updates können bis zur manuellen Freigabe zurückgestellt werden, Updates werden nur innerhalb des Firmennetzwerks verteilt (schont die Internet-Bandbreite), Patches können firmenintern (on premises) bewertet, terminiert und automatisiert ausgeführt werden.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 34.56,
+            "y": 767.28,
+            "maxWidth": 508.8,
+            "fontSize": 8
+          }
+        },
+        {
+          "id": "4.e",
+          "label": "e)",
+          "prompt": "Sie beabsichtigen, eine Software durch einen Patch oder durch ein Upgrade zu aktualisieren. Erläutern Sie die beiden möglichen Modelle anhand des vorliegenden Textes und wann diese zum Einsatz kommen. (Text: Nutzer, die eine Lizenz mit derselben Hauptversionsnummer wie die neue Version besitzen, erhalten einen kostenlosen Patch. Nutzer mit einer Lizenz mit anderer Hauptversionsnummer als die neue Version können ein Upgrade zu ermäßigtem Preis erwerben.)",
+          "points": 6,
+          "type": "text",
+          "modelAnswer": "Patch: wird angeboten, wenn der Nutzer eine Lizenz besitzt, die dieselbe Hauptversionsnummer wie die neue Version hat (z. B. Version 1 → 1.1) — kostenlos herunterladbar. Upgrade: wird angeboten, wenn der Nutzer eine Lizenz mit einer anderen Hauptversionsnummer besitzt (z. B. Version 1 → Version 2) — zu einem ermäßigten Preis erwerbbar.",
+          "pdfAnchor": {
+            "page": 11,
+            "x": 34.08,
+            "y": 437.68,
+            "maxWidth": 508.8,
+            "fontSize": 7
+          }
+        }
+      ]
+    }
+  ]
+}
