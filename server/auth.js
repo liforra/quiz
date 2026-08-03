@@ -206,12 +206,12 @@ authRouter.post('/api/auth/logout', async (req, res) => {
     try {
       const { end_session_endpoint } = await discover();
       if (end_session_endpoint) {
-        const url = new URL(end_session_endpoint);
-        // Authentik only honours a post-logout redirect it knows, so this is
-        // the app's own origin — which is a registered redirect URI already.
-        url.searchParams.set('post_logout_redirect_uri', `${PUBLIC_BASE_URL}/`);
-        url.searchParams.set('client_id', CLIENT_ID);
-        ssoLogoutUrl = url.toString();
+        // Deliberately no post_logout_redirect_uri: Authentik only honours one
+        // that is registered as a Logout-type redirect URI, and this instance
+        // can't register those. Sending an unregistered one risks an error
+        // page; without it the user reliably lands on Authentik's own
+        // "signed out" page. The local session is already gone either way.
+        ssoLogoutUrl = end_session_endpoint;
       }
     } catch (e) {
       // Local logout already happened; losing the SSO leg is not fatal.
