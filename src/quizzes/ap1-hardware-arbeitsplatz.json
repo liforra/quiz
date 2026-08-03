@@ -33,10 +33,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Welcher Speicher verliert seinen Inhalt, sobald der Computer ausgeschaltet wird?",
       "options": [
-        "SSD",
-        "HDD",
+        "SSD (Solid State Drive, Speicherung ohne bewegliche Teile)",
+        "HDD (Hard Disk Drive, magnetische Speicherplatte)",
         "Arbeitsspeicher (RAM)",
-        "USB-Stick"
+        "USB-Stick (Flash-Speicher im USB-Formfaktor)"
       ],
       "answer": "Arbeitsspeicher (RAM)",
       "explanation": "RAM ist flüchtiger (volatiler) Speicher — ohne Stromversorgung gehen die Daten verloren. SSD, HDD und USB-Stick speichern persistent.",
@@ -44,10 +44,10 @@
         "en": {
           "question": "Which type of memory loses its contents as soon as the computer is switched off?",
           "options": [
-            "SSD",
-            "HDD",
+            "SSD (Solid State Drive, no moving parts)",
+            "HDD (Hard Disk Drive, magnetic storage platter)",
             "Main memory (RAM)",
-            "USB flash drive"
+            "USB flash drive (flash memory in USB form factor)"
           ],
           "answer": "Main memory (RAM)",
           "explanation": "RAM is volatile memory — without power the data is lost. SSD, HDD and USB drives store data persistently."
@@ -564,9 +564,9 @@
       "question": "Was versteht man unter „Hyper-Threading“ bzw. „SMT“ (Simultaneous Multithreading)?",
       "options": [
         "Ein physischer Kern kann zwei Threads gleichzeitig verarbeiten",
-        "Die CPU übertaktet sich automatisch",
-        "Die Anzahl der physischen Kerne wird verdoppelt",
-        "Der Cache wird auf zwei Kerne aufgeteilt"
+        "Die CPU übertaktet sich automatisch, um kurzzeitig eine höhere Taktfrequenz zu erreichen",
+        "Die Anzahl der physischen Kerne wird durch zusätzliche Silizium-Fläche auf dem Die verdoppelt",
+        "Der L2-Cache wird dynamisch auf zwei physische Kerne aufgeteilt"
       ],
       "answer": "Ein physischer Kern kann zwei Threads gleichzeitig verarbeiten",
       "explanation": "SMT/Hyper-Threading erlaubt es einem physischen Kern, zwei logische Threads parallel zu bearbeiten, indem ungenutzte Ausführungseinheiten besser ausgelastet werden — es entsteht dabei aber kein zweiter physischer Kern.",
@@ -575,9 +575,9 @@
           "question": "What is meant by \"Hyper-Threading\" or \"SMT\" (Simultaneous Multithreading)?",
           "options": [
             "A single physical core can process two threads simultaneously",
-            "The CPU automatically overclocks itself",
-            "The number of physical cores is doubled",
-            "The cache is split across two cores"
+            "The CPU automatically overclocks itself to briefly reach a higher clock frequency",
+            "The number of physical cores is doubled by adding extra silicon area on the die",
+            "The L2 cache is dynamically split between two physical cores"
           ],
           "answer": "A single physical core can process two threads simultaneously",
           "explanation": "SMT/Hyper-Threading allows one physical core to handle two logical threads in parallel by better utilizing idle execution units — however, no second physical core is actually created."
@@ -1047,9 +1047,9 @@
       "question": "Was beschreibt der Begriff „Effizienz“ bei einem Netzteil?",
       "options": [
         "Das Verhältnis von abgegebener zu aufgenommener elektrischer Leistung",
-        "Die maximale Ausgangsspannung",
-        "Die Anzahl der verfügbaren Stromanschlüsse",
-        "Die Lebensdauer des Netzteils in Stunden"
+        "Die maximale Ausgangsspannung, die an den PCIe- und SATA-Anschlüssen anliegt",
+        "Die Anzahl der verfügbaren Stromanschlüsse für Laufwerke und Erweiterungskarten",
+        "Die Lebensdauer des Netzteils in Betriebsstunden bis zum Ausfall"
       ],
       "answer": "Das Verhältnis von abgegebener zu aufgenommener elektrischer Leistung",
       "explanation": "Effizienz = Ausgangsleistung ÷ Eingangsleistung. Je höher die Effizienz, desto weniger Energie wird als Wärme verschwendet.",
@@ -1058,9 +1058,9 @@
           "question": "What does the term \"efficiency\" describe for a power supply?",
           "options": [
             "The ratio of delivered to consumed electrical power",
-            "The maximum output voltage",
-            "The number of available power connectors",
-            "The lifespan of the power supply in hours"
+            "The maximum output voltage present at the PCIe and SATA connectors",
+            "The number of available power connectors for drives and expansion cards",
+            "The lifespan of the power supply in operating hours until failure"
           ],
           "answer": "The ratio of delivered to consumed electrical power",
           "explanation": "Efficiency = output power ÷ input power. The higher the efficiency, the less energy is wasted as heat."
@@ -1101,9 +1101,9 @@
       "question": "Was gibt die Bildwiederholfrequenz (Refresh Rate) eines Monitors in Hertz (Hz) an?",
       "options": [
         "Wie oft das Bild pro Sekunde neu aufgebaut wird",
-        "Die maximale Auflösung des Monitors",
-        "Die Reaktionszeit der Pixel",
-        "Den Kontrastumfang des Panels"
+        "Die maximale Auflösung des Monitors in Pixeln pro Zeile und Spalte",
+        "Die Reaktionszeit der Pixel beim Wechsel zwischen Graustufen",
+        "Den Kontrastumfang zwischen hellstem und dunkelstem Bildpunkt des Panels"
       ],
       "answer": "Wie oft das Bild pro Sekunde neu aufgebaut wird",
       "explanation": "60 Hz bedeutet 60 Bildaktualisierungen pro Sekunde. Höhere Werte (z. B. 144 Hz) sorgen für flüssigere Bewegungsdarstellung, besonders bei schnellen Inhalten.",
@@ -1112,9 +1112,9 @@
           "question": "What does a monitor's refresh rate in Hertz (Hz) indicate?",
           "options": [
             "How often the image is redrawn per second",
-            "The monitor's maximum resolution",
-            "The pixel response time",
-            "The panel's contrast range"
+            "The monitor's maximum resolution in pixels per row and column",
+            "The pixel response time when switching between gray shades",
+            "The contrast range between the brightest and darkest point of the panel"
           ],
           "answer": "How often the image is redrawn per second",
           "explanation": "60 Hz means 60 image updates per second. Higher values (e.g. 144 Hz) result in smoother motion display, especially for fast-moving content."
@@ -1209,9 +1209,9 @@
       "question": "Welches deutsche Regelwerk legt die Mindestanforderungen an die Gestaltung von Bildschirmarbeitsplätzen fest?",
       "options": [
         "Bildschirmarbeitsverordnung (ArbStättV/BildscharbV)",
-        "DSGVO",
-        "TKG",
-        "BetrVG"
+        "DSGVO (Datenschutz-Grundverordnung)",
+        "TKG (Telekommunikationsgesetz)",
+        "BetrVG (Betriebsverfassungsgesetz)"
       ],
       "answer": "Bildschirmarbeitsverordnung (ArbStättV/BildscharbV)",
       "explanation": "Die Bildschirmarbeitsverordnung (heute in die Arbeitsstättenverordnung integriert) regelt u. a. Anforderungen an Monitore, Beleuchtung und Pausenzeiten am Bildschirmarbeitsplatz.",
@@ -1220,7 +1220,7 @@
           "question": "Which German regulation sets the minimum requirements for the design of computer workstations?",
           "options": [
             "Display Screen Equipment Regulation (ArbStättV/BildscharbV)",
-            "GDPR",
+            "GDPR (General Data Protection Regulation)",
             "TKG (Telecommunications Act)",
             "BetrVG (Works Constitution Act)"
           ],
@@ -1385,10 +1385,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Welche Steckerform ist bei USB-C typisch?",
       "options": [
-        "Rechteckig, nicht verpolungssicher",
+        "Rechteckig, nicht verpolungssicher wie beim älteren USB-A-Stecker",
         "Oval, symmetrisch und verpolungssicher (beidseitig einsteckbar)",
-        "Rund wie bei PS/2",
-        "Quadratisch wie bei älteren Druckerkabeln"
+        "Rund wie bei PS/2-Tastatur- und Mausanschlüssen",
+        "Quadratisch wie bei älteren Druckerkabeln (USB-B-Anschluss)"
       ],
       "answer": "Oval, symmetrisch und verpolungssicher (beidseitig einsteckbar)",
       "explanation": "USB-C-Stecker sind symmetrisch gestaltet und können in beiden Ausrichtungen eingesteckt werden — ein klarer Vorteil gegenüber dem alten USB-A-Stecker.",
@@ -1396,10 +1396,10 @@
         "en": {
           "question": "What connector shape is typical for USB-C?",
           "options": [
-            "Rectangular, not reversible",
+            "Rectangular, not reversible, like the older USB-A connector",
             "Oval, symmetric and reversible (can be plugged in either way)",
-            "Round like PS/2",
-            "Square like older printer cables"
+            "Round, like PS/2 keyboard and mouse connectors",
+            "Square, like older printer cables (USB-B connector)"
           ],
           "answer": "Oval, symmetric and reversible (can be plugged in either way)",
           "explanation": "USB-C connectors are designed symmetrically and can be plugged in either orientation — a clear advantage over the older USB-A connector."
@@ -1599,10 +1599,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Welche Funktion hat Wärmeleitpaste zwischen CPU und Kühlkörper?",
       "options": [
-        "Sie klebt den Kühlkörper mechanisch fest",
+        "Sie klebt den Kühlkörper dauerhaft und mechanisch stabil auf der CPU fest",
         "Sie füllt mikroskopische Luftspalte und verbessert die Wärmeübertragung",
-        "Sie isoliert elektrisch gegen Kurzschlüsse",
-        "Sie dämpft Vibrationen des Lüfters"
+        "Sie isoliert elektrisch gegen Kurzschlüsse zwischen CPU-Kontakten und Kühlkörper",
+        "Sie dämpft mechanische Vibrationen des Lüfters und reduziert Betriebsgeräusche"
       ],
       "answer": "Sie füllt mikroskopische Luftspalte und verbessert die Wärmeübertragung",
       "explanation": "Auch bei planen Oberflächen bleiben mikroskopisch kleine Luftspalte, die Wärme schlecht leiten. Wärmeleitpaste verdrängt die Luft und verbessert so den Wärmeübergang zwischen CPU und Kühlkörper.",
@@ -1610,10 +1610,10 @@
         "en": {
           "question": "What is the function of thermal paste between the CPU and heat sink?",
           "options": [
-            "It mechanically glues the heat sink in place",
+            "It permanently and mechanically glues the heat sink firmly to the CPU",
             "It fills microscopic air gaps and improves heat transfer",
-            "It provides electrical insulation against short circuits",
-            "It dampens fan vibrations"
+            "It provides electrical insulation against short circuits between CPU contacts and the heat sink",
+            "It dampens mechanical fan vibrations and reduces operating noise"
           ],
           "answer": "It fills microscopic air gaps and improves heat transfer",
           "explanation": "Even flat surfaces retain microscopic air gaps, which conduct heat poorly. Thermal paste displaces the air and thereby improves heat transfer between the CPU and heat sink."
@@ -1679,9 +1679,9 @@
       "question": "Wodurch unterscheidet sich eine All-in-One(AiO)-Wasserkühlung von einer Custom-Loop-Wasserkühlung?",
       "options": [
         "AiO-Kühlungen sind werkseitig vormontiert und geschlossen, Custom Loops werden individuell zusammengebaut",
-        "AiO-Kühlungen benötigen keinen Lüfter",
-        "Custom Loops können nur die CPU kühlen",
-        "AiO-Kühlungen nutzen Luft statt Flüssigkeit"
+        "AiO-Kühlungen benötigen keinen Lüfter, da die Wärme allein über den Radiator abgegeben wird",
+        "Custom Loops können aufgrund der festen Schlauchlänge nur die CPU kühlen",
+        "AiO-Kühlungen nutzen komprimierte Luft statt einer Kühlflüssigkeit im geschlossenen Kreislauf"
       ],
       "answer": "AiO-Kühlungen sind werkseitig vormontiert und geschlossen, Custom Loops werden individuell zusammengebaut",
       "explanation": "AiO-Systeme (All-in-One) sind wartungsfrei vorbefüllt und geschlossen. Custom Loops werden aus Einzelkomponenten (Pumpe, Radiator, Schläuche, Kühlblöcke) individuell aufgebaut und können z. B. auch die GPU einbeziehen.",
@@ -1690,9 +1690,9 @@
           "question": "How does an all-in-one (AiO) liquid cooler differ from a custom-loop liquid cooling setup?",
           "options": [
             "AiO coolers are factory pre-assembled and sealed, while custom loops are individually built",
-            "AiO coolers do not require a fan",
-            "Custom loops can only cool the CPU",
-            "AiO coolers use air instead of liquid"
+            "AiO coolers do not require a fan, since heat is dissipated solely through the radiator",
+            "Custom loops can only cool the CPU due to their fixed tubing length",
+            "AiO coolers use compressed air instead of a cooling liquid in a closed loop"
           ],
           "answer": "AiO coolers are factory pre-assembled and sealed, while custom loops are individually built",
           "explanation": "AiO systems are pre-filled, sealed and maintenance-free. Custom loops are individually built from separate components (pump, radiator, tubing, cooling blocks) and can, for example, also include the GPU."
@@ -1813,10 +1813,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Welche Batterie versorgt üblicherweise die BIOS/UEFI-Einstellungen (Uhrzeit, CMOS-Daten) bei ausgeschaltetem PC?",
       "options": [
-        "9-V-Blockbatterie",
-        "AA-Batterie",
+        "9-V-Blockbatterie wie in Rauchmeldern verwendet",
+        "AA-Batterie (Mignon-Zelle) wie in Fernbedienungen",
         "CMOS-Batterie (meist CR2032)",
-        "Li-Ion-Akku"
+        "Li-Ion-Akku wie im Notebook-Hauptakku verbaut"
       ],
       "answer": "CMOS-Batterie (meist CR2032)",
       "explanation": "Eine kleine Knopfzelle (häufig Typ CR2032) versorgt den CMOS-Speicher, damit Uhrzeit und BIOS-Einstellungen auch ohne Netzanschluss erhalten bleiben.",
@@ -1824,10 +1824,10 @@
         "en": {
           "question": "Which battery typically powers the BIOS/UEFI settings (clock, CMOS data) when the PC is switched off?",
           "options": [
-            "9V block battery",
-            "AA battery",
+            "9V block battery, as used in smoke detectors",
+            "AA battery (Mignon cell), as used in remote controls",
             "CMOS battery (usually CR2032)",
-            "Li-ion battery pack"
+            "Li-ion battery, as used in the main notebook battery pack"
           ],
           "answer": "CMOS battery (usually CR2032)",
           "explanation": "A small coin cell (often type CR2032) powers the CMOS memory so that the clock and BIOS settings are retained even without mains power."
@@ -1840,10 +1840,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Ein PC gibt beim Start mehrere Signaltöne (Beep-Codes) aus und bootet nicht. Was ist der wahrscheinlichste erste Verdacht?",
       "options": [
-        "Fehlerhafte Netzwerkkabel",
+        "Fehlerhafte Netzwerkkabel, die die Verbindung zum LAN unterbrechen",
         "Ein Hardwareproblem, das der POST erkannt hat (z. B. RAM oder Grafikkarte)",
-        "Ein Softwarefehler im Betriebssystem",
-        "Ein defekter Drucker"
+        "Ein Softwarefehler im Betriebssystem, der beim Laden des Kernels auftritt",
+        "Ein defekter Drucker, der über USB oder Netzwerk nicht erreichbar ist"
       ],
       "answer": "Ein Hardwareproblem, das der POST erkannt hat (z. B. RAM oder Grafikkarte)",
       "explanation": "Beep-Codes werden vom POST ausgegeben, wenn grundlegende Hardware wie RAM oder Grafikkarte nicht korrekt erkannt wird — noch bevor ein Betriebssystem überhaupt starten könnte.",
@@ -1851,10 +1851,10 @@
         "en": {
           "question": "A PC emits several beep codes at startup and does not boot. What is the most likely initial suspicion?",
           "options": [
-            "Faulty network cables",
+            "Faulty network cables interrupting the connection to the LAN",
             "A hardware problem detected by the POST (e.g. RAM or graphics card)",
-            "A software error in the operating system",
-            "A defective printer"
+            "A software error in the operating system occurring while the kernel loads",
+            "A defective printer that is unreachable via USB or network"
           ],
           "answer": "A hardware problem detected by the POST (e.g. RAM or graphics card)",
           "explanation": "Beep codes are emitted by the POST when basic hardware such as RAM or the graphics card is not detected correctly — before an operating system could even start."
@@ -2042,10 +2042,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Welche Akkutechnologie ist in modernen Notebooks am weitesten verbreitet?",
       "options": [
-        "Nickel-Cadmium (NiCd)",
-        "Blei-Säure",
+        "Nickel-Cadmium (NiCd) mit ausgeprägtem Memory-Effekt",
+        "Blei-Säure wie in unterbrechungsfreien Stromversorgungen (USV)",
         "Lithium-Ionen (Li-Ion) / Lithium-Polymer (LiPo)",
-        "Alkaline"
+        "Alkaline-Batterien, nicht wiederaufladbar"
       ],
       "answer": "Lithium-Ionen (Li-Ion) / Lithium-Polymer (LiPo)",
       "explanation": "Li-Ion- bzw. LiPo-Akkus bieten eine hohe Energiedichte bei geringem Gewicht und keinen Memory-Effekt, weshalb sie heute Standard in Notebooks und Mobilgeräten sind.",
@@ -2053,10 +2053,10 @@
         "en": {
           "question": "Which battery technology is most common in modern notebooks?",
           "options": [
-            "Nickel-cadmium (NiCd)",
-            "Lead-acid",
+            "Nickel-cadmium (NiCd) with a pronounced memory effect",
+            "Lead-acid, as used in uninterruptible power supplies (UPS)",
             "Lithium-ion (Li-ion) / lithium-polymer (LiPo)",
-            "Alkaline"
+            "Alkaline batteries, not rechargeable"
           ],
           "answer": "Lithium-ion (Li-ion) / lithium-polymer (LiPo)",
           "explanation": "Li-ion and LiPo batteries offer high energy density at low weight and no memory effect, which is why they are now standard in notebooks and mobile devices."
@@ -2086,8 +2086,8 @@
       "options": [
         "Für den Anschluss einer NVMe-SSD oder WLAN-Karte",
         "Für den Anschluss eines externen Monitors",
-        "Für den Anschluss der Tastatur",
-        "Für den Anschluss des Netzteils"
+        "Für den Anschluss der Tastatur über ein internes Flachbandkabel",
+        "Für den Anschluss des internen Netzteil-Steckverbinders"
       ],
       "answer": "Für den Anschluss einer NVMe-SSD oder WLAN-Karte",
       "explanation": "M.2-Slots in Notebooks werden meist für kompakte NVMe-SSDs oder WLAN/Bluetooth-Module genutzt, da sie sehr platzsparend sind.",
@@ -2097,8 +2097,8 @@
           "options": [
             "Connecting an NVMe SSD or Wi-Fi card",
             "Connecting an external monitor",
-            "Connecting the keyboard",
-            "Connecting the power adapter"
+            "Connecting the keyboard via an internal ribbon cable",
+            "Connecting the internal power supply connector"
           ],
           "answer": "Connecting an NVMe SSD or Wi-Fi card",
           "explanation": "M.2 slots in notebooks are mostly used for compact NVMe SSDs or Wi-Fi/Bluetooth modules, since they are very space-efficient."
@@ -2147,9 +2147,9 @@
       "question": "Was ist die primäre Aufgabe eines Gerätetreibers?",
       "options": [
         "Er übersetzt Befehle des Betriebssystems in für die Hardware verständliche Signale",
-        "Er ersetzt das BIOS/UEFI",
-        "Er verschlüsselt Netzwerkverkehr",
-        "Er verwaltet Benutzerkonten"
+        "Er ersetzt das BIOS/UEFI vollständig beim Systemstart",
+        "Er verschlüsselt den gesamten Netzwerkverkehr zwischen Client und Server",
+        "Er verwaltet Benutzerkonten und deren Zugriffsrechte im System"
       ],
       "answer": "Er übersetzt Befehle des Betriebssystems in für die Hardware verständliche Signale",
       "explanation": "Ein Treiber fungiert als Vermittler zwischen Betriebssystem und Hardwarekomponente, damit das Betriebssystem generische Befehle senden kann, ohne die konkrete Hardwareimplementierung zu kennen.",
@@ -2158,9 +2158,9 @@
           "question": "What is the primary function of a device driver?",
           "options": [
             "It translates operating system commands into signals the hardware can understand",
-            "It replaces the BIOS/UEFI",
-            "It encrypts network traffic",
-            "It manages user accounts"
+            "It completely replaces the BIOS/UEFI during system startup",
+            "It encrypts all network traffic between client and server",
+            "It manages user accounts and their access rights within the system"
           ],
           "answer": "It translates operating system commands into signals the hardware can understand",
           "explanation": "A driver acts as an intermediary between the operating system and a hardware component, allowing the OS to send generic commands without knowing the specific hardware implementation."
@@ -2215,10 +2215,10 @@
       "category": "Hardware & Arbeitsplatz",
       "question": "Was ist ein zentrales Ziel von Green-IT-Maßnahmen in Unternehmen?",
       "options": [
-        "Maximale Rechenleistung unabhängig vom Energieverbrauch",
+        "Maximale Rechenleistung erzielen, unabhängig vom Energieverbrauch der eingesetzten Systeme",
         "Reduzierung des Energieverbrauchs und der Umweltbelastung von IT-Systemen über deren gesamten Lebenszyklus",
-        "Vollständiger Verzicht auf Klimatisierung im Rechenzentrum",
-        "Ausschließliche Nutzung von gebrauchter Hardware"
+        "Vollständiger Verzicht auf jegliche Klimatisierung im gesamten Rechenzentrum",
+        "Ausschließliche Nutzung von gebrauchter Hardware ohne Rücksicht auf Energieeffizienz"
       ],
       "answer": "Reduzierung des Energieverbrauchs und der Umweltbelastung von IT-Systemen über deren gesamten Lebenszyklus",
       "explanation": "Green IT umfasst Maßnahmen wie energieeffiziente Hardware, Virtualisierung, optimierte Kühlung und nachhaltige Entsorgung/Recycling, um den ökologischen Fußabdruck der IT zu senken.",
@@ -2226,10 +2226,10 @@
         "en": {
           "question": "What is a central goal of Green IT measures in companies?",
           "options": [
-            "Maximum computing performance regardless of energy consumption",
+            "Achieving maximum computing performance regardless of the energy consumption of the systems used",
             "Reducing the energy consumption and environmental impact of IT systems across their entire life cycle",
-            "Completely forgoing air conditioning in the data center",
-            "Exclusively using second-hand hardware"
+            "Completely forgoing any air conditioning throughout the entire data center",
+            "Exclusively using second-hand hardware without regard to energy efficiency"
           ],
           "answer": "Reducing the energy consumption and environmental impact of IT systems across their entire life cycle",
           "explanation": "Green IT includes measures such as energy-efficient hardware, virtualization, optimized cooling, and sustainable disposal/recycling to reduce IT's ecological footprint."

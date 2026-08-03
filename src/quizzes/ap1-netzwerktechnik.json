@@ -6,10 +6,10 @@
       "category": "Netzwerktechnik",
       "question": "Welche Aufgabe übernimmt ein DHCP-Server in einem Netzwerk?",
       "options": [
-        "Er löst Domainnamen in IP-Adressen auf",
+        "Er löst Domainnamen per Nameserver in IP-Adressen auf",
         "Er vergibt automatisch IP-Konfigurationen an Clients",
-        "Er filtert unerwünschten Netzwerkverkehr",
-        "Er synchronisiert die Uhrzeit der Clients"
+        "Er filtert unerwünschten Verkehr per Firewall-Regeln",
+        "Er synchronisiert die Uhrzeit der Clients per NTP"
       ],
       "answer": "Er vergibt automatisch IP-Konfigurationen an Clients",
       "explanation": "DHCP verteilt IP-Adresse, Subnetzmaske, Gateway und DNS-Server automatisch. Namensauflösung ist DNS, Zeit ist NTP, Filterung übernimmt die Firewall.",
@@ -17,10 +17,10 @@
         "en": {
           "question": "What is the role of a DHCP server in a network?",
           "options": [
-            "It resolves domain names to IP addresses",
+            "It resolves domain names to IP addresses via a name server",
             "It automatically assigns IP configurations to clients",
-            "It filters unwanted network traffic",
-            "It synchronizes the clients' clocks"
+            "It filters unwanted traffic using firewall rules",
+            "It synchronizes the clients' clocks using NTP"
           ],
           "answer": "It automatically assigns IP configurations to clients",
           "explanation": "DHCP hands out IP address, subnet mask, gateway and DNS server automatically. Name resolution is DNS, time is NTP, filtering is done by a firewall."
@@ -407,10 +407,10 @@
       "category": "Netzwerktechnik",
       "question": "Was ist der wesentliche Unterschied zwischen einem Hub und einem Switch?",
       "options": [
-        "Ein Hub filtert Broadcasts, ein Switch nicht",
+        "Ein Hub filtert Broadcasts anhand einer internen MAC-Tabelle heraus, ein Switch nicht",
         "Ein Switch leitet Frames gezielt anhand der MAC-Adresse weiter, ein Hub sendet an alle Ports",
-        "Ein Hub arbeitet auf Schicht 3, ein Switch auf Schicht 2",
-        "Ein Switch kann keine Kollisionsdomänen trennen"
+        "Ein Hub arbeitet auf OSI-Schicht 3 und wertet IP-Adressen aus, ein Switch nur auf Schicht 2",
+        "Ein Switch kann keine Kollisionsdomänen trennen, da alle Ports ein Segment bilden"
       ],
       "answer": "Ein Switch leitet Frames gezielt anhand der MAC-Adresse weiter, ein Hub sendet an alle Ports",
       "explanation": "Ein Hub ist ein reiner Signalverteiler ohne Intelligenz, jedes Bit geht an alle Ports (eine gemeinsame Kollisionsdomäne). Ein Switch lernt MAC-Adressen und leitet Frames gezielt nur an den passenden Port weiter, wodurch jeder Port eine eigene Kollisionsdomäne bildet.",
@@ -418,10 +418,10 @@
         "en": {
           "question": "What is the essential difference between a hub and a switch?",
           "options": [
-            "A hub filters broadcasts, a switch does not",
+            "A hub filters broadcasts using an internal MAC address table, a switch does not",
             "A switch forwards frames selectively based on the MAC address, a hub sends to all ports",
-            "A hub operates at layer 3, a switch at layer 2",
-            "A switch cannot separate collision domains"
+            "A hub operates at OSI layer 3 and evaluates IP addresses, a switch only at layer 2",
+            "A switch cannot separate collision domains, since all ports share one segment"
           ],
           "answer": "A switch forwards frames selectively based on the MAC address, a hub sends to all ports",
           "explanation": "A hub is a dumb signal repeater — every bit goes out every port (one shared collision domain). A switch learns MAC addresses and forwards frames only to the correct port, giving each port its own collision domain."
@@ -543,9 +543,9 @@
       "question": "Was ist der Hauptvorteil von VLSM (Variable Length Subnet Mask) gegenüber klassischem Subnetting mit fester Maskenlänge?",
       "options": [
         "Es erlaubt unterschiedlich große Subnetze und spart dadurch Adressraum",
-        "Es macht IPv6 überflüssig",
-        "Es ersetzt DHCP",
-        "Es verhindert Broadcast-Storms"
+        "Es macht IPv6 überflüssig, da genug IPv4-Adressraum entsteht",
+        "Es ersetzt DHCP bei der automatischen Vergabe von Adressen",
+        "Es verhindert Broadcast-Storms an Subnetzgrenzen automatisch"
       ],
       "answer": "Es erlaubt unterschiedlich große Subnetze und spart dadurch Adressraum",
       "explanation": "VLSM erlaubt es, jedem Subnetz genau die Anzahl Adressen zuzuweisen, die es braucht, statt überall dieselbe Maske zu verwenden – das vermeidet Verschwendung von Adressraum.",
@@ -554,9 +554,9 @@
           "question": "What is the main advantage of VLSM (Variable Length Subnet Mask) over classic fixed-length subnetting?",
           "options": [
             "It allows differently sized subnets and thereby saves address space",
-            "It makes IPv6 unnecessary",
-            "It replaces DHCP",
-            "It prevents broadcast storms"
+            "It makes IPv6 unnecessary, since enough IPv4 address space is freed up",
+            "It replaces DHCP for automatically assigning addresses",
+            "It prevents broadcast storms automatically at subnet boundaries"
           ],
           "answer": "It allows differently sized subnets and thereby saves address space",
           "explanation": "VLSM lets each subnet get exactly the number of addresses it needs instead of using the same mask everywhere, avoiding wasted address space."
@@ -569,10 +569,10 @@
       "category": "Netzwerktechnik",
       "question": "Welches Problem löst das Spanning Tree Protocol (STP) in geswitchten Netzwerken?",
       "options": [
-        "Es verschlüsselt den Datenverkehr",
+        "Es verschlüsselt den Datenverkehr zwischen Switches",
         "Es verhindert Schleifen (Loops) bei redundanten Verbindungen",
-        "Es vergibt IP-Adressen automatisch",
-        "Es komprimiert Ethernet-Frames"
+        "Es vergibt IP-Adressen automatisch an neue Ports",
+        "Es komprimiert Ethernet-Frames zur Bandbreitenersparnis"
       ],
       "answer": "Es verhindert Schleifen (Loops) bei redundanten Verbindungen",
       "explanation": "STP erkennt redundante Verbindungen zwischen Switches und blockiert gezielt Ports, um Broadcast-Storms durch Schleifen zu verhindern.",
@@ -580,10 +580,10 @@
         "en": {
           "question": "What problem does the Spanning Tree Protocol (STP) solve in switched networks?",
           "options": [
-            "It encrypts network traffic",
+            "It encrypts network traffic between switches",
             "It prevents loops from redundant links",
-            "It automatically assigns IP addresses",
-            "It compresses Ethernet frames"
+            "It automatically assigns IP addresses to new ports",
+            "It compresses Ethernet frames to save bandwidth"
           ],
           "answer": "It prevents loops from redundant links",
           "explanation": "STP detects redundant links between switches and selectively blocks ports to prevent broadcast storms caused by loops."
@@ -677,10 +677,10 @@
       "category": "Netzwerktechnik",
       "question": "Welche Funktion erfüllt NAT (Network Address Translation)?",
       "options": [
-        "Es löst Hostnamen in IP-Adressen auf",
+        "Es löst Hostnamen per Nameserver-Anfrage in IP-Adressen auf",
         "Es übersetzt private IP-Adressen in eine öffentliche Adresse und umgekehrt",
-        "Es verhindert Schleifen im Netzwerk",
-        "Es synchronisiert Uhrzeiten"
+        "Es verhindert Schleifen durch Blockieren redundanter Verbindungen",
+        "Es synchronisiert Uhrzeiten über einen zentralen Zeitserver"
       ],
       "answer": "Es übersetzt private IP-Adressen in eine öffentliche Adresse und umgekehrt",
       "explanation": "NAT ermöglicht es mehreren Geräten mit privaten IP-Adressen, sich eine oder wenige öffentliche IP-Adressen für den Internetzugang zu teilen.",
@@ -688,10 +688,10 @@
         "en": {
           "question": "What function does NAT (Network Address Translation) perform?",
           "options": [
-            "It resolves hostnames into IP addresses",
+            "It resolves hostnames into IP addresses via a name server query",
             "It translates private IP addresses into a public address and back",
-            "It prevents loops in the network",
-            "It synchronizes clocks"
+            "It prevents loops by blocking redundant connections",
+            "It synchronizes clocks via a central time server"
           ],
           "answer": "It translates private IP addresses into a public address and back",
           "explanation": "NAT lets multiple devices with private IP addresses share one or a few public IP addresses for internet access."
@@ -705,9 +705,9 @@
       "question": "Welche Aufgabe hat das ARP-Protokoll (Address Resolution Protocol)?",
       "options": [
         "Es ermittelt zu einer bekannten IP-Adresse die zugehörige MAC-Adresse im lokalen Netz",
-        "Es vergibt IP-Adressen automatisch",
-        "Es überwacht die Netzwerklast",
-        "Es verschlüsselt den Datenverkehr"
+        "Es vergibt IP-Adressen automatisch samt Lease-Verlängerung bei Bedarf",
+        "Es überwacht die Netzwerklast und meldet Überlastungen dem Administrator",
+        "Es verschlüsselt den Datenverkehr zwischen zwei Endgeräten im Subnetz"
       ],
       "answer": "Es ermittelt zu einer bekannten IP-Adresse die zugehörige MAC-Adresse im lokalen Netz",
       "explanation": "ARP fragt per Broadcast im lokalen Netz ab, welches Gerät zu einer bestimmten IP-Adresse gehört, und liefert dessen MAC-Adresse zurück.",
@@ -716,9 +716,9 @@
           "question": "What is the role of the ARP (Address Resolution Protocol)?",
           "options": [
             "It determines the MAC address belonging to a known IP address on the local network",
-            "It automatically assigns IP addresses",
-            "It monitors network load",
-            "It encrypts network traffic"
+            "It automatically assigns IP addresses and extends leases as needed",
+            "It monitors network load and reports overloads to the administrator",
+            "It encrypts network traffic between two devices on the subnet"
           ],
           "answer": "It determines the MAC address belonging to a known IP address on the local network",
           "explanation": "ARP broadcasts on the local network to ask which device owns a given IP address, and receives that device's MAC address in reply."
@@ -731,10 +731,10 @@
       "category": "Netzwerktechnik",
       "question": "Wozu dient das Standardgateway in der IP-Konfiguration eines Clients?",
       "options": [
-        "Es ist die Adresse des DNS-Servers",
+        "Es ist die Adresse des zuständigen DNS-Servers im lokalen Netz",
         "Es ist das Gerät, an das Pakete für fremde Netze weitergeleitet werden",
-        "Es vergibt IP-Adressen per DHCP",
-        "Es speichert die MAC-Adressen aller Geräte"
+        "Es vergibt IP-Adressen per DHCP an neu angemeldete Geräte",
+        "Es speichert die MAC-Adressen aller Geräte in einer Tabelle"
       ],
       "answer": "Es ist das Gerät, an das Pakete für fremde Netze weitergeleitet werden",
       "explanation": "Das Standardgateway ist üblicherweise ein Router, an den alle Pakete geschickt werden, deren Zieladresse nicht im eigenen Subnetz liegt.",
@@ -742,10 +742,10 @@
         "en": {
           "question": "What is the purpose of the default gateway in a client's IP configuration?",
           "options": [
-            "It is the address of the DNS server",
+            "It is the address of the DNS server responsible for the local network",
             "It is the device to which packets for foreign networks are forwarded",
-            "It assigns IP addresses via DHCP",
-            "It stores the MAC addresses of all devices"
+            "It assigns IP addresses via DHCP to newly connected devices",
+            "It stores the MAC addresses of all devices in a table"
           ],
           "answer": "It is the device to which packets for foreign networks are forwarded",
           "explanation": "The default gateway is usually a router to which all packets are sent whose destination is not within the local subnet."
@@ -812,10 +812,10 @@
       "category": "Netzwerktechnik",
       "question": "Was ist eine wesentliche Verbesserung von WPA3 gegenüber WPA2?",
       "options": [
-        "WPA3 verzichtet komplett auf Verschlüsselung",
+        "WPA3 verzichtet komplett auf Verschlüsselung und nutzt stattdessen nur MAC-Adressfilterung",
         "WPA3 nutzt ein sichereres Schlüsselaustauschverfahren (SAE) statt des anfälligen 4-Way-Handshakes",
-        "WPA3 funktioniert nur mit Kabelnetzen",
-        "WPA3 senkt die maximale Reichweite"
+        "WPA3 funktioniert nur mit Kabelnetzen, da der Schlüsselaustausch eine feste Verbindung voraussetzt",
+        "WPA3 senkt die maximale Reichweite gegenüber WPA2 spürbar ab, vor allem in Innenräumen"
       ],
       "answer": "WPA3 nutzt ein sichereres Schlüsselaustauschverfahren (SAE) statt des anfälligen 4-Way-Handshakes",
       "explanation": "WPA3 ersetzt den bei WPA2 für Offline-Wörterbuchangriffe anfälligen 4-Way-Handshake durch SAE (Simultaneous Authentication of Equals) und bietet damit besseren Schutz, besonders bei schwachen Passwörtern.",
@@ -823,10 +823,10 @@
         "en": {
           "question": "What is a key improvement of WPA3 over WPA2?",
           "options": [
-            "WPA3 abandons encryption entirely",
+            "WPA3 abandons encryption entirely and relies only on MAC address filtering instead",
             "WPA3 uses a more secure key exchange (SAE) instead of the vulnerable 4-way handshake",
-            "WPA3 only works on wired networks",
-            "WPA3 reduces the maximum range"
+            "WPA3 only works on wired networks, since the key exchange requires a fixed connection",
+            "WPA3 noticeably reduces the maximum range compared to WPA2, especially indoors"
           ],
           "answer": "WPA3 uses a more secure key exchange (SAE) instead of the vulnerable 4-way handshake",
           "explanation": "WPA3 replaces WPA2's 4-way handshake, which is vulnerable to offline dictionary attacks, with SAE (Simultaneous Authentication of Equals), offering better protection especially for weak passwords."
@@ -893,10 +893,10 @@
       "category": "Netzwerktechnik",
       "question": "Wofür wird das Tool traceroute (bzw. tracert unter Windows) typischerweise eingesetzt?",
       "options": [
-        "Zum Anzeigen der lokalen IP-Konfiguration",
+        "Zum Anzeigen der lokalen IP-Konfiguration samt Maske",
         "Zum Anzeigen aller Router-Hops auf dem Weg zu einem Zielhost",
-        "Zum Auflösen von Hostnamen in IP-Adressen",
-        "Zum Vergeben von IP-Adressen"
+        "Zum Auflösen von Hostnamen per DNS in IP-Adressen",
+        "Zum Vergeben von IP-Adressen an Clients im Netzsegment"
       ],
       "answer": "Zum Anzeigen aller Router-Hops auf dem Weg zu einem Zielhost",
       "explanation": "traceroute sendet Pakete mit steigender TTL und wertet die daraufhin von jedem Router zurückgesendeten ICMP-Fehlermeldungen aus, um den Weg (alle Hops) zu einem Ziel sichtbar zu machen.",
@@ -904,10 +904,10 @@
         "en": {
           "question": "What is the traceroute (or tracert on Windows) tool typically used for?",
           "options": [
-            "To display the local IP configuration",
+            "To display the local IP configuration including the mask",
             "To display all router hops on the path to a destination host",
-            "To resolve hostnames into IP addresses",
-            "To assign IP addresses"
+            "To resolve hostnames into IP addresses via DNS",
+            "To assign IP addresses to clients on the local segment"
           ],
           "answer": "To display all router hops on the path to a destination host",
           "explanation": "traceroute sends packets with increasing TTL and evaluates the resulting ICMP error messages from each router to reveal the full path (every hop) to a destination."
@@ -1003,8 +1003,8 @@
       "options": [
         "Daten können nur abwechselnd in eine Richtung gesendet werden",
         "Daten können gleichzeitig in beide Richtungen gesendet und empfangen werden",
-        "Es gibt keine Kollisionen mehr im gesamten Netzwerk",
-        "Die Übertragung erfolgt nur über Glasfaser"
+        "Es gibt keine Kollisionen mehr im gesamten Netzwerksegment",
+        "Die Übertragung erfolgt nur über Glasfaserkabel möglich"
       ],
       "answer": "Daten können gleichzeitig in beide Richtungen gesendet und empfangen werden",
       "explanation": "Im Vollduplex-Betrieb können Senden und Empfangen gleichzeitig erfolgen, wodurch bei Punkt-zu-Punkt-Verbindungen (z. B. Switch-Port) keine Kollisionen mehr auftreten.",
@@ -1014,8 +1014,8 @@
           "options": [
             "Data can only be sent alternately in one direction",
             "Data can be sent and received simultaneously in both directions",
-            "There are no collisions anywhere in the entire network",
-            "Transmission only happens over fiber optics"
+            "There are no collisions anywhere in the entire network segment",
+            "Transmission is only possible over fiber-optic cable"
           ],
           "answer": "Data can be sent and received simultaneously in both directions",
           "explanation": "In full-duplex mode, sending and receiving can happen at the same time, which eliminates collisions on point-to-point links (e.g. a switch port)."

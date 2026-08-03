@@ -61,9 +61,9 @@
       "question": "Welchen Zweck erfüllt ein digitales Zertifikat?",
       "options": [
         "Es bindet einen öffentlichen Schlüssel beglaubigt an eine Identität",
-        "Es verschlüsselt Festplatten vollständig",
-        "Es ersetzt Benutzerpasswörter im Betriebssystem",
-        "Es blockiert Schadsoftware auf dem Endgerät"
+        "Es verschlüsselt die gesamte Festplatte transparent im Hintergrund",
+        "Es ersetzt Benutzerpasswörter durch ein zentrales Single-Sign-On-Verfahren",
+        "Es erkennt und blockiert Schadsoftware anhand von Signaturen"
       ],
       "answer": "Es bindet einen öffentlichen Schlüssel beglaubigt an eine Identität",
       "explanation": "Eine Zertifizierungsstelle (CA) bestätigt mit ihrer Signatur, dass der öffentliche Schlüssel wirklich zur angegebenen Identität (z. B. Domain) gehört — Grundlage von TLS/HTTPS.",
@@ -72,9 +72,9 @@
           "question": "What purpose does a digital certificate serve?",
           "options": [
             "It bindingly attests that a public key belongs to an identity",
-            "It fully encrypts hard drives",
-            "It replaces user passwords in the operating system",
-            "It blocks malware on the end device"
+            "It transparently encrypts the entire hard drive in the background",
+            "It replaces user passwords with a centralized single sign-on scheme",
+            "It detects and blocks malware based on signatures"
           ],
           "answer": "It bindingly attests that a public key belongs to an identity",
           "explanation": "A certificate authority (CA) confirms with its signature that the public key really belongs to the stated identity (e.g. a domain) — the foundation of TLS/HTTPS."

@@ -88,9 +88,9 @@
       "question": "Worin unterscheidet sich ein NAS grundsätzlich von einem SAN?",
       "options": [
         "NAS bietet dateibasierten Zugriff (z. B. SMB/NFS), SAN blockbasierten Zugriff",
-        "NAS ist immer schneller als ein SAN",
-        "SAN funktioniert nur mit Bandlaufwerken",
-        "NAS kann ausschließlich über WLAN angebunden werden"
+        "Ein NAS erzielt aufgrund seiner Bauweise grundsätzlich höhere Durchsatzraten als ein SAN",
+        "Ein SAN kann ausschließlich Bandlaufwerke als Speichermedium ansprechen",
+        "Ein NAS lässt sich ausschließlich über eine WLAN-Verbindung ins Netzwerk einbinden"
       ],
       "answer": "NAS bietet dateibasierten Zugriff (z. B. SMB/NFS), SAN blockbasierten Zugriff",
       "explanation": "NAS = Network Attached Storage, Freigaben auf Dateiebene. SAN = Storage Area Network, präsentiert Block-Speicher (z. B. über iSCSI oder Fibre Channel), der wie eine lokale Platte erscheint.",
@@ -99,9 +99,9 @@
           "question": "What is the fundamental difference between a NAS and a SAN?",
           "options": [
             "NAS provides file-based access (e.g. SMB/NFS), SAN provides block-based access",
-            "A NAS is always faster than a SAN",
-            "A SAN only works with tape drives",
-            "A NAS can only be connected via Wi-Fi"
+            "A NAS inherently achieves higher throughput than a SAN due to its design",
+            "A SAN can only address tape drives as a storage medium",
+            "A NAS can only be integrated into the network over a Wi-Fi connection"
           ],
           "answer": "NAS provides file-based access (e.g. SMB/NFS), SAN provides block-based access",
           "explanation": "NAS = Network Attached Storage, shares at file level. SAN = Storage Area Network, presents block storage (e.g. via iSCSI or Fibre Channel) that appears like a local disk."

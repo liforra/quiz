@@ -61,9 +61,9 @@
       "question": "Welches Protokoll verhindert Schleifen (Loops) in einem geswitchten Netzwerk?",
       "options": [
         "STP (Spanning Tree Protocol)",
-        "OSPF",
-        "LACP",
-        "VTP"
+        "OSPF (Open Shortest Path First)",
+        "LACP (Link Aggregation Control Protocol)",
+        "VTP (VLAN Trunking Protocol)"
       ],
       "answer": "STP (Spanning Tree Protocol)",
       "explanation": "STP deaktiviert redundante Pfade logisch, bis sie im Fehlerfall gebraucht werden. OSPF ist ein Routingprotokoll, LACP bündelt Links, VTP verteilt VLAN-Konfigurationen.",
@@ -72,9 +72,9 @@
           "question": "Which protocol prevents loops in a switched network?",
           "options": [
             "STP (Spanning Tree Protocol)",
-            "OSPF",
-            "LACP",
-            "VTP"
+            "OSPF (Open Shortest Path First)",
+            "LACP (Link Aggregation Control Protocol)",
+            "VTP (VLAN Trunking Protocol)"
           ],
           "answer": "STP (Spanning Tree Protocol)",
           "explanation": "STP logically disables redundant paths until they are needed after a failure. OSPF is a routing protocol, LACP aggregates links, VTP distributes VLAN configurations."

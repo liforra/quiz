@@ -35,8 +35,8 @@
       "options": [
         "Sie filtert Netzwerkverkehr anhand definierter Regeln",
         "Sie entfernt Schadsoftware von infizierten Rechnern",
-        "Sie komprimiert Daten vor der Übertragung",
-        "Sie verwaltet Benutzerpasswörter zentral"
+        "Sie komprimiert Daten vor der Übertragung, um Bandbreite auf langsamen WAN-Verbindungen zu sparen",
+        "Sie verwaltet Benutzerpasswörter zentral und synchronisiert sie über ein LDAP-Verzeichnis"
       ],
       "answer": "Sie filtert Netzwerkverkehr anhand definierter Regeln",
       "explanation": "Eine Firewall erlaubt oder blockiert Verbindungen anhand von Regeln (z. B. Quell-/Ziel-IP, Port). Schadsoftware entfernt ein Virenscanner, Passwörter verwaltet ein Passwort-Manager.",
@@ -46,8 +46,8 @@
           "options": [
             "It filters network traffic based on defined rules",
             "It removes malware from infected computers",
-            "It compresses data before transmission",
-            "It manages user passwords centrally"
+            "It compresses data before transmission to save bandwidth on slow WAN connections",
+            "It manages user passwords centrally and synchronizes them via an LDAP directory"
           ],
           "answer": "It filters network traffic based on defined rules",
           "explanation": "A firewall allows or blocks connections based on rules (e.g. source/destination IP, port). Malware removal is an antivirus job, password management is done by a password manager."
@@ -382,18 +382,18 @@
           "explanation": "Trojans pose as legitimate, useful software to get installed, then covertly perform malicious actions. Unlike worms, they don't spread on their own.",
           "options": [
             "A program that disguises itself as a useful application and runs malicious functions in the background",
-            "A program that copies itself across networks on its own",
-            "A program that only logs keystrokes",
-            "A program that encrypts files and demands a ransom"
+            "A program that copies itself across networks on its own by exploiting vulnerabilities in services such as SMB to keep spreading",
+            "A program that only logs keystrokes and regularly transmits the collected data to an external server",
+            "A program that encrypts files and demands a ransom payment in exchange for the decryption key"
           ],
           "answer": "A program that disguises itself as a useful application and runs malicious functions in the background"
         }
       },
       "options": [
         "Ein Programm, das sich als nützliche Anwendung tarnt und im Hintergrund schädliche Funktionen ausführt",
-        "Ein Programm, das sich selbstständig über Netzwerke kopiert",
-        "Ein Programm, das ausschließlich Tastatureingaben protokolliert",
-        "Ein Programm, das Dateien verschlüsselt und ein Lösegeld fordert"
+        "Ein Programm, das sich selbstständig über Netzwerke kopiert und dabei Sicherheitslücken in Diensten wie SMB ausnutzt, um sich weiterzuverbreiten",
+        "Ein Programm, das ausschließlich Tastatureingaben protokolliert und die gesammelten Daten regelmäßig an einen externen Server überträgt",
+        "Ein Programm, das Dateien verschlüsselt und ein Lösegeld für die Bereitstellung des Entschlüsselungsschlüssels fordert"
       ],
       "answer": "Ein Programm, das sich als nützliche Anwendung tarnt und im Hintergrund schädliche Funktionen ausführt"
     },
@@ -437,8 +437,8 @@
           "options": [
             "It inspects individual data packets based on IP addresses and port numbers",
             "It analyzes the content of encrypted application data",
-            "It completely replaces an antivirus scanner",
-            "It manages digital certificates"
+            "It completely replaces an antivirus scanner, since it also checks file contents against known signatures",
+            "It manages digital certificates and issues them for TLS encryption"
           ],
           "answer": "It inspects individual data packets based on IP addresses and port numbers"
         }
@@ -446,8 +446,8 @@
       "options": [
         "Er prüft einzelne Datenpakete anhand von IP-Adressen und Portnummern",
         "Er analysiert den Inhalt verschlüsselter Anwendungsdaten",
-        "Er ersetzt einen Virenscanner vollständig",
-        "Er verwaltet digitale Zertifikate"
+        "Er ersetzt einen Virenscanner vollständig, da er auch Dateiinhalte auf bekannte Signaturen prüft",
+        "Er verwaltet digitale Zertifikate und stellt sie für die TLS-Verschlüsselung aus"
       ],
       "answer": "Er prüft einzelne Datenpakete anhand von IP-Adressen und Portnummern"
     },
@@ -463,18 +463,18 @@
           "explanation": "An application-layer firewall works at layer 7 and can examine the content of protocols like HTTP or FTP, while a packet filter only evaluates header data.",
           "options": [
             "It can inspect the actual content of application protocols such as HTTP",
-            "It fundamentally requires no configuration",
+            "It fundamentally requires no configuration, because it automatically learns all rules from the network traffic",
             "It is inherently always faster than a packet filter",
-            "It makes encryption unnecessary"
+            "It makes encryption unnecessary because it already secures all traffic on its own"
           ],
           "answer": "It can inspect the actual content of application protocols such as HTTP"
         }
       },
       "options": [
         "Sie kann den Inhalt von Anwendungsprotokollen wie HTTP inhaltlich analysieren",
-        "Sie benötigt grundsätzlich keine Konfiguration",
+        "Sie benötigt grundsätzlich keine Konfiguration, da sie alle Regeln automatisch aus dem Netzwerkverkehr lernt",
         "Sie ist prinzipbedingt immer schneller als ein Paketfilter",
-        "Sie macht Verschlüsselung überflüssig"
+        "Sie macht Verschlüsselung überflüssig, weil sie den gesamten Datenverkehr bereits selbst absichert"
       ],
       "answer": "Sie kann den Inhalt von Anwendungsprotokollen wie HTTP inhaltlich analysieren"
     },
@@ -544,18 +544,18 @@
           "explanation": "Asymmetric algorithms are computationally expensive but well suited to secure key exchange. The actual payload is encrypted symmetrically for performance reasons.",
           "options": [
             "Asymmetric encryption is only used to securely exchange the symmetric session key; the actual data is then encrypted with the faster symmetric method",
-            "Symmetric encryption is fundamentally insecure and is therefore only used briefly",
-            "Hybrid schemes are legally required",
-            "Asymmetric methods do not need any keys"
+            "Symmetric encryption is fundamentally insecure, since it uses the same key for both encryption and decryption, and is therefore only used briefly during the initial handshake",
+            "Hybrid schemes are legally required because pure asymmetric encryption is not permitted under BSI guidelines",
+            "Asymmetric methods do not need any keys, because encryption relies solely on the certificate of the remote party"
           ],
           "answer": "Asymmetric encryption is only used to securely exchange the symmetric session key; the actual data is then encrypted with the faster symmetric method"
         }
       },
       "options": [
         "Asymmetrische Verschlüsselung dient nur dem sicheren Austausch des symmetrischen Sitzungsschlüssels, die eigentlichen Daten verschlüsselt danach das schnellere symmetrische Verfahren",
-        "Symmetrische Verschlüsselung ist grundsätzlich unsicher und wird deshalb nur kurz verwendet",
-        "Hybridverfahren sind gesetzlich vorgeschrieben",
-        "Asymmetrische Verfahren benötigen keine Schlüssel"
+        "Symmetrische Verschlüsselung ist grundsätzlich unsicher, da sie denselben Schlüssel für Ver- und Entschlüsselung verwendet, und wird deshalb nur kurz für den initialen Handshake eingesetzt",
+        "Hybridverfahren sind gesetzlich vorgeschrieben, da reine asymmetrische Verschlüsselung laut BSI-Richtlinie nicht zugelassen ist",
+        "Asymmetrische Verfahren benötigen keine Schlüssel, da die Verschlüsselung allein auf dem Zertifikat der Gegenstelle basiert"
       ],
       "answer": "Asymmetrische Verschlüsselung dient nur dem sicheren Austausch des symmetrischen Sitzungsschlüssels, die eigentlichen Daten verschlüsselt danach das schnellere symmetrische Verfahren"
     },
@@ -571,18 +571,18 @@
           "explanation": "Hash functions are one-way functions: the original message can practically not be derived from the hash, and even a tiny change to the input completely changes the hash value.",
           "options": [
             "It must be practically impossible to reconstruct the original message from the hash value",
-            "The hash value must be longer than the input",
-            "The hash value must be reversible",
-            "The hash value must resemble the input"
+            "The hash value must be longer than the input, so that no collisions can occur between two hash values even for very large input files",
+            "The hash value must be reversible, so that the original message can be restored with the matching key if needed",
+            "The hash value must resemble the input, so that small changes to the message only cause minor changes to the resulting hash value"
           ],
           "answer": "It must be practically impossible to reconstruct the original message from the hash value"
         }
       },
       "options": [
         "Aus dem Hashwert darf sich die Ursprungsnachricht praktisch nicht rekonstruieren lassen",
-        "Der Hashwert muss länger sein als die Eingabe",
-        "Der Hashwert muss reversibel sein",
-        "Der Hashwert muss der Eingabe ähneln"
+        "Der Hashwert muss länger sein als die Eingabe, damit auch bei sehr großen Eingabedateien keine Kollisionen zwischen zwei Hashwerten entstehen können",
+        "Der Hashwert muss reversibel sein, damit die Ursprungsnachricht bei Bedarf mit dem passenden Schlüssel wiederhergestellt werden kann",
+        "Der Hashwert muss der Eingabe ähneln, damit sich kleine Änderungen der Nachricht nur geringfügig auf den resultierenden Hashwert auswirken"
       ],
       "answer": "Aus dem Hashwert darf sich die Ursprungsnachricht praktisch nicht rekonstruieren lassen"
     },
@@ -625,18 +625,18 @@
           "explanation": "An individual random value (salt) per password prevents attackers from using precomputed rainbow tables, because it makes every hash unique.",
           "options": [
             "Salting (adding a random value before hashing)",
-            "Shortening the password",
-            "Avoiding special characters",
-            "Hashing repeatedly without any extra value"
+            "Shortening the password to a length that is easier to remember",
+            "Avoiding special characters in favor of longer, easier-to-remember passphrases",
+            "Hashing repeatedly without any extra value, to artificially increase the computation time for attackers"
           ],
           "answer": "Salting (adding a random value before hashing)"
         }
       },
       "options": [
         "Salting (Hinzufügen eines Zufallswerts vor dem Hashen)",
-        "Verkürzen des Passworts",
-        "Verzicht auf Sonderzeichen",
-        "Mehrfaches Hashen ohne jeden Zusatzwert"
+        "Verkürzen des Passworts auf eine leicht zu merkende Länge",
+        "Verzicht auf Sonderzeichen zugunsten längerer, leichter merkbarer Passphrasen",
+        "Mehrfaches Hashen ohne jeden Zusatzwert, um die Rechenzeit für Angreifer künstlich zu erhöhen"
       ],
       "answer": "Salting (Hinzufügen eines Zufallswerts vor dem Hashen)"
     },
@@ -706,18 +706,18 @@
           "explanation": "Incremental backups only store the changes since the previous backup, making them very space-efficient, though restoring requires all the backup sets in the chain.",
           "options": [
             "Only the data that changed since the last backup of any type is saved",
-            "A complete copy of all data is created on every run",
+            "A complete copy of all data is created on every run, regardless of whether files have changed since the last backup",
             "Only data that changed since the last full backup is saved",
-            "Only deleted files are saved"
+            "Only deleted files are saved, so they can be restored in case of accidental deletion"
           ],
           "answer": "Only the data that changed since the last backup of any type is saved"
         }
       },
       "options": [
         "Es werden nur die Daten gesichert, die sich seit der letzten Sicherung (egal welchen Typs) geändert haben",
-        "Es wird bei jedem Lauf eine komplette Kopie aller Daten erstellt",
+        "Es wird bei jedem Lauf eine komplette Kopie aller Daten erstellt, unabhängig davon ob sich Dateien seit der letzten Sicherung geändert haben",
         "Es werden nur Daten gesichert, die sich seit der letzten Vollsicherung geändert haben",
-        "Es werden nur gelöschte Dateien gesichert"
+        "Es werden nur gelöschte Dateien gesichert, damit sie bei einem versehentlichen Löschen wiederhergestellt werden können"
       ],
       "answer": "Es werden nur die Daten gesichert, die sich seit der letzten Sicherung (egal welchen Typs) geändert haben"
     },
@@ -733,18 +733,18 @@
           "explanation": "A differential backup always refers back to the last full backup, so restoring only needs the full backup plus the latest differential backup.",
           "options": [
             "It saves all changes since the last full backup, not just since the last backup",
-            "It always creates a complete copy of all data",
-            "It only backs up system files",
-            "It does not require a prior full backup"
+            "It always creates a complete copy of all data and therefore requires the most storage space on every run",
+            "It only backs up system files, while user data must be captured separately with its own backup",
+            "It does not require a prior full backup, since it automatically captures all existing data in full on its first run"
           ],
           "answer": "It saves all changes since the last full backup, not just since the last backup"
         }
       },
       "options": [
         "Sie sichert alle Änderungen seit der letzten Vollsicherung, nicht nur seit der letzten Sicherung",
-        "Sie erstellt immer eine komplette Kopie aller Daten",
-        "Sie sichert ausschließlich Systemdateien",
-        "Sie benötigt keine vorherige Vollsicherung"
+        "Sie erstellt immer eine komplette Kopie aller Daten und benötigt deshalb bei jedem Lauf den meisten Speicherplatz",
+        "Sie sichert ausschließlich Systemdateien, während Benutzerdaten separat mit einer eigenen Sicherung erfasst werden müssen",
+        "Sie benötigt keine vorherige Vollsicherung, da sie beim ersten Lauf automatisch alle vorhandenen Daten vollständig erfasst"
       ],
       "answer": "Sie sichert alle Änderungen seit der letzten Vollsicherung, nicht nur seit der letzten Sicherung"
     },
@@ -814,7 +814,7 @@
           "explanation": "Under Art. 28 GDPR, the controller and processor must sign a DPA that regulates the scope, purpose and obligations of the data processing.",
           "options": [
             "Data processing agreement (DPA)",
-            "Employment contract",
+            "Employment contract between the company and its permanent employees",
             "Service level agreement",
             "Non-disclosure agreement"
           ],
@@ -823,7 +823,7 @@
       },
       "options": [
         "Auftragsverarbeitungsvertrag (AVV)",
-        "Arbeitsvertrag",
+        "Arbeitsvertrag zwischen dem Unternehmen und seinen fest angestellten Mitarbeitern",
         "Service-Level-Agreement",
         "Geheimhaltungsvereinbarung"
       ],
@@ -868,18 +868,18 @@
           "explanation": "Access control systems physically regulate who may enter a server room. Firewalls, antivirus software and encryption are logical/technical measures, not physical ones.",
           "options": [
             "An access control system using a keycard or PIN",
-            "Antivirus software",
-            "A firewall",
-            "Data encryption"
+            "Antivirus software using signature-based malware detection",
+            "A firewall filtering incoming and outgoing network traffic",
+            "Encryption of the files stored on the server"
           ],
           "answer": "An access control system using a keycard or PIN"
         }
       },
       "options": [
         "Zutrittskontrollsystem mit Chipkarte oder PIN",
-        "Virenscanner",
-        "Firewall",
-        "Datenverschlüsselung"
+        "Virenscanner mit signaturbasierter Erkennung von Schadsoftware",
+        "Firewall zur Filterung des ein- und ausgehenden Netzwerkverkehrs",
+        "Datenverschlüsselung der auf dem Server gespeicherten Dateien"
       ],
       "answer": "Zutrittskontrollsystem mit Chipkarte oder PIN"
     },
@@ -895,18 +895,18 @@
           "explanation": "Least privilege minimizes access rights to the necessary minimum, limiting the potential damage from misuse or a compromised account.",
           "options": [
             "Principle of least privilege",
-            "Need-to-know principle",
-            "Four-eyes principle",
-            "Separation of duties"
+            "Need-to-know principle, under which information is only shared with people who have an operational need",
+            "Four-eyes principle, under which critical actions must always be approved by two people",
+            "Separation of duties, under which critical process steps are distributed across several people"
           ],
           "answer": "Principle of least privilege"
         }
       },
       "options": [
         "Prinzip der geringsten Rechte (Least Privilege)",
-        "Need-to-know-Prinzip",
-        "Vier-Augen-Prinzip",
-        "Trennung von Pflichten"
+        "Need-to-know-Prinzip, bei dem Informationen nur an Personen mit dienstlichem Bedarf weitergegeben werden",
+        "Vier-Augen-Prinzip, bei dem kritische Aktionen stets von zwei Personen freigegeben werden müssen",
+        "Trennung von Pflichten, bei der kritische Prozessschritte auf mehrere Personen verteilt werden"
       ],
       "answer": "Prinzip der geringsten Rechte (Least Privilege)"
     },
@@ -924,7 +924,7 @@
             "Permissions are granted via roles, which are then assigned to users",
             "Every user gets individually defined rights with no connection to roles at all",
             "Rights are assigned exclusively and automatically by the OS kernel",
-            "Access rights depend solely on the time of day"
+            "Access rights depend solely on the time of day at which a user logs into the system"
           ],
           "answer": "Permissions are granted via roles, which are then assigned to users"
         }
@@ -933,7 +933,7 @@
         "Rechte werden über Rollen vergeben, die anschließend Benutzern zugewiesen werden",
         "Jeder Benutzer erhält individuell festgelegte Rechte ohne jeden Rollenbezug",
         "Rechte werden ausschließlich vom Betriebssystemkern automatisch vergeben",
-        "Zugriffsrechte richten sich ausschließlich nach der Tageszeit"
+        "Zugriffsrechte richten sich ausschließlich nach der Tageszeit, zu der sich ein Benutzer am System anmeldet"
       ],
       "answer": "Rechte werden über Rollen vergeben, die anschließend Benutzern zugewiesen werden"
     },
@@ -949,8 +949,8 @@
           "explanation": "A VPN creates an encrypted tunnel over an untrusted public network like the internet, so data can be transmitted confidentially and securely.",
           "options": [
             "It establishes an encrypted, private connection over a public network",
-            "It fundamentally speeds up the internet connection",
-            "It makes firewalls completely unnecessary",
+            "It fundamentally speeds up the internet connection by routing all traffic through a caching network",
+            "It makes firewalls completely unnecessary, because the encrypted tunnel already blocks any unwanted access",
             "It directly prevents malware infections on the endpoint device"
           ],
           "answer": "It establishes an encrypted, private connection over a public network"
@@ -958,8 +958,8 @@
       },
       "options": [
         "Es baut über ein öffentliches Netz eine verschlüsselte, private Verbindung auf",
-        "Es beschleunigt grundsätzlich die Internetverbindung",
-        "Es macht Firewalls vollständig überflüssig",
+        "Es beschleunigt grundsätzlich die Internetverbindung, indem der gesamte Datenverkehr über ein Cache-Netzwerk geleitet wird",
+        "Es macht Firewalls vollständig überflüssig, da der verschlüsselte Tunnel bereits jeglichen unerwünschten Zugriff blockiert",
         "Es verhindert Schadsoftware-Infektionen direkt auf dem Endgerät"
       ],
       "answer": "Es baut über ein öffentliches Netz eine verschlüsselte, private Verbindung auf"
@@ -1003,18 +1003,18 @@
           "explanation": "WPA3 uses \"Simultaneous Authentication of Equals\" (SAE), a more robust key exchange that makes offline attacks on captured handshakes much harder.",
           "options": [
             "WPA3 uses an improved key exchange that better protects the pre-shared key against offline dictionary attacks",
-            "WPA3 completely drops any form of encryption",
-            "WPA3 only works together with MAC address filtering",
-            "WPA3 no longer requires an access point"
+            "WPA3 completely drops any form of encryption, since authentication is handled entirely through certificates",
+            "WPA3 only works together with MAC address filtering, which admits every client based on its hardware address",
+            "WPA3 no longer requires an access point, because devices connect directly to each other over a peer-to-peer connection"
           ],
           "answer": "WPA3 uses an improved key exchange that better protects the pre-shared key against offline dictionary attacks"
         }
       },
       "options": [
         "WPA3 schützt durch ein verbessertes Schlüsselaustauschverfahren besser gegen Offline-Wörterbuchangriffe auf den Pre-Shared Key",
-        "WPA3 verzichtet vollständig auf jede Verschlüsselung",
-        "WPA3 funktioniert ausschließlich mit MAC-Adressfilterung",
-        "WPA3 benötigt keinen Access Point mehr"
+        "WPA3 verzichtet vollständig auf jede Verschlüsselung, da die Authentifizierung allein über Zertifikate erfolgt",
+        "WPA3 funktioniert ausschließlich mit MAC-Adressfilterung, wodurch jeder Client anhand seiner Hardware-Adresse zugelassen wird",
+        "WPA3 benötigt keinen Access Point mehr, da Geräte sich direkt über eine Peer-to-Peer-Verbindung verbinden"
       ],
       "answer": "WPA3 schützt durch ein verbessertes Schlüsselaustauschverfahren besser gegen Offline-Wörterbuchangriffe auf den Pre-Shared Key"
     },

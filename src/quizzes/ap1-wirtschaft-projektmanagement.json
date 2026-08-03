@@ -88,9 +88,9 @@
       "question": "Was gibt der Gesamtpuffer (GP) eines Vorgangs im Netzplan an?",
       "options": [
         "Die Zeitspanne, um die sich der Vorgang verschieben darf, ohne das Projektende zu gefährden",
-        "Die Mindestdauer des Vorgangs",
-        "Die Anzahl der beteiligten Mitarbeiter",
-        "Die Kosten des Vorgangs pro Tag"
+        "Die Mindestdauer des Vorgangs, berechnet aus der Differenz von frühestem und spätestem Endzeitpunkt",
+        "Die Anzahl der für den Vorgang eingeplanten Mitarbeiter laut Ressourcenplanung des Projekts",
+        "Die Kosten des Vorgangs pro Tag, wie sie in der Kostenplanung des Netzplans ausgewiesen werden"
       ],
       "answer": "Die Zeitspanne, um die sich der Vorgang verschieben darf, ohne das Projektende zu gefährden",
       "explanation": "GP = spätester Anfangszeitpunkt − frühester Anfangszeitpunkt (SAZ − FAZ). Vorgänge mit GP = 0 liegen auf dem kritischen Pfad.",
@@ -99,9 +99,9 @@
           "question": "What does the total float (slack) of an activity in a network diagram indicate?",
           "options": [
             "The amount of time the activity can be delayed without endangering the project end date",
-            "The minimum duration of the activity",
-            "The number of employees involved",
-            "The cost of the activity per day"
+            "The minimum duration of the activity, calculated from the difference between the earliest and latest finish time",
+            "The number of employees assigned to the activity according to the project's resource planning",
+            "The cost of the activity per day, as shown in the network diagram's cost planning"
           ],
           "answer": "The amount of time the activity can be delayed without endangering the project end date",
           "explanation": "Total float = latest start − earliest start. Activities with zero float lie on the critical path."
@@ -377,7 +377,7 @@
         "Den zeitlichen Ablauf von Vorgängen als Balken auf einer Zeitachse",
         "Die Kostenverteilung eines Projekts als Kreisdiagramm",
         "Die Abhängigkeiten zwischen Unternehmen in einer Lieferkette",
-        "Die Hierarchie der Projektorganisation"
+        "Die Hierarchie der Projektorganisation mit den Berichtswegen zwischen Projektleiter und Team"
       ],
       "answer": "Den zeitlichen Ablauf von Vorgängen als Balken auf einer Zeitachse",
       "explanation": "Im Gantt-Diagramm entspricht die Balkenlänge der Vorgangsdauer, die Position auf der Zeitachse dem geplanten Start- und Endtermin.",
@@ -388,7 +388,7 @@
             "The timing of activities as bars on a time axis",
             "The cost distribution of a project as a pie chart",
             "The dependencies between companies in a supply chain",
-            "The hierarchy of the project organization"
+            "The hierarchy of the project organization, including the reporting lines between project manager and team"
           ],
           "answer": "The timing of activities as bars on a time axis",
           "explanation": "In a Gantt chart, bar length represents activity duration, and its position on the time axis represents the planned start and end dates."
@@ -537,9 +537,9 @@
       "question": "Was wird zum Bareinkaufspreis in der Bezugskalkulation addiert, um den Einstandspreis zu ermitteln?",
       "options": [
         "Bezugskosten (z. B. Frachtkosten, Transportversicherung)",
-        "Gewinnzuschlag",
-        "Umsatzsteuer",
-        "Kundenskonto"
+        "Gewinnzuschlag, der im Rahmen der Verkaufskalkulation auf den Selbstkostenpreis aufgeschlagen wird",
+        "Umsatzsteuer, die auf der Eingangsrechnung gesondert ausgewiesen und ans Finanzamt abgeführt wird",
+        "Kundenskonto, das dem Käufer bei schneller Zahlung als Preisnachlass gewährt wird"
       ],
       "answer": "Bezugskosten (z. B. Frachtkosten, Transportversicherung)",
       "explanation": "Einstandspreis = Bareinkaufspreis + Bezugskosten. Gewinnzuschlag und Kundenskonto gehören erst zur Verkaufskalkulation.",
@@ -548,9 +548,9 @@
           "question": "What is added to the cash purchase price to determine the cost price in a procurement cost calculation (Bezugskalkulation)?",
           "options": [
             "Procurement costs (e.g. freight charges, transport insurance)",
-            "Profit markup",
-            "VAT",
-            "Customer cash discount"
+            "Profit markup, which is added to the cost price as part of the sales price calculation",
+            "VAT, which is shown separately on the invoice and paid to the tax office",
+            "Customer cash discount, granted to the buyer as a price reduction for prompt payment"
           ],
           "answer": "Procurement costs (e.g. freight charges, transport insurance)",
           "explanation": "Cost price = cash purchase price + procurement costs. Profit markup and customer discount only apply in the sales-price calculation."
@@ -618,9 +618,9 @@
       "question": "Wie haften die Gesellschafter einer OHG (Offene Handelsgesellschaft)?",
       "options": [
         "Alle Gesellschafter haften unbeschränkt, unmittelbar und gesamtschuldnerisch mit ihrem gesamten Vermögen",
-        "Nur mit der Höhe ihrer Einlage",
-        "Gar nicht persönlich",
-        "Nur der geschäftsführende Gesellschafter haftet"
+        "Nur mit der Höhe ihrer im Handelsregister eingetragenen Einlage, wie bei einem Kommanditisten",
+        "Gar nicht persönlich, da die OHG als juristische Person allein für ihre Verbindlichkeiten haftet",
+        "Nur der geschäftsführende Gesellschafter haftet, die übrigen sind von der Haftung befreit"
       ],
       "answer": "Alle Gesellschafter haften unbeschränkt, unmittelbar und gesamtschuldnerisch mit ihrem gesamten Vermögen",
       "explanation": "Die unbeschränkte persönliche Haftung ist ein zentrales Merkmal der OHG und unterscheidet sie von Kapitalgesellschaften.",
@@ -629,9 +629,9 @@
           "question": "How do the partners of an OHG (general commercial partnership) liable?",
           "options": [
             "All partners are liable unlimitedly, directly, and jointly with their entire personal assets",
-            "Only up to the amount of their capital contribution",
-            "They have no personal liability at all",
-            "Only the managing partner is liable"
+            "Only up to the amount of their capital contribution entered in the commercial register, as with a limited partner",
+            "They have no personal liability at all, since the OHG is a legal entity liable on its own",
+            "Only the managing partner is liable, while the other partners are released from liability"
           ],
           "answer": "All partners are liable unlimitedly, directly, and jointly with their entire personal assets",
           "explanation": "Unlimited personal liability is a defining feature of the OHG, distinguishing it from corporations."
@@ -645,8 +645,8 @@
       "question": "Wie unterscheidet sich die Haftung von Komplementär und Kommanditist in einer KG?",
       "options": [
         "Der Komplementär haftet unbeschränkt, der Kommanditist nur bis zur Höhe seiner Einlage",
-        "Beide haften unbeschränkt",
-        "Beide haften nur mit ihrer Einlage",
+        "Beide haften unbeschränkt mit ihrem gesamten Vermögen wie bei einer OHG",
+        "Beide haften nur mit ihrer Einlage, da die KG rechtlich als Kapitalgesellschaft gilt",
         "Der Kommanditist haftet unbeschränkt, der Komplementär nur mit seiner Einlage"
       ],
       "answer": "Der Komplementär haftet unbeschränkt, der Kommanditist nur bis zur Höhe seiner Einlage",
@@ -656,8 +656,8 @@
           "question": "How does the liability of the general partner (Komplementär) differ from that of the limited partner (Kommanditist) in a KG (limited partnership)?",
           "options": [
             "The general partner is liable without limit, the limited partner only up to their capital contribution",
-            "Both are liable without limit",
-            "Both are liable only up to their contribution",
+            "Both are liable without limit with their entire assets, as in an OHG",
+            "Both are liable only up to their contribution, since a KG is legally a corporation",
             "The limited partner is liable without limit, the general partner only up to their contribution"
           ],
           "answer": "The general partner is liable without limit, the limited partner only up to their capital contribution",
@@ -672,9 +672,9 @@
       "question": "Wie haftet der Inhaber eines Einzelunternehmens für Geschäftsschulden?",
       "options": [
         "Unbeschränkt mit seinem gesamten Privat- und Geschäftsvermögen",
-        "Nur mit dem Betriebsvermögen",
-        "Beschränkt auf eine festgelegte Einlage",
-        "Gar nicht"
+        "Nur mit dem im Unternehmen gebundenen Betriebsvermögen, das in der Bilanz ausgewiesen ist",
+        "Beschränkt auf eine im Handelsregister eingetragene Einlage wie bei einer GmbH",
+        "Gar nicht, da der Einzelunternehmer keine persönliche Haftung für Geschäftsschulden trägt"
       ],
       "answer": "Unbeschränkt mit seinem gesamten Privat- und Geschäftsvermögen",
       "explanation": "Beim Einzelunternehmen gibt es keine Trennung zwischen Privat- und Geschäftsvermögen bei der Haftung.",
@@ -683,9 +683,9 @@
           "question": "How is the owner of a sole proprietorship (Einzelunternehmen) liable for business debts?",
           "options": [
             "Without limit, with all private and business assets",
-            "Only with the business assets",
-            "Limited to a fixed capital contribution",
-            "Not liable at all"
+            "Only with the business assets tied up in the company, as shown on the balance sheet",
+            "Limited to a fixed capital contribution entered in the commercial register, as with a GmbH",
+            "Not liable at all, since a sole proprietor bears no personal liability for business debts"
           ],
           "answer": "Without limit, with all private and business assets",
           "explanation": "A sole proprietorship has no separation between private and business assets when it comes to liability."
@@ -699,9 +699,9 @@
       "question": "Welche gesetzliche Grundkündigungsfrist gilt für Arbeitnehmer nach § 622 BGB, sofern vertraglich oder tariflich nichts anderes vereinbart ist?",
       "options": [
         "4 Wochen zum 15. oder zum Ende eines Kalendermonats",
-        "2 Wochen ohne festen Termin",
-        "1 Monat zum Monatsende",
-        "6 Wochen zum Quartalsende"
+        "2 Wochen ohne festen Termin, wie es während der vereinbarten Probezeit gilt",
+        "1 Monat zum Monatsende, sofern der Arbeitnehmer mindestens zwei Jahre beschäftigt ist",
+        "6 Wochen zum Quartalsende, wie sie nach zwanzigjähriger Betriebszugehörigkeit gilt"
       ],
       "answer": "4 Wochen zum 15. oder zum Ende eines Kalendermonats",
       "explanation": "Diese Grundfrist gilt für beide Vertragsparteien, sofern keine längere vertragliche oder tarifliche Frist vereinbart wurde.",
@@ -710,9 +710,9 @@
           "question": "What is the statutory basic notice period for employees under § 622 BGB, if no other contractual or collective-agreement period applies?",
           "options": [
             "4 weeks to the 15th or the end of a calendar month",
-            "2 weeks without a fixed date",
-            "1 month to the end of the month",
-            "6 weeks to the end of the quarter"
+            "2 weeks without a fixed date, as applies during the agreed probationary period",
+            "1 month to the end of the month, provided the employee has been employed for at least two years",
+            "6 weeks to the end of the quarter, as applies after twenty years of service"
           ],
           "answer": "4 weeks to the 15th or the end of a calendar month",
           "explanation": "This basic period applies to both contracting parties unless a longer contractual or collectively agreed period applies."
@@ -780,8 +780,8 @@
       "question": "Was bedeutet ein vereinbarter Eigentumsvorbehalt beim Warenkauf?",
       "options": [
         "Der Verkäufer bleibt bis zur vollständigen Zahlung Eigentümer der Ware",
-        "Der Käufer wird sofort mit Übergabe Eigentümer",
-        "Der Verkäufer verzichtet auf sein Eigentum",
+        "Der Käufer wird sofort mit Übergabe der Ware zivilrechtlicher Eigentümer, unabhängig von der Zahlung",
+        "Der Verkäufer verzichtet auf sein Eigentum bereits mit Abschluss des Kaufvertrags",
         "Die Ware gehört ab Vertragsschluss beiden Parteien gemeinsam"
       ],
       "answer": "Der Verkäufer bleibt bis zur vollständigen Zahlung Eigentümer der Ware",
@@ -791,8 +791,8 @@
           "question": "What does a retention of title (Eigentumsvorbehalt) agreement mean when purchasing goods?",
           "options": [
             "The seller remains the owner of the goods until full payment is made",
-            "The buyer becomes the owner immediately upon handover",
-            "The seller waives ownership",
+            "The buyer becomes the legal owner immediately upon handover of the goods, regardless of payment",
+            "The seller waives ownership already at the time the purchase contract is signed",
             "The goods belong jointly to both parties from the moment the contract is signed"
           ],
           "answer": "The seller remains the owner of the goods until full payment is made",
@@ -889,8 +889,8 @@
       "options": [
         "Flüssige Mittel ÷ kurzfristige Verbindlichkeiten × 100",
         "Umlaufvermögen ÷ kurzfristige Verbindlichkeiten × 100",
-        "Eigenkapital ÷ Gesamtkapital × 100",
-        "Gewinn ÷ Umsatz × 100"
+        "Eigenkapital ÷ Gesamtkapital × 100, die sogenannte Eigenkapitalquote der Bilanz",
+        "Gewinn ÷ Umsatz × 100, die als Umsatzrentabilität bezeichnete Kennzahl"
       ],
       "answer": "Flüssige Mittel ÷ kurzfristige Verbindlichkeiten × 100",
       "explanation": "Die Liquidität 1. Grades zeigt, welcher Anteil der kurzfristigen Verbindlichkeiten sofort mit vorhandenen Zahlungsmitteln gedeckt werden kann.",
@@ -900,8 +900,8 @@
           "options": [
             "Cash and cash equivalents ÷ current liabilities × 100",
             "Current assets ÷ current liabilities × 100",
-            "Equity ÷ total capital × 100",
-            "Profit ÷ revenue × 100"
+            "Equity ÷ total capital × 100, known as the equity ratio on the balance sheet",
+            "Profit ÷ revenue × 100, the ratio known as return on sales"
           ],
           "answer": "Cash and cash equivalents ÷ current liabilities × 100",
           "explanation": "The cash ratio shows what proportion of current liabilities can be covered immediately with available cash."
@@ -942,9 +942,9 @@
       "question": "Was regelt ein Tarifvertrag typischerweise?",
       "options": [
         "Löhne, Arbeitszeiten und sonstige Arbeitsbedingungen zwischen Gewerkschaft und Arbeitgeber(-verband)",
-        "Ausschließlich die Unternehmenssteuern",
-        "Die Satzung einer Aktiengesellschaft",
-        "Die technische Spezifikation eines Produkts"
+        "Ausschließlich die vom Unternehmen an das Finanzamt zu zahlenden Steuern",
+        "Die Satzung einer Aktiengesellschaft, die von der Hauptversammlung beschlossen wird",
+        "Die technische Spezifikation eines Produkts gemäß den Vorgaben der Normungsgremien"
       ],
       "answer": "Löhne, Arbeitszeiten und sonstige Arbeitsbedingungen zwischen Gewerkschaft und Arbeitgeber(-verband)",
       "explanation": "Tarifverträge werden zwischen Gewerkschaften und einzelnen Arbeitgebern oder Arbeitgeberverbänden ausgehandelt und regeln kollektive Arbeitsbedingungen.",
@@ -953,9 +953,9 @@
           "question": "What does a collective bargaining agreement (Tarifvertrag) typically regulate?",
           "options": [
             "Wages, working hours, and other working conditions between a union and an employer/employer association",
-            "Only corporate taxes",
-            "The articles of association of a stock corporation",
-            "The technical specification of a product"
+            "Only the taxes the company pays to the tax office",
+            "The articles of association of a stock corporation, adopted by its general meeting",
+            "The technical specification of a product according to standards body requirements"
           ],
           "answer": "Wages, working hours, and other working conditions between a union and an employer/employer association",
           "explanation": "Collective bargaining agreements are negotiated between unions and individual employers or employer associations and set collective working conditions."
@@ -997,8 +997,8 @@
       "options": [
         "Mitarbeiter unterstehen fachlich weiterhin ihrer Linieninstanz, erhalten aber zusätzlich Weisungen vom Projektleiter",
         "Der Projektleiter hat die volle disziplinarische Weisungsbefugnis wie bei der reinen Projektorganisation",
-        "Es gibt keinen Projektleiter, nur einen Lenkungsausschuss",
-        "Das Projekt wird komplett außerhalb der Linienorganisation abgewickelt"
+        "Es gibt keinen Projektleiter, nur einen Lenkungsausschuss, der alle Entscheidungen einstimmig trifft",
+        "Das Projekt wird komplett außerhalb der Linienorganisation abgewickelt, wie bei der reinen Projektorganisation"
       ],
       "answer": "Mitarbeiter unterstehen fachlich weiterhin ihrer Linieninstanz, erhalten aber zusätzlich Weisungen vom Projektleiter",
       "explanation": "Die Matrix-Projektorganisation führt zu einer doppelten Unterstellung (Linie und Projekt), was Kompetenzkonflikte begünstigen kann.",
@@ -1008,8 +1008,8 @@
           "options": [
             "Employees still report to their line manager but also receive instructions from the project manager",
             "The project manager has full disciplinary authority, as in a pure project organization",
-            "There is no project manager, only a steering committee",
-            "The project is handled entirely outside the line organization"
+            "There is no project manager, only a steering committee that makes all decisions unanimously",
+            "The project is handled entirely outside the line organization, as in a pure project organization"
           ],
           "answer": "Employees still report to their line manager but also receive instructions from the project manager",
           "explanation": "Matrix project organization creates dual reporting lines (functional and project), which can foster conflicts of authority."
