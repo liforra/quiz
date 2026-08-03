@@ -265,7 +265,7 @@ export default function Sidebar({
                         >
                           <Timer size={16} />
                         </div>
-                        {quiz.type !== 'default' && (
+                        {quiz.type !== 'default' && (quiz.type === 'private' || quiz.authorId === appUser?.uid || appUser?.isAdmin) && (
                           <>
                             <div
                               onClick={(e) => {
