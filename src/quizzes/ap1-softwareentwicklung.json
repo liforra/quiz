@@ -23,7 +23,8 @@
             "string"
           ],
           "answer": "boolean",
-          "explanation": "A boolean has exactly two states: true and false. Integer stores whole numbers, float stores floating-point numbers, string stores text."
+          "explanation": "A boolean has exactly two states: true and false. Integer stores whole numbers, float stores floating-point numbers, string stores text.",
+          "category": "Software Development"
         }
       }
     },
@@ -50,7 +51,8 @@
             "14"
           ],
           "answer": "13",
-          "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Place values from the right: 1, 2, 4, 8."
+          "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Place values from the right: 1, 2, 4, 8.",
+          "category": "Software Development"
         }
       }
     },
@@ -77,7 +79,8 @@
             "None — every loop can be skipped"
           ],
           "answer": "Exit-controlled loop (do-while)",
-          "explanation": "In an exit-controlled loop the condition is checked AFTER the loop body — so the body runs at least once. A while loop checks beforehand."
+          "explanation": "In an exit-controlled loop the condition is checked AFTER the loop body — so the body runs at least once. A while loop checks beforehand.",
+          "category": "Software Development"
         }
       }
     },
@@ -104,7 +107,8 @@
             "256"
           ],
           "answer": "256",
-          "explanation": "1 byte = 8 bits → 2⁸ = 256 different values (e.g. 0 to 255). Popular trap: 255 is the highest value, not the count."
+          "explanation": "1 byte = 8 bits → 2⁸ = 256 different values (e.g. 0 to 255). Popular trap: 255 is the highest value, not the count.",
+          "category": "Software Development"
         }
       }
     },
@@ -141,7 +145,8 @@
             "Selection (branching)",
             "Iteration (loop)"
           ],
-          "explanation": "Structured programming gets by with exactly three control structures — GOTO jumps are deliberately avoided. Compilation is a translation step, not a control structure."
+          "explanation": "Structured programming gets by with exactly three control structures — GOTO jumps are deliberately avoided. Compilation is a translation step, not a control structure.",
+          "category": "Software Development"
         }
       }
     },
@@ -178,7 +183,8 @@
             "Enable multiple developers to work in parallel",
             "Restore earlier versions of the program"
           ],
-          "explanation": "Version control records who changed what and when, supports branches/merges for teamwork, and allows rolling back to any earlier state."
+          "explanation": "Version control records who changed what and when, supports branches/merges for teamwork, and allows rolling back to any earlier state.",
+          "category": "Software Development"
         }
       }
     },
@@ -215,7 +221,8 @@
             "It is independent of any specific programming language",
             "It is used to plan and communicate algorithms"
           ],
-          "explanation": "Pseudocode describes algorithms in a semi-formal, human-readable form — a design tool used before the actual implementation."
+          "explanation": "Pseudocode describes algorithms in a semi-formal, human-readable form — a design tool used before the actual implementation.",
+          "category": "Software Development"
         }
       }
     },
@@ -248,7 +255,8 @@
             "It describes the content or purpose of the variable",
             "It is unambiguous and named consistently with the rest of the code"
           ],
-          "explanation": "\"customerCount\" instead of \"x\": descriptive names keep code maintainable. Single-letter names are only conventional for short-lived counters (e.g. loop index i)."
+          "explanation": "\"customerCount\" instead of \"x\": descriptive names keep code maintainable. Single-letter names are only conventional for short-lived counters (e.g. loop index i).",
+          "category": "Software Development"
         }
       }
     },
@@ -263,7 +271,8 @@
         "en": {
           "question": "What is the difference between a compiler and an interpreter?",
           "answer": "A compiler translates the entire source code into machine code before execution; an interpreter translates and executes the code line by line at runtime",
-          "explanation": "Compiled programs run faster, interpreted ones are more flexible and platform-independent. Examples: C/C++ (compiler), Python (interpreter)."
+          "explanation": "Compiled programs run faster, interpreted ones are more flexible and platform-independent. Examples: C/C++ (compiler), Python (interpreter).",
+          "category": "Software Development"
         }
       }
     },
@@ -278,7 +287,8 @@
         "en": {
           "question": "What is the name of the diagram, named after its two inventors, used to represent algorithms graphically in a structured way?",
           "answer": "Nassi-Shneiderman diagram (structogram)",
-          "explanation": "Structograms represent sequence, branching and loops as nested blocks — without jumps, unlike a classic flowchart."
+          "explanation": "Structograms represent sequence, branching and loops as nested blocks — without jumps, unlike a classic flowchart.",
+          "category": "Software Development"
         }
       }
     },
@@ -293,7 +303,8 @@
         "en": {
           "question": "Convert the binary number 10100 to decimal.",
           "answer": "20 (16 + 4)",
-          "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20."
+          "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20.",
+          "category": "Software Development"
         }
       }
     },
@@ -308,7 +319,8 @@
         "en": {
           "question": "What is an algorithm?",
           "answer": "An unambiguous, finite set of instructions for solving a problem, consisting of individual executable steps",
-          "explanation": "Key properties: unambiguity, finiteness, executability and determinism — the same input leads to the same result."
+          "explanation": "Key properties: unambiguity, finiteness, executability and determinism — the same input leads to the same result.",
+          "category": "Software Development"
         }
       }
     },
@@ -323,7 +335,8 @@
         "en": {
           "question": "What is a variable?",
           "answer": "A named storage location for a changeable value.",
-          "explanation": "Variables store intermediate results, input or program state."
+          "explanation": "Variables store intermediate results, input or program state.",
+          "category": "Software Development"
         }
       }
     },
@@ -338,7 +351,8 @@
         "en": {
           "question": "What is a constant?",
           "answer": "A named value that should not be changed after definition.",
-          "explanation": "Constants make fixed values more readable and prevent accidental changes."
+          "explanation": "Constants make fixed values more readable and prevent accidental changes.",
+          "category": "Software Development"
         }
       }
     },
@@ -353,7 +367,8 @@
         "en": {
           "question": "What is an array?",
           "answer": "A data structure that stores multiple similar values under one name.",
-          "explanation": "Array elements are usually accessed by index."
+          "explanation": "Array elements are usually accessed by index.",
+          "category": "Software Development"
         }
       }
     },
@@ -368,7 +383,8 @@
         "en": {
           "question": "What is a function?",
           "answer": "A named block of code that performs a task and optionally returns a value.",
-          "explanation": "Functions structure programs and avoid repetition."
+          "explanation": "Functions structure programs and avoid repetition.",
+          "category": "Software Development"
         }
       }
     },
@@ -383,7 +399,8 @@
         "en": {
           "question": "What does parameter mean in a function?",
           "answer": "An input value that a function receives when called.",
-          "explanation": "Parameters make functions flexible and reusable."
+          "explanation": "Parameters make functions flexible and reusable.",
+          "category": "Software Development"
         }
       }
     },
@@ -398,7 +415,8 @@
         "en": {
           "question": "What is a condition in a program?",
           "answer": "An expression that evaluates to true or false and controls program flow.",
-          "explanation": "Conditions are used in if statements and loops, for example."
+          "explanation": "Conditions are used in if statements and loops, for example.",
+          "category": "Software Development"
         }
       }
     },
@@ -413,7 +431,8 @@
         "en": {
           "question": "What is a for loop?",
           "answer": "A loop often using a counter and fixed number of repetitions.",
-          "explanation": "It is useful when the number of iterations is known in advance."
+          "explanation": "It is useful when the number of iterations is known in advance.",
+          "category": "Software Development"
         }
       }
     },
@@ -428,7 +447,8 @@
         "en": {
           "question": "What is a while loop?",
           "answer": "A pre-test loop that runs while a condition is true.",
-          "explanation": "If the condition is false initially, the loop body is not executed."
+          "explanation": "If the condition is false initially, the loop body is not executed.",
+          "category": "Software Development"
         }
       }
     },
@@ -443,7 +463,8 @@
         "en": {
           "question": "What is debugging?",
           "answer": "Finding, analyzing and fixing errors in programs.",
-          "explanation": "Debuggers, logging and tests help narrow down causes."
+          "explanation": "Debuggers, logging and tests help narrow down causes.",
+          "category": "Software Development"
         }
       }
     },
@@ -458,7 +479,8 @@
         "en": {
           "question": "What is a syntax error?",
           "answer": "A violation of the programming language grammar.",
-          "explanation": "Syntax errors usually prevent a program from compiling or running."
+          "explanation": "Syntax errors usually prevent a program from compiling or running.",
+          "category": "Software Development"
         }
       }
     },
@@ -473,7 +495,8 @@
         "en": {
           "question": "What is a runtime error?",
           "answer": "An error that occurs only while the program is running.",
-          "explanation": "Examples include division by zero or access to missing files."
+          "explanation": "Examples include division by zero or access to missing files.",
+          "category": "Software Development"
         }
       }
     },
@@ -488,7 +511,8 @@
         "en": {
           "question": "What is a logic error?",
           "answer": "A program runs but produces incorrect results.",
-          "explanation": "Logic errors are often harder to find because no crash has to occur."
+          "explanation": "Logic errors are often harder to find because no crash has to occur.",
+          "category": "Software Development"
         }
       }
     },
@@ -503,7 +527,8 @@
         "en": {
           "question": "What does the IPO principle mean?",
           "answer": "Input, processing, output",
-          "explanation": "The IPO principle describes the basic flow of many IT systems."
+          "explanation": "The IPO principle describes the basic flow of many IT systems.",
+          "category": "Software Development"
         }
       }
     },
@@ -518,7 +543,8 @@
         "en": {
           "question": "What is a flowchart?",
           "answer": "A graphical program flow plan",
-          "explanation": "A flowchart represents algorithms graphically using standardized symbols."
+          "explanation": "A flowchart represents algorithms graphically using standardized symbols.",
+          "category": "Software Development"
         }
       }
     },
@@ -533,7 +559,8 @@
         "en": {
           "question": "What is a Nassi-Shneiderman diagram?",
           "answer": "A structured graphical representation of an algorithm.",
-          "explanation": "It shows sequence, selection and repetition without jump arrows."
+          "explanation": "It shows sequence, selection and repetition without jump arrows.",
+          "category": "Software Development"
         }
       }
     },
@@ -548,7 +575,8 @@
         "en": {
           "question": "What is pseudocode?",
           "answer": "A language-like, not strictly standardized description of an algorithm.",
-          "explanation": "Pseudocode is readable independent of a specific programming language."
+          "explanation": "Pseudocode is readable independent of a specific programming language.",
+          "category": "Software Development"
         }
       }
     },
@@ -563,7 +591,8 @@
         "en": {
           "question": "What does variable initialization mean?",
           "answer": "A variable is assigned an initial value.",
-          "explanation": "Without initialization, undefined or unexpected values may occur depending on the language."
+          "explanation": "Without initialization, undefined or unexpected values may occur depending on the language.",
+          "category": "Software Development"
         }
       }
     },
@@ -578,7 +607,8 @@
         "en": {
           "question": "What is a Boolean?",
           "answer": "A data type with the truth values true and false.",
-          "explanation": "Boolean values are used especially for conditions and flags."
+          "explanation": "Boolean values are used especially for conditions and flags.",
+          "category": "Software Development"
         }
       }
     },
@@ -593,7 +623,8 @@
         "en": {
           "question": "What is an integer?",
           "answer": "A data type for whole numbers.",
-          "explanation": "Integers store values without fractional parts, such as 0, 42 or -7."
+          "explanation": "Integers store values without fractional parts, such as 0, 42 or -7.",
+          "category": "Software Development"
         }
       }
     },
@@ -608,7 +639,8 @@
         "en": {
           "question": "What is a string?",
           "answer": "A sequence of characters.",
-          "explanation": "Strings store text such as names, messages or input."
+          "explanation": "Strings store text such as names, messages or input.",
+          "category": "Software Development"
         }
       }
     },
@@ -623,7 +655,8 @@
         "en": {
           "question": "What is a comment in source code?",
           "answer": "Text that explains code and is not executed as a program.",
-          "explanation": "Comments help understanding but should not repeat obvious code."
+          "explanation": "Comments help understanding but should not repeat obvious code.",
+          "category": "Software Development"
         }
       }
     },
@@ -638,7 +671,8 @@
         "en": {
           "question": "What does refactoring mean?",
           "answer": "Improving internal code structure without changing observable behavior.",
-          "explanation": "Refactoring improves maintainability and readability and should be protected by tests."
+          "explanation": "Refactoring improves maintainability and readability and should be protected by tests.",
+          "category": "Software Development"
         }
       }
     },
@@ -653,7 +687,8 @@
         "en": {
           "question": "What is a unit test?",
           "answer": "A test that checks a small program unit in isolation.",
-          "explanation": "Unit tests typically check functions, methods or classes."
+          "explanation": "Unit tests typically check functions, methods or classes.",
+          "category": "Software Development"
         }
       }
     },
@@ -668,7 +703,8 @@
         "en": {
           "question": "What is an integration test?",
           "answer": "A test that checks the interaction of several components.",
-          "explanation": "Integration tests find errors at interfaces between modules or systems."
+          "explanation": "Integration tests find errors at interfaces between modules or systems.",
+          "category": "Software Development"
         }
       }
     },
@@ -683,7 +719,8 @@
         "en": {
           "question": "What is a commit in Git?",
           "answer": "A saved state of changes with a unique identifier.",
-          "explanation": "Commits document development history and can be reviewed later."
+          "explanation": "Commits document development history and can be reviewed later.",
+          "category": "Software Development"
         }
       }
     },
@@ -698,7 +735,8 @@
         "en": {
           "question": "What is a branch in Git?",
           "answer": "A separate line of development.",
-          "explanation": "Branches allow parallel work on features or fixes."
+          "explanation": "Branches allow parallel work on features or fixes.",
+          "category": "Software Development"
         }
       }
     },
@@ -713,7 +751,8 @@
         "en": {
           "question": "What does merge mean in Git?",
           "answer": "Combining changes from different branches.",
-          "explanation": "A merge can cause conflicts if the same locations were changed."
+          "explanation": "A merge can cause conflicts if the same locations were changed.",
+          "category": "Software Development"
         }
       }
     },
@@ -728,7 +767,8 @@
         "en": {
           "question": "What is a merge conflict?",
           "answer": "Git cannot combine changes automatically.",
-          "explanation": "The developer must decide which version or combination is correct."
+          "explanation": "The developer must decide which version or combination is correct.",
+          "category": "Software Development"
         }
       }
     },
@@ -743,7 +783,8 @@
         "en": {
           "question": "What is a repository?",
           "answer": "A storage location for source code including version history.",
-          "explanation": "A repository can be local or hosted on a server such as GitHub."
+          "explanation": "A repository can be local or hosted on a server such as GitHub.",
+          "category": "Software Development"
         }
       }
     },
@@ -758,7 +799,8 @@
         "en": {
           "question": "What is an IDE?",
           "answer": "An integrated development environment.",
-          "explanation": "IDEs combine editor, build tools, debugger and often version control."
+          "explanation": "IDEs combine editor, build tools, debugger and often version control.",
+          "category": "Software Development"
         }
       }
     },
@@ -773,7 +815,8 @@
         "en": {
           "question": "What is a compiler?",
           "answer": "A program that translates source code into machine code or intermediate code.",
-          "explanation": "Compilers often check syntax and types before execution."
+          "explanation": "Compilers often check syntax and types before execution.",
+          "category": "Software Development"
         }
       }
     },
@@ -788,7 +831,8 @@
         "en": {
           "question": "What is an interpreter?",
           "answer": "A program that executes code step by step at runtime.",
-          "explanation": "Interpreters usually run programs without prior full compilation."
+          "explanation": "Interpreters usually run programs without prior full compilation.",
+          "category": "Software Development"
         }
       }
     },
@@ -803,7 +847,8 @@
         "en": {
           "question": "What does object-oriented programming mean?",
           "answer": "Programming with objects that encapsulate data and behavior.",
-          "explanation": "OOP uses concepts such as classes, objects, inheritance and polymorphism."
+          "explanation": "OOP uses concepts such as classes, objects, inheritance and polymorphism.",
+          "category": "Software Development"
         }
       }
     },
@@ -818,7 +863,8 @@
         "en": {
           "question": "What is a class?",
           "answer": "A blueprint for objects.",
-          "explanation": "A class describes attributes and methods its objects have."
+          "explanation": "A class describes attributes and methods its objects have.",
+          "category": "Software Development"
         }
       }
     },
@@ -833,7 +879,8 @@
         "en": {
           "question": "What is an object?",
           "answer": "A concrete instance of a class.",
-          "explanation": "Objects have their own attribute values and can execute methods."
+          "explanation": "Objects have their own attribute values and can execute methods.",
+          "category": "Software Development"
         }
       }
     },
@@ -848,7 +895,8 @@
         "en": {
           "question": "What is an attribute?",
           "answer": "A property or data field of an object.",
-          "explanation": "Attributes describe the state of an object."
+          "explanation": "Attributes describe the state of an object.",
+          "category": "Software Development"
         }
       }
     },
@@ -863,7 +911,8 @@
         "en": {
           "question": "What is a method?",
           "answer": "A function that belongs to a class or object.",
-          "explanation": "Methods describe the behavior of objects."
+          "explanation": "Methods describe the behavior of objects.",
+          "category": "Software Development"
         }
       }
     },
@@ -878,7 +927,8 @@
         "en": {
           "question": "What does encapsulation mean?",
           "answer": "Data and access to it are bundled and controlled in a class.",
-          "explanation": "Encapsulation protects internal state from uncontrolled access."
+          "explanation": "Encapsulation protects internal state from uncontrolled access.",
+          "category": "Software Development"
         }
       }
     },
@@ -893,7 +943,8 @@
         "en": {
           "question": "What does inheritance mean?",
           "answer": "A class takes over properties and methods from another class.",
-          "explanation": "Inheritance can support reuse but should be meaningful in the domain."
+          "explanation": "Inheritance can support reuse but should be meaningful in the domain.",
+          "category": "Software Development"
         }
       }
     },
@@ -908,7 +959,8 @@
         "en": {
           "question": "What does polymorphism mean?",
           "answer": "The same interfaces can have different concrete implementations.",
-          "explanation": "Polymorphism allows interchangeable objects with shared behavior."
+          "explanation": "Polymorphism allows interchangeable objects with shared behavior.",
+          "category": "Software Development"
         }
       }
     },
@@ -923,7 +975,8 @@
         "en": {
           "question": "What is UML?",
           "answer": "Unified Modeling Language",
-          "explanation": "UML is used for graphical modeling of software structures and processes."
+          "explanation": "UML is used for graphical modeling of software structures and processes.",
+          "category": "Software Development"
         }
       }
     },
@@ -938,7 +991,8 @@
         "en": {
           "question": "What does a UML class diagram show?",
           "answer": "Classes, attributes, methods and relationships.",
-          "explanation": "Class diagrams describe the static structure of a system."
+          "explanation": "Class diagrams describe the static structure of a system.",
+          "category": "Software Development"
         }
       }
     },
@@ -953,7 +1007,8 @@
         "en": {
           "question": "What does a UML activity diagram show?",
           "answer": "Workflows, decisions and parallelism.",
-          "explanation": "Activity diagrams are useful for processes and algorithms."
+          "explanation": "Activity diagrams are useful for processes and algorithms.",
+          "category": "Software Development"
         }
       }
     },
@@ -968,7 +1023,8 @@
         "en": {
           "question": "What is a sequence diagram?",
           "answer": "A diagram that shows messages between objects over time.",
-          "explanation": "Sequence diagrams visualize interactions and call order."
+          "explanation": "Sequence diagrams visualize interactions and call order.",
+          "category": "Software Development"
         }
       }
     },
@@ -983,7 +1039,8 @@
         "en": {
           "question": "What is a use case?",
           "answer": "A usage scenario from an actor perspective.",
-          "explanation": "Use cases describe what goal a user wants to achieve with the system."
+          "explanation": "Use cases describe what goal a user wants to achieve with the system.",
+          "category": "Software Development"
         }
       }
     },
@@ -998,7 +1055,8 @@
         "en": {
           "question": "What is linear search?",
           "answer": "A method that checks elements one after another.",
-          "explanation": "Linear search works on unsorted data but may need all elements in the worst case."
+          "explanation": "Linear search works on unsorted data but may need all elements in the worst case.",
+          "category": "Software Development"
         }
       }
     },
@@ -1013,7 +1071,8 @@
         "en": {
           "question": "What prerequisite does binary search have?",
           "answer": "The data must be sorted.",
-          "explanation": "Binary search halves the search range at each step."
+          "explanation": "Binary search halves the search range at each step.",
+          "category": "Software Development"
         }
       }
     },
@@ -1028,7 +1087,8 @@
         "en": {
           "question": "What is sorting in software development?",
           "answer": "Arranging data according to a criterion.",
-          "explanation": "Data can be sorted alphabetically, numerically or by date."
+          "explanation": "Data can be sorted alphabetically, numerically or by date.",
+          "category": "Software Development"
         }
       }
     },
@@ -1043,7 +1103,8 @@
         "en": {
           "question": "What does Big O notation mean?",
           "answer": "A description of how runtime or memory usage grows.",
-          "explanation": "Big O abstracts from specific hardware and considers input size."
+          "explanation": "Big O abstracts from specific hardware and considers input size.",
+          "category": "Software Development"
         }
       }
     },
@@ -1058,7 +1119,8 @@
         "en": {
           "question": "What does O(1) mean?",
           "answer": "Constant runtime independent of input size.",
-          "explanation": "Array access by index is a typical example."
+          "explanation": "Array access by index is a typical example.",
+          "category": "Software Development"
         }
       }
     },
@@ -1073,7 +1135,8 @@
         "en": {
           "question": "What does O(n) mean?",
           "answer": "Linear runtime proportional to input size.",
-          "explanation": "A simple loop over all elements is typically O(n)."
+          "explanation": "A simple loop over all elements is typically O(n).",
+          "category": "Software Development"
         }
       }
     },
@@ -1088,7 +1151,8 @@
         "en": {
           "question": "What is an API?",
           "answer": "A defined interface for using functions or data.",
-          "explanation": "APIs enable controlled communication between programs."
+          "explanation": "APIs enable controlled communication between programs.",
+          "category": "Software Development"
         }
       }
     },
@@ -1103,7 +1167,8 @@
         "en": {
           "question": "What does REST mean?",
           "answer": "Representational State Transfer",
-          "explanation": "REST uses resources, HTTP methods and stateless communication as architectural principles."
+          "explanation": "REST uses resources, HTTP methods and stateless communication as architectural principles.",
+          "category": "Software Development"
         }
       }
     },
@@ -1118,7 +1183,8 @@
         "en": {
           "question": "Which HTTP method is typically used to read data?",
           "answer": "GET",
-          "explanation": "GET requests a resource and should not cause a state change."
+          "explanation": "GET requests a resource and should not cause a state change.",
+          "category": "Software Development"
         }
       }
     },
@@ -1133,7 +1199,8 @@
         "en": {
           "question": "Which HTTP method is typically used to create new resources?",
           "answer": "POST",
-          "explanation": "POST sends data to the server, often to create a new resource."
+          "explanation": "POST sends data to the server, often to create a new resource.",
+          "category": "Software Development"
         }
       }
     },
@@ -1148,7 +1215,8 @@
         "en": {
           "question": "Which HTTP method is typically used to fully replace a resource?",
           "answer": "PUT",
-          "explanation": "PUT is often used to fully update or replace a resource."
+          "explanation": "PUT is often used to fully update or replace a resource.",
+          "category": "Software Development"
         }
       }
     },
@@ -1163,7 +1231,8 @@
         "en": {
           "question": "Which HTTP method is typically used to delete a resource?",
           "answer": "DELETE",
-          "explanation": "DELETE requests removal of a resource."
+          "explanation": "DELETE requests removal of a resource.",
+          "category": "Software Development"
         }
       }
     },
@@ -1178,7 +1247,8 @@
         "en": {
           "question": "What does HTTP status code 200 mean?",
           "answer": "OK",
-          "explanation": "The request was processed successfully."
+          "explanation": "The request was processed successfully.",
+          "category": "Software Development"
         }
       }
     },
@@ -1193,7 +1263,8 @@
         "en": {
           "question": "What does HTTP status code 404 mean?",
           "answer": "Not Found",
-          "explanation": "The requested resource was not found."
+          "explanation": "The requested resource was not found.",
+          "category": "Software Development"
         }
       }
     },
@@ -1208,7 +1279,8 @@
         "en": {
           "question": "What does HTTP status code 500 mean?",
           "answer": "Internal Server Error",
-          "explanation": "An unexpected error occurred on the server."
+          "explanation": "An unexpected error occurred on the server.",
+          "category": "Software Development"
         }
       }
     },
@@ -1223,7 +1295,8 @@
         "en": {
           "question": "What is JSON?",
           "answer": "A text-based data format using objects, arrays, numbers, strings and booleans.",
-          "explanation": "JSON is commonly used for APIs and configuration data."
+          "explanation": "JSON is commonly used for APIs and configuration data.",
+          "category": "Software Development"
         }
       }
     },
@@ -1238,7 +1311,8 @@
         "en": {
           "question": "What is XML?",
           "answer": "A markup language for structured representation of data.",
-          "explanation": "XML uses tags and can be validated with schemas."
+          "explanation": "XML uses tags and can be validated with schemas.",
+          "category": "Software Development"
         }
       }
     },
@@ -1253,7 +1327,8 @@
         "en": {
           "question": "What is a relational operator?",
           "answer": "An operator for comparing values.",
-          "explanation": "Examples are ==, !=, <, >, <= and >=."
+          "explanation": "Examples are ==, !=, <, >, <= and >=.",
+          "category": "Software Development"
         }
       }
     },
@@ -1268,7 +1343,8 @@
         "en": {
           "question": "What is a logical operator?",
           "answer": "An operator for combining truth values.",
-          "explanation": "Typical logical operators are AND, OR and NOT."
+          "explanation": "Typical logical operators are AND, OR and NOT.",
+          "category": "Software Development"
         }
       }
     },
@@ -1283,7 +1359,8 @@
         "en": {
           "question": "What is an infinite loop?",
           "answer": "A loop whose termination condition is never reached.",
-          "explanation": "Infinite loops often arise from faulty conditions or missing counter updates."
+          "explanation": "Infinite loops often arise from faulty conditions or missing counter updates.",
+          "category": "Software Development"
         }
       }
     },
@@ -1298,7 +1375,8 @@
         "en": {
           "question": "What is an off-by-one error?",
           "answer": "An error where a loop or index is off by exactly one.",
-          "explanation": "It often occurs at boundaries such as the first or last element."
+          "explanation": "It often occurs at boundaries such as the first or last element.",
+          "category": "Software Development"
         }
       }
     },
@@ -1313,7 +1391,8 @@
         "en": {
           "question": "What is a stack?",
           "answer": "A LIFO data structure.",
-          "explanation": "With last in, first out, the last pushed element is removed first."
+          "explanation": "With last in, first out, the last pushed element is removed first.",
+          "category": "Software Development"
         }
       }
     },
@@ -1328,7 +1407,8 @@
         "en": {
           "question": "What is a queue?",
           "answer": "A FIFO data structure.",
-          "explanation": "With first in, first out, the first inserted element is removed first."
+          "explanation": "With first in, first out, the first inserted element is removed first.",
+          "category": "Software Development"
         }
       }
     },
@@ -1343,7 +1423,8 @@
         "en": {
           "question": "What is a hash value?",
           "answer": "A fixed-length value calculated from data.",
-          "explanation": "Hash values are used for fast comparison or integrity checks, among other things."
+          "explanation": "Hash values are used for fast comparison or integrity checks, among other things.",
+          "category": "Software Development"
         }
       }
     },
@@ -1358,7 +1439,8 @@
         "en": {
           "question": "What is a null value?",
           "answer": "A special value for no reference or no present value.",
-          "explanation": "Null must be checked to avoid runtime errors."
+          "explanation": "Null must be checked to avoid runtime errors.",
+          "category": "Software Development"
         }
       }
     },
@@ -1373,7 +1455,8 @@
         "en": {
           "question": "What is a programming library?",
           "answer": "A collection of reusable functions, classes or modules.",
-          "explanation": "Libraries save development effort and bundle tested solutions."
+          "explanation": "Libraries save development effort and bundle tested solutions.",
+          "category": "Software Development"
         }
       }
     },
@@ -1388,7 +1471,8 @@
         "en": {
           "question": "What is a framework?",
           "answer": "A framework that defines structure and flow of an application.",
-          "explanation": "Frameworks provide conventions and often handle recurring tasks."
+          "explanation": "Frameworks provide conventions and often handle recurring tasks.",
+          "category": "Software Development"
         }
       }
     },
@@ -1403,7 +1487,8 @@
         "en": {
           "question": "What is a software license?",
           "answer": "A legal rule for use, modification and distribution.",
-          "explanation": "Licenses define what users and developers may do with software."
+          "explanation": "Licenses define what users and developers may do with software.",
+          "category": "Software Development"
         }
       }
     },
@@ -1418,7 +1503,8 @@
         "en": {
           "question": "What does open source mean?",
           "answer": "The source code is publicly visible and usable under a license.",
-          "explanation": "Open source does not automatically mean free of charge or without conditions."
+          "explanation": "Open source does not automatically mean free of charge or without conditions.",
+          "category": "Software Development"
         }
       }
     },
@@ -1433,7 +1519,8 @@
         "en": {
           "question": "What is a build?",
           "answer": "The process or result of creating runnable software from source code.",
-          "explanation": "Builds often include compiling, bundling, testing and packaging."
+          "explanation": "Builds often include compiling, bundling, testing and packaging.",
+          "category": "Software Development"
         }
       }
     },
@@ -1448,7 +1535,8 @@
         "en": {
           "question": "What is deployment?",
           "answer": "Making an application available in a target environment.",
-          "explanation": "Deployment places software on test, staging or production systems, for example."
+          "explanation": "Deployment places software on test, staging or production systems, for example.",
+          "category": "Software Development"
         }
       }
     },
@@ -1463,7 +1551,8 @@
         "en": {
           "question": "What is a release?",
           "answer": "An approved version of software.",
-          "explanation": "A release contains defined changes and is made available for use or distribution."
+          "explanation": "A release contains defined changes and is made available for use or distribution.",
+          "category": "Software Development"
         }
       }
     },
@@ -1478,7 +1567,8 @@
         "en": {
           "question": "What is a bug?",
           "answer": "A software defect that causes unexpected or incorrect behavior.",
-          "explanation": "Bugs can come from requirements, design, implementation or operation."
+          "explanation": "Bugs can come from requirements, design, implementation or operation.",
+          "category": "Software Development"
         }
       }
     },
@@ -1493,7 +1583,8 @@
         "en": {
           "question": "What is an issue tracker?",
           "answer": "A system for recording and tracking tasks, defects and requirements.",
-          "explanation": "Issue trackers help with prioritization, ownership and status visibility."
+          "explanation": "Issue trackers help with prioritization, ownership and status visibility.",
+          "category": "Software Development"
         }
       }
     },
@@ -1508,7 +1599,8 @@
         "en": {
           "question": "What is a pull request?",
           "answer": "A proposal to merge changes into another branch.",
-          "explanation": "Pull requests enable code review and discussion before merging."
+          "explanation": "Pull requests enable code review and discussion before merging.",
+          "category": "Software Development"
         }
       }
     },
@@ -1523,7 +1615,8 @@
         "en": {
           "question": "What does code review mean?",
           "answer": "A technical inspection of source code by other developers.",
-          "explanation": "Code reviews find defects, improve clarity and share knowledge."
+          "explanation": "Code reviews find defects, improve clarity and share knowledge.",
+          "category": "Software Development"
         }
       }
     },
@@ -1538,7 +1631,8 @@
         "en": {
           "question": "What is technical documentation?",
           "answer": "Description of structure, use or operation of a system.",
-          "explanation": "Good documentation makes maintenance, handover and troubleshooting easier."
+          "explanation": "Good documentation makes maintenance, handover and troubleshooting easier.",
+          "category": "Software Development"
         }
       }
     },
@@ -1553,7 +1647,8 @@
         "en": {
           "question": "What is a sequence step in an algorithm?",
           "answer": "An instruction executed in order.",
-          "explanation": "Sequence is one of the basic programming structures alongside selection and repetition."
+          "explanation": "Sequence is one of the basic programming structures alongside selection and repetition.",
+          "category": "Software Development"
         }
       }
     },
@@ -1568,7 +1663,8 @@
         "en": {
           "question": "What is selection in an algorithm?",
           "answer": "A branch depending on a condition.",
-          "explanation": "Selection is typically represented with if/else."
+          "explanation": "Selection is typically represented with if/else.",
+          "category": "Software Development"
         }
       }
     },
@@ -1583,7 +1679,8 @@
         "en": {
           "question": "What is repetition in an algorithm?",
           "answer": "A block is executed multiple times while or until a condition is met.",
-          "explanation": "Repetition is implemented with loops in programs."
+          "explanation": "Repetition is implemented with loops in programs.",
+          "category": "Software Development"
         }
       }
     },
@@ -1598,7 +1695,8 @@
         "en": {
           "question": "What decimal value does the binary number 1111 have?",
           "answer": "15",
-          "explanation": "1111₂ equals 8 + 4 + 2 + 1 = 15."
+          "explanation": "1111₂ equals 8 + 4 + 2 + 1 = 15.",
+          "category": "Software Development"
         }
       }
     },
@@ -1613,7 +1711,8 @@
         "en": {
           "question": "What decimal value does the binary number 100000 have?",
           "answer": "32",
-          "explanation": "100000₂ has only the 2⁵ bit set and equals 32."
+          "explanation": "100000₂ has only the 2⁵ bit set and equals 32.",
+          "category": "Software Development"
         }
       }
     },
@@ -1628,7 +1727,8 @@
         "en": {
           "question": "Which binary number corresponds to decimal 10?",
           "answer": "1010",
-          "explanation": "Decimal 10 equals 8 + 2, so 1010₂."
+          "explanation": "Decimal 10 equals 8 + 2, so 1010₂.",
+          "category": "Software Development"
         }
       }
     }

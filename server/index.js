@@ -86,7 +86,10 @@ async function callGroq(messages) {
     throw new Error(`Groq API error ${res.status}: ${text}`);
   }
   const data = await res.json();
-  return data.choices?.[0]?.message?.content ?? '';
+  return {
+    content: data.choices?.[0]?.message?.content ?? '',
+    usage: { totalTokens: data.usage?.total_tokens ?? 0 }
+  };
 }
 
 function handleAiError(res, e, fallbackMessage) {
@@ -123,9 +126,9 @@ app.post('/api/groq/grade', rateLimit, groqQuotaGuard, async (req, res) => {
     if (!question || correctAnswer == null || userAnswer == null) {
       return res.status(400).json({ error: 'Missing question/correctAnswer/userAnswer' });
     }
-    const content = await callGroq(buildGradingMessages({ question, correctAnswer, userAnswer, lang }));
+    const { content, usage } = await callGroq(buildGradingMessages({ question, correctAnswer, userAnswer, lang }));
     const parsed = JSON.parse(content.match(/\{[\s\S]*\}/)?.[0] ?? content);
-    res.json({ correct: !!parsed.correct, reasoning: parsed.reasoning || '' });
+    res.json({ correct: !!parsed.correct, reasoning: parsed.reasoning || '', usage });
   } catch (e) {
     handleAiError(res, e, 'AI grading failed');
   }
@@ -143,7 +146,7 @@ app.post('/api/groq/grade-exam-task', rateLimit, groqQuotaGuard, async (req, res
         return res.status(400).json({ error: 'Each part needs id/prompt/modelAnswer/maxPoints' });
       }
     }
-    const content = await callGroq(buildExamGradingMessages({ parts, lang }));
+    const { content } = await callGroq(buildExamGradingMessages({ parts, lang }));
     const parsed = JSON.parse(content.match(/\{[\s\S]*\}/)?.[0] ?? content);
     const byId = new Map(parts.map(p => [p.id, p.maxPoints]));
     const results = (Array.isArray(parsed.results) ? parsed.results : [])
@@ -162,8 +165,8 @@ app.post('/api/groq/explain', rateLimit, groqQuotaGuard, async (req, res) => {
     if (!question || correctAnswer == null) {
       return res.status(400).json({ error: 'Missing question/correctAnswer' });
     }
-    const explanation = await callGroq(buildExplainMessages({ question, options, correctAnswer, userAnswer, wasCorrect, lang }));
-    res.json({ explanation });
+    const { content: explanation, usage } = await callGroq(buildExplainMessages({ question, options, correctAnswer, userAnswer, wasCorrect, lang }));
+    res.json({ explanation, usage });
   } catch (e) {
     handleAiError(res, e, 'AI explanation failed');
   }
@@ -180,8 +183,8 @@ app.post('/api/groq/help', rateLimit, groqQuotaGuard, async (req, res) => {
     const safeHistory = history
       .filter(m => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
       .slice(-10);
-    const reply = await callGroq(buildHelpMessages({ question, options, history: safeHistory, lang }));
-    res.json({ reply });
+    const { content: reply, usage } = await callGroq(buildHelpMessages({ question, options, history: safeHistory, lang }));
+    res.json({ reply, usage });
   } catch (e) {
     handleAiError(res, e, 'AI help chat failed');
   }

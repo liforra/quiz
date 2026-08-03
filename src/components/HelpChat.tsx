@@ -8,9 +8,10 @@ interface HelpChatProps {
   onClose: () => void;
   uiLang: Lang;
   onAiError?: (e: any) => boolean;
+  onAiUsage?: (totalTokens: number) => void;
 }
 
-export default function HelpChat({ question, onClose, uiLang, onAiError }: HelpChatProps) {
+export default function HelpChat({ question, onClose, uiLang, onAiError, onAiUsage }: HelpChatProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,8 +37,9 @@ export default function HelpChat({ question, onClose, uiLang, onAiError }: HelpC
     setInput('');
     setLoading(true);
     try {
-      const reply = await askHelp(question.question, question.options, next, uiLang);
-      setMessages(prev => [...prev, { role: 'assistant', content: reply }]);
+      const result = await askHelp(question.question, question.options, next, uiLang);
+      setMessages(prev => [...prev, { role: 'assistant', content: result.reply }]);
+      onAiUsage?.(result.usage?.totalTokens);
     } catch (e) {
       onAiError?.(e);
       setMessages(prev => [...prev, { role: 'assistant', content: t(uiLang, 'helpUnavailable') }]);

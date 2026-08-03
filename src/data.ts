@@ -195,6 +195,23 @@ export const submitLeaderboardResult = (quizId: string, r: {
   title: string; score: number; total: number; timeSeconds: number;
 }) => post<{ ok: true; improved?: boolean }>(`/api/data/leaderboards/${encodeURIComponent(quizId)}`, r);
 
+// --- AI usage ---
+
+export const recordAiUsage = (totalTokens: number) =>
+  post<{ ok: true }>('/api/data/ai-usage', { totalTokens });
+
+export interface AiUsageRow {
+  uid: string;
+  username: string;
+  totalRequests: number;
+  totalTokens: number;
+  avgRequestsPerMin: number;
+  avgTokensPerMin: number;
+}
+
+export const fetchAiUsageLeaderboard = () =>
+  req<{ usage: AiUsageRow[] }>('/api/data/admin/ai-usage');
+
 // --- Admin ---
 
 export interface AdminUserRow {

@@ -17,6 +17,10 @@ export interface AiStatus {
   retryAfterSeconds: number;
 }
 
+export interface AiUsage {
+  totalTokens: number;
+}
+
 export async function checkAiStatus(): Promise<AiStatus> {
   try {
     const res = await fetch('/api/groq/status');
@@ -34,7 +38,7 @@ async function throwIfRateLimited(res: Response) {
   }
 }
 
-export async function gradeAnswer(question: string, correctAnswer: any, userAnswer: string, lang: Lang): Promise<{ correct: boolean; reasoning: string }> {
+export async function gradeAnswer(question: string, correctAnswer: any, userAnswer: string, lang: Lang): Promise<{ correct: boolean; reasoning: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/grade', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -45,7 +49,7 @@ export async function gradeAnswer(question: string, correctAnswer: any, userAnsw
   return res.json();
 }
 
-export async function explainAnswer(question: string, options: any, correctAnswer: any, userAnswer: any, wasCorrect: boolean, lang: Lang): Promise<string> {
+export async function explainAnswer(question: string, options: any, correctAnswer: any, userAnswer: any, wasCorrect: boolean, lang: Lang): Promise<{ explanation: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/explain', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -53,8 +57,7 @@ export async function explainAnswer(question: string, options: any, correctAnswe
   });
   await throwIfRateLimited(res);
   if (!res.ok) throw new Error('AI explanation failed');
-  const data = await res.json();
-  return data.explanation;
+  return res.json();
 }
 
 export interface ExamGradingRequestPart {
@@ -85,51 +88,6 @@ export async function gradeExamTask(parts: ExamGradingRequestPart[], lang: Lang)
   if (!res.ok) throw new Error('AI exam grading failed');
   const data = await res.json();
   return data.results;
-}
-
-// --- Authentik SSO (see server/authentik.js) ---
-
-export interface AuthentikStatus {
-  enabled: boolean;
-  issuer: string | null;
-}
-
-export async function checkAuthentikStatus(): Promise<AuthentikStatus> {
-  try {
-    const res = await fetch('/api/auth/authentik/status');
-    if (!res.ok) return { enabled: false, issuer: null };
-    return await res.json();
-  } catch {
-    return { enabled: false, issuer: null };
-  }
-}
-
-// Full-page navigation on purpose: the OIDC flow needs the browser's own
-// session with auth.liforra.de (and a popup would break on mobile).
-// `idToken` is only passed for the migration flow — it proves which legacy
-// account the new Authentik identity gets attached to.
-export function startAuthentikLogin(idToken?: string) {
-  const url = idToken
-    ? `/api/auth/authentik/start?mode=link&idToken=${encodeURIComponent(idToken)}`
-    : '/api/auth/authentik/start';
-  window.location.href = url;
-}
-
-export interface AuthentikExchange {
-  customToken: string;
-  username: string;
-  created: boolean;
-  linked: boolean;
-}
-
-export async function exchangeAuthentikCode(code: string): Promise<AuthentikExchange> {
-  const res = await fetch('/api/auth/authentik/exchange', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ code })
-  });
-  if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error || 'authentik_exchange_failed');
-  return res.json();
 }
 
 // --- Admin: source-PDF symlinks for exam export (see server/index.js) ---
@@ -171,7 +129,7 @@ export interface ChatMessage {
   content: string;
 }
 
-export async function askHelp(question: string, options: any, history: ChatMessage[], lang: Lang): Promise<string> {
+export async function askHelp(question: string, options: any, history: ChatMessage[], lang: Lang): Promise<{ reply: string; usage: AiUsage }> {
   const res = await fetch('/api/groq/help', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -179,6 +137,5 @@ export async function askHelp(question: string, options: any, history: ChatMessa
   });
   await throwIfRateLimited(res);
   if (!res.ok) throw new Error('AI help chat failed');
-  const data = await res.json();
-  return data.reply;
+  return res.json();
 }

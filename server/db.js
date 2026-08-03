@@ -104,6 +104,16 @@ CREATE TABLE IF NOT EXISTS custom_modes (
 );
 CREATE INDEX IF NOT EXISTS idx_modes_uid ON custom_modes(uid);
 
+-- Per-user AI consumption, for the admin usage leaderboard. One row per
+-- user; first_used/last_used give the window the averages are computed over.
+CREATE TABLE IF NOT EXISTS ai_usage (
+  uid            TEXT PRIMARY KEY REFERENCES users(uid) ON DELETE CASCADE,
+  total_requests INTEGER NOT NULL DEFAULT 0,
+  total_tokens   INTEGER NOT NULL DEFAULT 0,
+  first_used     TEXT NOT NULL,
+  last_used      TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS leaderboards (
   quiz_id    TEXT PRIMARY KEY,
   title      TEXT NOT NULL,

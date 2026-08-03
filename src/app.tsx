@@ -5,7 +5,8 @@ import {
   Moon, Sun, Pause, Timer, Lock, User, Eye, EyeOff, Save, CheckSquare, Square, Keyboard,
   Globe, Shield, X, Download, Menu, GraduationCap,
   Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
-  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy
+  HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy,
+  Maximize2, Minimize2
 } from 'lucide-react';
 import { BUILT_IN_MODES } from './modes';
 import { DEFAULT_QUIZZES } from './defaultQuizzes';
@@ -321,6 +322,18 @@ export default function App() {
     return false;
   }, [refreshAiStatus]);
 
+  // Logs every successful AI call (grading/explain/help) so the admin panel
+  // can show a usage leaderboard. The server owns the counters — a client
+  // can't understate what it used.
+  const recordAiUsage = useCallback(async (totalTokens: number) => {
+    if (!appUser) return;
+    try {
+      await api.recordAiUsage(totalTokens || 0);
+    } catch (e) {
+      console.error("Failed to record AI usage", e);
+    }
+  }, [appUser]);
+
   // --- UPDATE-AVAILABLE CHECK ---
   // Production used to run the Vite dev server, whose HMR client force-reloads
   // the page the moment it reconnects after a deploy — losing whatever the
@@ -418,10 +431,27 @@ export default function App() {
   const [adminUsers, setAdminUsers] = useState<api.AdminUserRow[]>([]);
   const [selectedAdminUser, setSelectedAdminUser] = useState(null);
   const [selectedAdminUserData, setSelectedAdminUserData] = useState(null);
+  const [aiUsageLeaderboard, setAiUsageLeaderboard] = useState([]);
 
   // Sidebar State
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
+
+  // Focus Mode State (hides nav chrome while playing)
+  const [focusMode, setFocusMode] = useState(() => localStorage.getItem('focusMode') === 'true');
+  useEffect(() => {
+    localStorage.setItem('focusMode', String(focusMode));
+  }, [focusMode]);
+  const isFocused = focusMode && view === 'playing';
+  // Shrink focus-mode sizing as the number of options grows, so a long
+  // multi-select question never needs the page to scroll to see every option.
+  const focusDensity = useMemo(() => {
+    if (!isFocused) return 'normal';
+    const n = displayQ?.options?.length || 0;
+    if (n >= 7) return 'tight';
+    if (n >= 5) return 'compact';
+    return 'roomy';
+  }, [isFocused, displayQ]);
 
 
   // Turns a leftover Firebase session into a migration ticket, no password
@@ -620,6 +650,7 @@ export default function App() {
     try {
       const answerForGrading = Array.isArray(displayQ.answer) ? displayQ.answer.join(', ') : displayQ.answer;
       const result = await gradeAnswer(displayQ.question, answerForGrading, typedAnswer.trim(), uiLang);
+      recordAiUsage(result.usage?.totalTokens);
       submitAnswer(result.correct, typedAnswer.trim());
     } catch (e) {
       // On rate limit this flips aiEnabled off, so the UI falls back to the
@@ -1208,6 +1239,11 @@ export default function App() {
       api.fetchAdminUsers()
         .then(({ users }) => setAdminUsers(users))
         .catch(e => console.error('Admin fetch error', e));
+      // The per-minute averages are computed server-side now — it owns the
+      // first/last-used timestamps the window is derived from.
+      api.fetchAiUsageLeaderboard()
+        .then(({ usage }) => setAiUsageLeaderboard(usage))
+        .catch(e => console.error('AI usage fetch error', e));
     }
   }, [view, appUser]);
 
@@ -1237,8 +1273,11 @@ export default function App() {
     )
   );
 
+  const focusOptionSizeClass = { roomy: 'p-6 text-lg', compact: 'p-4 text-base', tight: 'p-3 text-sm', normal: 'p-4' }[focusDensity];
+  const focusGapClass = { roomy: 'space-y-3', compact: 'space-y-2', tight: 'space-y-1.5', normal: 'space-y-3' }[focusDensity];
+
   const renderSingleChoice = () => (
-    <div className="space-y-3">
+    <div className={focusGapClass}>
       {displayQ.options.map((option, idx) => {
         const isSelected = userAnswers[currentQuestionIndex] === option;
         const ans = displayQ.answer;
@@ -1257,7 +1296,7 @@ export default function App() {
             <button
               disabled={showFeedback}
               onClick={() => submitAnswer(isCorrect, option)}
-              className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${style}`}
+              className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex justify-between items-center group ${focusOptionSizeClass} ${style}`}
             >
               <div className="flex items-center gap-3">
                 <span className={`w-6 h-6 flex items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
@@ -1287,7 +1326,7 @@ export default function App() {
               </button>
             )}
             {explainContext?.id === optionKey && (
-              <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+              <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
             )}
           </div>
         );
@@ -1299,7 +1338,7 @@ export default function App() {
   const renderMultiChoice = () => {
     return (
       <div className="space-y-4">
-        <div className="space-y-3">
+        <div className={focusGapClass}>
           {displayQ.options.map((option, idx) => {
             const isSelected = multiSelection.includes(option);
             const isActuallyCorrect = displayQ.answer.includes(option);
@@ -1328,7 +1367,7 @@ export default function App() {
                 <button
                   disabled={showFeedback}
                   onClick={() => toggleSelection(option)}
-                  className={`flex-1 text-left p-4 rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${style}`}
+                  className={`flex-1 text-left rounded-xl border-2 transition-all font-medium flex items-center gap-4 group hover:bg-zinc-50 dark:hover:bg-[#23202B] ${focusOptionSizeClass} ${style}`}
                 >
                   <div className="flex items-center gap-3 w-full">
                     <span className={`w-6 h-6 flex flex-shrink-0 items-center justify-center rounded text-xs font-mono border transition-colors ${showFeedback ? 'border-transparent opacity-50' :
@@ -1357,7 +1396,7 @@ export default function App() {
                   </button>
                 )}
                 {explainContext?.id === optionKey && (
-                  <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+                  <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
                 )}
               </div>
             );
@@ -1422,7 +1461,7 @@ export default function App() {
                 </button>
               )}
               {explainContext?.id === `${displayQ.id}::text` && (
-                <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} />
+                <ExplainPopover context={explainContext} onClose={() => setExplainContext(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
               )}
             </div>
           )}
@@ -1656,51 +1695,55 @@ export default function App() {
 
   return (
     <div className={theme}>
-      <div className="min-h-screen bg-purple-50 dark:bg-[#0F0E13] text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex">
+      <div className={`min-h-screen ${isFocused ? 'bg-white dark:bg-[#0F0E13]' : 'bg-purple-50 dark:bg-[#0F0E13]'} text-zinc-800 dark:text-[#EBE9F0] transition-colors duration-300 font-sans flex`}>
 
         {/* Sidebar */}
-        <Sidebar
-          view={view}
-          setView={setView}
-          theme={theme}
-          setTheme={setTheme}
-          appUser={appUser}
-          defaultQuizzes={DEFAULT_QUIZZES}
-          privateQuizzes={privateQuizzes}
-          publicQuizzes={publicQuizzes}
-          onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id, null, null, quiz.title)}
-          onSelectQuickQuiz={handleQuickQuizSession}
-          onEditQuiz={(quiz) => {
-            setEditingQuiz(quiz);
-            setEditTitle(quiz.title);
-            setSelectedIcon(quiz.icon || "BookOpen");
-            setSelectedModes(quiz.modes || []);
-          }}
-          onDeleteQuiz={handleDeleteQuiz}
-          onLogout={handleLogout}
-          isOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-          gravatarUrl={gravatarUrl}
-          onOpenSettings={openSettingsModal}
-          uiLang={uiLang}
-          setUiLang={setUiLang}
-          activeMode={activeMode}
-          setActiveMode={setActiveMode}
-          builtInModes={BUILT_IN_MODES}
-          customModes={customModes}
-          onCreateMode={saveCustomMode}
-        />
+        {!isFocused && (
+          <Sidebar
+            view={view}
+            setView={setView}
+            theme={theme}
+            setTheme={setTheme}
+            appUser={appUser}
+            defaultQuizzes={DEFAULT_QUIZZES}
+            privateQuizzes={privateQuizzes}
+            publicQuizzes={publicQuizzes}
+            onSelectQuiz={(quiz) => generateSmartSession(quiz.questions, quiz.id, null, null, quiz.title)}
+            onSelectQuickQuiz={handleQuickQuizSession}
+            onEditQuiz={(quiz) => {
+              setEditingQuiz(quiz);
+              setEditTitle(quiz.title);
+              setSelectedIcon(quiz.icon || "BookOpen");
+              setSelectedModes(quiz.modes || []);
+            }}
+            onDeleteQuiz={handleDeleteQuiz}
+            onLogout={handleLogout}
+            isOpen={isSidebarOpen}
+            toggleSidebar={toggleSidebar}
+            gravatarUrl={gravatarUrl}
+            onOpenSettings={openSettingsModal}
+            uiLang={uiLang}
+            setUiLang={setUiLang}
+            activeMode={activeMode}
+            setActiveMode={setActiveMode}
+            builtInModes={BUILT_IN_MODES}
+            customModes={customModes}
+            onCreateMode={saveCustomMode}
+          />
+        )}
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col min-w-0 h-screen overflow-y-auto">
 
           {/* Mobile Header */}
-          <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
-            <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
-              <Menu size={20} />
-            </button>
-            <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
-          </div>
+          {!isFocused && (
+            <div className="md:hidden h-14 flex items-center px-4 border-b border-zinc-200 dark:border-[#2A2633] bg-white dark:bg-[#18161F] sticky top-0 z-30">
+              <button onClick={toggleSidebar} className="p-2 -ml-2 text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-white">
+                <Menu size={20} />
+              </button>
+              <span className="font-bold text-lg ml-2 dark:text-white">FISI Trainer</span>
+            </div>
+          )}
 
           {aiConfigured && aiRateLimited && (
             <div className="px-4 py-2 bg-amber-50 dark:bg-amber-900/20 border-b border-amber-200 dark:border-amber-800/30 text-amber-700 dark:text-amber-400 text-xs font-medium text-center">
@@ -1909,8 +1952,11 @@ export default function App() {
 
           {/* --- VIEW: PLAYING --- */}
           {view === 'playing' && displayQ && (
-            <div className="min-h-full flex flex-col items-center p-4 py-10">
-              <div className="max-w-2xl w-full">
+            <div className={isFocused
+              ? "min-h-full flex flex-col items-center p-4"
+              : "min-h-full flex flex-col items-center p-4 py-10"
+            }>
+              <div className={isFocused ? "max-w-6xl w-full my-auto" : "max-w-2xl w-full"}>
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-4 px-1">
                   <div>
@@ -1918,26 +1964,31 @@ export default function App() {
                       Question {currentQuestionIndex + 1} of {sessionQueue.length}
                     </h2>
                     <div className="flex flex-wrap items-center gap-2 mt-1">
-                      <span className={`text-xs px-2 py-0.5 rounded-full border ${displayQ.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
-                        displayQ.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
-                          'border-zinc-200 text-zinc-600 bg-zinc-50'
-                        }`}>
-                        {displayQ.type.includes('multiple') ? 'Multi-Select' : displayQ.type.includes('text') ? 'Flashcard' : 'Single Choice'}
-                      </span>
-
-                      {displayQ.category && (
-                        <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
-                          {displayQ.category}
+                      {!isFocused && (
+                        <span className={`text-xs px-2 py-0.5 rounded-full border ${displayQ.type.includes('multiple') ? 'border-purple-200 text-purple-600 bg-purple-50' :
+                          displayQ.type.includes('text') ? 'border-blue-200 text-blue-600 bg-blue-50' :
+                            'border-zinc-200 text-zinc-600 bg-zinc-50'
+                          }`}>
+                          {displayQ.type.includes('multiple') ? 'Multi-Select' : displayQ.type.includes('text') ? 'Flashcard' : 'Single Choice'}
                         </span>
                       )}
 
-                      {/* Algorithm Tag */}
-                      {stats[displayQ.id] && (stats[displayQ.id].correct / (stats[displayQ.id].correct + stats[displayQ.id].wrong) < 0.7) && (
+                      {displayQ.category && (
+                        isFocused ? (
+                          <span className="text-xs text-zinc-400 dark:text-[#9D99A8]">{displayQ.category}</span>
+                        ) : (
+                          <span className="text-xs px-2 py-0.5 rounded-full border border-purple-200 text-purple-600 bg-purple-50 truncate max-w-[150px]">
+                            {displayQ.category}
+                          </span>
+                        )
+                      )}
+
+                      {!isFocused && stats[displayQ.id] && (stats[displayQ.id].correct / (stats[displayQ.id].correct + stats[displayQ.id].wrong) < 0.7) && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-orange-200 text-orange-600 bg-orange-50 flex items-center gap-1">
                           <RotateCcw size={10} /> Review
                         </span>
                       )}
-                      {!stats[displayQ.id] && (
+                      {!isFocused && !stats[displayQ.id] && (
                         <span className="text-xs px-2 py-0.5 rounded-full border border-green-200 text-green-600 bg-green-50 flex items-center gap-1">
                           New
                         </span>
@@ -1955,6 +2006,14 @@ export default function App() {
                         <Timer size={14} /> {Math.floor(quizTimeLeft / 60)}:{String(quizTimeLeft % 60).padStart(2, '0')}
                       </span>
                     )}
+                    <button
+                      onClick={() => setFocusMode(f => !f)}
+                      title={focusMode ? "Exit Focus Mode" : "Enter Focus Mode"}
+                      className="flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-purple-500 dark:hover:text-purple-400 transition-colors"
+                    >
+                      {focusMode ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+                      <span className="hidden sm:inline">{focusMode ? "Exit Focus" : "Focus Mode"}</span>
+                    </button>
                     <button onClick={() => setView('dashboard')} className="text-zinc-400 hover:text-red-500 text-xs font-medium">Exit</button>
                   </div>
                 </div>
@@ -1964,9 +2023,23 @@ export default function App() {
                 </div>
 
                 {/* Card */}
-                <div className="bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-5 sm:p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative">
+                <div className={isFocused
+                  ? {
+                    roomy: "bg-white dark:bg-[#0F0E13] p-10 md:p-20 min-h-[80vh] flex flex-col relative",
+                    compact: "bg-white dark:bg-[#0F0E13] p-8 md:p-14 min-h-[70vh] flex flex-col relative",
+                    tight: "bg-white dark:bg-[#0F0E13] p-6 md:p-10 min-h-[60vh] flex flex-col relative",
+                  }[focusDensity]
+                  : "bg-white dark:bg-[#18161F] rounded-2xl shadow-xl p-5 sm:p-6 md:p-10 border border-zinc-100 dark:border-[#2A2633] min-h-[400px] flex flex-col relative"
+                }>
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="flex-1 min-w-0 text-xl md:text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug">{displayQ.question}</h3>
+                    <h3 className={isFocused
+                      ? {
+                        roomy: "flex-1 min-w-0 text-4xl md:text-5xl font-bold text-zinc-800 dark:text-white mb-10 leading-snug",
+                        compact: "flex-1 min-w-0 text-3xl md:text-4xl font-bold text-zinc-800 dark:text-white mb-6 leading-snug",
+                        tight: "flex-1 min-w-0 text-2xl md:text-3xl font-bold text-zinc-800 dark:text-white mb-4 leading-snug",
+                      }[focusDensity]
+                      : "flex-1 min-w-0 text-xl md:text-2xl font-bold text-zinc-800 dark:text-white mb-8 leading-snug"
+                    }>{displayQ.question}</h3>
                     <div className="flex items-center gap-2 shrink-0">
                       <div className="hidden md:flex text-zinc-300 dark:text-zinc-600" title="Keyboard Shortcuts Enabled">
                         <Keyboard size={20} />
@@ -2255,6 +2328,44 @@ export default function App() {
                   )}
                 </div>
               </div>
+
+              {/* AI Usage Leaderboard */}
+              <div className="mt-8 bg-white dark:bg-[#18161F] rounded-2xl shadow-sm border border-zinc-100 dark:border-[#2A2633] overflow-hidden">
+                <div className="p-4 border-b border-zinc-100 dark:border-[#2A2633] bg-zinc-50 dark:bg-[#23202B] flex items-center gap-2">
+                  <Zap size={16} className="text-purple-500" />
+                  <h2 className="font-bold text-zinc-700 dark:text-white">AI Usage Leaderboard</h2>
+                </div>
+                {aiUsageLeaderboard.length === 0 ? (
+                  <p className="p-4 text-sm text-zinc-400 italic">No AI usage recorded yet.</p>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="text-left text-xs text-zinc-400 uppercase tracking-wider border-b border-zinc-100 dark:border-[#2A2633]">
+                          <th className="p-3">User</th>
+                          <th className="p-3 text-right">Requests</th>
+                          <th className="p-3 text-right">Tokens</th>
+                          <th className="p-3 text-right">Avg Req/min</th>
+                          <th className="p-3 text-right">Avg Tokens/min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {aiUsageLeaderboard.map((row, idx) => (
+                          <tr key={row.uid} className="border-b border-zinc-50 dark:border-[#23202B] last:border-0">
+                            <td className="p-3 font-bold text-zinc-800 dark:text-white">
+                              {idx === 0 && '🥇 '}{idx === 1 && '🥈 '}{idx === 2 && '🥉 '}{row.username}
+                            </td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.totalRequests.toLocaleString()}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.totalTokens.toLocaleString()}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.avgRequestsPerMin.toFixed(2)}</td>
+                            <td className="p-3 text-right text-zinc-600 dark:text-zinc-300">{row.avgTokensPerMin.toFixed(1)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -2493,7 +2604,7 @@ export default function App() {
         </div>
       )}
 
-      <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} />
+      <HelpChat question={helpChatQuestion} onClose={() => setHelpChatQuestion(null)} uiLang={uiLang} onAiError={handleAiError} onAiUsage={recordAiUsage} />
       {updateCard}
     </div>
   );

@@ -226,6 +226,47 @@ dataRouter.post('/api/data/leaderboards/:quizId', requireAuth, (req, res) => {
   res.json({ ok: true, improved: isImprovement });
 });
 
+// --- AI usage ---
+
+// Recorded per AI call so the admin panel can see who is burning through the
+// shared Groq quota. Counting happens here rather than in the client's own
+// document (as it did in Firestore), so the numbers can't be edited away.
+dataRouter.post('/api/data/ai-usage', requireAuth, (req, res) => {
+  const tokens = Math.max(0, Number(req.body?.totalTokens) || 0);
+  const ts = nowIso();
+  db.prepare(`
+    INSERT INTO ai_usage (uid, total_requests, total_tokens, first_used, last_used)
+    VALUES (?, 1, ?, ?, ?)
+    ON CONFLICT (uid) DO UPDATE SET
+      total_requests = total_requests + 1,
+      total_tokens   = total_tokens + excluded.total_tokens,
+      last_used      = excluded.last_used
+  `).run(req.user.uid, tokens, ts, ts);
+  res.json({ ok: true });
+});
+
+dataRouter.get('/api/data/admin/ai-usage', requireAdmin, (req, res) => {
+  const rows = db.prepare(`
+    SELECT a.*, u.username FROM ai_usage a JOIN users u ON u.uid = a.uid
+    ORDER BY a.total_tokens DESC
+  `).all();
+  res.json({
+    usage: rows.map(r => {
+      // Floor at one minute so a handful of requests seconds apart don't
+      // produce a wildly inflated (or infinite) per-minute rate.
+      const minutes = Math.max(1, (new Date(r.last_used).getTime() - new Date(r.first_used).getTime()) / 60000);
+      return {
+        uid: r.uid,
+        username: r.username || 'Unknown',
+        totalRequests: r.total_requests,
+        totalTokens: r.total_tokens,
+        avgRequestsPerMin: r.total_requests / minutes,
+        avgTokensPerMin: r.total_tokens / minutes
+      };
+    })
+  });
+});
+
 // --- Admin ---------------------------------------------------------------
 
 dataRouter.get('/api/data/admin/users', requireAdmin, (req, res) => {

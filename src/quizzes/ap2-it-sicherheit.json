@@ -23,7 +23,8 @@
             "Certificate authority"
           ],
           "answer": "Authenticator",
-          "explanation": "802.1X roles: the client is the supplicant, the switch/access point is the authenticator, and a RADIUS server is the authentication server."
+          "explanation": "802.1X roles: the client is the supplicant, the switch/access point is the authenticator, and a RADIUS server is the authentication server.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -50,7 +51,8 @@
             "RDP over port 80"
           ],
           "answer": "SSH",
-          "explanation": "SSH (Secure Shell, port 22) encrypts the entire session. Telnet transmits in plain text and is considered insecure."
+          "explanation": "SSH (Secure Shell, port 22) encrypts the entire session. Telnet transmits in plain text and is considered insecure.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -77,7 +79,8 @@
             "It blocks malware on the end device"
           ],
           "answer": "It bindingly attests that a public key belongs to an identity",
-          "explanation": "A certificate authority (CA) confirms with its signature that the public key really belongs to the stated identity (e.g. a domain) — the foundation of TLS/HTTPS."
+          "explanation": "A certificate authority (CA) confirms with its signature that the public key really belongs to the stated identity (e.g. a domain) — the foundation of TLS/HTTPS.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -104,7 +107,8 @@
             "Main mode"
           ],
           "answer": "Tunnel mode",
-          "explanation": "Tunnel mode: the complete IP packet is encapsulated — standard for site-to-site VPNs. Transport mode only encrypts the payload. Main/aggressive mode concern the IKE key exchange."
+          "explanation": "Tunnel mode: the complete IP packet is encapsulated — standard for site-to-site VPNs. Transport mode only encrypts the payload. Main/aggressive mode concern the IKE key exchange.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -141,7 +145,8 @@
             "Possession (e.g. smartphone with TOTP app)",
             "Biometrics (e.g. fingerprint)"
           ],
-          "explanation": "The three factor categories: something you KNOW, something you HAVE, something you ARE. MFA combines at least two different categories."
+          "explanation": "The three factor categories: something you KNOW, something you HAVE, something you ARE. MFA combines at least two different categories.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -180,7 +185,8 @@
             "Disable services that are not needed",
             "Apply security updates regularly"
           ],
-          "explanation": "Hardening = minimizing the attack surface: fewer services, strong authentication, up-to-date software. Telnet would be a step backwards (plain text)."
+          "explanation": "Hardening = minimizing the attack surface: fewer services, strong authentication, up-to-date software. Telnet would be a step backwards (plain text).",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -217,7 +223,8 @@
             "RSA is an asymmetric algorithm",
             "With symmetric encryption, both sides use the same key"
           ],
-          "explanation": "In practice both are combined (hybrid, e.g. TLS): asymmetric for the key exchange, symmetric for the fast payload encryption. The private key always stays secret."
+          "explanation": "In practice both are combined (hybrid, e.g. TLS): asymmetric for the key exchange, symmetric for the fast payload encryption. The private key always stays secret.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -250,7 +257,8 @@
             "MX record",
             "TXT record (e.g. for SPF and DKIM)"
           ],
-          "explanation": "MX designates the responsible mail server; SPF and DKIM are stored as TXT records and make sender spoofing harder. CNAME is an alias, SRV locates generic services."
+          "explanation": "MX designates the responsible mail server; SPF and DKIM are stored as TXT records and make sender spoofing harder. CNAME is an alias, SRV locates generic services.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -265,7 +273,8 @@
         "en": {
           "question": "What is a DMZ, and which systems are placed there?",
           "answer": "A demilitarized zone — a network segment separated by firewalls between the internet and the internal network, hosting externally reachable services (e.g. web, mail, proxy servers)",
-          "explanation": "If a server in the DMZ is compromised, the attacker still has no direct access to the internal LAN."
+          "explanation": "If a server in the DMZ is compromised, the attacker still has no direct access to the internal LAN.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -280,7 +289,8 @@
         "en": {
           "question": "Briefly explain the difference between authentication and authorization.",
           "answer": "Authentication verifies identity (who are you?), authorization verifies permissions (what are you allowed to do?)",
-          "explanation": "Only after successful authentication (e.g. login) does authorization (e.g. file permissions, group policies) decide which actions are allowed."
+          "explanation": "Only after successful authentication (e.g. login) does authorization (e.g. file permissions, group policies) decide which actions are allowed.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -295,7 +305,8 @@
         "en": {
           "question": "What is a brute-force attack, and name one effective countermeasure.",
           "answer": "Systematically trying all possible passwords/keys; countermeasures: long passwords, account lockout or rate limiting after failed attempts, 2FA",
-          "explanation": "Every additional character multiplies the effort exponentially. Fail2ban or account lockout stops automated attempts early."
+          "explanation": "Every additional character multiplies the effort exponentially. Fail2ban or account lockout stops automated attempts early.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -310,7 +321,8 @@
         "en": {
           "question": "What does the abbreviation VPN stand for, and what is it used for?",
           "answer": "Virtual Private Network — an encrypted tunnel over an insecure network (e.g. the internet), used e.g. for remote work access or site-to-site links",
-          "explanation": "Common technologies: IPsec, OpenVPN, WireGuard. The VPN protects the confidentiality and integrity of the transmitted data."
+          "explanation": "Common technologies: IPsec, OpenVPN, WireGuard. The VPN protects the confidentiality and integrity of the transmitted data.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -323,9 +335,10 @@
       "explanation": "802.1X kontrolliert den Netzwerkzugang portbasiert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of 802.1X in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of 802.1X in IT Security & Network Security?",
           "answer": "802.1X controls network access by port.",
-          "explanation": "802.1X controls network access by port. This is a common exam building block because it separates function from use case."
+          "explanation": "802.1X controls network access by port. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -338,9 +351,10 @@
       "explanation": "RADIUS stellt zentrale Authentifizierung, Autorisierung und Accounting bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RADIUS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of RADIUS in IT Security & Network Security?",
           "answer": "RADIUS provides centralized authentication, authorization and accounting.",
-          "explanation": "RADIUS provides centralized authentication, authorization and accounting. This is a common exam building block because it separates function from use case."
+          "explanation": "RADIUS provides centralized authentication, authorization and accounting. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -353,9 +367,10 @@
       "explanation": "TACACS+ trennt Authentifizierung, Autorisierung und Accounting für Geräteadministration. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TACACS+ in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of TACACS+ in IT Security & Network Security?",
           "answer": "TACACS+ separates authentication, authorization and accounting for device administration.",
-          "explanation": "TACACS+ separates authentication, authorization and accounting for device administration. This is a common exam building block because it separates function from use case."
+          "explanation": "TACACS+ separates authentication, authorization and accounting for device administration. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -368,9 +383,10 @@
       "explanation": "PKI verwaltet Zertifikate und Schlüssel in einer Vertrauenskette. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PKI in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of PKI in IT Security & Network Security?",
           "answer": "PKI manages certificates and keys in a chain of trust.",
-          "explanation": "PKI manages certificates and keys in a chain of trust. This is a common exam building block because it separates function from use case."
+          "explanation": "PKI manages certificates and keys in a chain of trust. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -383,9 +399,10 @@
       "explanation": "CA stellt digitale Zertifikate aus und signiert sie. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CA in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of CA in IT Security & Network Security?",
           "answer": "CA issues and signs digital certificates.",
-          "explanation": "CA issues and signs digital certificates. This is a common exam building block because it separates function from use case."
+          "explanation": "CA issues and signs digital certificates. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -398,9 +415,10 @@
       "explanation": "CSR ist eine Zertifikatsanforderung mit öffentlichem Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CSR in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of CSR in IT Security & Network Security?",
           "answer": "CSR is a certificate request containing a public key.",
-          "explanation": "CSR is a certificate request containing a public key. This is a common exam building block because it separates function from use case."
+          "explanation": "CSR is a certificate request containing a public key. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -413,9 +431,10 @@
       "explanation": "CRL listet widerrufene Zertifikate. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CRL in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of CRL in IT Security & Network Security?",
           "answer": "CRL lists revoked certificates.",
-          "explanation": "CRL lists revoked certificates. This is a common exam building block because it separates function from use case."
+          "explanation": "CRL lists revoked certificates. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -428,9 +447,10 @@
       "explanation": "OCSP prüft den Widerrufsstatus eines Zertifikats online. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of OCSP in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of OCSP in IT Security & Network Security?",
           "answer": "OCSP checks certificate revocation status online.",
-          "explanation": "OCSP checks certificate revocation status online. This is a common exam building block because it separates function from use case."
+          "explanation": "OCSP checks certificate revocation status online. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -443,9 +463,10 @@
       "explanation": "TLS verschlüsselt Transportverbindungen wie HTTPS. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TLS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of TLS in IT Security & Network Security?",
           "answer": "TLS encrypts transport connections such as HTTPS.",
-          "explanation": "TLS encrypts transport connections such as HTTPS. This is a common exam building block because it separates function from use case."
+          "explanation": "TLS encrypts transport connections such as HTTPS. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -458,9 +479,10 @@
       "explanation": "Perfect Forward Secrecy schützt alte Sitzungen auch bei später kompromittiertem Langzeitschlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Perfect Forward Secrecy in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Perfect Forward Secrecy in IT Security & Network Security?",
           "answer": "Perfect Forward Secrecy protects old sessions even if a long-term key is later compromised.",
-          "explanation": "Perfect Forward Secrecy protects old sessions even if a long-term key is later compromised. This is a common exam building block because it separates function from use case."
+          "explanation": "Perfect Forward Secrecy protects old sessions even if a long-term key is later compromised. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -473,9 +495,10 @@
       "explanation": "Diffie-Hellman ermöglicht sicheren Schlüsselaustausch über unsichere Netze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Diffie-Hellman in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Diffie-Hellman in IT Security & Network Security?",
           "answer": "Diffie-Hellman enables secure key exchange over insecure networks.",
-          "explanation": "Diffie-Hellman enables secure key exchange over insecure networks. This is a common exam building block because it separates function from use case."
+          "explanation": "Diffie-Hellman enables secure key exchange over insecure networks. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -488,9 +511,10 @@
       "explanation": "AES ist ein symmetrischer Verschlüsselungsalgorithmus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of AES in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of AES in IT Security & Network Security?",
           "answer": "AES is a symmetric encryption algorithm.",
-          "explanation": "AES is a symmetric encryption algorithm. This is a common exam building block because it separates function from use case."
+          "explanation": "AES is a symmetric encryption algorithm. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -503,9 +527,10 @@
       "explanation": "RSA ist ein asymmetrisches Kryptoverfahren. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RSA in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of RSA in IT Security & Network Security?",
           "answer": "RSA is an asymmetric cryptographic method.",
-          "explanation": "RSA is an asymmetric cryptographic method. This is a common exam building block because it separates function from use case."
+          "explanation": "RSA is an asymmetric cryptographic method. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -518,9 +543,10 @@
       "explanation": "SHA-256 ist eine kryptografische Hashfunktion. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SHA-256 in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of SHA-256 in IT Security & Network Security?",
           "answer": "SHA-256 is a cryptographic hash function.",
-          "explanation": "SHA-256 is a cryptographic hash function. This is a common exam building block because it separates function from use case."
+          "explanation": "SHA-256 is a cryptographic hash function. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -533,9 +559,10 @@
       "explanation": "HMAC prüft Integrität und Authentizität mit geheimem Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of HMAC in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of HMAC in IT Security & Network Security?",
           "answer": "HMAC checks integrity and authenticity with a secret key.",
-          "explanation": "HMAC checks integrity and authenticity with a secret key. This is a common exam building block because it separates function from use case."
+          "explanation": "HMAC checks integrity and authenticity with a secret key. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -548,9 +575,10 @@
       "explanation": "Salt macht gleiche Passwörter durch Zufallswerte zu unterschiedlichen Hashes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Salt in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Salt in IT Security & Network Security?",
           "answer": "Salt turns identical passwords into different hashes using random values.",
-          "explanation": "Salt turns identical passwords into different hashes using random values. This is a common exam building block because it separates function from use case."
+          "explanation": "Salt turns identical passwords into different hashes using random values. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -563,9 +591,10 @@
       "explanation": "Pepper ist ein zusätzlicher geheimer Wert beim Passwort-Hashing. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Pepper in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Pepper in IT Security & Network Security?",
           "answer": "Pepper is an additional secret value in password hashing.",
-          "explanation": "Pepper is an additional secret value in password hashing. This is a common exam building block because it separates function from use case."
+          "explanation": "Pepper is an additional secret value in password hashing. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -578,9 +607,10 @@
       "explanation": "MFA kombiniert mehrere unabhängige Authentifizierungsfaktoren. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MFA in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of MFA in IT Security & Network Security?",
           "answer": "MFA combines multiple independent authentication factors.",
-          "explanation": "MFA combines multiple independent authentication factors. This is a common exam building block because it separates function from use case."
+          "explanation": "MFA combines multiple independent authentication factors. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -593,9 +623,10 @@
       "explanation": "TOTP erzeugt zeitbasierte Einmalcodes. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TOTP in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of TOTP in IT Security & Network Security?",
           "answer": "TOTP generates time-based one-time codes.",
-          "explanation": "TOTP generates time-based one-time codes. This is a common exam building block because it separates function from use case."
+          "explanation": "TOTP generates time-based one-time codes. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -608,9 +639,10 @@
       "explanation": "FIDO2 ermöglicht phishingresistente Anmeldung mit kryptografischen Schlüsseln. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FIDO2 in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of FIDO2 in IT Security & Network Security?",
           "answer": "FIDO2 enables phishing-resistant login with cryptographic keys.",
-          "explanation": "FIDO2 enables phishing-resistant login with cryptographic keys. This is a common exam building block because it separates function from use case."
+          "explanation": "FIDO2 enables phishing-resistant login with cryptographic keys. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -623,9 +655,10 @@
       "explanation": "Zero Trust vertraut keinem Zugriff automatisch und prüft kontinuierlich. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Zero Trust in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Zero Trust in IT Security & Network Security?",
           "answer": "Zero Trust trusts no access automatically and verifies continuously.",
-          "explanation": "Zero Trust trusts no access automatically and verifies continuously. This is a common exam building block because it separates function from use case."
+          "explanation": "Zero Trust trusts no access automatically and verifies continuously. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -638,9 +671,10 @@
       "explanation": "Least Privilege vergibt nur die minimal notwendigen Rechte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Least Privilege in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Least Privilege in IT Security & Network Security?",
           "answer": "Least Privilege grants only the minimum necessary rights.",
-          "explanation": "Least Privilege grants only the minimum necessary rights. This is a common exam building block because it separates function from use case."
+          "explanation": "Least Privilege grants only the minimum necessary rights. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -653,9 +687,10 @@
       "explanation": "RBAC vergibt Berechtigungen über Rollen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RBAC in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of RBAC in IT Security & Network Security?",
           "answer": "RBAC assigns permissions through roles.",
-          "explanation": "RBAC assigns permissions through roles. This is a common exam building block because it separates function from use case."
+          "explanation": "RBAC assigns permissions through roles. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -668,9 +703,10 @@
       "explanation": "ACL definiert Zugriffserlaubnisse oder Verbote. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ACL in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of ACL in IT Security & Network Security?",
           "answer": "ACL defines access permissions or denials.",
-          "explanation": "ACL defines access permissions or denials. This is a common exam building block because it separates function from use case."
+          "explanation": "ACL defines access permissions or denials. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -683,9 +719,10 @@
       "explanation": "Firewall-Regel entscheidet anhand von Kriterien über Zulassen oder Blockieren. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Firewall-Regel in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Firewall-Regel decides allow or deny based on criteria.",
-          "explanation": "Firewall-Regel decides allow or deny based on criteria. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Firewall rule in IT Security & Network Security?",
+          "answer": "Firewall rule decides allow or deny based on criteria.",
+          "explanation": "Firewall rule decides allow or deny based on criteria. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -698,9 +735,10 @@
       "explanation": "Stateful Firewall berücksichtigt den Zustand von Verbindungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Stateful Firewall in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Stateful Firewall in IT Security & Network Security?",
           "answer": "Stateful Firewall considers connection state.",
-          "explanation": "Stateful Firewall considers connection state. This is a common exam building block because it separates function from use case."
+          "explanation": "Stateful Firewall considers connection state. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -713,9 +751,10 @@
       "explanation": "WAF schützt Webanwendungen vor typischen Angriffen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of WAF in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of WAF in IT Security & Network Security?",
           "answer": "WAF protects web applications from common attacks.",
-          "explanation": "WAF protects web applications from common attacks. This is a common exam building block because it separates function from use case."
+          "explanation": "WAF protects web applications from common attacks. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -728,9 +767,10 @@
       "explanation": "IDS erkennt verdächtige Aktivitäten und alarmiert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IDS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of IDS in IT Security & Network Security?",
           "answer": "IDS detects suspicious activity and alerts.",
-          "explanation": "IDS detects suspicious activity and alerts. This is a common exam building block because it separates function from use case."
+          "explanation": "IDS detects suspicious activity and alerts. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -743,9 +783,10 @@
       "explanation": "IPS erkennt Angriffe und kann sie aktiv blockieren. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IPS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of IPS in IT Security & Network Security?",
           "answer": "IPS detects attacks and can actively block them.",
-          "explanation": "IPS detects attacks and can actively block them. This is a common exam building block because it separates function from use case."
+          "explanation": "IPS detects attacks and can actively block them. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -758,9 +799,10 @@
       "explanation": "SIEM sammelt und korreliert Sicherheitsereignisse zentral. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SIEM in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of SIEM in IT Security & Network Security?",
           "answer": "SIEM centrally collects and correlates security events.",
-          "explanation": "SIEM centrally collects and correlates security events. This is a common exam building block because it separates function from use case."
+          "explanation": "SIEM centrally collects and correlates security events. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -773,9 +815,10 @@
       "explanation": "SOC überwacht und bearbeitet Sicherheitsereignisse organisatorisch. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SOC in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of SOC in IT Security & Network Security?",
           "answer": "SOC organizationally monitors and handles security events.",
-          "explanation": "SOC organizationally monitors and handles security events. This is a common exam building block because it separates function from use case."
+          "explanation": "SOC organizationally monitors and handles security events. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -788,9 +831,10 @@
       "explanation": "EDR erkennt und untersucht Angriffe auf Endgeräten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of EDR in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of EDR in IT Security & Network Security?",
           "answer": "EDR detects and investigates endpoint attacks.",
-          "explanation": "EDR detects and investigates endpoint attacks. This is a common exam building block because it separates function from use case."
+          "explanation": "EDR detects and investigates endpoint attacks. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -803,9 +847,10 @@
       "explanation": "NAC kontrolliert Gerätezugang zum Netzwerk. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NAC in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of NAC in IT Security & Network Security?",
           "answer": "NAC controls device access to the network.",
-          "explanation": "NAC controls device access to the network. This is a common exam building block because it separates function from use case."
+          "explanation": "NAC controls device access to the network. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -818,9 +863,10 @@
       "explanation": "DMZ trennt öffentlich erreichbare Dienste vom internen Netz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DMZ in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of DMZ in IT Security & Network Security?",
           "answer": "DMZ separates public services from the internal network.",
-          "explanation": "DMZ separates public services from the internal network. This is a common exam building block because it separates function from use case."
+          "explanation": "DMZ separates public services from the internal network. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -833,9 +879,10 @@
       "explanation": "Bastion Host ist ein besonders gehärteter exponierter Server. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Bastion Host in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Bastion Host in IT Security & Network Security?",
           "answer": "Bastion Host is a specially hardened exposed server.",
-          "explanation": "Bastion Host is a specially hardened exposed server. This is a common exam building block because it separates function from use case."
+          "explanation": "Bastion Host is a specially hardened exposed server. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -848,9 +895,10 @@
       "explanation": "Jump Host dient als kontrollierter Administrationszugang. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Jump Host in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Jump Host in IT Security & Network Security?",
           "answer": "Jump Host serves as controlled administrative access.",
-          "explanation": "Jump Host serves as controlled administrative access. This is a common exam building block because it separates function from use case."
+          "explanation": "Jump Host serves as controlled administrative access. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -863,9 +911,10 @@
       "explanation": "VPN stellt einen verschlüsselten Tunnel über unsichere Netze bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VPN in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of VPN in IT Security & Network Security?",
           "answer": "VPN provides an encrypted tunnel over insecure networks.",
-          "explanation": "VPN provides an encrypted tunnel over insecure networks. This is a common exam building block because it separates function from use case."
+          "explanation": "VPN provides an encrypted tunnel over insecure networks. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -878,9 +927,10 @@
       "explanation": "IPsec sichert IP-Kommunikation auf Netzwerkschicht. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of IPsec in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of IPsec in IT Security & Network Security?",
           "answer": "IPsec secures IP communication at the network layer.",
-          "explanation": "IPsec secures IP communication at the network layer. This is a common exam building block because it separates function from use case."
+          "explanation": "IPsec secures IP communication at the network layer. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -893,9 +943,10 @@
       "explanation": "SSL-VPN nutzt TLS für VPN-Zugänge. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SSL-VPN in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of SSL-VPN in IT Security & Network Security?",
           "answer": "SSL-VPN uses TLS for VPN access.",
-          "explanation": "SSL-VPN uses TLS for VPN access. This is a common exam building block because it separates function from use case."
+          "explanation": "SSL-VPN uses TLS for VPN access. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -908,9 +959,10 @@
       "explanation": "Split Tunneling leitet nur ausgewählten Verkehr durch den VPN-Tunnel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Split Tunneling in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Split Tunneling in IT Security & Network Security?",
           "answer": "Split Tunneling routes only selected traffic through the VPN tunnel.",
-          "explanation": "Split Tunneling routes only selected traffic through the VPN tunnel. This is a common exam building block because it separates function from use case."
+          "explanation": "Split Tunneling routes only selected traffic through the VPN tunnel. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -923,9 +975,10 @@
       "explanation": "Härtung reduziert Angriffsfläche durch sichere Konfiguration. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Härtung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Härtung reduces attack surface through secure configuration.",
-          "explanation": "Härtung reduces attack surface through secure configuration. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Hardening in IT Security & Network Security?",
+          "answer": "Hardening reduces attack surface through secure configuration.",
+          "explanation": "Hardening reduces attack surface through secure configuration. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -938,9 +991,10 @@
       "explanation": "Patchmanagement plant und verteilt Sicherheitsupdates kontrolliert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Patchmanagement in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Patchmanagement plans and deploys security updates in a controlled way.",
-          "explanation": "Patchmanagement plans and deploys security updates in a controlled way. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Patch management in IT Security & Network Security?",
+          "answer": "Patch management plans and deploys security updates in a controlled way.",
+          "explanation": "Patch management plans and deploys security updates in a controlled way. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -953,9 +1007,10 @@
       "explanation": "Vulnerability Scan sucht bekannte Schwachstellen automatisiert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Vulnerability Scan in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Vulnerability Scan in IT Security & Network Security?",
           "answer": "Vulnerability Scan automatically searches for known vulnerabilities.",
-          "explanation": "Vulnerability Scan automatically searches for known vulnerabilities. This is a common exam building block because it separates function from use case."
+          "explanation": "Vulnerability Scan automatically searches for known vulnerabilities. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -968,9 +1023,10 @@
       "explanation": "Penetrationstest prüft Sicherheit durch kontrollierte Angriffsversuche. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Penetrationstest in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Penetrationstest tests security through controlled attack attempts.",
-          "explanation": "Penetrationstest tests security through controlled attack attempts. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Penetration test in IT Security & Network Security?",
+          "answer": "Penetration test tests security through controlled attack attempts.",
+          "explanation": "Penetration test tests security through controlled attack attempts. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -983,9 +1039,10 @@
       "explanation": "CVE ist eine eindeutige Kennung für bekannte Schwachstellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CVE in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of CVE in IT Security & Network Security?",
           "answer": "CVE is a unique identifier for known vulnerabilities.",
-          "explanation": "CVE is a unique identifier for known vulnerabilities. This is a common exam building block because it separates function from use case."
+          "explanation": "CVE is a unique identifier for known vulnerabilities. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -998,9 +1055,10 @@
       "explanation": "CVSS bewertet die Schwere einer Schwachstelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CVSS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of CVSS in IT Security & Network Security?",
           "answer": "CVSS rates the severity of a vulnerability.",
-          "explanation": "CVSS rates the severity of a vulnerability. This is a common exam building block because it separates function from use case."
+          "explanation": "CVSS rates the severity of a vulnerability. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1013,9 +1071,10 @@
       "explanation": "Exploit nutzt eine Schwachstelle praktisch aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Exploit in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Exploit in IT Security & Network Security?",
           "answer": "Exploit practically abuses a vulnerability.",
-          "explanation": "Exploit practically abuses a vulnerability. This is a common exam building block because it separates function from use case."
+          "explanation": "Exploit practically abuses a vulnerability. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1028,9 +1087,10 @@
       "explanation": "Ransomware verschlüsselt oder sperrt Daten zur Erpressung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Ransomware in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Ransomware in IT Security & Network Security?",
           "answer": "Ransomware encrypts or blocks data for extortion.",
-          "explanation": "Ransomware encrypts or blocks data for extortion. This is a common exam building block because it separates function from use case."
+          "explanation": "Ransomware encrypts or blocks data for extortion. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1043,9 +1103,10 @@
       "explanation": "Phishing täuscht Nutzer zur Preisgabe sensibler Daten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Phishing in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Phishing in IT Security & Network Security?",
           "answer": "Phishing tricks users into revealing sensitive data.",
-          "explanation": "Phishing tricks users into revealing sensitive data. This is a common exam building block because it separates function from use case."
+          "explanation": "Phishing tricks users into revealing sensitive data. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1058,9 +1119,10 @@
       "explanation": "Spear Phishing richtet sich gezielt gegen bestimmte Personen oder Organisationen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Spear Phishing in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Spear Phishing in IT Security & Network Security?",
           "answer": "Spear Phishing targets specific people or organizations.",
-          "explanation": "Spear Phishing targets specific people or organizations. This is a common exam building block because it separates function from use case."
+          "explanation": "Spear Phishing targets specific people or organizations. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1073,9 +1135,10 @@
       "explanation": "Whaling zielt auf Führungskräfte oder besonders wertvolle Ziele. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Whaling in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Whaling in IT Security & Network Security?",
           "answer": "Whaling targets executives or especially valuable targets.",
-          "explanation": "Whaling targets executives or especially valuable targets. This is a common exam building block because it separates function from use case."
+          "explanation": "Whaling targets executives or especially valuable targets. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1088,9 +1151,10 @@
       "explanation": "Man-in-the-Middle schaltet sich zwischen Kommunikationspartner. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Man-in-the-Middle in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Man-in-the-Middle in IT Security & Network Security?",
           "answer": "Man-in-the-Middle positions itself between communication partners.",
-          "explanation": "Man-in-the-Middle positions itself between communication partners. This is a common exam building block because it separates function from use case."
+          "explanation": "Man-in-the-Middle positions itself between communication partners. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1103,9 +1167,10 @@
       "explanation": "Replay-Angriff spielt abgefangene gültige Nachrichten erneut ab. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Replay-Angriff in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Replay-Angriff replays captured valid messages.",
-          "explanation": "Replay-Angriff replays captured valid messages. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Replay attack in IT Security & Network Security?",
+          "answer": "Replay attack replays captured valid messages.",
+          "explanation": "Replay attack replays captured valid messages. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1118,9 +1183,10 @@
       "explanation": "DoS macht einen Dienst durch Überlastung oder Fehler nicht verfügbar. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DoS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of DoS in IT Security & Network Security?",
           "answer": "DoS makes a service unavailable through overload or faults.",
-          "explanation": "DoS makes a service unavailable through overload or faults. This is a common exam building block because it separates function from use case."
+          "explanation": "DoS makes a service unavailable through overload or faults. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1133,9 +1199,10 @@
       "explanation": "DDoS nutzt viele verteilte Systeme für einen DoS-Angriff. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DDoS in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of DDoS in IT Security & Network Security?",
           "answer": "DDoS uses many distributed systems for a DoS attack.",
-          "explanation": "DDoS uses many distributed systems for a DoS attack. This is a common exam building block because it separates function from use case."
+          "explanation": "DDoS uses many distributed systems for a DoS attack. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1148,9 +1215,10 @@
       "explanation": "ARP-Spoofing manipuliert ARP-Zuordnungen im lokalen Netz. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ARP-Spoofing in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of ARP-Spoofing in IT Security & Network Security?",
           "answer": "ARP-Spoofing manipulates ARP mappings in the local network.",
-          "explanation": "ARP-Spoofing manipulates ARP mappings in the local network. This is a common exam building block because it separates function from use case."
+          "explanation": "ARP-Spoofing manipulates ARP mappings in the local network. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1163,9 +1231,10 @@
       "explanation": "DNS-Spoofing liefert falsche Namensauflösungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DNS-Spoofing in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of DNS-Spoofing in IT Security & Network Security?",
           "answer": "DNS-Spoofing returns false name resolutions.",
-          "explanation": "DNS-Spoofing returns false name resolutions. This is a common exam building block because it separates function from use case."
+          "explanation": "DNS-Spoofing returns false name resolutions. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1178,9 +1247,10 @@
       "explanation": "MAC-Spoofing fälscht die MAC-Adresse eines Geräts. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MAC-Spoofing in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of MAC-Spoofing in IT Security & Network Security?",
           "answer": "MAC-Spoofing forges a device MAC address.",
-          "explanation": "MAC-Spoofing forges a device MAC address. This is a common exam building block because it separates function from use case."
+          "explanation": "MAC-Spoofing forges a device MAC address. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1193,9 +1263,10 @@
       "explanation": "Port Security begrenzt erlaubte MAC-Adressen an Switchports. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Port Security in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Port Security in IT Security & Network Security?",
           "answer": "Port Security limits allowed MAC addresses on switch ports.",
-          "explanation": "Port Security limits allowed MAC addresses on switch ports. This is a common exam building block because it separates function from use case."
+          "explanation": "Port Security limits allowed MAC addresses on switch ports. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1208,9 +1279,10 @@
       "explanation": "BPDU Guard schützt STP vor unerwarteten Switches an Access-Ports. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of BPDU Guard in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of BPDU Guard in IT Security & Network Security?",
           "answer": "BPDU Guard protects STP from unexpected switches on access ports.",
-          "explanation": "BPDU Guard protects STP from unexpected switches on access ports. This is a common exam building block because it separates function from use case."
+          "explanation": "BPDU Guard protects STP from unexpected switches on access ports. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1223,9 +1295,10 @@
       "explanation": "DHCP Snooping blockiert nicht autorisierte DHCP-Server. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DHCP Snooping in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of DHCP Snooping in IT Security & Network Security?",
           "answer": "DHCP Snooping blocks unauthorized DHCP servers.",
-          "explanation": "DHCP Snooping blocks unauthorized DHCP servers. This is a common exam building block because it separates function from use case."
+          "explanation": "DHCP Snooping blocks unauthorized DHCP servers. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1238,9 +1311,10 @@
       "explanation": "Dynamic ARP Inspection prüft ARP-Pakete gegen vertrauenswürdige Zuordnungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Dynamic ARP Inspection in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Dynamic ARP Inspection in IT Security & Network Security?",
           "answer": "Dynamic ARP Inspection checks ARP packets against trusted mappings.",
-          "explanation": "Dynamic ARP Inspection checks ARP packets against trusted mappings. This is a common exam building block because it separates function from use case."
+          "explanation": "Dynamic ARP Inspection checks ARP packets against trusted mappings. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1253,9 +1327,10 @@
       "explanation": "VLAN-Hopping versucht unberechtigt in andere VLANs zu gelangen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of VLAN-Hopping in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of VLAN-Hopping in IT Security & Network Security?",
           "answer": "VLAN-Hopping tries to access other VLANs without permission.",
-          "explanation": "VLAN-Hopping tries to access other VLANs without permission. This is a common exam building block because it separates function from use case."
+          "explanation": "VLAN-Hopping tries to access other VLANs without permission. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1268,9 +1343,10 @@
       "explanation": "Security Baseline definiert sichere Mindestkonfigurationen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Security Baseline in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Security Baseline in IT Security & Network Security?",
           "answer": "Security Baseline defines secure minimum configurations.",
-          "explanation": "Security Baseline defines secure minimum configurations. This is a common exam building block because it separates function from use case."
+          "explanation": "Security Baseline defines secure minimum configurations. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1283,9 +1359,10 @@
       "explanation": "Backup-Verschlüsselung schützt Sicherungsdaten bei Diebstahl oder Fehlzugriff. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Backup-Verschlüsselung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Backup-Verschlüsselung protects backup data against theft or unauthorized access.",
-          "explanation": "Backup-Verschlüsselung protects backup data against theft or unauthorized access. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Backup encryption in IT Security & Network Security?",
+          "answer": "Backup encryption protects backup data against theft or unauthorized access.",
+          "explanation": "Backup encryption protects backup data against theft or unauthorized access. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1298,9 +1375,10 @@
       "explanation": "Log-Management sammelt und bewahrt Protokolle nachvollziehbar auf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Log-Management in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Log-Management in IT Security & Network Security?",
           "answer": "Log-Management collects and retains logs traceably.",
-          "explanation": "Log-Management collects and retains logs traceably. This is a common exam building block because it separates function from use case."
+          "explanation": "Log-Management collects and retains logs traceably. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1313,9 +1391,10 @@
       "explanation": "Audit prüft Prozesse, Systeme oder Nachweise systematisch. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Audit in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Audit in IT Security & Network Security?",
           "answer": "Audit systematically checks processes, systems or evidence.",
-          "explanation": "Audit systematically checks processes, systems or evidence. This is a common exam building block because it separates function from use case."
+          "explanation": "Audit systematically checks processes, systems or evidence. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1328,9 +1407,10 @@
       "explanation": "Incident Response beschreibt strukturierte Reaktion auf Sicherheitsvorfälle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Incident Response in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Incident Response in IT Security & Network Security?",
           "answer": "Incident Response describes structured response to security incidents.",
-          "explanation": "Incident Response describes structured response to security incidents. This is a common exam building block because it separates function from use case."
+          "explanation": "Incident Response describes structured response to security incidents. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1343,9 +1423,10 @@
       "explanation": "Forensik sichert und analysiert Spuren gerichtsfest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Forensik in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Forensik preserves and analyzes evidence for legal use.",
-          "explanation": "Forensik preserves and analyzes evidence for legal use. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Forensics in IT Security & Network Security?",
+          "answer": "Forensics preserves and analyzes evidence for legal use.",
+          "explanation": "Forensics preserves and analyzes evidence for legal use. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1358,9 +1439,10 @@
       "explanation": "Chain of Custody dokumentiert lückenlos den Umgang mit Beweismitteln. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Chain of Custody in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of Chain of Custody in IT Security & Network Security?",
           "answer": "Chain of Custody documents handling of evidence without gaps.",
-          "explanation": "Chain of Custody documents handling of evidence without gaps. This is a common exam building block because it separates function from use case."
+          "explanation": "Chain of Custody documents handling of evidence without gaps. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1373,9 +1455,10 @@
       "explanation": "Notfallplan legt Maßnahmen für Krisen- und Ausfallsituationen fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Notfallplan in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Notfallplan defines measures for crisis and outage situations.",
-          "explanation": "Notfallplan defines measures for crisis and outage situations. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Contingency plan in IT Security & Network Security?",
+          "answer": "Contingency plan defines measures for crisis and outage situations.",
+          "explanation": "Contingency plan defines measures for crisis and outage situations. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1388,9 +1471,10 @@
       "explanation": "BCM sichert die Fortführung kritischer Geschäftsprozesse. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of BCM in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of BCM in IT Security & Network Security?",
           "answer": "BCM ensures continuity of critical business processes.",
-          "explanation": "BCM ensures continuity of critical business processes. This is a common exam building block because it separates function from use case."
+          "explanation": "BCM ensures continuity of critical business processes. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1403,9 +1487,10 @@
       "explanation": "RTO beschreibt die maximal tolerierbare Wiederanlaufzeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RTO in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of RTO in IT Security & Network Security?",
           "answer": "RTO describes the maximum tolerable recovery time.",
-          "explanation": "RTO describes the maximum tolerable recovery time. This is a common exam building block because it separates function from use case."
+          "explanation": "RTO describes the maximum tolerable recovery time. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1418,9 +1503,10 @@
       "explanation": "RPO beschreibt den maximal tolerierbaren Datenverlust in Zeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RPO in IT-Sicherheit & Netzwerksicherheit?",
+          "question": "What is the purpose of RPO in IT Security & Network Security?",
           "answer": "RPO describes the maximum tolerable data loss in time.",
-          "explanation": "RPO describes the maximum tolerable data loss in time. This is a common exam building block because it separates function from use case."
+          "explanation": "RPO describes the maximum tolerable data loss in time. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1433,9 +1519,10 @@
       "explanation": "Awareness-Schulung sensibilisiert Mitarbeitende für Sicherheitsrisiken. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Awareness-Schulung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Awareness-Schulung raises employee awareness of security risks.",
-          "explanation": "Awareness-Schulung raises employee awareness of security risks. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Awareness training in IT Security & Network Security?",
+          "answer": "Awareness training raises employee awareness of security risks.",
+          "explanation": "Awareness training raises employee awareness of security risks. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1448,9 +1535,10 @@
       "explanation": "Passwortrichtlinie legt Regeln für sichere Passwörter fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Passwortrichtlinie in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Passwortrichtlinie defines rules for secure passwords.",
-          "explanation": "Passwortrichtlinie defines rules for secure passwords. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Password policy in IT Security & Network Security?",
+          "answer": "Password policy defines rules for secure passwords.",
+          "explanation": "Password policy defines rules for secure passwords. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1463,9 +1551,10 @@
       "explanation": "Geheimhaltungsvereinbarung verpflichtet zum Schutz vertraulicher Informationen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Geheimhaltungsvereinbarung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Geheimhaltungsvereinbarung obligates protection of confidential information.",
-          "explanation": "Geheimhaltungsvereinbarung obligates protection of confidential information. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Non-disclosure agreement in IT Security & Network Security?",
+          "answer": "Non-disclosure agreement obligates protection of confidential information.",
+          "explanation": "Non-disclosure agreement obligates protection of confidential information. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1478,9 +1567,10 @@
       "explanation": "Datenschutz-Folgenabschätzung bewertet hohe Risiken für Rechte betroffener Personen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Datenschutz-Folgenabschätzung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Datenschutz-Folgenabschätzung assesses high risks to data subjects’ rights.",
-          "explanation": "Datenschutz-Folgenabschätzung assesses high risks to data subjects’ rights. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Data protection impact assessment in IT Security & Network Security?",
+          "answer": "Data protection impact assessment assesses high risks to data subjects’ rights.",
+          "explanation": "Data protection impact assessment assesses high risks to data subjects’ rights. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1493,9 +1583,10 @@
       "explanation": "TOM sind technische und organisatorische Maßnahmen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of TOM in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "TOM are technical and organizational measures.",
-          "explanation": "TOM are technical and organizational measures. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of TOMs in IT Security & Network Security?",
+          "answer": "TOMs are technical and organizational measures.",
+          "explanation": "TOMs are technical and organizational measures. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1508,9 +1599,10 @@
       "explanation": "Protokollierung macht sicherheitsrelevante Vorgänge nachvollziehbar. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Protokollierung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Protokollierung makes security-relevant actions traceable.",
-          "explanation": "Protokollierung makes security-relevant actions traceable. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Logging in IT Security & Network Security?",
+          "answer": "Logging makes security-relevant actions traceable.",
+          "explanation": "Logging makes security-relevant actions traceable. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1523,9 +1615,10 @@
       "explanation": "Sicherheitsrichtlinie legt verbindliche Sicherheitsregeln einer Organisation fest. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Sicherheitsrichtlinie in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Sicherheitsrichtlinie defines binding security rules of an organization.",
-          "explanation": "Sicherheitsrichtlinie defines binding security rules of an organization. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Security policy in IT Security & Network Security?",
+          "answer": "Security policy defines binding security rules of an organization.",
+          "explanation": "Security policy defines binding security rules of an organization. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1538,9 +1631,10 @@
       "explanation": "Schwachstellenmanagement erfasst, bewertet und beseitigt Sicherheitslücken. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Schwachstellenmanagement in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Schwachstellenmanagement records, evaluates and remediates vulnerabilities.",
-          "explanation": "Schwachstellenmanagement records, evaluates and remediates vulnerabilities. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Vulnerability management in IT Security & Network Security?",
+          "answer": "Vulnerability management records, evaluates and remediates vulnerabilities.",
+          "explanation": "Vulnerability management records, evaluates and remediates vulnerabilities. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1553,9 +1647,10 @@
       "explanation": "Netzsegmentierung trennt Bereiche zur Begrenzung von Zugriff und Schadensausbreitung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Netzsegmentierung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Netzsegmentierung separates areas to limit access and spread of damage.",
-          "explanation": "Netzsegmentierung separates areas to limit access and spread of damage. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Network segmentation in IT Security & Network Security?",
+          "answer": "Network segmentation separates areas to limit access and spread of damage.",
+          "explanation": "Network segmentation separates areas to limit access and spread of damage. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1568,9 +1663,10 @@
       "explanation": "Mikrosegmentierung setzt sehr feingranulare Sicherheitsgrenzen zwischen Workloads. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of Mikrosegmentierung in IT-Sicherheit & Netzwerksicherheit?",
-          "answer": "Mikrosegmentierung sets fine-grained security boundaries between workloads.",
-          "explanation": "Mikrosegmentierung sets fine-grained security boundaries between workloads. This is a common exam building block because it separates function from use case."
+          "question": "What is the purpose of Microsegmentation in IT Security & Network Security?",
+          "answer": "Microsegmentation sets fine-grained security boundaries between workloads.",
+          "explanation": "Microsegmentation sets fine-grained security boundaries between workloads. This is a common exam building block because it separates function from use case.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1585,7 +1681,8 @@
         "en": {
           "question": "What does defense in depth mean?",
           "answer": "Several coordinated security layers protect a system.",
-          "explanation": "Defense in depth reduces the risk that one failing control immediately causes a full security breach."
+          "explanation": "Defense in depth reduces the risk that one failing control immediately causes a full security breach.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1600,7 +1697,8 @@
         "en": {
           "question": "What is sandboxing?",
           "answer": "Programs are executed in an isolated environment.",
-          "explanation": "Sandboxing limits potential damage if a program is faulty or malicious."
+          "explanation": "Sandboxing limits potential damage if a program is faulty or malicious.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1615,7 +1713,8 @@
         "en": {
           "question": "What is a honeypot?",
           "answer": "An intentionally provided decoy target for observing attacks.",
-          "explanation": "Honeypots help identify attack patterns but should not be treated as the only production protection."
+          "explanation": "Honeypots help identify attack patterns but should not be treated as the only production protection.",
+          "category": "IT Security & Network Security"
         }
       }
     },
@@ -1630,7 +1729,8 @@
         "en": {
           "question": "What does certificate pinning mean?",
           "answer": "An application only accepts expected certificates or public keys.",
-          "explanation": "Pinning can make man-in-the-middle attacks harder but requires proper key and certificate management."
+          "explanation": "Pinning can make man-in-the-middle attacks harder but requires proper key and certificate management.",
+          "category": "IT Security & Network Security"
         }
       }
     }
