@@ -15,6 +15,7 @@ import { exec } from 'child_process';
 import { buildGradingMessages, buildExplainMessages, buildHelpMessages, buildExamGradingMessages } from './prompts.js';
 import { authRouter, sessionMiddleware, authentikConfigured, legacyMigrationEnabled } from './auth.js';
 import { dataRouter } from './data.js';
+import { settingsRouter } from './settings.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = path.join(__dirname, '..');
@@ -29,7 +30,10 @@ const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3849,h
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: ALLOWED_ORIGINS }));
+// credentials:true is only meaningful for the app's own origin; other origins
+// (the account portal) authenticate with a bearer token, which needs the
+// Authorization header allowed through preflight.
+app.use(cors({ origin: ALLOWED_ORIGINS, credentials: true, allowedHeaders: ['Content-Type', 'Authorization'] }));
 
 // Very lightweight per-IP rate limit — not meant to stop a determined
 // attacker, just to keep casual abuse from burning through the Groq quota.
@@ -109,6 +113,9 @@ app.use(authRouter);
 
 // The data API — replaces the client's direct Firestore access.
 app.use(dataRouter);
+
+// Self-describing settings, readable by a central account portal.
+app.use(settingsRouter);
 
 app.get('/api/groq/status', (req, res) => {
   const rateLimited = Date.now() < groqCooldownUntil;

@@ -11,8 +11,23 @@ export interface AppUser {
   email: string;
   gravatarEmail: string;
   hideFromLeaderboard: boolean;
+  uiLang: 'de' | 'en';
+  theme: 'light' | 'dark';
+  focusMode: boolean;
   isAdmin: boolean;
+  deactivatedAt?: string | null;
 }
+
+// Preferences the server owns, so they follow the user across devices. The
+// same values are exposed generically via /api/settings for the account
+// portal — see server/settings.js.
+export type UserSettings = Partial<{
+  gravatarEmail: string;
+  hideFromLeaderboard: boolean;
+  uiLang: 'de' | 'en';
+  theme: 'light' | 'dark';
+  focusMode: boolean;
+}>;
 
 export interface QuestionStat {
   correct: number;
@@ -156,11 +171,29 @@ export const fetchBootstrap = () => req<Bootstrap>('/api/data/bootstrap');
 export const fetchQuizStats = (quizId: string) =>
   req<{ stats: Record<string, QuestionStat> }>(`/api/data/quiz-stats/${encodeURIComponent(quizId)}`);
 
-export const saveProfile = (gravatarEmail: string, hideFromLeaderboard: boolean) =>
-  req<{ ok: true }>('/api/data/profile', {
+// Partial update — only the keys given are touched.
+export const saveSettings = (settings: UserSettings) =>
+  req<{ values: Required<UserSettings> }>('/api/settings', {
     method: 'PATCH',
-    body: JSON.stringify({ gravatarEmail, hideFromLeaderboard })
+    body: JSON.stringify(settings)
   });
+
+export const saveProfile = (gravatarEmail: string, hideFromLeaderboard: boolean) =>
+  saveSettings({ gravatarEmail, hideFromLeaderboard });
+
+// Freezes the account: sign-in is refused and leaderboard entries are removed,
+// but nothing is deleted. Only an admin can undo it.
+export const deactivateAccount = (confirmUsername: string) =>
+  post<{ ok: true; deactivated: true }>('/api/settings/deactivate', { confirm: confirmUsername });
+
+// Irreversible (GDPR Art. 17). Published quizzes survive, but anonymised.
+export const deleteAccount = (confirmUsername: string) =>
+  req<{ ok: true; deleted: true; summary: Record<string, number> }>('/api/settings/account', {
+    method: 'DELETE',
+    body: JSON.stringify({ confirm: confirmUsername })
+  });
+
+export const exportMyDataUrl = '/api/settings/export';
 
 // One call per answered question — the server updates the global tally, the
 // per-quiz tally and the attempt log in a single transaction.

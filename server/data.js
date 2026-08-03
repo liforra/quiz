@@ -272,14 +272,23 @@ dataRouter.get('/api/data/admin/ai-usage', requireAdmin, (req, res) => {
 dataRouter.get('/api/data/admin/users', requireAdmin, (req, res) => {
   res.json({
     users: db.prepare(`
-      SELECT u.uid, u.username, u.email, u.last_login, u.authentik_sub, u.legacy_firebase_uid,
+      SELECT u.uid, u.username, u.email, u.last_login, u.authentik_sub, u.legacy_firebase_uid, u.deactivated_at,
              (SELECT COUNT(*) FROM attempts a WHERE a.uid = u.uid) AS attempt_count
       FROM users u ORDER BY u.username
     `).all().map(r => ({
       uid: r.uid, username: r.username, email: r.email, lastLogin: r.last_login,
-      migrated: !!r.legacy_firebase_uid, linked: !!r.authentik_sub, attemptCount: r.attempt_count
+      migrated: !!r.legacy_firebase_uid, linked: !!r.authentik_sub,
+      deactivatedAt: r.deactivated_at || null, attemptCount: r.attempt_count
     }))
   });
+});
+
+// Undoing a deactivation has to be an admin action: a deactivated user can't
+// sign in, so they can't reach any endpoint of their own to reverse it.
+dataRouter.post('/api/data/admin/users/:uid/reactivate', requireAdmin, (req, res) => {
+  const r = db.prepare('UPDATE users SET deactivated_at = NULL WHERE uid = ?').run(req.params.uid);
+  if (!r.changes) return res.status(404).json({ error: 'not_found' });
+  res.json({ ok: true });
 });
 
 dataRouter.get('/api/data/admin/users/:uid', requireAdmin, (req, res) => {

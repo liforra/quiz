@@ -34,6 +34,10 @@ CREATE TABLE IF NOT EXISTS users (
   hide_from_leaderboard INTEGER NOT NULL DEFAULT 0,
   is_admin              INTEGER NOT NULL DEFAULT 0,
   legacy_firebase_uid   TEXT UNIQUE,       -- set when an old account was migrated
+  ui_lang               TEXT NOT NULL DEFAULT 'de',
+  theme                 TEXT NOT NULL DEFAULT 'dark',
+  focus_mode            INTEGER NOT NULL DEFAULT 0,
+  deactivated_at        TEXT,              -- set = account frozen, no sign-in
   created_at            TEXT NOT NULL,
   last_login            TEXT
 );
@@ -135,6 +139,30 @@ CREATE TABLE IF NOT EXISTS leaderboard_entries (
 CREATE INDEX IF NOT EXISTS idx_lb_entries_uid ON leaderboard_entries(uid);
 `);
 
+// --- Migrations ----------------------------------------------------------
+//
+// CREATE TABLE IF NOT EXISTS does nothing to a table that already exists, so
+// columns added after the first deployment need an explicit ALTER. Keeping
+// this list additive (never renaming or dropping) means an older database
+// catches up on boot and a newer one is a no-op.
+
+function addColumnIfMissing(table, column, definition) {
+  const existing = db.prepare(`PRAGMA table_info(${table})`).all().map(c => c.name);
+  if (existing.includes(column)) return false;
+  db.exec(`ALTER TABLE ${table} ADD COLUMN ${column} ${definition}`);
+  console.log(`Migrated: ${table}.${column} added`);
+  return true;
+}
+
+for (const [column, definition] of [
+  ['ui_lang', "TEXT NOT NULL DEFAULT 'de'"],
+  ['theme', "TEXT NOT NULL DEFAULT 'dark'"],
+  ['focus_mode', 'INTEGER NOT NULL DEFAULT 0'],
+  ['deactivated_at', 'TEXT']
+]) {
+  addColumnIfMissing('users', column, definition);
+}
+
 // --- Row <-> API shape helpers -------------------------------------------
 //
 // The client still speaks the Firestore-ish camelCase shape, so the mapping
@@ -146,7 +174,11 @@ export const toUser = (r) => r && ({
   email: r.email || '',
   gravatarEmail: r.gravatar_email || '',
   hideFromLeaderboard: !!r.hide_from_leaderboard,
+  uiLang: r.ui_lang || 'de',
+  theme: r.theme || 'dark',
+  focusMode: !!r.focus_mode,
   isAdmin: !!r.is_admin,
+  deactivatedAt: r.deactivated_at || null,
   lastLogin: r.last_login
 });
 

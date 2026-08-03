@@ -79,21 +79,61 @@ function setSessionCookie(res, id) {
   });
 }
 
-// Resolves the session cookie to a user row. Attached to every request so
-// routes can just read req.user.
-export function sessionMiddleware(req, res, next) {
+// Access tokens are verified by asking Authentik's userinfo endpoint, the
+// same way the login callback does — no JWT library, and revocation takes
+// effect immediately. Verified subjects are cached briefly so a portal
+// rendering several settings screens doesn't cause a round trip per request.
+const tokenCache = new Map();
+const TOKEN_CACHE_MS = 60_000;
+
+async function subjectForToken(token) {
+  const hit = tokenCache.get(token);
+  if (hit && Date.now() < hit.expiresAt) return hit.sub;
+  try {
+    const { userinfo_endpoint } = await discover();
+    const res = await fetch(userinfo_endpoint, { headers: { Authorization: `Bearer ${token}` } });
+    if (!res.ok) return null;
+    const { sub } = await res.json();
+    if (!sub) return null;
+    tokenCache.set(token, { sub, expiresAt: Date.now() + TOKEN_CACHE_MS });
+    return sub;
+  } catch (e) {
+    console.error('Token validation failed', e.message);
+    return null;
+  }
+}
+setInterval(() => {
+  const now = Date.now();
+  for (const [k, v] of tokenCache) if (now > v.expiresAt) tokenCache.delete(k);
+}, 5 * 60_000).unref?.();
+
+// Resolves the caller to a user row. Two ways in: the session cookie for this
+// app's own frontend, and an Authentik access token for other origins (the
+// account portal). Cookies are same-origin only — SameSite=Lax is what stops
+// a foreign page from making authenticated requests, so cross-origin callers
+// deliberately use a bearer token instead of relaxing that.
+export async function sessionMiddleware(req, res, next) {
   req.user = null;
+
   const id = readCookie(req, SESSION_COOKIE);
   if (id) {
     const row = db.prepare(`
       SELECT u.* FROM sessions s JOIN users u ON u.uid = s.uid
-      WHERE s.id = ? AND s.expires_at > ?
+      WHERE s.id = ? AND s.expires_at > ? AND u.deactivated_at IS NULL
     `).get(id, Date.now());
     if (row) {
       req.user = row;
       req.sessionId = id;
-    } else {
-      db.prepare('DELETE FROM sessions WHERE id = ?').run(id);
+      return next();
+    }
+    db.prepare('DELETE FROM sessions WHERE id = ?').run(id);
+  }
+
+  const auth = req.headers.authorization || '';
+  if (auth.startsWith('Bearer ') && authentikConfigured) {
+    const sub = await subjectForToken(auth.slice(7).trim());
+    if (sub) {
+      req.user = db.prepare('SELECT * FROM users WHERE authentik_sub = ? AND deactivated_at IS NULL').get(sub) || null;
     }
   }
   next();
@@ -140,6 +180,7 @@ function resolveUser(profile, legacyUid) {
 
   const existing = db.prepare('SELECT * FROM users WHERE authentik_sub = ?').get(profile.sub);
   if (existing) {
+    if (existing.deactivated_at) throw Object.assign(new Error('account_deactivated'), { code: 'account_deactivated' });
     if (legacyUid && legacyUid !== existing.uid) throw Object.assign(new Error('already_linked'), { code: 'already_linked' });
     db.prepare('UPDATE users SET username = ?, email = ?, is_admin = ?, last_login = ? WHERE uid = ?')
       .run(username, email, isAdmin, nowIso(), existing.uid);
@@ -395,7 +436,7 @@ authRouter.get('/api/auth/authentik/callback', async (req, res) => {
     res.redirect('/');
   } catch (e) {
     console.error('Authentik callback failed', e);
-    const known = ['already_linked', 'account_has_other_identity', 'legacy_account_not_imported'];
+    const known = ['already_linked', 'account_has_other_identity', 'legacy_account_not_imported', 'account_deactivated'];
     fail(known.includes(e.code) ? e.code : 'callback_failed');
   }
 });

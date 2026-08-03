@@ -88,7 +88,15 @@ function hashQuizIds(ids: string[]): string {
 
 export default function App() {
   // --- STATE ---
-  const [theme, setTheme] = useState('dark');
+  const [theme, setThemeState] = useState(() => localStorage.getItem('quiz_theme') || 'dark');
+  const setTheme = (next) => {
+    setThemeState(prev => {
+      const value = typeof next === 'function' ? next(prev) : next;
+      localStorage.setItem('quiz_theme', value);
+      api.saveSettings({ theme: value }).catch(e => console.error('Could not save theme', e));
+      return value;
+    });
+  };
   const [view, setView] = useState('auth'); // auth, dashboard, playing, results
   // The signed-in user, or null. There is no separate "auth user" object any
   // more — the session cookie is the whole story, and this is what the server
@@ -111,9 +119,13 @@ export default function App() {
     if (mode) localStorage.setItem('quiz_active_mode', mode);
     else localStorage.removeItem('quiz_active_mode');
   };
+  // Preferences live on the server so they follow the user to another device;
+  // localStorage stays as a cache so the first paint doesn't flash the default
+  // before /api/data/bootstrap answers.
   const setUiLang = (lang: Lang) => {
     setUiLangState(lang);
     localStorage.setItem('quiz_ui_lang', lang);
+    api.saveSettings({ uiLang: lang }).catch(e => console.error('Could not save language', e));
   };
 
   // Library Data
@@ -438,10 +450,15 @@ export default function App() {
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev);
 
   // Focus Mode State (hides nav chrome while playing)
-  const [focusMode, setFocusMode] = useState(() => localStorage.getItem('focusMode') === 'true');
-  useEffect(() => {
-    localStorage.setItem('focusMode', String(focusMode));
-  }, [focusMode]);
+  const [focusMode, setFocusModeState] = useState(() => localStorage.getItem('focusMode') === 'true');
+  const setFocusMode = (next) => {
+    setFocusModeState(prev => {
+      const value = typeof next === 'function' ? next(prev) : next;
+      localStorage.setItem('focusMode', String(value));
+      api.saveSettings({ focusMode: value }).catch(e => console.error('Could not save focus mode', e));
+      return value;
+    });
+  };
   const isFocused = focusMode && view === 'playing';
   // Shrink focus-mode sizing as the number of options grows, so a long
   // multi-select question never needs the page to scroll to see every option.
@@ -453,6 +470,15 @@ export default function App() {
     return 'roomy';
   }, [isFocused, displayQ]);
 
+
+  // The server is the source of truth for preferences; localStorage only
+  // bridges the gap until the first response arrives.
+  const applyServerPreferences = (u: api.AppUser) => {
+    if (u.uiLang) { setUiLangState(u.uiLang); localStorage.setItem('quiz_ui_lang', u.uiLang); }
+    if (u.theme) { setThemeState(u.theme); localStorage.setItem('quiz_theme', u.theme); }
+    setFocusModeState(!!u.focusMode);
+    localStorage.setItem('focusMode', String(!!u.focusMode));
+  };
 
   // Turns a leftover Firebase session into a migration ticket, no password
   // needed. Failure is silent on purpose: the user simply sees the normal
@@ -526,6 +552,7 @@ export default function App() {
     try {
       const data = await api.fetchBootstrap();
       setAppUser(data.user);
+      applyServerPreferences(data.user);
       setGlobalStats(data.stats);
       setAttempts(data.attempts);
       setPrivateQuizzes(data.privateQuizzes);
