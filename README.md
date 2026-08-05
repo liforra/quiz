@@ -135,6 +135,18 @@ layer instead, pointing at wherever `server/index.js` runs.
   questions land under "Unknown" instead of disappearing), a "best category"
   callout, and an accuracy-over-time trend chart, filterable by category.
   Admins see the same panel for any selected user.
+- **Logbuch / activity log** — sidebar → "Logbuch". Records when each quiz or
+  exam session was started and finished, with duration and score, grouped by
+  day with per-day and all-time totals — meant to be shown to someone else as
+  evidence that you practiced. Timestamps are written by the server, and a
+  client-supplied start time is rejected if it lies in the future (durations
+  are capped at 24h), so the record can't be backdated from a patched client.
+  Tracking is **opt-out** (checkbox on the page, also exposed to the account
+  portal as `logActivity`); turning it off stops new entries but keeps existing
+  ones — clearing the log is a separate, explicit button. The log is entirely
+  separate from the per-question `attempts` data, so deleting it costs no
+  statistics. Exportable as CSV (semicolon-separated, BOM, opens in German
+  Excel) and included in the GDPR JSON export.
 - **AI features** (optional, needs `GROQ_API_KEY`) — AI-graded free-text
   answers, a per-answer "explain why" popover, and a "Help?" chat that
   clarifies the question without ever revealing the answer (enforced by a

@@ -79,6 +79,21 @@ const FIELDS = [
       en: 'Hides the sidebar and enlarges the question.'
     },
     coerce: (v) => (v ? 1 : 0)
+  },
+  {
+    key: 'logActivity',
+    column: 'log_activity',
+    type: 'boolean',
+    label: { de: 'Lernzeiten aufzeichnen', en: 'Record study times' },
+    help: {
+      // Turning it off stops new rows but keeps the old ones on purpose: the
+      // log exists to be shown to someone, and a toggle that silently erased
+      // months of evidence would be the worst possible failure mode. Clearing
+      // it is a separate, explicit action in the app.
+      de: 'Hält fest, wann du ein Quiz startest und beendest — als Nachweis deiner Lernzeiten. Ausschalten stoppt neue Einträge; bestehende bleiben, bis du sie löschst.',
+      en: 'Records when you start and finish a quiz, as evidence of your study time. Turning it off stops new entries; existing ones stay until you delete them.'
+    },
+    coerce: (v) => (v ? 1 : 0)
   }
 ];
 
@@ -175,6 +190,7 @@ settingsRouter.get('/api/settings/export', requireAuth, (req, res) => {
     settings: readValues(req.user),
     questionStats: all('SELECT quiz_id, question_id, correct, wrong, last_played FROM question_stats WHERE uid = ?'),
     attempts: all('SELECT question_id, category, correct, skipped, quiz_id, timestamp FROM attempts WHERE uid = ?'),
+    activityLog: all('SELECT kind, title, quiz_id, question_count, score, total, duration_seconds, started_at, timestamp FROM activity_log WHERE uid = ?'),
     quizzes: all('SELECT id, scope, title, icon, modes, questions, created_at FROM quizzes WHERE owner_uid = ?'),
     customModes: all('SELECT id, label, icon, created_at FROM custom_modes WHERE uid = ?'),
     leaderboardEntries: all('SELECT quiz_id, best_score, best_total, best_percentage, best_time_seconds, last_played FROM leaderboard_entries WHERE uid = ?'),
@@ -230,6 +246,7 @@ settingsRouter.delete('/api/settings/account', requireAuth, (req, res) => {
       ['privateQuizzes', "DELETE FROM quizzes WHERE owner_uid = ? AND scope = 'private'"],
       ['questionStats', 'DELETE FROM question_stats WHERE uid = ?'],
       ['attempts', 'DELETE FROM attempts WHERE uid = ?'],
+      ['activityLog', 'DELETE FROM activity_log WHERE uid = ?'],
       ['customModes', 'DELETE FROM custom_modes WHERE uid = ?'],
       ['leaderboardEntries', 'DELETE FROM leaderboard_entries WHERE uid = ?'],
       ['aiUsage', 'DELETE FROM ai_usage WHERE uid = ?'],

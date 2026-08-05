@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS users (
   ui_lang               TEXT NOT NULL DEFAULT 'de',
   theme                 TEXT NOT NULL DEFAULT 'dark',
   focus_mode            INTEGER NOT NULL DEFAULT 0,
+  log_activity          INTEGER NOT NULL DEFAULT 1,  -- opt-out: writes the activity log below
   deactivated_at        TEXT,              -- set = account frozen, no sign-in
   created_at            TEXT NOT NULL,
   last_login            TEXT
@@ -85,6 +86,30 @@ CREATE INDEX IF NOT EXISTS idx_attempts_uid_ts ON attempts(uid, timestamp);
 -- Private and public quizzes were two collections in Firestore; here they
 -- differ only by scope. owner_uid stays set for public quizzes too, so an
 -- author can still edit/delete what they published.
+-- Session-level activity log ("when did I actually work?"), as opposed to the
+-- per-question attempts table above, which answers "what do I know?".
+-- Separate on purpose: attempts are the learning data the whole app is built
+-- on and can't be switched off, while this is a plain time record the user
+-- opts out of (users.log_activity) and may clear at any point without losing
+-- a single statistic.
+--
+-- started_at/ended_at are both stored: a finish row's ended_at is the server's
+-- clock, so the record isn't just what a browser claimed.
+CREATE TABLE IF NOT EXISTS activity_log (
+  id               INTEGER PRIMARY KEY AUTOINCREMENT,
+  uid              TEXT NOT NULL REFERENCES users(uid) ON DELETE CASCADE,
+  kind             TEXT NOT NULL,   -- quiz_start | quiz_finish | exam_start | exam_finish
+  title            TEXT NOT NULL DEFAULT '',
+  quiz_id          TEXT,
+  question_count   INTEGER,
+  score            INTEGER,
+  total            INTEGER,
+  duration_seconds INTEGER,
+  started_at       TEXT,            -- finish rows: when the matching start row was written
+  timestamp        TEXT NOT NULL    -- server clock, always
+);
+CREATE INDEX IF NOT EXISTS idx_activity_uid_ts ON activity_log(uid, timestamp);
+
 CREATE TABLE IF NOT EXISTS quizzes (
   id         TEXT PRIMARY KEY,
   scope      TEXT NOT NULL CHECK (scope IN ('private', 'public')),
@@ -158,7 +183,8 @@ for (const [column, definition] of [
   ['ui_lang', "TEXT NOT NULL DEFAULT 'de'"],
   ['theme', "TEXT NOT NULL DEFAULT 'dark'"],
   ['focus_mode', 'INTEGER NOT NULL DEFAULT 0'],
-  ['deactivated_at', 'TEXT']
+  ['deactivated_at', 'TEXT'],
+  ['log_activity', 'INTEGER NOT NULL DEFAULT 1']
 ]) {
   addColumnIfMissing('users', column, definition);
 }
@@ -177,6 +203,7 @@ export const toUser = (r) => r && ({
   uiLang: r.ui_lang || 'de',
   theme: r.theme || 'dark',
   focusMode: !!r.focus_mode,
+  logActivity: !!r.log_activity,
   isAdmin: !!r.is_admin,
   deactivatedAt: r.deactivated_at || null,
   lastLogin: r.last_login
@@ -191,6 +218,19 @@ export const toQuiz = (r) => r && ({
   author: r.author,
   authorId: r.owner_uid,
   createdAt: r.created_at
+});
+
+export const toActivity = (r) => r && ({
+  id: r.id,
+  kind: r.kind,
+  title: r.title,
+  quizId: r.quiz_id,
+  questionCount: r.question_count,
+  score: r.score,
+  total: r.total,
+  durationSeconds: r.duration_seconds,
+  startedAt: r.started_at,
+  timestamp: r.timestamp
 });
 
 export const toEntry = (r) => r && ({

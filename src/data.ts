@@ -14,6 +14,7 @@ export interface AppUser {
   uiLang: 'de' | 'en';
   theme: 'light' | 'dark';
   focusMode: boolean;
+  logActivity: boolean;
   isAdmin: boolean;
   deactivatedAt?: string | null;
 }
@@ -27,6 +28,7 @@ export type UserSettings = Partial<{
   uiLang: 'de' | 'en';
   theme: 'light' | 'dark';
   focusMode: boolean;
+  logActivity: boolean;
 }>;
 
 export interface QuestionStat {
@@ -200,6 +202,45 @@ export const exportMyDataUrl = '/api/settings/export';
 export const recordAnswer = (a: {
   questionId: string; quizId: string | null; category: string; correct: boolean; skipped: boolean;
 }) => post<{ ok: true }>('/api/data/answer', a);
+
+// --- Activity log ---
+//
+// "When did I work?", separate from the per-question stats. The server stamps
+// the time and silently drops the event when the user has logging off, so
+// callers here can fire and forget.
+
+export type ActivityKind = 'quiz_start' | 'quiz_finish' | 'exam_start' | 'exam_finish';
+
+export interface ActivityEntry {
+  id: number;
+  kind: ActivityKind;
+  title: string;
+  quizId: string | null;
+  questionCount: number | null;
+  score: number | null;
+  total: number | null;
+  durationSeconds: number | null;
+  startedAt: string | null;
+  timestamp: string;
+}
+
+// Never rejects: a failed log write must not interrupt a quiz that is
+// otherwise fine, and the user finds out it's empty by looking at the page.
+export const logActivity = (e: {
+  kind: ActivityKind; title: string; quizId?: string | null; questionCount?: number | null;
+  score?: number | null; total?: number | null; durationSeconds?: number | null; startedAt?: string | null;
+}) => post<{ ok: true; id?: number }>('/api/data/activity', e).catch(err => {
+  console.error('Could not write the activity log', err);
+  return { ok: true as const };
+});
+
+export const fetchActivity = (limit = 200) =>
+  req<{ enabled: boolean; total: number; entries: ActivityEntry[] }>(`/api/data/activity?limit=${limit}`);
+
+export const clearActivity = () =>
+  req<{ ok: true; deleted: number }>('/api/data/activity', { method: 'DELETE' });
+
+export const activityCsvUrl = '/api/data/activity/export.csv';
 
 export const createQuiz = (q: {
   scope: 'private' | 'public'; title: string; icon: string; modes: string[]; questions: any[];

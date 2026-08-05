@@ -132,6 +132,7 @@ export default function Sidebar({
     { id: 'exams', label: t(uiLang, 'apExams'), icon: FileEdit },
     { id: 'stats', label: t(uiLang, 'statistics'), icon: BarChart2 },
     { id: 'leaderboards', label: t(uiLang, 'leaderboards'), icon: Trophy },
+    { id: 'logs', label: t(uiLang, 'logs'), icon: History },
     { id: 'results', label: t(uiLang, 'lastResults'), icon: Award, condition: view === 'results' },
     { id: 'admin', label: t(uiLang, 'adminPanel'), icon: Shield, condition: !!appUser?.isAdmin },
   ];

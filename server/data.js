@@ -12,7 +12,7 @@
 
 import express from 'express';
 import crypto from 'crypto';
-import { db, toUser, toQuiz, toEntry } from './db.js';
+import { db, toUser, toQuiz, toEntry, toActivity } from './db.js';
 import { requireAuth, requireAdmin } from './auth.js';
 
 export const dataRouter = express.Router();
@@ -105,6 +105,91 @@ dataRouter.post('/api/data/answer', requireAuth, (req, res) => {
     return res.status(500).json({ error: 'write_failed' });
   }
   res.json({ ok: true });
+});
+
+// --- Activity log --------------------------------------------------------
+//
+// A record of *when* the user worked (sessions started/finished, how long,
+// what), meant to be shown to someone else as evidence of practice time.
+// Deliberately separate from `attempts`: this one is opt-out and clearable,
+// and dropping it costs no learning data.
+//
+// Timestamps come from the server clock, never the request body — a log the
+// client could backdate would prove nothing. The client only supplies what it
+// alone knows (which quiz, how many questions, the score).
+
+const ACTIVITY_KINDS = new Set(['quiz_start', 'quiz_finish', 'exam_start', 'exam_finish']);
+const MAX_ACTIVITY_LIMIT = 1000;
+
+// Clamps a client-supplied number into a sane range, or null if absent.
+const optInt = (v, max) => (Number.isFinite(Number(v)) ? Math.max(0, Math.min(max, Math.round(Number(v)))) : null);
+
+dataRouter.post('/api/data/activity', requireAuth, (req, res) => {
+  // The opt-out is enforced here, not just in the UI, so a stale tab that
+  // still thinks tracking is on can't keep writing rows after it was turned off.
+  if (!req.user.log_activity) return res.json({ ok: true, skipped: 'logging_disabled' });
+
+  const { kind, title, quizId, questionCount, score, total, durationSeconds, startedAt } = req.body || {};
+  if (!ACTIVITY_KINDS.has(kind)) return res.status(400).json({ error: 'bad_kind' });
+
+  // A client-supplied startedAt is only accepted as an ISO string that isn't
+  // in the future; anything else falls back to "unknown" rather than being
+  // trusted. 24h caps the duration so a tab left open overnight can't book
+  // itself a day of work.
+  let started = null;
+  if (typeof startedAt === 'string') {
+    const ms = Date.parse(startedAt);
+    if (Number.isFinite(ms) && ms <= Date.now()) started = new Date(ms).toISOString();
+  }
+
+  const info = db.prepare(`
+    INSERT INTO activity_log (uid, kind, title, quiz_id, question_count, score, total, duration_seconds, started_at, timestamp)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `).run(
+    req.user.uid, kind, String(title || '').slice(0, 200), quizId ? String(quizId) : null,
+    optInt(questionCount, 10_000), optInt(score, 10_000), optInt(total, 10_000),
+    optInt(durationSeconds, 24 * 3600), started, nowIso()
+  );
+  res.json({ ok: true, id: Number(info.lastInsertRowid) });
+});
+
+const readActivity = (uid, limit) =>
+  db.prepare('SELECT * FROM activity_log WHERE uid = ? ORDER BY timestamp DESC, id DESC LIMIT ?')
+    .all(uid, limit)
+    .map(toActivity);
+
+dataRouter.get('/api/data/activity', requireAuth, (req, res) => {
+  const limit = Math.max(1, Math.min(MAX_ACTIVITY_LIMIT, Number(req.query.limit) || 200));
+  res.json({
+    enabled: !!req.user.log_activity,
+    total: db.prepare('SELECT COUNT(*) AS n FROM activity_log WHERE uid = ?').get(req.user.uid).n,
+    entries: readActivity(req.user.uid, limit)
+  });
+});
+
+// A CSV is what actually gets handed to somebody (or opened in Excel) as
+// proof — the JSON export at /api/settings/export is for taking your data
+// with you, which is a different job.
+dataRouter.get('/api/data/activity/export.csv', requireAuth, (req, res) => {
+  const rows = readActivity(req.user.uid, MAX_ACTIVITY_LIMIT);
+  const escape = (v) => {
+    const s = v == null ? '' : String(v);
+    return /[";\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  // Semicolon-separated: German Excel splits on ';' by default, and a
+  // comma-separated file would land in a single column there.
+  const lines = [['timestamp', 'kind', 'title', 'started_at', 'duration_seconds', 'score', 'total', 'questions'].join(';')];
+  for (const r of rows.slice().reverse()) {
+    lines.push([r.timestamp, r.kind, r.title, r.startedAt, r.durationSeconds, r.score, r.total, r.questionCount].map(escape).join(';'));
+  }
+  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+  res.setHeader('Content-Disposition', `attachment; filename="quiz-logbuch-${req.user.username}.csv"`);
+  res.send('﻿' + lines.join('\n')); // BOM so Excel reads the umlauts as UTF-8
+});
+
+dataRouter.delete('/api/data/activity', requireAuth, (req, res) => {
+  const { changes } = db.prepare('DELETE FROM activity_log WHERE uid = ?').run(req.user.uid);
+  res.json({ ok: true, deleted: changes });
 });
 
 // --- Quizzes -------------------------------------------------------------

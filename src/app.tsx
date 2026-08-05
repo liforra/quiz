@@ -22,6 +22,7 @@ import ExamsHub from './components/ExamsHub';
 import ExamTaking, { ExamAnswers } from './components/ExamTaking';
 import ExamResults, { ExamGrading } from './components/ExamResults';
 import AdminExamSources from './components/AdminExamSources';
+import ActivityLog from './components/ActivityLog';
 import { exportExamToPdf, downloadPdfBlob } from './examPdfExport';
 import { computeCategoryBreakdown, pickBestCategory } from './stats';
 
@@ -151,13 +152,26 @@ export default function App() {
   // tasks with mixed choice/number/text parts and real point values).
   const [activeExam, setActiveExam] = useState<Exam | null>(null);
   const [examAnswers, setExamAnswers] = useState<ExamAnswers>({});
+  // Wall-clock start of the running exam, for the logbook's duration (exams
+  // have no leaderboard, so nothing else was tracking this).
+  const examStartTimeRef = useRef<number | null>(null);
   const startExam = (exam: Exam) => {
     setActiveExam(exam);
     setExamAnswers({});
+    examStartTimeRef.current = Date.now();
+    logSession({ kind: 'exam_start', title: exam.title, quizId: exam.id });
     setView('examTaking');
   };
   const submitExam = (answers: ExamAnswers) => {
     setExamAnswers(answers);
+    const startedAtMs = examStartTimeRef.current;
+    logSession({
+      kind: 'exam_finish',
+      title: activeExam?.title || 'Exam',
+      quizId: activeExam?.id ?? null,
+      durationSeconds: startedAtMs ? Math.round((Date.now() - startedAtMs) / 1000) : null,
+      startedAt: startedAtMs ? new Date(startedAtMs).toISOString() : null
+    });
     setView('examResults');
   };
   const exportExamPdf = async (grading: ExamGrading) => {
@@ -276,6 +290,10 @@ export default function App() {
   // tiebreaker — set once in generateSmartSession, read once when the last
   // question is answered.
   const quizStartTimeRef = useRef<number | null>(null);
+  // Guards the "session finished" log entry: a session can end in two places
+  // (last question answered, or the quiz timer running out), and the results
+  // view can re-render freely — this makes sure exactly one row is written.
+  const sessionLoggedRef = useRef(false);
   // Lazily constructed so the browser doesn't fetch a sound until it's
   // actually needed, and reused (via .currentTime reset) on replay so
   // rapid-fire answers don't get cut off by a still-playing instance.
@@ -459,6 +477,21 @@ export default function App() {
       return value;
     });
   };
+  // Activity logging ("Logbuch") — records *when* a session ran, so the user
+  // can show someone that they practiced. Opt-out, and off means the events
+  // aren't even sent (the server drops them too, for stale tabs).
+  const [logActivityEnabled, setLogActivityEnabledState] = useState(() => localStorage.getItem('logActivity') !== 'false');
+  const setLogActivityEnabled = (value: boolean) => {
+    setLogActivityEnabledState(value);
+    localStorage.setItem('logActivity', String(value));
+    api.saveSettings({ logActivity: value }).catch(e => console.error('Could not save activity logging', e));
+  };
+  // Fire-and-forget: a session must never fail because its log entry did.
+  const logSession = useCallback((event: Parameters<typeof api.logActivity>[0]) => {
+    if (!logActivityEnabled) return;
+    api.logActivity(event);
+  }, [logActivityEnabled]);
+
   const isFocused = focusMode && view === 'playing';
   // Shrink focus-mode sizing as the number of options grows, so a long
   // multi-select question never needs the page to scroll to see every option.
@@ -478,6 +511,8 @@ export default function App() {
     if (u.theme) { setThemeState(u.theme); localStorage.setItem('quiz_theme', u.theme); }
     setFocusModeState(!!u.focusMode);
     localStorage.setItem('focusMode', String(!!u.focusMode));
+    setLogActivityEnabledState(!!u.logActivity);
+    localStorage.setItem('logActivity', String(!!u.logActivity));
   };
 
   // Turns a leftover Firebase session into a migration ticket, no password
@@ -738,6 +773,26 @@ export default function App() {
   useEffect(() => {
     advancingRef.current = false;
   }, [currentQuestionIndex]);
+
+  // --- LOGBOOK: SESSION FINISHED ---
+  // Hooked to the results view rather than to handleNext, because a session
+  // also ends when the quiz timer expires — both paths land here, and the ref
+  // guard keeps it to one entry per session.
+  useEffect(() => {
+    if (view !== 'results' || sessionLoggedRef.current || sessionQueue.length === 0) return;
+    sessionLoggedRef.current = true;
+    const startedAtMs = quizStartTimeRef.current;
+    logSession({
+      kind: 'quiz_finish',
+      title: currentQuizTitle || t(uiLang, 'quickTest'),
+      quizId: currentQuizId,
+      questionCount: sessionQueue.length,
+      score: sessionScore,
+      total: sessionQueue.length,
+      durationSeconds: startedAtMs ? Math.round((Date.now() - startedAtMs) / 1000) : null,
+      startedAt: startedAtMs ? new Date(startedAtMs).toISOString() : null
+    });
+  }, [view, sessionQueue.length, sessionScore, currentQuizId, currentQuizTitle, uiLang, logSession]);
 
   // --- CUSTOM QUIZ: 3-2-1-GO COUNTDOWN ---
   // Drives the pre-game overlay for a timed custom quiz. Steps are timed to
@@ -1228,6 +1283,13 @@ export default function App() {
     setError('');
     setActiveTimer(timerConfig);
     quizStartTimeRef.current = Date.now();
+    sessionLoggedRef.current = false;
+    logSession({
+      kind: 'quiz_start',
+      title: quizTitle || t(uiLang, 'quickTest'),
+      quizId,
+      questionCount: finalQueue.length
+    });
     // A configured timer needs its 3-2-1-GO countdown to play first; plain
     // sessions (no timer) skip straight to the question view as before.
     setView(timerConfig ? 'countdown' : 'playing');
@@ -2247,6 +2309,16 @@ export default function App() {
               uiLang={uiLang}
               onExit={() => setView('exams')}
               onExportPdf={exportExamPdf}
+            />
+          )}
+
+          {/* --- VIEW: LOGBOOK --- */}
+          {view === 'logs' && (
+            <ActivityLog
+              uiLang={uiLang}
+              onBack={() => setView('dashboard')}
+              logActivity={logActivityEnabled}
+              setLogActivity={setLogActivityEnabled}
             />
           )}
 
