@@ -1,1733 +1,2817 @@
 {
   "questions": [
     {
-      "id": "ap1-swe-q01",
+      "id": "ap1-swe-r01",
       "type": "single",
       "category": "Softwareentwicklung",
-      "question": "Welcher Datentyp eignet sich für die Speicherung eines Wahrheitswertes (wahr/falsch)?",
+      "question": "Ein Programm soll speichern, ob ein Kunde zugestimmt hat. Welcher Datentyp passt?",
       "options": [
         "boolean",
         "integer",
-        "float",
-        "string"
+        "string mit fester Zeichenlänge",
+        "float mit doppelter Genauigkeit"
       ],
       "answer": "boolean",
-      "explanation": "Ein boolean kennt genau zwei Zustände: true und false. Integer speichert Ganzzahlen, float Gleitkommazahlen, string Zeichenketten.",
+      "explanation": "Ein boolean kennt genau die beiden Zustände true und false und bildet eine Ja-Nein-Entscheidung exakt ab. Zahlen oder Texte dafür zu missbrauchen macht den Code unnötig fehleranfällig.",
       "translations": {
         "en": {
-          "question": "Which data type is suitable for storing a truth value (true/false)?",
+          "question": "A program needs to store whether a customer has agreed. Which data type fits?",
           "options": [
             "boolean",
             "integer",
-            "float",
-            "string"
+            "string with a fixed character length",
+            "float with double precision"
           ],
           "answer": "boolean",
-          "explanation": "A boolean has exactly two states: true and false. Integer stores whole numbers, float stores floating-point numbers, string stores text.",
+          "explanation": "A boolean knows exactly the two states true and false and models a yes-no decision precisely. Misusing numbers or text for it makes the code needlessly error-prone.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q02",
+      "id": "ap1-swe-r02",
       "type": "single",
       "category": "Softwareentwicklung",
-      "question": "Welchen dezimalen Wert hat die Binärzahl 1101?",
+      "question": "Welche Schleifenart durchläuft ihren Rumpf garantiert mindestens einmal?",
       "options": [
-        "11",
-        "12",
-        "13",
-        "14"
+        "Die fußgesteuerte do-while-Schleife",
+        "Die kopfgesteuerte while-Schleife",
+        "Die Zählschleife mit Startwert über dem Endwert",
+        "Keine, denn jede Schleife lässt sich überspringen"
       ],
-      "answer": "13",
-      "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Stellenwerte von rechts: 1, 2, 4, 8.",
+      "answer": "Die fußgesteuerte do-while-Schleife",
+      "explanation": "Bei der fußgesteuerten Schleife steht die Bedingung nach dem Rumpf, der Rumpf läuft also vor der ersten Prüfung. Kopfgesteuerte Schleifen prüfen zuerst und können komplett übersprungen werden.",
       "translations": {
         "en": {
-          "question": "What is the decimal value of the binary number 1101?",
+          "question": "Which kind of loop is guaranteed to run its body at least once?",
           "options": [
-            "11",
-            "12",
-            "13",
-            "14"
+            "The foot-controlled do-while loop",
+            "The head-controlled while loop",
+            "The counting loop with start above end value",
+            "None, since every loop can be skipped entirely"
           ],
-          "answer": "13",
-          "explanation": "1101₂ = 1×8 + 1×4 + 0×2 + 1×1 = 8 + 4 + 0 + 1 = 13. Place values from the right: 1, 2, 4, 8.",
+          "answer": "The foot-controlled do-while loop",
+          "explanation": "In a foot-controlled loop the condition sits after the body, so the body runs before the first check. Head-controlled loops check first and can be skipped completely.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q03",
+      "id": "ap1-swe-r03",
       "type": "single",
       "category": "Softwareentwicklung",
-      "question": "Welche Schleifenart wird in jedem Fall mindestens einmal durchlaufen?",
+      "question": "Ein Programm lässt sich nicht übersetzen, weil ein Semikolon fehlt. Um welche Fehlerart handelt es sich?",
       "options": [
-        "Fußgesteuerte Schleife (do-while)",
-        "Kopfgesteuerte Schleife (while)",
-        "Zählschleife mit Startwert größer als Endwert",
-        "Keine — jede Schleife kann übersprungen werden"
+        "Syntaxfehler",
+        "Laufzeitfehler",
+        "Logischer Fehler",
+        "Fehler in der Programmdokumentation"
       ],
-      "answer": "Fußgesteuerte Schleife (do-while)",
-      "explanation": "Bei der fußgesteuerten Schleife wird die Bedingung erst NACH dem Schleifenkörper geprüft — der Körper läuft also mindestens einmal. Die while-Schleife prüft vorher.",
+      "answer": "Syntaxfehler",
+      "explanation": "Syntaxfehler verstoßen gegen die Sprachregeln und fallen schon beim Übersetzen auf. Laufzeitfehler treten erst bei der Ausführung auf, logische Fehler liefern lauffähigen, aber falschen Code.",
       "translations": {
         "en": {
-          "question": "Which type of loop is always executed at least once?",
+          "question": "A program will not compile because a semicolon is missing. Which kind of error is this?",
           "options": [
-            "Exit-controlled loop (do-while)",
-            "Entry-controlled loop (while)",
-            "Counting loop with a start value greater than the end value",
-            "None — every loop can be skipped"
+            "Syntax error",
+            "Runtime error",
+            "Logical error",
+            "Error in the program documentation"
           ],
-          "answer": "Exit-controlled loop (do-while)",
-          "explanation": "In an exit-controlled loop the condition is checked AFTER the loop body — so the body runs at least once. A while loop checks beforehand.",
+          "answer": "Syntax error",
+          "explanation": "Syntax errors violate the language rules and show up during compilation. Runtime errors appear only during execution, logical errors produce running but wrong code.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q04",
+      "id": "ap1-swe-r04",
       "type": "single",
       "category": "Softwareentwicklung",
-      "question": "Wie viele verschiedene Werte lassen sich mit einem Byte darstellen?",
+      "question": "Ein Programm läuft durch, berechnet aber durchweg falsche Summen. Welche Fehlerart liegt vor?",
       "options": [
-        "8",
-        "64",
-        "255",
-        "256"
+        "Ein logischer Fehler im Algorithmus",
+        "Ein Syntaxfehler in der Quelldatei",
+        "Ein Fehler beim Übersetzen des Programms",
+        "Ein Fehler in der eingesetzten Entwicklungsumgebung"
       ],
-      "answer": "256",
-      "explanation": "1 Byte = 8 Bit → 2⁸ = 256 verschiedene Werte (z. B. 0 bis 255). Beliebte Falle: 255 ist der höchste Wert, nicht die Anzahl.",
+      "answer": "Ein logischer Fehler im Algorithmus",
+      "explanation": "Ein logischer Fehler ist sprachlich korrekt, bildet aber die Anforderung falsch ab - der Compiler kann ihn nicht bemerken. Genau solche Fehler findet man nur durch Testfälle mit bekanntem Sollergebnis.",
       "translations": {
         "en": {
-          "question": "How many different values can be represented with one byte?",
+          "question": "A program runs through but consistently computes wrong totals. Which kind of error is this?",
           "options": [
-            "8",
-            "64",
-            "255",
-            "256"
+            "A logical error in the algorithm",
+            "A syntax error in the source file",
+            "An error while compiling the program",
+            "An error in the development environment used"
           ],
-          "answer": "256",
-          "explanation": "1 byte = 8 bits → 2⁸ = 256 different values (e.g. 0 to 255). Popular trap: 255 is the highest value, not the count.",
+          "answer": "A logical error in the algorithm",
+          "explanation": "A logical error is linguistically correct but models the requirement wrongly - the compiler cannot notice it. Such errors are found only through test cases with a known expected result.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q05",
+      "id": "ap1-swe-r05",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welchen dezimalen Wert hat die Binärzahl 10110?",
+      "options": [
+        "22",
+        "20",
+        "24",
+        "26"
+      ],
+      "answer": "22",
+      "explanation": "Stellenwerte von rechts sind 1, 2, 4, 8 und 16: also 16 + 0 + 4 + 2 + 0 = 22.",
+      "translations": {
+        "en": {
+          "question": "What decimal value does the binary number 10110 have?",
+          "options": [
+            "22",
+            "20",
+            "24",
+            "26"
+          ],
+          "answer": "22",
+          "explanation": "The place values from the right are 1, 2, 4, 8 and 16: so 16 + 0 + 4 + 2 + 0 = 22.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r06",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "In einem Team soll nachvollziehbar bleiben, wer wann welche Änderung gemacht hat. Was setzt ihr ein?",
+      "options": [
+        "Eine Versionsverwaltung wie Git",
+        "Eine gemeinsame Ablage auf dem Netzlaufwerk",
+        "Eine Namenskonvention mit Datum im Dateinamen",
+        "Eine wöchentliche Sicherungskopie des Projektordners"
+      ],
+      "answer": "Eine Versionsverwaltung wie Git",
+      "explanation": "Versionsverwaltung speichert jede Änderung mit Autor, Zeitpunkt und Beschreibung und erlaubt paralleles Arbeiten in Branches. Dateinamen mit Datum und Sicherungen liefern nichts davon.",
+      "translations": {
+        "en": {
+          "question": "A team needs to keep track of who changed what and when. What do you use?",
+          "options": [
+            "A version control system such as Git",
+            "A shared folder on the network drive",
+            "A naming convention with the date in the file name",
+            "A weekly backup copy of the project directory"
+          ],
+          "answer": "A version control system such as Git",
+          "explanation": "Version control stores every change with author, timestamp and description and allows parallel work in branches. File names with dates and backups deliver none of that.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r07",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was beschreibt ein Struktogramm nach Nassi-Shneiderman?",
+      "options": [
+        "Den Ablauf eines Algorithmus in geschachtelten Blöcken",
+        "Den Aufbau einer Datenbank mit ihren Tabellen",
+        "Die Verteilung der Komponenten auf mehrere Server",
+        "Die zeitliche Planung der Arbeitspakete im Projekt"
+      ],
+      "answer": "Den Ablauf eines Algorithmus in geschachtelten Blöcken",
+      "explanation": "Struktogramme stellen Sequenz, Verzweigung und Wiederholung als ineinander liegende Rechtecke dar und erzwingen dadurch strukturierte Programmierung ohne Sprünge.",
+      "translations": {
+        "en": {
+          "question": "What does a Nassi-Shneiderman diagram describe?",
+          "options": [
+            "The flow of an algorithm in nested blocks",
+            "The structure of a database with its tables",
+            "The distribution of components across servers",
+            "The scheduling of work packages in a project"
+          ],
+          "answer": "The flow of an algorithm in nested blocks",
+          "explanation": "Structograms represent sequence, selection and iteration as nested rectangles and thereby enforce structured programming without jumps.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r08",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Ein Datenfeld soll 50 Namen aufnehmen, die über einen Index ansprechbar sind. Was nutzt du?",
+      "options": [
+        "Ein Array",
+        "Eine einzelne Variable",
+        "Eine Konstante",
+        "Einen Kommentar"
+      ],
+      "answer": "Ein Array",
+      "explanation": "Ein Array fasst gleichartige Werte unter einem Namen zusammen und macht sie über einen Index erreichbar. Einzelvariablen für 50 Namen wären unwartbar.",
+      "translations": {
+        "en": {
+          "question": "A data field must hold 50 names addressable by an index. What do you use?",
+          "options": [
+            "An array",
+            "A single variable",
+            "A constant",
+            "A comment"
+          ],
+          "answer": "An array",
+          "explanation": "An array groups values of the same kind under one name and makes them reachable by index. Fifty individual variables would be unmaintainable.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r09",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussage über eine Konstante trifft zu?",
+      "options": [
+        "Ihr Wert steht fest und darf zur Laufzeit nicht wechseln",
+        "Ihr Wert wird bei jedem Programmstart neu ausgewürfelt",
+        "Sie belegt grundsätzlich weniger Speicher als Variablen",
+        "Sie ist nur innerhalb von Schleifen gültig und sichtbar"
+      ],
+      "answer": "Ihr Wert steht fest und darf zur Laufzeit nicht wechseln",
+      "explanation": "Konstanten machen feste Werte wie den Mehrwertsteuersatz sprechend und verhindern versehentliches Überschreiben. Mit Speicherbedarf oder Schleifen hat das nichts zu tun.",
+      "translations": {
+        "en": {
+          "question": "Which statement about a constant is correct?",
+          "options": [
+            "Its value is fixed and must not change at runtime",
+            "Its value is randomised at every program start",
+            "It fundamentally uses less memory than variables",
+            "It is valid and visible only inside loops"
+          ],
+          "answer": "Its value is fixed and must not change at runtime",
+          "explanation": "Constants give fixed values such as a VAT rate a readable name and prevent accidental overwriting. This has nothing to do with memory usage or loops.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r10",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was unterscheidet einen Compiler von einem Interpreter?",
+      "options": [
+        "Der Compiler übersetzt vorab komplett, der Interpreter zur Laufzeit",
+        "Der Compiler prüft nur die Rechtschreibung der Bezeichner",
+        "Der Interpreter erzeugt stets eine ausführbare Programmdatei",
+        "Der Interpreter arbeitet grundsätzlich schneller als Compiler"
+      ],
+      "answer": "Der Compiler übersetzt vorab komplett, der Interpreter zur Laufzeit",
+      "explanation": "Der Compiler erzeugt vor der Ausführung Maschinencode, der Interpreter übersetzt Zeile für Zeile beim Laufen. Deshalb starten interpretierte Programme schnell, laufen aber meist langsamer.",
+      "translations": {
+        "en": {
+          "question": "What distinguishes a compiler from an interpreter?",
+          "options": [
+            "The compiler translates fully in advance, the interpreter at runtime",
+            "The compiler only checks the spelling of identifiers",
+            "The interpreter always produces an executable program file",
+            "The interpreter is fundamentally faster than a compiler"
+          ],
+          "answer": "The compiler translates fully in advance, the interpreter at runtime",
+          "explanation": "A compiler produces machine code before execution, an interpreter translates line by line while running. Interpreted programs therefore start quickly but usually run slower.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r11",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welches Vorgehensmodell arbeitet in kurzen Zyklen mit regelmäßigem Kundenfeedback?",
+      "options": [
+        "Scrum",
+        "Das Wasserfallmodell",
+        "Das V-Modell in seiner klassischen Form",
+        "Die sequenzielle Phasenplanung mit Meilensteinen"
+      ],
+      "answer": "Scrum",
+      "explanation": "Scrum liefert in Sprints von zwei bis vier Wochen lauffähige Zwischenstände. Wasserfall und V-Modell legen die Anforderungen dagegen früh fest und liefern erst am Ende.",
+      "translations": {
+        "en": {
+          "question": "Which process model works in short cycles with regular customer feedback?",
+          "options": [
+            "Scrum",
+            "The waterfall model",
+            "The V-model in its classic form",
+            "Sequential phase planning with milestones"
+          ],
+          "answer": "Scrum",
+          "explanation": "Scrum delivers running increments in sprints of two to four weeks. Waterfall and the V-model fix requirements early and deliver only at the end.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r12",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Der Auftraggeber beschreibt, was er haben will. Wie heißt dieses Dokument?",
+      "options": [
+        "Lastenheft",
+        "Pflichtenheft",
+        "Abnahmeprotokoll",
+        "Betriebshandbuch"
+      ],
+      "answer": "Lastenheft",
+      "explanation": "Das Lastenheft kommt vom Auftraggeber und nennt das Was. Der Auftragnehmer antwortet mit dem Pflichtenheft und beschreibt darin das Wie.",
+      "translations": {
+        "en": {
+          "question": "The client describes what they want. What is this document called?",
+          "options": [
+            "Requirements specification",
+            "Functional specification",
+            "Acceptance record",
+            "Operations manual"
+          ],
+          "answer": "Requirements specification",
+          "explanation": "The requirements specification comes from the client and states the what. The contractor replies with the functional specification describing the how.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r13",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "In einer Klasse sollen Attribute nur über Methoden zugänglich sein. Wie heißt das Prinzip?",
+      "options": [
+        "Kapselung",
+        "Vererbung",
+        "Polymorphie",
+        "Instanziierung"
+      ],
+      "answer": "Kapselung",
+      "explanation": "Kapselung verbirgt den inneren Zustand und lässt Zugriff nur über definierte Methoden zu. Dadurch bleiben Objekte in einem gültigen Zustand.",
+      "translations": {
+        "en": {
+          "question": "In a class, attributes should be accessible only through methods. What is this principle called?",
+          "options": [
+            "Encapsulation",
+            "Inheritance",
+            "Polymorphism",
+            "Instantiation"
+          ],
+          "answer": "Encapsulation",
+          "explanation": "Encapsulation hides the internal state and permits access only through defined methods. That keeps objects in a valid state.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r14",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Eine Klasse Sportwagen soll alle Eigenschaften der Klasse Fahrzeug übernehmen. Was nutzt du?",
+      "options": [
+        "Vererbung",
+        "Kapselung",
+        "Überladung",
+        "Rekursion"
+      ],
+      "answer": "Vererbung",
+      "explanation": "Die abgeleitete Klasse erbt Attribute und Methoden der Basisklasse und ergänzt eigene. So wird gemeinsamer Code nur einmal geschrieben.",
+      "translations": {
+        "en": {
+          "question": "A class SportsCar should take over all properties of the class Vehicle. What do you use?",
+          "options": [
+            "Inheritance",
+            "Encapsulation",
+            "Overloading",
+            "Recursion"
+          ],
+          "answer": "Inheritance",
+          "explanation": "The derived class inherits attributes and methods of the base class and adds its own. Shared code is thereby written only once.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r15",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was ist der Unterschied zwischen einer Klasse und einem Objekt?",
+      "options": [
+        "Die Klasse ist der Bauplan, das Objekt die konkrete Ausprägung",
+        "Die Klasse ist die Ausprägung, das Objekt der zugehörige Bauplan",
+        "Beide bezeichnen dasselbe und werden beliebig verwendet",
+        "Die Klasse existiert nur zur Laufzeit, das Objekt im Quelltext"
+      ],
+      "answer": "Die Klasse ist der Bauplan, das Objekt die konkrete Ausprägung",
+      "explanation": "Aus einer Klasse lassen sich beliebig viele Objekte erzeugen, jedes mit eigenen Attributwerten. Die Klasse selbst beschreibt nur Struktur und Verhalten.",
+      "translations": {
+        "en": {
+          "question": "What is the difference between a class and an object?",
+          "options": [
+            "The class is the blueprint, the object the concrete instance",
+            "The class is the instance, the object the matching blueprint",
+            "Both mean the same and are used interchangeably",
+            "The class exists only at runtime, the object in source code"
+          ],
+          "answer": "The class is the blueprint, the object the concrete instance",
+          "explanation": "Any number of objects can be created from a class, each with its own attribute values. The class itself only describes structure and behaviour.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r16",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Suchmethode findet einen Wert in einer sortierten Liste am schnellsten?",
+      "options": [
+        "Die binäre Suche",
+        "Die lineare Suche",
+        "Die zufällige Stichprobe",
+        "Das vollständige Auslesen"
+      ],
+      "answer": "Die binäre Suche",
+      "explanation": "Die binäre Suche halbiert den Suchbereich in jedem Schritt und braucht deshalb nur logarithmisch viele Vergleiche. Voraussetzung ist allerdings, dass die Liste sortiert vorliegt.",
+      "translations": {
+        "en": {
+          "question": "Which search method finds a value in a sorted list fastest?",
+          "options": [
+            "Binary search",
+            "Linear search",
+            "Random sampling",
+            "Reading out everything"
+          ],
+          "answer": "Binary search",
+          "explanation": "Binary search halves the search range at every step and therefore needs only logarithmically many comparisons. It does require the list to be sorted.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r17",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Eine Methode ruft sich selbst mit kleiner werdenden Werten auf. Wie nennt man das?",
+      "options": [
+        "Rekursion",
+        "Iteration",
+        "Vererbung",
+        "Kapselung"
+      ],
+      "answer": "Rekursion",
+      "explanation": "Rekursion löst ein Problem, indem sie es auf kleinere Teilprobleme zurückführt. Ohne Abbruchbedingung endet das in einem Überlauf des Aufrufstapels.",
+      "translations": {
+        "en": {
+          "question": "A method calls itself with ever smaller values. What is this called?",
+          "options": [
+            "Recursion",
+            "Iteration",
+            "Inheritance",
+            "Encapsulation"
+          ],
+          "answer": "Recursion",
+          "explanation": "Recursion solves a problem by reducing it to smaller subproblems. Without a termination condition it ends in a call stack overflow.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r18",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Datenstruktur arbeitet nach dem Prinzip zuletzt hinein, zuerst heraus?",
+      "options": [
+        "Der Stapel",
+        "Die Warteschlange",
+        "Das sortierte Feld",
+        "Die verkettete Ringliste"
+      ],
+      "answer": "Der Stapel",
+      "explanation": "Ein Stack legt Elemente oben ab und nimmt sie dort wieder weg. Die Warteschlange arbeitet umgekehrt nach zuerst hinein, zuerst heraus.",
+      "translations": {
+        "en": {
+          "question": "Which data structure works on the last in, first out principle?",
+          "options": [
+            "The stack",
+            "The queue",
+            "The sorted array",
+            "The circular linked list"
+          ],
+          "answer": "The stack",
+          "explanation": "A stack pushes elements on top and pops them from there. A queue works the other way round on first in, first out.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r19",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Ein Testfall prüft nur die Ein- und Ausgaben ohne Kenntnis des Quelltexts. Wie heißt das Verfahren?",
+      "options": [
+        "Blackbox-Test",
+        "Whitebox-Test",
+        "Regressionstest",
+        "Abnahmetest durch den Auftraggeber"
+      ],
+      "answer": "Blackbox-Test",
+      "explanation": "Beim Blackbox-Test wird gegen die Spezifikation getestet, ohne in den Code zu schauen. Der Whitebox-Test nutzt dagegen die innere Struktur zur Auswahl der Testfälle.",
+      "translations": {
+        "en": {
+          "question": "A test case checks only inputs and outputs without knowledge of the source code. What is this called?",
+          "options": [
+            "Black box test",
+            "White box test",
+            "Regression test",
+            "Acceptance test by the client"
+          ],
+          "answer": "Black box test",
+          "explanation": "A black box test checks against the specification without looking at the code. A white box test uses the internal structure to select test cases.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r20",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Warum werden aussagekräftige Variablennamen empfohlen?",
+      "options": [
+        "Sie machen den Code ohne zusätzliche Erklärung lesbar",
+        "Sie verkürzen spürbar die Laufzeit des Programms",
+        "Sie verringern den Speicherbedarf des Programms",
+        "Sie sind für den Compiler zwingend vorgeschrieben"
+      ],
+      "answer": "Sie machen den Code ohne zusätzliche Erklärung lesbar",
+      "explanation": "Code wird weit häufiger gelesen als geschrieben. Ein Name wie anzahlKunden erklärt sich selbst, während x eine Erklärung im Kommentar braucht. Auf Laufzeit und Speicher hat der Name keinen Einfluss.",
+      "translations": {
+        "en": {
+          "question": "Why are meaningful variable names recommended?",
+          "options": [
+            "They make the code readable without extra explanation",
+            "They noticeably shorten the program's runtime",
+            "They reduce the memory footprint of the program",
+            "They are strictly required by the compiler"
+          ],
+          "answer": "They make the code readable without extra explanation",
+          "explanation": "Code is read far more often than it is written. A name like customerCount explains itself, while x needs a comment. The name has no influence on runtime or memory.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r21",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welcher Operator prüft in vielen Sprachen auf Gleichheit zweier Werte?",
+      "options": [
+        "==",
+        "=",
+        "!=",
+        "<="
+      ],
+      "answer": "==",
+      "explanation": "Ein einfaches Gleichheitszeichen weist zu, ein doppeltes vergleicht. Diese Verwechslung ist eine klassische Fehlerquelle in Bedingungen.",
+      "translations": {
+        "en": {
+          "question": "Which operator checks two values for equality in many languages?",
+          "options": [
+            "==",
+            "=",
+            "!=",
+            "<="
+          ],
+          "answer": "==",
+          "explanation": "A single equals sign assigns, a double one compares. Confusing the two is a classic source of errors in conditions.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r22",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Ein Kunde meldet einen Fehler, der nach jeder Auslieferung erneut auftritt. Welcher Test hätte das verhindert?",
+      "options": [
+        "Ein Regressionstest nach jeder Änderung",
+        "Ein einmaliger Lasttest vor dem Projektstart",
+        "Ein Abnahmetest allein durch den Auftraggeber",
+        "Ein Blick in die Programmdokumentation"
+      ],
+      "answer": "Ein Regressionstest nach jeder Änderung",
+      "explanation": "Regressionstests wiederholen bestehende Testfälle nach jeder Änderung und decken auf, wenn etwas Repariertes wieder kaputtgeht. Genau dafür lohnt sich Automatisierung.",
+      "translations": {
+        "en": {
+          "question": "A customer reports a bug that reappears after every release. Which test would have prevented this?",
+          "options": [
+            "A regression test after every change",
+            "A one-off load test before the project starts",
+            "An acceptance test by the client alone",
+            "A look into the program documentation"
+          ],
+          "answer": "A regression test after every change",
+          "explanation": "Regression tests repeat existing test cases after every change and reveal when something already fixed breaks again. This is exactly where automation pays off.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r23",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was bewirkt ein Commit in einer Versionsverwaltung?",
+      "options": [
+        "Er hält einen Änderungsstand mit Beschreibung dauerhaft fest",
+        "Er überträgt die Änderungen sofort auf den Produktivserver",
+        "Er löscht alle vorherigen Versionen des Projekts",
+        "Er sperrt die Dateien für alle anderen Teammitglieder"
+      ],
+      "answer": "Er hält einen Änderungsstand mit Beschreibung dauerhaft fest",
+      "explanation": "Der Commit erzeugt einen benannten Punkt in der Historie, zu dem man zurückkehren kann. Das Veröffentlichen auf einem Server ist ein eigener Schritt, meist push genannt.",
+      "translations": {
+        "en": {
+          "question": "What does a commit do in a version control system?",
+          "options": [
+            "It records a change set with a description permanently",
+            "It transfers the changes to the production server at once",
+            "It deletes all previous versions of the project",
+            "It locks the files for all other team members"
+          ],
+          "answer": "It records a change set with a description permanently",
+          "explanation": "A commit creates a named point in the history that you can return to. Publishing to a server is a separate step, usually called push.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r24",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Wozu dient ein Branch in der Versionsverwaltung?",
+      "options": [
+        "Er erlaubt paralleles Arbeiten ohne den Hauptstand zu stören",
+        "Er verkleinert die Datenmenge des gesamten Projekts",
+        "Er ersetzt die Notwendigkeit einer Datensicherung",
+        "Er beschleunigt das Übersetzen des Quelltexts"
+      ],
+      "answer": "Er erlaubt paralleles Arbeiten ohne den Hauptstand zu stören",
+      "explanation": "In einem Branch entsteht ein eigener Entwicklungsstrang, der später über einen Merge zurückfließt. So bleibt der Hauptzweig jederzeit lauffähig.",
+      "translations": {
+        "en": {
+          "question": "What is a branch used for in version control?",
+          "options": [
+            "It allows parallel work without disturbing the main line",
+            "It reduces the total data volume of the project",
+            "It removes the need for a separate data backup",
+            "It speeds up the compilation of the source code"
+          ],
+          "answer": "It allows parallel work without disturbing the main line",
+          "explanation": "A branch creates its own development line that is merged back later. The main branch therefore stays runnable at all times.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r25",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussage über Pseudocode ist richtig?",
+      "options": [
+        "Er beschreibt Algorithmen sprachunabhängig und ist nicht ausführbar",
+        "Er wird vor der Nutzung von einem Compiler übersetzt",
+        "Er ist eine Programmiersprache mit fester Syntaxregel",
+        "Er dient ausschließlich der Dokumentation nach Projektende"
+      ],
+      "answer": "Er beschreibt Algorithmen sprachunabhängig und ist nicht ausführbar",
+      "explanation": "Pseudocode steht zwischen Umgangssprache und Programmcode und dient dem Entwurf. Genau weil er keine feste Syntax hat, lässt er sich in jede Zielsprache übertragen.",
+      "translations": {
+        "en": {
+          "question": "Which statement about pseudocode is correct?",
+          "options": [
+            "It describes algorithms language-independently and is not executable",
+            "It is translated by a compiler before it can be used",
+            "It is a programming language with fixed syntax rules",
+            "It serves solely for documentation after project completion"
+          ],
+          "answer": "It describes algorithms language-independently and is not executable",
+          "explanation": "Pseudocode sits between plain language and program code and serves the design phase. Precisely because it has no fixed syntax, it can be transferred to any target language.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r26",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Ein Programm greift auf das elfte Element eines Arrays mit zehn Feldern zu. Was passiert typischerweise?",
+      "options": [
+        "Es entsteht ein Laufzeitfehler beim Zugriff",
+        "Der Compiler verweigert grundsätzlich die Übersetzung",
+        "Das Array vergrößert sich automatisch um ein Feld",
+        "Das Programm liefert stillschweigend immer eine Null"
+      ],
+      "answer": "Es entsteht ein Laufzeitfehler beim Zugriff",
+      "explanation": "Der Zugriff außerhalb der Grenzen ist syntaktisch korrekt und fällt daher erst zur Laufzeit auf. Viele Sprachen werfen dann eine Ausnahme, andere lesen unkontrolliert fremden Speicher.",
+      "translations": {
+        "en": {
+          "question": "A program accesses the eleventh element of an array with ten slots. What typically happens?",
+          "options": [
+            "A runtime error occurs on the access",
+            "The compiler fundamentally refuses to translate it",
+            "The array grows automatically by one slot",
+            "The program silently always returns a zero"
+          ],
+          "answer": "A runtime error occurs on the access",
+          "explanation": "Access outside the bounds is syntactically correct and therefore surfaces only at runtime. Many languages then throw an exception, others read foreign memory uncontrolled.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r27",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was beschreibt ein Use-Case-Diagramm in UML?",
+      "options": [
+        "Wer welche fachlichen Funktionen des Systems nutzt",
+        "Wie die Klassen des Systems voneinander erben",
+        "In welcher Reihenfolge Nachrichten ausgetauscht werden",
+        "Wie die Daten physisch auf Servern verteilt sind"
+      ],
+      "answer": "Wer welche fachlichen Funktionen des Systems nutzt",
+      "explanation": "Das Anwendungsfalldiagramm zeigt Akteure und ihre Anwendungsfälle aus fachlicher Sicht. Vererbung zeigt das Klassendiagramm, Nachrichtenfolgen das Sequenzdiagramm.",
+      "translations": {
+        "en": {
+          "question": "What does a use case diagram in UML describe?",
+          "options": [
+            "Who uses which business functions of the system",
+            "How the system's classes inherit from each other",
+            "In which order messages are exchanged",
+            "How the data is physically distributed on servers"
+          ],
+          "answer": "Who uses which business functions of the system",
+          "explanation": "The use case diagram shows actors and their use cases from a business perspective. Inheritance is shown by the class diagram, message sequences by the sequence diagram.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r28",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Warum wird Quelltext kommentiert?",
+      "options": [
+        "Um die Absicht hinter einer Lösung nachvollziehbar zu machen",
+        "Um die Ausführungsgeschwindigkeit des Programms zu erhöhen",
+        "Um dem Compiler zusätzliche Optimierungen zu erlauben",
+        "Um die Anzahl der benötigten Variablen zu verringern"
+      ],
+      "answer": "Um die Absicht hinter einer Lösung nachvollziehbar zu machen",
+      "explanation": "Was der Code tut, steht im Code; warum er es so tut, gehört in den Kommentar. Auf die Ausführung haben Kommentare keinerlei Einfluss, da der Compiler sie entfernt.",
+      "translations": {
+        "en": {
+          "question": "Why is source code commented?",
+          "options": [
+            "To make the intention behind a solution traceable",
+            "To increase the execution speed of the program",
+            "To allow the compiler additional optimisations",
+            "To reduce the number of variables required"
+          ],
+          "answer": "To make the intention behind a solution traceable",
+          "explanation": "What the code does is in the code; why it does it that way belongs in a comment. Comments have no effect on execution since the compiler removes them.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r29",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Welche Kontrollstruktur setzt du ein, wenn abhängig von einer Bedingung unterschiedlicher Code laufen soll?",
+      "options": [
+        "Eine Verzweigung",
+        "Eine Sequenz",
+        "Eine Zählschleife",
+        "Eine Konstantendeklaration"
+      ],
+      "answer": "Eine Verzweigung",
+      "explanation": "Die Verzweigung wählt zwischen Alternativen. Sequenz bedeutet Abarbeitung nacheinander, die Schleife wiederholt, und eine Deklaration steuert gar nichts.",
+      "translations": {
+        "en": {
+          "question": "Which control structure do you use when different code should run depending on a condition?",
+          "options": [
+            "A selection",
+            "A sequence",
+            "A counting loop",
+            "A constant declaration"
+          ],
+          "answer": "A selection",
+          "explanation": "Selection chooses between alternatives. Sequence means running one after another, a loop repeats, and a declaration controls nothing at all.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r30",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was liefert eine Methode mit dem Rückgabetyp void?",
+      "options": [
+        "Keinen Wert, sie führt nur eine Aktion aus",
+        "Immer den Wert null als Ergebnis zurück",
+        "Eine leere Zeichenkette als Standardergebnis",
+        "Den zuletzt berechneten Wert der Methode"
+      ],
+      "answer": "Keinen Wert, sie führt nur eine Aktion aus",
+      "explanation": "void kennzeichnet Methoden ohne Rückgabewert, etwa eine Ausgabe auf dem Bildschirm. Wer ein Ergebnis braucht, deklariert einen passenden Rückgabetyp.",
+      "translations": {
+        "en": {
+          "question": "What does a method with return type void deliver?",
+          "options": [
+            "No value, it only performs an action",
+            "Always the value null as its result",
+            "An empty string as a default result",
+            "The most recently computed value"
+          ],
+          "answer": "No value, it only performs an action",
+          "explanation": "void marks methods without a return value, such as printing to the screen. Anyone needing a result declares a matching return type.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r31",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Eine Anwendung soll nach einer Änderung schnell auf alte Fehler geprüft werden. Was hilft dauerhaft?",
+      "options": [
+        "Automatisierte Testfälle im Projekt hinterlegen",
+        "Vor jeder Auslieferung das Handbuch überarbeiten",
+        "Die Anzahl der Kommentare im Quelltext erhöhen",
+        "Nach jedem Release die Versionsnummer hochzählen"
+      ],
+      "answer": "Automatisierte Testfälle im Projekt hinterlegen",
+      "explanation": "Automatisierte Tests laufen bei jeder Änderung mit und melden Rückschritte sofort. Handbücher, Kommentare und Versionsnummern dokumentieren, prüfen aber nichts.",
+      "translations": {
+        "en": {
+          "question": "An application should be quickly checked for old bugs after a change. What helps permanently?",
+          "options": [
+            "Store automated test cases in the project",
+            "Revise the manual before every release",
+            "Increase the number of comments in the code",
+            "Increment the version number after each release"
+          ],
+          "answer": "Store automated test cases in the project",
+          "explanation": "Automated tests run on every change and report regressions immediately. Manuals, comments and version numbers document but verify nothing.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r32",
+      "type": "single",
+      "category": "Softwareentwicklung",
+      "question": "Was bedeutet der Begriff Debugging?",
+      "options": [
+        "Das gezielte Suchen und Beheben von Programmfehlern",
+        "Das Übersetzen des Quelltexts in Maschinencode",
+        "Das Aufteilen eines Programms in mehrere Module",
+        "Das Verkleinern des Programms für die Auslieferung"
+      ],
+      "answer": "Das gezielte Suchen und Beheben von Programmfehlern",
+      "explanation": "Beim Debuggen hält man das Programm an, prüft Variablenwerte und geht Schritt für Schritt durch den Ablauf. Übersetzen, Modularisieren und Verkleinern sind eigene Vorgänge.",
+      "translations": {
+        "en": {
+          "question": "What does the term debugging mean?",
+          "options": [
+            "The targeted finding and fixing of program errors",
+            "The translation of source code into machine code",
+            "The splitting of a program into several modules",
+            "The shrinking of a program for distribution"
+          ],
+          "answer": "The targeted finding and fixing of program errors",
+          "explanation": "When debugging you pause the program, inspect variable values and step through the flow. Compiling, modularising and shrinking are separate activities.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r33",
       "type": "multiple",
       "category": "Softwareentwicklung",
       "question": "Welche Kontrollstrukturen kennt die strukturierte Programmierung?",
       "options": [
-        "Sequenz (Anweisungsfolge)",
-        "Auswahl (Verzweigung)",
-        "Wiederholung (Schleife)",
-        "Unbedingter Sprung (GOTO)",
-        "Kompilierung"
+        "Sequenz als Abfolge von Anweisungen",
+        "Auswahl als Verzweigung",
+        "Wiederholung als Schleife",
+        "Verschachtelung dieser Grundformen",
+        "Unbedingter Sprung mit GOTO",
+        "Das Übersetzen des Quelltexts"
       ],
       "answer": [
-        "Sequenz (Anweisungsfolge)",
-        "Auswahl (Verzweigung)",
-        "Wiederholung (Schleife)"
+        "Sequenz als Abfolge von Anweisungen",
+        "Auswahl als Verzweigung",
+        "Wiederholung als Schleife",
+        "Verschachtelung dieser Grundformen"
       ],
-      "explanation": "Die strukturierte Programmierung kommt mit genau drei Kontrollstrukturen aus — GOTO-Sprünge werden bewusst vermieden. Kompilierung ist ein Übersetzungsvorgang.",
+      "explanation": "Sequenz, Auswahl und Wiederholung genügen für jeden Algorithmus und lassen sich beliebig schachteln. Der unbedingte Sprung wird bewusst vermieden, und Übersetzen ist keine Kontrollstruktur.",
       "translations": {
         "en": {
-          "question": "Which control structures does structured programming use?",
+          "question": "Which control structures does structured programming know?",
           "options": [
-            "Sequence (series of statements)",
-            "Selection (branching)",
-            "Iteration (loop)",
-            "Unconditional jump (GOTO)",
-            "Compilation"
+            "Sequence as a series of statements",
+            "Selection as a branch",
+            "Iteration as a loop",
+            "Nesting of these basic forms",
+            "Unconditional jump using GOTO",
+            "The compilation of the source code"
           ],
           "answer": [
-            "Sequence (series of statements)",
-            "Selection (branching)",
-            "Iteration (loop)"
+            "Sequence as a series of statements",
+            "Selection as a branch",
+            "Iteration as a loop",
+            "Nesting of these basic forms"
           ],
-          "explanation": "Structured programming gets by with exactly three control structures — GOTO jumps are deliberately avoided. Compilation is a translation step, not a control structure.",
+          "explanation": "Sequence, selection and iteration suffice for any algorithm and can be nested arbitrarily. The unconditional jump is deliberately avoided, and compilation is not a control structure.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q06",
+      "id": "ap1-swe-r34",
       "type": "multiple",
       "category": "Softwareentwicklung",
-      "question": "Welche Aufgaben übernimmt eine Versionsverwaltung wie Git?",
+      "question": "Welche Eigenschaften sollte ein guter Testfall haben?",
       "options": [
-        "Änderungshistorie des Quellcodes nachvollziehbar machen",
-        "Paralleles Arbeiten mehrerer Entwickler ermöglichen",
-        "Frühere Programmstände wiederherstellen",
-        "Quellcode automatisch auf Viren prüfen",
-        "Den Stromverbrauch des Servers senken"
+        "Er hat ein vorab festgelegtes Sollergebnis",
+        "Er ist wiederholbar und liefert gleiche Ergebnisse",
+        "Er prüft eine klar abgegrenzte Anforderung",
+        "Er ist unabhängig von anderen Testfällen",
+        "Er wird erst nach dem Auftreten eines Fehlers geschrieben",
+        "Er prüft möglichst viele Anforderungen gleichzeitig"
       ],
       "answer": [
-        "Änderungshistorie des Quellcodes nachvollziehbar machen",
-        "Paralleles Arbeiten mehrerer Entwickler ermöglichen",
-        "Frühere Programmstände wiederherstellen"
+        "Er hat ein vorab festgelegtes Sollergebnis",
+        "Er ist wiederholbar und liefert gleiche Ergebnisse",
+        "Er prüft eine klar abgegrenzte Anforderung",
+        "Er ist unabhängig von anderen Testfällen"
       ],
-      "explanation": "Versionsverwaltung protokolliert, wer wann was geändert hat, unterstützt Branches/Merges für Teamarbeit und erlaubt das Zurückrollen auf jeden früheren Stand.",
+      "explanation": "Nur mit bekanntem Sollwert lässt sich überhaupt bewerten, ob ein Test bestanden ist. Unabhängigkeit und klare Abgrenzung machen die Fehlersuche schnell, Sammeltests dagegen mehrdeutig.",
       "translations": {
         "en": {
-          "question": "Which tasks does a version control system like Git handle?",
+          "question": "Which properties should a good test case have?",
           "options": [
-            "Make the change history of the source code traceable",
-            "Enable multiple developers to work in parallel",
-            "Restore earlier versions of the program",
-            "Automatically scan source code for viruses",
-            "Reduce the server's power consumption"
+            "It has a predefined expected result",
+            "It is repeatable and yields the same results",
+            "It checks one clearly delimited requirement",
+            "It is independent of other test cases",
+            "It is written only after a bug has appeared",
+            "It checks as many requirements as possible at once"
           ],
           "answer": [
-            "Make the change history of the source code traceable",
-            "Enable multiple developers to work in parallel",
-            "Restore earlier versions of the program"
+            "It has a predefined expected result",
+            "It is repeatable and yields the same results",
+            "It checks one clearly delimited requirement",
+            "It is independent of other test cases"
           ],
-          "explanation": "Version control records who changed what and when, supports branches/merges for teamwork, and allows rolling back to any earlier state.",
+          "explanation": "Only with a known expected value can you judge whether a test passed at all. Independence and clear scope make debugging fast, while combined tests are ambiguous.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q07",
+      "id": "ap1-swe-r35",
       "type": "multiple",
       "category": "Softwareentwicklung",
-      "question": "Welche Aussagen über Pseudocode treffen zu?",
+      "question": "Welche Angaben gehören in ein Pflichtenheft?",
       "options": [
-        "Er ist nicht direkt auf einem Computer ausführbar",
-        "Er ist unabhängig von einer konkreten Programmiersprache",
-        "Er dient der Planung und Kommunikation von Algorithmen",
-        "Er muss vor der Verwendung kompiliert werden",
-        "Er benötigt eine spezielle Entwicklungsumgebung"
+        "Beschreibung der geplanten Umsetzung",
+        "Abgrenzung des Lieferumfangs",
+        "Anforderungen an die Schnittstellen",
+        "Kriterien für die Abnahme",
+        "Der private Terminkalender des Entwicklers",
+        "Die Farbwahl des Firmenlogos des Kunden"
       ],
       "answer": [
-        "Er ist nicht direkt auf einem Computer ausführbar",
-        "Er ist unabhängig von einer konkreten Programmiersprache",
-        "Er dient der Planung und Kommunikation von Algorithmen"
+        "Beschreibung der geplanten Umsetzung",
+        "Abgrenzung des Lieferumfangs",
+        "Anforderungen an die Schnittstellen",
+        "Kriterien für die Abnahme"
       ],
-      "explanation": "Pseudocode beschreibt Algorithmen in halbformaler, menschenlesbarer Form — als Entwurfswerkzeug vor der eigentlichen Implementierung.",
+      "explanation": "Das Pflichtenheft beantwortet, wie und womit die Anforderungen des Lastenhefts umgesetzt werden, inklusive Abgrenzung und Abnahmekriterien. Persönliche Termine und Logofarben gehören nicht hinein.",
       "translations": {
         "en": {
-          "question": "Which statements about pseudocode are true?",
+          "question": "Which items belong in a functional specification?",
           "options": [
-            "It cannot be executed directly on a computer",
-            "It is independent of any specific programming language",
-            "It is used to plan and communicate algorithms",
-            "It must be compiled before use",
-            "It requires a special development environment"
+            "Description of the planned implementation",
+            "Delimitation of the scope of delivery",
+            "Requirements for the interfaces",
+            "Criteria for acceptance",
+            "The developer's private calendar",
+            "The colour choice of the client's logo"
           ],
           "answer": [
-            "It cannot be executed directly on a computer",
-            "It is independent of any specific programming language",
-            "It is used to plan and communicate algorithms"
+            "Description of the planned implementation",
+            "Delimitation of the scope of delivery",
+            "Requirements for the interfaces",
+            "Criteria for acceptance"
           ],
-          "explanation": "Pseudocode describes algorithms in a semi-formal, human-readable form — a design tool used before the actual implementation.",
+          "explanation": "The functional specification answers how and with what the requirements will be implemented, including scope and acceptance criteria. Private appointments and logo colours do not belong there.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q08",
+      "id": "ap1-swe-r36",
       "type": "multiple",
       "category": "Softwareentwicklung",
-      "question": "Welche Kriterien sollte ein guter Variablenname erfüllen?",
+      "question": "Welche Aussagen über objektorientierte Programmierung sind zutreffend?",
       "options": [
-        "Er beschreibt den Inhalt bzw. Zweck der Variablen",
-        "Er ist eindeutig und konsistent zum restlichen Code benannt",
-        "Er ist so kurz wie möglich, z. B. immer nur ein Buchstabe",
-        "Er enthält möglichst viele Sonderzeichen"
+        "Objekte bündeln Daten und Verhalten",
+        "Klassen dienen als Bauplan für Objekte",
+        "Vererbung ermöglicht Wiederverwendung von Code",
+        "Kapselung schützt den inneren Zustand",
+        "Objekte lassen sich nur einmal je Programm erzeugen",
+        "Klassen ersetzen die Notwendigkeit von Variablen"
       ],
       "answer": [
-        "Er beschreibt den Inhalt bzw. Zweck der Variablen",
-        "Er ist eindeutig und konsistent zum restlichen Code benannt"
+        "Objekte bündeln Daten und Verhalten",
+        "Klassen dienen als Bauplan für Objekte",
+        "Vererbung ermöglicht Wiederverwendung von Code",
+        "Kapselung schützt den inneren Zustand"
       ],
-      "explanation": "„anzahlKunden“ statt „x“: sprechende Namen machen Code wartbar. Einbuchstabige Namen sind nur für kurzlebige Zähler (z. B. Schleifenindex i) üblich.",
+      "explanation": "Objekte vereinen Attribute und Methoden, Klassen beschreiben sie, Vererbung spart Doppelungen und Kapselung sichert die Konsistenz. Beliebig viele Objekte je Klasse sind gerade der Sinn der Sache.",
       "translations": {
         "en": {
-          "question": "Which criteria should a good variable name meet?",
+          "question": "Which statements about object-oriented programming are correct?",
           "options": [
-            "It describes the content or purpose of the variable",
-            "It is unambiguous and named consistently with the rest of the code",
-            "It is as short as possible, e.g. always just one letter",
-            "It contains as many special characters as possible"
+            "Objects bundle data and behaviour",
+            "Classes serve as a blueprint for objects",
+            "Inheritance enables reuse of code",
+            "Encapsulation protects the internal state",
+            "Objects can be created only once per program",
+            "Classes remove the need for variables"
           ],
           "answer": [
-            "It describes the content or purpose of the variable",
-            "It is unambiguous and named consistently with the rest of the code"
+            "Objects bundle data and behaviour",
+            "Classes serve as a blueprint for objects",
+            "Inheritance enables reuse of code",
+            "Encapsulation protects the internal state"
           ],
-          "explanation": "\"customerCount\" instead of \"x\": descriptive names keep code maintainable. Single-letter names are only conventional for short-lived counters (e.g. loop index i).",
+          "explanation": "Objects unite attributes and methods, classes describe them, inheritance avoids duplication and encapsulation secures consistency. Creating any number of objects per class is exactly the point.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r37",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Schritte gehören zum klassischen Ablauf der Softwareentwicklung?",
+      "options": [
+        "Anforderungen erheben und abstimmen",
+        "Lösung entwerfen und modellieren",
+        "Umsetzung in Quelltext",
+        "Testen gegen die Anforderungen",
+        "Die Preisliste des Vertriebs erstellen",
+        "Die Büromöbel des Teams auswählen"
+      ],
+      "answer": [
+        "Anforderungen erheben und abstimmen",
+        "Lösung entwerfen und modellieren",
+        "Umsetzung in Quelltext",
+        "Testen gegen die Anforderungen"
+      ],
+      "explanation": "Analyse, Entwurf, Implementierung und Test bilden den Kern jedes Vorgehensmodells, gefolgt von Einführung und Wartung. Vertriebs- und Bürothemen liegen außerhalb.",
+      "translations": {
+        "en": {
+          "question": "Which steps belong to the classic software development sequence?",
+          "options": [
+            "Elicit and agree the requirements",
+            "Design and model the solution",
+            "Implement in source code",
+            "Test against the requirements",
+            "Create the sales price list",
+            "Choose the team's office furniture"
+          ],
+          "answer": [
+            "Elicit and agree the requirements",
+            "Design and model the solution",
+            "Implement in source code",
+            "Test against the requirements"
+          ],
+          "explanation": "Analysis, design, implementation and testing form the core of every process model, followed by rollout and maintenance. Sales and office topics lie outside.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r38",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zu Git treffen zu?",
+      "options": [
+        "Ein Commit hält einen Änderungsstand fest",
+        "Ein Branch erlaubt paralleles Arbeiten",
+        "Ein Merge führt Entwicklungsstände zusammen",
+        "Die Historie bleibt vollständig nachvollziehbar",
+        "Git ersetzt vollständig eine Datensicherung",
+        "Jede Datei kann nur von einer Person bearbeitet werden"
+      ],
+      "answer": [
+        "Ein Commit hält einen Änderungsstand fest",
+        "Ein Branch erlaubt paralleles Arbeiten",
+        "Ein Merge führt Entwicklungsstände zusammen",
+        "Die Historie bleibt vollständig nachvollziehbar"
+      ],
+      "explanation": "Commit, Branch, Merge und lückenlose Historie sind die Kernbegriffe. Ein Repository allein ist aber keine Sicherung, und paralleles Bearbeiten derselben Datei ist ausdrücklich vorgesehen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about Git are correct?",
+          "options": [
+            "A commit records a set of changes",
+            "A branch allows parallel work",
+            "A merge brings development lines together",
+            "The history stays fully traceable",
+            "Git completely replaces a data backup",
+            "Each file can be edited by only one person"
+          ],
+          "answer": [
+            "A commit records a set of changes",
+            "A branch allows parallel work",
+            "A merge brings development lines together",
+            "The history stays fully traceable"
+          ],
+          "explanation": "Commit, branch, merge and a complete history are the core concepts. A repository alone is not a backup, though, and parallel editing of the same file is explicitly supported.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r39",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Datentypen sind in den meisten Sprachen als Grunddatentypen vorhanden?",
+      "options": [
+        "Ganzzahl",
+        "Gleitkommazahl",
+        "Wahrheitswert",
+        "Einzelzeichen",
+        "Datenbanktabelle",
+        "Netzwerkverbindung"
+      ],
+      "answer": [
+        "Ganzzahl",
+        "Gleitkommazahl",
+        "Wahrheitswert",
+        "Einzelzeichen"
+      ],
+      "explanation": "Ganzzahl, Gleitkommazahl, Wahrheitswert und Zeichen sind die üblichen primitiven Typen, aus denen sich komplexere Strukturen zusammensetzen. Tabellen und Verbindungen sind Bibliotheksobjekte.",
+      "translations": {
+        "en": {
+          "question": "Which data types exist as primitive types in most languages?",
+          "options": [
+            "Integer",
+            "Floating point number",
+            "Boolean",
+            "Single character",
+            "Database table",
+            "Network connection"
+          ],
+          "answer": [
+            "Integer",
+            "Floating point number",
+            "Boolean",
+            "Single character"
+          ],
+          "explanation": "Integer, float, boolean and character are the usual primitive types from which more complex structures are built. Tables and connections are library objects.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r40",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Vorteile bringt die Aufteilung eines Programms in Module?",
+      "options": [
+        "Einzelne Teile lassen sich getrennt testen",
+        "Fehler bleiben leichter eingrenzbar",
+        "Teile lassen sich in anderen Projekten wiederverwenden",
+        "Mehrere Entwickler können parallel arbeiten",
+        "Die Zahl der Programmzeilen sinkt zwangsläufig",
+        "Das Programm läuft dadurch immer schneller"
+      ],
+      "answer": [
+        "Einzelne Teile lassen sich getrennt testen",
+        "Fehler bleiben leichter eingrenzbar",
+        "Teile lassen sich in anderen Projekten wiederverwenden",
+        "Mehrere Entwickler können parallel arbeiten"
+      ],
+      "explanation": "Modularisierung wirkt vor allem organisatorisch: Testbarkeit, Fehlereingrenzung, Wiederverwendung und Arbeitsteilung. Auf Zeilenzahl und Laufzeit hat sie keinen automatischen Einfluss.",
+      "translations": {
+        "en": {
+          "question": "Which advantages come from splitting a program into modules?",
+          "options": [
+            "Individual parts can be tested separately",
+            "Faults remain easier to isolate",
+            "Parts can be reused in other projects",
+            "Several developers can work in parallel",
+            "The number of code lines necessarily drops",
+            "The program always runs faster as a result"
+          ],
+          "answer": [
+            "Individual parts can be tested separately",
+            "Faults remain easier to isolate",
+            "Parts can be reused in other projects",
+            "Several developers can work in parallel"
+          ],
+          "explanation": "Modularisation works mainly on the organisational level: testability, fault isolation, reuse and division of labour. It has no automatic effect on line count or runtime.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r41",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Schleifen sind korrekt?",
+      "options": [
+        "Die while-Schleife prüft vor dem Durchlauf",
+        "Die do-while-Schleife prüft nach dem Durchlauf",
+        "Die for-Schleife eignet sich für bekannte Wiederholungszahlen",
+        "Eine fehlende Abbruchbedingung führt zur Endlosschleife",
+        "Jede Schleife läuft mindestens einmal durch",
+        "Schleifen lassen sich nicht ineinander schachteln"
+      ],
+      "answer": [
+        "Die while-Schleife prüft vor dem Durchlauf",
+        "Die do-while-Schleife prüft nach dem Durchlauf",
+        "Die for-Schleife eignet sich für bekannte Wiederholungszahlen",
+        "Eine fehlende Abbruchbedingung führt zur Endlosschleife"
+      ],
+      "explanation": "Der Prüfzeitpunkt unterscheidet kopf- und fußgesteuerte Schleifen, die Zählschleife passt bei bekannter Anzahl. Nur die fußgesteuerte läuft garantiert einmal, und Schachtelung ist gängige Praxis.",
+      "translations": {
+        "en": {
+          "question": "Which statements about loops are correct?",
+          "options": [
+            "The while loop checks before each pass",
+            "The do-while loop checks after each pass",
+            "The for loop suits known repetition counts",
+            "A missing exit condition causes an endless loop",
+            "Every loop runs through at least once",
+            "Loops cannot be nested inside each other"
+          ],
+          "answer": [
+            "The while loop checks before each pass",
+            "The do-while loop checks after each pass",
+            "The for loop suits known repetition counts",
+            "A missing exit condition causes an endless loop"
+          ],
+          "explanation": "The check position distinguishes head- and foot-controlled loops, and the counting loop fits a known count. Only the foot-controlled one is guaranteed to run once, and nesting is common practice.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r42",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Merkmale kennzeichnen agile Vorgehensweisen?",
+      "options": [
+        "Kurze Entwicklungszyklen mit lauffähigem Ergebnis",
+        "Regelmäßige Rückmeldung durch den Auftraggeber",
+        "Anpassbarkeit der Anforderungen im Projektverlauf",
+        "Selbstorganisierte Teams",
+        "Vollständige Festlegung aller Details zu Beginn",
+        "Verzicht auf jegliche Dokumentation"
+      ],
+      "answer": [
+        "Kurze Entwicklungszyklen mit lauffähigem Ergebnis",
+        "Regelmäßige Rückmeldung durch den Auftraggeber",
+        "Anpassbarkeit der Anforderungen im Projektverlauf",
+        "Selbstorganisierte Teams"
+      ],
+      "explanation": "Agile Modelle setzen auf kurze Zyklen, Feedback, Wandelbarkeit und Eigenverantwortung. Vollständige Vorabplanung kennzeichnet den Wasserfall, und Dokumentation entfällt keineswegs, sie wird nur schlanker.",
+      "translations": {
+        "en": {
+          "question": "Which characteristics define agile approaches?",
+          "options": [
+            "Short development cycles with a working result",
+            "Regular feedback from the client",
+            "Adaptability of requirements during the project",
+            "Self-organising teams",
+            "Complete specification of all details at the start",
+            "Doing away with documentation entirely"
+          ],
+          "answer": [
+            "Short development cycles with a working result",
+            "Regular feedback from the client",
+            "Adaptability of requirements during the project",
+            "Self-organising teams"
+          ],
+          "explanation": "Agile models rely on short cycles, feedback, adaptability and self-responsibility. Complete upfront planning characterises waterfall, and documentation is by no means dropped, only made leaner.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r43",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Arrays sind zutreffend?",
+      "options": [
+        "Sie fassen Werte gleichen Typs zusammen",
+        "Der Zugriff erfolgt über einen Index",
+        "Der Index beginnt in vielen Sprachen bei null",
+        "Zugriffe außerhalb der Grenzen führen zu Fehlern",
+        "Ihre Größe passt sich immer automatisch an",
+        "Sie können Werte beliebig gemischter Typen speichern"
+      ],
+      "answer": [
+        "Sie fassen Werte gleichen Typs zusammen",
+        "Der Zugriff erfolgt über einen Index",
+        "Der Index beginnt in vielen Sprachen bei null",
+        "Zugriffe außerhalb der Grenzen führen zu Fehlern"
+      ],
+      "explanation": "Ein klassisches Array ist typgleich, indiziert und in der Größe fest - deshalb sind Grenzverletzungen ein Laufzeitproblem. Dynamische, gemischte Sammlungen bieten erst Listen und ähnliche Strukturen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about arrays are correct?",
+          "options": [
+            "They group values of the same type",
+            "Access happens through an index",
+            "The index starts at zero in many languages",
+            "Access outside the bounds causes errors",
+            "Their size always adjusts automatically",
+            "They can store values of arbitrarily mixed types"
+          ],
+          "answer": [
+            "They group values of the same type",
+            "Access happens through an index",
+            "The index starts at zero in many languages",
+            "Access outside the bounds causes errors"
+          ],
+          "explanation": "A classic array is type-uniform, indexed and fixed in size - which is why bound violations are a runtime problem. Dynamic, mixed collections are provided by lists and similar structures.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r44",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aufgaben erfüllt eine Entwicklungsumgebung?",
+      "options": [
+        "Sie bietet einen Editor mit Syntaxhervorhebung",
+        "Sie startet Übersetzung und Ausführung",
+        "Sie stellt einen Debugger bereit",
+        "Sie bindet die Versionsverwaltung ein",
+        "Sie schreibt die Anforderungen des Kunden",
+        "Sie ersetzt die fachliche Abnahme durch den Kunden"
+      ],
+      "answer": [
+        "Sie bietet einen Editor mit Syntaxhervorhebung",
+        "Sie startet Übersetzung und Ausführung",
+        "Sie stellt einen Debugger bereit",
+        "Sie bindet die Versionsverwaltung ein"
+      ],
+      "explanation": "Eine IDE bündelt Editor, Übersetzer, Debugger und Versionsverwaltung an einer Oberfläche. Anforderungen und Abnahme bleiben Aufgaben der Menschen im Projekt.",
+      "translations": {
+        "en": {
+          "question": "Which tasks does an integrated development environment perform?",
+          "options": [
+            "It provides an editor with syntax highlighting",
+            "It starts compilation and execution",
+            "It supplies a debugger",
+            "It integrates version control",
+            "It writes the customer's requirements",
+            "It replaces formal acceptance by the customer"
+          ],
+          "answer": [
+            "It provides an editor with syntax highlighting",
+            "It starts compilation and execution",
+            "It supplies a debugger",
+            "It integrates version control"
+          ],
+          "explanation": "An IDE bundles editor, compiler, debugger and version control in one interface. Requirements and acceptance remain tasks for the people in the project.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r45",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zu Sortierverfahren sind richtig?",
+      "options": [
+        "Sortieren ordnet Daten nach einem Kriterium",
+        "Verfahren unterscheiden sich im Aufwand",
+        "Sortierte Daten ermöglichen die binäre Suche",
+        "Der Aufwand hängt von der Anzahl der Elemente ab",
+        "Jedes Sortierverfahren braucht gleich viele Schritte",
+        "Sortieren ist nur bei Zahlen möglich"
+      ],
+      "answer": [
+        "Sortieren ordnet Daten nach einem Kriterium",
+        "Verfahren unterscheiden sich im Aufwand",
+        "Sortierte Daten ermöglichen die binäre Suche",
+        "Der Aufwand hängt von der Anzahl der Elemente ab"
+      ],
+      "explanation": "Der entscheidende Unterschied zwischen Verfahren liegt im Aufwand bei wachsender Datenmenge, und erst Sortierung macht die schnelle binäre Suche möglich. Sortieren lässt sich alles mit definierter Ordnung.",
+      "translations": {
+        "en": {
+          "question": "Which statements about sorting methods are correct?",
+          "options": [
+            "Sorting orders data by a criterion",
+            "Methods differ in their effort",
+            "Sorted data enables binary search",
+            "The effort depends on the number of elements",
+            "Every sorting method needs the same number of steps",
+            "Sorting is only possible with numbers"
+          ],
+          "answer": [
+            "Sorting orders data by a criterion",
+            "Methods differ in their effort",
+            "Sorted data enables binary search",
+            "The effort depends on the number of elements"
+          ],
+          "explanation": "The decisive difference between methods is effort as data volume grows, and only sorting makes fast binary search possible. Anything with a defined ordering can be sorted.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r46",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Diagrammarten gehören zu UML?",
+      "options": [
+        "Klassendiagramm",
+        "Anwendungsfalldiagramm",
+        "Sequenzdiagramm",
+        "Aktivitätsdiagramm",
+        "Netzplan nach Vorgangsknoten",
+        "Balkenplan nach Gantt"
+      ],
+      "answer": [
+        "Klassendiagramm",
+        "Anwendungsfalldiagramm",
+        "Sequenzdiagramm",
+        "Aktivitätsdiagramm"
+      ],
+      "explanation": "UML beschreibt Struktur und Verhalten von Software in Klassen-, Anwendungsfall-, Sequenz- und Aktivitätsdiagrammen. Netzplan und Balkenplan sind Werkzeuge des Projektmanagements.",
+      "translations": {
+        "en": {
+          "question": "Which diagram types belong to UML?",
+          "options": [
+            "Class diagram",
+            "Use case diagram",
+            "Sequence diagram",
+            "Activity diagram",
+            "Activity-on-node network plan",
+            "Gantt bar chart"
+          ],
+          "answer": [
+            "Class diagram",
+            "Use case diagram",
+            "Sequence diagram",
+            "Activity diagram"
+          ],
+          "explanation": "UML describes the structure and behaviour of software in class, use case, sequence and activity diagrams. Network plans and bar charts are project management tools.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r47",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Fehlerarten unterscheidet man in der Programmierung?",
+      "options": [
+        "Syntaxfehler beim Übersetzen",
+        "Laufzeitfehler während der Ausführung",
+        "Logische Fehler mit falschem Ergebnis",
+        "Semantische Fehler in der Bedeutung",
+        "Farbfehler in der Entwicklungsumgebung",
+        "Tastaturfehler der Hardware"
+      ],
+      "answer": [
+        "Syntaxfehler beim Übersetzen",
+        "Laufzeitfehler während der Ausführung",
+        "Logische Fehler mit falschem Ergebnis",
+        "Semantische Fehler in der Bedeutung"
+      ],
+      "explanation": "Die drei klassischen Kategorien sind Syntax, Laufzeit und Logik, wobei semantische Fehler eng mit den logischen zusammenhängen. Werkzeug- und Hardwareprobleme sind keine Programmfehlerarten.",
+      "translations": {
+        "en": {
+          "question": "Which kinds of errors are distinguished in programming?",
+          "options": [
+            "Syntax errors during compilation",
+            "Runtime errors during execution",
+            "Logical errors producing a wrong result",
+            "Semantic errors in meaning",
+            "Colour errors in the development environment",
+            "Keyboard faults of the hardware"
+          ],
+          "answer": [
+            "Syntax errors during compilation",
+            "Runtime errors during execution",
+            "Logical errors producing a wrong result",
+            "Semantic errors in meaning"
+          ],
+          "explanation": "The three classic categories are syntax, runtime and logic, with semantic errors closely related to logical ones. Tooling and hardware problems are not categories of program error.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r48",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Funktionen und Methoden sind korrekt?",
+      "options": [
+        "Sie bündeln wiederverwendbaren Code",
+        "Sie können Parameter entgegennehmen",
+        "Sie können einen Wert zurückgeben",
+        "Sie machen ein Programm besser lesbar",
+        "Sie dürfen nur einmal je Programm aufgerufen werden",
+        "Sie verlangen zwingend mindestens drei Parameter"
+      ],
+      "answer": [
+        "Sie bündeln wiederverwendbaren Code",
+        "Sie können Parameter entgegennehmen",
+        "Sie können einen Wert zurückgeben",
+        "Sie machen ein Programm besser lesbar"
+      ],
+      "explanation": "Der Sinn von Funktionen ist die Wiederverwendung: Parameter hinein, Ergebnis heraus, und der Aufrufer bleibt lesbar. Mehrfachaufrufe sind gerade der Zweck, und Parameter sind optional.",
+      "translations": {
+        "en": {
+          "question": "Which statements about functions and methods are correct?",
+          "options": [
+            "They bundle reusable code",
+            "They can accept parameters",
+            "They can return a value",
+            "They make a program more readable",
+            "They may be called only once per program",
+            "They strictly require at least three parameters"
+          ],
+          "answer": [
+            "They bundle reusable code",
+            "They can accept parameters",
+            "They can return a value",
+            "They make a program more readable"
+          ],
+          "explanation": "The point of functions is reuse: parameters in, result out, and the caller stays readable. Multiple calls are precisely the purpose, and parameters are optional.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r49",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Punkte gehören zu einer sinnvollen Programmdokumentation?",
+      "options": [
+        "Beschreibung der Schnittstellen",
+        "Erläuterung nicht offensichtlicher Entscheidungen",
+        "Hinweise zur Installation und Konfiguration",
+        "Angaben zu bekannten Einschränkungen",
+        "Eine Abschrift des gesamten Quelltexts",
+        "Die Urlaubsplanung des Entwicklungsteams"
+      ],
+      "answer": [
+        "Beschreibung der Schnittstellen",
+        "Erläuterung nicht offensichtlicher Entscheidungen",
+        "Hinweise zur Installation und Konfiguration",
+        "Angaben zu bekannten Einschränkungen"
+      ],
+      "explanation": "Dokumentation soll erklären, was der Code nicht selbst sagt: Schnittstellen, Begründungen, Betrieb und Grenzen. Den Quelltext abzuschreiben verdoppelt nur den Pflegeaufwand.",
+      "translations": {
+        "en": {
+          "question": "Which points belong in useful program documentation?",
+          "options": [
+            "Description of the interfaces",
+            "Explanation of non-obvious decisions",
+            "Notes on installation and configuration",
+            "Statements about known limitations",
+            "A transcript of the entire source code",
+            "The holiday planning of the development team"
+          ],
+          "answer": [
+            "Description of the interfaces",
+            "Explanation of non-obvious decisions",
+            "Notes on installation and configuration",
+            "Statements about known limitations"
+          ],
+          "explanation": "Documentation should explain what the code cannot say itself: interfaces, rationale, operation and limits. Transcribing the source only doubles the maintenance effort.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r50",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Variablen sind richtig?",
+      "options": [
+        "Sie besitzen einen Namen und einen Datentyp",
+        "Ihr Wert kann sich zur Laufzeit ändern",
+        "Ihr Gültigkeitsbereich ist begrenzt",
+        "Sie belegen Speicherplatz im Arbeitsspeicher",
+        "Ihr Datentyp ändert sich bei jedem Zugriff",
+        "Sie behalten ihren Wert auch nach Programmende"
+      ],
+      "answer": [
+        "Sie besitzen einen Namen und einen Datentyp",
+        "Ihr Wert kann sich zur Laufzeit ändern",
+        "Ihr Gültigkeitsbereich ist begrenzt",
+        "Sie belegen Speicherplatz im Arbeitsspeicher"
+      ],
+      "explanation": "Name, Typ, Gültigkeitsbereich und Speicherbedarf sind die Kernmerkmale. Der Typ liegt in typisierten Sprachen fest, und ohne Speichern in einer Datei ist der Wert nach Programmende weg.",
+      "translations": {
+        "en": {
+          "question": "Which statements about variables are correct?",
+          "options": [
+            "They have a name and a data type",
+            "Their value can change at runtime",
+            "Their scope of validity is limited",
+            "They occupy space in main memory",
+            "Their data type changes on every access",
+            "They keep their value after the program ends"
+          ],
+          "answer": [
+            "They have a name and a data type",
+            "Their value can change at runtime",
+            "Their scope of validity is limited",
+            "They occupy space in main memory"
+          ],
+          "explanation": "Name, type, scope and memory usage are the core characteristics. The type is fixed in typed languages, and without saving to a file the value is gone once the program ends.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r51",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zum Vergleich von Wasserfall- und agilem Modell treffen zu?",
+      "options": [
+        "Der Wasserfall legt Phasen fest nacheinander an",
+        "Agile Modelle liefern früh nutzbare Zwischenstände",
+        "Der Wasserfall erschwert späte Änderungen",
+        "Agile Modelle brauchen enge Kundenbeteiligung",
+        "Agile Modelle verzichten auf jede Planung",
+        "Der Wasserfall ist grundsätzlich immer schneller"
+      ],
+      "answer": [
+        "Der Wasserfall legt Phasen fest nacheinander an",
+        "Agile Modelle liefern früh nutzbare Zwischenstände",
+        "Der Wasserfall erschwert späte Änderungen",
+        "Agile Modelle brauchen enge Kundenbeteiligung"
+      ],
+      "explanation": "Wasserfall plant vollständig vorab und wird bei späten Änderungen teuer; agile Modelle tauschen das gegen kurze Zyklen und Kundennähe. Planung gibt es dort weiterhin, nur kleinteiliger.",
+      "translations": {
+        "en": {
+          "question": "Which statements comparing the waterfall and agile models are correct?",
+          "options": [
+            "Waterfall arranges phases strictly one after another",
+            "Agile models deliver usable increments early",
+            "Waterfall makes late changes difficult",
+            "Agile models need close customer involvement",
+            "Agile models do away with planning entirely",
+            "Waterfall is fundamentally always faster"
+          ],
+          "answer": [
+            "Waterfall arranges phases strictly one after another",
+            "Agile models deliver usable increments early",
+            "Waterfall makes late changes difficult",
+            "Agile models need close customer involvement"
+          ],
+          "explanation": "Waterfall plans fully upfront and becomes expensive with late changes; agile models trade that for short cycles and customer proximity. Planning still exists there, just in smaller pieces.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r52",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zu Datenstrukturen sind korrekt?",
+      "options": [
+        "Ein Stapel arbeitet nach zuletzt hinein, zuerst heraus",
+        "Eine Warteschlange arbeitet nach zuerst hinein, zuerst heraus",
+        "Eine Liste erlaubt das Einfügen an beliebiger Stelle",
+        "Ein Baum ordnet Elemente hierarchisch",
+        "Ein Stapel erlaubt wahlfreien Zugriff auf jedes Element",
+        "Eine Warteschlange sortiert ihre Elemente automatisch"
+      ],
+      "answer": [
+        "Ein Stapel arbeitet nach zuletzt hinein, zuerst heraus",
+        "Eine Warteschlange arbeitet nach zuerst hinein, zuerst heraus",
+        "Eine Liste erlaubt das Einfügen an beliebiger Stelle",
+        "Ein Baum ordnet Elemente hierarchisch"
+      ],
+      "explanation": "Stapel und Warteschlange unterscheiden sich genau in der Entnahmereihenfolge, Listen und Bäume in Flexibilität und Ordnung. Wahlfreier Zugriff und automatisches Sortieren gehören nicht dazu.",
+      "translations": {
+        "en": {
+          "question": "Which statements about data structures are correct?",
+          "options": [
+            "A stack works last in, first out",
+            "A queue works first in, first out",
+            "A list allows insertion at any position",
+            "A tree orders elements hierarchically",
+            "A stack allows random access to every element",
+            "A queue sorts its elements automatically"
+          ],
+          "answer": [
+            "A stack works last in, first out",
+            "A queue works first in, first out",
+            "A list allows insertion at any position",
+            "A tree orders elements hierarchically"
+          ],
+          "explanation": "Stack and queue differ precisely in removal order, lists and trees in flexibility and ordering. Random access and automatic sorting are not part of it.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r53",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Boolesche Operatoren sind zutreffend?",
+      "options": [
+        "UND liefert wahr, wenn beide Bedingungen wahr sind",
+        "ODER liefert wahr, wenn mindestens eine wahr ist",
+        "NICHT kehrt einen Wahrheitswert um",
+        "Sie lassen sich in Bedingungen kombinieren",
+        "UND liefert wahr, sobald eine Bedingung wahr ist",
+        "NICHT verknüpft immer genau zwei Bedingungen"
+      ],
+      "answer": [
+        "UND liefert wahr, wenn beide Bedingungen wahr sind",
+        "ODER liefert wahr, wenn mindestens eine wahr ist",
+        "NICHT kehrt einen Wahrheitswert um",
+        "Sie lassen sich in Bedingungen kombinieren"
+      ],
+      "explanation": "UND fordert alles, ODER genügt eines, NICHT dreht um - kombiniert ergeben sie beliebig komplexe Bedingungen. Die letzten beiden Aussagen vertauschen genau diese Definitionen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about boolean operators are correct?",
+          "options": [
+            "AND yields true when both conditions are true",
+            "OR yields true when at least one is true",
+            "NOT inverts a truth value",
+            "They can be combined in conditions",
+            "AND yields true as soon as one condition is true",
+            "NOT always joins exactly two conditions"
+          ],
+          "answer": [
+            "AND yields true when both conditions are true",
+            "OR yields true when at least one is true",
+            "NOT inverts a truth value",
+            "They can be combined in conditions"
+          ],
+          "explanation": "AND demands everything, OR settles for one, NOT inverts - combined they build arbitrarily complex conditions. The last two statements swap exactly these definitions.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r54",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Gründe sprechen für den Einsatz einer Bibliothek statt einer Eigenentwicklung?",
+      "options": [
+        "Der Aufwand für die Umsetzung sinkt",
+        "Die Lösung ist bereits vielfach erprobt",
+        "Fehler werden zentral durch den Hersteller behoben",
+        "Es entsteht Zeit für die eigentliche Fachlogik",
+        "Die eigene Anwendung wird dadurch immer kleiner",
+        "Lizenzfragen entfallen bei Bibliotheken vollständig"
+      ],
+      "answer": [
+        "Der Aufwand für die Umsetzung sinkt",
+        "Die Lösung ist bereits vielfach erprobt",
+        "Fehler werden zentral durch den Hersteller behoben",
+        "Es entsteht Zeit für die eigentliche Fachlogik"
+      ],
+      "explanation": "Erprobte Bibliotheken sparen Aufwand und Fehler und lassen Zeit für das, was die Anwendung ausmacht. Die Programmgröße wächst durch Abhängigkeiten eher, und Lizenzen wollen genau geprüft sein.",
+      "translations": {
+        "en": {
+          "question": "Which reasons argue for using a library instead of writing your own?",
+          "options": [
+            "The implementation effort drops",
+            "The solution is already widely proven",
+            "Bugs are fixed centrally by the vendor",
+            "Time is freed up for the actual business logic",
+            "The application itself always becomes smaller",
+            "Licensing questions disappear entirely with libraries"
+          ],
+          "answer": [
+            "The implementation effort drops",
+            "The solution is already widely proven",
+            "Bugs are fixed centrally by the vendor",
+            "Time is freed up for the actual business logic"
+          ],
+          "explanation": "Proven libraries save effort and bugs and free up time for what makes the application. Program size tends to grow through dependencies, and licences need careful checking.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r55",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zur binären Suche sind richtig?",
+      "options": [
+        "Sie setzt eine sortierte Datenmenge voraus",
+        "Sie halbiert den Suchbereich in jedem Schritt",
+        "Sie ist bei großen Mengen deutlich schneller als lineares Suchen",
+        "Sie vergleicht zuerst mit dem mittleren Element",
+        "Sie funktioniert auch auf unsortierten Daten",
+        "Sie prüft grundsätzlich jedes Element einmal"
+      ],
+      "answer": [
+        "Sie setzt eine sortierte Datenmenge voraus",
+        "Sie halbiert den Suchbereich in jedem Schritt",
+        "Sie ist bei großen Mengen deutlich schneller als lineares Suchen",
+        "Sie vergleicht zuerst mit dem mittleren Element"
+      ],
+      "explanation": "Sortierung, Halbierung und der Start in der Mitte sind das Prinzip, daraus folgt der große Vorsprung bei vielen Elementen. Jedes Element zu prüfen wäre gerade die lineare Suche.",
+      "translations": {
+        "en": {
+          "question": "Which statements about binary search are correct?",
+          "options": [
+            "It requires a sorted data set",
+            "It halves the search range at every step",
+            "It is much faster than linear search on large sets",
+            "It first compares against the middle element",
+            "It also works on unsorted data",
+            "It fundamentally checks every element once"
+          ],
+          "answer": [
+            "It requires a sorted data set",
+            "It halves the search range at every step",
+            "It is much faster than linear search on large sets",
+            "It first compares against the middle element"
+          ],
+          "explanation": "Sorting, halving and starting in the middle are the principle, from which the large advantage on many elements follows. Checking every element would be linear search.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r56",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Angaben beschreiben eine Methode in einem Klassendiagramm?",
+      "options": [
+        "Der Name der Methode",
+        "Die Parameterliste",
+        "Der Rückgabetyp",
+        "Die Sichtbarkeit",
+        "Die Anzahl der Aufrufe zur Laufzeit",
+        "Der Speicherort der Quelldatei"
+      ],
+      "answer": [
+        "Der Name der Methode",
+        "Die Parameterliste",
+        "Der Rückgabetyp",
+        "Die Sichtbarkeit"
+      ],
+      "explanation": "Signatur und Sichtbarkeit beschreiben eine Methode statisch und vollständig. Laufzeitverhalten und Dateiablage gehören nicht in ein Strukturdiagramm.",
+      "translations": {
+        "en": {
+          "question": "Which details describe a method in a class diagram?",
+          "options": [
+            "The name of the method",
+            "The parameter list",
+            "The return type",
+            "The visibility",
+            "The number of runtime calls",
+            "The location of the source file"
+          ],
+          "answer": [
+            "The name of the method",
+            "The parameter list",
+            "The return type",
+            "The visibility"
+          ],
+          "explanation": "Signature and visibility describe a method statically and completely. Runtime behaviour and file location do not belong in a structural diagram.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r57",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Maßnahmen erhöhen die Wartbarkeit von Quelltext?",
+      "options": [
+        "Sprechende Namen für Variablen und Methoden",
+        "Kurze, klar abgegrenzte Funktionen",
+        "Einheitliche Formatierung im gesamten Projekt",
+        "Vermeidung von doppeltem Code",
+        "Möglichst viele Aufgaben in einer Funktion bündeln",
+        "Verzicht auf jede Art von Struktur zugunsten des Tempos"
+      ],
+      "answer": [
+        "Sprechende Namen für Variablen und Methoden",
+        "Kurze, klar abgegrenzte Funktionen",
+        "Einheitliche Formatierung im gesamten Projekt",
+        "Vermeidung von doppeltem Code"
+      ],
+      "explanation": "Lesbarkeit entsteht durch Benennung, Größe, Einheitlichkeit und fehlende Wiederholung. Alleskönner-Funktionen und Strukturlosigkeit erzeugen genau das Gegenteil.",
+      "translations": {
+        "en": {
+          "question": "Which measures increase the maintainability of source code?",
+          "options": [
+            "Meaningful names for variables and methods",
+            "Short, clearly delimited functions",
+            "Consistent formatting across the project",
+            "Avoidance of duplicated code",
+            "Bundling as many tasks as possible into one function",
+            "Dropping all structure in favour of speed"
+          ],
+          "answer": [
+            "Meaningful names for variables and methods",
+            "Short, clearly delimited functions",
+            "Consistent formatting across the project",
+            "Avoidance of duplicated code"
+          ],
+          "explanation": "Readability comes from naming, size, consistency and absence of repetition. Do-everything functions and structurelessness produce exactly the opposite.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r58",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Parameterübergabe sind zutreffend?",
+      "options": [
+        "Bei Wertübergabe erhält die Methode eine Kopie",
+        "Bei Referenzübergabe wirkt die Änderung nach außen",
+        "Die Reihenfolge der Parameter ist bedeutsam",
+        "Parameter können Standardwerte besitzen",
+        "Parameter werden immer als Text übergeben",
+        "Eine Methode darf höchstens einen Parameter haben"
+      ],
+      "answer": [
+        "Bei Wertübergabe erhält die Methode eine Kopie",
+        "Bei Referenzübergabe wirkt die Änderung nach außen",
+        "Die Reihenfolge der Parameter ist bedeutsam",
+        "Parameter können Standardwerte besitzen"
+      ],
+      "explanation": "Wert oder Referenz entscheidet, ob Änderungen im Aufrufer sichtbar werden - eine häufige Fehlerquelle. Reihenfolge zählt, Standardwerte sind verbreitet, und die Anzahl ist nicht begrenzt.",
+      "translations": {
+        "en": {
+          "question": "Which statements about parameter passing are correct?",
+          "options": [
+            "With pass by value the method receives a copy",
+            "With pass by reference the change is visible outside",
+            "The order of the parameters matters",
+            "Parameters can have default values",
+            "Parameters are always passed as text",
+            "A method may have at most one parameter"
+          ],
+          "answer": [
+            "With pass by value the method receives a copy",
+            "With pass by reference the change is visible outside",
+            "The order of the parameters matters",
+            "Parameters can have default values"
+          ],
+          "explanation": "Value or reference decides whether changes become visible in the caller - a frequent source of bugs. Order matters, default values are common, and the count is not limited.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r59",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Zahlensysteme sind richtig?",
+      "options": [
+        "Das Dualsystem nutzt zwei Ziffern",
+        "Das Hexadezimalsystem nutzt sechzehn Ziffern",
+        "Vier Bit entsprechen einer Hexadezimalziffer",
+        "Rechner arbeiten intern dual",
+        "Das Hexadezimalsystem nutzt nur Buchstaben",
+        "Das Dualsystem kennt die Ziffer zwei"
+      ],
+      "answer": [
+        "Das Dualsystem nutzt zwei Ziffern",
+        "Das Hexadezimalsystem nutzt sechzehn Ziffern",
+        "Vier Bit entsprechen einer Hexadezimalziffer",
+        "Rechner arbeiten intern dual"
+      ],
+      "explanation": "Dual mit 0 und 1, hexadezimal mit 0 bis 9 und A bis F, und vier Bit passen genau in eine Hexziffer - deshalb die kompakte Schreibweise. Die Ziffer zwei gibt es im Dualsystem nicht.",
+      "translations": {
+        "en": {
+          "question": "Which statements about number systems are correct?",
+          "options": [
+            "The binary system uses two digits",
+            "The hexadecimal system uses sixteen digits",
+            "Four bits correspond to one hexadecimal digit",
+            "Computers work internally in binary",
+            "The hexadecimal system uses only letters",
+            "The binary system knows the digit two"
+          ],
+          "answer": [
+            "The binary system uses two digits",
+            "The hexadecimal system uses sixteen digits",
+            "Four bits correspond to one hexadecimal digit",
+            "Computers work internally in binary"
+          ],
+          "explanation": "Binary with 0 and 1, hexadecimal with 0 to 9 and A to F, and four bits fit exactly into one hex digit - hence the compact notation. The digit two does not exist in binary.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r60",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aufgaben hat ein Debugger?",
+      "options": [
+        "Das Programm an definierten Stellen anhalten",
+        "Variablenwerte zur Laufzeit anzeigen",
+        "Den Ablauf schrittweise nachvollziehen",
+        "Den Aufrufstapel sichtbar machen",
+        "Fehler eigenständig im Quelltext beheben",
+        "Die Anforderungen des Kunden erheben"
+      ],
+      "answer": [
+        "Das Programm an definierten Stellen anhalten",
+        "Variablenwerte zur Laufzeit anzeigen",
+        "Den Ablauf schrittweise nachvollziehen",
+        "Den Aufrufstapel sichtbar machen"
+      ],
+      "explanation": "Haltepunkte, Variableneinblick, Einzelschritt und Aufrufstapel machen unsichtbares Verhalten sichtbar. Die Korrektur schreibt weiterhin der Mensch, und Anforderungen erhebt niemand mit einem Debugger.",
+      "translations": {
+        "en": {
+          "question": "Which tasks does a debugger have?",
+          "options": [
+            "Halt the program at defined points",
+            "Show variable values at runtime",
+            "Step through the flow gradually",
+            "Make the call stack visible",
+            "Fix bugs in the source code by itself",
+            "Elicit the customer's requirements"
+          ],
+          "answer": [
+            "Halt the program at defined points",
+            "Show variable values at runtime",
+            "Step through the flow gradually",
+            "Make the call stack visible"
+          ],
+          "explanation": "Breakpoints, variable inspection, single stepping and the call stack make invisible behaviour visible. The fix is still written by a human, and nobody elicits requirements with a debugger.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r61",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen zum Programmablaufplan sind korrekt?",
+      "options": [
+        "Er stellt den Ablauf grafisch mit Symbolen dar",
+        "Verzweigungen werden als Raute gezeichnet",
+        "Start und Ende haben eigene Symbole",
+        "Er ist unabhängig von der Programmiersprache",
+        "Er ersetzt vollständig den späteren Quelltext",
+        "Er darf nur von einer Person gelesen werden"
+      ],
+      "answer": [
+        "Er stellt den Ablauf grafisch mit Symbolen dar",
+        "Verzweigungen werden als Raute gezeichnet",
+        "Start und Ende haben eigene Symbole",
+        "Er ist unabhängig von der Programmiersprache"
+      ],
+      "explanation": "Der PAP verbindet genormte Symbole durch Pfeile und beschreibt den Ablauf sprachneutral - ein Entwurfswerkzeug, kein lauffähiges Programm.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the program flowchart are correct?",
+          "options": [
+            "It shows the flow graphically with symbols",
+            "Branches are drawn as a diamond",
+            "Start and end have their own symbols",
+            "It is independent of the programming language",
+            "It completely replaces the later source code",
+            "It may only be read by a single person"
+          ],
+          "answer": [
+            "It shows the flow graphically with symbols",
+            "Branches are drawn as a diamond",
+            "Start and end have their own symbols",
+            "It is independent of the programming language"
+          ],
+          "explanation": "The flowchart links standardised symbols with arrows and describes the flow language-neutrally - a design tool, not a runnable program.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r62",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Ausnahmen sind zutreffend?",
+      "options": [
+        "Sie melden außergewöhnliche Situationen zur Laufzeit",
+        "Sie lassen sich gezielt abfangen und behandeln",
+        "Unbehandelt führen sie zum Programmabbruch",
+        "Sie trennen Fehlerbehandlung vom Normalablauf",
+        "Sie werden bereits beim Übersetzen ausgelöst",
+        "Sie ersetzen die Prüfung von Benutzereingaben"
+      ],
+      "answer": [
+        "Sie melden außergewöhnliche Situationen zur Laufzeit",
+        "Sie lassen sich gezielt abfangen und behandeln",
+        "Unbehandelt führen sie zum Programmabbruch",
+        "Sie trennen Fehlerbehandlung vom Normalablauf"
+      ],
+      "explanation": "Ausnahmen halten den Normalfall lesbar und bündeln die Fehlerbehandlung an einer Stelle. Sie entstehen zur Laufzeit und ersetzen keine Eingabeprüfung, die den Fehler von vornherein vermeidet.",
+      "translations": {
+        "en": {
+          "question": "Which statements about exceptions are correct?",
+          "options": [
+            "They signal exceptional situations at runtime",
+            "They can be caught and handled deliberately",
+            "Unhandled, they terminate the program",
+            "They separate error handling from the normal flow",
+            "They are already raised during compilation",
+            "They replace validation of user input"
+          ],
+          "answer": [
+            "They signal exceptional situations at runtime",
+            "They can be caught and handled deliberately",
+            "Unhandled, they terminate the program",
+            "They separate error handling from the normal flow"
+          ],
+          "explanation": "Exceptions keep the normal case readable and concentrate error handling in one place. They arise at runtime and do not replace input validation, which avoids the error in the first place.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r63",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Schritte gehören zur Aufnahme von Anforderungen beim Kunden?",
+      "options": [
+        "Gespräche mit den späteren Nutzern führen",
+        "Bestehende Abläufe beobachten und aufnehmen",
+        "Anforderungen schriftlich festhalten",
+        "Unklarheiten gezielt nachfragen",
+        "Die Umsetzung ohne Rücksprache festlegen",
+        "Anforderungen nach eigenem Geschmack ändern"
+      ],
+      "answer": [
+        "Gespräche mit den späteren Nutzern führen",
+        "Bestehende Abläufe beobachten und aufnehmen",
+        "Anforderungen schriftlich festhalten",
+        "Unklarheiten gezielt nachfragen"
+      ],
+      "explanation": "Anforderungen entstehen im Dialog: zuhören, beobachten, schriftlich festhalten und Unklarheiten klären. Alleingänge führen zu Software, die am Bedarf vorbeigeht.",
+      "translations": {
+        "en": {
+          "question": "Which steps belong to gathering requirements at the customer?",
+          "options": [
+            "Hold conversations with the later users",
+            "Observe and record existing workflows",
+            "Record requirements in writing",
+            "Ask specifically about ambiguities",
+            "Decide the implementation without consultation",
+            "Change requirements to personal taste"
+          ],
+          "answer": [
+            "Hold conversations with the later users",
+            "Observe and record existing workflows",
+            "Record requirements in writing",
+            "Ask specifically about ambiguities"
+          ],
+          "explanation": "Requirements emerge in dialogue: listen, observe, write down and clarify ambiguities. Going it alone produces software that misses the actual need.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r64",
+      "type": "multiple",
+      "category": "Softwareentwicklung",
+      "question": "Welche Aussagen über Konstanten und Variablen sind richtig?",
+      "options": [
+        "Konstanten behalten ihren Wert während der Laufzeit",
+        "Variablen können ihren Wert ändern",
+        "Konstanten machen feste Werte im Code lesbar",
+        "Beide besitzen einen Namen und einen Typ",
+        "Konstanten lassen sich zur Laufzeit überschreiben",
+        "Variablen benötigen grundsätzlich keinen Datentyp"
+      ],
+      "answer": [
+        "Konstanten behalten ihren Wert während der Laufzeit",
+        "Variablen können ihren Wert ändern",
+        "Konstanten machen feste Werte im Code lesbar",
+        "Beide besitzen einen Namen und einen Typ"
+      ],
+      "explanation": "Der Unterschied liegt allein in der Veränderbarkeit; Name und Typ haben beide. Genau deshalb schützt eine Konstante vor versehentlichem Überschreiben fester Werte.",
+      "translations": {
+        "en": {
+          "question": "Which statements about constants and variables are correct?",
+          "options": [
+            "Constants keep their value during runtime",
+            "Variables can change their value",
+            "Constants make fixed values in code readable",
+            "Both have a name and a type",
+            "Constants can be overwritten at runtime",
+            "Variables fundamentally need no data type"
+          ],
+          "answer": [
+            "Constants keep their value during runtime",
+            "Variables can change their value",
+            "Constants make fixed values in code readable",
+            "Both have a name and a type"
+          ],
+          "explanation": "The difference lies solely in mutability; both have a name and a type. That is exactly why a constant protects fixed values from accidental overwriting.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r65",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welchen Dezimalwert hat die Binärzahl 1010?",
+      "answer": "10",
+      "explanation": "Stellenwerte von rechts: 8 + 0 + 2 + 0 ergibt 10.",
+      "translations": {
+        "en": {
+          "question": "What decimal value does the binary number 1010 have?",
+          "answer": "10",
+          "explanation": "Place values from the right: 8 + 0 + 2 + 0 gives 10.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r66",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welcher Datentyp speichert genau die Werte wahr und falsch?",
+      "answer": "boolean",
+      "explanation": "Ein boolean bildet Ja-Nein-Entscheidungen exakt ab und braucht dafür nur ein einziges Bit an Information.",
+      "translations": {
+        "en": {
+          "question": "Which data type stores exactly the values true and false?",
+          "answer": "boolean",
+          "explanation": "A boolean models yes-no decisions precisely and needs only a single bit of information for it.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r67",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Wie heißt ein Fehler, der das Übersetzen verhindert, weil Sprachregeln verletzt sind?",
+      "answer": "Syntaxfehler",
+      "explanation": "Der Compiler meldet ihn samt Zeilennummer, bevor das Programm überhaupt laufen kann.",
+      "translations": {
+        "en": {
+          "question": "What is an error preventing compilation because language rules are broken called?",
+          "answer": "Syntax error",
+          "explanation": "The compiler reports it with a line number before the program can even run.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r68",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welches Dokument beschreibt aus Sicht des Auftraggebers, was gefordert wird?",
+      "answer": "Lastenheft",
+      "explanation": "Es nennt das Was. Die Antwort des Auftragnehmers mit dem Wie steht im Pflichtenheft.",
+      "translations": {
+        "en": {
+          "question": "Which document describes from the client's point of view what is required?",
+          "answer": "Requirements specification",
+          "explanation": "It states the what. The contractor's answer with the how is in the functional specification.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r69",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Wie heißt das Prinzip, bei dem eine Klasse Eigenschaften einer anderen übernimmt?",
+      "answer": "Vererbung",
+      "explanation": "Die abgeleitete Klasse erbt Attribute und Methoden und ergänzt eigene - so wird gemeinsamer Code nur einmal geschrieben.",
+      "translations": {
+        "en": {
+          "question": "What is the principle of one class taking over the properties of another called?",
+          "answer": "Inheritance",
+          "explanation": "The derived class inherits attributes and methods and adds its own - shared code is written only once.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r70",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Wie nennt man den Vorgang, bei dem sich eine Methode selbst aufruft?",
+      "answer": "Rekursion",
+      "explanation": "Ohne Abbruchbedingung läuft der Aufrufstapel über und das Programm stürzt ab.",
+      "translations": {
+        "en": {
+          "question": "What is the process of a method calling itself called?",
+          "answer": "Recursion",
+          "explanation": "Without a termination condition the call stack overflows and the program crashes.",
+          "category": "Software Development"
+        }
+      }
+    },
+    {
+      "id": "ap1-swe-r71",
+      "type": "text",
+      "category": "Softwareentwicklung",
+      "question": "Welche Datenstruktur arbeitet nach dem Prinzip zuerst hinein, zuerst heraus?",
+      "answer": "Warteschlange",
+      "explanation": "Auf Englisch Queue. Der Stapel arbeitet genau umgekehrt nach zuletzt hinein, zuerst heraus.",
+      "translations": {
+        "en": {
+          "question": "Which data structure works on the first in, first out principle?",
+          "answer": "Queue",
+          "explanation": "The stack works exactly the other way round, last in first out.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q09",
+      "id": "ap1-swe-r72",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Worin unterscheiden sich Compiler und Interpreter?",
-      "answer": "Ein Compiler übersetzt den gesamten Quellcode vor der Ausführung in Maschinencode; ein Interpreter übersetzt und führt den Code zeilenweise zur Laufzeit aus",
-      "explanation": "Kompilierte Programme laufen schneller, interpretierte sind flexibler und plattformunabhängiger. Beispiele: C/C++ (Compiler), Python (Interpreter).",
+      "question": "Wie heißt ein gespeicherter Änderungsstand in einer Versionsverwaltung?",
+      "answer": "Commit",
+      "explanation": "Er enthält Autor, Zeitpunkt und eine Beschreibung und dient als Rückkehrpunkt in der Historie.",
       "translations": {
         "en": {
-          "question": "What is the difference between a compiler and an interpreter?",
-          "answer": "A compiler translates the entire source code into machine code before execution; an interpreter translates and executes the code line by line at runtime",
-          "explanation": "Compiled programs run faster, interpreted ones are more flexible and platform-independent. Examples: C/C++ (compiler), Python (interpreter).",
+          "question": "What is a stored set of changes in a version control system called?",
+          "answer": "Commit",
+          "explanation": "It contains author, timestamp and a description and serves as a return point in the history.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q10",
+      "id": "ap1-swe-r73",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Wie heißt das nach seinen beiden Erfindern benannte Diagramm, mit dem Algorithmen strukturiert grafisch dargestellt werden?",
-      "answer": "Nassi-Shneiderman-Diagramm (Struktogramm)",
-      "explanation": "Struktogramme stellen Sequenz, Verzweigung und Schleife als verschachtelte Blöcke dar — ohne Sprünge, im Gegensatz zum Programmablaufplan (Flussdiagramm).",
+      "question": "Wie nennt man einen eigenen Entwicklungsstrang in der Versionsverwaltung?",
+      "answer": "Branch",
+      "explanation": "In ihm lässt sich arbeiten, ohne den Hauptstand zu stören; per Merge fließt das Ergebnis zurück.",
       "translations": {
         "en": {
-          "question": "What is the name of the diagram, named after its two inventors, used to represent algorithms graphically in a structured way?",
-          "answer": "Nassi-Shneiderman diagram (structogram)",
-          "explanation": "Structograms represent sequence, branching and loops as nested blocks — without jumps, unlike a classic flowchart.",
+          "question": "What is a separate development line in version control called?",
+          "answer": "Branch",
+          "explanation": "Work happens in it without disturbing the main line; a merge brings the result back.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q11",
+      "id": "ap1-swe-r74",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Wandeln Sie die Binärzahl 10100 in eine Dezimalzahl um.",
-      "answer": "20 (16 + 4)",
-      "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20.",
+      "question": "Welches Suchverfahren halbiert in jedem Schritt den Suchbereich?",
+      "answer": "Binäre Suche",
+      "explanation": "Sie setzt sortierte Daten voraus und braucht dadurch nur logarithmisch viele Vergleiche.",
       "translations": {
         "en": {
-          "question": "Convert the binary number 10100 to decimal.",
-          "answer": "20 (16 + 4)",
-          "explanation": "10100₂ = 1×16 + 0×8 + 1×4 + 0×2 + 0×1 = 20.",
+          "question": "Which search method halves the search range at every step?",
+          "answer": "Binary search",
+          "explanation": "It requires sorted data and therefore needs only logarithmically many comparisons.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q12",
+      "id": "ap1-swe-r75",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was versteht man unter einem Algorithmus?",
-      "answer": "Eine eindeutige, endliche Handlungsvorschrift zur Lösung eines Problems, die aus einzelnen, ausführbaren Schritten besteht",
-      "explanation": "Wichtige Eigenschaften: Eindeutigkeit, Endlichkeit, Ausführbarkeit und Determiniertheit — gleiche Eingabe führt zum gleichen Ergebnis.",
+      "question": "Welchen Rückgabetyp trägt eine Methode, die keinen Wert zurückgibt?",
+      "answer": "void",
+      "explanation": "Sie führt nur eine Aktion aus, etwa eine Ausgabe, und liefert dem Aufrufer kein Ergebnis.",
       "translations": {
         "en": {
-          "question": "What is an algorithm?",
-          "answer": "An unambiguous, finite set of instructions for solving a problem, consisting of individual executable steps",
-          "explanation": "Key properties: unambiguity, finiteness, executability and determinism — the same input leads to the same result.",
+          "question": "Which return type does a method that returns no value carry?",
+          "answer": "void",
+          "explanation": "It only performs an action, such as printing, and gives the caller no result.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q13",
+      "id": "ap1-swe-r76",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine Variable?",
-      "answer": "Ein benannter Speicherplatz für einen veränderbaren Wert.",
-      "explanation": "Variablen speichern Zwischenergebnisse, Eingaben oder Zustände eines Programms.",
+      "question": "Wie nennt man das grafische Ablaufmodell aus geschachtelten Rechtecken?",
+      "answer": "Struktogramm",
+      "explanation": "Nach Nassi-Shneiderman benannt. Es erzwingt strukturierte Programmierung ohne Sprünge.",
       "translations": {
         "en": {
-          "question": "What is a variable?",
-          "answer": "A named storage location for a changeable value.",
-          "explanation": "Variables store intermediate results, input or program state.",
+          "question": "What is the graphical flow model made of nested rectangles called?",
+          "answer": "Structogram",
+          "explanation": "Named after Nassi-Shneiderman. It enforces structured programming without jumps.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q14",
+      "id": "ap1-swe-r77",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine Konstante?",
-      "answer": "Ein benannter Wert, der nach der Definition nicht verändert werden soll.",
-      "explanation": "Konstanten machen feste Werte lesbarer und verhindern unbeabsichtigte Änderungen.",
+      "question": "Welcher Operator vergleicht in vielen Sprachen zwei Werte auf Gleichheit?",
+      "answer": "==",
+      "explanation": "Ein einfaches Gleichheitszeichen weist dagegen zu - eine klassische Fehlerquelle in Bedingungen.",
       "translations": {
         "en": {
-          "question": "What is a constant?",
-          "answer": "A named value that should not be changed after definition.",
-          "explanation": "Constants make fixed values more readable and prevent accidental changes.",
+          "question": "Which operator compares two values for equality in many languages?",
+          "answer": "==",
+          "explanation": "A single equals sign assigns instead - a classic source of errors in conditions.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q15",
+      "id": "ap1-swe-r78",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Array?",
-      "answer": "Eine Datenstruktur, die mehrere gleichartige Werte unter einem Namen speichert.",
-      "explanation": "Elemente eines Arrays werden meist über einen Index angesprochen.",
+      "question": "Wie heißt der Test, der ohne Kenntnis des Quelltexts nur Ein- und Ausgaben prüft?",
+      "answer": "Blackbox-Test",
+      "explanation": "Getestet wird gegen die Spezifikation. Der Whitebox-Test nutzt dagegen die innere Struktur.",
       "translations": {
         "en": {
-          "question": "What is an array?",
-          "answer": "A data structure that stores multiple similar values under one name.",
-          "explanation": "Array elements are usually accessed by index.",
+          "question": "What is a test checking only inputs and outputs without knowledge of the code called?",
+          "answer": "Black box test",
+          "explanation": "Testing happens against the specification. A white box test uses the internal structure instead.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q16",
+      "id": "ap1-swe-r79",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine Funktion?",
-      "answer": "Ein benannter Programmblock, der eine Aufgabe ausführt und optional einen Wert zurückgibt.",
-      "explanation": "Funktionen strukturieren Programme und vermeiden Wiederholungen.",
+      "question": "Welchen Dezimalwert hat die Binärzahl 11111111?",
+      "answer": "255",
+      "explanation": "Acht gesetzte Bits ergeben den größtmöglichen Wert eines Bytes.",
       "translations": {
         "en": {
-          "question": "What is a function?",
-          "answer": "A named block of code that performs a task and optionally returns a value.",
-          "explanation": "Functions structure programs and avoid repetition.",
+          "question": "What decimal value does the binary number 11111111 have?",
+          "answer": "255",
+          "explanation": "Eight set bits give the largest possible value of one byte.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q17",
+      "id": "ap1-swe-r80",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was bedeutet Parameter in einer Funktion?",
-      "answer": "Ein Eingabewert, den eine Funktion bei ihrem Aufruf erhält.",
-      "explanation": "Parameter machen Funktionen flexibel und wiederverwendbar.",
+      "question": "Wie nennt man das Zusammenführen zweier Entwicklungsstände in Git?",
+      "answer": "Merge",
+      "explanation": "Bestehen widersprüchliche Änderungen an derselben Stelle, entsteht ein Konflikt und muss von Hand gelöst werden.",
       "translations": {
         "en": {
-          "question": "What does parameter mean in a function?",
-          "answer": "An input value that a function receives when called.",
-          "explanation": "Parameters make functions flexible and reusable.",
+          "question": "What is combining two development lines in Git called?",
+          "answer": "Merge",
+          "explanation": "If contradictory changes hit the same place, a conflict arises and must be resolved by hand.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q18",
+      "id": "ap1-swe-r81",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine Bedingung in einem Programm?",
-      "answer": "Ein Ausdruck, der wahr oder falsch ergibt und den Programmablauf steuert.",
-      "explanation": "Bedingungen werden zum Beispiel in if-Anweisungen und Schleifen verwendet.",
+      "question": "Wie heißt das Vorgehensmodell mit Sprints, Daily und Product Owner?",
+      "answer": "Scrum",
+      "explanation": "Es liefert in kurzen Zyklen lauffähige Zwischenstände und holt regelmäßig Rückmeldung ein.",
       "translations": {
         "en": {
-          "question": "What is a condition in a program?",
-          "answer": "An expression that evaluates to true or false and controls program flow.",
-          "explanation": "Conditions are used in if statements and loops, for example.",
+          "question": "What is the process model with sprints, dailies and a product owner called?",
+          "answer": "Scrum",
+          "explanation": "It delivers running increments in short cycles and gathers feedback regularly.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q19",
+      "id": "ap1-swe-r82",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine for-Schleife?",
-      "answer": "Eine Schleife, die häufig mit Zähler und fester Wiederholungsanzahl arbeitet.",
-      "explanation": "Sie eignet sich besonders, wenn die Anzahl der Durchläufe vorher bekannt ist.",
+      "question": "Bei welchem Index beginnt in vielen Programmiersprachen das erste Element eines Arrays?",
+      "answer": "0",
+      "explanation": "Der Index gibt den Abstand zum Anfang an, deshalb hat das erste Element den Abstand null.",
       "translations": {
         "en": {
-          "question": "What is a for loop?",
-          "answer": "A loop often using a counter and fixed number of repetitions.",
-          "explanation": "It is useful when the number of iterations is known in advance.",
+          "question": "At which index does the first element of an array start in many languages?",
+          "answer": "0",
+          "explanation": "The index states the offset from the start, so the first element has offset zero.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q20",
+      "id": "ap1-swe-r83",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist eine while-Schleife?",
-      "answer": "Eine kopfgesteuerte Schleife, die läuft, solange eine Bedingung wahr ist.",
-      "explanation": "Ist die Bedingung zu Beginn falsch, wird der Schleifenrumpf nicht ausgeführt.",
+      "question": "Wie nennt man das Verbergen des inneren Zustands eines Objekts hinter Methoden?",
+      "answer": "Kapselung",
+      "explanation": "Der Zugriff läuft nur über definierte Methoden, wodurch das Objekt in einem gültigen Zustand bleibt.",
       "translations": {
         "en": {
-          "question": "What is a while loop?",
-          "answer": "A pre-test loop that runs while a condition is true.",
-          "explanation": "If the condition is false initially, the loop body is not executed.",
+          "question": "What is hiding an object's internal state behind methods called?",
+          "answer": "Encapsulation",
+          "explanation": "Access happens only through defined methods, keeping the object in a valid state.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q21",
+      "id": "ap1-swe-r84",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist Debugging?",
-      "answer": "Das Suchen, Analysieren und Beheben von Fehlern in Programmen.",
-      "explanation": "Debugger, Logging und Tests helfen dabei, Fehlerursachen einzugrenzen.",
+      "question": "Welches Werkzeug übersetzt Quelltext vorab vollständig in Maschinencode?",
+      "answer": "Compiler",
+      "explanation": "Der Interpreter übersetzt dagegen zur Laufzeit Zeile für Zeile.",
       "translations": {
         "en": {
-          "question": "What is debugging?",
-          "answer": "Finding, analyzing and fixing errors in programs.",
-          "explanation": "Debuggers, logging and tests help narrow down causes.",
+          "question": "Which tool translates source code fully into machine code in advance?",
+          "answer": "Compiler",
+          "explanation": "An interpreter by contrast translates line by line at runtime.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q22",
+      "id": "ap1-swe-r85",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Syntaxfehler?",
-      "answer": "Ein Verstoß gegen die Grammatik der Programmiersprache.",
-      "explanation": "Syntaxfehler verhindern meist, dass ein Programm übersetzt oder ausgeführt wird.",
+      "question": "Wie heißt ein Fehler, der erst während der Ausführung auftritt?",
+      "answer": "Laufzeitfehler",
+      "explanation": "Typische Auslöser sind Division durch null oder Zugriffe außerhalb der Feldgrenzen.",
       "translations": {
         "en": {
-          "question": "What is a syntax error?",
-          "answer": "A violation of the programming language grammar.",
-          "explanation": "Syntax errors usually prevent a program from compiling or running.",
+          "question": "What is an error that occurs only during execution called?",
+          "answer": "Runtime error",
+          "explanation": "Typical triggers are division by zero or access outside array bounds.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q23",
+      "id": "ap1-swe-r86",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Laufzeitfehler?",
-      "answer": "Ein Fehler, der erst während der Programmausführung auftritt.",
-      "explanation": "Beispiele sind Division durch null oder Zugriff auf nicht vorhandene Dateien.",
+      "question": "Wie nennt man eine Schleife, die ihre Bedingung erst nach dem Rumpf prüft?",
+      "answer": "Fußgesteuerte Schleife",
+      "explanation": "Sie läuft deshalb garantiert mindestens einmal durch, typischerweise als do-while geschrieben.",
       "translations": {
         "en": {
-          "question": "What is a runtime error?",
-          "answer": "An error that occurs only while the program is running.",
-          "explanation": "Examples include division by zero or access to missing files.",
+          "question": "What is a loop checking its condition only after the body called?",
+          "answer": "Foot-controlled loop",
+          "explanation": "It therefore runs at least once, typically written as do-while.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q24",
+      "id": "ap1-swe-r87",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein logischer Fehler?",
-      "answer": "Ein Programm läuft, liefert aber fachlich falsche Ergebnisse.",
-      "explanation": "Logische Fehler sind oft schwerer zu finden, weil kein Absturz auftreten muss.",
+      "question": "Welches UML-Diagramm zeigt Akteure und ihre fachlichen Anwendungsfälle?",
+      "answer": "Anwendungsfalldiagramm",
+      "explanation": "Auf Englisch Use-Case-Diagramm. Es beschreibt, wer welche Funktion nutzt, nicht wie sie umgesetzt wird.",
       "translations": {
         "en": {
-          "question": "What is a logic error?",
-          "answer": "A program runs but produces incorrect results.",
-          "explanation": "Logic errors are often harder to find because no crash has to occur.",
+          "question": "Which UML diagram shows actors and their business use cases?",
+          "answer": "Use case diagram",
+          "explanation": "It describes who uses which function, not how it is implemented.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q25",
+      "id": "ap1-swe-r88",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was bedeutet EVA-Prinzip?",
-      "answer": "Eingabe, Verarbeitung, Ausgabe",
-      "explanation": "Das EVA-Prinzip beschreibt den grundlegenden Ablauf vieler IT-Systeme.",
+      "question": "Wie viele Zustände kann ein boolescher Wert annehmen?",
+      "answer": "2",
+      "explanation": "Wahr oder falsch. Auf dieser Zweiwertigkeit bauen alle logischen Verknüpfungen auf.",
       "translations": {
         "en": {
-          "question": "What does the IPO principle mean?",
-          "answer": "Input, processing, output",
-          "explanation": "The IPO principle describes the basic flow of many IT systems.",
+          "question": "How many states can a boolean value take?",
+          "answer": "2",
+          "explanation": "True or false. All logical operations build on this two-valued nature.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q26",
+      "id": "ap1-swe-r89",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein PAP?",
-      "answer": "Ein Programmablaufplan",
-      "explanation": "Ein PAP stellt Algorithmen mit genormten Symbolen grafisch dar.",
+      "question": "Wie heißt eine Sammlung wiederverwendbarer Funktionen und Klassen?",
+      "answer": "Bibliothek",
+      "explanation": "Sie spart Entwicklungsaufwand und bündelt erprobte Lösungen, bringt aber Abhängigkeiten und Lizenzfragen mit.",
       "translations": {
         "en": {
-          "question": "What is a flowchart?",
-          "answer": "A graphical program flow plan",
-          "explanation": "A flowchart represents algorithms graphically using standardized symbols.",
+          "question": "What is a collection of reusable functions and classes called?",
+          "answer": "Library",
+          "explanation": "It saves development effort and bundles proven solutions but brings dependencies and licensing questions.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q27",
+      "id": "ap1-swe-r90",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Struktogramm?",
-      "answer": "Eine strukturierte grafische Darstellung eines Algorithmus nach Nassi-Shneiderman.",
-      "explanation": "Struktogramme zeigen Sequenz, Auswahl und Wiederholung ohne Sprungpfeile.",
+      "question": "Wie nennt man den Test, der nach jeder Änderung alte Fehler ausschließt?",
+      "answer": "Regressionstest",
+      "explanation": "Er wiederholt bestehende Testfälle und meldet, wenn bereits Behobenes wieder auftritt.",
       "translations": {
         "en": {
-          "question": "What is a Nassi-Shneiderman diagram?",
-          "answer": "A structured graphical representation of an algorithm.",
-          "explanation": "It shows sequence, selection and repetition without jump arrows.",
+          "question": "What is the test ruling out old bugs after every change called?",
+          "answer": "Regression test",
+          "explanation": "It repeats existing test cases and reports when something already fixed reappears.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q28",
+      "id": "ap1-swe-r91",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist Pseudocode?",
-      "answer": "Eine sprachnahe, nicht streng normierte Beschreibung eines Algorithmus.",
-      "explanation": "Pseudocode ist unabhängig von einer konkreten Programmiersprache lesbar.",
+      "question": "Welche Fehlerart liegt vor, wenn ein Programm läuft, aber falsch rechnet?",
+      "answer": "Logischer Fehler",
+      "explanation": "Der Compiler kann ihn nicht bemerken; entdeckt wird er nur durch Tests mit bekanntem Sollergebnis.",
       "translations": {
         "en": {
-          "question": "What is pseudocode?",
-          "answer": "A language-like, not strictly standardized description of an algorithm.",
-          "explanation": "Pseudocode is readable independent of a specific programming language.",
+          "question": "Which kind of error is it when a program runs but computes wrongly?",
+          "answer": "Logical error",
+          "explanation": "The compiler cannot notice it; it is found only through tests with a known expected result.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q29",
+      "id": "ap1-swe-r92",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was bedeutet Initialisierung einer Variable?",
-      "answer": "Einer Variable wird ein Anfangswert zugewiesen.",
-      "explanation": "Ohne Initialisierung können je nach Sprache undefinierte oder unerwartete Werte entstehen.",
+      "question": "Wie heißt der Bereich, in dem eine Variable gültig und sichtbar ist?",
+      "answer": "Gültigkeitsbereich",
+      "explanation": "Auf Englisch Scope. Eine lokale Variable existiert nur innerhalb ihres Blocks.",
       "translations": {
         "en": {
-          "question": "What does variable initialization mean?",
-          "answer": "A variable is assigned an initial value.",
-          "explanation": "Without initialization, undefined or unexpected values may occur depending on the language.",
+          "question": "What is the area in which a variable is valid and visible called?",
+          "answer": "Scope",
+          "explanation": "A local variable exists only within its block.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q30",
+      "id": "ap1-swe-r93",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Boolean?",
-      "answer": "Ein Datentyp mit den Wahrheitswerten wahr und falsch.",
-      "explanation": "Boolean-Werte werden besonders für Bedingungen und Flags verwendet.",
+      "question": "Welchen Dezimalwert hat die Hexadezimalzahl A?",
+      "answer": "10",
+      "explanation": "A bis F stehen für die Werte 10 bis 15, weil das Hexadezimalsystem sechzehn Ziffern braucht.",
       "translations": {
         "en": {
-          "question": "What is a Boolean?",
-          "answer": "A data type with the truth values true and false.",
-          "explanation": "Boolean values are used especially for conditions and flags.",
+          "question": "What decimal value does the hexadecimal number A have?",
+          "answer": "10",
+          "explanation": "A to F represent the values 10 to 15, because hexadecimal needs sixteen digits.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q31",
+      "id": "ap1-swe-r94",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Integer?",
-      "answer": "Ein Datentyp für ganze Zahlen.",
-      "explanation": "Integer speichern Werte ohne Nachkommastellen, zum Beispiel 0, 42 oder -7.",
+      "question": "Wie nennt man einen konkret erzeugten Vertreter einer Klasse?",
+      "answer": "Objekt",
+      "explanation": "Auch Instanz genannt. Aus einer Klasse lassen sich beliebig viele davon mit eigenen Attributwerten erzeugen.",
       "translations": {
         "en": {
-          "question": "What is an integer?",
-          "answer": "A data type for whole numbers.",
-          "explanation": "Integers store values without fractional parts, such as 0, 42 or -7.",
+          "question": "What is a concretely created representative of a class called?",
+          "answer": "Object",
+          "explanation": "Also called an instance. Any number of them with their own attribute values can be created from a class.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q32",
+      "id": "ap1-swe-r95",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein String?",
-      "answer": "Eine Zeichenkette.",
-      "explanation": "Strings speichern Text wie Namen, Meldungen oder Eingaben.",
+      "question": "Wie heißt die Fehlersuche mit Haltepunkten und Einzelschrittausführung?",
+      "answer": "Debugging",
+      "explanation": "Das Programm wird angehalten, Variablenwerte werden geprüft und der Ablauf Schritt für Schritt verfolgt.",
       "translations": {
         "en": {
-          "question": "What is a string?",
-          "answer": "A sequence of characters.",
-          "explanation": "Strings store text such as names, messages or input.",
+          "question": "What is fault finding with breakpoints and single stepping called?",
+          "answer": "Debugging",
+          "explanation": "The program is paused, variable values are inspected and the flow followed step by step.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q33",
+      "id": "ap1-swe-r96",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Kommentar im Quellcode?",
-      "answer": "Text, der den Code erläutert und nicht als Programm ausgeführt wird.",
-      "explanation": "Kommentare helfen beim Verständnis, sollten aber nicht offensichtlichen Code wiederholen.",
+      "question": "Welches Symbol stellt in einem Programmablaufplan eine Verzweigung dar?",
+      "answer": "Die Raute",
+      "explanation": "Aus ihr führen zwei beschriftete Wege heraus, üblicherweise für ja und nein.",
       "translations": {
         "en": {
-          "question": "What is a comment in source code?",
-          "answer": "Text that explains code and is not executed as a program.",
-          "explanation": "Comments help understanding but should not repeat obvious code.",
+          "question": "Which symbol represents a branch in a program flowchart?",
+          "answer": "The diamond",
+          "explanation": "Two labelled paths lead out of it, usually for yes and no.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q34",
+      "id": "ap1-swe-r97",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was bedeutet Refactoring?",
-      "answer": "Verbesserung der inneren Codestruktur ohne Änderung des beobachtbaren Verhaltens.",
-      "explanation": "Refactoring erhöht Wartbarkeit und Lesbarkeit, sollte durch Tests abgesichert sein.",
+      "question": "Wie nennt man Text im Quelltext, den der Compiler ignoriert?",
+      "answer": "Kommentar",
+      "explanation": "Er erklärt die Absicht hinter einer Lösung und hat keinerlei Einfluss auf die Ausführung.",
       "translations": {
         "en": {
-          "question": "What does refactoring mean?",
-          "answer": "Improving internal code structure without changing observable behavior.",
-          "explanation": "Refactoring improves maintainability and readability and should be protected by tests.",
+          "question": "What is text in source code that the compiler ignores called?",
+          "answer": "Comment",
+          "explanation": "It explains the intention behind a solution and has no effect on execution whatsoever.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q35",
+      "id": "ap1-swe-r98",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Unit-Test?",
-      "answer": "Ein Test, der eine kleine Programmeinheit isoliert prüft.",
-      "explanation": "Unit-Tests prüfen typischerweise Funktionen, Methoden oder Klassen.",
+      "question": "Welches Modell prüft jede Entwicklungsphase gegen eine zugehörige Teststufe?",
+      "answer": "V-Modell",
+      "explanation": "Jeder Entwurfsstufe links steht rechts eine passende Teststufe gegenüber, von Modultest bis Abnahmetest.",
       "translations": {
         "en": {
-          "question": "What is a unit test?",
-          "answer": "A test that checks a small program unit in isolation.",
-          "explanation": "Unit tests typically check functions, methods or classes.",
+          "question": "Which model checks each development phase against a matching test level?",
+          "answer": "V-model",
+          "explanation": "Every design level on the left has a matching test level on the right, from unit test to acceptance test.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q36",
+      "id": "ap1-swe-r99",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Integrationstest?",
-      "answer": "Ein Test, der das Zusammenspiel mehrerer Komponenten prüft.",
-      "explanation": "Integrationstests finden Fehler an Schnittstellen zwischen Modulen oder Systemen.",
+      "question": "Wie nennt man eine Schleife ohne erreichbare Abbruchbedingung?",
+      "answer": "Endlosschleife",
+      "explanation": "Das Programm reagiert dann nicht mehr und muss von außen beendet werden.",
       "translations": {
         "en": {
-          "question": "What is an integration test?",
-          "answer": "A test that checks the interaction of several components.",
-          "explanation": "Integration tests find errors at interfaces between modules or systems.",
+          "question": "What is a loop with no reachable exit condition called?",
+          "answer": "Endless loop",
+          "explanation": "The program then stops responding and has to be terminated from outside.",
           "category": "Software Development"
         }
       }
     },
     {
-      "id": "ap1-swe-q37",
+      "id": "ap1-swe-r100",
       "type": "text",
       "category": "Softwareentwicklung",
-      "question": "Was ist ein Commit in Git?",
-      "answer": "Ein gespeicherter Änderungsstand mit eindeutiger Kennung.",
-      "explanation": "Commits dokumentieren die Entwicklungshistorie und können später nachvollzogen werden.",
+      "question": "Wie viele Grundkontrollstrukturen genügen der strukturierten Programmierung?",
+      "answer": "3",
+      "explanation": "Sequenz, Auswahl und Wiederholung reichen aus, um jeden Algorithmus zu formulieren.",
       "translations": {
         "en": {
-          "question": "What is a commit in Git?",
-          "answer": "A saved state of changes with a unique identifier.",
-          "explanation": "Commits document development history and can be reviewed later.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q38",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Branch in Git?",
-      "answer": "Ein separater Entwicklungszweig.",
-      "explanation": "Branches erlauben paralleles Arbeiten an Features oder Fehlerbehebungen.",
-      "translations": {
-        "en": {
-          "question": "What is a branch in Git?",
-          "answer": "A separate line of development.",
-          "explanation": "Branches allow parallel work on features or fixes.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q39",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Merge in Git?",
-      "answer": "Das Zusammenführen von Änderungen aus unterschiedlichen Branches.",
-      "explanation": "Beim Merge können Konflikte entstehen, wenn dieselben Stellen geändert wurden.",
-      "translations": {
-        "en": {
-          "question": "What does merge mean in Git?",
-          "answer": "Combining changes from different branches.",
-          "explanation": "A merge can cause conflicts if the same locations were changed.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q40",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Merge-Konflikt?",
-      "answer": "Git kann Änderungen nicht automatisch zusammenführen.",
-      "explanation": "Der Entwickler muss entscheiden, welche Version oder Kombination korrekt ist.",
-      "translations": {
-        "en": {
-          "question": "What is a merge conflict?",
-          "answer": "Git cannot combine changes automatically.",
-          "explanation": "The developer must decide which version or combination is correct.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q41",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Repository?",
-      "answer": "Ein Speicherort für Quellcode inklusive Versionshistorie.",
-      "explanation": "Ein Repository kann lokal oder auf einem Server wie GitHub liegen.",
-      "translations": {
-        "en": {
-          "question": "What is a repository?",
-          "answer": "A storage location for source code including version history.",
-          "explanation": "A repository can be local or hosted on a server such as GitHub.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q42",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine IDE?",
-      "answer": "Eine integrierte Entwicklungsumgebung.",
-      "explanation": "IDEs bündeln Editor, Build-Werkzeuge, Debugger und oft Versionsverwaltung.",
-      "translations": {
-        "en": {
-          "question": "What is an IDE?",
-          "answer": "An integrated development environment.",
-          "explanation": "IDEs combine editor, build tools, debugger and often version control.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q43",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Compiler?",
-      "answer": "Ein Programm, das Quellcode in Maschinencode oder Zwischencode übersetzt.",
-      "explanation": "Compiler prüfen dabei oft Syntax und Typen vor der Ausführung.",
-      "translations": {
-        "en": {
-          "question": "What is a compiler?",
-          "answer": "A program that translates source code into machine code or intermediate code.",
-          "explanation": "Compilers often check syntax and types before execution.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q44",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Interpreter?",
-      "answer": "Ein Programm, das Code schrittweise zur Laufzeit ausführt.",
-      "explanation": "Interpreter führen Programme meist ohne vorherige vollständige Übersetzung aus.",
-      "translations": {
-        "en": {
-          "question": "What is an interpreter?",
-          "answer": "A program that executes code step by step at runtime.",
-          "explanation": "Interpreters usually run programs without prior full compilation.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q45",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet objektorientierte Programmierung?",
-      "answer": "Programmierung mit Objekten, die Daten und Verhalten kapseln.",
-      "explanation": "OOP nutzt Konzepte wie Klassen, Objekte, Vererbung und Polymorphie.",
-      "translations": {
-        "en": {
-          "question": "What does object-oriented programming mean?",
-          "answer": "Programming with objects that encapsulate data and behavior.",
-          "explanation": "OOP uses concepts such as classes, objects, inheritance and polymorphism.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q46",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Klasse?",
-      "answer": "Ein Bauplan für Objekte.",
-      "explanation": "Eine Klasse beschreibt Attribute und Methoden, die ihre Objekte besitzen.",
-      "translations": {
-        "en": {
-          "question": "What is a class?",
-          "answer": "A blueprint for objects.",
-          "explanation": "A class describes attributes and methods its objects have.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q47",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Objekt?",
-      "answer": "Eine konkrete Instanz einer Klasse.",
-      "explanation": "Objekte besitzen eigene Attributwerte und können Methoden ausführen.",
-      "translations": {
-        "en": {
-          "question": "What is an object?",
-          "answer": "A concrete instance of a class.",
-          "explanation": "Objects have their own attribute values and can execute methods.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q48",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Attribut?",
-      "answer": "Eine Eigenschaft oder ein Datenfeld eines Objekts.",
-      "explanation": "Attribute beschreiben den Zustand eines Objekts.",
-      "translations": {
-        "en": {
-          "question": "What is an attribute?",
-          "answer": "A property or data field of an object.",
-          "explanation": "Attributes describe the state of an object.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q49",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Methode?",
-      "answer": "Eine Funktion, die zu einer Klasse oder einem Objekt gehört.",
-      "explanation": "Methoden beschreiben das Verhalten von Objekten.",
-      "translations": {
-        "en": {
-          "question": "What is a method?",
-          "answer": "A function that belongs to a class or object.",
-          "explanation": "Methods describe the behavior of objects.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q50",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Kapselung?",
-      "answer": "Daten und Zugriff darauf werden in einer Klasse gebündelt und kontrolliert.",
-      "explanation": "Kapselung schützt interne Zustände vor unkontrolliertem Zugriff.",
-      "translations": {
-        "en": {
-          "question": "What does encapsulation mean?",
-          "answer": "Data and access to it are bundled and controlled in a class.",
-          "explanation": "Encapsulation protects internal state from uncontrolled access.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q51",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Vererbung?",
-      "answer": "Eine Klasse übernimmt Eigenschaften und Methoden einer anderen Klasse.",
-      "explanation": "Vererbung kann Wiederverwendung fördern, sollte aber fachlich sinnvoll sein.",
-      "translations": {
-        "en": {
-          "question": "What does inheritance mean?",
-          "answer": "A class takes over properties and methods from another class.",
-          "explanation": "Inheritance can support reuse but should be meaningful in the domain.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q52",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Polymorphie?",
-      "answer": "Gleiche Schnittstellen können unterschiedliche konkrete Implementierungen haben.",
-      "explanation": "Polymorphie erlaubt austauschbare Objekte mit gemeinsamem Verhalten.",
-      "translations": {
-        "en": {
-          "question": "What does polymorphism mean?",
-          "answer": "The same interfaces can have different concrete implementations.",
-          "explanation": "Polymorphism allows interchangeable objects with shared behavior.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q53",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist UML?",
-      "answer": "Unified Modeling Language",
-      "explanation": "UML dient zur grafischen Modellierung von Softwarestrukturen und Abläufen.",
-      "translations": {
-        "en": {
-          "question": "What is UML?",
-          "answer": "Unified Modeling Language",
-          "explanation": "UML is used for graphical modeling of software structures and processes.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q54",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was zeigt ein UML-Klassendiagramm?",
-      "answer": "Klassen, Attribute, Methoden und Beziehungen.",
-      "explanation": "Klassendiagramme beschreiben die statische Struktur eines Systems.",
-      "translations": {
-        "en": {
-          "question": "What does a UML class diagram show?",
-          "answer": "Classes, attributes, methods and relationships.",
-          "explanation": "Class diagrams describe the static structure of a system.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q55",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was zeigt ein UML-Aktivitätsdiagramm?",
-      "answer": "Abläufe, Entscheidungen und Parallelitäten.",
-      "explanation": "Aktivitätsdiagramme eignen sich zur Darstellung von Prozessen und Algorithmen.",
-      "translations": {
-        "en": {
-          "question": "What does a UML activity diagram show?",
-          "answer": "Workflows, decisions and parallelism.",
-          "explanation": "Activity diagrams are useful for processes and algorithms.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q56",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Sequenzdiagramm?",
-      "answer": "Ein Diagramm, das Nachrichten zwischen Objekten über die Zeit zeigt.",
-      "explanation": "Sequenzdiagramme machen Interaktionen und Aufrufreihenfolgen sichtbar.",
-      "translations": {
-        "en": {
-          "question": "What is a sequence diagram?",
-          "answer": "A diagram that shows messages between objects over time.",
-          "explanation": "Sequence diagrams visualize interactions and call order.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q57",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Use Case?",
-      "answer": "Ein Anwendungsfall aus Sicht eines Akteurs.",
-      "explanation": "Use Cases beschreiben, welches Ziel ein Nutzer mit dem System erreichen möchte.",
-      "translations": {
-        "en": {
-          "question": "What is a use case?",
-          "answer": "A usage scenario from an actor perspective.",
-          "explanation": "Use cases describe what goal a user wants to achieve with the system.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q58",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Algorithmus mit linearer Suche?",
-      "answer": "Ein Verfahren, das Elemente nacheinander prüft.",
-      "explanation": "Lineare Suche funktioniert auch unsortiert, benötigt im schlechtesten Fall aber alle Elemente.",
-      "translations": {
-        "en": {
-          "question": "What is linear search?",
-          "answer": "A method that checks elements one after another.",
-          "explanation": "Linear search works on unsorted data but may need all elements in the worst case.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q59",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche Voraussetzung hat binäre Suche?",
-      "answer": "Die Daten müssen sortiert sein.",
-      "explanation": "Binäre Suche halbiert den Suchbereich in jedem Schritt.",
-      "translations": {
-        "en": {
-          "question": "What prerequisite does binary search have?",
-          "answer": "The data must be sorted.",
-          "explanation": "Binary search halves the search range at each step.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q60",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist Sortieren in der Softwareentwicklung?",
-      "answer": "Das Anordnen von Daten nach einem Kriterium.",
-      "explanation": "Sortiert werden kann zum Beispiel alphabetisch, numerisch oder nach Datum.",
-      "translations": {
-        "en": {
-          "question": "What is sorting in software development?",
-          "answer": "Arranging data according to a criterion.",
-          "explanation": "Data can be sorted alphabetically, numerically or by date.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q61",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Big-O-Notation?",
-      "answer": "Eine Beschreibung des Wachstums von Laufzeit oder Speicherbedarf.",
-      "explanation": "Big-O abstrahiert von konkreter Hardware und betrachtet die Eingabegröße.",
-      "translations": {
-        "en": {
-          "question": "What does Big O notation mean?",
-          "answer": "A description of how runtime or memory usage grows.",
-          "explanation": "Big O abstracts from specific hardware and considers input size.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q62",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet O(1)?",
-      "answer": "Konstante Laufzeit unabhängig von der Eingabegröße.",
-      "explanation": "Ein Array-Zugriff per Index ist ein typisches Beispiel.",
-      "translations": {
-        "en": {
-          "question": "What does O(1) mean?",
-          "answer": "Constant runtime independent of input size.",
-          "explanation": "Array access by index is a typical example.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q63",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet O(n)?",
-      "answer": "Lineare Laufzeit proportional zur Eingabegröße.",
-      "explanation": "Eine einfache Schleife über alle Elemente ist typischerweise O(n).",
-      "translations": {
-        "en": {
-          "question": "What does O(n) mean?",
-          "answer": "Linear runtime proportional to input size.",
-          "explanation": "A simple loop over all elements is typically O(n).",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q64",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine API?",
-      "answer": "Eine definierte Schnittstelle zur Nutzung von Funktionen oder Daten.",
-      "explanation": "APIs ermöglichen kontrollierte Kommunikation zwischen Programmen.",
-      "translations": {
-        "en": {
-          "question": "What is an API?",
-          "answer": "A defined interface for using functions or data.",
-          "explanation": "APIs enable controlled communication between programs.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q65",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet REST?",
-      "answer": "Representational State Transfer",
-      "explanation": "REST nutzt Ressourcen, HTTP-Methoden und zustandslose Kommunikation als Architekturprinzip.",
-      "translations": {
-        "en": {
-          "question": "What does REST mean?",
-          "answer": "Representational State Transfer",
-          "explanation": "REST uses resources, HTTP methods and stateless communication as architectural principles.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q66",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche HTTP-Methode wird typischerweise zum Lesen von Daten genutzt?",
-      "answer": "GET",
-      "explanation": "GET fordert eine Ressource an und sollte keine Zustandsänderung auslösen.",
-      "translations": {
-        "en": {
-          "question": "Which HTTP method is typically used to read data?",
-          "answer": "GET",
-          "explanation": "GET requests a resource and should not cause a state change.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q67",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche HTTP-Methode wird typischerweise zum Anlegen neuer Ressourcen genutzt?",
-      "answer": "POST",
-      "explanation": "POST übermittelt Daten an den Server, häufig zum Erzeugen einer neuen Ressource.",
-      "translations": {
-        "en": {
-          "question": "Which HTTP method is typically used to create new resources?",
-          "answer": "POST",
-          "explanation": "POST sends data to the server, often to create a new resource.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q68",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche HTTP-Methode wird typischerweise zum vollständigen Ersetzen einer Ressource genutzt?",
-      "answer": "PUT",
-      "explanation": "PUT wird oft verwendet, um eine Ressource vollständig zu aktualisieren oder zu ersetzen.",
-      "translations": {
-        "en": {
-          "question": "Which HTTP method is typically used to fully replace a resource?",
-          "answer": "PUT",
-          "explanation": "PUT is often used to fully update or replace a resource.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q69",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche HTTP-Methode wird typischerweise zum Löschen einer Ressource genutzt?",
-      "answer": "DELETE",
-      "explanation": "DELETE fordert das Entfernen einer Ressource an.",
-      "translations": {
-        "en": {
-          "question": "Which HTTP method is typically used to delete a resource?",
-          "answer": "DELETE",
-          "explanation": "DELETE requests removal of a resource.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q70",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet HTTP-Statuscode 200?",
-      "answer": "OK",
-      "explanation": "Die Anfrage wurde erfolgreich verarbeitet.",
-      "translations": {
-        "en": {
-          "question": "What does HTTP status code 200 mean?",
-          "answer": "OK",
-          "explanation": "The request was processed successfully.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q71",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet HTTP-Statuscode 404?",
-      "answer": "Not Found",
-      "explanation": "Die angeforderte Ressource wurde nicht gefunden.",
-      "translations": {
-        "en": {
-          "question": "What does HTTP status code 404 mean?",
-          "answer": "Not Found",
-          "explanation": "The requested resource was not found.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q72",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet HTTP-Statuscode 500?",
-      "answer": "Internal Server Error",
-      "explanation": "Auf dem Server ist ein unerwarteter Fehler aufgetreten.",
-      "translations": {
-        "en": {
-          "question": "What does HTTP status code 500 mean?",
-          "answer": "Internal Server Error",
-          "explanation": "An unexpected error occurred on the server.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q73",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist JSON?",
-      "answer": "Ein textbasiertes Datenformat aus Objekten, Arrays, Zahlen, Strings und Wahrheitswerten.",
-      "explanation": "JSON wird häufig für APIs und Konfigurationsdaten verwendet.",
-      "translations": {
-        "en": {
-          "question": "What is JSON?",
-          "answer": "A text-based data format using objects, arrays, numbers, strings and booleans.",
-          "explanation": "JSON is commonly used for APIs and configuration data.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q74",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist XML?",
-      "answer": "Eine Auszeichnungssprache zur strukturierten Darstellung von Daten.",
-      "explanation": "XML nutzt Tags und kann mit Schemata validiert werden.",
-      "translations": {
-        "en": {
-          "question": "What is XML?",
-          "answer": "A markup language for structured representation of data.",
-          "explanation": "XML uses tags and can be validated with schemas.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q75",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein relationaler Operator?",
-      "answer": "Ein Operator zum Vergleichen von Werten.",
-      "explanation": "Beispiele sind ==, !=, <, >, <= und >=.",
-      "translations": {
-        "en": {
-          "question": "What is a relational operator?",
-          "answer": "An operator for comparing values.",
-          "explanation": "Examples are ==, !=, <, >, <= and >=.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q76",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein logischer Operator?",
-      "answer": "Ein Operator zur Verknüpfung von Wahrheitswerten.",
-      "explanation": "Typische logische Operatoren sind AND, OR und NOT.",
-      "translations": {
-        "en": {
-          "question": "What is a logical operator?",
-          "answer": "An operator for combining truth values.",
-          "explanation": "Typical logical operators are AND, OR and NOT.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q77",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Endlosschleife?",
-      "answer": "Eine Schleife, deren Abbruchbedingung nie erreicht wird.",
-      "explanation": "Endlosschleifen entstehen oft durch fehlerhafte Bedingungen oder fehlende Zähleränderung.",
-      "translations": {
-        "en": {
-          "question": "What is an infinite loop?",
-          "answer": "A loop whose termination condition is never reached.",
-          "explanation": "Infinite loops often arise from faulty conditions or missing counter updates.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q78",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Off-by-one-Fehler?",
-      "answer": "Ein Fehler, bei dem eine Schleife oder ein Index um genau eins danebenliegt.",
-      "explanation": "Er tritt häufig an Bereichsgrenzen auf, etwa beim ersten oder letzten Element.",
-      "translations": {
-        "en": {
-          "question": "What is an off-by-one error?",
-          "answer": "An error where a loop or index is off by exactly one.",
-          "explanation": "It often occurs at boundaries such as the first or last element.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q79",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Stack?",
-      "answer": "Eine LIFO-Datenstruktur.",
-      "explanation": "Bei Last In, First Out wird das zuletzt abgelegte Element zuerst entnommen.",
-      "translations": {
-        "en": {
-          "question": "What is a stack?",
-          "answer": "A LIFO data structure.",
-          "explanation": "With last in, first out, the last pushed element is removed first.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q80",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Queue?",
-      "answer": "Eine FIFO-Datenstruktur.",
-      "explanation": "Bei First In, First Out wird das zuerst eingefügte Element zuerst entnommen.",
-      "translations": {
-        "en": {
-          "question": "What is a queue?",
-          "answer": "A FIFO data structure.",
-          "explanation": "With first in, first out, the first inserted element is removed first.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q81",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Hashwert?",
-      "answer": "Ein aus Daten berechneter Wert fester Länge.",
-      "explanation": "Hashwerte dienen unter anderem zum schnellen Vergleichen oder Prüfen von Integrität.",
-      "translations": {
-        "en": {
-          "question": "What is a hash value?",
-          "answer": "A fixed-length value calculated from data.",
-          "explanation": "Hash values are used for fast comparison or integrity checks, among other things.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q82",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Nullwert?",
-      "answer": "Ein spezieller Wert für keine vorhandene Referenz oder keinen vorhandenen Wert.",
-      "explanation": "Null muss geprüft werden, um Laufzeitfehler zu vermeiden.",
-      "translations": {
-        "en": {
-          "question": "What is a null value?",
-          "answer": "A special value for no reference or no present value.",
-          "explanation": "Null must be checked to avoid runtime errors.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q83",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Bibliothek in der Programmierung?",
-      "answer": "Eine Sammlung wiederverwendbarer Funktionen, Klassen oder Module.",
-      "explanation": "Bibliotheken sparen Entwicklungsaufwand und bündeln getestete Lösungen.",
-      "translations": {
-        "en": {
-          "question": "What is a programming library?",
-          "answer": "A collection of reusable functions, classes or modules.",
-          "explanation": "Libraries save development effort and bundle tested solutions.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q84",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Framework?",
-      "answer": "Ein Rahmenwerk, das Struktur und Ablauf einer Anwendung vorgibt.",
-      "explanation": "Frameworks liefern Konventionen und übernehmen häufig wiederkehrende Aufgaben.",
-      "translations": {
-        "en": {
-          "question": "What is a framework?",
-          "answer": "A framework that defines structure and flow of an application.",
-          "explanation": "Frameworks provide conventions and often handle recurring tasks.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q85",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Lizenz bei Software?",
-      "answer": "Eine rechtliche Regelung zur Nutzung, Änderung und Weitergabe.",
-      "explanation": "Lizenzen legen fest, was Anwender und Entwickler mit Software tun dürfen.",
-      "translations": {
-        "en": {
-          "question": "What is a software license?",
-          "answer": "A legal rule for use, modification and distribution.",
-          "explanation": "Licenses define what users and developers may do with software.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q86",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Open Source?",
-      "answer": "Der Quellcode ist öffentlich einsehbar und unter Lizenz nutzbar.",
-      "explanation": "Open Source heißt nicht automatisch kostenlos oder frei von Bedingungen.",
-      "translations": {
-        "en": {
-          "question": "What does open source mean?",
-          "answer": "The source code is publicly visible and usable under a license.",
-          "explanation": "Open source does not automatically mean free of charge or without conditions.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q87",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Build?",
-      "answer": "Der Prozess oder das Ergebnis der Erstellung lauffähiger Software aus Quellcode.",
-      "explanation": "Builds umfassen oft Kompilieren, Bündeln, Testen und Paketieren.",
-      "translations": {
-        "en": {
-          "question": "What is a build?",
-          "answer": "The process or result of creating runnable software from source code.",
-          "explanation": "Builds often include compiling, bundling, testing and packaging.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q88",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist Deployment?",
-      "answer": "Das Bereitstellen einer Anwendung in einer Zielumgebung.",
-      "explanation": "Deployment bringt Software zum Beispiel auf Test-, Staging- oder Produktivsysteme.",
-      "translations": {
-        "en": {
-          "question": "What is deployment?",
-          "answer": "Making an application available in a target environment.",
-          "explanation": "Deployment places software on test, staging or production systems, for example.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q89",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Release?",
-      "answer": "Eine freigegebene Version einer Software.",
-      "explanation": "Ein Release enthält definierte Änderungen und wird für Nutzung oder Verteilung bereitgestellt.",
-      "translations": {
-        "en": {
-          "question": "What is a release?",
-          "answer": "An approved version of software.",
-          "explanation": "A release contains defined changes and is made available for use or distribution.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q90",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Bug?",
-      "answer": "Ein Fehler in Software, der zu unerwartetem oder falschem Verhalten führt.",
-      "explanation": "Bugs können aus Anforderungen, Design, Implementierung oder Betrieb entstehen.",
-      "translations": {
-        "en": {
-          "question": "What is a bug?",
-          "answer": "A software defect that causes unexpected or incorrect behavior.",
-          "explanation": "Bugs can come from requirements, design, implementation or operation.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q91",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Issue-Tracker?",
-      "answer": "Ein System zur Erfassung und Nachverfolgung von Aufgaben, Fehlern und Anforderungen.",
-      "explanation": "Issue-Tracker helfen bei Priorisierung, Zuständigkeit und Statusübersicht.",
-      "translations": {
-        "en": {
-          "question": "What is an issue tracker?",
-          "answer": "A system for recording and tracking tasks, defects and requirements.",
-          "explanation": "Issue trackers help with prioritization, ownership and status visibility.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q92",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Pull Request?",
-      "answer": "Ein Vorschlag, Änderungen in einen anderen Branch zu übernehmen.",
-      "explanation": "Pull Requests ermöglichen Code-Review und Diskussion vor dem Zusammenführen.",
-      "translations": {
-        "en": {
-          "question": "What is a pull request?",
-          "answer": "A proposal to merge changes into another branch.",
-          "explanation": "Pull requests enable code review and discussion before merging.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q93",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was bedeutet Code-Review?",
-      "answer": "Eine fachliche Prüfung von Quellcode durch andere Entwickler.",
-      "explanation": "Code-Reviews finden Fehler, verbessern Verständlichkeit und verteilen Wissen.",
-      "translations": {
-        "en": {
-          "question": "What does code review mean?",
-          "answer": "A technical inspection of source code by other developers.",
-          "explanation": "Code reviews find defects, improve clarity and share knowledge.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q94",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist technische Dokumentation?",
-      "answer": "Beschreibung von Aufbau, Nutzung oder Betrieb eines Systems.",
-      "explanation": "Gute Dokumentation erleichtert Wartung, Übergabe und Fehlersuche.",
-      "translations": {
-        "en": {
-          "question": "What is technical documentation?",
-          "answer": "Description of structure, use or operation of a system.",
-          "explanation": "Good documentation makes maintenance, handover and troubleshooting easier.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q95",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist ein Sequenzschritt in einem Algorithmus?",
-      "answer": "Eine Anweisung, die der Reihe nach ausgeführt wird.",
-      "explanation": "Sequenz ist neben Auswahl und Wiederholung eine Grundstruktur der Programmierung.",
-      "translations": {
-        "en": {
-          "question": "What is a sequence step in an algorithm?",
-          "answer": "An instruction executed in order.",
-          "explanation": "Sequence is one of the basic programming structures alongside selection and repetition.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q96",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist eine Auswahl in einem Algorithmus?",
-      "answer": "Eine Verzweigung abhängig von einer Bedingung.",
-      "explanation": "Auswahl wird typischerweise mit if/else dargestellt.",
-      "translations": {
-        "en": {
-          "question": "What is selection in an algorithm?",
-          "answer": "A branch depending on a condition.",
-          "explanation": "Selection is typically represented with if/else.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q97",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Was ist Wiederholung in einem Algorithmus?",
-      "answer": "Ein Block wird mehrfach ausgeführt, solange oder bis eine Bedingung erfüllt ist.",
-      "explanation": "Wiederholungen werden in Programmen durch Schleifen umgesetzt.",
-      "translations": {
-        "en": {
-          "question": "What is repetition in an algorithm?",
-          "answer": "A block is executed multiple times while or until a condition is met.",
-          "explanation": "Repetition is implemented with loops in programs.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q98",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welchen dezimalen Wert hat die Binärzahl 1111?",
-      "answer": "15",
-      "explanation": "1111₂ entspricht 8 + 4 + 2 + 1 = 15.",
-      "translations": {
-        "en": {
-          "question": "What decimal value does the binary number 1111 have?",
-          "answer": "15",
-          "explanation": "1111₂ equals 8 + 4 + 2 + 1 = 15.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q99",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welchen dezimalen Wert hat die Binärzahl 100000?",
-      "answer": "32",
-      "explanation": "100000₂ hat nur das 2⁵-Bit gesetzt und entspricht 32.",
-      "translations": {
-        "en": {
-          "question": "What decimal value does the binary number 100000 have?",
-          "answer": "32",
-          "explanation": "100000₂ has only the 2⁵ bit set and equals 32.",
-          "category": "Software Development"
-        }
-      }
-    },
-    {
-      "id": "ap1-swe-q100",
-      "type": "text",
-      "category": "Softwareentwicklung",
-      "question": "Welche Binärzahl entspricht der Dezimalzahl 10?",
-      "answer": "1010",
-      "explanation": "10 dezimal entspricht 8 + 2, also 1010₂.",
-      "translations": {
-        "en": {
-          "question": "Which binary number corresponds to decimal 10?",
-          "answer": "1010",
-          "explanation": "Decimal 10 equals 8 + 2, so 1010₂.",
+          "question": "How many basic control structures suffice for structured programming?",
+          "answer": "3",
+          "explanation": "Sequence, selection and iteration are enough to express any algorithm.",
           "category": "Software Development"
         }
       }

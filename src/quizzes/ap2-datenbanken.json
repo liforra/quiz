@@ -1,94 +1,318 @@
 {
   "questions": [
     {
-      "id": "ap2-db-q01",
+      "id": "ap2-db-r01",
       "type": "single",
       "category": "Datenbanken",
-      "question": "Welche SQL-Abfrage liefert alle Kunden aus Berlin, alphabetisch nach Name sortiert?",
+      "question": "Welche Abfrage liefert alle Kunden aus Berlin, sortiert nach Name?",
       "options": [
         "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
         "SELECT * FROM kunden ORDER BY ort = 'Berlin' WHERE name;",
         "SELECT * FROM kunden GROUP BY name HAVING ort = 'Berlin';",
-        "SELECT name FROM kunden SORT BY ort = 'Berlin';"
+        "SELECT * FROM kunden SORT BY name WHERE ort = 'Berlin';"
       ],
       "answer": "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
-      "explanation": "WHERE filtert Zeilen, ORDER BY sortiert das Ergebnis. GROUP BY/HAVING sind für Gruppierungen und Aggregate gedacht, SORT BY existiert in SQL nicht.",
+      "explanation": "WHERE filtert Zeilen, ORDER BY sortiert das Ergebnis. GROUP BY mit HAVING ist für Gruppierungen gedacht, und SORT BY existiert in SQL nicht.",
       "translations": {
         "en": {
-          "question": "Which SQL query returns all customers from Berlin, sorted alphabetically by name?",
+          "question": "Which query returns all customers from Berlin, sorted by name?",
           "options": [
             "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
             "SELECT * FROM kunden ORDER BY ort = 'Berlin' WHERE name;",
             "SELECT * FROM kunden GROUP BY name HAVING ort = 'Berlin';",
-            "SELECT name FROM kunden SORT BY ort = 'Berlin';"
+            "SELECT * FROM kunden SORT BY name WHERE ort = 'Berlin';"
           ],
           "answer": "SELECT * FROM kunden WHERE ort = 'Berlin' ORDER BY name;",
-          "explanation": "WHERE filters rows, ORDER BY sorts the result. GROUP BY/HAVING are for grouping and aggregates; SORT BY does not exist in SQL.",
+          "explanation": "WHERE filters rows, ORDER BY sorts the result. GROUP BY with HAVING is meant for grouping, and SORT BY does not exist in SQL.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q02",
+      "id": "ap2-db-r02",
       "type": "single",
       "category": "Datenbanken",
-      "question": "Mit welchem SQL-Befehl wird ein neuer Datensatz in eine Tabelle eingefügt?",
+      "question": "Ein Bericht soll alle Kunden zeigen, auch die ohne Bestellung. Welcher JOIN passt?",
       "options": [
-        "INSERT INTO",
+        "LEFT JOIN von kunden auf bestellungen",
+        "INNER JOIN von kunden auf bestellungen",
+        "CROSS JOIN von kunden auf bestellungen",
+        "SELF JOIN der Tabelle bestellungen"
+      ],
+      "answer": "LEFT JOIN von kunden auf bestellungen",
+      "explanation": "Der LEFT JOIN behält alle Zeilen der linken Tabelle und füllt fehlende Treffer mit NULL. Ein INNER JOIN würde genau die Kunden ohne Bestellung herausfiltern.",
+      "translations": {
+        "en": {
+          "question": "A report must show all customers, including those without orders. Which join fits?",
+          "options": [
+            "LEFT JOIN from kunden onto bestellungen",
+            "INNER JOIN from kunden onto bestellungen",
+            "CROSS JOIN from kunden onto bestellungen",
+            "SELF JOIN of the table bestellungen"
+          ],
+          "answer": "LEFT JOIN from kunden onto bestellungen",
+          "explanation": "A LEFT JOIN keeps all rows of the left table and fills missing matches with NULL. An INNER JOIN would filter out exactly the customers without orders.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r03",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Bedingung filtert erst nach der Gruppierung?",
+      "options": [
+        "HAVING",
+        "WHERE",
+        "ORDER BY",
+        "DISTINCT"
+      ],
+      "answer": "HAVING",
+      "explanation": "WHERE wirkt auf einzelne Zeilen vor der Gruppierung, HAVING auf die gebildeten Gruppen danach. Deshalb dürfen nur in HAVING Aggregatfunktionen stehen.",
+      "translations": {
+        "en": {
+          "question": "Which clause filters only after grouping?",
+          "options": [
+            "HAVING",
+            "WHERE",
+            "ORDER BY",
+            "DISTINCT"
+          ],
+          "answer": "HAVING",
+          "explanation": "WHERE acts on individual rows before grouping, HAVING on the resulting groups afterwards. That is why only HAVING may contain aggregate functions.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r04",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "In einer Tabelle steht die Lieferantenanschrift bei jedem Artikel erneut. Welches Problem entsteht?",
+      "options": [
+        "Redundanz mit der Gefahr von Änderungsanomalien",
+        "Ein Verstoß gegen die referenzielle Integrität",
+        "Ein Verlust der Sortierbarkeit der Tabelle",
+        "Eine automatische Sperre der betroffenen Zeilen"
+      ],
+      "answer": "Redundanz mit der Gefahr von Änderungsanomalien",
+      "explanation": "Wird die Anschrift geändert, muss das an jeder Stelle geschehen - sonst widersprechen sich die Daten. Genau solche Anomalien beseitigt die Normalisierung durch Auslagern in eine eigene Tabelle.",
+      "translations": {
+        "en": {
+          "question": "In one table the supplier address is repeated for every article. Which problem arises?",
+          "options": [
+            "Redundancy with the risk of update anomalies",
+            "A violation of referential integrity",
+            "A loss of the table's sortability",
+            "An automatic lock on the affected rows"
+          ],
+          "answer": "Redundancy with the risk of update anomalies",
+          "explanation": "If the address changes, it must be changed everywhere - otherwise the data contradicts itself. Normalisation removes exactly such anomalies by moving data into its own table.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r05",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Eigenschaft muss ein Primärschlüssel erfüllen?",
+      "options": [
+        "Er ist eindeutig und niemals NULL",
+        "Er ist immer eine fortlaufende Zahl",
+        "Er darf sich bei Bedarf wiederholen",
+        "Er besteht aus höchstens einem Zeichen"
+      ],
+      "answer": "Er ist eindeutig und niemals NULL",
+      "explanation": "Eindeutigkeit und Nichtleere machen jeden Datensatz zweifelsfrei ansprechbar. Ob dahinter eine Zahl oder ein zusammengesetzter Schlüssel steht, ist frei wählbar.",
+      "translations": {
+        "en": {
+          "question": "Which property must a primary key fulfil?",
+          "options": [
+            "It is unique and never NULL",
+            "It is always a consecutive number",
+            "It may repeat itself when needed",
+            "It consists of at most one character"
+          ],
+          "answer": "It is unique and never NULL",
+          "explanation": "Uniqueness and non-nullness make every record unambiguously addressable. Whether it is a number or a composite key behind it is free to choose.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r06",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Eine Tabelle enthält ein Feld mit mehreren Telefonnummern in einer Zelle. Gegen welche Normalform verstößt das?",
+      "options": [
+        "Gegen die erste Normalform",
+        "Gegen die zweite Normalform",
+        "Gegen die dritte Normalform",
+        "Gegen keine, das ist zulässig"
+      ],
+      "answer": "Gegen die erste Normalform",
+      "explanation": "Die erste Normalform verlangt atomare Werte - eine Zelle enthält genau einen Wert. Mehrere Nummern gehören in eine eigene Tabelle mit Fremdschlüssel.",
+      "translations": {
+        "en": {
+          "question": "A table has one field holding several phone numbers in a single cell. Which normal form does that violate?",
+          "options": [
+            "The first normal form",
+            "The second normal form",
+            "The third normal form",
+            "None, that is permitted"
+          ],
+          "answer": "The first normal form",
+          "explanation": "The first normal form requires atomic values - one cell holds exactly one value. Several numbers belong in their own table with a foreign key.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r07",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Befehl ändert die Struktur einer bestehenden Tabelle?",
+      "options": [
+        "ALTER TABLE",
         "UPDATE",
-        "CREATE TABLE",
-        "ALTER TABLE"
+        "INSERT INTO",
+        "SELECT INTO"
       ],
-      "answer": "INSERT INTO",
-      "explanation": "INSERT INTO fügt neue Zeilen ein, UPDATE ändert bestehende, CREATE TABLE legt eine neue Tabelle an, ALTER TABLE ändert die Tabellenstruktur.",
+      "answer": "ALTER TABLE",
+      "explanation": "ALTER TABLE gehört zur DDL und ändert Spalten oder Bedingungen. UPDATE und INSERT gehören zur DML und ändern nur Daten.",
       "translations": {
         "en": {
-          "question": "Which SQL command inserts a new record into a table?",
+          "question": "Which statement changes the structure of an existing table?",
           "options": [
-            "INSERT INTO",
+            "ALTER TABLE",
             "UPDATE",
-            "CREATE TABLE",
-            "ALTER TABLE"
+            "INSERT INTO",
+            "SELECT INTO"
           ],
-          "answer": "INSERT INTO",
-          "explanation": "INSERT INTO adds new rows, UPDATE modifies existing ones, CREATE TABLE creates a new table, ALTER TABLE changes the table structure.",
+          "answer": "ALTER TABLE",
+          "explanation": "ALTER TABLE belongs to DDL and changes columns or constraints. UPDATE and INSERT belong to DML and change only data.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q03",
+      "id": "ap2-db-r08",
       "type": "single",
       "category": "Datenbanken",
-      "question": "Welcher JOIN-Typ liefert nur die Datensätze, für die es in BEIDEN verknüpften Tabellen eine Übereinstimmung gibt?",
+      "question": "Eine Überweisung bucht ab und schreibt gut. Welche ACID-Eigenschaft garantiert, dass beides oder nichts passiert?",
       "options": [
-        "INNER JOIN",
-        "LEFT JOIN",
-        "RIGHT JOIN",
-        "FULL OUTER JOIN"
+        "Atomarität",
+        "Konsistenz",
+        "Isolation",
+        "Dauerhaftigkeit"
       ],
-      "answer": "INNER JOIN",
-      "explanation": "INNER JOIN = nur Treffer in beiden Tabellen. LEFT/RIGHT JOIN behalten zusätzlich alle Zeilen der linken/rechten Tabelle, FULL OUTER JOIN alle Zeilen beider Tabellen.",
+      "answer": "Atomarität",
+      "explanation": "Atomarität macht die Transaktion unteilbar: bei einem Fehler wird alles zurückgerollt. Konsistenz sichert die Regeln, Isolation die Trennung paralleler Transaktionen.",
       "translations": {
         "en": {
-          "question": "Which JOIN type returns only the records that have a match in BOTH joined tables?",
+          "question": "A transfer debits and credits. Which ACID property guarantees that both or neither happens?",
           "options": [
-            "INNER JOIN",
-            "LEFT JOIN",
-            "RIGHT JOIN",
-            "FULL OUTER JOIN"
+            "Atomicity",
+            "Consistency",
+            "Isolation",
+            "Durability"
           ],
-          "answer": "INNER JOIN",
-          "explanation": "INNER JOIN = only matches in both tables. LEFT/RIGHT JOIN additionally keep all rows of the left/right table, FULL OUTER JOIN keeps all rows of both.",
+          "answer": "Atomicity",
+          "explanation": "Atomicity makes the transaction indivisible: on an error everything is rolled back. Consistency preserves the rules, isolation the separation of parallel transactions.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q04",
+      "id": "ap2-db-r09",
       "type": "single",
       "category": "Datenbanken",
-      "question": "Welche SQL-Funktion ermittelt die Anzahl der Zeilen eines Abfrageergebnisses?",
+      "question": "Eine Abfrage auf einer großen Tabelle dauert sehr lange. Was hilft bei häufig gefilterten Spalten?",
+      "options": [
+        "Ein Index auf der gefilterten Spalte",
+        "Ein zusätzlicher Primärschlüssel je Zeile",
+        "Ein DISTINCT vor der WHERE-Bedingung",
+        "Eine Umbenennung der betroffenen Spalte"
+      ],
+      "answer": "Ein Index auf der gefilterten Spalte",
+      "explanation": "Ein Index erlaubt gezieltes Nachschlagen statt eines vollständigen Tabellendurchlaufs. Der Preis sind zusätzlicher Speicher und langsamere Schreibvorgänge.",
+      "translations": {
+        "en": {
+          "question": "A query on a large table takes very long. What helps for frequently filtered columns?",
+          "options": [
+            "An index on the filtered column",
+            "An additional primary key per row",
+            "A DISTINCT before the WHERE clause",
+            "Renaming the affected column"
+          ],
+          "answer": "An index on the filtered column",
+          "explanation": "An index allows targeted lookup instead of a full table scan. The price is extra storage and slower write operations.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r10",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Befehl macht die Änderungen einer Transaktion dauerhaft?",
+      "options": [
+        "COMMIT",
+        "ROLLBACK",
+        "SAVEPOINT",
+        "GRANT"
+      ],
+      "answer": "COMMIT",
+      "explanation": "COMMIT schreibt die Transaktion endgültig fest, ROLLBACK verwirft sie. SAVEPOINT setzt nur einen Zwischenpunkt, GRANT vergibt Rechte.",
+      "translations": {
+        "en": {
+          "question": "Which statement makes the changes of a transaction permanent?",
+          "options": [
+            "COMMIT",
+            "ROLLBACK",
+            "SAVEPOINT",
+            "GRANT"
+          ],
+          "answer": "COMMIT",
+          "explanation": "COMMIT writes the transaction permanently, ROLLBACK discards it. SAVEPOINT only sets an intermediate marker, GRANT assigns privileges.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r11",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Ein Kunde soll nicht gelöscht werden können, solange Bestellungen zu ihm existieren. Was sichert das?",
+      "options": [
+        "Die referenzielle Integrität über den Fremdschlüssel",
+        "Ein zusätzlicher Index auf der Bestelltabelle",
+        "Ein DISTINCT beim Auslesen der Bestellungen",
+        "Eine Sortierung der Bestellungen nach Datum"
+      ],
+      "answer": "Die referenzielle Integrität über den Fremdschlüssel",
+      "explanation": "Der Fremdschlüssel verweist auf den Primärschlüssel und verhindert verwaiste Datensätze. Mit ON DELETE CASCADE ließe sich alternativ mitlöschen.",
+      "translations": {
+        "en": {
+          "question": "A customer must not be deletable while orders exist for them. What ensures that?",
+          "options": [
+            "Referential integrity via the foreign key",
+            "An additional index on the orders table",
+            "A DISTINCT when reading the orders",
+            "Sorting the orders by their date"
+          ],
+          "answer": "Referential integrity via the foreign key",
+          "explanation": "The foreign key references the primary key and prevents orphaned records. With ON DELETE CASCADE the dependent rows could alternatively be deleted too.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r12",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Funktion liefert die Anzahl der Zeilen eines Ergebnisses?",
       "options": [
         "COUNT()",
         "SUM()",
@@ -96,10 +320,10 @@
         "MAX()"
       ],
       "answer": "COUNT()",
-      "explanation": "COUNT() zählt Zeilen, SUM() summiert Werte, AVG() bildet den Durchschnitt, MAX() liefert den größten Wert.",
+      "explanation": "COUNT zählt Zeilen, SUM summiert Werte, AVG bildet den Durchschnitt und MAX liefert den größten Wert.",
       "translations": {
         "en": {
-          "question": "Which SQL function determines the number of rows in a query result?",
+          "question": "Which function returns the number of rows in a result?",
           "options": [
             "COUNT()",
             "SUM()",
@@ -107,1629 +331,2487 @@
             "MAX()"
           ],
           "answer": "COUNT()",
-          "explanation": "COUNT() counts rows, SUM() adds up values, AVG() computes the average, MAX() returns the largest value.",
+          "explanation": "COUNT counts rows, SUM adds values, AVG forms the average and MAX returns the largest value.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q05",
+      "id": "ap2-db-r13",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Wie wird eine n:m-Beziehung im relationalen Modell umgesetzt?",
+      "options": [
+        "Über eine zusätzliche Zwischentabelle",
+        "Über einen zusammengesetzten Primärschlüssel in beiden Tabellen",
+        "Über ein Mehrfachfeld in einer der Tabellen",
+        "Über einen Index auf beiden beteiligten Tabellen"
+      ],
+      "answer": "Über eine zusätzliche Zwischentabelle",
+      "explanation": "Die Zwischentabelle nimmt die Fremdschlüssel beider Seiten auf und zerlegt so die n:m- in zwei 1:n-Beziehungen. Mehrfachfelder verstoßen gegen die erste Normalform.",
+      "translations": {
+        "en": {
+          "question": "How is an n:m relationship implemented in the relational model?",
+          "options": [
+            "Through an additional junction table",
+            "Through a composite primary key in both tables",
+            "Through a multi-value field in one of the tables",
+            "Through an index on both participating tables"
+          ],
+          "answer": "Through an additional junction table",
+          "explanation": "The junction table holds the foreign keys of both sides and thereby splits the n:m into two 1:n relationships. Multi-value fields violate the first normal form.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r14",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Aussage über eine View trifft zu?",
+      "options": [
+        "Sie ist eine gespeicherte Abfrage ohne eigene Daten",
+        "Sie kopiert die Daten in eine zweite Tabelle",
+        "Sie ersetzt den Primärschlüssel der Basistabelle",
+        "Sie beschleunigt Schreibvorgänge auf der Tabelle"
+      ],
+      "answer": "Sie ist eine gespeicherte Abfrage ohne eigene Daten",
+      "explanation": "Eine View liefert bei jedem Zugriff das aktuelle Ergebnis ihrer Abfrage. Sie vereinfacht komplexe Joins und kann Spalten gezielt ausblenden.",
+      "translations": {
+        "en": {
+          "question": "Which statement about a view is correct?",
+          "options": [
+            "It is a stored query without data of its own",
+            "It copies the data into a second table",
+            "It replaces the primary key of the base table",
+            "It speeds up write operations on the table"
+          ],
+          "answer": "It is a stored query without data of its own",
+          "explanation": "A view delivers the current result of its query on every access. It simplifies complex joins and can deliberately hide columns.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r15",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Vergleich findet alle Namen, die mit Mei beginnen?",
+      "options": [
+        "WHERE name LIKE 'Mei%'",
+        "WHERE name = 'Mei'",
+        "WHERE name BETWEEN 'Mei'",
+        "WHERE name IN ('Mei')"
+      ],
+      "answer": "WHERE name LIKE 'Mei%'",
+      "explanation": "LIKE mit dem Platzhalter Prozent sucht nach Mustern. Das Gleichheitszeichen verlangt exakte Übereinstimmung, BETWEEN braucht zwei Grenzen.",
+      "translations": {
+        "en": {
+          "question": "Which comparison finds all names starting with Mei?",
+          "options": [
+            "WHERE name LIKE 'Mei%'",
+            "WHERE name = 'Mei'",
+            "WHERE name BETWEEN 'Mei'",
+            "WHERE name IN ('Mei')"
+          ],
+          "answer": "WHERE name LIKE 'Mei%'",
+          "explanation": "LIKE with the percent wildcard searches for patterns. The equals sign demands an exact match, and BETWEEN needs two bounds.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r16",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Warum liefert die Bedingung WHERE rabatt = NULL keine Zeilen?",
+      "options": [
+        "NULL lässt sich nicht mit dem Gleichheitszeichen prüfen",
+        "NULL ist in Bedingungen grundsätzlich verboten",
+        "NULL wird beim Vergleich automatisch zu null",
+        "NULL steht immer am Ende der Sortierung"
+      ],
+      "answer": "NULL lässt sich nicht mit dem Gleichheitszeichen prüfen",
+      "explanation": "NULL bedeutet unbekannt, und ein Vergleich mit Unbekanntem ergibt weder wahr noch falsch. Richtig ist deshalb IS NULL beziehungsweise IS NOT NULL.",
+      "translations": {
+        "en": {
+          "question": "Why does the condition WHERE rabatt = NULL return no rows?",
+          "options": [
+            "NULL cannot be tested with the equals sign",
+            "NULL is fundamentally forbidden in conditions",
+            "NULL is automatically converted to zero",
+            "NULL always appears last in the sort order"
+          ],
+          "answer": "NULL cannot be tested with the equals sign",
+          "explanation": "NULL means unknown, and a comparison with the unknown yields neither true nor false. The correct form is therefore IS NULL or IS NOT NULL.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r17",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Ein UPDATE ohne WHERE wurde ausgeführt und die Transaktion läuft noch. Was rettet die Daten?",
+      "options": [
+        "Ein ROLLBACK der offenen Transaktion",
+        "Ein sofortiges COMMIT der Änderungen",
+        "Ein zusätzlicher Index auf der Tabelle",
+        "Ein DROP der betroffenen Tabelle"
+      ],
+      "answer": "Ein ROLLBACK der offenen Transaktion",
+      "explanation": "Solange nicht bestätigt wurde, macht ROLLBACK alle Änderungen der Transaktion rückgängig. Ein COMMIT würde den Fehler dagegen festschreiben.",
+      "translations": {
+        "en": {
+          "question": "An UPDATE without WHERE was executed and the transaction is still open. What saves the data?",
+          "options": [
+            "A ROLLBACK of the open transaction",
+            "An immediate COMMIT of the changes",
+            "An additional index on the table",
+            "A DROP of the affected table"
+          ],
+          "answer": "A ROLLBACK of the open transaction",
+          "explanation": "As long as nothing has been confirmed, ROLLBACK undoes all changes of the transaction. A COMMIT would make the mistake permanent instead.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r18",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Kardinalität beschreibt die Beziehung zwischen Kunde und seinen Bestellungen?",
+      "options": [
+        "1:n",
+        "1:1",
+        "n:m",
+        "0:0"
+      ],
+      "answer": "1:n",
+      "explanation": "Ein Kunde kann viele Bestellungen haben, jede Bestellung gehört aber zu genau einem Kunden. Das ist der Standardfall einer 1:n-Beziehung.",
+      "translations": {
+        "en": {
+          "question": "Which cardinality describes the relationship between a customer and their orders?",
+          "options": [
+            "1:n",
+            "1:1",
+            "n:m",
+            "0:0"
+          ],
+          "answer": "1:n",
+          "explanation": "One customer can have many orders, but each order belongs to exactly one customer. That is the standard case of a 1:n relationship.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r19",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Befehl entzieht einem Benutzer ein zuvor erteiltes Recht?",
+      "options": [
+        "REVOKE",
+        "GRANT",
+        "DELETE",
+        "ROLLBACK"
+      ],
+      "answer": "REVOKE",
+      "explanation": "GRANT vergibt Rechte, REVOKE nimmt sie zurück - beide gehören zur DCL. DELETE entfernt Daten, ROLLBACK verwirft eine Transaktion.",
+      "translations": {
+        "en": {
+          "question": "Which statement withdraws a previously granted privilege from a user?",
+          "options": [
+            "REVOKE",
+            "GRANT",
+            "DELETE",
+            "ROLLBACK"
+          ],
+          "answer": "REVOKE",
+          "explanation": "GRANT assigns privileges, REVOKE takes them back - both belong to DCL. DELETE removes data, ROLLBACK discards a transaction.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r20",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Zwei Transaktionen warten gegenseitig auf gesperrte Zeilen. Wie nennt man diese Situation?",
+      "options": [
+        "Deadlock",
+        "Rollback",
+        "Commit",
+        "Trigger"
+      ],
+      "answer": "Deadlock",
+      "explanation": "Beim Deadlock blockieren sich Transaktionen wechselseitig und keine kommt weiter. Das Datenbanksystem erkennt das und rollt eine der beteiligten Transaktionen zurück.",
+      "translations": {
+        "en": {
+          "question": "Two transactions wait for each other's locked rows. What is this situation called?",
+          "options": [
+            "Deadlock",
+            "Rollback",
+            "Commit",
+            "Trigger"
+          ],
+          "answer": "Deadlock",
+          "explanation": "In a deadlock transactions block each other mutually and none proceeds. The database system detects this and rolls one of the involved transactions back.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r21",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Datentyp eignet sich für einen Geldbetrag mit exakt zwei Nachkommastellen?",
+      "options": [
+        "DECIMAL",
+        "FLOAT",
+        "INTEGER",
+        "VARCHAR"
+      ],
+      "answer": "DECIMAL",
+      "explanation": "DECIMAL rechnet exakt mit fester Stellenzahl. FLOAT rundet binär und erzeugt bei Geldbeträgen Centabweichungen, VARCHAR verhindert jedes Rechnen.",
+      "translations": {
+        "en": {
+          "question": "Which data type suits a monetary amount with exactly two decimal places?",
+          "options": [
+            "DECIMAL",
+            "FLOAT",
+            "INTEGER",
+            "VARCHAR"
+          ],
+          "answer": "DECIMAL",
+          "explanation": "DECIMAL computes exactly with a fixed number of digits. FLOAT rounds in binary and produces cent deviations for money, VARCHAR prevents any arithmetic.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r22",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welcher Befehl entfernt eine Tabelle samt Struktur aus der Datenbank?",
+      "options": [
+        "DROP TABLE",
+        "DELETE FROM",
+        "TRUNCATE TABLE",
+        "ALTER TABLE"
+      ],
+      "answer": "DROP TABLE",
+      "explanation": "DROP entfernt die Tabelle vollständig. DELETE und TRUNCATE löschen nur Zeilen und lassen die Struktur bestehen.",
+      "translations": {
+        "en": {
+          "question": "Which statement removes a table including its structure from the database?",
+          "options": [
+            "DROP TABLE",
+            "DELETE FROM",
+            "TRUNCATE TABLE",
+            "ALTER TABLE"
+          ],
+          "answer": "DROP TABLE",
+          "explanation": "DROP removes the table entirely. DELETE and TRUNCATE only remove rows and leave the structure in place.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r23",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Eine Tabelle in der zweiten Normalform hat eine Spalte, die von einer Nichtschlüsselspalte abhängt. Was folgt?",
+      "options": [
+        "Sie verletzt die dritte Normalform",
+        "Sie verletzt die erste Normalform",
+        "Sie ist bereits vollständig normalisiert",
+        "Sie benötigt einen zusätzlichen Index"
+      ],
+      "answer": "Sie verletzt die dritte Normalform",
+      "explanation": "Die dritte Normalform verlangt, dass Nichtschlüsselattribute nur vom Schlüssel abhängen. Transitive Abhängigkeiten wandern in eine eigene Tabelle.",
+      "translations": {
+        "en": {
+          "question": "A table in second normal form has a column depending on a non-key column. What follows?",
+          "options": [
+            "It violates the third normal form",
+            "It violates the first normal form",
+            "It is already fully normalised",
+            "It requires an additional index"
+          ],
+          "answer": "It violates the third normal form",
+          "explanation": "The third normal form requires non-key attributes to depend only on the key. Transitive dependencies move into their own table.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r24",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Abfrage liefert den Umsatz je Kunde?",
+      "options": [
+        "SELECT kunde, SUM(betrag) FROM umsatz GROUP BY kunde;",
+        "SELECT kunde, SUM(betrag) FROM umsatz ORDER BY kunde;",
+        "SELECT kunde, SUM(betrag) FROM umsatz WHERE kunde;",
+        "SELECT DISTINCT kunde, betrag FROM umsatz;"
+      ],
+      "answer": "SELECT kunde, SUM(betrag) FROM umsatz GROUP BY kunde;",
+      "explanation": "Aggregatfunktionen brauchen GROUP BY für alle nicht aggregierten Spalten. ORDER BY sortiert nur, DISTINCT entfernt Dubletten ohne zu summieren.",
+      "translations": {
+        "en": {
+          "question": "Which query returns the revenue per customer?",
+          "options": [
+            "SELECT kunde, SUM(betrag) FROM umsatz GROUP BY kunde;",
+            "SELECT kunde, SUM(betrag) FROM umsatz ORDER BY kunde;",
+            "SELECT kunde, SUM(betrag) FROM umsatz WHERE kunde;",
+            "SELECT DISTINCT kunde, betrag FROM umsatz;"
+          ],
+          "answer": "SELECT kunde, SUM(betrag) FROM umsatz GROUP BY kunde;",
+          "explanation": "Aggregate functions need GROUP BY for every non-aggregated column. ORDER BY only sorts, DISTINCT removes duplicates without summing.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r25",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Wofür sorgt die Isolation in den ACID-Eigenschaften?",
+      "options": [
+        "Parallele Transaktionen beeinflussen sich nicht gegenseitig",
+        "Bestätigte Änderungen überstehen einen Systemabsturz",
+        "Eine Transaktion wird ganz oder gar nicht ausgeführt",
+        "Alle Integritätsregeln bleiben nach der Buchung erhalten"
+      ],
+      "answer": "Parallele Transaktionen beeinflussen sich nicht gegenseitig",
+      "explanation": "Isolation verhindert, dass eine Transaktion Zwischenstände einer anderen sieht. Die drei anderen Beschreibungen gehören zu Dauerhaftigkeit, Atomarität und Konsistenz.",
+      "translations": {
+        "en": {
+          "question": "What does isolation ensure among the ACID properties?",
+          "options": [
+            "Parallel transactions do not influence each other",
+            "Committed changes survive a system crash",
+            "A transaction runs completely or not at all",
+            "All integrity rules hold after the booking"
+          ],
+          "answer": "Parallel transactions do not influence each other",
+          "explanation": "Isolation prevents one transaction from seeing another's intermediate state. The three other descriptions belong to durability, atomicity and consistency.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r26",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welches System speichert Daten als Dokumente statt in Tabellen?",
+      "options": [
+        "MongoDB",
+        "PostgreSQL",
+        "MariaDB",
+        "Microsoft SQL Server"
+      ],
+      "answer": "MongoDB",
+      "explanation": "MongoDB ist eine Dokumentendatenbank ohne festes Schema. Die drei anderen sind relationale Systeme mit Tabellen und SQL.",
+      "translations": {
+        "en": {
+          "question": "Which system stores data as documents instead of tables?",
+          "options": [
+            "MongoDB",
+            "PostgreSQL",
+            "MariaDB",
+            "Microsoft SQL Server"
+          ],
+          "answer": "MongoDB",
+          "explanation": "MongoDB is a document database without a fixed schema. The other three are relational systems with tables and SQL.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r27",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Ein Feld soll beim Einfügen automatisch das aktuelle Datum erhalten. Was setzt du?",
+      "options": [
+        "Einen DEFAULT-Wert auf der Spalte",
+        "Einen zusätzlichen Index auf der Spalte",
+        "Eine UNIQUE-Bedingung auf der Spalte",
+        "Einen Fremdschlüssel auf eine Datumstabelle"
+      ],
+      "answer": "Einen DEFAULT-Wert auf der Spalte",
+      "explanation": "DEFAULT greift, wenn beim INSERT kein Wert angegeben wird. Index und UNIQUE regeln Zugriff und Eindeutigkeit, nicht die Vorbelegung.",
+      "translations": {
+        "en": {
+          "question": "A field should automatically receive the current date on insert. What do you set?",
+          "options": [
+            "A DEFAULT value on the column",
+            "An additional index on the column",
+            "A UNIQUE constraint on the column",
+            "A foreign key to a date table"
+          ],
+          "answer": "A DEFAULT value on the column",
+          "explanation": "DEFAULT applies when no value is given on INSERT. Index and UNIQUE govern access and uniqueness, not the initial value.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r28",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Was bewirkt ON DELETE CASCADE bei einem Fremdschlüssel?",
+      "options": [
+        "Abhängige Datensätze werden mitgelöscht",
+        "Das Löschen des Hauptsatzes wird verhindert",
+        "Der Fremdschlüssel wird auf NULL gesetzt",
+        "Die Tabelle wird bei jedem Löschen gesperrt"
+      ],
+      "answer": "Abhängige Datensätze werden mitgelöscht",
+      "explanation": "CASCADE räumt abhängige Zeilen automatisch mit weg. Die Alternative RESTRICT verhindert das Löschen, SET NULL leert den Verweis.",
+      "translations": {
+        "en": {
+          "question": "What does ON DELETE CASCADE do on a foreign key?",
+          "options": [
+            "Dependent records are deleted along with it",
+            "Deleting the parent record is prevented",
+            "The foreign key is set to NULL",
+            "The table is locked on every delete"
+          ],
+          "answer": "Dependent records are deleted along with it",
+          "explanation": "CASCADE automatically clears dependent rows too. The alternative RESTRICT prevents the deletion, SET NULL empties the reference.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r29",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Wie viele Zeilen liefert ein CROSS JOIN zweier Tabellen mit 10 und 20 Zeilen?",
+      "options": [
+        "200",
+        "30",
+        "20",
+        "10"
+      ],
+      "answer": "200",
+      "explanation": "Der CROSS JOIN bildet das kartesische Produkt: jede Zeile wird mit jeder kombiniert, also 10 mal 20. Meist ist so ein Ergebnis ein vergessenes JOIN-Kriterium.",
+      "translations": {
+        "en": {
+          "question": "How many rows does a CROSS JOIN of two tables with 10 and 20 rows return?",
+          "options": [
+            "200",
+            "30",
+            "20",
+            "10"
+          ],
+          "answer": "200",
+          "explanation": "A CROSS JOIN forms the cartesian product: every row combined with every other, i.e. 10 times 20. Usually such a result means a forgotten join condition.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r30",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Sicherung erlaubt die Wiederherstellung auf einen beliebigen Zeitpunkt?",
+      "options": [
+        "Vollsicherung zusammen mit den Transaktionsprotokollen",
+        "Eine reine Vollsicherung ohne weitere Dateien",
+        "Ein Export der Tabellenstruktur ohne Daten",
+        "Eine Kopie der Konfigurationsdateien des Servers"
+      ],
+      "answer": "Vollsicherung zusammen mit den Transaktionsprotokollen",
+      "explanation": "Erst die Protokolle erlauben das Nachfahren aller Änderungen bis kurz vor den Schadenszeitpunkt. Ohne sie landet man beim Stand der letzten Vollsicherung.",
+      "translations": {
+        "en": {
+          "question": "Which backup allows recovery to an arbitrary point in time?",
+          "options": [
+            "Full backup together with the transaction logs",
+            "A plain full backup without further files",
+            "An export of the table structure without data",
+            "A copy of the server's configuration files"
+          ],
+          "answer": "Full backup together with the transaction logs",
+          "explanation": "Only the logs allow replaying all changes up to shortly before the incident. Without them you land at the state of the last full backup.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r31",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Welche Klausel entfernt doppelte Zeilen aus dem Ergebnis?",
+      "options": [
+        "DISTINCT",
+        "GROUP BY",
+        "HAVING",
+        "UNION ALL"
+      ],
+      "answer": "DISTINCT",
+      "explanation": "DISTINCT filtert identische Ergebniszeilen heraus. GROUP BY fasst für Aggregate zusammen, und UNION ALL behält Dubletten ausdrücklich.",
+      "translations": {
+        "en": {
+          "question": "Which clause removes duplicate rows from the result?",
+          "options": [
+            "DISTINCT",
+            "GROUP BY",
+            "HAVING",
+            "UNION ALL"
+          ],
+          "answer": "DISTINCT",
+          "explanation": "DISTINCT filters out identical result rows. GROUP BY consolidates for aggregates, and UNION ALL deliberately keeps duplicates.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r32",
+      "type": "single",
+      "category": "Datenbanken",
+      "question": "Ein Auszubildender soll Daten lesen, aber nichts ändern dürfen. Was vergibst du?",
+      "options": [
+        "Nur das SELECT-Recht auf die Tabellen",
+        "Alle Rechte mit Ausnahme von DROP",
+        "Das Recht, eigene Tabellen anzulegen",
+        "Administratorrechte auf der Datenbank"
+      ],
+      "answer": "Nur das SELECT-Recht auf die Tabellen",
+      "explanation": "Rechte werden nach dem Prinzip der minimalen Vergabe erteilt. Lesen ohne Schreibrecht deckt den Bedarf ab, ohne Änderungsrisiko zu schaffen.",
+      "translations": {
+        "en": {
+          "question": "An apprentice should read data but not be able to change anything. What do you grant?",
+          "options": [
+            "Only the SELECT privilege on the tables",
+            "All privileges except for DROP",
+            "The privilege to create own tables",
+            "Administrator privileges on the database"
+          ],
+          "answer": "Only the SELECT privilege on the tables",
+          "explanation": "Privileges are granted following the principle of least privilege. Read without write covers the need without creating any risk of modification.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r33",
       "type": "multiple",
       "category": "Datenbanken",
-      "question": "Welche der folgenden SQL-Befehle gehören zur DML (Data Manipulation Language)?",
+      "question": "Welche Befehle gehören zur DML?",
       "options": [
         "INSERT",
         "UPDATE",
         "DELETE",
+        "SELECT",
         "CREATE TABLE",
         "DROP TABLE"
       ],
       "answer": [
         "INSERT",
         "UPDATE",
-        "DELETE"
+        "DELETE",
+        "SELECT"
       ],
-      "explanation": "DML manipuliert Daten (INSERT, UPDATE, DELETE). CREATE und DROP verändern die Struktur und gehören zur DDL (Data Definition Language).",
+      "explanation": "Die Data Manipulation Language arbeitet mit den Daten selbst. CREATE und DROP verändern die Struktur und zählen zur DDL.",
       "translations": {
         "en": {
-          "question": "Which of the following SQL commands belong to DML (Data Manipulation Language)?",
+          "question": "Which statements belong to DML?",
           "options": [
             "INSERT",
             "UPDATE",
             "DELETE",
+            "SELECT",
             "CREATE TABLE",
             "DROP TABLE"
           ],
           "answer": [
             "INSERT",
             "UPDATE",
-            "DELETE"
+            "DELETE",
+            "SELECT"
           ],
-          "explanation": "DML manipulates data (INSERT, UPDATE, DELETE). CREATE and DROP change the structure and belong to DDL (Data Definition Language).",
+          "explanation": "The data manipulation language works with the data itself. CREATE and DROP change the structure and belong to DDL.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q06",
+      "id": "ap2-db-r34",
       "type": "multiple",
       "category": "Datenbanken",
-      "question": "Welche Eigenschaften muss ein Primärschlüssel erfüllen?",
+      "question": "Welche Eigenschaften beschreiben die ACID-Regeln?",
       "options": [
-        "Er ist innerhalb der Tabelle eindeutig",
-        "Er darf nicht NULL sein",
-        "Er identifiziert jeden Datensatz zweifelsfrei",
-        "Er darf mehrfach vorkommen, solange die Tabelle klein ist"
+        "Atomarität einer Transaktion",
+        "Konsistenz der Daten danach",
+        "Isolation paralleler Transaktionen",
+        "Dauerhaftigkeit bestätigter Änderungen",
+        "Automatische Indizierung aller Spalten",
+        "Anonymisierung personenbezogener Daten"
       ],
       "answer": [
-        "Er ist innerhalb der Tabelle eindeutig",
-        "Er darf nicht NULL sein",
-        "Er identifiziert jeden Datensatz zweifelsfrei"
+        "Atomarität einer Transaktion",
+        "Konsistenz der Daten danach",
+        "Isolation paralleler Transaktionen",
+        "Dauerhaftigkeit bestätigter Änderungen"
       ],
-      "explanation": "Eindeutig + nicht NULL = jeder Datensatz ist zweifelsfrei ansprechbar. Häufig wird dafür eine künstliche ID (Auto-Increment) verwendet.",
+      "explanation": "ACID steht für Atomicity, Consistency, Isolation und Durability - vier Zusagen, die eine Transaktion verlässlich machen. Indizes und Datenschutz sind eigene Themen.",
       "translations": {
         "en": {
-          "question": "Which properties must a primary key satisfy?",
+          "question": "Which properties describe the ACID rules?",
           "options": [
-            "It is unique within the table",
-            "It must not be NULL",
-            "It unambiguously identifies every record",
-            "It may occur multiple times as long as the table is small"
+            "Atomicity of a transaction",
+            "Consistency of the data afterwards",
+            "Isolation of parallel transactions",
+            "Durability of committed changes",
+            "Automatic indexing of all columns",
+            "Anonymisation of personal data"
           ],
           "answer": [
-            "It is unique within the table",
-            "It must not be NULL",
-            "It unambiguously identifies every record"
+            "Atomicity of a transaction",
+            "Consistency of the data afterwards",
+            "Isolation of parallel transactions",
+            "Durability of committed changes"
           ],
-          "explanation": "Unique + not NULL = every record can be addressed unambiguously. Often an artificial ID (auto-increment) is used for this.",
+          "explanation": "ACID stands for atomicity, consistency, isolation and durability - four guarantees that make a transaction reliable. Indexes and data protection are separate topics.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q07",
+      "id": "ap2-db-r35",
       "type": "multiple",
       "category": "Datenbanken",
-      "question": "Welche Ziele verfolgt die Normalisierung einer relationalen Datenbank?",
+      "question": "Welche Aussagen über Fremdschlüssel sind korrekt?",
       "options": [
-        "Redundanzen (doppelte Datenhaltung) vermeiden",
-        "Anomalien beim Einfügen, Ändern und Löschen verhindern",
-        "Die Datenkonsistenz verbessern",
-        "Jede Abfrage automatisch beschleunigen",
-        "Backups überflüssig machen"
+        "Er verweist auf den Primärschlüssel einer anderen Tabelle",
+        "Er sichert die referenzielle Integrität",
+        "Er verhindert verwaiste Datensätze",
+        "Er kann mehrfach in der Tabelle vorkommen",
+        "Er muss innerhalb seiner Tabelle eindeutig sein",
+        "Er ersetzt den Primärschlüssel der eigenen Tabelle"
       ],
       "answer": [
-        "Redundanzen (doppelte Datenhaltung) vermeiden",
-        "Anomalien beim Einfügen, Ändern und Löschen verhindern",
-        "Die Datenkonsistenz verbessern"
+        "Er verweist auf den Primärschlüssel einer anderen Tabelle",
+        "Er sichert die referenzielle Integrität",
+        "Er verhindert verwaiste Datensätze",
+        "Er kann mehrfach in der Tabelle vorkommen"
       ],
-      "explanation": "Normalisierung (1.–3. Normalform) strukturiert Daten sauber. Abfragen können durch die nötigen JOINs sogar langsamer werden — deshalb wird gelegentlich bewusst denormalisiert.",
+      "explanation": "Der Fremdschlüssel bildet die Beziehung ab und darf sich wiederholen - viele Bestellungen gehören zu einem Kunden. Eindeutigkeit fordert nur der Primärschlüssel.",
       "translations": {
         "en": {
-          "question": "What are the goals of normalizing a relational database?",
+          "question": "Which statements about foreign keys are correct?",
           "options": [
-            "Avoid redundancy (duplicate data storage)",
-            "Prevent insert, update and delete anomalies",
-            "Improve data consistency",
-            "Automatically speed up every query",
-            "Make backups unnecessary"
+            "It references the primary key of another table",
+            "It secures referential integrity",
+            "It prevents orphaned records",
+            "It may appear multiple times in the table",
+            "It must be unique within its own table",
+            "It replaces the primary key of its own table"
           ],
           "answer": [
-            "Avoid redundancy (duplicate data storage)",
-            "Prevent insert, update and delete anomalies",
-            "Improve data consistency"
+            "It references the primary key of another table",
+            "It secures referential integrity",
+            "It prevents orphaned records",
+            "It may appear multiple times in the table"
           ],
-          "explanation": "Normalization (1st–3rd normal form) structures data cleanly. Queries can actually become slower due to the required JOINs — which is why databases are sometimes deliberately denormalized.",
+          "explanation": "The foreign key models the relationship and may repeat - many orders belong to one customer. Only the primary key demands uniqueness.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q08",
+      "id": "ap2-db-r36",
       "type": "multiple",
       "category": "Datenbanken",
-      "question": "Welche der folgenden Systeme sind relationale Datenbankmanagementsysteme?",
+      "question": "Welche Aussagen über Indizes sind zutreffend?",
+      "options": [
+        "Sie beschleunigen das Suchen in großen Tabellen",
+        "Sie belegen zusätzlichen Speicherplatz",
+        "Sie verlangsamen Einfüge- und Änderungsvorgänge",
+        "Sie lohnen sich besonders auf häufig gefilterten Spalten",
+        "Sie beschleunigen jede denkbare Abfrage",
+        "Sie ersetzen den Primärschlüssel einer Tabelle"
+      ],
+      "answer": [
+        "Sie beschleunigen das Suchen in großen Tabellen",
+        "Sie belegen zusätzlichen Speicherplatz",
+        "Sie verlangsamen Einfüge- und Änderungsvorgänge",
+        "Sie lohnen sich besonders auf häufig gefilterten Spalten"
+      ],
+      "explanation": "Ein Index ist ein Handel: schnelleres Lesen gegen Speicher und langsameres Schreiben. Wahllos gesetzte Indizes bringen deshalb mehr Nachteile als Nutzen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about indexes are correct?",
+          "options": [
+            "They speed up searching in large tables",
+            "They occupy additional storage space",
+            "They slow down inserts and updates",
+            "They pay off especially on frequently filtered columns",
+            "They speed up every conceivable query",
+            "They replace the primary key of a table"
+          ],
+          "answer": [
+            "They speed up searching in large tables",
+            "They occupy additional storage space",
+            "They slow down inserts and updates",
+            "They pay off especially on frequently filtered columns"
+          ],
+          "explanation": "An index is a trade: faster reads for storage and slower writes. Indexes set indiscriminately therefore cause more harm than good.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r37",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Anforderungen stellt die erste Normalform?",
+      "options": [
+        "Alle Attributwerte sind atomar",
+        "Jede Zelle enthält genau einen Wert",
+        "Wiederholungsgruppen werden ausgelagert",
+        "Die Tabelle besitzt einen Primärschlüssel",
+        "Alle Nichtschlüsselattribute hängen vom Gesamtschlüssel ab",
+        "Es gibt keine transitiven Abhängigkeiten mehr"
+      ],
+      "answer": [
+        "Alle Attributwerte sind atomar",
+        "Jede Zelle enthält genau einen Wert",
+        "Wiederholungsgruppen werden ausgelagert",
+        "Die Tabelle besitzt einen Primärschlüssel"
+      ],
+      "explanation": "Die erste Normalform verlangt Atomarität und identifizierbare Zeilen. Volle Abhängigkeit vom Schlüssel fordert die zweite, Transitivfreiheit die dritte Normalform.",
+      "translations": {
+        "en": {
+          "question": "Which requirements does the first normal form impose?",
+          "options": [
+            "All attribute values are atomic",
+            "Each cell contains exactly one value",
+            "Repeating groups are moved out",
+            "The table has a primary key",
+            "All non-key attributes depend on the whole key",
+            "There are no transitive dependencies left"
+          ],
+          "answer": [
+            "All attribute values are atomic",
+            "Each cell contains exactly one value",
+            "Repeating groups are moved out",
+            "The table has a primary key"
+          ],
+          "explanation": "The first normal form requires atomicity and identifiable rows. Full dependency on the key is the second normal form, freedom from transitivity the third.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r38",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche JOIN-Arten kennt SQL?",
+      "options": [
+        "INNER JOIN",
+        "LEFT OUTER JOIN",
+        "RIGHT OUTER JOIN",
+        "FULL OUTER JOIN",
+        "UPPER JOIN",
+        "GROUP JOIN"
+      ],
+      "answer": [
+        "INNER JOIN",
+        "LEFT OUTER JOIN",
+        "RIGHT OUTER JOIN",
+        "FULL OUTER JOIN"
+      ],
+      "explanation": "Inner und die drei Outer-Varianten decken die üblichen Fälle ab, ergänzt um CROSS JOIN. UPPER und GROUP JOIN gibt es nicht.",
+      "translations": {
+        "en": {
+          "question": "Which join types does SQL know?",
+          "options": [
+            "INNER JOIN",
+            "LEFT OUTER JOIN",
+            "RIGHT OUTER JOIN",
+            "FULL OUTER JOIN",
+            "UPPER JOIN",
+            "GROUP JOIN"
+          ],
+          "answer": [
+            "INNER JOIN",
+            "LEFT OUTER JOIN",
+            "RIGHT OUTER JOIN",
+            "FULL OUTER JOIN"
+          ],
+          "explanation": "Inner and the three outer variants cover the usual cases, plus CROSS JOIN. UPPER and GROUP JOIN do not exist.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r39",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Angaben gehören in ein ER-Modell?",
+      "options": [
+        "Entitätstypen mit ihren Attributen",
+        "Beziehungen zwischen den Entitätstypen",
+        "Kardinalitäten der Beziehungen",
+        "Kennzeichnung der Schlüsselattribute",
+        "Die Namen der Datenbankbenutzer",
+        "Der Speicherort der Datenbankdateien"
+      ],
+      "answer": [
+        "Entitätstypen mit ihren Attributen",
+        "Beziehungen zwischen den Entitätstypen",
+        "Kardinalitäten der Beziehungen",
+        "Kennzeichnung der Schlüsselattribute"
+      ],
+      "explanation": "Das ER-Modell beschreibt die fachliche Struktur: Entitäten, Attribute, Beziehungen und Kardinalitäten. Benutzer und Ablageorte sind Betriebsdetails.",
+      "translations": {
+        "en": {
+          "question": "Which items belong in an ER model?",
+          "options": [
+            "Entity types with their attributes",
+            "Relationships between the entity types",
+            "Cardinalities of the relationships",
+            "Marking of the key attributes",
+            "The names of the database users",
+            "The storage location of the database files"
+          ],
+          "answer": [
+            "Entity types with their attributes",
+            "Relationships between the entity types",
+            "Cardinalities of the relationships",
+            "Marking of the key attributes"
+          ],
+          "explanation": "The ER model describes the business structure: entities, attributes, relationships and cardinalities. Users and storage locations are operational details.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r40",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aggregatfunktionen kennt SQL?",
+      "options": [
+        "COUNT",
+        "SUM",
+        "AVG",
+        "MAX",
+        "SORT",
+        "FILTER"
+      ],
+      "answer": [
+        "COUNT",
+        "SUM",
+        "AVG",
+        "MAX"
+      ],
+      "explanation": "COUNT, SUM, AVG, MIN und MAX fassen mehrere Zeilen zu einem Wert zusammen. SORT und FILTER sind keine SQL-Funktionen - dafür stehen ORDER BY und WHERE.",
+      "translations": {
+        "en": {
+          "question": "Which aggregate functions does SQL know?",
+          "options": [
+            "COUNT",
+            "SUM",
+            "AVG",
+            "MAX",
+            "SORT",
+            "FILTER"
+          ],
+          "answer": [
+            "COUNT",
+            "SUM",
+            "AVG",
+            "MAX"
+          ],
+          "explanation": "COUNT, SUM, AVG, MIN and MAX condense several rows into one value. SORT and FILTER are not SQL functions - ORDER BY and WHERE serve those purposes.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r41",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Vorteile bringt die Normalisierung einer Datenbank?",
+      "options": [
+        "Redundanz wird verringert",
+        "Änderungsanomalien werden vermieden",
+        "Die Datenkonsistenz steigt",
+        "Der Speicherbedarf sinkt tendenziell",
+        "Jede Abfrage wird dadurch schneller",
+        "Die Anzahl der Tabellen sinkt"
+      ],
+      "answer": [
+        "Redundanz wird verringert",
+        "Änderungsanomalien werden vermieden",
+        "Die Datenkonsistenz steigt",
+        "Der Speicherbedarf sinkt tendenziell"
+      ],
+      "explanation": "Weniger Redundanz bedeutet weniger Widersprüche und weniger Speicher. Der Preis sind mehr Tabellen und damit mehr Joins, die Abfragen eher verlangsamen.",
+      "translations": {
+        "en": {
+          "question": "Which advantages come from normalising a database?",
+          "options": [
+            "Redundancy is reduced",
+            "Update anomalies are avoided",
+            "Data consistency increases",
+            "Storage requirements tend to fall",
+            "Every query becomes faster as a result",
+            "The number of tables decreases"
+          ],
+          "answer": [
+            "Redundancy is reduced",
+            "Update anomalies are avoided",
+            "Data consistency increases",
+            "Storage requirements tend to fall"
+          ],
+          "explanation": "Less redundancy means fewer contradictions and less storage. The price is more tables and therefore more joins, which tend to slow queries down.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r42",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Constraints lassen sich auf einer Spalte definieren?",
+      "options": [
+        "NOT NULL gegen leere Werte",
+        "UNIQUE gegen Doppelungen",
+        "CHECK für eine Wertebedingung",
+        "DEFAULT für einen Vorgabewert",
+        "SORTED für automatische Sortierung",
+        "FASTER für schnelleren Zugriff"
+      ],
+      "answer": [
+        "NOT NULL gegen leere Werte",
+        "UNIQUE gegen Doppelungen",
+        "CHECK für eine Wertebedingung",
+        "DEFAULT für einen Vorgabewert"
+      ],
+      "explanation": "NOT NULL, UNIQUE, CHECK und DEFAULT sichern Datenqualität schon beim Schreiben. SORTED und FASTER existieren nicht.",
+      "translations": {
+        "en": {
+          "question": "Which constraints can be defined on a column?",
+          "options": [
+            "NOT NULL against empty values",
+            "UNIQUE against duplicates",
+            "CHECK for a value condition",
+            "DEFAULT for a preset value",
+            "SORTED for automatic sorting",
+            "FASTER for quicker access"
+          ],
+          "answer": [
+            "NOT NULL against empty values",
+            "UNIQUE against duplicates",
+            "CHECK for a value condition",
+            "DEFAULT for a preset value"
+          ],
+          "explanation": "NOT NULL, UNIQUE, CHECK and DEFAULT secure data quality at write time. SORTED and FASTER do not exist.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r43",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Transaktionen sind richtig?",
+      "options": [
+        "Sie fassen mehrere Anweisungen zu einer Einheit zusammen",
+        "COMMIT schreibt sie endgültig fest",
+        "ROLLBACK verwirft alle Änderungen",
+        "Sie sichern die Konsistenz bei Fehlern",
+        "Sie beschleunigen die Ausführung der Anweisungen",
+        "Sie ersetzen die Datensicherung der Datenbank"
+      ],
+      "answer": [
+        "Sie fassen mehrere Anweisungen zu einer Einheit zusammen",
+        "COMMIT schreibt sie endgültig fest",
+        "ROLLBACK verwirft alle Änderungen",
+        "Sie sichern die Konsistenz bei Fehlern"
+      ],
+      "explanation": "Transaktionen bündeln Anweisungen und machen sie gemeinsam gültig oder ungültig. Auf Geschwindigkeit wirken sie nicht, und eine Sicherung ersetzen sie erst recht nicht.",
+      "translations": {
+        "en": {
+          "question": "Which statements about transactions are correct?",
+          "options": [
+            "They group several statements into one unit",
+            "COMMIT makes them permanent",
+            "ROLLBACK discards all changes",
+            "They preserve consistency when errors occur",
+            "They speed up execution of the statements",
+            "They replace the database backup"
+          ],
+          "answer": [
+            "They group several statements into one unit",
+            "COMMIT makes them permanent",
+            "ROLLBACK discards all changes",
+            "They preserve consistency when errors occur"
+          ],
+          "explanation": "Transactions bundle statements and make them jointly valid or invalid. They do not affect speed, and they certainly do not replace a backup.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r44",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Systeme sind relationale Datenbankmanagementsysteme?",
       "options": [
         "MySQL",
         "PostgreSQL",
         "MariaDB",
-        "MongoDB",
-        "Redis"
+        "Microsoft SQL Server",
+        "Redis",
+        "MongoDB"
       ],
       "answer": [
         "MySQL",
         "PostgreSQL",
-        "MariaDB"
+        "MariaDB",
+        "Microsoft SQL Server"
       ],
-      "explanation": "MySQL, PostgreSQL und MariaDB speichern in Tabellen mit SQL. MongoDB ist eine Dokumenten-Datenbank, Redis ein Key-Value-Store (beide NoSQL).",
+      "explanation": "Die ersten vier speichern in Tabellen und sprechen SQL. Redis ist ein Key-Value-Store und MongoDB eine Dokumentendatenbank.",
       "translations": {
         "en": {
-          "question": "Which of the following systems are relational database management systems?",
+          "question": "Which systems are relational database management systems?",
           "options": [
             "MySQL",
             "PostgreSQL",
             "MariaDB",
-            "MongoDB",
-            "Redis"
+            "Microsoft SQL Server",
+            "Redis",
+            "MongoDB"
           ],
           "answer": [
             "MySQL",
             "PostgreSQL",
-            "MariaDB"
+            "MariaDB",
+            "Microsoft SQL Server"
           ],
-          "explanation": "MySQL, PostgreSQL and MariaDB store data in tables using SQL. MongoDB is a document database, Redis a key-value store (both NoSQL).",
+          "explanation": "The first four store data in tables and speak SQL. Redis is a key-value store and MongoDB a document database.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r45",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Maßnahmen schützen eine Datenbank vor Datenverlust?",
+      "options": [
+        "Regelmäßige Vollsicherungen",
+        "Sicherung der Transaktionsprotokolle",
+        "Getrennte Aufbewahrung der Sicherungen",
+        "Regelmäßige Rückspieltests",
+        "Ein zusätzlicher Index auf jeder Tabelle",
+        "Der Verzicht auf Fremdschlüssel"
+      ],
+      "answer": [
+        "Regelmäßige Vollsicherungen",
+        "Sicherung der Transaktionsprotokolle",
+        "Getrennte Aufbewahrung der Sicherungen",
+        "Regelmäßige Rückspieltests"
+      ],
+      "explanation": "Sicherungen, Protokolle, räumliche Trennung und geprüfte Wiederherstellung sind das Fundament. Indizes und Schlüssel betreffen Leistung und Integrität, nicht den Verlustschutz.",
+      "translations": {
+        "en": {
+          "question": "Which measures protect a database against data loss?",
+          "options": [
+            "Regular full backups",
+            "Backup of the transaction logs",
+            "Separate storage of the backups",
+            "Regular restore tests",
+            "An additional index on every table",
+            "Doing without foreign keys"
+          ],
+          "answer": [
+            "Regular full backups",
+            "Backup of the transaction logs",
+            "Separate storage of the backups",
+            "Regular restore tests"
+          ],
+          "explanation": "Backups, logs, physical separation and verified restores are the foundation. Indexes and keys concern performance and integrity, not loss protection.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r46",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über NULL in SQL sind zutreffend?",
+      "options": [
+        "NULL bedeutet unbekannt, nicht null",
+        "Ein Vergleich mit dem Gleichheitszeichen schlägt fehl",
+        "Geprüft wird mit IS NULL",
+        "Aggregatfunktionen überspringen NULL-Werte meist",
+        "NULL entspricht der Zahl null",
+        "NULL entspricht einer leeren Zeichenkette"
+      ],
+      "answer": [
+        "NULL bedeutet unbekannt, nicht null",
+        "Ein Vergleich mit dem Gleichheitszeichen schlägt fehl",
+        "Geprüft wird mit IS NULL",
+        "Aggregatfunktionen überspringen NULL-Werte meist"
+      ],
+      "explanation": "NULL steht für einen fehlenden Wert und ist weder null noch Leerstring. Deshalb braucht es IS NULL statt eines Gleichheitsvergleichs.",
+      "translations": {
+        "en": {
+          "question": "Which statements about NULL in SQL are correct?",
+          "options": [
+            "NULL means unknown, not zero",
+            "A comparison with the equals sign fails",
+            "It is tested with IS NULL",
+            "Aggregate functions usually skip NULL values",
+            "NULL equals the number zero",
+            "NULL equals an empty string"
+          ],
+          "answer": [
+            "NULL means unknown, not zero",
+            "A comparison with the equals sign fails",
+            "It is tested with IS NULL",
+            "Aggregate functions usually skip NULL values"
+          ],
+          "explanation": "NULL stands for a missing value and is neither zero nor an empty string. That is why IS NULL is needed instead of an equality comparison.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r47",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Views sind korrekt?",
+      "options": [
+        "Sie speichern eine Abfrage unter einem Namen",
+        "Sie liefern beim Zugriff aktuelle Daten",
+        "Sie vereinfachen komplexe Abfragen",
+        "Sie können Spalten gezielt ausblenden",
+        "Sie halten eine eigene Kopie der Daten",
+        "Sie machen Indizes grundsätzlich überflüssig"
+      ],
+      "answer": [
+        "Sie speichern eine Abfrage unter einem Namen",
+        "Sie liefern beim Zugriff aktuelle Daten",
+        "Sie vereinfachen komplexe Abfragen",
+        "Sie können Spalten gezielt ausblenden"
+      ],
+      "explanation": "Eine View ist im Kern eine benannte Abfrage - deshalb sieht sie immer die aktuellen Daten und eignet sich zur gezielten Einschränkung des Zugriffs. Eigene Daten hält sie nicht.",
+      "translations": {
+        "en": {
+          "question": "Which statements about views are correct?",
+          "options": [
+            "They store a query under a name",
+            "They deliver current data on access",
+            "They simplify complex queries",
+            "They can deliberately hide columns",
+            "They keep their own copy of the data",
+            "They fundamentally make indexes unnecessary"
+          ],
+          "answer": [
+            "They store a query under a name",
+            "They deliver current data on access",
+            "They simplify complex queries",
+            "They can deliberately hide columns"
+          ],
+          "explanation": "A view is essentially a named query - which is why it always sees current data and suits restricting access. It holds no data of its own.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r48",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Schritte gehören zum Entwurf einer relationalen Datenbank?",
+      "options": [
+        "Anforderungen und Datenobjekte erheben",
+        "Ein ER-Modell mit Beziehungen erstellen",
+        "Das Modell in Tabellen überführen",
+        "Die Tabellen normalisieren",
+        "Zuerst willkürlich Indizes anlegen",
+        "Erst nach dem Betrieb die Schlüssel festlegen"
+      ],
+      "answer": [
+        "Anforderungen und Datenobjekte erheben",
+        "Ein ER-Modell mit Beziehungen erstellen",
+        "Das Modell in Tabellen überführen",
+        "Die Tabellen normalisieren"
+      ],
+      "explanation": "Analyse, Modellierung, Überführung und Normalisierung ergeben ein tragfähiges Schema. Indizes kommen erst danach, wenn das Abfrageverhalten bekannt ist.",
+      "translations": {
+        "en": {
+          "question": "Which steps belong to designing a relational database?",
+          "options": [
+            "Gather requirements and data objects",
+            "Create an ER model with relationships",
+            "Transfer the model into tables",
+            "Normalise the tables",
+            "Create arbitrary indexes first",
+            "Define keys only after going live"
+          ],
+          "answer": [
+            "Gather requirements and data objects",
+            "Create an ER model with relationships",
+            "Transfer the model into tables",
+            "Normalise the tables"
+          ],
+          "explanation": "Analysis, modelling, transfer and normalisation produce a sound schema. Indexes come afterwards, once query behaviour is known.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r49",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen zur Auflösung einer n:m-Beziehung sind richtig?",
+      "options": [
+        "Es entsteht eine zusätzliche Zwischentabelle",
+        "Sie enthält die Fremdschlüssel beider Seiten",
+        "Aus einer n:m werden zwei 1:n-Beziehungen",
+        "Die Zwischentabelle kann eigene Attribute haben",
+        "Eine der Ursprungstabellen entfällt dabei",
+        "Die Beziehung lässt sich ohne Zwischentabelle abbilden"
+      ],
+      "answer": [
+        "Es entsteht eine zusätzliche Zwischentabelle",
+        "Sie enthält die Fremdschlüssel beider Seiten",
+        "Aus einer n:m werden zwei 1:n-Beziehungen",
+        "Die Zwischentabelle kann eigene Attribute haben"
+      ],
+      "explanation": "Die Zwischentabelle trägt beide Fremdschlüssel und oft eigene Angaben wie Menge oder Datum. Beide Ursprungstabellen bleiben erhalten.",
+      "translations": {
+        "en": {
+          "question": "Which statements about resolving an n:m relationship are correct?",
+          "options": [
+            "An additional junction table is created",
+            "It holds the foreign keys of both sides",
+            "One n:m becomes two 1:n relationships",
+            "The junction table can have own attributes",
+            "One of the original tables disappears",
+            "The relationship can be modelled without a junction table"
+          ],
+          "answer": [
+            "An additional junction table is created",
+            "It holds the foreign keys of both sides",
+            "One n:m becomes two 1:n relationships",
+            "The junction table can have own attributes"
+          ],
+          "explanation": "The junction table carries both foreign keys and often its own details such as quantity or date. Both original tables remain.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r50",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über die Reihenfolge einer SELECT-Anweisung sind korrekt?",
+      "options": [
+        "FROM bestimmt die Datenquelle",
+        "WHERE filtert einzelne Zeilen",
+        "GROUP BY fasst Zeilen zu Gruppen zusammen",
+        "HAVING filtert die gebildeten Gruppen",
+        "ORDER BY wirkt vor der Gruppierung",
+        "WHERE darf Aggregatfunktionen enthalten"
+      ],
+      "answer": [
+        "FROM bestimmt die Datenquelle",
+        "WHERE filtert einzelne Zeilen",
+        "GROUP BY fasst Zeilen zu Gruppen zusammen",
+        "HAVING filtert die gebildeten Gruppen"
+      ],
+      "explanation": "Die logische Reihenfolge lautet FROM, WHERE, GROUP BY, HAVING und zuletzt ORDER BY. Aggregate stehen deshalb in HAVING, nicht in WHERE.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the order of a SELECT statement are correct?",
+          "options": [
+            "FROM determines the data source",
+            "WHERE filters individual rows",
+            "GROUP BY consolidates rows into groups",
+            "HAVING filters the resulting groups",
+            "ORDER BY acts before the grouping",
+            "WHERE may contain aggregate functions"
+          ],
+          "answer": [
+            "FROM determines the data source",
+            "WHERE filters individual rows",
+            "GROUP BY consolidates rows into groups",
+            "HAVING filters the resulting groups"
+          ],
+          "explanation": "The logical order is FROM, WHERE, GROUP BY, HAVING and finally ORDER BY. Aggregates therefore belong in HAVING, not in WHERE.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r51",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Gründe sprechen für eine NoSQL-Datenbank?",
+      "options": [
+        "Sehr große, schnell wachsende Datenmengen",
+        "Flexible Struktur ohne festes Schema",
+        "Horizontale Verteilung auf viele Knoten",
+        "Speicherung schwach strukturierter Daten",
+        "Strenge Einhaltung aller ACID-Zusagen",
+        "Komplexe Joins über viele Tabellen"
+      ],
+      "answer": [
+        "Sehr große, schnell wachsende Datenmengen",
+        "Flexible Struktur ohne festes Schema",
+        "Horizontale Verteilung auf viele Knoten",
+        "Speicherung schwach strukturierter Daten"
+      ],
+      "explanation": "NoSQL punktet bei Menge, Flexibilität und Verteilung. Wer starke Transaktionszusagen und komplexe Joins braucht, ist mit einem relationalen System besser bedient.",
+      "translations": {
+        "en": {
+          "question": "Which reasons argue for a NoSQL database?",
+          "options": [
+            "Very large, rapidly growing data volumes",
+            "Flexible structure without a fixed schema",
+            "Horizontal distribution across many nodes",
+            "Storage of weakly structured data",
+            "Strict adherence to all ACID guarantees",
+            "Complex joins across many tables"
+          ],
+          "answer": [
+            "Very large, rapidly growing data volumes",
+            "Flexible structure without a fixed schema",
+            "Horizontal distribution across many nodes",
+            "Storage of weakly structured data"
+          ],
+          "explanation": "NoSQL scores on volume, flexibility and distribution. Anyone needing strong transactional guarantees and complex joins is better served by a relational system.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r52",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Schlüsselarten sind zutreffend?",
+      "options": [
+        "Ein Kandidatenschlüssel identifiziert eindeutig",
+        "Der Primärschlüssel wird aus den Kandidaten gewählt",
+        "Ein zusammengesetzter Schlüssel umfasst mehrere Spalten",
+        "Ein Fremdschlüssel verweist auf eine andere Tabelle",
+        "Eine Tabelle darf mehrere Primärschlüssel haben",
+        "Ein Primärschlüssel darf NULL-Werte enthalten"
+      ],
+      "answer": [
+        "Ein Kandidatenschlüssel identifiziert eindeutig",
+        "Der Primärschlüssel wird aus den Kandidaten gewählt",
+        "Ein zusammengesetzter Schlüssel umfasst mehrere Spalten",
+        "Ein Fremdschlüssel verweist auf eine andere Tabelle"
+      ],
+      "explanation": "Aus den Kandidatenschlüsseln wird genau einer zum Primärschlüssel bestimmt, notfalls über mehrere Spalten. Mehrere Primärschlüssel oder NULL sind ausgeschlossen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about key types are correct?",
+          "options": [
+            "A candidate key identifies uniquely",
+            "The primary key is chosen from the candidates",
+            "A composite key spans several columns",
+            "A foreign key references another table",
+            "A table may have several primary keys",
+            "A primary key may contain NULL values"
+          ],
+          "answer": [
+            "A candidate key identifies uniquely",
+            "The primary key is chosen from the candidates",
+            "A composite key spans several columns",
+            "A foreign key references another table"
+          ],
+          "explanation": "Exactly one of the candidate keys becomes the primary key, if necessary spanning several columns. Several primary keys or NULL are ruled out.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r53",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über die zweite Normalform sind richtig?",
+      "options": [
+        "Die erste Normalform ist Voraussetzung",
+        "Nichtschlüsselattribute hängen vom gesamten Schlüssel ab",
+        "Teilabhängigkeiten werden aufgelöst",
+        "Sie ist besonders bei zusammengesetzten Schlüsseln relevant",
+        "Sie verlangt den Verzicht auf Fremdschlüssel",
+        "Sie beseitigt transitive Abhängigkeiten"
+      ],
+      "answer": [
+        "Die erste Normalform ist Voraussetzung",
+        "Nichtschlüsselattribute hängen vom gesamten Schlüssel ab",
+        "Teilabhängigkeiten werden aufgelöst",
+        "Sie ist besonders bei zusammengesetzten Schlüsseln relevant"
+      ],
+      "explanation": "Die zweite Normalform beseitigt Abhängigkeiten von nur einem Teil des Schlüssels und ist deshalb nur bei zusammengesetzten Schlüsseln ein Thema. Transitivität behandelt erst die dritte.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the second normal form are correct?",
+          "options": [
+            "The first normal form is a prerequisite",
+            "Non-key attributes depend on the whole key",
+            "Partial dependencies are resolved",
+            "It matters especially with composite keys",
+            "It requires doing without foreign keys",
+            "It removes transitive dependencies"
+          ],
+          "answer": [
+            "The first normal form is a prerequisite",
+            "Non-key attributes depend on the whole key",
+            "Partial dependencies are resolved",
+            "It matters especially with composite keys"
+          ],
+          "explanation": "The second normal form removes dependencies on only part of the key and therefore only matters with composite keys. Transitivity is handled by the third.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r54",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Maßnahmen erhöhen die Sicherheit einer Datenbank?",
+      "options": [
+        "Rechte nach dem Prinzip der minimalen Vergabe",
+        "Eigene Konten statt gemeinsam genutzter Zugänge",
+        "Verschlüsselte Verbindungen zum Datenbankserver",
+        "Regelmäßige Aktualisierung des Datenbanksystems",
+        "Ein gemeinsames Administratorkonto für alle",
+        "Direkter Zugriff auf die Datenbank aus dem Internet"
+      ],
+      "answer": [
+        "Rechte nach dem Prinzip der minimalen Vergabe",
+        "Eigene Konten statt gemeinsam genutzter Zugänge",
+        "Verschlüsselte Verbindungen zum Datenbankserver",
+        "Regelmäßige Aktualisierung des Datenbanksystems"
+      ],
+      "explanation": "Minimale Rechte, personenbezogene Konten, verschlüsselte Verbindungen und Patches sind die Grundlagen. Sammelkonten und offene Erreichbarkeit sind das Gegenteil davon.",
+      "translations": {
+        "en": {
+          "question": "Which measures increase the security of a database?",
+          "options": [
+            "Privileges following the least privilege principle",
+            "Individual accounts instead of shared logins",
+            "Encrypted connections to the database server",
+            "Regular updates of the database system",
+            "One shared administrator account for everyone",
+            "Direct access to the database from the internet"
+          ],
+          "answer": [
+            "Privileges following the least privilege principle",
+            "Individual accounts instead of shared logins",
+            "Encrypted connections to the database server",
+            "Regular updates of the database system"
+          ],
+          "explanation": "Least privilege, individual accounts, encrypted connections and patches are the basics. Shared accounts and open exposure are the opposite.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r55",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über den INNER JOIN sind korrekt?",
+      "options": [
+        "Er liefert nur Zeilen mit Treffern in beiden Tabellen",
+        "Zeilen ohne Partner entfallen im Ergebnis",
+        "Die Verknüpfungsbedingung steht in der ON-Klausel",
+        "Er ist der am häufigsten genutzte JOIN-Typ",
+        "Er ergänzt fehlende Partner mit NULL",
+        "Er liefert immer das kartesische Produkt"
+      ],
+      "answer": [
+        "Er liefert nur Zeilen mit Treffern in beiden Tabellen",
+        "Zeilen ohne Partner entfallen im Ergebnis",
+        "Die Verknüpfungsbedingung steht in der ON-Klausel",
+        "Er ist der am häufigsten genutzte JOIN-Typ"
+      ],
+      "explanation": "Der INNER JOIN behält nur Paare, die die Bedingung erfüllen. NULL-Auffüllung leisten die OUTER-Varianten, das kartesische Produkt der CROSS JOIN.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the INNER JOIN are correct?",
+          "options": [
+            "It returns only rows with matches in both tables",
+            "Rows without a partner drop out of the result",
+            "The join condition sits in the ON clause",
+            "It is the most frequently used join type",
+            "It fills missing partners with NULL",
+            "It always returns the cartesian product"
+          ],
+          "answer": [
+            "It returns only rows with matches in both tables",
+            "Rows without a partner drop out of the result",
+            "The join condition sits in the ON clause",
+            "It is the most frequently used join type"
+          ],
+          "explanation": "The INNER JOIN keeps only pairs satisfying the condition. NULL padding is done by the outer variants, the cartesian product by the CROSS JOIN.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r56",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Angaben braucht eine CREATE-TABLE-Anweisung mindestens?",
+      "options": [
+        "Den Namen der Tabelle",
+        "Die Namen der Spalten",
+        "Die Datentypen der Spalten",
+        "Sinnvollerweise einen Primärschlüssel",
+        "Die Anzahl der später erwarteten Zeilen",
+        "Den Namen des zuständigen Entwicklers"
+      ],
+      "answer": [
+        "Den Namen der Tabelle",
+        "Die Namen der Spalten",
+        "Die Datentypen der Spalten",
+        "Sinnvollerweise einen Primärschlüssel"
+      ],
+      "explanation": "Tabellenname, Spalten und Datentypen sind zwingend, ein Primärschlüssel ist praktisch immer sinnvoll. Zeilenzahl und Zuständigkeit gehören nicht in die Definition.",
+      "translations": {
+        "en": {
+          "question": "Which details does a CREATE TABLE statement need at minimum?",
+          "options": [
+            "The name of the table",
+            "The names of the columns",
+            "The data types of the columns",
+            "Sensibly a primary key",
+            "The number of rows expected later",
+            "The name of the responsible developer"
+          ],
+          "answer": [
+            "The name of the table",
+            "The names of the columns",
+            "The data types of the columns",
+            "Sensibly a primary key"
+          ],
+          "explanation": "Table name, columns and data types are mandatory, and a primary key is practically always sensible. Row counts and ownership do not belong in the definition.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r57",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Ursachen können eine langsame Datenbankabfrage erklären?",
+      "options": [
+        "Fehlende Indizes auf gefilterten Spalten",
+        "Ein vergessenes JOIN-Kriterium",
+        "Sehr große Ergebnismengen ohne Einschränkung",
+        "Ungünstig formulierte Unterabfragen",
+        "Ein zu kurzer Tabellenname",
+        "Eine zu helle Bildschirmeinstellung"
+      ],
+      "answer": [
+        "Fehlende Indizes auf gefilterten Spalten",
+        "Ein vergessenes JOIN-Kriterium",
+        "Sehr große Ergebnismengen ohne Einschränkung",
+        "Ungünstig formulierte Unterabfragen"
+      ],
+      "explanation": "Fehlende Indizes, vergessene Verknüpfungen, riesige Ergebnismengen und schlecht gebaute Unterabfragen sind die üblichen Verdächtigen. Namen und Anzeige spielen keine Rolle.",
+      "translations": {
+        "en": {
+          "question": "Which causes can explain a slow database query?",
+          "options": [
+            "Missing indexes on filtered columns",
+            "A forgotten join condition",
+            "Very large result sets without restriction",
+            "Poorly formulated subqueries",
+            "Too short a table name",
+            "Too bright a screen setting"
+          ],
+          "answer": [
+            "Missing indexes on filtered columns",
+            "A forgotten join condition",
+            "Very large result sets without restriction",
+            "Poorly formulated subqueries"
+          ],
+          "explanation": "Missing indexes, forgotten joins, huge result sets and badly built subqueries are the usual suspects. Names and display play no role.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r58",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Befehle gehören zur DDL?",
+      "options": [
+        "CREATE TABLE",
+        "ALTER TABLE",
+        "DROP TABLE",
+        "CREATE INDEX",
+        "SELECT",
+        "COMMIT"
+      ],
+      "answer": [
+        "CREATE TABLE",
+        "ALTER TABLE",
+        "DROP TABLE",
+        "CREATE INDEX"
+      ],
+      "explanation": "Die Data Definition Language beschreibt die Struktur der Datenbank. SELECT gehört zur DML und COMMIT zur Transaktionssteuerung.",
+      "translations": {
+        "en": {
+          "question": "Which statements belong to DDL?",
+          "options": [
+            "CREATE TABLE",
+            "ALTER TABLE",
+            "DROP TABLE",
+            "CREATE INDEX",
+            "SELECT",
+            "COMMIT"
+          ],
+          "answer": [
+            "CREATE TABLE",
+            "ALTER TABLE",
+            "DROP TABLE",
+            "CREATE INDEX"
+          ],
+          "explanation": "The data definition language describes the structure of the database. SELECT belongs to DML and COMMIT to transaction control.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r59",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Datentypen in SQL sind zutreffend?",
+      "options": [
+        "VARCHAR speichert Text variabler Länge",
+        "INTEGER speichert Ganzzahlen",
+        "DECIMAL rechnet mit fester Nachkommastellenzahl",
+        "DATE speichert ein Kalenderdatum",
+        "FLOAT eignet sich am besten für Geldbeträge",
+        "VARCHAR eignet sich am besten für Rechenoperationen"
+      ],
+      "answer": [
+        "VARCHAR speichert Text variabler Länge",
+        "INTEGER speichert Ganzzahlen",
+        "DECIMAL rechnet mit fester Nachkommastellenzahl",
+        "DATE speichert ein Kalenderdatum"
+      ],
+      "explanation": "Der passende Typ sichert Speicherplatz und Rechengenauigkeit. Für Geld ist DECIMAL Pflicht, weil FLOAT binär rundet, und mit Text lässt sich nicht rechnen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about SQL data types are correct?",
+          "options": [
+            "VARCHAR stores text of variable length",
+            "INTEGER stores whole numbers",
+            "DECIMAL computes with a fixed number of decimals",
+            "DATE stores a calendar date",
+            "FLOAT is best suited to monetary amounts",
+            "VARCHAR is best suited to arithmetic operations"
+          ],
+          "answer": [
+            "VARCHAR stores text of variable length",
+            "INTEGER stores whole numbers",
+            "DECIMAL computes with a fixed number of decimals",
+            "DATE stores a calendar date"
+          ],
+          "explanation": "The right type secures storage and computational accuracy. For money DECIMAL is mandatory because FLOAT rounds in binary, and text cannot be used for arithmetic.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r60",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über die dritte Normalform sind korrekt?",
+      "options": [
+        "Die zweite Normalform ist Voraussetzung",
+        "Transitive Abhängigkeiten werden beseitigt",
+        "Nichtschlüsselattribute hängen nur vom Schlüssel ab",
+        "Betroffene Attribute wandern in eine eigene Tabelle",
+        "Sie erlaubt wieder Wiederholungsgruppen",
+        "Sie verlangt den Verzicht auf Primärschlüssel"
+      ],
+      "answer": [
+        "Die zweite Normalform ist Voraussetzung",
+        "Transitive Abhängigkeiten werden beseitigt",
+        "Nichtschlüsselattribute hängen nur vom Schlüssel ab",
+        "Betroffene Attribute wandern in eine eigene Tabelle"
+      ],
+      "explanation": "Hängt ein Attribut über ein anderes Nichtschlüsselattribut vom Schlüssel ab, wird es ausgelagert. Wiederholungsgruppen und fehlende Schlüssel widersprechen den vorherigen Normalformen.",
+      "translations": {
+        "en": {
+          "question": "Which statements about the third normal form are correct?",
+          "options": [
+            "The second normal form is a prerequisite",
+            "Transitive dependencies are eliminated",
+            "Non-key attributes depend only on the key",
+            "Affected attributes move into their own table",
+            "It permits repeating groups again",
+            "It requires doing without primary keys"
+          ],
+          "answer": [
+            "The second normal form is a prerequisite",
+            "Transitive dependencies are eliminated",
+            "Non-key attributes depend only on the key",
+            "Affected attributes move into their own table"
+          ],
+          "explanation": "If an attribute depends on the key via another non-key attribute, it is moved out. Repeating groups and missing keys contradict the earlier normal forms.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r61",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Sperren in Datenbanken sind richtig?",
+      "options": [
+        "Sie verhindern widersprüchliche gleichzeitige Änderungen",
+        "Lesesperren und Schreibsperren werden unterschieden",
+        "Zu lange gehaltene Sperren bremsen andere Transaktionen",
+        "Gegenseitiges Warten kann zu einem Deadlock führen",
+        "Sperren beschleunigen die Ausführung von Abfragen",
+        "Sperren ersetzen die Rechteverwaltung der Datenbank"
+      ],
+      "answer": [
+        "Sie verhindern widersprüchliche gleichzeitige Änderungen",
+        "Lesesperren und Schreibsperren werden unterschieden",
+        "Zu lange gehaltene Sperren bremsen andere Transaktionen",
+        "Gegenseitiges Warten kann zu einem Deadlock führen"
+      ],
+      "explanation": "Sperren sichern die Isolation, kosten aber Parallelität - deshalb sollen Transaktionen kurz sein. Mit Rechteverwaltung haben sie nichts zu tun.",
+      "translations": {
+        "en": {
+          "question": "Which statements about database locks are correct?",
+          "options": [
+            "They prevent contradictory simultaneous changes",
+            "Read locks and write locks are distinguished",
+            "Locks held too long slow other transactions",
+            "Mutual waiting can lead to a deadlock",
+            "Locks speed up the execution of queries",
+            "Locks replace the database privilege system"
+          ],
+          "answer": [
+            "They prevent contradictory simultaneous changes",
+            "Read locks and write locks are distinguished",
+            "Locks held too long slow other transactions",
+            "Mutual waiting can lead to a deadlock"
+          ],
+          "explanation": "Locks secure isolation but cost concurrency - which is why transactions should be short. They have nothing to do with privilege management.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r62",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Datensicherung von Datenbanken sind zutreffend?",
+      "options": [
+        "Eine Vollsicherung erfasst den gesamten Bestand",
+        "Transaktionsprotokolle erlauben zeitpunktgenaue Wiederherstellung",
+        "Die Wiederherstellung sollte geprüft werden",
+        "Sicherungen gehören an einen getrennten Ort",
+        "Ein Export der Struktur allein genügt als Sicherung",
+        "Sicherungen im laufenden Betrieb sind grundsätzlich unmöglich"
+      ],
+      "answer": [
+        "Eine Vollsicherung erfasst den gesamten Bestand",
+        "Transaktionsprotokolle erlauben zeitpunktgenaue Wiederherstellung",
+        "Die Wiederherstellung sollte geprüft werden",
+        "Sicherungen gehören an einen getrennten Ort"
+      ],
+      "explanation": "Voll plus Protokolle, getrennt gelagert und regelmäßig getestet ergibt ein belastbares Konzept. Die Struktur allein enthält keine Daten, und Online-Sicherungen sind längst Standard.",
+      "translations": {
+        "en": {
+          "question": "Which statements about database backups are correct?",
+          "options": [
+            "A full backup captures the entire dataset",
+            "Transaction logs allow point-in-time recovery",
+            "The restore should be verified",
+            "Backups belong at a separate location",
+            "Exporting the structure alone suffices as a backup",
+            "Backups during operation are fundamentally impossible"
+          ],
+          "answer": [
+            "A full backup captures the entire dataset",
+            "Transaction logs allow point-in-time recovery",
+            "The restore should be verified",
+            "Backups belong at a separate location"
+          ],
+          "explanation": "Full plus logs, stored separately and tested regularly gives a sound concept. The structure alone contains no data, and online backups have long been standard.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r63",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Aussagen über Aggregatfunktionen und GROUP BY sind korrekt?",
+      "options": [
+        "Aggregate fassen mehrere Zeilen zu einem Wert zusammen",
+        "GROUP BY bildet die Gruppen für die Aggregation",
+        "Nicht aggregierte Spalten gehören in die GROUP-BY-Klausel",
+        "HAVING filtert anhand der Aggregatergebnisse",
+        "Aggregate lassen sich in WHERE verwenden",
+        "GROUP BY sortiert das Ergebnis automatisch aufsteigend"
+      ],
+      "answer": [
+        "Aggregate fassen mehrere Zeilen zu einem Wert zusammen",
+        "GROUP BY bildet die Gruppen für die Aggregation",
+        "Nicht aggregierte Spalten gehören in die GROUP-BY-Klausel",
+        "HAVING filtert anhand der Aggregatergebnisse"
+      ],
+      "explanation": "Aggregat und GROUP BY gehören zusammen, gefiltert wird danach mit HAVING. In WHERE stehen Aggregate nicht, und für eine Sortierung braucht es ORDER BY.",
+      "translations": {
+        "en": {
+          "question": "Which statements about aggregate functions and GROUP BY are correct?",
+          "options": [
+            "Aggregates condense several rows into one value",
+            "GROUP BY forms the groups for aggregation",
+            "Non-aggregated columns belong in the GROUP BY clause",
+            "HAVING filters based on the aggregate results",
+            "Aggregates can be used in WHERE",
+            "GROUP BY automatically sorts the result ascending"
+          ],
+          "answer": [
+            "Aggregates condense several rows into one value",
+            "GROUP BY forms the groups for aggregation",
+            "Non-aggregated columns belong in the GROUP BY clause",
+            "HAVING filters based on the aggregate results"
+          ],
+          "explanation": "Aggregate and GROUP BY belong together, with HAVING filtering afterwards. Aggregates do not belong in WHERE, and sorting requires ORDER BY.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r64",
+      "type": "multiple",
+      "category": "Datenbanken",
+      "question": "Welche Angaben gehören in die Dokumentation eines Datenbankschemas?",
+      "options": [
+        "Tabellen mit ihren Spalten und Datentypen",
+        "Schlüssel und Beziehungen zwischen Tabellen",
+        "Bedeutung fachlich unklarer Spalten",
+        "Bekannte Einschränkungen und Besonderheiten",
+        "Die Passwörter der Datenbankbenutzer",
+        "Die Uhrzeit der letzten Kaffeepause"
+      ],
+      "answer": [
+        "Tabellen mit ihren Spalten und Datentypen",
+        "Schlüssel und Beziehungen zwischen Tabellen",
+        "Bedeutung fachlich unklarer Spalten",
+        "Bekannte Einschränkungen und Besonderheiten"
+      ],
+      "explanation": "Struktur, Beziehungen, fachliche Bedeutung und Besonderheiten machen ein Schema für andere nutzbar. Zugangsdaten gehören niemals in eine Dokumentation.",
+      "translations": {
+        "en": {
+          "question": "Which details belong in the documentation of a database schema?",
+          "options": [
+            "Tables with their columns and data types",
+            "Keys and relationships between tables",
+            "Meaning of columns that are unclear in business terms",
+            "Known limitations and peculiarities",
+            "The passwords of the database users",
+            "The time of the last coffee break"
+          ],
+          "answer": [
+            "Tables with their columns and data types",
+            "Keys and relationships between tables",
+            "Meaning of columns that are unclear in business terms",
+            "Known limitations and peculiarities"
+          ],
+          "explanation": "Structure, relationships, business meaning and peculiarities make a schema usable by others. Credentials never belong in documentation.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r65",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Welcher JOIN liefert nur Datensätze mit Treffern in beiden Tabellen?",
+      "answer": "INNER JOIN",
+      "explanation": "Zeilen ohne passenden Partner fallen dabei aus dem Ergebnis heraus.",
+      "translations": {
+        "en": {
+          "question": "Which join returns only records with matches in both tables?",
+          "answer": "INNER JOIN",
+          "explanation": "Rows without a matching partner drop out of the result.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r66",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Welche SQL-Funktion zählt die Zeilen eines Abfrageergebnisses?",
+      "answer": "COUNT",
+      "explanation": "COUNT(*) zählt alle Zeilen, COUNT(spalte) überspringt NULL-Werte in dieser Spalte.",
+      "translations": {
+        "en": {
+          "question": "Which SQL function counts the rows of a query result?",
+          "answer": "COUNT",
+          "explanation": "COUNT(*) counts all rows, COUNT(column) skips NULL values in that column.",
+          "category": "Databases"
+        }
+      }
+    },
+    {
+      "id": "ap2-db-r67",
+      "type": "text",
+      "category": "Datenbanken",
+      "question": "Welche Normalform verlangt atomare Werte in jeder Zelle?",
+      "answer": "1NF",
+      "explanation": "Mehrere Werte in einer Zelle, etwa mehrere Telefonnummern, verstoßen dagegen.",
+      "translations": {
+        "en": {
+          "question": "Which normal form requires atomic values in every cell?",
+          "answer": "1NF",
+          "explanation": "Several values in one cell, such as multiple phone numbers, violate it.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q09",
+      "id": "ap2-db-r68",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat die WHERE-Klausel in einer SQL-Abfrage?",
-      "answer": "Sie filtert die Zeilen nach einer Bedingung — nur Datensätze, welche die Bedingung erfüllen, erscheinen im Ergebnis",
-      "explanation": "Beispiel: WHERE preis > 100 liefert nur Zeilen mit einem Preis über 100. Für Aggregat-Filter nach GROUP BY nutzt man stattdessen HAVING.",
+      "question": "Welcher Befehl macht Änderungen einer Transaktion dauerhaft?",
+      "answer": "COMMIT",
+      "explanation": "Erst danach sind sie für andere Transaktionen sichtbar und überstehen einen Absturz.",
       "translations": {
         "en": {
-          "question": "What is the purpose of the WHERE clause in an SQL query?",
-          "answer": "It filters the rows by a condition — only records satisfying the condition appear in the result",
-          "explanation": "Example: WHERE price > 100 returns only rows with a price above 100. To filter aggregates after GROUP BY, you use HAVING instead.",
+          "question": "Which statement makes a transaction's changes permanent?",
+          "answer": "COMMIT",
+          "explanation": "Only afterwards are they visible to other transactions and survive a crash.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q10",
+      "id": "ap2-db-r69",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Mit welchem SQL-Befehl entfernt man die Tabelle „kunden“ vollständig — inklusive ihrer Struktur — aus der Datenbank?",
-      "answer": "DROP TABLE kunden;",
-      "explanation": "DROP TABLE löscht Struktur UND Daten. DELETE FROM kunden würde nur die Zeilen löschen, die leere Tabelle bliebe bestehen (TRUNCATE leert sie schneller).",
+      "question": "Wie prüft man in SQL korrekt auf einen fehlenden Wert?",
+      "answer": "IS NULL",
+      "explanation": "Ein Vergleich mit dem Gleichheitszeichen scheitert, weil NULL unbekannt bedeutet.",
       "translations": {
         "en": {
-          "question": "Which SQL command removes the table \"kunden\" completely — including its structure — from the database?",
-          "answer": "DROP TABLE kunden;",
-          "explanation": "DROP TABLE deletes structure AND data. DELETE FROM kunden would only delete the rows, leaving the empty table in place (TRUNCATE empties it faster).",
+          "question": "How do you correctly test for a missing value in SQL?",
+          "answer": "IS NULL",
+          "explanation": "A comparison with the equals sign fails because NULL means unknown.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q11",
+      "id": "ap2-db-r70",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Was ist eine 1:n-Beziehung? Nennen Sie ein Beispiel.",
-      "answer": "Ein Datensatz der einen Tabelle ist mit beliebig vielen Datensätzen der anderen Tabelle verknüpft — z. B. ein Kunde hat viele Bestellungen, jede Bestellung gehört genau einem Kunden",
-      "explanation": "Umgesetzt wird sie über einen Fremdschlüssel auf der n-Seite (z. B. kunden_id in der Tabelle bestellungen).",
+      "question": "Wofür steht das A in den ACID-Eigenschaften?",
+      "answer": "Atomarität",
+      "explanation": "Eine Transaktion wird ganz oder gar nicht ausgeführt - im Fehlerfall folgt der Rollback.",
       "translations": {
         "en": {
-          "question": "What is a 1:n relationship? Give an example.",
-          "answer": "One record in one table is linked to any number of records in another table — e.g. one customer has many orders, and each order belongs to exactly one customer",
-          "explanation": "It is implemented via a foreign key on the n side (e.g. customer_id in the orders table).",
+          "question": "What does the A in the ACID properties stand for?",
+          "answer": "Atomicity",
+          "explanation": "A transaction runs completely or not at all - on error a rollback follows.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q12",
+      "id": "ap2-db-r71",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Wofür steht die Abkürzung SQL?",
-      "answer": "Structured Query Language",
-      "explanation": "SQL ist die Standardsprache für relationale Datenbanken — für Abfragen (SELECT), Datenmanipulation (DML) und Strukturdefinition (DDL).",
+      "question": "Welches Datenbankobjekt speichert eine Abfrage unter einem Namen?",
+      "answer": "View",
+      "explanation": "Sie hält keine eigenen Daten und liefert bei jedem Zugriff den aktuellen Stand.",
       "translations": {
         "en": {
-          "question": "What does the abbreviation SQL stand for?",
-          "answer": "Structured Query Language",
-          "explanation": "SQL is the standard language for relational databases — for queries (SELECT), data manipulation (DML) and structure definition (DDL).",
+          "question": "Which database object stores a query under a name?",
+          "answer": "View",
+          "explanation": "It holds no data of its own and delivers the current state on every access.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q13",
+      "id": "ap2-db-r72",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat SELECT im Bereich Datenbanken?",
-      "answer": "SELECT liest Daten aus Tabellen.",
-      "explanation": "SELECT liest Daten aus Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wie viele Zeilen liefert ein CROSS JOIN von 5 mal 6 Zeilen?",
+      "answer": "30",
+      "explanation": "Das kartesische Produkt kombiniert jede Zeile mit jeder: 5 mal 6 ergibt 30.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SELECT in Databases?",
-          "answer": "SELECT reads data from tables.",
-          "explanation": "SELECT reads data from tables. This is a common exam building block because it separates function from use case.",
+          "question": "How many rows does a CROSS JOIN of 5 by 6 rows return?",
+          "answer": "30",
+          "explanation": "The cartesian product combines every row with every other: 5 times 6 gives 30.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q14",
+      "id": "ap2-db-r73",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat FROM im Bereich Datenbanken?",
-      "answer": "FROM gibt die Quelltabelle einer Abfrage an.",
-      "explanation": "FROM gibt die Quelltabelle einer Abfrage an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Schlüssel verweist auf den Primärschlüssel einer anderen Tabelle?",
+      "answer": "Fremdschlüssel",
+      "explanation": "Er bildet die Beziehung ab und sichert zusammen mit der Datenbank die referenzielle Integrität.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FROM in Databases?",
-          "answer": "FROM specifies the source table of a query.",
-          "explanation": "FROM specifies the source table of a query. This is a common exam building block because it separates function from use case.",
+          "question": "Which key references the primary key of another table?",
+          "answer": "Foreign key",
+          "explanation": "It models the relationship and, together with the database, secures referential integrity.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q15",
+      "id": "ap2-db-r74",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat WHERE im Bereich Datenbanken?",
-      "answer": "WHERE filtert Zeilen nach Bedingungen.",
-      "explanation": "WHERE filtert Zeilen nach Bedingungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Klausel filtert erst nach der Gruppierung?",
+      "answer": "HAVING",
+      "explanation": "WHERE wirkt vorher auf einzelne Zeilen; nur HAVING darf Aggregatfunktionen enthalten.",
       "translations": {
         "en": {
-          "question": "What is the purpose of WHERE in Databases?",
-          "answer": "WHERE filters rows by conditions.",
-          "explanation": "WHERE filters rows by conditions. This is a common exam building block because it separates function from use case.",
+          "question": "Which clause filters only after grouping?",
+          "answer": "HAVING",
+          "explanation": "WHERE acts beforehand on individual rows; only HAVING may contain aggregate functions.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q16",
+      "id": "ap2-db-r75",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ORDER BY im Bereich Datenbanken?",
-      "answer": "ORDER BY sortiert das Abfrageergebnis.",
-      "explanation": "ORDER BY sortiert das Abfrageergebnis. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Datentyp eignet sich für Geldbeträge mit exakter Nachkommastelle?",
+      "answer": "DECIMAL",
+      "explanation": "FLOAT rundet binär und erzeugt bei Geldbeträgen Abweichungen im Centbereich.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ORDER BY in Databases?",
-          "answer": "ORDER BY sorts the query result.",
-          "explanation": "ORDER BY sorts the query result. This is a common exam building block because it separates function from use case.",
+          "question": "Which data type suits monetary amounts with exact decimals?",
+          "answer": "DECIMAL",
+          "explanation": "FLOAT rounds in binary and produces cent-level deviations for monetary values.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q17",
+      "id": "ap2-db-r76",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat GROUP BY im Bereich Datenbanken?",
-      "answer": "GROUP BY fasst Zeilen für Aggregationen zusammen.",
-      "explanation": "GROUP BY fasst Zeilen für Aggregationen zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wie wird eine n:m-Beziehung im relationalen Modell aufgelöst?",
+      "answer": "Zwischentabelle",
+      "explanation": "Sie nimmt die Fremdschlüssel beider Seiten auf und macht daraus zwei 1:n-Beziehungen.",
       "translations": {
         "en": {
-          "question": "What is the purpose of GROUP BY in Databases?",
-          "answer": "GROUP BY groups rows for aggregation.",
-          "explanation": "GROUP BY groups rows for aggregation. This is a common exam building block because it separates function from use case.",
+          "question": "How is an n:m relationship resolved in the relational model?",
+          "answer": "Junction table",
+          "explanation": "It holds the foreign keys of both sides and turns them into two 1:n relationships.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q18",
+      "id": "ap2-db-r77",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat HAVING im Bereich Datenbanken?",
-      "answer": "HAVING filtert Gruppen nach einer Aggregation.",
-      "explanation": "HAVING filtert Gruppen nach einer Aggregation. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Befehl entzieht einem Benutzer ein Recht?",
+      "answer": "REVOKE",
+      "explanation": "Das Gegenstück ist GRANT; beide gehören zur Data Control Language.",
       "translations": {
         "en": {
-          "question": "What is the purpose of HAVING in Databases?",
-          "answer": "HAVING filters groups after aggregation.",
-          "explanation": "HAVING filters groups after aggregation. This is a common exam building block because it separates function from use case.",
+          "question": "Which statement withdraws a privilege from a user?",
+          "answer": "REVOKE",
+          "explanation": "Its counterpart is GRANT; both belong to the data control language.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q19",
+      "id": "ap2-db-r78",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat COUNT im Bereich Datenbanken?",
-      "answer": "COUNT zählt Zeilen oder Werte.",
-      "explanation": "COUNT zählt Zeilen oder Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wie nennt man das gegenseitige Blockieren zweier Transaktionen?",
+      "answer": "Deadlock",
+      "explanation": "Das Datenbanksystem erkennt die Situation und rollt eine der beteiligten Transaktionen zurück.",
       "translations": {
         "en": {
-          "question": "What is the purpose of COUNT in Databases?",
-          "answer": "COUNT counts rows or values.",
-          "explanation": "COUNT counts rows or values. This is a common exam building block because it separates function from use case.",
+          "question": "What is two transactions blocking each other called?",
+          "answer": "Deadlock",
+          "explanation": "The database system detects the situation and rolls one of the involved transactions back.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q20",
+      "id": "ap2-db-r79",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat SUM im Bereich Datenbanken?",
-      "answer": "SUM addiert numerische Werte.",
-      "explanation": "SUM addiert numerische Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Normalform beseitigt transitive Abhängigkeiten?",
+      "answer": "3NF",
+      "explanation": "Hängt ein Attribut über ein anderes Nichtschlüsselattribut vom Schlüssel ab, wird es ausgelagert.",
       "translations": {
         "en": {
-          "question": "What is the purpose of SUM in Databases?",
-          "answer": "SUM adds numeric values.",
-          "explanation": "SUM adds numeric values. This is a common exam building block because it separates function from use case.",
+          "question": "Which normal form eliminates transitive dependencies?",
+          "answer": "3NF",
+          "explanation": "If an attribute depends on the key via another non-key attribute, it is moved out.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q21",
+      "id": "ap2-db-r80",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat AVG im Bereich Datenbanken?",
-      "answer": "AVG berechnet den Durchschnitt.",
-      "explanation": "AVG berechnet den Durchschnitt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Platzhalter steht in LIKE für beliebig viele Zeichen?",
+      "answer": "%",
+      "explanation": "Der Unterstrich steht dagegen für genau ein einzelnes Zeichen.",
       "translations": {
         "en": {
-          "question": "What is the purpose of AVG in Databases?",
-          "answer": "AVG calculates the average.",
-          "explanation": "AVG calculates the average. This is a common exam building block because it separates function from use case.",
+          "question": "Which wildcard stands for any number of characters in LIKE?",
+          "answer": "%",
+          "explanation": "The underscore by contrast stands for exactly one single character.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q22",
+      "id": "ap2-db-r81",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat MIN im Bereich Datenbanken?",
-      "answer": "MIN ermittelt den kleinsten Wert.",
-      "explanation": "MIN ermittelt den kleinsten Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Befehl entfernt eine Tabelle samt Struktur?",
+      "answer": "DROP TABLE",
+      "explanation": "DELETE und TRUNCATE entfernen dagegen nur die Zeilen und lassen die Tabelle bestehen.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MIN in Databases?",
-          "answer": "MIN finds the smallest value.",
-          "explanation": "MIN finds the smallest value. This is a common exam building block because it separates function from use case.",
+          "question": "Which statement removes a table including its structure?",
+          "answer": "DROP TABLE",
+          "explanation": "DELETE and TRUNCATE by contrast remove only the rows and leave the table in place.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q23",
+      "id": "ap2-db-r82",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat MAX im Bereich Datenbanken?",
-      "answer": "MAX ermittelt den größten Wert.",
-      "explanation": "MAX ermittelt den größten Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Kardinalität hat die Beziehung zwischen Bestellung und Kunde?",
+      "answer": "n:1",
+      "explanation": "Viele Bestellungen gehören zu einem Kunden; aus Sicht des Kunden ist es eine 1:n-Beziehung.",
       "translations": {
         "en": {
-          "question": "What is the purpose of MAX in Databases?",
-          "answer": "MAX finds the largest value.",
-          "explanation": "MAX finds the largest value. This is a common exam building block because it separates function from use case.",
+          "question": "Which cardinality does the relationship between order and customer have?",
+          "answer": "n:1",
+          "explanation": "Many orders belong to one customer; from the customer's side it is a 1:n relationship.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q24",
+      "id": "ap2-db-r83",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat INNER JOIN im Bereich Datenbanken?",
-      "answer": "INNER JOIN liefert nur passende Datensätze aus beiden Tabellen.",
-      "explanation": "INNER JOIN liefert nur passende Datensätze aus beiden Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welches Datenbankobjekt beschleunigt die Suche auf einer Spalte?",
+      "answer": "Index",
+      "explanation": "Er kostet Speicher und verlangsamt Schreibvorgänge, beschleunigt aber gezielte Zugriffe erheblich.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INNER JOIN in Databases?",
-          "answer": "INNER JOIN returns only matching rows from both tables.",
-          "explanation": "INNER JOIN returns only matching rows from both tables. This is a common exam building block because it separates function from use case.",
+          "question": "Which database object speeds up searching on a column?",
+          "answer": "Index",
+          "explanation": "It costs storage and slows writes but considerably speeds up targeted access.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q25",
+      "id": "ap2-db-r84",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat LEFT JOIN im Bereich Datenbanken?",
-      "answer": "LEFT JOIN liefert alle linken Zeilen und passende rechte Zeilen.",
-      "explanation": "LEFT JOIN liefert alle linken Zeilen und passende rechte Zeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher Befehl verwirft alle Änderungen einer offenen Transaktion?",
+      "answer": "ROLLBACK",
+      "explanation": "Er rettet auch ein versehentliches UPDATE ohne WHERE, solange noch nicht bestätigt wurde.",
       "translations": {
         "en": {
-          "question": "What is the purpose of LEFT JOIN in Databases?",
-          "answer": "LEFT JOIN returns all left rows and matching right rows.",
-          "explanation": "LEFT JOIN returns all left rows and matching right rows. This is a common exam building block because it separates function from use case.",
+          "question": "Which statement discards all changes of an open transaction?",
+          "answer": "ROLLBACK",
+          "explanation": "It even rescues an accidental UPDATE without WHERE, as long as nothing was committed.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q26",
+      "id": "ap2-db-r85",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat RIGHT JOIN im Bereich Datenbanken?",
-      "answer": "RIGHT JOIN liefert alle rechten Zeilen und passende linke Zeilen.",
-      "explanation": "RIGHT JOIN liefert alle rechten Zeilen und passende linke Zeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wofür steht das D in ACID?",
+      "answer": "Dauerhaftigkeit",
+      "explanation": "Bestätigte Änderungen überstehen auch einen Systemabsturz, weil sie protokolliert wurden.",
       "translations": {
         "en": {
-          "question": "What is the purpose of RIGHT JOIN in Databases?",
-          "answer": "RIGHT JOIN returns all right rows and matching left rows.",
-          "explanation": "RIGHT JOIN returns all right rows and matching left rows. This is a common exam building block because it separates function from use case.",
+          "question": "What does the D in ACID stand for?",
+          "answer": "Durability",
+          "explanation": "Committed changes survive even a system crash because they were logged.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q27",
+      "id": "ap2-db-r86",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat FULL OUTER JOIN im Bereich Datenbanken?",
-      "answer": "FULL OUTER JOIN liefert passende und nicht passende Zeilen beider Seiten.",
-      "explanation": "FULL OUTER JOIN liefert passende und nicht passende Zeilen beider Seiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Klausel entfernt doppelte Zeilen aus einem Ergebnis?",
+      "answer": "DISTINCT",
+      "explanation": "UNION entfernt Dubletten ebenfalls, UNION ALL behält sie dagegen ausdrücklich.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FULL OUTER JOIN in Databases?",
-          "answer": "FULL OUTER JOIN returns matching and non-matching rows from both sides.",
-          "explanation": "FULL OUTER JOIN returns matching and non-matching rows from both sides. This is a common exam building block because it separates function from use case.",
+          "question": "Which clause removes duplicate rows from a result?",
+          "answer": "DISTINCT",
+          "explanation": "UNION also removes duplicates, while UNION ALL deliberately keeps them.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q28",
+      "id": "ap2-db-r87",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat CROSS JOIN im Bereich Datenbanken?",
-      "answer": "CROSS JOIN bildet das kartesische Produkt zweier Tabellen.",
-      "explanation": "CROSS JOIN bildet das kartesische Produkt zweier Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Dateien erlauben zusammen mit einer Vollsicherung die zeitpunktgenaue Wiederherstellung?",
+      "answer": "Transaktionsprotokolle",
+      "explanation": "Sie erlauben das Nachfahren aller Änderungen bis kurz vor den Schadenszeitpunkt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CROSS JOIN in Databases?",
-          "answer": "CROSS JOIN creates the Cartesian product of two tables.",
-          "explanation": "CROSS JOIN creates the Cartesian product of two tables. This is a common exam building block because it separates function from use case.",
+          "question": "Which files, together with a full backup, allow point-in-time recovery?",
+          "answer": "Transaction logs",
+          "explanation": "They allow replaying all changes up to shortly before the incident.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q29",
+      "id": "ap2-db-r88",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat INSERT im Bereich Datenbanken?",
-      "answer": "INSERT fügt neue Datensätze ein.",
-      "explanation": "INSERT fügt neue Datensätze ein. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Bedingung verhindert leere Werte in einer Spalte?",
+      "answer": "NOT NULL",
+      "explanation": "Sie sichert schon beim Schreiben zu, dass ein Wert vorhanden ist.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INSERT in Databases?",
-          "answer": "INSERT inserts new records.",
-          "explanation": "INSERT inserts new records. This is a common exam building block because it separates function from use case.",
+          "question": "Which constraint prevents empty values in a column?",
+          "answer": "NOT NULL",
+          "explanation": "It guarantees at write time that a value is present.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q30",
+      "id": "ap2-db-r89",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat UPDATE im Bereich Datenbanken?",
-      "answer": "UPDATE ändert bestehende Datensätze.",
-      "explanation": "UPDATE ändert bestehende Datensätze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welcher JOIN behält alle Zeilen der linken Tabelle?",
+      "answer": "LEFT JOIN",
+      "explanation": "Fehlende Partner der rechten Seite werden im Ergebnis mit NULL aufgefüllt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of UPDATE in Databases?",
-          "answer": "UPDATE changes existing records.",
-          "explanation": "UPDATE changes existing records. This is a common exam building block because it separates function from use case.",
+          "question": "Which join keeps all rows of the left table?",
+          "answer": "LEFT JOIN",
+          "explanation": "Missing partners on the right side are filled with NULL in the result.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q31",
+      "id": "ap2-db-r90",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DELETE im Bereich Datenbanken?",
-      "answer": "DELETE löscht Datensätze.",
-      "explanation": "DELETE löscht Datensätze. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Sprachfamilie in SQL umfasst GRANT und REVOKE?",
+      "answer": "DCL",
+      "explanation": "Die Data Control Language regelt Rechte an Datenbankobjekten.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DELETE in Databases?",
-          "answer": "DELETE deletes records.",
-          "explanation": "DELETE deletes records. This is a common exam building block because it separates function from use case.",
+          "question": "Which SQL language family comprises GRANT and REVOKE?",
+          "answer": "DCL",
+          "explanation": "The data control language governs privileges on database objects.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q32",
+      "id": "ap2-db-r91",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat CREATE TABLE im Bereich Datenbanken?",
-      "answer": "CREATE TABLE legt eine neue Tabelle an.",
-      "explanation": "CREATE TABLE legt eine neue Tabelle an. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Funktion liefert den Durchschnitt einer Zahlenspalte?",
+      "answer": "AVG",
+      "explanation": "NULL-Werte werden dabei übersprungen und fließen nicht in den Mittelwert ein.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CREATE TABLE in Databases?",
-          "answer": "CREATE TABLE creates a new table.",
-          "explanation": "CREATE TABLE creates a new table. This is a common exam building block because it separates function from use case.",
+          "question": "Which function returns the average of a numeric column?",
+          "answer": "AVG",
+          "explanation": "NULL values are skipped and do not enter the average.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q33",
+      "id": "ap2-db-r92",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ALTER TABLE im Bereich Datenbanken?",
-      "answer": "ALTER TABLE ändert die Struktur einer Tabelle.",
-      "explanation": "ALTER TABLE ändert die Struktur einer Tabelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Datenbankart speichert Daten als Schlüssel-Wert-Paare im Arbeitsspeicher?",
+      "answer": "Key-Value-Store",
+      "explanation": "Redis ist der bekannteste Vertreter und wird oft als schneller Zwischenspeicher eingesetzt.",
       "translations": {
         "en": {
-          "question": "What is the purpose of ALTER TABLE in Databases?",
-          "answer": "ALTER TABLE changes the structure of a table.",
-          "explanation": "ALTER TABLE changes the structure of a table. This is a common exam building block because it separates function from use case.",
+          "question": "Which kind of database stores data as key-value pairs in memory?",
+          "answer": "Key-value store",
+          "explanation": "Redis is the best-known representative and is often used as a fast cache.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q34",
+      "id": "ap2-db-r93",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DROP TABLE im Bereich Datenbanken?",
-      "answer": "DROP TABLE löscht eine Tabelle inklusive Struktur.",
-      "explanation": "DROP TABLE löscht eine Tabelle inklusive Struktur. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Option löscht abhängige Datensätze beim Entfernen des Hauptsatzes mit?",
+      "answer": "ON DELETE CASCADE",
+      "explanation": "Die Alternative RESTRICT verhindert das Löschen, solange abhängige Zeilen existieren.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DROP TABLE in Databases?",
-          "answer": "DROP TABLE deletes a table including its structure.",
-          "explanation": "DROP TABLE deletes a table including its structure. This is a common exam building block because it separates function from use case.",
+          "question": "Which option deletes dependent records along with the parent record?",
+          "answer": "ON DELETE CASCADE",
+          "explanation": "The alternative RESTRICT prevents deletion while dependent rows exist.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q35",
+      "id": "ap2-db-r94",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat PRIMARY KEY im Bereich Datenbanken?",
-      "answer": "PRIMARY KEY identifiziert Datensätze eindeutig.",
-      "explanation": "PRIMARY KEY identifiziert Datensätze eindeutig. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welches Modell stellt Entitäten, Attribute und Beziehungen grafisch dar?",
+      "answer": "ER-Modell",
+      "explanation": "Es beschreibt die fachliche Struktur, bevor daraus konkrete Tabellen abgeleitet werden.",
       "translations": {
         "en": {
-          "question": "What is the purpose of PRIMARY KEY in Databases?",
-          "answer": "PRIMARY KEY uniquely identifies records.",
-          "explanation": "PRIMARY KEY uniquely identifies records. This is a common exam building block because it separates function from use case.",
+          "question": "Which model shows entities, attributes and relationships graphically?",
+          "answer": "ER model",
+          "explanation": "It describes the business structure before concrete tables are derived from it.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q36",
+      "id": "ap2-db-r95",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat FOREIGN KEY im Bereich Datenbanken?",
-      "answer": "FOREIGN KEY verweist auf einen Schlüssel einer anderen Tabelle.",
-      "explanation": "FOREIGN KEY verweist auf einen Schlüssel einer anderen Tabelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Klausel gibt die Sortierreihenfolge eines Ergebnisses vor?",
+      "answer": "ORDER BY",
+      "explanation": "Ohne sie ist die Reihenfolge der Zeilen im Ergebnis nicht zugesichert.",
       "translations": {
         "en": {
-          "question": "What is the purpose of FOREIGN KEY in Databases?",
-          "answer": "FOREIGN KEY references a key in another table.",
-          "explanation": "FOREIGN KEY references a key in another table. This is a common exam building block because it separates function from use case.",
+          "question": "Which clause defines the sort order of a result?",
+          "answer": "ORDER BY",
+          "explanation": "Without it the order of rows in the result is not guaranteed.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q37",
+      "id": "ap2-db-r96",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat UNIQUE im Bereich Datenbanken?",
-      "answer": "UNIQUE erzwingt eindeutige Werte.",
-      "explanation": "UNIQUE erzwingt eindeutige Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wie viele Primärschlüssel darf eine Tabelle haben?",
+      "answer": "1",
+      "explanation": "Er kann allerdings aus mehreren Spalten zusammengesetzt sein.",
       "translations": {
         "en": {
-          "question": "What is the purpose of UNIQUE in Databases?",
-          "answer": "UNIQUE enforces unique values.",
-          "explanation": "UNIQUE enforces unique values. This is a common exam building block because it separates function from use case.",
+          "question": "How many primary keys may a table have?",
+          "answer": "1",
+          "explanation": "It can, however, be composed of several columns.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q38",
+      "id": "ap2-db-r97",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat NOT NULL im Bereich Datenbanken?",
-      "answer": "NOT NULL verbietet leere NULL-Werte.",
-      "explanation": "NOT NULL verbietet leere NULL-Werte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Bedingung erlaubt genau einen Wert je Spalte in der ganzen Tabelle?",
+      "answer": "UNIQUE",
+      "explanation": "Anders als der Primärschlüssel darf eine UNIQUE-Spalte je nach System NULL enthalten.",
       "translations": {
         "en": {
-          "question": "What is the purpose of NOT NULL in Databases?",
-          "answer": "NOT NULL forbids NULL values.",
-          "explanation": "NOT NULL forbids NULL values. This is a common exam building block because it separates function from use case.",
+          "question": "Which constraint permits each value only once per column across the table?",
+          "answer": "UNIQUE",
+          "explanation": "Unlike the primary key, a UNIQUE column may contain NULL depending on the system.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q39",
+      "id": "ap2-db-r98",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DEFAULT im Bereich Datenbanken?",
-      "answer": "DEFAULT setzt einen Standardwert.",
-      "explanation": "DEFAULT setzt einen Standardwert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche Anweisung ändert vorhandene Datensätze einer Tabelle?",
+      "answer": "UPDATE",
+      "explanation": "Ohne WHERE trifft sie alle Zeilen - ein klassischer und teurer Fehler.",
       "translations": {
         "en": {
-          "question": "What is the purpose of DEFAULT in Databases?",
-          "answer": "DEFAULT sets a default value.",
-          "explanation": "DEFAULT sets a default value. This is a common exam building block because it separates function from use case.",
+          "question": "Which statement changes existing records in a table?",
+          "answer": "UPDATE",
+          "explanation": "Without WHERE it hits every row - a classic and expensive mistake.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q40",
+      "id": "ap2-db-r99",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat CHECK im Bereich Datenbanken?",
-      "answer": "CHECK prüft Werte gegen eine Bedingung.",
-      "explanation": "CHECK prüft Werte gegen eine Bedingung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Wie nennt man Widersprüche, die durch mehrfach gespeicherte gleiche Daten entstehen?",
+      "answer": "Anomalien",
+      "explanation": "Einfüge-, Änderungs- und Löschanomalien sind der Hauptgrund für die Normalisierung.",
       "translations": {
         "en": {
-          "question": "What is the purpose of CHECK in Databases?",
-          "answer": "CHECK checks values against a condition.",
-          "explanation": "CHECK checks values against a condition. This is a common exam building block because it separates function from use case.",
+          "question": "What are contradictions caused by the same data stored multiple times called?",
+          "answer": "Anomalies",
+          "explanation": "Insert, update and delete anomalies are the main reason for normalisation.",
           "category": "Databases"
         }
       }
     },
     {
-      "id": "ap2-db-q41",
+      "id": "ap2-db-r100",
       "type": "text",
       "category": "Datenbanken",
-      "question": "Welche Aufgabe hat INDEX im Bereich Datenbanken?",
-      "answer": "INDEX beschleunigt Such- und Sortierzugriffe.",
-      "explanation": "INDEX beschleunigt Such- und Sortierzugriffe. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
+      "question": "Welche SQL-Anweisung liest Daten aus einer Tabelle?",
+      "answer": "SELECT",
+      "explanation": "Sie ist die mit Abstand häufigste Anweisung und Grundlage jeder Auswertung.",
       "translations": {
         "en": {
-          "question": "What is the purpose of INDEX in Databases?",
-          "answer": "INDEX speeds up search and sort access.",
-          "explanation": "INDEX speeds up search and sort access. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q42",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat VIEW im Bereich Datenbanken?",
-      "answer": "VIEW stellt eine gespeicherte virtuelle Abfrage bereit.",
-      "explanation": "VIEW stellt eine gespeicherte virtuelle Abfrage bereit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of VIEW in Databases?",
-          "answer": "VIEW provides a stored virtual query.",
-          "explanation": "VIEW provides a stored virtual query. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q43",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat TRANSACTION im Bereich Datenbanken?",
-      "answer": "TRANSACTION fasst mehrere Änderungen logisch zusammen.",
-      "explanation": "TRANSACTION fasst mehrere Änderungen logisch zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of TRANSACTION in Databases?",
-          "answer": "TRANSACTION groups several changes logically.",
-          "explanation": "TRANSACTION groups several changes logically. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q44",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat COMMIT im Bereich Datenbanken?",
-      "answer": "COMMIT macht Transaktionsänderungen dauerhaft.",
-      "explanation": "COMMIT macht Transaktionsänderungen dauerhaft. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of COMMIT in Databases?",
-          "answer": "COMMIT makes transaction changes permanent.",
-          "explanation": "COMMIT makes transaction changes permanent. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q45",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ROLLBACK im Bereich Datenbanken?",
-      "answer": "ROLLBACK nimmt Transaktionsänderungen zurück.",
-      "explanation": "ROLLBACK nimmt Transaktionsänderungen zurück. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of ROLLBACK in Databases?",
-          "answer": "ROLLBACK undoes transaction changes.",
-          "explanation": "ROLLBACK undoes transaction changes. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q46",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ACID im Bereich Datenbanken?",
-      "answer": "ACID beschreibt Atomarität, Konsistenz, Isolation und Dauerhaftigkeit.",
-      "explanation": "ACID beschreibt Atomarität, Konsistenz, Isolation und Dauerhaftigkeit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of ACID in Databases?",
-          "answer": "ACID describes atomicity, consistency, isolation and durability.",
-          "explanation": "ACID describes atomicity, consistency, isolation and durability. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q47",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat 1. Normalform im Bereich Datenbanken?",
-      "answer": "1. Normalform verlangt atomare Werte ohne Wiederholungsgruppen.",
-      "explanation": "1. Normalform verlangt atomare Werte ohne Wiederholungsgruppen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of 1st normal form in Databases?",
-          "answer": "1st normal form requires atomic values without repeating groups.",
-          "explanation": "1st normal form requires atomic values without repeating groups. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q48",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat 2. Normalform im Bereich Datenbanken?",
-      "answer": "2. Normalform beseitigt partielle Abhängigkeiten vom zusammengesetzten Schlüssel.",
-      "explanation": "2. Normalform beseitigt partielle Abhängigkeiten vom zusammengesetzten Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of 2nd normal form in Databases?",
-          "answer": "2nd normal form removes partial dependencies from a composite key.",
-          "explanation": "2nd normal form removes partial dependencies from a composite key. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q49",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat 3. Normalform im Bereich Datenbanken?",
-      "answer": "3. Normalform beseitigt transitive Abhängigkeiten.",
-      "explanation": "3. Normalform beseitigt transitive Abhängigkeiten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of 3rd normal form in Databases?",
-          "answer": "3rd normal form removes transitive dependencies.",
-          "explanation": "3rd normal form removes transitive dependencies. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q50",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Redundanz im Bereich Datenbanken?",
-      "answer": "Redundanz bedeutet mehrfache Speicherung derselben Information.",
-      "explanation": "Redundanz bedeutet mehrfache Speicherung derselben Information. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Redundancy in Databases?",
-          "answer": "Redundancy means storing the same information multiple times.",
-          "explanation": "Redundancy means storing the same information multiple times. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q51",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Anomalie im Bereich Datenbanken?",
-      "answer": "Anomalie ist eine unerwünschte Nebenwirkung durch schlechte Tabellenstruktur.",
-      "explanation": "Anomalie ist eine unerwünschte Nebenwirkung durch schlechte Tabellenstruktur. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Anomaly in Databases?",
-          "answer": "Anomaly is an unwanted side effect of poor table structure.",
-          "explanation": "Anomaly is an unwanted side effect of poor table structure. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q52",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ER-Modell im Bereich Datenbanken?",
-      "answer": "ER-Modell modelliert Entitäten, Attribute und Beziehungen.",
-      "explanation": "ER-Modell modelliert Entitäten, Attribute und Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of ER model in Databases?",
-          "answer": "ER model models entities, attributes and relationships.",
-          "explanation": "ER model models entities, attributes and relationships. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q53",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Entität im Bereich Datenbanken?",
-      "answer": "Entität ist ein eindeutig beschreibbares Objekt der realen oder fachlichen Welt.",
-      "explanation": "Entität ist ein eindeutig beschreibbares Objekt der realen oder fachlichen Welt. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Entity in Databases?",
-          "answer": "Entity is a uniquely describable object in the domain.",
-          "explanation": "Entity is a uniquely describable object in the domain. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q54",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Attribut im Bereich Datenbanken?",
-      "answer": "Attribut beschreibt eine Eigenschaft einer Entität.",
-      "explanation": "Attribut beschreibt eine Eigenschaft einer Entität. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Attribute in Databases?",
-          "answer": "Attribute describes a property of an entity.",
-          "explanation": "Attribute describes a property of an entity. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q55",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Kardinalität im Bereich Datenbanken?",
-      "answer": "Kardinalität beschreibt Mengenverhältnisse zwischen Entitäten.",
-      "explanation": "Kardinalität beschreibt Mengenverhältnisse zwischen Entitäten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Cardinality in Databases?",
-          "answer": "Cardinality describes quantity relationships between entities.",
-          "explanation": "Cardinality describes quantity relationships between entities. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q56",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat 1:1-Beziehung im Bereich Datenbanken?",
-      "answer": "1:1-Beziehung ordnet einem Datensatz höchstens einen Datensatz der anderen Seite zu.",
-      "explanation": "1:1-Beziehung ordnet einem Datensatz höchstens einen Datensatz der anderen Seite zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of 1:1 relationship in Databases?",
-          "answer": "1:1 relationship assigns at most one record on the other side.",
-          "explanation": "1:1 relationship assigns at most one record on the other side. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q57",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat 1:n-Beziehung im Bereich Datenbanken?",
-      "answer": "1:n-Beziehung ordnet einem Datensatz mehrere Datensätze der anderen Seite zu.",
-      "explanation": "1:n-Beziehung ordnet einem Datensatz mehrere Datensätze der anderen Seite zu. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of 1:n relationship in Databases?",
-          "answer": "1:n relationship assigns several records on the other side.",
-          "explanation": "1:n relationship assigns several records on the other side. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q58",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat n:m-Beziehung im Bereich Datenbanken?",
-      "answer": "n:m-Beziehung wird relational meist über eine Zwischentabelle aufgelöst.",
-      "explanation": "n:m-Beziehung wird relational meist über eine Zwischentabelle aufgelöst. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of n:m relationship in Databases?",
-          "answer": "n:m relationship is usually resolved with a junction table.",
-          "explanation": "n:m relationship is usually resolved with a junction table. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q59",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Junction Table im Bereich Datenbanken?",
-      "answer": "Junction Table verknüpft zwei Tabellen bei n:m-Beziehungen.",
-      "explanation": "Junction Table verknüpft zwei Tabellen bei n:m-Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Junction Table in Databases?",
-          "answer": "Junction Table links two tables in many-to-many relationships.",
-          "explanation": "Junction Table links two tables in many-to-many relationships. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q60",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat NULL im Bereich Datenbanken?",
-      "answer": "NULL steht für unbekannten oder nicht vorhandenen Wert.",
-      "explanation": "NULL steht für unbekannten oder nicht vorhandenen Wert. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of NULL in Databases?",
-          "answer": "NULL represents an unknown or missing value.",
-          "explanation": "NULL represents an unknown or missing value. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q61",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat LIKE im Bereich Datenbanken?",
-      "answer": "LIKE sucht mit Mustern in Textwerten.",
-      "explanation": "LIKE sucht mit Mustern in Textwerten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of LIKE in Databases?",
-          "answer": "LIKE searches text values with patterns.",
-          "explanation": "LIKE searches text values with patterns. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q62",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat BETWEEN im Bereich Datenbanken?",
-      "answer": "BETWEEN prüft einen Wert auf einen Bereich.",
-      "explanation": "BETWEEN prüft einen Wert auf einen Bereich. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of BETWEEN in Databases?",
-          "answer": "BETWEEN checks whether a value lies in a range.",
-          "explanation": "BETWEEN checks whether a value lies in a range. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q63",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat IN im Bereich Datenbanken?",
-      "answer": "IN prüft, ob ein Wert in einer Liste enthalten ist.",
-      "explanation": "IN prüft, ob ein Wert in einer Liste enthalten ist. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of IN in Databases?",
-          "answer": "IN checks whether a value is in a list.",
-          "explanation": "IN checks whether a value is in a list. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q64",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DISTINCT im Bereich Datenbanken?",
-      "answer": "DISTINCT entfernt doppelte Ergebniszeilen.",
-      "explanation": "DISTINCT entfernt doppelte Ergebniszeilen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of DISTINCT in Databases?",
-          "answer": "DISTINCT removes duplicate result rows.",
-          "explanation": "DISTINCT removes duplicate result rows. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q65",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Alias im Bereich Datenbanken?",
-      "answer": "Alias vergibt temporäre Namen für Spalten oder Tabellen.",
-      "explanation": "Alias vergibt temporäre Namen für Spalten oder Tabellen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Alias in Databases?",
-          "answer": "Alias assigns temporary names to columns or tables.",
-          "explanation": "Alias assigns temporary names to columns or tables. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q66",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Subquery im Bereich Datenbanken?",
-      "answer": "Subquery ist eine Abfrage innerhalb einer anderen Abfrage.",
-      "explanation": "Subquery ist eine Abfrage innerhalb einer anderen Abfrage. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Subquery in Databases?",
-          "answer": "Subquery is a query inside another query.",
-          "explanation": "Subquery is a query inside another query. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q67",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Stored Procedure im Bereich Datenbanken?",
-      "answer": "Stored Procedure ist gespeicherte Programmlogik in der Datenbank.",
-      "explanation": "Stored Procedure ist gespeicherte Programmlogik in der Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Stored Procedure in Databases?",
-          "answer": "Stored Procedure is stored program logic in the database.",
-          "explanation": "Stored Procedure is stored program logic in the database. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q68",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Trigger im Bereich Datenbanken?",
-      "answer": "Trigger führt automatisch Logik bei Datenänderungen aus.",
-      "explanation": "Trigger führt automatisch Logik bei Datenänderungen aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Trigger in Databases?",
-          "answer": "Trigger automatically runs logic on data changes.",
-          "explanation": "Trigger automatically runs logic on data changes. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q69",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Backup im Bereich Datenbanken?",
-      "answer": "Backup sichert Datenbankdaten für Wiederherstellung.",
-      "explanation": "Backup sichert Datenbankdaten für Wiederherstellung. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Backup in Databases?",
-          "answer": "Backup backs up database data for recovery.",
-          "explanation": "Backup backs up database data for recovery. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q70",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Dump im Bereich Datenbanken?",
-      "answer": "Dump exportiert Datenbankstruktur und Daten in eine Datei.",
-      "explanation": "Dump exportiert Datenbankstruktur und Daten in eine Datei. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Dump in Databases?",
-          "answer": "Dump exports database structure and data to a file.",
-          "explanation": "Dump exports database structure and data to a file. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q71",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Replikation im Bereich Datenbanken?",
-      "answer": "Replikation kopiert Daten auf weitere Datenbankserver.",
-      "explanation": "Replikation kopiert Daten auf weitere Datenbankserver. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Replication in Databases?",
-          "answer": "Replication copies data to additional database servers.",
-          "explanation": "Replication copies data to additional database servers. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q72",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Locking im Bereich Datenbanken?",
-      "answer": "Locking sperrt Daten zur Vermeidung konkurrierender Konflikte.",
-      "explanation": "Locking sperrt Daten zur Vermeidung konkurrierender Konflikte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Locking in Databases?",
-          "answer": "Locking locks data to avoid concurrent conflicts.",
-          "explanation": "Locking locks data to avoid concurrent conflicts. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q73",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Deadlock im Bereich Datenbanken?",
-      "answer": "Deadlock entsteht, wenn Transaktionen gegenseitig auf Sperren warten.",
-      "explanation": "Deadlock entsteht, wenn Transaktionen gegenseitig auf Sperren warten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Deadlock in Databases?",
-          "answer": "Deadlock occurs when transactions wait on each other’s locks.",
-          "explanation": "Deadlock occurs when transactions wait on each other’s locks. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q74",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Isolation im Bereich Datenbanken?",
-      "answer": "Isolation trennt parallele Transaktionen voneinander.",
-      "explanation": "Isolation trennt parallele Transaktionen voneinander. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Isolation in Databases?",
-          "answer": "Isolation separates parallel transactions from each other.",
-          "explanation": "Isolation separates parallel transactions from each other. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q75",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Datenintegrität im Bereich Datenbanken?",
-      "answer": "Datenintegrität bedeutet Korrektheit und Konsistenz gespeicherter Daten.",
-      "explanation": "Datenintegrität bedeutet Korrektheit und Konsistenz gespeicherter Daten. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Data integrity in Databases?",
-          "answer": "Data integrity means correctness and consistency of stored data.",
-          "explanation": "Data integrity means correctness and consistency of stored data. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q76",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Referentielle Integrität im Bereich Datenbanken?",
-      "answer": "Referentielle Integrität stellt gültige Beziehungen zwischen Tabellen sicher.",
-      "explanation": "Referentielle Integrität stellt gültige Beziehungen zwischen Tabellen sicher. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Referential integrity in Databases?",
-          "answer": "Referential integrity ensures valid relationships between tables.",
-          "explanation": "Referential integrity ensures valid relationships between tables. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q77",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ON DELETE CASCADE im Bereich Datenbanken?",
-      "answer": "ON DELETE CASCADE löscht abhängige Datensätze automatisch mit.",
-      "explanation": "ON DELETE CASCADE löscht abhängige Datensätze automatisch mit. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of ON DELETE CASCADE in Databases?",
-          "answer": "ON DELETE CASCADE automatically deletes dependent records.",
-          "explanation": "ON DELETE CASCADE automatically deletes dependent records. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q78",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat VARCHAR im Bereich Datenbanken?",
-      "answer": "VARCHAR speichert Zeichenketten variabler Länge.",
-      "explanation": "VARCHAR speichert Zeichenketten variabler Länge. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of VARCHAR in Databases?",
-          "answer": "VARCHAR stores variable-length strings.",
-          "explanation": "VARCHAR stores variable-length strings. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q79",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat INTEGER im Bereich Datenbanken?",
-      "answer": "INTEGER speichert ganze Zahlen.",
-      "explanation": "INTEGER speichert ganze Zahlen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of INTEGER in Databases?",
-          "answer": "INTEGER stores whole numbers.",
-          "explanation": "INTEGER stores whole numbers. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q80",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DATE im Bereich Datenbanken?",
-      "answer": "DATE speichert Datumswerte.",
-      "explanation": "DATE speichert Datumswerte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of DATE in Databases?",
-          "answer": "DATE stores date values.",
-          "explanation": "DATE stores date values. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q81",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat BOOLEAN im Bereich Datenbanken?",
-      "answer": "BOOLEAN speichert Wahrheitswerte.",
-      "explanation": "BOOLEAN speichert Wahrheitswerte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of BOOLEAN in Databases?",
-          "answer": "BOOLEAN stores truth values.",
-          "explanation": "BOOLEAN stores truth values. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q82",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat DECIMAL im Bereich Datenbanken?",
-      "answer": "DECIMAL speichert exakte Dezimalzahlen.",
-      "explanation": "DECIMAL speichert exakte Dezimalzahlen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of DECIMAL in Databases?",
-          "answer": "DECIMAL stores exact decimal numbers.",
-          "explanation": "DECIMAL stores exact decimal numbers. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q83",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat NoSQL im Bereich Datenbanken?",
-      "answer": "NoSQL bezeichnet nicht-relationale Datenbankmodelle.",
-      "explanation": "NoSQL bezeichnet nicht-relationale Datenbankmodelle. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of NoSQL in Databases?",
-          "answer": "NoSQL refers to non-relational database models.",
-          "explanation": "NoSQL refers to non-relational database models. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q84",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Dokumentendatenbank im Bereich Datenbanken?",
-      "answer": "Dokumentendatenbank speichert strukturierte Dokumente wie JSON.",
-      "explanation": "Dokumentendatenbank speichert strukturierte Dokumente wie JSON. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Document database in Databases?",
-          "answer": "Document database stores structured documents such as JSON.",
-          "explanation": "Document database stores structured documents such as JSON. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q85",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Key-Value-Store im Bereich Datenbanken?",
-      "answer": "Key-Value-Store speichert Werte über eindeutige Schlüssel.",
-      "explanation": "Key-Value-Store speichert Werte über eindeutige Schlüssel. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Key-Value-Store in Databases?",
-          "answer": "Key-Value-Store stores values by unique keys.",
-          "explanation": "Key-Value-Store stores values by unique keys. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q86",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Datenbank-Schema im Bereich Datenbanken?",
-      "answer": "Datenbank-Schema beschreibt die Struktur einer Datenbank.",
-      "explanation": "Datenbank-Schema beschreibt die Struktur einer Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Database schema in Databases?",
-          "answer": "Database schema describes the structure of a database.",
-          "explanation": "Database schema describes the structure of a database. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q87",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Migration im Bereich Datenbanken?",
-      "answer": "Migration ändert Datenbankschema oder Daten kontrolliert über Versionen.",
-      "explanation": "Migration ändert Datenbankschema oder Daten kontrolliert über Versionen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Migration in Databases?",
-          "answer": "Migration changes database schema or data through controlled versions.",
-          "explanation": "Migration changes database schema or data through controlled versions. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q88",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat ORM im Bereich Datenbanken?",
-      "answer": "ORM bildet Objekte einer Programmiersprache auf Tabellen ab.",
-      "explanation": "ORM bildet Objekte einer Programmiersprache auf Tabellen ab. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of ORM in Databases?",
-          "answer": "ORM maps programming language objects to tables.",
-          "explanation": "ORM maps programming language objects to tables. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q89",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat SQL-Injection im Bereich Datenbanken?",
-      "answer": "SQL-Injection nutzt unsichere Eingaben zur Manipulation von SQL aus.",
-      "explanation": "SQL-Injection nutzt unsichere Eingaben zur Manipulation von SQL aus. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of SQL-Injection in Databases?",
-          "answer": "SQL-Injection exploits unsafe input to manipulate SQL.",
-          "explanation": "SQL-Injection exploits unsafe input to manipulate SQL. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q90",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Prepared Statement im Bereich Datenbanken?",
-      "answer": "Prepared Statement trennt SQL-Code von Parametern.",
-      "explanation": "Prepared Statement trennt SQL-Code von Parametern. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Prepared Statement in Databases?",
-          "answer": "Prepared Statement separates SQL code from parameters.",
-          "explanation": "Prepared Statement separates SQL code from parameters. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q91",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Least Privilege im Bereich Datenbanken?",
-      "answer": "Least Privilege vergibt nur die minimal nötigen Datenbankrechte.",
-      "explanation": "Least Privilege vergibt nur die minimal nötigen Datenbankrechte. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Least Privilege in Databases?",
-          "answer": "Least Privilege grants only the minimum necessary database privileges.",
-          "explanation": "Least Privilege grants only the minimum necessary database privileges. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q92",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Connection Pool im Bereich Datenbanken?",
-      "answer": "Connection Pool verwaltet wiederverwendbare Datenbankverbindungen.",
-      "explanation": "Connection Pool verwaltet wiederverwendbare Datenbankverbindungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Connection Pool in Databases?",
-          "answer": "Connection Pool manages reusable database connections.",
-          "explanation": "Connection Pool manages reusable database connections. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q93",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Normalisierung im Bereich Datenbanken?",
-      "answer": "Normalisierung strukturiert Tabellen zur Reduktion von Redundanzen.",
-      "explanation": "Normalisierung strukturiert Tabellen zur Reduktion von Redundanzen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Normalization in Databases?",
-          "answer": "Normalization structures tables to reduce redundancy.",
-          "explanation": "Normalization structures tables to reduce redundancy. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q94",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Denormalisierung im Bereich Datenbanken?",
-      "answer": "Denormalisierung nimmt Redundanz bewusst für schnellere Abfragen in Kauf.",
-      "explanation": "Denormalisierung nimmt Redundanz bewusst für schnellere Abfragen in Kauf. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Denormalization in Databases?",
-          "answer": "Denormalization intentionally accepts redundancy for faster queries.",
-          "explanation": "Denormalization intentionally accepts redundancy for faster queries. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q95",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Aggregation im Bereich Datenbanken?",
-      "answer": "Aggregation fasst mehrere Werte zu einem Ergebnis zusammen.",
-      "explanation": "Aggregation fasst mehrere Werte zu einem Ergebnis zusammen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Aggregation in Databases?",
-          "answer": "Aggregation summarizes several values into one result.",
-          "explanation": "Aggregation summarizes several values into one result. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q96",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Datenmodell im Bereich Datenbanken?",
-      "answer": "Datenmodell beschreibt Datenobjekte, Eigenschaften und Beziehungen.",
-      "explanation": "Datenmodell beschreibt Datenobjekte, Eigenschaften und Beziehungen. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Data model in Databases?",
-          "answer": "Data model describes data objects, properties and relationships.",
-          "explanation": "Data model describes data objects, properties and relationships. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q97",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat CSV-Import im Bereich Datenbanken?",
-      "answer": "CSV-Import lädt tabellarische Textdaten in eine Datenbank.",
-      "explanation": "CSV-Import lädt tabellarische Textdaten in eine Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of CSV-Import in Databases?",
-          "answer": "CSV-Import loads tabular text data into a database.",
-          "explanation": "CSV-Import loads tabular text data into a database. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q98",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat EXPLAIN im Bereich Datenbanken?",
-      "answer": "EXPLAIN zeigt den Ausführungsplan einer SQL-Abfrage.",
-      "explanation": "EXPLAIN zeigt den Ausführungsplan einer SQL-Abfrage. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of EXPLAIN in Databases?",
-          "answer": "EXPLAIN shows the execution plan of an SQL query.",
-          "explanation": "EXPLAIN shows the execution plan of an SQL query. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q99",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat Datenbankrolle im Bereich Datenbanken?",
-      "answer": "Datenbankrolle bündelt Berechtigungen für Benutzer oder Dienste.",
-      "explanation": "Datenbankrolle bündelt Berechtigungen für Benutzer oder Dienste. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of Database role in Databases?",
-          "answer": "Database role bundles permissions for users or services.",
-          "explanation": "Database role bundles permissions for users or services. This is a common exam building block because it separates function from use case.",
-          "category": "Databases"
-        }
-      }
-    },
-    {
-      "id": "ap2-db-q100",
-      "type": "text",
-      "category": "Datenbanken",
-      "question": "Welche Aufgabe hat GRANT im Bereich Datenbanken?",
-      "answer": "GRANT vergibt Berechtigungen in der Datenbank.",
-      "explanation": "GRANT vergibt Berechtigungen in der Datenbank. Diese Einordnung ist ein typischer Prüfungsbaustein, weil sie Funktion und Einsatzgebiet voneinander trennt.",
-      "translations": {
-        "en": {
-          "question": "What is the purpose of GRANT in Databases?",
-          "answer": "GRANT grants permissions in the database.",
-          "explanation": "GRANT grants permissions in the database. This is a common exam building block because it separates function from use case.",
+          "question": "Which SQL statement reads data from a table?",
+          "answer": "SELECT",
+          "explanation": "It is by far the most frequent statement and the basis of every evaluation.",
           "category": "Databases"
         }
       }

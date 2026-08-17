@@ -25,7 +25,7 @@ const EXAM_SOURCES_DIR = path.join(PROJECT_ROOT, 'public', 'exam-sources');
 
 const PORT = process.env.PORT || 8787;
 const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
-const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+const GROQ_MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
 const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3849,https://quiz.liforra.de').split(',');
 
 const app = express();
