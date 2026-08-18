@@ -39,3 +39,7 @@ data/
 # Rendered pages of real IHK exams — same material as Prüfungen/ and
 # public/exam-sources/, kept out of the (public) repo for the same reason.
 public/exams/
+
+# Python bytecode from the quiz-rebuild tooling in .quiz-rebuild/
+__pycache__/
+*.pyc

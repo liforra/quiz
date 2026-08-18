@@ -947,15 +947,13 @@
         "Er hat ein vorab festgelegtes Sollergebnis",
         "Er ist wiederholbar und liefert gleiche Ergebnisse",
         "Er prüft eine klar abgegrenzte Anforderung",
-        "Er ist unabhängig von anderen Testfällen",
         "Er wird erst nach dem Auftreten eines Fehlers geschrieben",
         "Er prüft möglichst viele Anforderungen gleichzeitig"
       ],
       "answer": [
         "Er hat ein vorab festgelegtes Sollergebnis",
         "Er ist wiederholbar und liefert gleiche Ergebnisse",
-        "Er prüft eine klar abgegrenzte Anforderung",
-        "Er ist unabhängig von anderen Testfällen"
+        "Er prüft eine klar abgegrenzte Anforderung"
       ],
       "explanation": "Nur mit bekanntem Sollwert lässt sich überhaupt bewerten, ob ein Test bestanden ist. Unabhängigkeit und klare Abgrenzung machen die Fehlersuche schnell, Sammeltests dagegen mehrdeutig.",
       "translations": {
@@ -965,15 +963,13 @@
             "It has a predefined expected result",
             "It is repeatable and yields the same results",
             "It checks one clearly delimited requirement",
-            "It is independent of other test cases",
             "It is written only after a bug has appeared",
             "It checks as many requirements as possible at once"
           ],
           "answer": [
             "It has a predefined expected result",
             "It is repeatable and yields the same results",
-            "It checks one clearly delimited requirement",
-            "It is independent of other test cases"
+            "It checks one clearly delimited requirement"
           ],
           "explanation": "Only with a known expected value can you judge whether a test passed at all. Independence and clear scope make debugging fast, while combined tests are ambiguous.",
           "category": "Software Development"
@@ -988,16 +984,12 @@
       "options": [
         "Beschreibung der geplanten Umsetzung",
         "Abgrenzung des Lieferumfangs",
-        "Anforderungen an die Schnittstellen",
-        "Kriterien für die Abnahme",
         "Der private Terminkalender des Entwicklers",
         "Die Farbwahl des Firmenlogos des Kunden"
       ],
       "answer": [
         "Beschreibung der geplanten Umsetzung",
-        "Abgrenzung des Lieferumfangs",
-        "Anforderungen an die Schnittstellen",
-        "Kriterien für die Abnahme"
+        "Abgrenzung des Lieferumfangs"
       ],
       "explanation": "Das Pflichtenheft beantwortet, wie und womit die Anforderungen des Lastenhefts umgesetzt werden, inklusive Abgrenzung und Abnahmekriterien. Persönliche Termine und Logofarben gehören nicht hinein.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "Description of the planned implementation",
             "Delimitation of the scope of delivery",
-            "Requirements for the interfaces",
-            "Criteria for acceptance",
             "The developer's private calendar",
             "The colour choice of the client's logo"
           ],
           "answer": [
             "Description of the planned implementation",
-            "Delimitation of the scope of delivery",
-            "Requirements for the interfaces",
-            "Criteria for acceptance"
+            "Delimitation of the scope of delivery"
           ],
           "explanation": "The functional specification answers how and with what the requirements will be implemented, including scope and acceptance criteria. Private appointments and logo colours do not belong there.",
           "category": "Software Development"
@@ -1073,15 +1061,13 @@
         "Anforderungen erheben und abstimmen",
         "Lösung entwerfen und modellieren",
         "Umsetzung in Quelltext",
-        "Testen gegen die Anforderungen",
         "Die Preisliste des Vertriebs erstellen",
         "Die Büromöbel des Teams auswählen"
       ],
       "answer": [
         "Anforderungen erheben und abstimmen",
         "Lösung entwerfen und modellieren",
-        "Umsetzung in Quelltext",
-        "Testen gegen die Anforderungen"
+        "Umsetzung in Quelltext"
       ],
       "explanation": "Analyse, Entwurf, Implementierung und Test bilden den Kern jedes Vorgehensmodells, gefolgt von Einführung und Wartung. Vertriebs- und Bürothemen liegen außerhalb.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "Elicit and agree the requirements",
             "Design and model the solution",
             "Implement in source code",
-            "Test against the requirements",
             "Create the sales price list",
             "Choose the team's office furniture"
           ],
           "answer": [
             "Elicit and agree the requirements",
             "Design and model the solution",
-            "Implement in source code",
-            "Test against the requirements"
+            "Implement in source code"
           ],
           "explanation": "Analysis, design, implementation and testing form the core of every process model, followed by rollout and maintenance. Sales and office topics lie outside.",
           "category": "Software Development"
@@ -1114,16 +1098,12 @@
       "options": [
         "Ein Commit hält einen Änderungsstand fest",
         "Ein Branch erlaubt paralleles Arbeiten",
-        "Ein Merge führt Entwicklungsstände zusammen",
-        "Die Historie bleibt vollständig nachvollziehbar",
         "Git ersetzt vollständig eine Datensicherung",
         "Jede Datei kann nur von einer Person bearbeitet werden"
       ],
       "answer": [
         "Ein Commit hält einen Änderungsstand fest",
-        "Ein Branch erlaubt paralleles Arbeiten",
-        "Ein Merge führt Entwicklungsstände zusammen",
-        "Die Historie bleibt vollständig nachvollziehbar"
+        "Ein Branch erlaubt paralleles Arbeiten"
       ],
       "explanation": "Commit, Branch, Merge und lückenlose Historie sind die Kernbegriffe. Ein Repository allein ist aber keine Sicherung, und paralleles Bearbeiten derselben Datei ist ausdrücklich vorgesehen.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "A commit records a set of changes",
             "A branch allows parallel work",
-            "A merge brings development lines together",
-            "The history stays fully traceable",
             "Git completely replaces a data backup",
             "Each file can be edited by only one person"
           ],
           "answer": [
             "A commit records a set of changes",
-            "A branch allows parallel work",
-            "A merge brings development lines together",
-            "The history stays fully traceable"
+            "A branch allows parallel work"
           ],
           "explanation": "Commit, branch, merge and a complete history are the core concepts. A repository alone is not a backup, though, and parallel editing of the same file is explicitly supported.",
           "category": "Software Development"
@@ -1199,15 +1175,13 @@
         "Einzelne Teile lassen sich getrennt testen",
         "Fehler bleiben leichter eingrenzbar",
         "Teile lassen sich in anderen Projekten wiederverwenden",
-        "Mehrere Entwickler können parallel arbeiten",
         "Die Zahl der Programmzeilen sinkt zwangsläufig",
         "Das Programm läuft dadurch immer schneller"
       ],
       "answer": [
         "Einzelne Teile lassen sich getrennt testen",
         "Fehler bleiben leichter eingrenzbar",
-        "Teile lassen sich in anderen Projekten wiederverwenden",
-        "Mehrere Entwickler können parallel arbeiten"
+        "Teile lassen sich in anderen Projekten wiederverwenden"
       ],
       "explanation": "Modularisierung wirkt vor allem organisatorisch: Testbarkeit, Fehlereingrenzung, Wiederverwendung und Arbeitsteilung. Auf Zeilenzahl und Laufzeit hat sie keinen automatischen Einfluss.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "Individual parts can be tested separately",
             "Faults remain easier to isolate",
             "Parts can be reused in other projects",
-            "Several developers can work in parallel",
             "The number of code lines necessarily drops",
             "The program always runs faster as a result"
           ],
           "answer": [
             "Individual parts can be tested separately",
             "Faults remain easier to isolate",
-            "Parts can be reused in other projects",
-            "Several developers can work in parallel"
+            "Parts can be reused in other projects"
           ],
           "explanation": "Modularisation works mainly on the organisational level: testability, fault isolation, reuse and division of labour. It has no automatic effect on line count or runtime.",
           "category": "Software Development"
@@ -1240,16 +1212,12 @@
       "options": [
         "Die while-Schleife prüft vor dem Durchlauf",
         "Die do-while-Schleife prüft nach dem Durchlauf",
-        "Die for-Schleife eignet sich für bekannte Wiederholungszahlen",
-        "Eine fehlende Abbruchbedingung führt zur Endlosschleife",
         "Jede Schleife läuft mindestens einmal durch",
         "Schleifen lassen sich nicht ineinander schachteln"
       ],
       "answer": [
         "Die while-Schleife prüft vor dem Durchlauf",
-        "Die do-while-Schleife prüft nach dem Durchlauf",
-        "Die for-Schleife eignet sich für bekannte Wiederholungszahlen",
-        "Eine fehlende Abbruchbedingung führt zur Endlosschleife"
+        "Die do-while-Schleife prüft nach dem Durchlauf"
       ],
       "explanation": "Der Prüfzeitpunkt unterscheidet kopf- und fußgesteuerte Schleifen, die Zählschleife passt bei bekannter Anzahl. Nur die fußgesteuerte läuft garantiert einmal, und Schachtelung ist gängige Praxis.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "The while loop checks before each pass",
             "The do-while loop checks after each pass",
-            "The for loop suits known repetition counts",
-            "A missing exit condition causes an endless loop",
             "Every loop runs through at least once",
             "Loops cannot be nested inside each other"
           ],
           "answer": [
             "The while loop checks before each pass",
-            "The do-while loop checks after each pass",
-            "The for loop suits known repetition counts",
-            "A missing exit condition causes an endless loop"
+            "The do-while loop checks after each pass"
           ],
           "explanation": "The check position distinguishes head- and foot-controlled loops, and the counting loop fits a known count. Only the foot-controlled one is guaranteed to run once, and nesting is common practice.",
           "category": "Software Development"
@@ -1325,15 +1289,13 @@
         "Sie fassen Werte gleichen Typs zusammen",
         "Der Zugriff erfolgt über einen Index",
         "Der Index beginnt in vielen Sprachen bei null",
-        "Zugriffe außerhalb der Grenzen führen zu Fehlern",
         "Ihre Größe passt sich immer automatisch an",
         "Sie können Werte beliebig gemischter Typen speichern"
       ],
       "answer": [
         "Sie fassen Werte gleichen Typs zusammen",
         "Der Zugriff erfolgt über einen Index",
-        "Der Index beginnt in vielen Sprachen bei null",
-        "Zugriffe außerhalb der Grenzen führen zu Fehlern"
+        "Der Index beginnt in vielen Sprachen bei null"
       ],
       "explanation": "Ein klassisches Array ist typgleich, indiziert und in der Größe fest - deshalb sind Grenzverletzungen ein Laufzeitproblem. Dynamische, gemischte Sammlungen bieten erst Listen und ähnliche Strukturen.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "They group values of the same type",
             "Access happens through an index",
             "The index starts at zero in many languages",
-            "Access outside the bounds causes errors",
             "Their size always adjusts automatically",
             "They can store values of arbitrarily mixed types"
           ],
           "answer": [
             "They group values of the same type",
             "Access happens through an index",
-            "The index starts at zero in many languages",
-            "Access outside the bounds causes errors"
+            "The index starts at zero in many languages"
           ],
           "explanation": "A classic array is type-uniform, indexed and fixed in size - which is why bound violations are a runtime problem. Dynamic, mixed collections are provided by lists and similar structures.",
           "category": "Software Development"
@@ -1366,16 +1326,12 @@
       "options": [
         "Sie bietet einen Editor mit Syntaxhervorhebung",
         "Sie startet Übersetzung und Ausführung",
-        "Sie stellt einen Debugger bereit",
-        "Sie bindet die Versionsverwaltung ein",
         "Sie schreibt die Anforderungen des Kunden",
         "Sie ersetzt die fachliche Abnahme durch den Kunden"
       ],
       "answer": [
         "Sie bietet einen Editor mit Syntaxhervorhebung",
-        "Sie startet Übersetzung und Ausführung",
-        "Sie stellt einen Debugger bereit",
-        "Sie bindet die Versionsverwaltung ein"
+        "Sie startet Übersetzung und Ausführung"
       ],
       "explanation": "Eine IDE bündelt Editor, Übersetzer, Debugger und Versionsverwaltung an einer Oberfläche. Anforderungen und Abnahme bleiben Aufgaben der Menschen im Projekt.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "It provides an editor with syntax highlighting",
             "It starts compilation and execution",
-            "It supplies a debugger",
-            "It integrates version control",
             "It writes the customer's requirements",
             "It replaces formal acceptance by the customer"
           ],
           "answer": [
             "It provides an editor with syntax highlighting",
-            "It starts compilation and execution",
-            "It supplies a debugger",
-            "It integrates version control"
+            "It starts compilation and execution"
           ],
           "explanation": "An IDE bundles editor, compiler, debugger and version control in one interface. Requirements and acceptance remain tasks for the people in the project.",
           "category": "Software Development"
@@ -1451,15 +1403,13 @@
         "Klassendiagramm",
         "Anwendungsfalldiagramm",
         "Sequenzdiagramm",
-        "Aktivitätsdiagramm",
         "Netzplan nach Vorgangsknoten",
         "Balkenplan nach Gantt"
       ],
       "answer": [
         "Klassendiagramm",
         "Anwendungsfalldiagramm",
-        "Sequenzdiagramm",
-        "Aktivitätsdiagramm"
+        "Sequenzdiagramm"
       ],
       "explanation": "UML beschreibt Struktur und Verhalten von Software in Klassen-, Anwendungsfall-, Sequenz- und Aktivitätsdiagrammen. Netzplan und Balkenplan sind Werkzeuge des Projektmanagements.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Class diagram",
             "Use case diagram",
             "Sequence diagram",
-            "Activity diagram",
             "Activity-on-node network plan",
             "Gantt bar chart"
           ],
           "answer": [
             "Class diagram",
             "Use case diagram",
-            "Sequence diagram",
-            "Activity diagram"
+            "Sequence diagram"
           ],
           "explanation": "UML describes the structure and behaviour of software in class, use case, sequence and activity diagrams. Network plans and bar charts are project management tools.",
           "category": "Software Development"
@@ -1492,16 +1440,12 @@
       "options": [
         "Syntaxfehler beim Übersetzen",
         "Laufzeitfehler während der Ausführung",
-        "Logische Fehler mit falschem Ergebnis",
-        "Semantische Fehler in der Bedeutung",
         "Farbfehler in der Entwicklungsumgebung",
         "Tastaturfehler der Hardware"
       ],
       "answer": [
         "Syntaxfehler beim Übersetzen",
-        "Laufzeitfehler während der Ausführung",
-        "Logische Fehler mit falschem Ergebnis",
-        "Semantische Fehler in der Bedeutung"
+        "Laufzeitfehler während der Ausführung"
       ],
       "explanation": "Die drei klassischen Kategorien sind Syntax, Laufzeit und Logik, wobei semantische Fehler eng mit den logischen zusammenhängen. Werkzeug- und Hardwareprobleme sind keine Programmfehlerarten.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "Syntax errors during compilation",
             "Runtime errors during execution",
-            "Logical errors producing a wrong result",
-            "Semantic errors in meaning",
             "Colour errors in the development environment",
             "Keyboard faults of the hardware"
           ],
           "answer": [
             "Syntax errors during compilation",
-            "Runtime errors during execution",
-            "Logical errors producing a wrong result",
-            "Semantic errors in meaning"
+            "Runtime errors during execution"
           ],
           "explanation": "The three classic categories are syntax, runtime and logic, with semantic errors closely related to logical ones. Tooling and hardware problems are not categories of program error.",
           "category": "Software Development"
@@ -1577,15 +1517,13 @@
         "Beschreibung der Schnittstellen",
         "Erläuterung nicht offensichtlicher Entscheidungen",
         "Hinweise zur Installation und Konfiguration",
-        "Angaben zu bekannten Einschränkungen",
         "Eine Abschrift des gesamten Quelltexts",
         "Die Urlaubsplanung des Entwicklungsteams"
       ],
       "answer": [
         "Beschreibung der Schnittstellen",
         "Erläuterung nicht offensichtlicher Entscheidungen",
-        "Hinweise zur Installation und Konfiguration",
-        "Angaben zu bekannten Einschränkungen"
+        "Hinweise zur Installation und Konfiguration"
       ],
       "explanation": "Dokumentation soll erklären, was der Code nicht selbst sagt: Schnittstellen, Begründungen, Betrieb und Grenzen. Den Quelltext abzuschreiben verdoppelt nur den Pflegeaufwand.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "Description of the interfaces",
             "Explanation of non-obvious decisions",
             "Notes on installation and configuration",
-            "Statements about known limitations",
             "A transcript of the entire source code",
             "The holiday planning of the development team"
           ],
           "answer": [
             "Description of the interfaces",
             "Explanation of non-obvious decisions",
-            "Notes on installation and configuration",
-            "Statements about known limitations"
+            "Notes on installation and configuration"
           ],
           "explanation": "Documentation should explain what the code cannot say itself: interfaces, rationale, operation and limits. Transcribing the source only doubles the maintenance effort.",
           "category": "Software Development"
@@ -1618,16 +1554,12 @@
       "options": [
         "Sie besitzen einen Namen und einen Datentyp",
         "Ihr Wert kann sich zur Laufzeit ändern",
-        "Ihr Gültigkeitsbereich ist begrenzt",
-        "Sie belegen Speicherplatz im Arbeitsspeicher",
         "Ihr Datentyp ändert sich bei jedem Zugriff",
         "Sie behalten ihren Wert auch nach Programmende"
       ],
       "answer": [
         "Sie besitzen einen Namen und einen Datentyp",
-        "Ihr Wert kann sich zur Laufzeit ändern",
-        "Ihr Gültigkeitsbereich ist begrenzt",
-        "Sie belegen Speicherplatz im Arbeitsspeicher"
+        "Ihr Wert kann sich zur Laufzeit ändern"
       ],
       "explanation": "Name, Typ, Gültigkeitsbereich und Speicherbedarf sind die Kernmerkmale. Der Typ liegt in typisierten Sprachen fest, und ohne Speichern in einer Datei ist der Wert nach Programmende weg.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "They have a name and a data type",
             "Their value can change at runtime",
-            "Their scope of validity is limited",
-            "They occupy space in main memory",
             "Their data type changes on every access",
             "They keep their value after the program ends"
           ],
           "answer": [
             "They have a name and a data type",
-            "Their value can change at runtime",
-            "Their scope of validity is limited",
-            "They occupy space in main memory"
+            "Their value can change at runtime"
           ],
           "explanation": "Name, type, scope and memory usage are the core characteristics. The type is fixed in typed languages, and without saving to a file the value is gone once the program ends.",
           "category": "Software Development"
@@ -1703,15 +1631,13 @@
         "Ein Stapel arbeitet nach zuletzt hinein, zuerst heraus",
         "Eine Warteschlange arbeitet nach zuerst hinein, zuerst heraus",
         "Eine Liste erlaubt das Einfügen an beliebiger Stelle",
-        "Ein Baum ordnet Elemente hierarchisch",
         "Ein Stapel erlaubt wahlfreien Zugriff auf jedes Element",
         "Eine Warteschlange sortiert ihre Elemente automatisch"
       ],
       "answer": [
         "Ein Stapel arbeitet nach zuletzt hinein, zuerst heraus",
         "Eine Warteschlange arbeitet nach zuerst hinein, zuerst heraus",
-        "Eine Liste erlaubt das Einfügen an beliebiger Stelle",
-        "Ein Baum ordnet Elemente hierarchisch"
+        "Eine Liste erlaubt das Einfügen an beliebiger Stelle"
       ],
       "explanation": "Stapel und Warteschlange unterscheiden sich genau in der Entnahmereihenfolge, Listen und Bäume in Flexibilität und Ordnung. Wahlfreier Zugriff und automatisches Sortieren gehören nicht dazu.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "A stack works last in, first out",
             "A queue works first in, first out",
             "A list allows insertion at any position",
-            "A tree orders elements hierarchically",
             "A stack allows random access to every element",
             "A queue sorts its elements automatically"
           ],
           "answer": [
             "A stack works last in, first out",
             "A queue works first in, first out",
-            "A list allows insertion at any position",
-            "A tree orders elements hierarchically"
+            "A list allows insertion at any position"
           ],
           "explanation": "Stack and queue differ precisely in removal order, lists and trees in flexibility and ordering. Random access and automatic sorting are not part of it.",
           "category": "Software Development"
@@ -1744,16 +1668,12 @@
       "options": [
         "UND liefert wahr, wenn beide Bedingungen wahr sind",
         "ODER liefert wahr, wenn mindestens eine wahr ist",
-        "NICHT kehrt einen Wahrheitswert um",
-        "Sie lassen sich in Bedingungen kombinieren",
         "UND liefert wahr, sobald eine Bedingung wahr ist",
         "NICHT verknüpft immer genau zwei Bedingungen"
       ],
       "answer": [
         "UND liefert wahr, wenn beide Bedingungen wahr sind",
-        "ODER liefert wahr, wenn mindestens eine wahr ist",
-        "NICHT kehrt einen Wahrheitswert um",
-        "Sie lassen sich in Bedingungen kombinieren"
+        "ODER liefert wahr, wenn mindestens eine wahr ist"
       ],
       "explanation": "UND fordert alles, ODER genügt eines, NICHT dreht um - kombiniert ergeben sie beliebig komplexe Bedingungen. Die letzten beiden Aussagen vertauschen genau diese Definitionen.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "AND yields true when both conditions are true",
             "OR yields true when at least one is true",
-            "NOT inverts a truth value",
-            "They can be combined in conditions",
             "AND yields true as soon as one condition is true",
             "NOT always joins exactly two conditions"
           ],
           "answer": [
             "AND yields true when both conditions are true",
-            "OR yields true when at least one is true",
-            "NOT inverts a truth value",
-            "They can be combined in conditions"
+            "OR yields true when at least one is true"
           ],
           "explanation": "AND demands everything, OR settles for one, NOT inverts - combined they build arbitrarily complex conditions. The last two statements swap exactly these definitions.",
           "category": "Software Development"
@@ -1829,15 +1745,13 @@
         "Sie setzt eine sortierte Datenmenge voraus",
         "Sie halbiert den Suchbereich in jedem Schritt",
         "Sie ist bei großen Mengen deutlich schneller als lineares Suchen",
-        "Sie vergleicht zuerst mit dem mittleren Element",
         "Sie funktioniert auch auf unsortierten Daten",
         "Sie prüft grundsätzlich jedes Element einmal"
       ],
       "answer": [
         "Sie setzt eine sortierte Datenmenge voraus",
         "Sie halbiert den Suchbereich in jedem Schritt",
-        "Sie ist bei großen Mengen deutlich schneller als lineares Suchen",
-        "Sie vergleicht zuerst mit dem mittleren Element"
+        "Sie ist bei großen Mengen deutlich schneller als lineares Suchen"
       ],
       "explanation": "Sortierung, Halbierung und der Start in der Mitte sind das Prinzip, daraus folgt der große Vorsprung bei vielen Elementen. Jedes Element zu prüfen wäre gerade die lineare Suche.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "It requires a sorted data set",
             "It halves the search range at every step",
             "It is much faster than linear search on large sets",
-            "It first compares against the middle element",
             "It also works on unsorted data",
             "It fundamentally checks every element once"
           ],
           "answer": [
             "It requires a sorted data set",
             "It halves the search range at every step",
-            "It is much faster than linear search on large sets",
-            "It first compares against the middle element"
+            "It is much faster than linear search on large sets"
           ],
           "explanation": "Sorting, halving and starting in the middle are the principle, from which the large advantage on many elements follows. Checking every element would be linear search.",
           "category": "Software Development"
@@ -1870,16 +1782,12 @@
       "options": [
         "Der Name der Methode",
         "Die Parameterliste",
-        "Der Rückgabetyp",
-        "Die Sichtbarkeit",
         "Die Anzahl der Aufrufe zur Laufzeit",
         "Der Speicherort der Quelldatei"
       ],
       "answer": [
         "Der Name der Methode",
-        "Die Parameterliste",
-        "Der Rückgabetyp",
-        "Die Sichtbarkeit"
+        "Die Parameterliste"
       ],
       "explanation": "Signatur und Sichtbarkeit beschreiben eine Methode statisch und vollständig. Laufzeitverhalten und Dateiablage gehören nicht in ein Strukturdiagramm.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "The name of the method",
             "The parameter list",
-            "The return type",
-            "The visibility",
             "The number of runtime calls",
             "The location of the source file"
           ],
           "answer": [
             "The name of the method",
-            "The parameter list",
-            "The return type",
-            "The visibility"
+            "The parameter list"
           ],
           "explanation": "Signature and visibility describe a method statically and completely. Runtime behaviour and file location do not belong in a structural diagram.",
           "category": "Software Development"
@@ -1955,15 +1859,13 @@
         "Bei Wertübergabe erhält die Methode eine Kopie",
         "Bei Referenzübergabe wirkt die Änderung nach außen",
         "Die Reihenfolge der Parameter ist bedeutsam",
-        "Parameter können Standardwerte besitzen",
         "Parameter werden immer als Text übergeben",
         "Eine Methode darf höchstens einen Parameter haben"
       ],
       "answer": [
         "Bei Wertübergabe erhält die Methode eine Kopie",
         "Bei Referenzübergabe wirkt die Änderung nach außen",
-        "Die Reihenfolge der Parameter ist bedeutsam",
-        "Parameter können Standardwerte besitzen"
+        "Die Reihenfolge der Parameter ist bedeutsam"
       ],
       "explanation": "Wert oder Referenz entscheidet, ob Änderungen im Aufrufer sichtbar werden - eine häufige Fehlerquelle. Reihenfolge zählt, Standardwerte sind verbreitet, und die Anzahl ist nicht begrenzt.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "With pass by value the method receives a copy",
             "With pass by reference the change is visible outside",
             "The order of the parameters matters",
-            "Parameters can have default values",
             "Parameters are always passed as text",
             "A method may have at most one parameter"
           ],
           "answer": [
             "With pass by value the method receives a copy",
             "With pass by reference the change is visible outside",
-            "The order of the parameters matters",
-            "Parameters can have default values"
+            "The order of the parameters matters"
           ],
           "explanation": "Value or reference decides whether changes become visible in the caller - a frequent source of bugs. Order matters, default values are common, and the count is not limited.",
           "category": "Software Development"
@@ -1996,16 +1896,12 @@
       "options": [
         "Das Dualsystem nutzt zwei Ziffern",
         "Das Hexadezimalsystem nutzt sechzehn Ziffern",
-        "Vier Bit entsprechen einer Hexadezimalziffer",
-        "Rechner arbeiten intern dual",
         "Das Hexadezimalsystem nutzt nur Buchstaben",
         "Das Dualsystem kennt die Ziffer zwei"
       ],
       "answer": [
         "Das Dualsystem nutzt zwei Ziffern",
-        "Das Hexadezimalsystem nutzt sechzehn Ziffern",
-        "Vier Bit entsprechen einer Hexadezimalziffer",
-        "Rechner arbeiten intern dual"
+        "Das Hexadezimalsystem nutzt sechzehn Ziffern"
       ],
       "explanation": "Dual mit 0 und 1, hexadezimal mit 0 bis 9 und A bis F, und vier Bit passen genau in eine Hexziffer - deshalb die kompakte Schreibweise. Die Ziffer zwei gibt es im Dualsystem nicht.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "The binary system uses two digits",
             "The hexadecimal system uses sixteen digits",
-            "Four bits correspond to one hexadecimal digit",
-            "Computers work internally in binary",
             "The hexadecimal system uses only letters",
             "The binary system knows the digit two"
           ],
           "answer": [
             "The binary system uses two digits",
-            "The hexadecimal system uses sixteen digits",
-            "Four bits correspond to one hexadecimal digit",
-            "Computers work internally in binary"
+            "The hexadecimal system uses sixteen digits"
           ],
           "explanation": "Binary with 0 and 1, hexadecimal with 0 to 9 and A to F, and four bits fit exactly into one hex digit - hence the compact notation. The digit two does not exist in binary.",
           "category": "Software Development"
@@ -2081,15 +1973,13 @@
         "Er stellt den Ablauf grafisch mit Symbolen dar",
         "Verzweigungen werden als Raute gezeichnet",
         "Start und Ende haben eigene Symbole",
-        "Er ist unabhängig von der Programmiersprache",
         "Er ersetzt vollständig den späteren Quelltext",
         "Er darf nur von einer Person gelesen werden"
       ],
       "answer": [
         "Er stellt den Ablauf grafisch mit Symbolen dar",
         "Verzweigungen werden als Raute gezeichnet",
-        "Start und Ende haben eigene Symbole",
-        "Er ist unabhängig von der Programmiersprache"
+        "Start und Ende haben eigene Symbole"
       ],
       "explanation": "Der PAP verbindet genormte Symbole durch Pfeile und beschreibt den Ablauf sprachneutral - ein Entwurfswerkzeug, kein lauffähiges Programm.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "It shows the flow graphically with symbols",
             "Branches are drawn as a diamond",
             "Start and end have their own symbols",
-            "It is independent of the programming language",
             "It completely replaces the later source code",
             "It may only be read by a single person"
           ],
           "answer": [
             "It shows the flow graphically with symbols",
             "Branches are drawn as a diamond",
-            "Start and end have their own symbols",
-            "It is independent of the programming language"
+            "Start and end have their own symbols"
           ],
           "explanation": "The flowchart links standardised symbols with arrows and describes the flow language-neutrally - a design tool, not a runnable program.",
           "category": "Software Development"
@@ -2122,16 +2010,12 @@
       "options": [
         "Sie melden außergewöhnliche Situationen zur Laufzeit",
         "Sie lassen sich gezielt abfangen und behandeln",
-        "Unbehandelt führen sie zum Programmabbruch",
-        "Sie trennen Fehlerbehandlung vom Normalablauf",
         "Sie werden bereits beim Übersetzen ausgelöst",
         "Sie ersetzen die Prüfung von Benutzereingaben"
       ],
       "answer": [
         "Sie melden außergewöhnliche Situationen zur Laufzeit",
-        "Sie lassen sich gezielt abfangen und behandeln",
-        "Unbehandelt führen sie zum Programmabbruch",
-        "Sie trennen Fehlerbehandlung vom Normalablauf"
+        "Sie lassen sich gezielt abfangen und behandeln"
       ],
       "explanation": "Ausnahmen halten den Normalfall lesbar und bündeln die Fehlerbehandlung an einer Stelle. Sie entstehen zur Laufzeit und ersetzen keine Eingabeprüfung, die den Fehler von vornherein vermeidet.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "They signal exceptional situations at runtime",
             "They can be caught and handled deliberately",
-            "Unhandled, they terminate the program",
-            "They separate error handling from the normal flow",
             "They are already raised during compilation",
             "They replace validation of user input"
           ],
           "answer": [
             "They signal exceptional situations at runtime",
-            "They can be caught and handled deliberately",
-            "Unhandled, they terminate the program",
-            "They separate error handling from the normal flow"
+            "They can be caught and handled deliberately"
           ],
           "explanation": "Exceptions keep the normal case readable and concentrate error handling in one place. They arise at runtime and do not replace input validation, which avoids the error in the first place.",
           "category": "Software Development"
@@ -2207,15 +2087,13 @@
         "Konstanten behalten ihren Wert während der Laufzeit",
         "Variablen können ihren Wert ändern",
         "Konstanten machen feste Werte im Code lesbar",
-        "Beide besitzen einen Namen und einen Typ",
         "Konstanten lassen sich zur Laufzeit überschreiben",
         "Variablen benötigen grundsätzlich keinen Datentyp"
       ],
       "answer": [
         "Konstanten behalten ihren Wert während der Laufzeit",
         "Variablen können ihren Wert ändern",
-        "Konstanten machen feste Werte im Code lesbar",
-        "Beide besitzen einen Namen und einen Typ"
+        "Konstanten machen feste Werte im Code lesbar"
       ],
       "explanation": "Der Unterschied liegt allein in der Veränderbarkeit; Name und Typ haben beide. Genau deshalb schützt eine Konstante vor versehentlichem Überschreiben fester Werte.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "Constants keep their value during runtime",
             "Variables can change their value",
             "Constants make fixed values in code readable",
-            "Both have a name and a type",
             "Constants can be overwritten at runtime",
             "Variables fundamentally need no data type"
           ],
           "answer": [
             "Constants keep their value during runtime",
             "Variables can change their value",
-            "Constants make fixed values in code readable",
-            "Both have a name and a type"
+            "Constants make fixed values in code readable"
           ],
           "explanation": "The difference lies solely in mutability; both have a name and a type. That is exactly why a constant protects fixed values from accidental overwriting.",
           "category": "Software Development"

@@ -55,6 +55,41 @@ def S(qid, q_de, opts_de, correct, expl_de, q_en, opts_en, expl_en):
     }
 
 
+def _vary_shapes(items):
+    """Variiert die Anzahl richtiger Antworten ueber alle multiple-Fragen.
+
+    Ohne das haetten alle multiple-Fragen dieselbe Zahl richtiger Optionen und
+    "immer vier anklicken" waere eine Strategie ganz ohne Fachwissen. Entfernt
+    werden nur *richtige* Optionen vom Ende des richtigen Blocks - die falschen
+    bleiben an ihrer Stelle, damit Erklaerungen, die sich auf "die letzten
+    beiden Aussagen" beziehen, weiterhin stimmen.
+
+    Reihum statt per Hash, damit die drei Formen exakt gleich haeufig auftreten;
+    bei nur 32 Fragen je Datei streut ein Hash zu stark.
+    """
+    n = 0
+    for it in items:
+        if it["_t"] != "multiple":
+            continue
+        drop = n % 3
+        n += 1
+        if drop == 0 or len(it["a"]) - drop < 2:
+            continue
+        de, en, corr = _drop_correct(it["o"][0], it["o"][1], it["a"], drop)
+        it["o"] = (de, en)
+        it["a"] = corr
+    return items
+
+
+def _drop_correct(opts_de, opts_en, correct, drop):
+    removed = set(correct[-drop:])
+    keep_idx = [i for i in range(len(opts_de)) if i not in removed]
+    remap = {old: new for new, old in enumerate(keep_idx)}
+    return ([opts_de[i] for i in keep_idx],
+            [opts_en[i] for i in keep_idx],
+            [remap[i] for i in correct[:-drop]])
+
+
 def M(qid, q_de, opts_de, correct, expl_de, q_en, opts_en, expl_en):
     """Multiple choice: mehrere richtige Optionen (correct = Index-Tupel)."""
     return {
@@ -199,6 +234,17 @@ def _check(questions, filename, old_ids):
         if all(len(a) == mx for a in ans) and len({len(o) for o in q["options"]}) > 1:
             longest += 1
 
+    # Form der multiple-Fragen: kommt eine Kombination zu oft vor, laesst sich
+    # die Antwortzahl erraten, ohne die Frage zu lesen.
+    shapes = Counter((len(q["options"]), len(q["answer"]))
+                     for q in questions if q["type"] == "multiple")
+    n_mult = sum(shapes.values())
+    if n_mult:
+        top, cnt = shapes.most_common(1)[0]
+        if cnt / n_mult > 0.45:
+            errs.append(f"multiple-Form {top[0]} Optionen/{top[1]} richtig kommt in "
+                        f"{cnt/n_mult:.0%} der Faelle vor (Ziel <=45%)")
+
     ratio = statistics.mean(corr) / statistics.mean(wrong)
     share = longest / n_mc
     if not 0.90 <= ratio <= 1.10:
@@ -227,7 +273,7 @@ def _check(questions, filename, old_ids):
             if q["type"] == "multiple":
                 if not isinstance(q["answer"], list) or not 2 <= len(q["answer"]) < len(o):
                     errs.append(f"{q['id']}: multiple braucht 2..n-1 richtige Optionen")
-                if len(o) < 5:
+                if len(o) < 4:
                     warns.append(f"{q['id']}: nur {len(o)} Optionen bei multiple")
         for k in ("question", "answer", "explanation", "category"):
             if not tr.get(k):
@@ -239,7 +285,8 @@ def _check(questions, filename, old_ids):
 
     qlens = [len(q["question"]) for q in questions]
     stats = (f"  Typen {dict(types)} | Frage ⌀{statistics.mean(qlens):.0f} max {max(qlens)} Zeichen\n"
-             f"  Optionslaenge richtig/falsch = {ratio:.2f} | laengste-ist-richtig {share:.0%}")
+             f"  Optionslaenge richtig/falsch = {ratio:.2f} | laengste-ist-richtig {share:.0%}\n"
+             f"  multiple-Formen (Optionen/richtig): {dict(sorted(shapes.items()))}")
     return errs, warns, stats
 
 
@@ -257,7 +304,7 @@ def build(filename, cat_de, cat_en, items):
     except (subprocess.CalledProcessError, json.JSONDecodeError):
         print(f"  ! Warnung: git-Referenz quizzes-v1-alt fuer {filename} nicht lesbar")
 
-    questions = [_to_json(i, cat_de, cat_en) for i in items]
+    questions = [_to_json(i, cat_de, cat_en) for i in _vary_shapes(items)]
     errs, warns, stats = _check(questions, filename, old_ids)
 
     print(f"\n=== {filename} ===")

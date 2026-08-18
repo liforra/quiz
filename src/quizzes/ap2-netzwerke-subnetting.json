@@ -947,15 +947,13 @@
         "Global Unicast",
         "Link Local",
         "Unique Local",
-        "Multicast",
         "Broadcast",
         "Reverse Unicast"
       ],
       "answer": [
         "Global Unicast",
         "Link Local",
-        "Unique Local",
-        "Multicast"
+        "Unique Local"
       ],
       "explanation": "IPv6 kennt Unicast in globaler, link-lokaler und eindeutig-lokaler Ausprägung sowie Multicast und Anycast. Broadcast wurde bewusst durch Multicast ersetzt.",
       "translations": {
@@ -965,15 +963,13 @@
             "Global unicast",
             "Link local",
             "Unique local",
-            "Multicast",
             "Broadcast",
             "Reverse unicast"
           ],
           "answer": [
             "Global unicast",
             "Link local",
-            "Unique local",
-            "Multicast"
+            "Unique local"
           ],
           "explanation": "IPv6 knows unicast in global, link-local and unique-local form plus multicast and anycast. Broadcast was deliberately replaced by multicast.",
           "category": "Networks & Subnetting"
@@ -988,16 +984,12 @@
       "options": [
         "Das Zielnetz",
         "Die Netzmaske beziehungsweise das Präfix",
-        "Den nächsten Hop oder das Ausgangsinterface",
-        "Optional eine Metrik zur Gewichtung",
         "Die MAC-Adresse des Zielhosts",
         "Die Seriennummer des Zielservers"
       ],
       "answer": [
         "Das Zielnetz",
-        "Die Netzmaske beziehungsweise das Präfix",
-        "Den nächsten Hop oder das Ausgangsinterface",
-        "Optional eine Metrik zur Gewichtung"
+        "Die Netzmaske beziehungsweise das Präfix"
       ],
       "explanation": "Zielnetz, Präfix und nächster Hop sind das Minimum, die Metrik steuert die Bevorzugung bei mehreren Wegen. MAC-Adressen ermittelt der Router bei Bedarf selbst.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "The destination network",
             "The netmask or prefix",
-            "The next hop or outgoing interface",
-            "Optionally a metric for weighting",
             "The MAC address of the target host",
             "The serial number of the target server"
           ],
           "answer": [
             "The destination network",
-            "The netmask or prefix",
-            "The next hop or outgoing interface",
-            "Optionally a metric for weighting"
+            "The netmask or prefix"
           ],
           "explanation": "Destination, prefix and next hop are the minimum; the metric controls preference between several paths. The router determines MAC addresses itself when needed.",
           "category": "Networks & Subnetting"
@@ -1073,15 +1061,13 @@
         "Es ist ein Link-State-Protokoll",
         "Es berechnet Kosten aus der Bandbreite",
         "Es kennt eine Aufteilung in Areas",
-        "Es konvergiert schneller als RIP",
         "Es begrenzt die Netzgröße auf 15 Hops",
         "Es überträgt Routen ausschließlich unverschlüsselt"
       ],
       "answer": [
         "Es ist ein Link-State-Protokoll",
         "Es berechnet Kosten aus der Bandbreite",
-        "Es kennt eine Aufteilung in Areas",
-        "Es konvergiert schneller als RIP"
+        "Es kennt eine Aufteilung in Areas"
       ],
       "explanation": "OSPF baut eine vollständige Topologiedatenbank auf, rechnet mit Bandbreitenkosten und skaliert über Areas. Die 15-Hop-Grenze ist eine RIP-Eigenschaft, und OSPF kennt Authentifizierung.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "It is a link-state protocol",
             "It derives cost from bandwidth",
             "It supports division into areas",
-            "It converges faster than RIP",
             "It limits network size to 15 hops",
             "It transmits routes exclusively unencrypted"
           ],
           "answer": [
             "It is a link-state protocol",
             "It derives cost from bandwidth",
-            "It supports division into areas",
-            "It converges faster than RIP"
+            "It supports division into areas"
           ],
           "explanation": "OSPF builds a complete topology database, computes bandwidth-based cost and scales through areas. The 15-hop limit is a RIP property, and OSPF supports authentication.",
           "category": "Networks & Subnetting"
@@ -1114,16 +1098,12 @@
       "options": [
         "Bedarf je Standort und Abteilung erheben",
         "Passende Präfixlängen je Segment festlegen",
-        "Adressbereiche überschneidungsfrei vergeben",
-        "Reserve für künftiges Wachstum einplanen",
         "Alle Segmente pauschal als /24 anlegen",
         "Adressen erst nach dem Aufbau dokumentieren"
       ],
       "answer": [
         "Bedarf je Standort und Abteilung erheben",
-        "Passende Präfixlängen je Segment festlegen",
-        "Adressbereiche überschneidungsfrei vergeben",
-        "Reserve für künftiges Wachstum einplanen"
+        "Passende Präfixlängen je Segment festlegen"
       ],
       "explanation": "Bedarf, passende Größen, Überschneidungsfreiheit und Reserve führen zu einem tragfähigen Plan. Pauschale /24 verschwenden Adressen, und nachträgliche Dokumentation ist erfahrungsgemäß lückenhaft.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Survey the demand per site and department",
             "Define suitable prefix lengths per segment",
-            "Assign address ranges without overlap",
-            "Plan reserve for future growth",
             "Create all segments as /24 across the board",
             "Document addresses only after the rollout"
           ],
           "answer": [
             "Survey the demand per site and department",
-            "Define suitable prefix lengths per segment",
-            "Assign address ranges without overlap",
-            "Plan reserve for future growth"
+            "Define suitable prefix lengths per segment"
           ],
           "explanation": "Demand, suitable sizes, freedom from overlap and reserve lead to a viable plan. Blanket /24s waste addresses, and documentation written afterwards is notoriously incomplete.",
           "category": "Networks & Subnetting"
@@ -1199,15 +1175,13 @@
         "Überlastete Leitungen mit Warteschlangen",
         "Viele Zwischenstationen auf dem Weg",
         "Große physische Entfernung zum Ziel",
-        "Überlastete Router mit hoher Rechenlast",
         "Eine zu große Festplatte im Zielserver",
         "Ein zu langer Netzwerkname des WLANs"
       ],
       "answer": [
         "Überlastete Leitungen mit Warteschlangen",
         "Viele Zwischenstationen auf dem Weg",
-        "Große physische Entfernung zum Ziel",
-        "Überlastete Router mit hoher Rechenlast"
+        "Große physische Entfernung zum Ziel"
       ],
       "explanation": "Warteschlangen, Hops, Entfernung und Gerätelast summieren sich zur Umlaufzeit. Speichergröße und Netzname haben darauf keinerlei Einfluss.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "Congested links with queueing",
             "Many intermediate hops on the path",
             "Large physical distance to the target",
-            "Overloaded routers under high processing load",
             "Too large a hard disk in the target server",
             "Too long a WLAN network name"
           ],
           "answer": [
             "Congested links with queueing",
             "Many intermediate hops on the path",
-            "Large physical distance to the target",
-            "Overloaded routers under high processing load"
+            "Large physical distance to the target"
           ],
           "explanation": "Queueing, hops, distance and device load add up to the round trip time. Storage size and network name have no influence whatsoever.",
           "category": "Networks & Subnetting"
@@ -1240,16 +1212,12 @@
       "options": [
         "DHCP-Anfragen sind zunächst Broadcasts",
         "Ein Relay leitet sie über Netzgrenzen weiter",
-        "Reservierungen binden Adressen an MAC-Adressen",
-        "Optionen können Gateway und DNS mitgeben",
         "Broadcasts passieren Router ohne weitere Hilfe",
         "Ein DHCP-Server kann nur ein Subnetz bedienen"
       ],
       "answer": [
         "DHCP-Anfragen sind zunächst Broadcasts",
-        "Ein Relay leitet sie über Netzgrenzen weiter",
-        "Reservierungen binden Adressen an MAC-Adressen",
-        "Optionen können Gateway und DNS mitgeben"
+        "Ein Relay leitet sie über Netzgrenzen weiter"
       ],
       "explanation": "Der Broadcast bleibt im Segment, deshalb braucht es das Relay. Über Optionen und Reservierungen kann ein einzelner Server viele Subnetze sauber versorgen.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "DHCP requests are broadcasts at first",
             "A relay forwards them across network boundaries",
-            "Reservations bind addresses to MAC addresses",
-            "Options can supply gateway and DNS",
             "Broadcasts cross routers without further help",
             "A DHCP server can only serve one subnet"
           ],
           "answer": [
             "DHCP requests are broadcasts at first",
-            "A relay forwards them across network boundaries",
-            "Reservations bind addresses to MAC addresses",
-            "Options can supply gateway and DNS"
+            "A relay forwards them across network boundaries"
           ],
           "explanation": "The broadcast stays in the segment, which is why a relay is needed. Through options and reservations a single server can cleanly serve many subnets.",
           "category": "Networks & Subnetting"
@@ -1325,15 +1289,13 @@
         "Sie liegt im globalen Unicast-Bereich",
         "Sie ist für Dokumentation reserviert",
         "Sie darf in Beispielen frei verwendet werden",
-        "Ihre Notation nutzt die verkürzte Schreibweise",
         "Sie ist eine Link-Local-Adresse",
         "Sie kennzeichnet eine Multicast-Gruppe"
       ],
       "answer": [
         "Sie liegt im globalen Unicast-Bereich",
         "Sie ist für Dokumentation reserviert",
-        "Sie darf in Beispielen frei verwendet werden",
-        "Ihre Notation nutzt die verkürzte Schreibweise"
+        "Sie darf in Beispielen frei verwendet werden"
       ],
       "explanation": "2001:db8::/32 stammt aus 2000::/3 und ist ausdrücklich für Beispiele und Dokumentation reserviert. Link-Local wäre fe80, Multicast ff00.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "It lies in the global unicast range",
             "It is reserved for documentation",
             "It may be used freely in examples",
-            "Its notation uses the shortened form",
             "It is a link-local address",
             "It denotes a multicast group"
           ],
           "answer": [
             "It lies in the global unicast range",
             "It is reserved for documentation",
-            "It may be used freely in examples",
-            "Its notation uses the shortened form"
+            "It may be used freely in examples"
           ],
           "explanation": "2001:db8::/32 comes from 2000::/3 and is expressly reserved for examples and documentation. Link-local would be fe80, multicast ff00.",
           "category": "Networks & Subnetting"
@@ -1366,16 +1326,12 @@
       "options": [
         "Die Router auf dem Weg zum Ziel",
         "Die Antwortzeit je Zwischenstation",
-        "Die Anzahl der Hops bis zum Ziel",
-        "Den Punkt, ab dem die Verzögerung springt",
         "Die Auslastung der Festplatten der Router",
         "Die Passwörter der beteiligten Geräte"
       ],
       "answer": [
         "Die Router auf dem Weg zum Ziel",
-        "Die Antwortzeit je Zwischenstation",
-        "Die Anzahl der Hops bis zum Ziel",
-        "Den Punkt, ab dem die Verzögerung springt"
+        "Die Antwortzeit je Zwischenstation"
       ],
       "explanation": "Ein Trace macht den Pfad und die Zeitverteilung sichtbar und zeigt, wo die Verzögerung entsteht. Interna der Geräte liefert er selbstverständlich nicht.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "The routers along the path to the target",
             "The response time per intermediate hop",
-            "The number of hops to the destination",
-            "The point at which latency jumps",
             "The disk utilisation of the routers",
             "The passwords of the devices involved"
           ],
           "answer": [
             "The routers along the path to the target",
-            "The response time per intermediate hop",
-            "The number of hops to the destination",
-            "The point at which latency jumps"
+            "The response time per intermediate hop"
           ],
           "explanation": "A trace reveals the path and the distribution of time and shows where the delay arises. It obviously does not provide device internals.",
           "category": "Networks & Subnetting"
@@ -1451,15 +1403,13 @@
         "Adressplan mit vergebenen Subnetzen",
         "VLAN-Übersicht mit Verwendungszweck",
         "Verkabelungsplan mit Portbelegung",
-        "Konfigurationsstände der aktiven Komponenten",
         "Die Urlaubsplanung der Administratoren",
         "Die Preisliste des Netzwerklieferanten"
       ],
       "answer": [
         "Adressplan mit vergebenen Subnetzen",
         "VLAN-Übersicht mit Verwendungszweck",
-        "Verkabelungsplan mit Portbelegung",
-        "Konfigurationsstände der aktiven Komponenten"
+        "Verkabelungsplan mit Portbelegung"
       ],
       "explanation": "Adressen, VLANs, Verkabelung und Konfigurationsstände sind das, was im Störungsfall zählt. Organisatorisches und Kaufmännisches gehört in andere Ablagen.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Address plan with assigned subnets",
             "VLAN overview with intended purpose",
             "Cabling plan with port assignments",
-            "Configuration states of the active components",
             "The holiday planning of the administrators",
             "The price list of the network supplier"
           ],
           "answer": [
             "Address plan with assigned subnets",
             "VLAN overview with intended purpose",
-            "Cabling plan with port assignments",
-            "Configuration states of the active components"
+            "Cabling plan with port assignments"
           ],
           "explanation": "Addresses, VLANs, cabling and configuration states are what counts during an incident. Organisational and commercial matters belong in other records.",
           "category": "Networks & Subnetting"
@@ -1492,16 +1440,12 @@
       "options": [
         "Es verhindert Schleifen in redundanten Topologien",
         "RSTP konvergiert deutlich schneller als klassisches STP",
-        "Eine Root Bridge wird über Prioritäten gewählt",
-        "Blockierte Ports übernehmen bei einem Ausfall",
         "Es erhöht die Bandbreite aller beteiligten Ports",
         "Es macht Link Aggregation grundsätzlich überflüssig"
       ],
       "answer": [
         "Es verhindert Schleifen in redundanten Topologien",
-        "RSTP konvergiert deutlich schneller als klassisches STP",
-        "Eine Root Bridge wird über Prioritäten gewählt",
-        "Blockierte Ports übernehmen bei einem Ausfall"
+        "RSTP konvergiert deutlich schneller als klassisches STP"
       ],
       "explanation": "STP und sein schnellerer Nachfolger RSTP halten die Topologie schleifenfrei und aktivieren Reservewege im Fehlerfall. Bandbreite entsteht dadurch nicht - dafür ist Link Aggregation da.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "It prevents loops in redundant topologies",
             "RSTP converges much faster than classic STP",
-            "A root bridge is elected via priorities",
-            "Blocked ports take over on a failure",
             "It increases the bandwidth of all involved ports",
             "It fundamentally makes link aggregation unnecessary"
           ],
           "answer": [
             "It prevents loops in redundant topologies",
-            "RSTP converges much faster than classic STP",
-            "A root bridge is elected via priorities",
-            "Blocked ports take over on a failure"
+            "RSTP converges much faster than classic STP"
           ],
           "explanation": "STP and its faster successor RSTP keep the topology loop-free and activate standby paths on failure. It creates no bandwidth - that is what link aggregation is for.",
           "category": "Networks & Subnetting"
@@ -1577,15 +1517,13 @@
         "Er leitet zwischen VLANs weiter",
         "Er trifft Entscheidungen anhand von IP-Adressen",
         "Er führt eine Routingtabelle",
-        "Er arbeitet zusätzlich als klassischer Switch",
         "Er ersetzt vollständig die Internet-Firewall",
         "Er arbeitet ausschließlich auf Schicht 1"
       ],
       "answer": [
         "Er leitet zwischen VLANs weiter",
         "Er trifft Entscheidungen anhand von IP-Adressen",
-        "Er führt eine Routingtabelle",
-        "Er arbeitet zusätzlich als klassischer Switch"
+        "Er führt eine Routingtabelle"
       ],
       "explanation": "Der Layer-3-Switch vereint schnelles Switching mit Routingfunktionen und übernimmt typischerweise das Routing zwischen VLANs. Eine Firewall am Internetübergang ersetzt er nicht.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "It forwards between VLANs",
             "It makes decisions based on IP addresses",
             "It maintains a routing table",
-            "It additionally works as a classic switch",
             "It fully replaces the internet firewall",
             "It works exclusively on layer 1"
           ],
           "answer": [
             "It forwards between VLANs",
             "It makes decisions based on IP addresses",
-            "It maintains a routing table",
-            "It additionally works as a classic switch"
+            "It maintains a routing table"
           ],
           "explanation": "A layer 3 switch combines fast switching with routing functions and typically handles inter-VLAN routing. It does not replace a firewall at the internet edge.",
           "category": "Networks & Subnetting"
@@ -1618,16 +1554,12 @@
       "options": [
         "Clients bilden ihre Adresse selbst",
         "Router Advertisements liefern das Präfix",
-        "Ein DHCP-Server ist dafür nicht zwingend nötig",
-        "Das Präfix ist dabei typischerweise ein /64",
         "Die Adresse wird von einem Server fest vergeben",
         "SLAAC funktioniert ausschließlich mit IPv4"
       ],
       "answer": [
         "Clients bilden ihre Adresse selbst",
-        "Router Advertisements liefern das Präfix",
-        "Ein DHCP-Server ist dafür nicht zwingend nötig",
-        "Das Präfix ist dabei typischerweise ein /64"
+        "Router Advertisements liefern das Präfix"
       ],
       "explanation": "Bei SLAAC verteilt der Router nur das Präfix, den Rest bildet der Client selbst - deshalb reicht ein /64 und es braucht keinen DHCP-Server. Mit IPv4 hat das Verfahren nichts zu tun.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "Clients form their address themselves",
             "Router advertisements supply the prefix",
-            "A DHCP server is not strictly required",
-            "The prefix is typically a /64",
             "The address is fixed by a server",
             "SLAAC works exclusively with IPv4"
           ],
           "answer": [
             "Clients form their address themselves",
-            "Router advertisements supply the prefix",
-            "A DHCP server is not strictly required",
-            "The prefix is typically a /64"
+            "Router advertisements supply the prefix"
           ],
           "explanation": "With SLAAC the router only advertises the prefix and the client forms the rest - hence a /64 suffices and no DHCP server is needed. It has nothing to do with IPv4.",
           "category": "Networks & Subnetting"
@@ -1703,15 +1631,13 @@
         "Verwaltungszugriff bleibt vom Nutzverkehr getrennt",
         "Ein Ausfall im Produktivnetz blockiert nicht den Zugriff",
         "Angriffe aus dem Nutzernetz erreichen es nicht direkt",
-        "Zugriffe lassen sich enger einschränken",
         "Die Bandbreite im Produktivnetz verdoppelt sich",
         "Aktive Komponenten brauchen dann keine Passwörter"
       ],
       "answer": [
         "Verwaltungszugriff bleibt vom Nutzverkehr getrennt",
         "Ein Ausfall im Produktivnetz blockiert nicht den Zugriff",
-        "Angriffe aus dem Nutzernetz erreichen es nicht direkt",
-        "Zugriffe lassen sich enger einschränken"
+        "Angriffe aus dem Nutzernetz erreichen es nicht direkt"
       ],
       "explanation": "Trennung schützt den Zugriffsweg genau dann, wenn man ihn am dringendsten braucht - im Störungsfall. An Bandbreite und Zugangsschutz ändert das nichts.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Administrative access stays separate from user traffic",
             "An outage in the production network does not block access",
             "Attacks from the user network do not reach it directly",
-            "Access can be restricted more tightly",
             "Bandwidth in the production network doubles",
             "Active components then need no passwords"
           ],
           "answer": [
             "Administrative access stays separate from user traffic",
             "An outage in the production network does not block access",
-            "Attacks from the user network do not reach it directly",
-            "Access can be restricted more tightly"
+            "Attacks from the user network do not reach it directly"
           ],
           "explanation": "Separation protects the access path exactly when it is needed most - during an incident. It changes nothing about bandwidth or access protection.",
           "category": "Networks & Subnetting"
@@ -1744,16 +1668,12 @@
       "options": [
         "Mehrere benachbarte Netze werden zu einem Eintrag",
         "Die Präfixlänge wird dabei verkürzt",
-        "Die Routingtabelle wird dadurch kleiner",
-        "Die Netze müssen zusammenhängend sein",
         "Beliebige Netze lassen sich zusammenfassen",
         "Die Zusammenfassung erhöht die Bandbreite"
       ],
       "answer": [
         "Mehrere benachbarte Netze werden zu einem Eintrag",
-        "Die Präfixlänge wird dabei verkürzt",
-        "Die Routingtabelle wird dadurch kleiner",
-        "Die Netze müssen zusammenhängend sein"
+        "Die Präfixlänge wird dabei verkürzt"
       ],
       "explanation": "Zusammenfassen funktioniert nur bei zusammenhängenden Blöcken auf einer Bitgrenze und verkürzt das Präfix. Sie entlastet die Tabelle, nicht die Leitung.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "Several adjacent networks become one entry",
             "The prefix length is shortened in the process",
-            "The routing table becomes smaller",
-            "The networks must be contiguous",
             "Arbitrary networks can be summarised",
             "Summarisation increases bandwidth"
           ],
           "answer": [
             "Several adjacent networks become one entry",
-            "The prefix length is shortened in the process",
-            "The routing table becomes smaller",
-            "The networks must be contiguous"
+            "The prefix length is shortened in the process"
           ],
           "explanation": "Summarisation only works for contiguous blocks on a bit boundary and shortens the prefix. It relieves the table, not the link.",
           "category": "Networks & Subnetting"
@@ -1829,15 +1745,13 @@
         "Nicht genutzte Ports administrativ abschalten",
         "Zugriff auf die Verwaltung einschränken",
         "Aktuelle Firmware einspielen",
-        "Portsicherheit für erlaubte MAC-Adressen aktivieren",
         "Alle Ports pauschal ins Management-VLAN legen",
         "Standardpasswörter aus Bequemlichkeit belassen"
       ],
       "answer": [
         "Nicht genutzte Ports administrativ abschalten",
         "Zugriff auf die Verwaltung einschränken",
-        "Aktuelle Firmware einspielen",
-        "Portsicherheit für erlaubte MAC-Adressen aktivieren"
+        "Aktuelle Firmware einspielen"
       ],
       "explanation": "Abgeschaltete Ports, eingeschränkter Verwaltungszugriff, Patches und Portsicherheit verkleinern die Angriffsfläche wirksam. Die letzten beiden Punkte vergrößern sie erheblich.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Administratively disable unused ports",
             "Restrict access to the management interface",
             "Install current firmware",
-            "Enable port security for permitted MAC addresses",
             "Put all ports into the management VLAN wholesale",
             "Leave default passwords in place for convenience"
           ],
           "answer": [
             "Administratively disable unused ports",
             "Restrict access to the management interface",
-            "Install current firmware",
-            "Enable port security for permitted MAC addresses"
+            "Install current firmware"
           ],
           "explanation": "Disabled ports, restricted management access, patches and port security effectively shrink the attack surface. The last two points enlarge it considerably.",
           "category": "Networks & Subnetting"
@@ -1870,16 +1782,12 @@
       "options": [
         "Sie begrenzt die maximale Nutzlast eines Frames",
         "Ethernet nutzt üblicherweise 1500 Byte",
-        "Eine zu große MTU führt zu Fragmentierung",
-        "Tunnel verringern die nutzbare MTU",
         "Eine höhere MTU erhöht immer den Durchsatz",
         "Die MTU wird vom DNS-Server vorgegeben"
       ],
       "answer": [
         "Sie begrenzt die maximale Nutzlast eines Frames",
-        "Ethernet nutzt üblicherweise 1500 Byte",
-        "Eine zu große MTU führt zu Fragmentierung",
-        "Tunnel verringern die nutzbare MTU"
+        "Ethernet nutzt üblicherweise 1500 Byte"
       ],
       "explanation": "1500 Byte sind der Ethernet-Standard, Tunnel-Header knabbern davon ab und erzwingen Fragmentierung oder Path-MTU-Discovery. Größere Werte helfen nur, wenn die gesamte Strecke mitspielt.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "It limits the maximum payload of a frame",
             "Ethernet typically uses 1500 bytes",
-            "Too large an MTU leads to fragmentation",
-            "Tunnels reduce the usable MTU",
             "A higher MTU always increases throughput",
             "The MTU is dictated by the DNS server"
           ],
           "answer": [
             "It limits the maximum payload of a frame",
-            "Ethernet typically uses 1500 bytes",
-            "Too large an MTU leads to fragmentation",
-            "Tunnels reduce the usable MTU"
+            "Ethernet typically uses 1500 bytes"
           ],
           "explanation": "1500 bytes is the Ethernet standard; tunnel headers eat into it and force fragmentation or path MTU discovery. Larger values only help if the entire path supports them.",
           "category": "Networks & Subnetting"
@@ -1955,15 +1859,13 @@
         "Die Netzadresse",
         "Die Präfixlänge oder Maske",
         "Die Broadcast-Adresse",
-        "Den nutzbaren Hostbereich",
         "Die Anzahl der Switches im Segment",
         "Den Hersteller der Netzwerkkarten"
       ],
       "answer": [
         "Die Netzadresse",
         "Die Präfixlänge oder Maske",
-        "Die Broadcast-Adresse",
-        "Den nutzbaren Hostbereich"
+        "Die Broadcast-Adresse"
       ],
       "explanation": "Netzadresse, Präfix, Broadcast und Hostbereich beschreiben ein Subnetz vollständig und rechnerisch überprüfbar. Gerätedetails gehören in die Inventarliste.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "The network address",
             "The prefix length or mask",
             "The broadcast address",
-            "The usable host range",
             "The number of switches in the segment",
             "The manufacturer of the network cards"
           ],
           "answer": [
             "The network address",
             "The prefix length or mask",
-            "The broadcast address",
-            "The usable host range"
+            "The broadcast address"
           ],
           "explanation": "Network address, prefix, broadcast and host range describe a subnet completely and verifiably. Device details belong in the inventory.",
           "category": "Networks & Subnetting"
@@ -1996,16 +1896,12 @@
       "options": [
         "Ein Controller verwaltet mehrere Access Points zentral",
         "Benachbarte Zellen sollten verschiedene Kanäle nutzen",
-        "Roaming erlaubt den Wechsel ohne Verbindungsabbruch",
-        "Eine Ausleuchtungsmessung hilft bei der Planung",
         "Mehr Sendeleistung löst Überlappungsprobleme",
         "Alle Access Points sollten denselben Kanal nutzen"
       ],
       "answer": [
         "Ein Controller verwaltet mehrere Access Points zentral",
-        "Benachbarte Zellen sollten verschiedene Kanäle nutzen",
-        "Roaming erlaubt den Wechsel ohne Verbindungsabbruch",
-        "Eine Ausleuchtungsmessung hilft bei der Planung"
+        "Benachbarte Zellen sollten verschiedene Kanäle nutzen"
       ],
       "explanation": "Zentrale Steuerung, Kanalplanung, Roaming und Messung sind das Handwerkszeug. Gleiche Kanäle und mehr Leistung verschärfen die gegenseitige Störung.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "A controller manages several access points centrally",
             "Neighbouring cells should use different channels",
-            "Roaming allows switching without dropping the connection",
-            "A site survey helps with planning",
             "More transmit power solves overlap problems",
             "All access points should use the same channel"
           ],
           "answer": [
             "A controller manages several access points centrally",
-            "Neighbouring cells should use different channels",
-            "Roaming allows switching without dropping the connection",
-            "A site survey helps with planning"
+            "Neighbouring cells should use different channels"
           ],
           "explanation": "Central control, channel planning, roaming and measurement are the tools of the trade. Identical channels and more power worsen mutual interference.",
           "category": "Networks & Subnetting"
@@ -2081,15 +1973,13 @@
         "Adressbereich aus dem Gesamtplan zuteilen",
         "VLANs und deren Zweck festlegen",
         "Routing zum Hauptstandort einrichten",
-        "Konfiguration und Adressen dokumentieren",
         "Adressen frei nach Verfügbarkeit vergeben",
         "Dokumentation erst bei der ersten Störung anlegen"
       ],
       "answer": [
         "Adressbereich aus dem Gesamtplan zuteilen",
         "VLANs und deren Zweck festlegen",
-        "Routing zum Hauptstandort einrichten",
-        "Konfiguration und Adressen dokumentieren"
+        "Routing zum Hauptstandort einrichten"
       ],
       "explanation": "Planvolle Zuteilung, VLAN-Konzept, Routing und Dokumentation machen den Standort betreibbar und erweiterbar. Freihändige Vergabe erzeugt genau die Überschneidungen, die später Ärger machen.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Allocate an address range from the overall plan",
             "Define VLANs and their purpose",
             "Set up routing to the main site",
-            "Document configuration and addresses",
             "Assign addresses freely as available",
             "Create documentation only at the first incident"
           ],
           "answer": [
             "Allocate an address range from the overall plan",
             "Define VLANs and their purpose",
-            "Set up routing to the main site",
-            "Document configuration and addresses"
+            "Set up routing to the main site"
           ],
           "explanation": "Planned allocation, a VLAN concept, routing and documentation make the site operable and extensible. Ad-hoc assignment creates exactly the overlaps that cause trouble later.",
           "category": "Networks & Subnetting"
@@ -2122,16 +2010,12 @@
       "options": [
         "Es sichert Vertraulichkeit der Nutzdaten",
         "Es prüft die Integrität der Pakete",
-        "Es authentisiert die Gegenstelle",
-        "Es kennt Tunnel- und Transportmodus",
         "Es arbeitet ausschließlich auf Schicht 7",
         "Es ersetzt die Notwendigkeit von Firewalls"
       ],
       "answer": [
         "Es sichert Vertraulichkeit der Nutzdaten",
-        "Es prüft die Integrität der Pakete",
-        "Es authentisiert die Gegenstelle",
-        "Es kennt Tunnel- und Transportmodus"
+        "Es prüft die Integrität der Pakete"
       ],
       "explanation": "IPsec liefert Vertraulichkeit, Integrität und Authentizität auf Schicht 3, wahlweise im Tunnel- oder Transportmodus. Eine Firewall ersetzt es nicht.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "It secures confidentiality of the payload",
             "It verifies the integrity of the packets",
-            "It authenticates the remote peer",
-            "It knows tunnel and transport mode",
             "It works exclusively on layer 7",
             "It removes the need for firewalls"
           ],
           "answer": [
             "It secures confidentiality of the payload",
-            "It verifies the integrity of the packets",
-            "It authenticates the remote peer",
-            "It knows tunnel and transport mode"
+            "It verifies the integrity of the packets"
           ],
           "explanation": "IPsec provides confidentiality, integrity and authenticity on layer 3, either in tunnel or transport mode. It does not replace a firewall.",
           "category": "Networks & Subnetting"
@@ -2207,15 +2087,13 @@
         "Sie machen einen internen Dienst von außen erreichbar",
         "Sie brauchen Ziel-IP und Zielport intern",
         "Sie vergrößern die Angriffsfläche des Netzes",
-        "Eine DMZ ist für solche Dienste die sicherere Lösung",
         "Sie verschlüsseln den weitergeleiteten Verkehr",
         "Sie sind für ausgehende Verbindungen erforderlich"
       ],
       "answer": [
         "Sie machen einen internen Dienst von außen erreichbar",
         "Sie brauchen Ziel-IP und Zielport intern",
-        "Sie vergrößern die Angriffsfläche des Netzes",
-        "Eine DMZ ist für solche Dienste die sicherere Lösung"
+        "Sie vergrößern die Angriffsfläche des Netzes"
       ],
       "explanation": "Eine Weiterleitung öffnet gezielt einen Weg nach innen - genau deshalb gehört der Dienst besser in eine DMZ. Verschlüsselung entsteht dadurch nicht, und ausgehend regelt NAT das ohnehin.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "They make an internal service reachable from outside",
             "They need an internal destination IP and port",
             "They enlarge the attack surface of the network",
-            "A DMZ is the safer solution for such services",
             "They encrypt the forwarded traffic",
             "They are required for outbound connections"
           ],
           "answer": [
             "They make an internal service reachable from outside",
             "They need an internal destination IP and port",
-            "They enlarge the attack surface of the network",
-            "A DMZ is the safer solution for such services"
+            "They enlarge the attack surface of the network"
           ],
           "explanation": "A forwarding rule deliberately opens a path inward - which is exactly why the service belongs in a DMZ. It creates no encryption, and outbound traffic is handled by NAT anyway.",
           "category": "Networks & Subnetting"

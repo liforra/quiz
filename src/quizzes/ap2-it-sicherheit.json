@@ -947,15 +947,13 @@
         "Denial of Service durch Überlastung",
         "Verteilter Angriff aus einem Botnetz",
         "Verschlüsselung der Daten durch Ransomware",
-        "Zerstörung von Konfigurationsdaten",
         "Unbemerktes Mitlesen vertraulicher Daten",
         "Fälschen einer Absenderadresse in einer Mail"
       ],
       "answer": [
         "Denial of Service durch Überlastung",
         "Verteilter Angriff aus einem Botnetz",
-        "Verschlüsselung der Daten durch Ransomware",
-        "Zerstörung von Konfigurationsdaten"
+        "Verschlüsselung der Daten durch Ransomware"
       ],
       "explanation": "Überlast, Botnetzangriffe, Verschlüsselung und Zerstörung machen Systeme unbenutzbar. Mitlesen trifft die Vertraulichkeit, Absenderfälschung die Authentizität.",
       "translations": {
@@ -965,15 +963,13 @@
             "Denial of service through overload",
             "Distributed attack from a botnet",
             "Encryption of the data by ransomware",
-            "Destruction of configuration data",
             "Unnoticed interception of confidential data",
             "Forging a sender address in an email"
           ],
           "answer": [
             "Denial of service through overload",
             "Distributed attack from a botnet",
-            "Encryption of the data by ransomware",
-            "Destruction of configuration data"
+            "Encryption of the data by ransomware"
           ],
           "explanation": "Overload, botnet attacks, encryption and destruction render systems unusable. Interception hits confidentiality, sender forgery authenticity.",
           "category": "IT Security & Network Security"
@@ -988,16 +984,12 @@
       "options": [
         "Eine Zertifizierungsstelle",
         "Eine Registrierungsstelle",
-        "Ein Verzeichnis für ausgestellte Zertifikate",
-        "Ein Verfahren zum Sperren von Zertifikaten",
         "Ein zentrales Verzeichnis aller privaten Schlüssel",
         "Ein Verfahren zum Löschen aller Protokolle"
       ],
       "answer": [
         "Eine Zertifizierungsstelle",
-        "Eine Registrierungsstelle",
-        "Ein Verzeichnis für ausgestellte Zertifikate",
-        "Ein Verfahren zum Sperren von Zertifikaten"
+        "Eine Registrierungsstelle"
       ],
       "explanation": "CA, RA, Verzeichnis und Sperrmechanismus bilden die Public-Key-Infrastruktur. Private Schlüssel liegen niemals zentral - genau das wäre der Totalschaden.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "A certification authority",
             "A registration authority",
-            "A directory of issued certificates",
-            "A mechanism for revoking certificates",
             "A central directory of all private keys",
             "A mechanism for deleting all logs"
           ],
           "answer": [
             "A certification authority",
-            "A registration authority",
-            "A directory of issued certificates",
-            "A mechanism for revoking certificates"
+            "A registration authority"
           ],
           "explanation": "CA, RA, directory and revocation form the public key infrastructure. Private keys are never held centrally - that would be exactly the catastrophic case.",
           "category": "IT Security & Network Security"
@@ -1073,15 +1061,13 @@
         "Es verschlüsselt die Verbindung zwischen Client und Server",
         "Es prüft die Identität des Servers über ein Zertifikat",
         "Es sichert die Integrität der übertragenen Daten",
-        "Es handelt einen symmetrischen Sitzungsschlüssel aus",
         "Es schützt die Daten auch nach dem Empfang auf der Festplatte",
         "Es macht eine Zugriffskontrolle auf dem Server überflüssig"
       ],
       "answer": [
         "Es verschlüsselt die Verbindung zwischen Client und Server",
         "Es prüft die Identität des Servers über ein Zertifikat",
-        "Es sichert die Integrität der übertragenen Daten",
-        "Es handelt einen symmetrischen Sitzungsschlüssel aus"
+        "Es sichert die Integrität der übertragenen Daten"
       ],
       "explanation": "TLS sichert den Transportweg mit Vertraulichkeit, Authentizität und Integrität. Was auf dem Server passiert, liegt außerhalb seiner Zuständigkeit.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "It encrypts the connection between client and server",
             "It verifies the server's identity via a certificate",
             "It secures the integrity of the transmitted data",
-            "It negotiates a symmetric session key",
             "It protects the data on disk after receipt",
             "It makes access control on the server unnecessary"
           ],
           "answer": [
             "It encrypts the connection between client and server",
             "It verifies the server's identity via a certificate",
-            "It secures the integrity of the transmitted data",
-            "It negotiates a symmetric session key"
+            "It secures the integrity of the transmitted data"
           ],
           "explanation": "TLS secures the transport path with confidentiality, authenticity and integrity. What happens on the server lies outside its remit.",
           "category": "IT Security & Network Security"
@@ -1114,16 +1098,12 @@
       "options": [
         "Vorfall erkennen und bewerten",
         "Betroffene Systeme isolieren",
-        "Spuren für die Analyse sichern",
-        "Ursache beseitigen und Betrieb wiederherstellen",
         "Protokolle vorsorglich löschen",
         "Betroffene Systeme sofort neu installieren"
       ],
       "answer": [
         "Vorfall erkennen und bewerten",
-        "Betroffene Systeme isolieren",
-        "Spuren für die Analyse sichern",
-        "Ursache beseitigen und Betrieb wiederherstellen"
+        "Betroffene Systeme isolieren"
       ],
       "explanation": "Erkennen, Eindämmen, Beweissicherung und Wiederherstellung bilden den Ablauf, abgeschlossen durch die Nachbereitung. Löschen und voreiliges Neuinstallieren vernichten die Spuren.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Detect and assess the incident",
             "Isolate the affected systems",
-            "Preserve evidence for analysis",
-            "Eradicate the cause and restore operation",
             "Delete logs as a precaution",
             "Reinstall the affected systems immediately"
           ],
           "answer": [
             "Detect and assess the incident",
-            "Isolate the affected systems",
-            "Preserve evidence for analysis",
-            "Eradicate the cause and restore operation"
+            "Isolate the affected systems"
           ],
           "explanation": "Detection, containment, evidence preservation and recovery form the sequence, closed by a review. Deleting and premature reinstalling destroy the traces.",
           "category": "IT Security & Network Security"
@@ -1199,15 +1175,13 @@
         "Zweck und fachliche Begründung der Regel",
         "Quelle, Ziel und freigegebener Dienst",
         "Antragsteller und Freigabedatum",
-        "Geplante Überprüfung oder Befristung",
         "Das Passwort des Firewalladministrators",
         "Die Anzahl der Kabel im Serverschrank"
       ],
       "answer": [
         "Zweck und fachliche Begründung der Regel",
         "Quelle, Ziel und freigegebener Dienst",
-        "Antragsteller und Freigabedatum",
-        "Geplante Überprüfung oder Befristung"
+        "Antragsteller und Freigabedatum"
       ],
       "explanation": "Ohne Begründung und Verantwortlichkeit wächst jedes Regelwerk zu einem undurchschaubaren Dickicht. Befristungen erzwingen die regelmäßige Überprüfung.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "Purpose and business justification of the rule",
             "Source, destination and released service",
             "Requester and approval date",
-            "Planned review or expiry",
             "The firewall administrator's password",
             "The number of cables in the server rack"
           ],
           "answer": [
             "Purpose and business justification of the rule",
             "Source, destination and released service",
-            "Requester and approval date",
-            "Planned review or expiry"
+            "Requester and approval date"
           ],
           "explanation": "Without justification and ownership every rule set grows into an unresolvable tangle. Expiry dates enforce regular review.",
           "category": "IT Security & Network Security"
@@ -1240,16 +1212,12 @@
       "options": [
         "Erreichbare Netzlaufwerke werden mitverschlüsselt",
         "Offline gelagerte Sicherungen überstehen den Angriff",
-        "Unveränderbare Sicherungen bieten zusätzlichen Schutz",
-        "Netzsegmentierung begrenzt die Ausbreitung",
         "Ein Virenscanner allein verhindert jeden Befall",
         "Die Zahlung des Lösegelds garantiert die Entschlüsselung"
       ],
       "answer": [
         "Erreichbare Netzlaufwerke werden mitverschlüsselt",
-        "Offline gelagerte Sicherungen überstehen den Angriff",
-        "Unveränderbare Sicherungen bieten zusätzlichen Schutz",
-        "Netzsegmentierung begrenzt die Ausbreitung"
+        "Offline gelagerte Sicherungen überstehen den Angriff"
       ],
       "explanation": "Ransomware folgt jedem erreichbaren Pfad, deshalb wirken Trennung und Unveränderbarkeit der Sicherungen. Scanner sind eine Schicht von mehreren, und Zahlungen garantieren gar nichts.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "Reachable network drives are encrypted too",
             "Backups stored offline survive the attack",
-            "Immutable backups provide additional protection",
-            "Network segmentation limits the spread",
             "A virus scanner alone prevents any infection",
             "Paying the ransom guarantees decryption"
           ],
           "answer": [
             "Reachable network drives are encrypted too",
-            "Backups stored offline survive the attack",
-            "Immutable backups provide additional protection",
-            "Network segmentation limits the spread"
+            "Backups stored offline survive the attack"
           ],
           "explanation": "Ransomware follows every reachable path, which is why separation and immutability of backups work. Scanners are one layer among several, and payment guarantees nothing.",
           "category": "IT Security & Network Security"
@@ -1325,15 +1289,13 @@
         "Systeme werden regelmäßig auf bekannte Lücken geprüft",
         "Der CVSS-Wert hilft bei der Priorisierung",
         "Gefundene Lücken werden nachverfolgt bis zur Behebung",
-        "Auch Systeme ohne Internetzugang werden erfasst",
         "Ein einmaliger Scan im Jahr genügt vollständig",
         "Nur Systeme mit öffentlicher IP sind betroffen"
       ],
       "answer": [
         "Systeme werden regelmäßig auf bekannte Lücken geprüft",
         "Der CVSS-Wert hilft bei der Priorisierung",
-        "Gefundene Lücken werden nachverfolgt bis zur Behebung",
-        "Auch Systeme ohne Internetzugang werden erfasst"
+        "Gefundene Lücken werden nachverfolgt bis zur Behebung"
       ],
       "explanation": "Wirksam ist ein laufender Prozess mit Priorisierung und Nachverfolgung über den gesamten Bestand. Interne Systeme geraten spätestens dann ins Visier, wenn ein Angreifer bereits im Netz ist.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "Systems are checked regularly for known gaps",
             "The CVSS value helps with prioritisation",
             "Findings are tracked through to remediation",
-            "Systems without internet access are covered too",
             "A single scan per year is entirely sufficient",
             "Only systems with a public IP are affected"
           ],
           "answer": [
             "Systems are checked regularly for known gaps",
             "The CVSS value helps with prioritisation",
-            "Findings are tracked through to remediation",
-            "Systems without internet access are covered too"
+            "Findings are tracked through to remediation"
           ],
           "explanation": "What works is a continuous process with prioritisation and tracking across the whole estate. Internal systems come into focus at the latest once an attacker is already inside.",
           "category": "IT Security & Network Security"
@@ -1366,16 +1326,12 @@
       "options": [
         "Ein Angreifer erreicht nicht sofort alle Systeme",
         "Verkehr zwischen Segmenten lässt sich kontrollieren",
-        "Besonders schützenswerte Systeme lassen sich absondern",
-        "Die Ausbreitung von Schadsoftware wird gebremst",
         "Die Bandbreite je Segment verdoppelt sich",
         "Virenschutz auf den Endgeräten wird entbehrlich"
       ],
       "answer": [
         "Ein Angreifer erreicht nicht sofort alle Systeme",
-        "Verkehr zwischen Segmenten lässt sich kontrollieren",
-        "Besonders schützenswerte Systeme lassen sich absondern",
-        "Die Ausbreitung von Schadsoftware wird gebremst"
+        "Verkehr zwischen Segmenten lässt sich kontrollieren"
       ],
       "explanation": "Segmentierung schafft Kontrollpunkte und begrenzt die seitliche Bewegung im Netz. An Bandbreite und Endgeräteschutz ändert sie nichts.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "An attacker does not immediately reach all systems",
             "Traffic between segments can be controlled",
-            "Particularly sensitive systems can be isolated",
-            "The spread of malware is slowed down",
             "The bandwidth per segment doubles",
             "Endpoint antivirus becomes dispensable"
           ],
           "answer": [
             "An attacker does not immediately reach all systems",
-            "Traffic between segments can be controlled",
-            "Particularly sensitive systems can be isolated",
-            "The spread of malware is slowed down"
+            "Traffic between segments can be controlled"
           ],
           "explanation": "Segmentation creates control points and limits lateral movement. It changes nothing about bandwidth or endpoint protection.",
           "category": "IT Security & Network Security"
@@ -1451,15 +1403,13 @@
         "Zulässige Ausfallzeit je System",
         "Zulässiger Datenverlust je System",
         "Benannte Verantwortliche und Meldewege",
-        "Beschriebene Wiederanlaufreihenfolge",
         "Die Anschaffungspreise der Hardware",
         "Die Urlaubswünsche der Fachabteilungen"
       ],
       "answer": [
         "Zulässige Ausfallzeit je System",
         "Zulässiger Datenverlust je System",
-        "Benannte Verantwortliche und Meldewege",
-        "Beschriebene Wiederanlaufreihenfolge"
+        "Benannte Verantwortliche und Meldewege"
       ],
       "explanation": "RTO, RPO, Zuständigkeiten und Wiederanlaufreihenfolge machen den Ernstfall beherrschbar. Kaufmännisches und Organisatorisches gehört in andere Unterlagen.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Permissible downtime per system",
             "Permissible data loss per system",
             "Named responsibilities and reporting paths",
-            "A described restart sequence",
             "The purchase prices of the hardware",
             "The holiday preferences of the departments"
           ],
           "answer": [
             "Permissible downtime per system",
             "Permissible data loss per system",
-            "Named responsibilities and reporting paths",
-            "A described restart sequence"
+            "Named responsibilities and reporting paths"
           ],
           "explanation": "RTO, RPO, responsibilities and restart order make an emergency manageable. Commercial and organisational matters belong in other documents.",
           "category": "IT Security & Network Security"
@@ -1492,16 +1440,12 @@
       "options": [
         "Passwörter werden nur als Hashwert gespeichert",
         "Ein Salt je Konto verhindert vorberechnete Tabellen",
-        "Langsame Hashverfahren erschweren das Durchprobieren",
-        "Klartextspeicherung ist ein schwerer Mangel",
         "Eine Verschlüsselung ist gleichwertig zum Hashen",
         "Der Salt muss geheim gehalten werden"
       ],
       "answer": [
         "Passwörter werden nur als Hashwert gespeichert",
-        "Ein Salt je Konto verhindert vorberechnete Tabellen",
-        "Langsame Hashverfahren erschweren das Durchprobieren",
-        "Klartextspeicherung ist ein schwerer Mangel"
+        "Ein Salt je Konto verhindert vorberechnete Tabellen"
       ],
       "explanation": "Hash plus Salt plus bewusst langsames Verfahren ist der Stand der Technik. Verschlüsselung wäre umkehrbar, und der Salt darf offen neben dem Hash stehen.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "Passwords are stored only as a hash value",
             "A salt per account defeats precomputed tables",
-            "Slow hash functions hinder brute forcing",
-            "Storing plain text is a severe deficiency",
             "Encryption is equivalent to hashing",
             "The salt has to be kept secret"
           ],
           "answer": [
             "Passwords are stored only as a hash value",
-            "A salt per account defeats precomputed tables",
-            "Slow hash functions hinder brute forcing",
-            "Storing plain text is a severe deficiency"
+            "A salt per account defeats precomputed tables"
           ],
           "explanation": "Hash plus salt plus a deliberately slow function is the state of the art. Encryption would be reversible, and the salt may sit openly next to the hash.",
           "category": "IT Security & Network Security"
@@ -1577,15 +1517,13 @@
         "Sie ist verständlich formuliert",
         "Sie benennt Verantwortlichkeiten",
         "Sie wird regelmäßig überprüft",
-        "Sie wird von der Leitung getragen",
         "Sie ist bewusst möglichst unbestimmt gehalten",
         "Sie gilt ausdrücklich nicht für Führungskräfte"
       ],
       "answer": [
         "Sie ist verständlich formuliert",
         "Sie benennt Verantwortlichkeiten",
-        "Sie wird regelmäßig überprüft",
-        "Sie wird von der Leitung getragen"
+        "Sie wird regelmäßig überprüft"
       ],
       "explanation": "Verständlichkeit, klare Zuständigkeiten, regelmäßige Pflege und Rückhalt der Leitung entscheiden über die Wirkung. Ausnahmen für einzelne Gruppen untergraben die Glaubwürdigkeit.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "It is formulated understandably",
             "It names responsibilities",
             "It is reviewed regularly",
-            "It is backed by management",
             "It is deliberately kept as vague as possible",
             "It explicitly does not apply to managers"
           ],
           "answer": [
             "It is formulated understandably",
             "It names responsibilities",
-            "It is reviewed regularly",
-            "It is backed by management"
+            "It is reviewed regularly"
           ],
           "explanation": "Clarity, clear ownership, regular maintenance and management backing decide its effect. Exceptions for individual groups undermine credibility.",
           "category": "IT Security & Network Security"
@@ -1618,16 +1554,12 @@
       "options": [
         "SQL-Injection über Eingabefelder",
         "Cross-Site-Scripting im Browser des Opfers",
-        "Cross-Site-Request-Forgery über fremde Seiten",
-        "Ausnutzen unsicherer Sitzungsverwaltung",
         "ARP-Spoofing im lokalen Segment",
         "Physischer Diebstahl eines Notebooks"
       ],
       "answer": [
         "SQL-Injection über Eingabefelder",
-        "Cross-Site-Scripting im Browser des Opfers",
-        "Cross-Site-Request-Forgery über fremde Seiten",
-        "Ausnutzen unsicherer Sitzungsverwaltung"
+        "Cross-Site-Scripting im Browser des Opfers"
       ],
       "explanation": "Injection, XSS, CSRF und Sitzungsprobleme sind die Klassiker auf Anwendungsebene. ARP-Spoofing ist ein Netzangriff und Diebstahl ein physisches Risiko.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "SQL injection via input fields",
             "Cross-site scripting in the victim's browser",
-            "Cross-site request forgery via foreign pages",
-            "Exploiting insecure session management",
             "ARP spoofing in the local segment",
             "Physical theft of a laptop"
           ],
           "answer": [
             "SQL injection via input fields",
-            "Cross-site scripting in the victim's browser",
-            "Cross-site request forgery via foreign pages",
-            "Exploiting insecure session management"
+            "Cross-site scripting in the victim's browser"
           ],
           "explanation": "Injection, XSS, CSRF and session problems are the classics at application level. ARP spoofing is a network attack and theft a physical risk.",
           "category": "IT Security & Network Security"
@@ -1703,15 +1631,13 @@
         "Zentrale Ablage schützt vor nachträglicher Änderung",
         "Zeitsynchronisation ist für die Auswertung entscheidend",
         "Aufbewahrungsfristen müssen festgelegt sein",
-        "Zugriff auf Protokolle wird eingeschränkt",
         "Protokolle dürfen personenbezogene Daten unbegrenzt speichern",
         "Uhrzeiten der Systeme dürfen beliebig abweichen"
       ],
       "answer": [
         "Zentrale Ablage schützt vor nachträglicher Änderung",
         "Zeitsynchronisation ist für die Auswertung entscheidend",
-        "Aufbewahrungsfristen müssen festgelegt sein",
-        "Zugriff auf Protokolle wird eingeschränkt"
+        "Aufbewahrungsfristen müssen festgelegt sein"
       ],
       "explanation": "Ohne synchrone Uhren lässt sich kein Ablauf über mehrere Systeme rekonstruieren. Fristen und Zugriffsbeschränkung wahren zugleich den Datenschutz.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Central storage protects against later modification",
             "Time synchronisation is decisive for analysis",
             "Retention periods have to be defined",
-            "Access to logs is restricted",
             "Logs may store personal data indefinitely",
             "System clocks may deviate arbitrarily"
           ],
           "answer": [
             "Central storage protects against later modification",
             "Time synchronisation is decisive for analysis",
-            "Retention periods have to be defined",
-            "Access to logs is restricted"
+            "Retention periods have to be defined"
           ],
           "explanation": "Without synchronised clocks no sequence across several systems can be reconstructed. Retention periods and restricted access simultaneously preserve data protection.",
           "category": "IT Security & Network Security"
@@ -1744,16 +1668,12 @@
       "options": [
         "Es gibt ein Schlüsselpaar aus öffentlich und privat",
         "Verschlüsselt wird mit dem öffentlichen Schlüssel",
-        "Signiert wird mit dem privaten Schlüssel",
-        "Sie löst das Problem des Schlüsselaustauschs",
         "Sie ist schneller als symmetrische Verfahren",
         "Beide Schlüssel dürfen veröffentlicht werden"
       ],
       "answer": [
         "Es gibt ein Schlüsselpaar aus öffentlich und privat",
-        "Verschlüsselt wird mit dem öffentlichen Schlüssel",
-        "Signiert wird mit dem privaten Schlüssel",
-        "Sie löst das Problem des Schlüsselaustauschs"
+        "Verschlüsselt wird mit dem öffentlichen Schlüssel"
       ],
       "explanation": "Das Schlüsselpaar trennt Verschlüsseln und Entschlüsseln und macht den sicheren Austausch überhaupt erst praktikabel. Der Preis ist deutlich geringere Geschwindigkeit.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "There is a key pair of public and private",
             "Encryption uses the public key",
-            "Signing uses the private key",
-            "It solves the key exchange problem",
             "It is faster than symmetric methods",
             "Both keys may be published"
           ],
           "answer": [
             "There is a key pair of public and private",
-            "Encryption uses the public key",
-            "Signing uses the private key",
-            "It solves the key exchange problem"
+            "Encryption uses the public key"
           ],
           "explanation": "The key pair separates encryption from decryption and makes secure exchange practical in the first place. The price is considerably lower speed.",
           "category": "IT Security & Network Security"
@@ -1829,15 +1745,13 @@
         "Sicherheitsupdates werden priorisiert eingespielt",
         "Ein Testlauf vor dem Ausrollen mindert Risiken",
         "Der Patchstand wird nachvollziehbar dokumentiert",
-        "Ein Rückweg für fehlgeschlagene Updates ist eingeplant",
         "Updates werden erst nach einem Vorfall eingespielt",
         "Testsysteme brauchen grundsätzlich keine Patches"
       ],
       "answer": [
         "Sicherheitsupdates werden priorisiert eingespielt",
         "Ein Testlauf vor dem Ausrollen mindert Risiken",
-        "Der Patchstand wird nachvollziehbar dokumentiert",
-        "Ein Rückweg für fehlgeschlagene Updates ist eingeplant"
+        "Der Patchstand wird nachvollziehbar dokumentiert"
       ],
       "explanation": "Priorisierung, Test, Dokumentation und Rückweg machen Patchen beherrschbar. Zu warten überlässt Angreifern das Zeitfenster, und Testsysteme hängen oft am selben Netz.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Security updates are applied with priority",
             "A test run before rollout reduces risk",
             "The patch level is documented traceably",
-            "A rollback path for failed updates is planned",
             "Updates are applied only after an incident",
             "Test systems fundamentally need no patches"
           ],
           "answer": [
             "Security updates are applied with priority",
             "A test run before rollout reduces risk",
-            "The patch level is documented traceably",
-            "A rollback path for failed updates is planned"
+            "The patch level is documented traceably"
           ],
           "explanation": "Prioritisation, testing, documentation and a rollback path make patching manageable. Waiting hands attackers the window, and test systems often sit on the same network.",
           "category": "IT Security & Network Security"
@@ -1870,16 +1782,12 @@
       "options": [
         "Sie trennt Zonen unterschiedlichen Schutzbedarfs",
         "Sie arbeitet nach dem Prinzip Default Deny",
-        "Sie protokolliert verworfene Verbindungen",
-        "Ihr Regelwerk wird regelmäßig überprüft",
         "Sie erkennt und entfernt Schadsoftware von Clients",
         "Sie macht Endgerätesicherheit überflüssig"
       ],
       "answer": [
         "Sie trennt Zonen unterschiedlichen Schutzbedarfs",
-        "Sie arbeitet nach dem Prinzip Default Deny",
-        "Sie protokolliert verworfene Verbindungen",
-        "Ihr Regelwerk wird regelmäßig überprüft"
+        "Sie arbeitet nach dem Prinzip Default Deny"
       ],
       "explanation": "Zonentrennung, Default Deny, Protokollierung und Regelpflege sind die Kernaufgaben. Schadcode auf Endgeräten bekämpft man dort, nicht an der Netzgrenze.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "It separates zones with different protection needs",
             "It works on the default deny principle",
-            "It logs discarded connections",
-            "Its rule set is reviewed regularly",
             "It detects and removes malware from clients",
             "It makes endpoint security unnecessary"
           ],
           "answer": [
             "It separates zones with different protection needs",
-            "It works on the default deny principle",
-            "It logs discarded connections",
-            "Its rule set is reviewed regularly"
+            "It works on the default deny principle"
           ],
           "explanation": "Zone separation, default deny, logging and rule maintenance are the core tasks. Malicious code on endpoints is fought there, not at the network boundary.",
           "category": "IT Security & Network Security"
@@ -1955,15 +1859,13 @@
         "Den öffentlichen Schlüssel des Inhabers",
         "Den Namen des Inhabers",
         "Den Aussteller des Zertifikats",
-        "Den Gültigkeitszeitraum",
         "Den privaten Schlüssel des Inhabers",
         "Das Anmeldepasswort des Inhabers"
       ],
       "answer": [
         "Den öffentlichen Schlüssel des Inhabers",
         "Den Namen des Inhabers",
-        "Den Aussteller des Zertifikats",
-        "Den Gültigkeitszeitraum"
+        "Den Aussteller des Zertifikats"
       ],
       "explanation": "Ein Zertifikat verknüpft öffentlichen Schlüssel, Identität, Aussteller und Laufzeit in einem signierten Dokument. Geheimnisse stehen niemals darin.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "The public key of the holder",
             "The name of the holder",
             "The issuer of the certificate",
-            "The period of validity",
             "The private key of the holder",
             "The login password of the holder"
           ],
           "answer": [
             "The public key of the holder",
             "The name of the holder",
-            "The issuer of the certificate",
-            "The period of validity"
+            "The issuer of the certificate"
           ],
           "explanation": "A certificate links public key, identity, issuer and validity period in one signed document. Secrets never appear in it.",
           "category": "IT Security & Network Security"
@@ -1996,16 +1896,12 @@
       "options": [
         "Sie ermitteln offene Dienste eines Systems",
         "Sie gehen einem gezielten Angriff oft voraus",
-        "Sie sind in Protokollen erkennbar",
-        "Ohne Beauftragung sind sie rechtlich problematisch",
         "Sie verschlüsseln den Verkehr zum Zielsystem",
         "Sie beheben gefundene Schwachstellen automatisch"
       ],
       "answer": [
         "Sie ermitteln offene Dienste eines Systems",
-        "Sie gehen einem gezielten Angriff oft voraus",
-        "Sie sind in Protokollen erkennbar",
-        "Ohne Beauftragung sind sie rechtlich problematisch"
+        "Sie gehen einem gezielten Angriff oft voraus"
       ],
       "explanation": "Ein Scan ist Aufklärung: er zeigt Angriffsfläche, hinterlässt Spuren und braucht eine Beauftragung. Beheben muss man die Funde anschließend selbst.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "They determine a system's open services",
             "They often precede a targeted attack",
-            "They are visible in logs",
-            "Without authorisation they are legally problematic",
             "They encrypt the traffic to the target system",
             "They automatically fix the vulnerabilities found"
           ],
           "answer": [
             "They determine a system's open services",
-            "They often precede a targeted attack",
-            "They are visible in logs",
-            "Without authorisation they are legally problematic"
+            "They often precede a targeted attack"
           ],
           "explanation": "A scan is reconnaissance: it reveals attack surface, leaves traces and needs authorisation. Fixing the findings afterwards is your own job.",
           "category": "IT Security & Network Security"
@@ -2081,15 +1973,13 @@
         "Geräte werden vor dem Netzzugang geprüft",
         "Nicht konforme Geräte landen in einem Quarantänenetz",
         "802.1X ist ein verbreitetes Verfahren dafür",
-        "Ein RADIUS-Server übernimmt die Entscheidung",
         "Jedes Gerät erhält ungeprüft vollen Zugang",
         "Die Prüfung ersetzt jede weitere Absicherung"
       ],
       "answer": [
         "Geräte werden vor dem Netzzugang geprüft",
         "Nicht konforme Geräte landen in einem Quarantänenetz",
-        "802.1X ist ein verbreitetes Verfahren dafür",
-        "Ein RADIUS-Server übernimmt die Entscheidung"
+        "802.1X ist ein verbreitetes Verfahren dafür"
       ],
       "explanation": "NAC prüft vor dem Zugang und schiebt auffällige Geräte in ein eingeschränktes Netz. Es ist eine Schicht von mehreren und ersetzt weder Patches noch Segmentierung.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Devices are checked before network access",
             "Non-compliant devices land in a quarantine network",
             "802.1X is a widespread method for this",
-            "A RADIUS server makes the decision",
             "Every device gets full access unchecked",
             "The check replaces any further protection"
           ],
           "answer": [
             "Devices are checked before network access",
             "Non-compliant devices land in a quarantine network",
-            "802.1X is a widespread method for this",
-            "A RADIUS server makes the decision"
+            "802.1X is a widespread method for this"
           ],
           "explanation": "NAC checks before granting access and moves suspicious devices into a restricted network. It is one layer among several and replaces neither patches nor segmentation.",
           "category": "IT Security & Network Security"
@@ -2122,16 +2010,12 @@
       "options": [
         "Angreifer geben sich als Kollegen oder Dienstleister aus",
         "Zeitdruck soll die Prüfung der Identität verhindern",
-        "Rückruf über bekannte Nummern deckt die Täuschung auf",
-        "Festgelegte Freigabeprozesse schützen wirksam",
         "Technische Schutzmaßnahmen allein verhindern sie",
         "Erfahrene Fachkräfte sind grundsätzlich immun"
       ],
       "answer": [
         "Angreifer geben sich als Kollegen oder Dienstleister aus",
-        "Zeitdruck soll die Prüfung der Identität verhindern",
-        "Rückruf über bekannte Nummern deckt die Täuschung auf",
-        "Festgelegte Freigabeprozesse schützen wirksam"
+        "Zeitdruck soll die Prüfung der Identität verhindern"
       ],
       "explanation": "Der Angriff zielt auf den Menschen, deshalb wirken vor allem Prozesse und Rückfragen. Weder Technik noch Erfahrung bieten dagegen vollständigen Schutz.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "Attackers pose as colleagues or service providers",
             "Time pressure is meant to prevent identity checks",
-            "Calling back on known numbers exposes the deception",
-            "Defined approval processes protect effectively",
             "Technical measures alone prevent them",
             "Experienced professionals are fundamentally immune"
           ],
           "answer": [
             "Attackers pose as colleagues or service providers",
-            "Time pressure is meant to prevent identity checks",
-            "Calling back on known numbers exposes the deception",
-            "Defined approval processes protect effectively"
+            "Time pressure is meant to prevent identity checks"
           ],
           "explanation": "The attack targets people, so processes and verification calls are what help. Neither technology nor experience provides complete protection.",
           "category": "IT Security & Network Security"
@@ -2207,15 +2087,13 @@
         "Die maximal tolerierbare Ausfallzeit",
         "Der maximal tolerierbare Datenverlust",
         "Eine Priorisierung der Geschäftsprozesse",
-        "Regelmäßige Übungen des Wiederanlaufs",
         "Die durchschnittliche Tippgeschwindigkeit der Nutzer",
         "Die Anzahl der Bildschirme je Arbeitsplatz"
       ],
       "answer": [
         "Die maximal tolerierbare Ausfallzeit",
         "Der maximal tolerierbare Datenverlust",
-        "Eine Priorisierung der Geschäftsprozesse",
-        "Regelmäßige Übungen des Wiederanlaufs"
+        "Eine Priorisierung der Geschäftsprozesse"
       ],
       "explanation": "RTO, RPO, Prozesspriorisierung und Übungen bilden das Gerüst. Ohne geprobten Wiederanlauf bleibt jedes Notfallhandbuch Theorie.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "The maximum tolerable downtime",
             "The maximum tolerable data loss",
             "A prioritisation of the business processes",
-            "Regular rehearsals of the restart",
             "The average typing speed of the users",
             "The number of screens per workstation"
           ],
           "answer": [
             "The maximum tolerable downtime",
             "The maximum tolerable data loss",
-            "A prioritisation of the business processes",
-            "Regular rehearsals of the restart"
+            "A prioritisation of the business processes"
           ],
           "explanation": "RTO, RPO, process prioritisation and rehearsals form the framework. Without a rehearsed restart every emergency manual stays theory.",
           "category": "IT Security & Network Security"

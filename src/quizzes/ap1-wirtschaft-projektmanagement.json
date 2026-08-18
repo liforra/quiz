@@ -947,15 +947,13 @@
         "Zeit",
         "Kosten",
         "Leistung beziehungsweise Qualität",
-        "Ihre gegenseitige Abhängigkeit",
         "Die Anzahl der Besprechungen",
         "Die Größe des Besprechungsraums"
       ],
       "answer": [
         "Zeit",
         "Kosten",
-        "Leistung beziehungsweise Qualität",
-        "Ihre gegenseitige Abhängigkeit"
+        "Leistung beziehungsweise Qualität"
       ],
       "explanation": "Zeit, Kosten und Leistung stehen in Wechselwirkung: keine Ecke lässt sich ändern, ohne die anderen zu berühren. Genau diese Abhängigkeit macht das Dreieck aus.",
       "translations": {
@@ -965,15 +963,13 @@
             "Time",
             "Cost",
             "Scope or quality",
-            "Their mutual dependency",
             "The number of meetings",
             "The size of the meeting room"
           ],
           "answer": [
             "Time",
             "Cost",
-            "Scope or quality",
-            "Their mutual dependency"
+            "Scope or quality"
           ],
           "explanation": "Time, cost and scope interact: no corner can be changed without touching the others. This dependency is exactly what the triangle expresses.",
           "category": "Business & Project Management"
@@ -988,16 +984,12 @@
       "options": [
         "Nacherfüllung verlangen",
         "Vom Vertrag zurücktreten",
-        "Den Kaufpreis mindern",
-        "Schadenersatz fordern",
         "Die Ware behalten und gar nichts zahlen",
         "Den Verkäufer zur Namensänderung zwingen"
       ],
       "answer": [
         "Nacherfüllung verlangen",
-        "Vom Vertrag zurücktreten",
-        "Den Kaufpreis mindern",
-        "Schadenersatz fordern"
+        "Vom Vertrag zurücktreten"
       ],
       "explanation": "Das Gesetz sieht eine Stufenfolge vor: zuerst Nacherfüllung, danach Rücktritt, Minderung oder Schadenersatz. Ware behalten ohne Zahlung ist keine dieser Möglichkeiten.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "Demand subsequent performance",
             "Withdraw from the contract",
-            "Reduce the purchase price",
-            "Claim damages",
             "Keep the goods and pay nothing at all",
             "Force the seller to change its name"
           ],
           "answer": [
             "Demand subsequent performance",
-            "Withdraw from the contract",
-            "Reduce the purchase price",
-            "Claim damages"
+            "Withdraw from the contract"
           ],
           "explanation": "The law provides a sequence: subsequent performance first, then withdrawal, price reduction or damages. Keeping the goods without paying is none of these options.",
           "category": "Business & Project Management"
@@ -1073,15 +1061,13 @@
         "Material für die gefertigten Stücke",
         "Fertigungslöhne nach Stückzahl",
         "Energie für laufende Maschinen",
-        "Verpackung je ausgeliefertem Stück",
         "Miete für die Betriebshalle",
         "Versicherungsprämie des Gebäudes"
       ],
       "answer": [
         "Material für die gefertigten Stücke",
         "Fertigungslöhne nach Stückzahl",
-        "Energie für laufende Maschinen",
-        "Verpackung je ausgeliefertem Stück"
+        "Energie für laufende Maschinen"
       ],
       "explanation": "Variable Kosten steigen mit der Ausbringungsmenge, fixe laufen mengenunabhängig weiter. Miete und Versicherung fallen auch bei Stillstand an.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "Material for the units produced",
             "Piece-rate production wages",
             "Energy for running machines",
-            "Packaging per unit shipped",
             "Rent for the production hall",
             "Insurance premium for the building"
           ],
           "answer": [
             "Material for the units produced",
             "Piece-rate production wages",
-            "Energy for running machines",
-            "Packaging per unit shipped"
+            "Energy for running machines"
           ],
           "explanation": "Variable costs rise with output while fixed costs continue regardless of quantity. Rent and insurance apply even during a standstill.",
           "category": "Business & Project Management"
@@ -1114,16 +1098,12 @@
       "options": [
         "Rabatt vom Listeneinkaufspreis abziehen",
         "Skonto vom Zieleinkaufspreis abziehen",
-        "Bezugskosten hinzurechnen",
-        "Den Bezugspreis als Ergebnis ermitteln",
         "Den erwarteten Gewinn aufschlagen",
         "Die Mehrwertsteuer des Kunden abziehen"
       ],
       "answer": [
         "Rabatt vom Listeneinkaufspreis abziehen",
-        "Skonto vom Zieleinkaufspreis abziehen",
-        "Bezugskosten hinzurechnen",
-        "Den Bezugspreis als Ergebnis ermitteln"
+        "Skonto vom Zieleinkaufspreis abziehen"
       ],
       "explanation": "Die Bezugskalkulation führt vom Listenpreis über Rabatt, Skonto und Bezugskosten zum Bezugspreis. Gewinnaufschlag und Kundensteuer gehören in die Verkaufskalkulation.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Deduct the trade discount from the list price",
             "Deduct cash discount from the target price",
-            "Add the inbound freight and handling costs",
-            "Determine the purchase price as the result",
             "Add the expected profit margin",
             "Deduct the customer's value added tax"
           ],
           "answer": [
             "Deduct the trade discount from the list price",
-            "Deduct cash discount from the target price",
-            "Add the inbound freight and handling costs",
-            "Determine the purchase price as the result"
+            "Deduct cash discount from the target price"
           ],
           "explanation": "The purchase calculation runs from list price through trade discount, cash discount and inbound costs to the purchase price. Profit margin and customer tax belong in the sales calculation.",
           "category": "Business & Project Management"
@@ -1199,15 +1175,13 @@
         "Es ist zeitlich befristet",
         "Es verfolgt ein einmaliges Ziel",
         "Es hat begrenzte Ressourcen",
-        "Es ist abteilungsübergreifend organisiert",
         "Es wiederholt sich in gleicher Form täglich",
         "Es kommt ohne jede Planung aus"
       ],
       "answer": [
         "Es ist zeitlich befristet",
         "Es verfolgt ein einmaliges Ziel",
-        "Es hat begrenzte Ressourcen",
-        "Es ist abteilungsübergreifend organisiert"
+        "Es hat begrenzte Ressourcen"
       ],
       "explanation": "Befristung, Einmaligkeit, begrenzte Mittel und interdisziplinäre Zusammensetzung unterscheiden Projekte von Routinearbeit. Wiederholende Tätigkeit ist gerade kein Projekt.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "It is limited in time",
             "It pursues a unique goal",
             "It has limited resources",
-            "It is organised across departments",
             "It repeats in identical form every day",
             "It manages without any planning"
           ],
           "answer": [
             "It is limited in time",
             "It pursues a unique goal",
-            "It has limited resources",
-            "It is organised across departments"
+            "It has limited resources"
           ],
           "explanation": "Time limitation, uniqueness, limited means and interdisciplinary composition distinguish projects from routine work. Repetitive activity is precisely not a project.",
           "category": "Business & Project Management"
@@ -1240,16 +1212,12 @@
       "options": [
         "Preis der angebotenen Leistung",
         "Zugesagte Lieferzeit",
-        "Umfang und Qualität des Services",
-        "Erfahrungen aus früheren Aufträgen",
         "Die Schriftart im Angebotsschreiben",
         "Der Vorname des Vertriebsmitarbeiters"
       ],
       "answer": [
         "Preis der angebotenen Leistung",
-        "Zugesagte Lieferzeit",
-        "Umfang und Qualität des Services",
-        "Erfahrungen aus früheren Aufträgen"
+        "Zugesagte Lieferzeit"
       ],
       "explanation": "Bewertet werden gewichtete Sachkriterien wie Preis, Termin, Service und Zuverlässigkeit. Rein formale oder persönliche Merkmale haben in einer objektiven Bewertung nichts zu suchen.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "Price of the offered service",
             "Promised delivery time",
-            "Scope and quality of the service",
-            "Experience from previous orders",
             "The font used in the offer letter",
             "The first name of the sales representative"
           ],
           "answer": [
             "Price of the offered service",
-            "Promised delivery time",
-            "Scope and quality of the service",
-            "Experience from previous orders"
+            "Promised delivery time"
           ],
           "explanation": "Weighted factual criteria such as price, deadline, service and reliability are assessed. Purely formal or personal features have no place in an objective evaluation.",
           "category": "Business & Project Management"
@@ -1325,15 +1289,13 @@
         "Sie ist eine juristische Person",
         "Die Haftung ist auf das Gesellschaftsvermögen beschränkt",
         "Sie braucht ein Mindeststammkapital",
-        "Sie wird ins Handelsregister eingetragen",
         "Die Gesellschafter haften stets privat mit",
         "Sie darf keine Mitarbeiter beschäftigen"
       ],
       "answer": [
         "Sie ist eine juristische Person",
         "Die Haftung ist auf das Gesellschaftsvermögen beschränkt",
-        "Sie braucht ein Mindeststammkapital",
-        "Sie wird ins Handelsregister eingetragen"
+        "Sie braucht ein Mindeststammkapital"
       ],
       "explanation": "Die GmbH ist eine eigene Rechtspersönlichkeit mit beschränkter Haftung, Mindeststammkapital und Registereintrag. Private Haftung greift nur in Ausnahmefällen.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "It is a legal person",
             "Liability is limited to the company's assets",
             "It requires a minimum share capital",
-            "It is entered in the commercial register",
             "The shareholders are always personally liable",
             "It may not employ any staff"
           ],
           "answer": [
             "It is a legal person",
             "Liability is limited to the company's assets",
-            "It requires a minimum share capital",
-            "It is entered in the commercial register"
+            "It requires a minimum share capital"
           ],
           "explanation": "The company is a legal entity of its own with limited liability, minimum capital and register entry. Personal liability applies only in exceptional cases.",
           "category": "Business & Project Management"
@@ -1366,16 +1326,12 @@
       "options": [
         "Die Reihenfolge der Vorgänge",
         "Frühest- und spätestmögliche Zeitpunkte",
-        "Die Pufferzeiten der Vorgänge",
-        "Den kritischen Pfad des Projekts",
         "Die Zufriedenheit der Mitarbeiter",
         "Die Höhe der Umsatzsteuer"
       ],
       "answer": [
         "Die Reihenfolge der Vorgänge",
-        "Frühest- und spätestmögliche Zeitpunkte",
-        "Die Pufferzeiten der Vorgänge",
-        "Den kritischen Pfad des Projekts"
+        "Frühest- und spätestmögliche Zeitpunkte"
       ],
       "explanation": "Der Netzplan macht Abhängigkeiten und Zeitreserven sichtbar und zeigt, welche Kette den Endtermin bestimmt. Weiche Faktoren und Steuern gehören nicht dazu.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "The sequence of the activities",
             "Earliest and latest possible dates",
-            "The float times of the activities",
-            "The critical path of the project",
             "The satisfaction of the employees",
             "The rate of value added tax"
           ],
           "answer": [
             "The sequence of the activities",
-            "Earliest and latest possible dates",
-            "The float times of the activities",
-            "The critical path of the project"
+            "Earliest and latest possible dates"
           ],
           "explanation": "The network plan makes dependencies and time reserves visible and shows which chain determines the end date. Soft factors and taxes are not part of it.",
           "category": "Business & Project Management"
@@ -1451,15 +1403,13 @@
         "Fachwissen bleibt in den Fachabteilungen gebündelt",
         "Projekte erhalten dennoch eigene Steuerung",
         "Ressourcen lassen sich flexibel zuordnen",
-        "Der Austausch zwischen Bereichen nimmt zu",
         "Weisungskonflikte sind vollständig ausgeschlossen",
         "Die Entscheidungswege werden immer kürzer"
       ],
       "answer": [
         "Fachwissen bleibt in den Fachabteilungen gebündelt",
         "Projekte erhalten dennoch eigene Steuerung",
-        "Ressourcen lassen sich flexibel zuordnen",
-        "Der Austausch zwischen Bereichen nimmt zu"
+        "Ressourcen lassen sich flexibel zuordnen"
       ],
       "explanation": "Die Matrix verbindet Fachtiefe mit Projektsteuerung und fördert den Austausch. Der Preis dafür sind genau die Weisungskonflikte durch doppelte Unterstellung.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Expertise stays concentrated in the specialist departments",
             "Projects still receive their own steering",
             "Resources can be assigned flexibly",
-            "Exchange between areas increases",
             "Conflicting instructions are completely ruled out",
             "Decision paths always become shorter"
           ],
           "answer": [
             "Expertise stays concentrated in the specialist departments",
             "Projects still receive their own steering",
-            "Resources can be assigned flexibly",
-            "Exchange between areas increases"
+            "Resources can be assigned flexibly"
           ],
           "explanation": "The matrix combines depth of expertise with project steering and encourages exchange. The price is precisely the conflicting instructions from dual reporting.",
           "category": "Business & Project Management"
@@ -1492,16 +1440,12 @@
       "options": [
         "Anschaffungskosten",
         "Laufende Betriebskosten",
-        "Erwartete Einsparungen oder Erträge",
-        "Nutzungsdauer der Investition",
         "Die Anzahl der Parkplätze am Standort",
         "Das Alter des Geschäftsführers"
       ],
       "answer": [
         "Anschaffungskosten",
-        "Laufende Betriebskosten",
-        "Erwartete Einsparungen oder Erträge",
-        "Nutzungsdauer der Investition"
+        "Laufende Betriebskosten"
       ],
       "explanation": "Erst Anschaffung, Betrieb, Rückfluss und Nutzungsdauer zusammen ergeben ein belastbares Bild. Der reine Kaufpreis führt bei Folgekosten leicht in die Irre.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "Acquisition costs",
             "Ongoing operating costs",
-            "Expected savings or returns",
-            "Useful life of the investment",
             "The number of parking spaces on site",
             "The age of the managing director"
           ],
           "answer": [
             "Acquisition costs",
-            "Ongoing operating costs",
-            "Expected savings or returns",
-            "Useful life of the investment"
+            "Ongoing operating costs"
           ],
           "explanation": "Only acquisition, operation, return and useful life together give a sound picture. The purchase price alone easily misleads when follow-on costs exist.",
           "category": "Business & Project Management"
@@ -1577,15 +1517,13 @@
         "Er zerlegt das Projekt in Teilaufgaben",
         "Er führt bis auf Arbeitspakete herunter",
         "Er schafft die Basis für Aufwandsschätzung",
-        "Er macht Verantwortlichkeiten zuordenbar",
         "Er berechnet automatisch den kritischen Pfad",
         "Er ersetzt den Projektauftrag vollständig"
       ],
       "answer": [
         "Er zerlegt das Projekt in Teilaufgaben",
         "Er führt bis auf Arbeitspakete herunter",
-        "Er schafft die Basis für Aufwandsschätzung",
-        "Er macht Verantwortlichkeiten zuordenbar"
+        "Er schafft die Basis für Aufwandsschätzung"
       ],
       "explanation": "Der Strukturplan gliedert und macht schätzbar und zuordenbar. Zeitliche Abhängigkeiten und der kritische Pfad entstehen erst im Netzplan.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "It divides the project into subtasks",
             "It breaks down to work packages",
             "It creates the basis for effort estimation",
-            "It makes responsibilities assignable",
             "It automatically calculates the critical path",
             "It fully replaces the project charter"
           ],
           "answer": [
             "It divides the project into subtasks",
             "It breaks down to work packages",
-            "It creates the basis for effort estimation",
-            "It makes responsibilities assignable"
+            "It creates the basis for effort estimation"
           ],
           "explanation": "The breakdown structure divides and makes work estimable and assignable. Temporal dependencies and the critical path only emerge in the network plan.",
           "category": "Business & Project Management"
@@ -1618,16 +1554,12 @@
       "options": [
         "Umfang der Haftung",
         "Höhe des benötigten Kapitals",
-        "Gewünschte Mitspracherechte",
-        "Steuerliche Auswirkungen",
         "Die Anzahl der Bürostühle",
         "Die Marke des Firmenwagens"
       ],
       "answer": [
         "Umfang der Haftung",
-        "Höhe des benötigten Kapitals",
-        "Gewünschte Mitspracherechte",
-        "Steuerliche Auswirkungen"
+        "Höhe des benötigten Kapitals"
       ],
       "explanation": "Haftung, Kapitalbedarf, Mitsprache und Steuern sind die klassischen Entscheidungskriterien, ergänzt um Aufwand für Gründung und Publizität. Ausstattungsfragen spielen keine Rolle.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "Extent of liability",
             "Amount of capital required",
-            "Desired participation rights",
-            "Tax implications",
             "The number of office chairs",
             "The brand of the company car"
           ],
           "answer": [
             "Extent of liability",
-            "Amount of capital required",
-            "Desired participation rights",
-            "Tax implications"
+            "Amount of capital required"
           ],
           "explanation": "Liability, capital needs, participation and taxes are the classic decision criteria, plus formation effort and disclosure duties. Equipment questions play no role.",
           "category": "Business & Project Management"
@@ -1703,15 +1631,13 @@
         "Erfahrungswerte aus vergleichbaren Projekten",
         "Einschätzung der Personen, die die Arbeit tun",
         "Reserve für unvorhergesehene Probleme",
-        "Abhängigkeiten von Zulieferungen Dritter",
         "Den Wunschtermin des Auftraggebers als Vorgabe",
         "Die aktuelle Wettervorhersage der Region"
       ],
       "answer": [
         "Erfahrungswerte aus vergleichbaren Projekten",
         "Einschätzung der Personen, die die Arbeit tun",
-        "Reserve für unvorhergesehene Probleme",
-        "Abhängigkeiten von Zulieferungen Dritter"
+        "Reserve für unvorhergesehene Probleme"
       ],
       "explanation": "Gute Schätzungen stützen sich auf Erfahrung, die Sicht der Ausführenden, Puffer und externe Abhängigkeiten. Vom Wunschtermin rückwärts zu rechnen erzeugt keine Schätzung, sondern eine Hoffnung.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Experience from comparable projects",
             "Assessment by the people doing the work",
             "Reserve for unforeseen problems",
-            "Dependencies on third-party deliveries",
             "The client's desired date as a given",
             "The current weather forecast for the region"
           ],
           "answer": [
             "Experience from comparable projects",
             "Assessment by the people doing the work",
-            "Reserve for unforeseen problems",
-            "Dependencies on third-party deliveries"
+            "Reserve for unforeseen problems"
           ],
           "explanation": "Good estimates rest on experience, the view of those doing the work, buffers and external dependencies. Working backwards from a desired date produces a hope, not an estimate.",
           "category": "Business & Project Management"
@@ -1744,16 +1668,12 @@
       "options": [
         "Er besteht aus Vorgängen ohne Puffer",
         "Er bestimmt die Gesamtdauer des Projekts",
-        "Verzögerungen auf ihm verschieben den Endtermin",
-        "Er verdient besondere Aufmerksamkeit in der Steuerung",
         "Er enthält immer die teuersten Vorgänge",
         "Er lässt sich beliebig verkürzen ohne Folgen"
       ],
       "answer": [
         "Er besteht aus Vorgängen ohne Puffer",
-        "Er bestimmt die Gesamtdauer des Projekts",
-        "Verzögerungen auf ihm verschieben den Endtermin",
-        "Er verdient besondere Aufmerksamkeit in der Steuerung"
+        "Er bestimmt die Gesamtdauer des Projekts"
       ],
       "explanation": "Pufferlose Vorgänge bilden die längste Kette und damit die Projektdauer. Ob diese Vorgänge teuer sind, hat damit nichts zu tun.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "It consists of activities without float",
             "It determines the overall project duration",
-            "Delays on it move the end date",
-            "It deserves special attention in steering",
             "It always contains the most expensive activities",
             "It can be shortened arbitrarily without consequences"
           ],
           "answer": [
             "It consists of activities without float",
-            "It determines the overall project duration",
-            "Delays on it move the end date",
-            "It deserves special attention in steering"
+            "It determines the overall project duration"
           ],
           "explanation": "Activities without float form the longest chain and thus the project duration. Whether those activities are expensive has nothing to do with it.",
           "category": "Business & Project Management"
@@ -1829,15 +1745,13 @@
         "Gesamtkosten über die Nutzungsdauer",
         "Amortisationsdauer der Investition",
         "Erwartete jährliche Einsparung",
-        "Verfügbarkeitszusagen des Anbieters",
         "Die Anzahl der Seiten im Prospekt",
         "Das Gründungsjahr des Herstellers"
       ],
       "answer": [
         "Gesamtkosten über die Nutzungsdauer",
         "Amortisationsdauer der Investition",
-        "Erwartete jährliche Einsparung",
-        "Verfügbarkeitszusagen des Anbieters"
+        "Erwartete jährliche Einsparung"
       ],
       "explanation": "TCO, Amortisation, Einsparung und Servicezusagen machen Angebote wirtschaftlich vergleichbar. Prospektumfang und Firmenalter sagen über die Eignung nichts aus.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Total cost over the useful life",
             "Payback period of the investment",
             "Expected annual saving",
-            "Availability commitments of the vendor",
             "The number of pages in the brochure",
             "The founding year of the manufacturer"
           ],
           "answer": [
             "Total cost over the useful life",
             "Payback period of the investment",
-            "Expected annual saving",
-            "Availability commitments of the vendor"
+            "Expected annual saving"
           ],
           "explanation": "TCO, payback, savings and service commitments make offers economically comparable. Brochure length and company age say nothing about suitability.",
           "category": "Business & Project Management"
@@ -1870,16 +1782,12 @@
       "options": [
         "Sie sind die kleinste Einheit des Strukturplans",
         "Sie haben eine benannte verantwortliche Person",
-        "Ihr Aufwand lässt sich abschätzen",
-        "Ihr Ergebnis ist überprüfbar beschrieben",
         "Sie dauern grundsätzlich genau eine Woche",
         "Sie werden erst nach Projektende definiert"
       ],
       "answer": [
         "Sie sind die kleinste Einheit des Strukturplans",
-        "Sie haben eine benannte verantwortliche Person",
-        "Ihr Aufwand lässt sich abschätzen",
-        "Ihr Ergebnis ist überprüfbar beschrieben"
+        "Sie haben eine benannte verantwortliche Person"
       ],
       "explanation": "Ein gutes Arbeitspaket ist klein genug zum Schätzen, hat einen Verantwortlichen und ein prüfbares Ergebnis. Eine feste Dauer gibt es nicht, und definiert wird es zu Projektbeginn.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "They are the smallest unit of the breakdown structure",
             "They have a named responsible person",
-            "Their effort can be estimated",
-            "Their result is described verifiably",
             "They fundamentally last exactly one week",
             "They are defined only after the project ends"
           ],
           "answer": [
             "They are the smallest unit of the breakdown structure",
-            "They have a named responsible person",
-            "Their effort can be estimated",
-            "Their result is described verifiably"
+            "They have a named responsible person"
           ],
           "explanation": "A good work package is small enough to estimate, has an owner and a verifiable result. There is no fixed duration, and it is defined at project start.",
           "category": "Business & Project Management"
@@ -1955,15 +1859,13 @@
         "Der Projektauftrag mit Zielen",
         "Die Planungsunterlagen",
         "Protokolle wesentlicher Entscheidungen",
-        "Der Abschlussbericht",
         "Die privaten Notizen einzelner Beteiligter",
         "Die Speisekarte der Betriebskantine"
       ],
       "answer": [
         "Der Projektauftrag mit Zielen",
         "Die Planungsunterlagen",
-        "Protokolle wesentlicher Entscheidungen",
-        "Der Abschlussbericht"
+        "Protokolle wesentlicher Entscheidungen"
       ],
       "explanation": "Auftrag, Planung, Entscheidungen und Abschluss machen ein Projekt nachvollziehbar und übergabefähig. Private Notizen sind kein verbindlicher Bestandteil.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "The project charter with its goals",
             "The planning documents",
             "Minutes of key decisions",
-            "The closing report",
             "Private notes of individual participants",
             "The menu of the company canteen"
           ],
           "answer": [
             "The project charter with its goals",
             "The planning documents",
-            "Minutes of key decisions",
-            "The closing report"
+            "Minutes of key decisions"
           ],
           "explanation": "Charter, planning, decisions and closure make a project traceable and handover-ready. Private notes are not a binding component.",
           "category": "Business & Project Management"
@@ -1996,16 +1896,12 @@
       "options": [
         "Ein Angebot kann eine Bindefrist enthalten",
         "Nach Ablauf der Frist erlischt die Bindung",
-        "Eine abweichende Bestellung gilt als neues Angebot",
-        "Freibleibende Angebote binden den Anbieter nicht",
         "Jedes Angebot bindet unbefristet",
         "Ein Angebot kommt erst mit Zahlung zustande"
       ],
       "answer": [
         "Ein Angebot kann eine Bindefrist enthalten",
-        "Nach Ablauf der Frist erlischt die Bindung",
-        "Eine abweichende Bestellung gilt als neues Angebot",
-        "Freibleibende Angebote binden den Anbieter nicht"
+        "Nach Ablauf der Frist erlischt die Bindung"
       ],
       "explanation": "Bindefristen und Freizeichnungsklauseln steuern, wie lange und ob ein Anbieter gebunden ist. Weicht die Bestellung ab, dreht sich das Verhältnis und der Kunde macht das Angebot.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "An offer can contain a period of validity",
             "After the period expires the binding ends",
-            "A deviating order counts as a new offer",
-            "Non-binding offers do not bind the vendor",
             "Every offer binds indefinitely",
             "An offer only arises upon payment"
           ],
           "answer": [
             "An offer can contain a period of validity",
-            "After the period expires the binding ends",
-            "A deviating order counts as a new offer",
-            "Non-binding offers do not bind the vendor"
+            "After the period expires the binding ends"
           ],
           "explanation": "Validity periods and non-binding clauses control how long and whether a vendor is bound. If the order deviates, the roles reverse and the customer makes the offer.",
           "category": "Business & Project Management"
@@ -2081,15 +1973,13 @@
         "Interne Ressourcen werden freigesetzt",
         "Der Anbieter bringt spezialisiertes Wissen mit",
         "Es entsteht Abhängigkeit vom Dienstleister",
-        "Vertragliche Regelungen werden wichtiger",
         "Die Verantwortung geht vollständig auf den Anbieter über",
         "Kosten sinken in jedem Fall dauerhaft"
       ],
       "answer": [
         "Interne Ressourcen werden freigesetzt",
         "Der Anbieter bringt spezialisiertes Wissen mit",
-        "Es entsteht Abhängigkeit vom Dienstleister",
-        "Vertragliche Regelungen werden wichtiger"
+        "Es entsteht Abhängigkeit vom Dienstleister"
       ],
       "explanation": "Outsourcing tauscht eigene Kapazität gegen Spezialwissen, erzeugt aber Abhängigkeit und verlagert das Gewicht auf den Vertrag. Die Gesamtverantwortung bleibt beim Auftraggeber.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Internal resources are freed up",
             "The provider brings specialised knowledge",
             "Dependency on the service provider arises",
-            "Contractual arrangements become more important",
             "Responsibility passes entirely to the provider",
             "Costs fall permanently in every case"
           ],
           "answer": [
             "Internal resources are freed up",
             "The provider brings specialised knowledge",
-            "Dependency on the service provider arises",
-            "Contractual arrangements become more important"
+            "Dependency on the service provider arises"
           ],
           "explanation": "Outsourcing trades own capacity for specialist knowledge but creates dependency and shifts weight onto the contract. Overall responsibility stays with the client.",
           "category": "Business & Project Management"
@@ -2122,16 +2010,12 @@
       "options": [
         "Sie erfasst die tatsächlichen Bestände",
         "Sie dient dem Abgleich mit der Buchführung",
-        "Sie deckt Schwund und Fehlbuchungen auf",
-        "Sie ist gesetzlich vorgeschrieben",
         "Sie ersetzt die laufende Lagerbuchhaltung",
         "Sie erfolgt ausschließlich täglich"
       ],
       "answer": [
         "Sie erfasst die tatsächlichen Bestände",
-        "Sie dient dem Abgleich mit der Buchführung",
-        "Sie deckt Schwund und Fehlbuchungen auf",
-        "Sie ist gesetzlich vorgeschrieben"
+        "Sie dient dem Abgleich mit der Buchführung"
       ],
       "explanation": "Die körperliche Bestandsaufnahme prüft, ob Buchbestand und Wirklichkeit übereinstimmen. Sie ergänzt die laufende Buchhaltung, ersetzt sie aber nicht.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "It records the actual stock levels",
             "It serves to reconcile with the accounts",
-            "It reveals shrinkage and posting errors",
-            "It is required by law",
             "It replaces ongoing inventory bookkeeping",
             "It takes place exclusively every day"
           ],
           "answer": [
             "It records the actual stock levels",
-            "It serves to reconcile with the accounts",
-            "It reveals shrinkage and posting errors",
-            "It is required by law"
+            "It serves to reconcile with the accounts"
           ],
           "explanation": "The physical count checks whether book stock and reality agree. It complements ongoing bookkeeping but does not replace it.",
           "category": "Business & Project Management"
@@ -2207,15 +2087,13 @@
         "Vom Bezugspreis führt der Weg über Zuschläge zum Verkaufspreis",
         "Der Handlungskostenzuschlag deckt die Gemeinkosten",
         "Der Gewinnzuschlag ergibt den Barverkaufspreis",
-        "Kundenskonto und Rabatt werden aufgeschlagen",
         "Die Kalkulation endet beim Listeneinkaufspreis",
         "Die Umsatzsteuer wird vom Verkaufspreis abgezogen"
       ],
       "answer": [
         "Vom Bezugspreis führt der Weg über Zuschläge zum Verkaufspreis",
         "Der Handlungskostenzuschlag deckt die Gemeinkosten",
-        "Der Gewinnzuschlag ergibt den Barverkaufspreis",
-        "Kundenskonto und Rabatt werden aufgeschlagen"
+        "Der Gewinnzuschlag ergibt den Barverkaufspreis"
       ],
       "explanation": "Die Vorwärtskalkulation führt vom Bezugspreis über Handlungskosten und Gewinn zum Bar-, Ziel- und Listenverkaufspreis. Kundenskonto und Rabatt werden dabei aufgeschlagen, nicht abgezogen.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "From the purchase price the path leads via surcharges to the selling price",
             "The handling cost surcharge covers the overheads",
             "The profit surcharge yields the cash selling price",
-            "Customer cash discount and trade discount are added on",
             "The calculation ends at the list purchase price",
             "Value added tax is deducted from the selling price"
           ],
           "answer": [
             "From the purchase price the path leads via surcharges to the selling price",
             "The handling cost surcharge covers the overheads",
-            "The profit surcharge yields the cash selling price",
-            "Customer cash discount and trade discount are added on"
+            "The profit surcharge yields the cash selling price"
           ],
           "explanation": "Forward calculation runs from the purchase price via handling costs and profit to the cash, target and list selling price. Customer discounts are added on, not deducted.",
           "category": "Business & Project Management"

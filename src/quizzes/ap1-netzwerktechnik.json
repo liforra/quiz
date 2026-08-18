@@ -946,15 +946,13 @@
       "options": [
         "Eine Adresse ist 128 Bit lang",
         "Die Notation erfolgt hexadezimal",
-        "Broadcasts wurden durch Multicast ersetzt",
         "NAT ist für den Internetzugang zwingend nötig",
         "Eine Adresse besteht aus 4 Blöcken",
         "Die Adresse wird stets manuell vergeben"
       ],
       "answer": [
         "Eine Adresse ist 128 Bit lang",
-        "Die Notation erfolgt hexadezimal",
-        "Broadcasts wurden durch Multicast ersetzt"
+        "Die Notation erfolgt hexadezimal"
       ],
       "explanation": "IPv6 nutzt 128 Bit in 8 hexadezimalen Blöcken zu je 16 Bit und kennt statt Broadcast nur noch Multicast. Der riesige Adressraum macht NAT gerade überflüssig, und Adressen kommen meist per SLAAC oder DHCPv6.",
       "translations": {
@@ -963,15 +961,13 @@
           "options": [
             "An address is 128 bits long",
             "Notation is hexadecimal",
-            "Broadcasts were replaced by multicast",
             "NAT is strictly required for internet access",
             "An address consists of 4 blocks",
             "Addresses are always assigned manually"
           ],
           "answer": [
             "An address is 128 bits long",
-            "Notation is hexadecimal",
-            "Broadcasts were replaced by multicast"
+            "Notation is hexadecimal"
           ],
           "explanation": "IPv6 uses 128 bits in 8 hexadecimal blocks of 16 bits each and replaces broadcast with multicast. The huge address space makes NAT unnecessary, and addresses usually come via SLAAC or DHCPv6.",
           "category": "Network Technology"
@@ -986,16 +982,12 @@
       "options": [
         "Er vergibt IP-Adressen aus einem definierten Bereich",
         "Er teilt den Clients die Subnetzmaske mit",
-        "Er nennt den Clients Gateway und DNS-Server",
-        "Er verwaltet die Leasedauer der Zuweisungen",
         "Er übersetzt Hostnamen in IP-Adressen",
         "Er filtert unerwünschten Verkehr nach Regeln"
       ],
       "answer": [
         "Er vergibt IP-Adressen aus einem definierten Bereich",
-        "Er teilt den Clients die Subnetzmaske mit",
-        "Er nennt den Clients Gateway und DNS-Server",
-        "Er verwaltet die Leasedauer der Zuweisungen"
+        "Er teilt den Clients die Subnetzmaske mit"
       ],
       "explanation": "DHCP liefert das komplette Adresspaket auf Zeit: Adresse, Maske, Gateway und DNS mit befristeter Lease. Namen auflösen ist Sache von DNS, Verkehr filtern Sache der Firewall.",
       "translations": {
@@ -1004,16 +996,12 @@
           "options": [
             "It assigns IP addresses from a defined range",
             "It tells clients their subnet mask",
-            "It names the gateway and DNS server to clients",
-            "It manages the lease duration of assignments",
             "It translates hostnames into IP addresses",
             "It filters unwanted traffic based on rules"
           ],
           "answer": [
             "It assigns IP addresses from a defined range",
-            "It tells clients their subnet mask",
-            "It names the gateway and DNS server to clients",
-            "It manages the lease duration of assignments"
+            "It tells clients their subnet mask"
           ],
           "explanation": "DHCP delivers the complete address package on a timer: address, mask, gateway and DNS with a limited lease. Resolving names is DNS's job, filtering traffic the firewall's.",
           "category": "Network Technology"
@@ -1069,15 +1057,13 @@
         "Kabel und Link-LED prüfen",
         "IP-Konfiguration des Hosts prüfen",
         "Erreichbarkeit des Gateways per ping testen",
-        "Namensauflösung per nslookup testen",
         "Zuerst den Anwendungsserver neu installieren",
         "Zuerst die Netzwerkkarte pauschal austauschen"
       ],
       "answer": [
         "Kabel und Link-LED prüfen",
         "IP-Konfiguration des Hosts prüfen",
-        "Erreichbarkeit des Gateways per ping testen",
-        "Namensauflösung per nslookup testen"
+        "Erreichbarkeit des Gateways per ping testen"
       ],
       "explanation": "Von unten nach oben heißt: erst Physik, dann Adressierung, dann Routing, dann Dienste. Neuinstallation und Hardwaretausch auf Verdacht überspringen die Diagnose und kosten unnötig Zeit.",
       "translations": {
@@ -1087,15 +1073,13 @@
             "Check the cable and the link LED",
             "Check the host's IP configuration",
             "Test reachability of the gateway with ping",
-            "Test name resolution with nslookup",
             "Reinstall the application server first",
             "Replace the network card outright first"
           ],
           "answer": [
             "Check the cable and the link LED",
             "Check the host's IP configuration",
-            "Test reachability of the gateway with ping",
-            "Test name resolution with nslookup"
+            "Test reachability of the gateway with ping"
           ],
           "explanation": "Bottom-up means physics first, then addressing, then routing, then services. Reinstalling or swapping hardware on suspicion skips the diagnosis and wastes time.",
           "category": "Network Technology"
@@ -1110,16 +1094,12 @@
       "options": [
         "Es baut vor der Übertragung eine Verbindung auf",
         "Es bestätigt empfangene Segmente",
-        "Es sendet verlorene Segmente erneut",
-        "Es stellt die richtige Reihenfolge wieder her",
         "Es verzichtet zugunsten der Geschwindigkeit auf Bestätigungen",
         "Es arbeitet ausschließlich innerhalb eines Subnetzes"
       ],
       "answer": [
         "Es baut vor der Übertragung eine Verbindung auf",
-        "Es bestätigt empfangene Segmente",
-        "Es sendet verlorene Segmente erneut",
-        "Es stellt die richtige Reihenfolge wieder her"
+        "Es bestätigt empfangene Segmente"
       ],
       "explanation": "TCP ist verbindungsorientiert und zuverlässig: Handshake, Bestätigungen, Neuversand und Sortierung gehören zum Kern. Der Verzicht auf Bestätigungen kennzeichnet UDP, und die Subnetzgrenze ist Sache von Schicht 2.",
       "translations": {
@@ -1128,16 +1108,12 @@
           "options": [
             "It establishes a connection before transmitting",
             "It acknowledges received segments",
-            "It retransmits lost segments",
-            "It restores the correct order of data",
             "It skips acknowledgements in favour of speed",
             "It operates strictly within a single subnet"
           ],
           "answer": [
             "It establishes a connection before transmitting",
-            "It acknowledges received segments",
-            "It retransmits lost segments",
-            "It restores the correct order of data"
+            "It acknowledges received segments"
           ],
           "explanation": "TCP is connection-oriented and reliable: handshake, acknowledgements, retransmission and reordering are core features. Skipping acknowledgements characterises UDP, and subnet boundaries are a layer 2 matter.",
           "category": "Network Technology"
@@ -1195,15 +1171,13 @@
         "SSH auf 22",
         "DNS auf 53",
         "SMTP auf 25",
-        "RDP auf 3389",
         "FTP auf knapp 8000",
         "HTTP auf 143"
       ],
       "answer": [
         "SSH auf 22",
         "DNS auf 53",
-        "SMTP auf 25",
-        "RDP auf 3389"
+        "SMTP auf 25"
       ],
       "explanation": "22 SSH, 53 DNS, 25 SMTP und 3389 RDP sind Standardzuordnungen. FTP nutzt 20 und 21, HTTP den Port 80 - 143 gehört zu IMAP.",
       "translations": {
@@ -1213,15 +1187,13 @@
             "SSH on 22",
             "DNS on 53",
             "SMTP on 25",
-            "RDP on 3389",
             "FTP on roughly 8000",
             "HTTP on 143"
           ],
           "answer": [
             "SSH on 22",
             "DNS on 53",
-            "SMTP on 25",
-            "RDP on 3389"
+            "SMTP on 25"
           ],
           "explanation": "22 SSH, 53 DNS, 25 SMTP and 3389 RDP are the standard assignments. FTP uses 20 and 21, HTTP uses port 80 - 143 belongs to IMAP.",
           "category": "Network Technology"
@@ -1236,16 +1208,12 @@
       "options": [
         "Größere überbrückbare Entfernungen",
         "Unempfindlichkeit gegen elektromagnetische Störungen",
-        "Kein Übersprechen zwischen benachbarten Fasern",
-        "Höhere erreichbare Übertragungsraten",
         "Deutlich günstigere Steckverbinder und Werkzeuge",
         "Möglichkeit, Endgeräte über die Faser zu speisen"
       ],
       "answer": [
         "Größere überbrückbare Entfernungen",
-        "Unempfindlichkeit gegen elektromagnetische Störungen",
-        "Kein Übersprechen zwischen benachbarten Fasern",
-        "Höhere erreichbare Übertragungsraten"
+        "Unempfindlichkeit gegen elektromagnetische Störungen"
       ],
       "explanation": "Glasfaser punktet bei Reichweite, Störfestigkeit, Übersprechen und Bandbreite. Konfektionierung und Messtechnik sind allerdings teurer, und eine Stromversorgung wie PoE ist über Licht nicht möglich.",
       "translations": {
@@ -1254,16 +1222,12 @@
           "options": [
             "Greater distances that can be bridged",
             "Immunity to electromagnetic interference",
-            "No crosstalk between neighbouring fibres",
-            "Higher achievable transmission rates",
             "Considerably cheaper connectors and tools",
             "The option to power end devices over the fibre"
           ],
           "answer": [
             "Greater distances that can be bridged",
-            "Immunity to electromagnetic interference",
-            "No crosstalk between neighbouring fibres",
-            "Higher achievable transmission rates"
+            "Immunity to electromagnetic interference"
           ],
           "explanation": "Fibre wins on reach, interference immunity, crosstalk and bandwidth. Termination and measurement equipment are more expensive, though, and power delivery like PoE is impossible over light.",
           "category": "Network Technology"
@@ -1321,15 +1285,13 @@
         "Sie ist 48 Bit lang",
         "Sie wird hexadezimal dargestellt",
         "Die erste Hälfte kennzeichnet den Hersteller",
-        "Sie wird auf Schicht 2 ausgewertet",
         "Sie wird von einem DHCP-Server vergeben",
         "Sie ändert sich bei jedem Netzwechsel"
       ],
       "answer": [
         "Sie ist 48 Bit lang",
         "Sie wird hexadezimal dargestellt",
-        "Die erste Hälfte kennzeichnet den Hersteller",
-        "Sie wird auf Schicht 2 ausgewertet"
+        "Die erste Hälfte kennzeichnet den Hersteller"
       ],
       "explanation": "48 Bit in Hexschreibweise, davon die ersten 24 Bit als Herstellerkennung OUI - ausgewertet wird sie auf der Sicherungsschicht. DHCP vergibt IP-Adressen, nicht MACs, und die MAC bleibt beim Netzwechsel gleich.",
       "translations": {
@@ -1339,15 +1301,13 @@
             "It is 48 bits long",
             "It is written in hexadecimal",
             "The first half identifies the manufacturer",
-            "It is evaluated on layer 2",
             "It is assigned by a DHCP server",
             "It changes whenever the network changes"
           ],
           "answer": [
             "It is 48 bits long",
             "It is written in hexadecimal",
-            "The first half identifies the manufacturer",
-            "It is evaluated on layer 2"
+            "The first half identifies the manufacturer"
           ],
           "explanation": "48 bits in hexadecimal notation, the first 24 of which form the manufacturer OUI - evaluated on the data link layer. DHCP assigns IP addresses, not MACs, and the MAC stays the same across networks.",
           "category": "Network Technology"
@@ -1362,16 +1322,12 @@
       "options": [
         "ipconfig /all für die eigene Konfiguration",
         "ping für die Erreichbarkeit eines Ziels",
-        "tracert für den Weg zum Ziel",
-        "nslookup für die Namensauflösung",
         "chkdsk für die Netzwerkeinstellungen",
         "diskpart für die Routingtabelle"
       ],
       "answer": [
         "ipconfig /all für die eigene Konfiguration",
-        "ping für die Erreichbarkeit eines Ziels",
-        "tracert für den Weg zum Ziel",
-        "nslookup für die Namensauflösung"
+        "ping für die Erreichbarkeit eines Ziels"
       ],
       "explanation": "ipconfig, ping, tracert und nslookup decken Konfiguration, Erreichbarkeit, Pfad und DNS ab. chkdsk prüft Dateisysteme und diskpart verwaltet Partitionen - beide haben mit dem Netz nichts zu tun.",
       "translations": {
@@ -1380,16 +1336,12 @@
           "options": [
             "ipconfig /all for the local configuration",
             "ping for reachability of a target",
-            "tracert for the path to the target",
-            "nslookup for name resolution",
             "chkdsk for the network settings",
             "diskpart for the routing table"
           ],
           "answer": [
             "ipconfig /all for the local configuration",
-            "ping for reachability of a target",
-            "tracert for the path to the target",
-            "nslookup for name resolution"
+            "ping for reachability of a target"
           ],
           "explanation": "ipconfig, ping, tracert and nslookup cover configuration, reachability, path and DNS. chkdsk checks file systems and diskpart manages partitions - neither has anything to do with the network.",
           "category": "Network Technology"
@@ -1447,15 +1399,13 @@
         "Verlauf und Länge der einzelnen Strecken",
         "Bezeichnung der Dosen und Patchfeldports",
         "Verwendete Kabelkategorie je Strecke",
-        "Ergebnisse der Abnahmemessung",
         "Der Kaufpreis der eingesetzten Endgeräte",
         "Die Namen der Nutzer an jedem Arbeitsplatz"
       ],
       "answer": [
         "Verlauf und Länge der einzelnen Strecken",
         "Bezeichnung der Dosen und Patchfeldports",
-        "Verwendete Kabelkategorie je Strecke",
-        "Ergebnisse der Abnahmemessung"
+        "Verwendete Kabelkategorie je Strecke"
       ],
       "explanation": "Für spätere Fehlersuche und Erweiterung braucht man Wege, eindeutige Kennzeichnungen, Kabelkategorie und Messprotokolle. Preise und Nutzernamen ändern sich ständig und gehören in andere Verzeichnisse.",
       "translations": {
@@ -1465,15 +1415,13 @@
             "Route and length of the individual runs",
             "Labelling of outlets and patch panel ports",
             "Cable category used on each run",
-            "Results of the acceptance measurements",
             "The purchase price of the end devices used",
             "The names of the users at each workstation"
           ],
           "answer": [
             "Route and length of the individual runs",
             "Labelling of outlets and patch panel ports",
-            "Cable category used on each run",
-            "Results of the acceptance measurements"
+            "Cable category used on each run"
           ],
           "explanation": "Later troubleshooting and expansion require routes, unambiguous labels, cable category and test reports. Prices and user names change constantly and belong in other records.",
           "category": "Network Technology"
@@ -1488,16 +1436,12 @@
       "options": [
         "Die Netzadresse mit Hostteil null",
         "Die Broadcast-Adresse mit Hostteil voll gesetzt",
-        "Adressen aus dem Loopback-Bereich 127.x.x.x",
-        "Adressen mit einem Oktett größer als 255",
         "Die erste vergebbare Adresse des Bereichs",
         "Die Adresse des Standardgateways im Netz"
       ],
       "answer": [
         "Die Netzadresse mit Hostteil null",
-        "Die Broadcast-Adresse mit Hostteil voll gesetzt",
-        "Adressen aus dem Loopback-Bereich 127.x.x.x",
-        "Adressen mit einem Oktett größer als 255"
+        "Die Broadcast-Adresse mit Hostteil voll gesetzt"
       ],
       "explanation": "Netz- und Broadcastadresse sind reserviert, Loopback ist für den eigenen Rechner gedacht und Oktette über 255 existieren nicht. Die erste nutzbare Adresse und die Gatewayadresse sind dagegen ganz normale Hostadressen.",
       "translations": {
@@ -1506,16 +1450,12 @@
           "options": [
             "The network address with an all-zero host part",
             "The broadcast address with an all-ones host part",
-            "Addresses from the loopback range 127.x.x.x",
-            "Addresses with an octet greater than 255",
             "The first assignable address of the range",
             "The address of the default gateway"
           ],
           "answer": [
             "The network address with an all-zero host part",
-            "The broadcast address with an all-ones host part",
-            "Addresses from the loopback range 127.x.x.x",
-            "Addresses with an octet greater than 255"
+            "The broadcast address with an all-ones host part"
           ],
           "explanation": "Network and broadcast addresses are reserved, loopback is meant for the local machine and octets above 255 do not exist. The first usable address and the gateway address are perfectly normal host addresses.",
           "category": "Network Technology"
@@ -1573,15 +1513,13 @@
         "Es ermittelt zu einer IPv4-Adresse die passende MAC",
         "Es arbeitet nur innerhalb des lokalen Netzsegments",
         "Die Anfrage geht als Broadcast an alle Geräte",
-        "Ergebnisse werden befristet zwischengespeichert",
         "Es übersetzt Hostnamen in IP-Adressen",
         "Es vergibt IP-Adressen an neue Geräte"
       ],
       "answer": [
         "Es ermittelt zu einer IPv4-Adresse die passende MAC",
         "Es arbeitet nur innerhalb des lokalen Netzsegments",
-        "Die Anfrage geht als Broadcast an alle Geräte",
-        "Ergebnisse werden befristet zwischengespeichert"
+        "Die Anfrage geht als Broadcast an alle Geräte"
       ],
       "explanation": "ARP fragt per Broadcast nach der MAC zu einer IP und legt die Antwort im ARP-Cache ab, gültig nur im eigenen Segment. Namen auflösen macht DNS, Adressen vergeben DHCP.",
       "translations": {
@@ -1591,15 +1529,13 @@
             "It finds the matching MAC for an IPv4 address",
             "It works only within the local network segment",
             "The request goes out as a broadcast to all devices",
-            "Results are cached for a limited time",
             "It translates hostnames into IP addresses",
             "It assigns IP addresses to new devices"
           ],
           "answer": [
             "It finds the matching MAC for an IPv4 address",
             "It works only within the local network segment",
-            "The request goes out as a broadcast to all devices",
-            "Results are cached for a limited time"
+            "The request goes out as a broadcast to all devices"
           ],
           "explanation": "ARP broadcasts a request for the MAC belonging to an IP and stores the answer in the ARP cache, valid only in its own segment. Resolving names is DNS, assigning addresses is DHCP.",
           "category": "Network Technology"
@@ -1614,16 +1550,12 @@
       "options": [
         "Anzahl der gleichzeitig aktiven Clients",
         "Störungen durch benachbarte Funknetze",
-        "Baustoffe und Wände zwischen Sender und Client",
-        "Der gemeinsam genutzte Funkkanal",
         "Die Länge des Netzwerknamens SSID",
         "Die Farbe des Gehäuses am Access Point"
       ],
       "answer": [
         "Anzahl der gleichzeitig aktiven Clients",
-        "Störungen durch benachbarte Funknetze",
-        "Baustoffe und Wände zwischen Sender und Client",
-        "Der gemeinsam genutzte Funkkanal"
+        "Störungen durch benachbarte Funknetze"
       ],
       "explanation": "Funk ist ein geteiltes Medium: mehr Clients, Nachbarnetze, Dämpfung durch Baustoffe und Kanalbelegung drücken den Durchsatz. SSID-Länge und Gehäusefarbe sind ohne jeden Einfluss.",
       "translations": {
@@ -1632,16 +1564,12 @@
           "options": [
             "Number of simultaneously active clients",
             "Interference from neighbouring radio networks",
-            "Building materials and walls between sender and client",
-            "The shared radio channel in use",
             "The length of the network name SSID",
             "The colour of the access point housing"
           ],
           "answer": [
             "Number of simultaneously active clients",
-            "Interference from neighbouring radio networks",
-            "Building materials and walls between sender and client",
-            "The shared radio channel in use"
+            "Interference from neighbouring radio networks"
           ],
           "explanation": "Radio is a shared medium: more clients, neighbouring networks, attenuation by building materials and channel occupancy all reduce throughput. SSID length and housing colour have no influence whatsoever.",
           "category": "Network Technology"
@@ -1699,15 +1627,13 @@
         "Dose und Patchfeldport auflegen und beschriften",
         "Patchkabel vom Patchfeld auf einen Switchport stecken",
         "Den Port dem richtigen VLAN zuordnen",
-        "Die Strecke messen und das Ergebnis dokumentieren",
         "Den Switch komplett neu konfigurieren",
         "Allen Nutzern neue Passwörter zuweisen"
       ],
       "answer": [
         "Dose und Patchfeldport auflegen und beschriften",
         "Patchkabel vom Patchfeld auf einen Switchport stecken",
-        "Den Port dem richtigen VLAN zuordnen",
-        "Die Strecke messen und das Ergebnis dokumentieren"
+        "Den Port dem richtigen VLAN zuordnen"
       ],
       "explanation": "Auflegen, patchen, VLAN zuordnen und messen sind die Standardschritte einer Neuanbindung. Eine komplette Neukonfiguration des Switches oder ein Passwortwechsel für alle wäre völlig unverhältnismäßig.",
       "translations": {
@@ -1717,15 +1643,13 @@
             "Terminate and label the outlet and patch panel port",
             "Patch from the patch panel to a switch port",
             "Assign the port to the correct VLAN",
-            "Measure the link and document the result",
             "Reconfigure the switch completely from scratch",
             "Assign new passwords to all users"
           ],
           "answer": [
             "Terminate and label the outlet and patch panel port",
             "Patch from the patch panel to a switch port",
-            "Assign the port to the correct VLAN",
-            "Measure the link and document the result"
+            "Assign the port to the correct VLAN"
           ],
           "explanation": "Terminating, patching, VLAN assignment and measurement are the standard steps of a new connection. Reconfiguring the whole switch or changing everyone's password would be entirely disproportionate.",
           "category": "Network Technology"
@@ -1740,16 +1664,12 @@
       "options": [
         "Es arbeitet ohne vorherigen Verbindungsaufbau",
         "Es bestätigt den Empfang nicht",
-        "Es hat weniger Protokoll-Overhead als TCP",
-        "Es eignet sich für Echtzeitdaten wie Sprache",
         "Es sichert die Reihenfolge der Pakete zu",
         "Es wiederholt verlorene Pakete automatisch"
       ],
       "answer": [
         "Es arbeitet ohne vorherigen Verbindungsaufbau",
-        "Es bestätigt den Empfang nicht",
-        "Es hat weniger Protokoll-Overhead als TCP",
-        "Es eignet sich für Echtzeitdaten wie Sprache"
+        "Es bestätigt den Empfang nicht"
       ],
       "explanation": "UDP verschickt Datagramme ohne Handshake, ohne Bestätigung und mit kleinem Header - ideal, wenn Tempo wichtiger als Vollständigkeit ist. Reihenfolge und Neuversand garantiert nur TCP.",
       "translations": {
@@ -1758,16 +1678,12 @@
           "options": [
             "It works without establishing a connection first",
             "It does not acknowledge receipt",
-            "It carries less protocol overhead than TCP",
-            "It suits real-time data such as voice",
             "It guarantees the order of packets",
             "It automatically repeats lost packets"
           ],
           "answer": [
             "It works without establishing a connection first",
-            "It does not acknowledge receipt",
-            "It carries less protocol overhead than TCP",
-            "It suits real-time data such as voice"
+            "It does not acknowledge receipt"
           ],
           "explanation": "UDP sends datagrams without handshake, without acknowledgement and with a small header - ideal when speed matters more than completeness. Ordering and retransmission are guaranteed only by TCP.",
           "category": "Network Technology"
@@ -1825,15 +1741,13 @@
         "Wer betroffen ist und seit wann",
         "Welche Fehlermeldung genau erscheint",
         "Ob das Problem reproduzierbar ist",
-        "Was bereits geprüft wurde",
         "Wie hoch das Jahresbudget der Abteilung ist",
         "Welche Farbe das Gehäuse des PCs hat"
       ],
       "answer": [
         "Wer betroffen ist und seit wann",
         "Welche Fehlermeldung genau erscheint",
-        "Ob das Problem reproduzierbar ist",
-        "Was bereits geprüft wurde"
+        "Ob das Problem reproduzierbar ist"
       ],
       "explanation": "Betroffene, Zeitpunkt, Wortlaut der Meldung, Reproduzierbarkeit und bereits geprüfte Punkte machen ein Ticket bearbeitbar und verhindern doppelte Arbeit. Budget und Gehäusefarbe helfen bei der Lösung nicht.",
       "translations": {
@@ -1843,15 +1757,13 @@
             "Who is affected and since when",
             "Which error message appears exactly",
             "Whether the problem is reproducible",
-            "What has already been checked",
             "How large the department's annual budget is",
             "What colour the PC housing has"
           ],
           "answer": [
             "Who is affected and since when",
             "Which error message appears exactly",
-            "Whether the problem is reproducible",
-            "What has already been checked"
+            "Whether the problem is reproducible"
           ],
           "explanation": "Affected users, timing, the exact wording of the message, reproducibility and steps already checked make a ticket workable and prevent duplicated effort. Budget and housing colour do not help solve it.",
           "category": "Network Technology"
@@ -1866,16 +1778,12 @@
       "options": [
         "Es verhindert Schleifen in vermaschten Switchnetzen",
         "Es blockiert dafür gezielt einzelne Ports",
-        "Es wählt eine Root Bridge im Netz",
-        "Blockierte Wege werden bei Ausfall aktiviert",
         "Es beschleunigt die Übertragung auf allen Ports",
         "Es ersetzt die Notwendigkeit eines Routers"
       ],
       "answer": [
         "Es verhindert Schleifen in vermaschten Switchnetzen",
-        "Es blockiert dafür gezielt einzelne Ports",
-        "Es wählt eine Root Bridge im Netz",
-        "Blockierte Wege werden bei Ausfall aktiviert"
+        "Es blockiert dafür gezielt einzelne Ports"
       ],
       "explanation": "STP baut aus einem vermaschten Netz einen schleifenfreien Baum: eine Root Bridge wird gewählt, überzählige Wege werden blockiert und im Fehlerfall wieder freigegeben. Mit Geschwindigkeit oder Routing hat es nichts zu tun.",
       "translations": {
@@ -1884,16 +1792,12 @@
           "options": [
             "It prevents loops in meshed switch networks",
             "To do so it deliberately blocks individual ports",
-            "It elects a root bridge in the network",
-            "Blocked paths are activated on failure",
             "It speeds up transmission on all ports",
             "It removes the need for a router"
           ],
           "answer": [
             "It prevents loops in meshed switch networks",
-            "To do so it deliberately blocks individual ports",
-            "It elects a root bridge in the network",
-            "Blocked paths are activated on failure"
+            "To do so it deliberately blocks individual ports"
           ],
           "explanation": "STP builds a loop-free tree out of a meshed network: a root bridge is elected, surplus paths are blocked and released again on failure. It has nothing to do with speed or routing.",
           "category": "Network Technology"
@@ -1951,15 +1855,13 @@
         "Eine Firewall verwirft ICMP-Pakete",
         "Das Ziel ist ausgeschaltet oder gestartet gerade",
         "Eine Route zum Zielnetz fehlt",
-        "Die Ziel-IP wurde falsch eingegeben",
         "Auf dem Ziel ist zu wenig Speicherplatz frei",
         "Der Bildschirmschoner des Ziels ist aktiv"
       ],
       "answer": [
         "Eine Firewall verwirft ICMP-Pakete",
         "Das Ziel ist ausgeschaltet oder gestartet gerade",
-        "Eine Route zum Zielnetz fehlt",
-        "Die Ziel-IP wurde falsch eingegeben"
+        "Eine Route zum Zielnetz fehlt"
       ],
       "explanation": "Gefilterte ICMP-Pakete, ein abgeschaltetes Ziel, fehlendes Routing und Tippfehler sind die häufigsten Gründe. Speicherplatz und Bildschirmschoner beeinflussen die Erreichbarkeit im Netz nicht.",
       "translations": {
@@ -1969,15 +1871,13 @@
             "A firewall discards ICMP packets",
             "The target is switched off or still booting",
             "A route to the target network is missing",
-            "The target IP was typed incorrectly",
             "The target has too little free disk space",
             "The target's screen saver is active"
           ],
           "answer": [
             "A firewall discards ICMP packets",
             "The target is switched off or still booting",
-            "A route to the target network is missing",
-            "The target IP was typed incorrectly"
+            "A route to the target network is missing"
           ],
           "explanation": "Filtered ICMP packets, a powered-off target, missing routing and typos are the most common reasons. Disk space and screen savers do not affect network reachability.",
           "category": "Network Technology"
@@ -1992,16 +1892,12 @@
       "options": [
         "Höhere Kategorien erlauben höhere Frequenzen",
         "Cat 5e reicht für Gigabit-Ethernet aus",
-        "Die Kategorie muss auch für Dosen und Stecker passen",
-        "Die schwächste Komponente bestimmt die Gesamtklasse",
         "Die Kategorie legt die maximale Länge auf 300 m fest",
         "Eine höhere Kategorie erhöht die Anzahl der Adernpaare"
       ],
       "answer": [
         "Höhere Kategorien erlauben höhere Frequenzen",
-        "Cat 5e reicht für Gigabit-Ethernet aus",
-        "Die Kategorie muss auch für Dosen und Stecker passen",
-        "Die schwächste Komponente bestimmt die Gesamtklasse"
+        "Cat 5e reicht für Gigabit-Ethernet aus"
       ],
       "explanation": "Kategorien beschreiben die Übertragungsfrequenz, und die Kette ist nur so gut wie ihr schwächstes Glied - Dose und Stecker zählen mit. Die 100-m-Grenze bleibt bestehen, und vier Adernpaare hat Twisted Pair unabhängig von der Kategorie.",
       "translations": {
@@ -2010,16 +1906,12 @@
           "options": [
             "Higher categories allow higher frequencies",
             "Cat 5e is sufficient for gigabit Ethernet",
-            "The category must also match outlets and plugs",
-            "The weakest component determines the overall class",
             "The category sets the maximum length to 300 m",
             "A higher category increases the number of wire pairs"
           ],
           "answer": [
             "Higher categories allow higher frequencies",
-            "Cat 5e is sufficient for gigabit Ethernet",
-            "The category must also match outlets and plugs",
-            "The weakest component determines the overall class"
+            "Cat 5e is sufficient for gigabit Ethernet"
           ],
           "explanation": "Categories describe transmission frequency, and the chain is only as good as its weakest link - outlets and plugs count. The 100 m limit remains, and twisted pair has four wire pairs regardless of category.",
           "category": "Network Technology"
@@ -2077,15 +1969,13 @@
         "Das Standardpasswort des Routers ändern",
         "Die Firmware des Routers aktuell halten",
         "Fernzugriff auf die Routeroberfläche abschalten",
-        "Ein eigenes Gäste-WLAN einrichten",
         "Den DHCP-Server komplett abschalten",
         "Alle Geräte auf feste öffentliche IPs umstellen"
       ],
       "answer": [
         "Das Standardpasswort des Routers ändern",
         "Die Firmware des Routers aktuell halten",
-        "Fernzugriff auf die Routeroberfläche abschalten",
-        "Ein eigenes Gäste-WLAN einrichten"
+        "Fernzugriff auf die Routeroberfläche abschalten"
       ],
       "explanation": "Standardpasswort, Firmwarestand, offener Fernzugriff und fehlende Gästetrennung sind die klassischen Schwachstellen im Heimnetz. DHCP abzuschalten erzeugt nur Handarbeit, und öffentliche Adressen für alle Geräte wären das Gegenteil von sicher.",
       "translations": {
@@ -2095,15 +1985,13 @@
             "Change the router's default password",
             "Keep the router firmware up to date",
             "Switch off remote access to the router interface",
-            "Set up a separate guest WLAN",
             "Disable the DHCP server entirely",
             "Move all devices to fixed public IP addresses"
           ],
           "answer": [
             "Change the router's default password",
             "Keep the router firmware up to date",
-            "Switch off remote access to the router interface",
-            "Set up a separate guest WLAN"
+            "Switch off remote access to the router interface"
           ],
           "explanation": "Default passwords, firmware level, exposed remote access and missing guest separation are the classic home network weaknesses. Disabling DHCP only creates manual work, and public addresses for every device would be the opposite of safe.",
           "category": "Network Technology"
@@ -2118,16 +2006,12 @@
       "options": [
         "Es besteht aus sieben Schichten",
         "Jede Schicht nutzt die Dienste der darunterliegenden",
-        "Schicht 3 ist die Vermittlungsschicht",
-        "Schicht 4 ist die Transportschicht",
         "Es besteht aus vier Schichten wie TCP/IP",
         "Die oberste Schicht ist die Bitübertragung"
       ],
       "answer": [
         "Es besteht aus sieben Schichten",
-        "Jede Schicht nutzt die Dienste der darunterliegenden",
-        "Schicht 3 ist die Vermittlungsschicht",
-        "Schicht 4 ist die Transportschicht"
+        "Jede Schicht nutzt die Dienste der darunterliegenden"
       ],
       "explanation": "Sieben Schichten, jede baut auf der darunter auf; 3 ist Vermittlung, 4 Transport. Vier Schichten hat das TCP/IP-Modell, und die Bitübertragung ist die unterste Schicht, nicht die oberste.",
       "translations": {
@@ -2136,16 +2020,12 @@
           "options": [
             "It consists of seven layers",
             "Each layer uses the services of the one below",
-            "Layer 3 is the network layer",
-            "Layer 4 is the transport layer",
             "It consists of four layers like TCP/IP",
             "The topmost layer is the physical layer"
           ],
           "answer": [
             "It consists of seven layers",
-            "Each layer uses the services of the one below",
-            "Layer 3 is the network layer",
-            "Layer 4 is the transport layer"
+            "Each layer uses the services of the one below"
           ],
           "explanation": "Seven layers, each building on the one below; 3 is network, 4 is transport. Four layers belong to the TCP/IP model, and the physical layer is the bottom one, not the top.",
           "category": "Network Technology"
@@ -2203,15 +2083,13 @@
         "Die IP-Adresse der Netzwerkkarte",
         "Die Subnetzmaske der Verbindung",
         "Das eingetragene Standardgateway",
-        "Die physische Adresse der Karte",
         "Die freie Kapazität der Festplatte",
         "Die Liste der installierten Programme"
       ],
       "answer": [
         "Die IP-Adresse der Netzwerkkarte",
         "Die Subnetzmaske der Verbindung",
-        "Das eingetragene Standardgateway",
-        "Die physische Adresse der Karte"
+        "Das eingetragene Standardgateway"
       ],
       "explanation": "ipconfig /all zeigt die vollständige Konfiguration je Adapter samt MAC, DHCP-Server und DNS. Festplattenbelegung und Softwarelisten liefern ganz andere Werkzeuge.",
       "translations": {
@@ -2221,15 +2099,13 @@
             "The IP address of the network adapter",
             "The subnet mask of the connection",
             "The configured default gateway",
-            "The physical address of the adapter",
             "The free capacity of the hard disk",
             "The list of installed programs"
           ],
           "answer": [
             "The IP address of the network adapter",
             "The subnet mask of the connection",
-            "The configured default gateway",
-            "The physical address of the adapter"
+            "The configured default gateway"
           ],
           "explanation": "ipconfig /all shows the complete per-adapter configuration including MAC, DHCP server and DNS. Disk usage and software inventories come from entirely different tools.",
           "category": "Network Technology"

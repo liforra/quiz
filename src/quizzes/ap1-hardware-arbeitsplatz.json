@@ -947,15 +947,13 @@
         "Deutlich kürzere Zugriffszeiten",
         "Höhere Anzahl an Ein- und Ausgabeoperationen",
         "Unempfindlichkeit gegen Erschütterungen",
-        "Geräuschloser Betrieb ohne bewegte Teile",
         "Unbegrenzte Anzahl an Schreibzyklen",
         "Günstigerer Preis je Gigabyte"
       ],
       "answer": [
         "Deutlich kürzere Zugriffszeiten",
         "Höhere Anzahl an Ein- und Ausgabeoperationen",
-        "Unempfindlichkeit gegen Erschütterungen",
-        "Geräuschloser Betrieb ohne bewegte Teile"
+        "Unempfindlichkeit gegen Erschütterungen"
       ],
       "explanation": "Fehlende Mechanik bringt Tempo, Robustheit und Ruhe. Die Zahl der Schreibzyklen ist allerdings begrenzt, und pro Gigabyte bleibt die Festplatte günstiger.",
       "translations": {
@@ -965,15 +963,13 @@
             "Considerably shorter access times",
             "Higher number of input and output operations",
             "Insensitivity to shock and vibration",
-            "Silent operation without moving parts",
             "Unlimited number of write cycles",
             "Cheaper price per gigabyte"
           ],
           "answer": [
             "Considerably shorter access times",
             "Higher number of input and output operations",
-            "Insensitivity to shock and vibration",
-            "Silent operation without moving parts"
+            "Insensitivity to shock and vibration"
           ],
           "explanation": "The absence of mechanics brings speed, robustness and silence. The number of write cycles is limited, though, and per gigabyte the hard disk stays cheaper.",
           "category": "Hardware & Workplace"
@@ -988,16 +984,12 @@
       "options": [
         "Anzahl der Kerne",
         "Taktfrequenz",
-        "Größe des Caches",
-        "Unterstützte Befehlssatzerweiterungen",
         "Farbe des Kühlkörpers",
         "Gewicht der Verpackung"
       ],
       "answer": [
         "Anzahl der Kerne",
-        "Taktfrequenz",
-        "Größe des Caches",
-        "Unterstützte Befehlssatzerweiterungen"
+        "Taktfrequenz"
       ],
       "explanation": "Kerne, Takt, Cache und Befehlssatzerweiterungen bestimmen zusammen, wie schnell Aufgaben abgearbeitet werden. Äußerlichkeiten wie Kühlerfarbe oder Verpackungsgewicht sagen nichts aus.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "Number of cores",
             "Clock frequency",
-            "Cache size",
-            "Supported instruction set extensions",
             "Colour of the heat sink",
             "Weight of the packaging"
           ],
           "answer": [
             "Number of cores",
-            "Clock frequency",
-            "Cache size",
-            "Supported instruction set extensions"
+            "Clock frequency"
           ],
           "explanation": "Cores, clock, cache and instruction set extensions together determine how fast tasks are processed. Externals such as cooler colour or packaging weight say nothing.",
           "category": "Hardware & Workplace"
@@ -1073,15 +1061,13 @@
         "HDMI",
         "DisplayPort",
         "DVI",
-        "VGA",
         "SATA",
         "PS/2"
       ],
       "answer": [
         "HDMI",
         "DisplayPort",
-        "DVI",
-        "VGA"
+        "DVI"
       ],
       "explanation": "HDMI, DisplayPort und DVI übertragen digital, VGA analog. SATA verbindet Datenträger und PS/2 ältere Tastaturen und Mäuse.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "HDMI",
             "DisplayPort",
             "DVI",
-            "VGA",
             "SATA",
             "PS/2"
           ],
           "answer": [
             "HDMI",
             "DisplayPort",
-            "DVI",
-            "VGA"
+            "DVI"
           ],
           "explanation": "HDMI, DisplayPort and DVI transmit digitally, VGA in analogue form. SATA connects storage devices and PS/2 older keyboards and mice.",
           "category": "Hardware & Workplace"
@@ -1114,16 +1098,12 @@
       "options": [
         "Energiesparoptionen im Betriebssystem aktivieren",
         "Geräte mit hohem Wirkungsgrad beschaffen",
-        "Bildschirme nach kurzer Untätigkeit abschalten",
-        "Abschaltbare Steckdosenleisten einsetzen",
         "Alle Rechner dauerhaft durchlaufen lassen",
         "Bildschirmschoner mit bewegter Grafik nutzen"
       ],
       "answer": [
         "Energiesparoptionen im Betriebssystem aktivieren",
-        "Geräte mit hohem Wirkungsgrad beschaffen",
-        "Bildschirme nach kurzer Untätigkeit abschalten",
-        "Abschaltbare Steckdosenleisten einsetzen"
+        "Geräte mit hohem Wirkungsgrad beschaffen"
       ],
       "explanation": "Abschalten und effiziente Geräte wirken direkt, ebenso Leisten gegen Bereitschaftsverluste. Dauerbetrieb und aufwendige Bildschirmschoner erhöhen den Verbrauch sogar.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Enable power saving options in the operating system",
             "Procure devices with high efficiency ratings",
-            "Switch screens off after short inactivity",
-            "Use switchable power strips",
             "Let all PCs run permanently around the clock",
             "Use screen savers with animated graphics"
           ],
           "answer": [
             "Enable power saving options in the operating system",
-            "Procure devices with high efficiency ratings",
-            "Switch screens off after short inactivity",
-            "Use switchable power strips"
+            "Procure devices with high efficiency ratings"
           ],
           "explanation": "Switching off and efficient devices act directly, as do power strips against standby losses. Continuous operation and elaborate screen savers actually raise consumption.",
           "category": "Hardware & Workplace"
@@ -1199,15 +1175,13 @@
         "Er ist flüchtig und verliert Daten ohne Strom",
         "Er ist deutlich schneller als jeder Massenspeicher",
         "Zu wenig davon führt zum Auslagern auf die Platte",
-        "Die Kapazität wird in Gigabyte angegeben",
         "Er speichert das Betriebssystem dauerhaft",
         "Er ersetzt bei Bedarf den Prozessorcache"
       ],
       "answer": [
         "Er ist flüchtig und verliert Daten ohne Strom",
         "Er ist deutlich schneller als jeder Massenspeicher",
-        "Zu wenig davon führt zum Auslagern auf die Platte",
-        "Die Kapazität wird in Gigabyte angegeben"
+        "Zu wenig davon führt zum Auslagern auf die Platte"
       ],
       "explanation": "RAM ist schnell und flüchtig; reicht er nicht, weicht das System auf die deutlich langsamere Auslagerungsdatei aus. Dauerhafte Ablage übernimmt der Massenspeicher, und der Cache sitzt im Prozessor.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "It is volatile and loses data without power",
             "It is much faster than any mass storage device",
             "Too little of it leads to paging onto the disk",
-            "Capacity is stated in gigabytes",
             "It stores the operating system permanently",
             "It replaces the processor cache when needed"
           ],
           "answer": [
             "It is volatile and loses data without power",
             "It is much faster than any mass storage device",
-            "Too little of it leads to paging onto the disk",
-            "Capacity is stated in gigabytes"
+            "Too little of it leads to paging onto the disk"
           ],
           "explanation": "RAM is fast and volatile; when it runs short the system falls back to the far slower page file. Permanent storage is the mass storage device's job, and the cache sits inside the processor.",
           "category": "Hardware & Workplace"
@@ -1240,16 +1212,12 @@
       "options": [
         "Hohes Druckaufkommen im Alltag",
         "Niedrige Kosten je gedruckter Seite",
-        "Wischfeste Ausdrucke ohne Trocknungszeit",
-        "Hohe Druckgeschwindigkeit bei Text",
         "Häufiger Fotodruck in bester Qualität",
         "Sehr seltene Nutzung mit langen Pausen"
       ],
       "answer": [
         "Hohes Druckaufkommen im Alltag",
-        "Niedrige Kosten je gedruckter Seite",
-        "Wischfeste Ausdrucke ohne Trocknungszeit",
-        "Hohe Druckgeschwindigkeit bei Text"
+        "Niedrige Kosten je gedruckter Seite"
       ],
       "explanation": "Laser spielt seine Stärken bei Menge, Tempo und Seitenpreis aus und schmiert nicht. Für Fotos und für sehr seltene Nutzung ist Tinte oft die passendere Wahl.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "High everyday printing volume",
             "Low cost per printed page",
-            "Smudge-proof output with no drying time",
-            "High printing speed for text documents",
             "Frequent photo printing in top quality",
             "Very rare use with long idle periods"
           ],
           "answer": [
             "High everyday printing volume",
-            "Low cost per printed page",
-            "Smudge-proof output with no drying time",
-            "High printing speed for text documents"
+            "Low cost per printed page"
           ],
           "explanation": "Laser plays to its strengths in volume, speed and cost per page and does not smudge. For photos and very occasional use, inkjet is often the better fit.",
           "category": "Hardware & Workplace"
@@ -1325,15 +1289,13 @@
         "Verstaubte Kühlkörper und Lüfter",
         "Ausgetrocknete Wärmeleitpaste",
         "Blockierte Lüftungsöffnungen am Gehäuse",
-        "Ein defekter oder stehender Lüfter",
         "Eine zu große Festplattenkapazität",
         "Eine zu hohe Bildschirmauflösung"
       ],
       "answer": [
         "Verstaubte Kühlkörper und Lüfter",
         "Ausgetrocknete Wärmeleitpaste",
-        "Blockierte Lüftungsöffnungen am Gehäuse",
-        "Ein defekter oder stehender Lüfter"
+        "Blockierte Lüftungsöffnungen am Gehäuse"
       ],
       "explanation": "Wärme muss abgeführt werden; Staub, alte Paste, verdeckte Öffnungen und stehende Lüfter verhindern genau das. Speicherkapazität und Bildauflösung erzeugen keine nennenswerte Abwärme.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "Dusty heat sinks and fans",
             "Dried-out thermal paste",
             "Blocked ventilation openings on the case",
-            "A defective or stalled fan",
             "Too large a hard disk capacity",
             "Too high a screen resolution"
           ],
           "answer": [
             "Dusty heat sinks and fans",
             "Dried-out thermal paste",
-            "Blocked ventilation openings on the case",
-            "A defective or stalled fan"
+            "Blocked ventilation openings on the case"
           ],
           "explanation": "Heat has to be carried away; dust, old paste, covered openings and stalled fans prevent exactly that. Storage capacity and screen resolution produce no notable waste heat.",
           "category": "Hardware & Workplace"
@@ -1366,16 +1326,12 @@
       "options": [
         "USB überträgt Daten und liefert Strom",
         "Geräte lassen sich im Betrieb anschließen",
-        "Ein Hub erweitert die Zahl der Anschlüsse",
-        "Neuere Versionen erreichen höhere Datenraten",
         "USB überträgt grundsätzlich kein Bildsignal",
         "Jeder Anschluss braucht einen eigenen Treiber"
       ],
       "answer": [
         "USB überträgt Daten und liefert Strom",
-        "Geräte lassen sich im Betrieb anschließen",
-        "Ein Hub erweitert die Zahl der Anschlüsse",
-        "Neuere Versionen erreichen höhere Datenraten"
+        "Geräte lassen sich im Betrieb anschließen"
       ],
       "explanation": "Strom und Daten in einem Kabel, Hot-Plug-Fähigkeit, Erweiterbarkeit per Hub und wachsende Raten je Version kennzeichnen USB. Über USB-C lässt sich sehr wohl Bild übertragen, und Standardklassen brauchen keine eigenen Treiber.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "USB carries data and supplies power",
             "Devices can be connected during operation",
-            "A hub extends the number of ports",
-            "Newer versions reach higher data rates",
             "USB fundamentally carries no video signal",
             "Every port needs its own dedicated driver"
           ],
           "answer": [
             "USB carries data and supplies power",
-            "Devices can be connected during operation",
-            "A hub extends the number of ports",
-            "Newer versions reach higher data rates"
+            "Devices can be connected during operation"
           ],
           "explanation": "Power and data in one cable, hot-plug capability, expansion through hubs and rising rates per version characterise USB. Video can certainly be carried over USB-C, and standard device classes need no dedicated drivers.",
           "category": "Hardware & Workplace"
@@ -1451,15 +1403,13 @@
         "Es prüft die Hardware im Selbsttest",
         "Es legt die Startreihenfolge der Datenträger fest",
         "Es übergibt die Kontrolle an den Bootloader",
-        "Es stellt grundlegende Einstellungen bereit",
         "Es installiert die Anwendungsprogramme",
         "Es verwaltet die Benutzerkonten des Systems"
       ],
       "answer": [
         "Es prüft die Hardware im Selbsttest",
         "Es legt die Startreihenfolge der Datenträger fest",
-        "Es übergibt die Kontrolle an den Bootloader",
-        "Es stellt grundlegende Einstellungen bereit"
+        "Es übergibt die Kontrolle an den Bootloader"
       ],
       "explanation": "Selbsttest, Startreihenfolge, Übergabe an den Bootloader und Grundeinstellungen sind die Firmwareaufgaben. Anwendungen und Benutzerkonten verwaltet erst das Betriebssystem.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "It checks the hardware in a self test",
             "It defines the boot order of the drives",
             "It hands control over to the bootloader",
-            "It provides basic configuration settings",
             "It installs the application programs",
             "It manages the system's user accounts"
           ],
           "answer": [
             "It checks the hardware in a self test",
             "It defines the boot order of the drives",
-            "It hands control over to the bootloader",
-            "It provides basic configuration settings"
+            "It hands control over to the bootloader"
           ],
           "explanation": "Self test, boot order, handover to the bootloader and basic settings are the firmware's jobs. Applications and user accounts are managed by the operating system.",
           "category": "Hardware & Workplace"
@@ -1492,16 +1440,12 @@
       "options": [
         "Antistatikarmband mit Erdung tragen",
         "Rechner vorher vom Stromnetz trennen",
-        "Bauteile nur am Rand anfassen",
-        "Komponenten auf leitfähiger Unterlage ablegen",
         "Bauteile vor dem Einbau anhauchen",
         "Mit feuchtem Tuch über die Platine wischen"
       ],
       "answer": [
         "Antistatikarmband mit Erdung tragen",
-        "Rechner vorher vom Stromnetz trennen",
-        "Bauteile nur am Rand anfassen",
-        "Komponenten auf leitfähiger Unterlage ablegen"
+        "Rechner vorher vom Stromnetz trennen"
       ],
       "explanation": "Erdung, Spannungsfreiheit, Anfassen am Rand und leitfähige Ablage verhindern elektrostatische Schäden. Feuchtigkeit auf der Platine wäre dagegen unmittelbar schädlich.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "Wear an earthed antistatic wrist strap",
             "Disconnect the machine from mains power first",
-            "Handle components only by their edges",
-            "Place components on a conductive surface",
             "Breathe on components before installing them",
             "Wipe the board with a damp cloth"
           ],
           "answer": [
             "Wear an earthed antistatic wrist strap",
-            "Disconnect the machine from mains power first",
-            "Handle components only by their edges",
-            "Place components on a conductive surface"
+            "Disconnect the machine from mains power first"
           ],
           "explanation": "Earthing, removing power, edge handling and conductive surfaces prevent electrostatic damage. Moisture on the board would be immediately harmful.",
           "category": "Hardware & Workplace"
@@ -1577,15 +1517,13 @@
         "Sie sind mobil und arbeiten netzunabhängig",
         "Sie sind bei gleicher Leistung meist teurer",
         "Ihre Komponenten sind schlechter aufrüstbar",
-        "Sie erzeugen bei Volllast mehr Geräusch je Leistung",
         "Sie lassen sich leichter selbst reparieren",
         "Sie bieten grundsätzlich mehr Anschlüsse"
       ],
       "answer": [
         "Sie sind mobil und arbeiten netzunabhängig",
         "Sie sind bei gleicher Leistung meist teurer",
-        "Ihre Komponenten sind schlechter aufrüstbar",
-        "Sie erzeugen bei Volllast mehr Geräusch je Leistung"
+        "Ihre Komponenten sind schlechter aufrüstbar"
       ],
       "explanation": "Mobilität erkauft man mit Preis, kompakter Bauweise und schlechter Aufrüstbarkeit; kleine Lüfter werden zudem schneller laut. Reparatur und Anschlussvielfalt sprechen für den Desktop.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "They are mobile and run independently of mains power",
             "They usually cost more for the same performance",
             "Their components are harder to upgrade",
-            "They are noisier per unit of performance at full load",
             "They are easier to repair yourself",
             "They fundamentally offer more ports"
           ],
           "answer": [
             "They are mobile and run independently of mains power",
             "They usually cost more for the same performance",
-            "Their components are harder to upgrade",
-            "They are noisier per unit of performance at full load"
+            "Their components are harder to upgrade"
           ],
           "explanation": "Mobility is paid for with price, compact construction and poor upgradability; small fans also get loud sooner. Repairability and port variety favour the desktop.",
           "category": "Hardware & Workplace"
@@ -1618,16 +1554,12 @@
       "options": [
         "Geringe eigene Rechenleistung",
         "Anwendungen laufen auf einem zentralen Server",
-        "Niedriger Stromverbrauch im Betrieb",
-        "Zentrale Verwaltung und Aktualisierung",
         "Umfangreiche lokale Datenhaltung",
         "Hohe Grafikleistung für lokale Spiele"
       ],
       "answer": [
         "Geringe eigene Rechenleistung",
-        "Anwendungen laufen auf einem zentralen Server",
-        "Niedriger Stromverbrauch im Betrieb",
-        "Zentrale Verwaltung und Aktualisierung"
+        "Anwendungen laufen auf einem zentralen Server"
       ],
       "explanation": "Der Thin Client ist bewusst schlank: er zeigt an und nimmt Eingaben entgegen, während Rechenlast und Daten zentral liegen. Genau daraus folgen sparsamer Betrieb und einfache Verwaltung.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "Little processing power of its own",
             "Applications run on a central server",
-            "Low power consumption in operation",
-            "Central administration and updating",
             "Extensive local data storage",
             "High graphics performance for local gaming"
           ],
           "answer": [
             "Little processing power of its own",
-            "Applications run on a central server",
-            "Low power consumption in operation",
-            "Central administration and updating"
+            "Applications run on a central server"
           ],
           "explanation": "A thin client is deliberately lean: it displays and accepts input while processing load and data stay central. Economical operation and simple administration follow directly from that.",
           "category": "Hardware & Workplace"
@@ -1703,15 +1631,13 @@
         "Elektroaltgeräte gehören nicht in den Restmüll",
         "Datenträger sind vorher sicher zu löschen",
         "Rücknahmestellen nehmen Altgeräte an",
-        "Batterien werden getrennt entsorgt",
         "Geräte dürfen im Hausmüll entsorgt werden",
         "Festplatten können ungelöscht verkauft werden"
       ],
       "answer": [
         "Elektroaltgeräte gehören nicht in den Restmüll",
         "Datenträger sind vorher sicher zu löschen",
-        "Rücknahmestellen nehmen Altgeräte an",
-        "Batterien werden getrennt entsorgt"
+        "Rücknahmestellen nehmen Altgeräte an"
       ],
       "explanation": "Das Elektrogesetz verlangt getrennte Rückgabe, Batterien nochmals gesondert, und Datenschutz verlangt sicheres Löschen vor der Abgabe. Hausmüll und ungelöschte Verkäufe verstoßen gegen beides.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Electronic waste does not belong in general refuse",
             "Storage media must be securely wiped beforehand",
             "Collection points accept old equipment",
-            "Batteries are disposed of separately",
             "Devices may be put into household waste",
             "Hard disks can be sold without being wiped"
           ],
           "answer": [
             "Electronic waste does not belong in general refuse",
             "Storage media must be securely wiped beforehand",
-            "Collection points accept old equipment",
-            "Batteries are disposed of separately"
+            "Collection points accept old equipment"
           ],
           "explanation": "Electronics legislation requires separate return, batteries separately again, and data protection requires secure wiping before handover. Household waste and unwiped sales violate both.",
           "category": "Hardware & Workplace"
@@ -1744,16 +1668,12 @@
       "options": [
         "USB-Stick",
         "Externe SSD über USB",
-        "Speicherkarte mit Lesegerät",
-        "Netzwerkfreigabe über LAN",
         "Der Kaltgerätestecker des Netzteils",
         "Der Lüfteranschluss auf der Platine"
       ],
       "answer": [
         "USB-Stick",
-        "Externe SSD über USB",
-        "Speicherkarte mit Lesegerät",
-        "Netzwerkfreigabe über LAN"
+        "Externe SSD über USB"
       ],
       "explanation": "Wechselmedien und Netzwerkfreigaben sind die üblichen Wege, wobei die Freigabe bei größeren Mengen und Nachvollziehbarkeit klar im Vorteil ist. Strom- und Lüfteranschlüsse übertragen keine Daten.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "USB stick",
             "External SSD over USB",
-            "Memory card with a reader",
-            "Network share over LAN",
             "The power inlet of the PSU",
             "The fan header on the board"
           ],
           "answer": [
             "USB stick",
-            "External SSD over USB",
-            "Memory card with a reader",
-            "Network share over LAN"
+            "External SSD over USB"
           ],
           "explanation": "Removable media and network shares are the usual routes, with the share clearly ahead for larger volumes and traceability. Power and fan connectors carry no data.",
           "category": "Hardware & Workplace"
@@ -1829,15 +1745,13 @@
         "Geforderte Mindestausstattung an Prozessor und Speicher",
         "Notwendige Schnittstellen und Anschlüsse",
         "Gewünschte Garantie- und Reaktionszeiten",
-        "Anforderungen an Energieeffizienz",
         "Die Lieblingsmarke des Einkäufers",
         "Die Farbe der Verpackungskartons"
       ],
       "answer": [
         "Geforderte Mindestausstattung an Prozessor und Speicher",
         "Notwendige Schnittstellen und Anschlüsse",
-        "Gewünschte Garantie- und Reaktionszeiten",
-        "Anforderungen an Energieeffizienz"
+        "Gewünschte Garantie- und Reaktionszeiten"
       ],
       "explanation": "Ein Pflichtenheft beschreibt messbare Anforderungen, an denen Angebote vergleichbar werden: Leistung, Anschlüsse, Service und Effizienz. Persönliche Vorlieben und Verpackung gehören nicht dazu.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Required minimum processor and memory configuration",
             "Necessary interfaces and connectors",
             "Desired warranty and response times",
-            "Requirements for energy efficiency",
             "The purchaser's favourite brand",
             "The colour of the packaging boxes"
           ],
           "answer": [
             "Required minimum processor and memory configuration",
             "Necessary interfaces and connectors",
-            "Desired warranty and response times",
-            "Requirements for energy efficiency"
+            "Desired warranty and response times"
           ],
           "explanation": "A specification describes measurable requirements that make offers comparable: performance, connectors, service and efficiency. Personal preferences and packaging do not belong there.",
           "category": "Hardware & Workplace"
@@ -1870,16 +1782,12 @@
       "options": [
         "SATA erreicht rund 600 Megabyte je Sekunde",
         "NVMe nutzt die PCIe-Anbindung des Systems",
-        "M.2 beschreibt eine Bauform, nicht das Protokoll",
-        "NVMe erreicht deutlich höhere Datenraten als SATA",
         "SATA ist schneller als jede NVMe-Verbindung",
         "M.2 arbeitet grundsätzlich immer mit NVMe"
       ],
       "answer": [
         "SATA erreicht rund 600 Megabyte je Sekunde",
-        "NVMe nutzt die PCIe-Anbindung des Systems",
-        "M.2 beschreibt eine Bauform, nicht das Protokoll",
-        "NVMe erreicht deutlich höhere Datenraten als SATA"
+        "NVMe nutzt die PCIe-Anbindung des Systems"
       ],
       "explanation": "SATA deckelt bei etwa 600 MB/s, NVMe hängt am PCIe-Bus und liegt weit darüber. M.2 ist nur der Steckplatz und kann beide Protokolle führen - der Blick ins Datenblatt lohnt sich.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "SATA reaches around 600 megabytes per second",
             "NVMe uses the system's PCIe attachment",
-            "M.2 describes a form factor, not the protocol",
-            "NVMe reaches much higher data rates than SATA",
             "SATA is faster than any NVMe connection",
             "M.2 always works with NVMe by definition"
           ],
           "answer": [
             "SATA reaches around 600 megabytes per second",
-            "NVMe uses the system's PCIe attachment",
-            "M.2 describes a form factor, not the protocol",
-            "NVMe reaches much higher data rates than SATA"
+            "NVMe uses the system's PCIe attachment"
           ],
           "explanation": "SATA caps at roughly 600 MB/s while NVMe hangs off the PCIe bus and goes far beyond. M.2 is only the slot and can carry either protocol - reading the data sheet pays off.",
           "category": "Hardware & Workplace"
@@ -1955,15 +1859,13 @@
         "Er erkennt Bitfehler im Speicherinhalt",
         "Er korrigiert Einzelbitfehler selbstständig",
         "Er wird vor allem in Servern eingesetzt",
-        "Er braucht Unterstützung durch Board und Prozessor",
         "Er ist schneller als gewöhnlicher Speicher",
         "Er verdoppelt die nutzbare Kapazität"
       ],
       "answer": [
         "Er erkennt Bitfehler im Speicherinhalt",
         "Er korrigiert Einzelbitfehler selbstständig",
-        "Er wird vor allem in Servern eingesetzt",
-        "Er braucht Unterstützung durch Board und Prozessor"
+        "Er wird vor allem in Servern eingesetzt"
       ],
       "explanation": "ECC bezahlt Zuverlässigkeit mit etwas Kapazität und Tempo: Fehler werden erkannt und einzelne Bits korrigiert, sofern die Plattform mitspielt. Schneller oder größer wird der Speicher dadurch nicht.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "It detects bit errors in the stored content",
             "It corrects single-bit errors automatically",
             "It is used primarily in servers",
-            "It needs support from board and processor",
             "It is faster than ordinary memory",
             "It doubles the usable capacity"
           ],
           "answer": [
             "It detects bit errors in the stored content",
             "It corrects single-bit errors automatically",
-            "It is used primarily in servers",
-            "It needs support from board and processor"
+            "It is used primarily in servers"
           ],
           "explanation": "ECC pays for reliability with a little capacity and speed: errors are detected and single bits corrected, provided the platform supports it. The memory becomes neither faster nor larger.",
           "category": "Hardware & Workplace"
@@ -1996,16 +1896,12 @@
       "options": [
         "Bildschirmdiagonale in Zoll",
         "Native Auflösung in Bildpunkten",
-        "Anschlüsse für das Bildsignal",
-        "Höhenverstellbarkeit des Standfußes",
         "Anzahl der Schrauben im Gehäuse",
         "Herkunftsland des Verpackungskartons"
       ],
       "answer": [
         "Bildschirmdiagonale in Zoll",
-        "Native Auflösung in Bildpunkten",
-        "Anschlüsse für das Bildsignal",
-        "Höhenverstellbarkeit des Standfußes"
+        "Native Auflösung in Bildpunkten"
       ],
       "explanation": "Diagonale, Auflösung, Anschlüsse und Ergonomie entscheiden über Eignung am Arbeitsplatz. Konstruktionsdetails und Verpackungsherkunft helfen bei der Auswahl nicht weiter.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "Screen diagonal in inches",
             "Native resolution in pixels",
-            "Connectors for the video signal",
-            "Height adjustability of the stand",
             "Number of screws in the housing",
             "Country of origin of the packaging"
           ],
           "answer": [
             "Screen diagonal in inches",
-            "Native resolution in pixels",
-            "Connectors for the video signal",
-            "Height adjustability of the stand"
+            "Native resolution in pixels"
           ],
           "explanation": "Diagonal, resolution, connectors and ergonomics decide suitability at the workplace. Construction details and packaging origin do not help the selection.",
           "category": "Hardware & Workplace"
@@ -2081,15 +1973,13 @@
         "Regelmäßige Reinigung von Staub",
         "Aufstellung mit freien Lüftungsöffnungen",
         "Vermeidung von direkter Sonneneinstrahlung",
-        "Schutz vor Spannungsspitzen im Netz",
         "Dauerbetrieb unter Volllast rund um die Uhr",
         "Betrieb bei möglichst hoher Raumtemperatur"
       ],
       "answer": [
         "Regelmäßige Reinigung von Staub",
         "Aufstellung mit freien Lüftungsöffnungen",
-        "Vermeidung von direkter Sonneneinstrahlung",
-        "Schutz vor Spannungsspitzen im Netz"
+        "Vermeidung von direkter Sonneneinstrahlung"
       ],
       "explanation": "Wärme und Staub sind die größten Feinde der Elektronik, Spannungsspitzen der plötzliche. Dauervolllast und Hitze verkürzen die Lebensdauer dagegen messbar.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Regular removal of dust",
             "Placement with unobstructed ventilation openings",
             "Avoiding direct sunlight on the case",
-            "Protection against mains voltage spikes",
             "Continuous full-load operation around the clock",
             "Operation at the highest possible room temperature"
           ],
           "answer": [
             "Regular removal of dust",
             "Placement with unobstructed ventilation openings",
-            "Avoiding direct sunlight on the case",
-            "Protection against mains voltage spikes"
+            "Avoiding direct sunlight on the case"
           ],
           "explanation": "Heat and dust are electronics' biggest enemies, voltage spikes the sudden one. Continuous full load and heat measurably shorten service life instead.",
           "category": "Hardware & Workplace"
@@ -2122,16 +2010,12 @@
       "options": [
         "Die Tastatur ist ein reines Eingabegerät",
         "Der Monitor ist ein Ausgabegerät",
-        "Ein Touchscreen dient Ein- und Ausgabe zugleich",
-        "Ein Multifunktionsdrucker mit Scanner kann beides",
         "Die Maus gibt Bildinformationen aus",
         "Der Lautsprecher nimmt Daten entgegen"
       ],
       "answer": [
         "Die Tastatur ist ein reines Eingabegerät",
-        "Der Monitor ist ein Ausgabegerät",
-        "Ein Touchscreen dient Ein- und Ausgabe zugleich",
-        "Ein Multifunktionsdrucker mit Scanner kann beides"
+        "Der Monitor ist ein Ausgabegerät"
       ],
       "explanation": "Die Zuordnung folgt der Richtung des Datenflusses; Touchscreens und Multifunktionsgeräte vereinen beide Richtungen. Die Maus gibt nichts aus, der Lautsprecher nimmt nichts auf.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "The keyboard is a pure input device",
             "The monitor is an output device",
-            "A touchscreen serves input and output at once",
-            "A multifunction printer with scanner does both",
             "The mouse outputs image information",
             "The loudspeaker receives data input"
           ],
           "answer": [
             "The keyboard is a pure input device",
-            "The monitor is an output device",
-            "A touchscreen serves input and output at once",
-            "A multifunction printer with scanner does both"
+            "The monitor is an output device"
           ],
           "explanation": "The classification follows the direction of data flow; touchscreens and multifunction devices combine both directions. The mouse outputs nothing and the loudspeaker records nothing.",
           "category": "Hardware & Workplace"
@@ -2207,15 +2087,13 @@
         "Luftkühlung nutzt Kühlkörper und Lüfter",
         "Ein guter Luftstrom braucht Zu- und Abluft",
         "Wasserkühlung führt Wärme über ein Medium ab",
-        "Staub verschlechtert die Kühlleistung deutlich",
         "Mehr Lüfter bedeuten immer bessere Kühlung",
         "Ein geschlossenes Gehäuse braucht keine Belüftung"
       ],
       "answer": [
         "Luftkühlung nutzt Kühlkörper und Lüfter",
         "Ein guter Luftstrom braucht Zu- und Abluft",
-        "Wasserkühlung führt Wärme über ein Medium ab",
-        "Staub verschlechtert die Kühlleistung deutlich"
+        "Wasserkühlung führt Wärme über ein Medium ab"
       ],
       "explanation": "Entscheidend ist ein gerichteter Luftstrom von kalt nach warm, nicht die bloße Anzahl der Lüfter - gegeneinander blasende Lüfter bringen wenig. Ohne Belüftung staut sich die Wärme in jedem Gehäuse.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "Air cooling uses heat sinks and fans",
             "Good airflow needs both intake and exhaust",
             "Water cooling carries heat away via a medium",
-            "Dust noticeably degrades cooling performance",
             "More fans always mean better cooling",
             "A closed case needs no ventilation at all"
           ],
           "answer": [
             "Air cooling uses heat sinks and fans",
             "Good airflow needs both intake and exhaust",
-            "Water cooling carries heat away via a medium",
-            "Dust noticeably degrades cooling performance"
+            "Water cooling carries heat away via a medium"
           ],
           "explanation": "What matters is a directed airflow from cool to warm, not the sheer number of fans - fans blowing against each other achieve little. Without ventilation heat builds up in any case.",
           "category": "Hardware & Workplace"

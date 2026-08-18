@@ -65,13 +65,23 @@ in options · fehlende EN-Übersetzung.
 | 3 | ap1-hardware-arbeitsplatz.json | Hardware & Arbeitsplatz | `ap1-hw-r` | **fertig** |
 | 4 | ap1-softwareentwicklung.json | Softwareentwicklung | `ap1-swe-r` | **fertig** |
 | 5 | ap1-wirtschaft-projektmanagement.json | Wirtschaft & Projektmanagement | `ap1-wpm-r` | **fertig** |
-| 6 | ap2-netzwerke-subnetting.json | Netzwerke & Subnetting | `ap2-net-r` | offen |
-| 7 | ap2-datenbanken.json | Datenbanken | `ap2-db-r` | offen |
-| 8 | ap2-it-sicherheit.json | IT-Sicherheit & Netzwerksicherheit | `ap2-sec-r` | offen |
-| 9 | ap2-serverdienste-virtualisierung.json | Serverdienste & Virtualisierung | `ap2-srv-r` | offen |
-| 10 | ap2-speicher-backup.json | Speicher & Backup | `ap2-sto-r` | offen |
+| 6 | ap2-netzwerke-subnetting.json | Netzwerke & Subnetting | `ap2-net-r` | **fertig** |
+| 7 | ap2-datenbanken.json | Datenbanken | `ap2-db-r` | **fertig** |
+| 8 | ap2-it-sicherheit.json | IT-Sicherheit & Netzwerksicherheit | `ap2-sec-r` | **fertig** |
+| 9 | ap2-serverdienste-virtualisierung.json | Serverdienste & Virtualisierung | `ap2-srv-r` | **fertig** |
+| 10 | ap2-speicher-backup.json | Speicher & Backup | `ap2-sto-r` | **fertig** |
 
 Status: `offen` → `fertig`. Diese Tabelle nach jeder fertigen Datei aktualisieren.
+
+## Nachträglich gefundener Fehler (behoben)
+
+Beim ersten Durchlauf hatten **318 von 320** multiple-Fragen exakt 4 richtige
+Antworten von 6 - damit wäre "immer vier anklicken" eine Strategie ganz ohne
+Fachwissen gewesen. `_vary_shapes()` in `qlib.py` verteilt die Formen jetzt
+reihum gleichmäßig auf 6/4, 5/3 und 4/2 (Optionen/richtig); eine harte Prüfung
+lehnt jede Datei ab, in der eine Form über 45 % kommt. Entfernt werden dabei
+nur *richtige* Optionen vom Ende - die falschen bleiben an ihrer Position,
+damit Erklärungen mit Bezug auf "die letzten beiden Aussagen" gültig bleiben.
 
 ## Nicht vergessen
 
@@ -80,6 +90,5 @@ Status: `offen` → `fertig`. Diese Tabelle nach jeder fertigen Datei aktualisie
   keine Aufsätze.
 - `src/app.tsx:95` mischt die Optionen bei jedem Rendern → Reihenfolge in der
   JSON ist egal, **Längenbias** ist das reale Erratbarkeits-Leck.
-- Nach allen 10 Dateien: `npm run build` bzw. Lint gegenprüfen und README-Angabe
-  „12 questions each with an even single/multiple/text split" korrigieren
-  (stimmt schon jetzt nicht — es sind 100 pro Datei).
+- README ist korrigiert (100 Fragen je Datei, 32/32/36) und `npm run build`
+  läuft fehlerfrei durch.

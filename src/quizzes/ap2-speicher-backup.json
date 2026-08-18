@@ -947,15 +947,13 @@
         "Drei Kopien der Daten insgesamt",
         "Zwei unterschiedliche Medientypen",
         "Eine Kopie an einem anderen Ort",
-        "Schutz vor Ausfall eines einzelnen Mediums",
         "Drei Sicherungsläufe an jedem Werktag",
         "Alle Kopien im selben Serverraum"
       ],
       "answer": [
         "Drei Kopien der Daten insgesamt",
         "Zwei unterschiedliche Medientypen",
-        "Eine Kopie an einem anderen Ort",
-        "Schutz vor Ausfall eines einzelnen Mediums"
+        "Eine Kopie an einem anderen Ort"
       ],
       "explanation": "Drei Kopien, zwei Medientypen, eine auswärts - das deckt Einzelfehler, Medienschaden und Standortverlust ab. Alle Kopien am selben Ort teilen jedes Risiko.",
       "translations": {
@@ -965,15 +963,13 @@
             "Three copies of the data in total",
             "Two different media types",
             "One copy at a different location",
-            "Protection against failure of a single medium",
             "Three backup runs on every working day",
             "All copies in the same server room"
           ],
           "answer": [
             "Three copies of the data in total",
             "Two different media types",
-            "One copy at a different location",
-            "Protection against failure of a single medium"
+            "One copy at a different location"
           ],
           "explanation": "Three copies, two media types, one off site - covering single failures, media damage and site loss. All copies in one place share every risk.",
           "category": "Storage & Backup"
@@ -988,16 +984,12 @@
       "options": [
         "Sie sichert Änderungen seit der letzten Sicherung",
         "Sie ist beim Sichern besonders schnell",
-        "Sie belegt am wenigsten Speicherplatz",
-        "Die Wiederherstellung braucht die gesamte Kette",
         "Sie bezieht sich immer auf die letzte Vollsicherung",
         "Sie lässt sich ohne Vollsicherung zurückspielen"
       ],
       "answer": [
         "Sie sichert Änderungen seit der letzten Sicherung",
-        "Sie ist beim Sichern besonders schnell",
-        "Sie belegt am wenigsten Speicherplatz",
-        "Die Wiederherstellung braucht die gesamte Kette"
+        "Sie ist beim Sichern besonders schnell"
       ],
       "explanation": "Inkrementell ist der sparsamste Weg beim Sichern und der aufwendigste beim Zurückspielen. Der Bezug auf die letzte Vollsicherung kennzeichnet dagegen die differenzielle Sicherung.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "It backs up changes since the last backup",
             "It is particularly fast when backing up",
-            "It occupies the least storage space",
-            "Recovery needs the entire chain",
             "It always refers to the last full backup",
             "It can be restored without a full backup"
           ],
           "answer": [
             "It backs up changes since the last backup",
-            "It is particularly fast when backing up",
-            "It occupies the least storage space",
-            "Recovery needs the entire chain"
+            "It is particularly fast when backing up"
           ],
           "explanation": "Incremental is the most economical way to back up and the most laborious to restore. Referring to the last full backup characterises the differential backup instead.",
           "category": "Storage & Backup"
@@ -1073,15 +1061,13 @@
         "Es stellt Blockspeicher für Server bereit",
         "Es nutzt häufig Fibre Channel oder iSCSI",
         "Der Server sieht den Bereich wie eine lokale Platte",
-        "Es erlaubt zentrale Verwaltung des Speichers",
         "Es liefert Dateifreigaben über SMB an Clients",
         "Es ersetzt die Datensicherung der Server"
       ],
       "answer": [
         "Es stellt Blockspeicher für Server bereit",
         "Es nutzt häufig Fibre Channel oder iSCSI",
-        "Der Server sieht den Bereich wie eine lokale Platte",
-        "Es erlaubt zentrale Verwaltung des Speichers"
+        "Der Server sieht den Bereich wie eine lokale Platte"
       ],
       "explanation": "Ein SAN liefert Blöcke, kein Dateisystem - das legt der Server selbst darauf an. Dateifreigaben sind Sache eines NAS, und Sicherung bleibt eine eigene Aufgabe.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "It provides block storage for servers",
             "It often uses fibre channel or iSCSI",
             "The server sees the area like a local disk",
-            "It allows central management of storage",
             "It delivers SMB file shares to clients",
             "It replaces the servers' data backup"
           ],
           "answer": [
             "It provides block storage for servers",
             "It often uses fibre channel or iSCSI",
-            "The server sees the area like a local disk",
-            "It allows central management of storage"
+            "The server sees the area like a local disk"
           ],
           "explanation": "A SAN delivers blocks, not a file system - the server creates that itself. File shares are a NAS's job, and backup remains a separate task.",
           "category": "Storage & Backup"
@@ -1114,16 +1098,12 @@
       "options": [
         "Mehrfach vorkommende Blöcke werden einmal gespeichert",
         "Der Platzbedarf sinkt teils erheblich",
-        "Bei ähnlichen virtuellen Maschinen wirkt sie besonders stark",
-        "Sie erfordert zusätzliche Rechenleistung",
         "Sie erhöht die Ausfallsicherheit des Speichers",
         "Sie ersetzt die Verschlüsselung der Sicherung"
       ],
       "answer": [
         "Mehrfach vorkommende Blöcke werden einmal gespeichert",
-        "Der Platzbedarf sinkt teils erheblich",
-        "Bei ähnlichen virtuellen Maschinen wirkt sie besonders stark",
-        "Sie erfordert zusätzliche Rechenleistung"
+        "Der Platzbedarf sinkt teils erheblich"
       ],
       "explanation": "Deduplizierung tauscht Rechenzeit gegen Speicherplatz und wirkt dort am stärksten, wo sich Daten stark ähneln. Mit Ausfallsicherheit und Vertraulichkeit hat sie nichts zu tun.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Blocks occurring repeatedly are stored once",
             "Space requirements drop considerably at times",
-            "It works especially well with similar virtual machines",
-            "It requires additional processing power",
             "It increases the fault tolerance of the storage",
             "It replaces encryption of the backup"
           ],
           "answer": [
             "Blocks occurring repeatedly are stored once",
-            "Space requirements drop considerably at times",
-            "It works especially well with similar virtual machines",
-            "It requires additional processing power"
+            "Space requirements drop considerably at times"
           ],
           "explanation": "Deduplication trades processing time for storage space and works best where data is very similar. It has nothing to do with fault tolerance or confidentiality.",
           "category": "Storage & Backup"
@@ -1199,15 +1175,13 @@
         "Sie sind je Terabyte vergleichsweise günstig",
         "Sie lassen sich stromlos lange lagern",
         "Sie bieten von Natur aus ein Air Gap",
-        "Der wahlfreie Zugriff ist langsam",
         "Sie eignen sich gut als schneller Zwischenspeicher",
         "Sie verlieren nach wenigen Monaten ihre Daten"
       ],
       "answer": [
         "Sie sind je Terabyte vergleichsweise günstig",
         "Sie lassen sich stromlos lange lagern",
-        "Sie bieten von Natur aus ein Air Gap",
-        "Der wahlfreie Zugriff ist langsam"
+        "Sie bieten von Natur aus ein Air Gap"
       ],
       "explanation": "Bänder punkten bei Preis, Haltbarkeit und der physischen Trennung vom Netz. Ihr sequenzieller Zugriff macht sie für schnelle Einzelrestores allerdings unpraktisch.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "They are comparatively cheap per terabyte",
             "They can be stored unpowered for a long time",
             "They inherently provide an air gap",
-            "Random access is slow",
             "They work well as a fast intermediate cache",
             "They lose their data after a few months"
           ],
           "answer": [
             "They are comparatively cheap per terabyte",
             "They can be stored unpowered for a long time",
-            "They inherently provide an air gap",
-            "Random access is slow"
+            "They inherently provide an air gap"
           ],
           "explanation": "Tapes score on price, durability and physical separation from the network. Their sequential access makes them impractical for fast individual restores, though.",
           "category": "Storage & Backup"
@@ -1240,16 +1212,12 @@
       "options": [
         "Die Daten liegen identisch auf zwei Platten",
         "Der Ausfall einer Platte wird verkraftet",
-        "Die Nettokapazität beträgt die Hälfte der Rohkapazität",
-        "Es sind mindestens zwei Platten erforderlich",
         "Die Nettokapazität entspricht der Summe beider Platten",
         "Es ersetzt die Sicherung der gespiegelten Daten"
       ],
       "answer": [
         "Die Daten liegen identisch auf zwei Platten",
-        "Der Ausfall einer Platte wird verkraftet",
-        "Die Nettokapazität beträgt die Hälfte der Rohkapazität",
-        "Es sind mindestens zwei Platten erforderlich"
+        "Der Ausfall einer Platte wird verkraftet"
       ],
       "explanation": "Spiegelung ist einfach und robust, kostet aber die Hälfte der Kapazität. Gelöschte Dateien werden allerdings auf beiden Platten gelöscht - deshalb bleibt die Sicherung nötig.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "The data lies identically on two disks",
             "The failure of one disk is tolerated",
-            "Net capacity is half the raw capacity",
-            "At least two disks are required",
             "Net capacity equals the sum of both disks",
             "It replaces the backup of the mirrored data"
           ],
           "answer": [
             "The data lies identically on two disks",
-            "The failure of one disk is tolerated",
-            "Net capacity is half the raw capacity",
-            "At least two disks are required"
+            "The failure of one disk is tolerated"
           ],
           "explanation": "Mirroring is simple and robust but costs half the capacity. Deleted files are deleted on both disks, though - which is why backup remains necessary.",
           "category": "Storage & Backup"
@@ -1325,15 +1289,13 @@
         "Sie liefern deutlich mehr Ein- und Ausgabeoperationen",
         "Sie haben keine mechanische Zugriffszeit",
         "Ihre Schreibzyklen sind begrenzt",
-        "Ihr Zustand lässt sich über Kennwerte überwachen",
         "Sie eignen sich am besten zur stromlosen Archivierung",
         "Sie machen ein RAID grundsätzlich überflüssig"
       ],
       "answer": [
         "Sie liefern deutlich mehr Ein- und Ausgabeoperationen",
         "Sie haben keine mechanische Zugriffszeit",
-        "Ihre Schreibzyklen sind begrenzt",
-        "Ihr Zustand lässt sich über Kennwerte überwachen"
+        "Ihre Schreibzyklen sind begrenzt"
       ],
       "explanation": "SSDs glänzen bei Zugriffen pro Sekunde, altern aber über Schreibzyklen. Für die stromlose Langzeitlagerung sind sie die schlechteste Wahl, und Ausfälle gibt es auch bei ihnen.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "They deliver far more input and output operations",
             "They have no mechanical seek time",
             "Their write cycles are limited",
-            "Their health can be monitored via metrics",
             "They are best suited to unpowered archiving",
             "They fundamentally make RAID unnecessary"
           ],
           "answer": [
             "They deliver far more input and output operations",
             "They have no mechanical seek time",
-            "Their write cycles are limited",
-            "Their health can be monitored via metrics"
+            "Their write cycles are limited"
           ],
           "explanation": "SSDs excel at operations per second but age through write cycles. For unpowered long-term storage they are the worst choice, and they fail too.",
           "category": "Storage & Backup"
@@ -1366,16 +1326,12 @@
       "options": [
         "Ein definiertes System oder Datenpaket auswählen",
         "Die Wiederherstellung in einer Testumgebung durchführen",
-        "Die Vollständigkeit der Daten prüfen",
-        "Die benötigte Dauer messen und dokumentieren",
         "Die Wiederherstellung direkt über das Produktivsystem laufen lassen",
         "Auf eine Dokumentation des Ergebnisses verzichten"
       ],
       "answer": [
         "Ein definiertes System oder Datenpaket auswählen",
-        "Die Wiederherstellung in einer Testumgebung durchführen",
-        "Die Vollständigkeit der Daten prüfen",
-        "Die benötigte Dauer messen und dokumentieren"
+        "Die Wiederherstellung in einer Testumgebung durchführen"
       ],
       "explanation": "Der Test prüft Vollständigkeit und Dauer und liefert damit den Nachweis für RTO und RPO. Auf dem Produktivsystem zu testen riskiert genau den Schaden, den man verhindern will.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "Select a defined system or data set",
             "Perform the restore in a test environment",
-            "Verify the completeness of the data",
-            "Measure and document the time required",
             "Run the restore directly over the production system",
             "Skip documenting the result"
           ],
           "answer": [
             "Select a defined system or data set",
-            "Perform the restore in a test environment",
-            "Verify the completeness of the data",
-            "Measure and document the time required"
+            "Perform the restore in a test environment"
           ],
           "explanation": "The test verifies completeness and duration and thereby evidences RTO and RPO. Testing on production risks exactly the damage you are trying to prevent.",
           "category": "Storage & Backup"
@@ -1451,15 +1403,13 @@
         "Benötigte Kapazität samt Wachstum",
         "Geforderte Ein- und Ausgabeleistung",
         "Anforderungen an die Verfügbarkeit",
-        "Vorhandene Anbindung im Rechenzentrum",
         "Die Farbgestaltung der vorderen Gehäusefront",
         "Das Gewicht der mitgelieferten Transportverpackung"
       ],
       "answer": [
         "Benötigte Kapazität samt Wachstum",
         "Geforderte Ein- und Ausgabeleistung",
-        "Anforderungen an die Verfügbarkeit",
-        "Vorhandene Anbindung im Rechenzentrum"
+        "Anforderungen an die Verfügbarkeit"
       ],
       "explanation": "Kapazität, Leistung, Verfügbarkeit und Anbindung bestimmen die Auswahl und die Kosten. Äußerlichkeiten spielen keine Rolle.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Required capacity including growth",
             "Required input and output performance",
             "Availability requirements",
-            "Existing connectivity in the data centre",
             "The colour scheme of the front of the chassis",
             "The weight of the supplied transport packaging"
           ],
           "answer": [
             "Required capacity including growth",
             "Required input and output performance",
-            "Availability requirements",
-            "Existing connectivity in the data centre"
+            "Availability requirements"
           ],
           "explanation": "Capacity, performance, availability and connectivity determine choice and cost. Externals play no role.",
           "category": "Storage & Backup"
@@ -1492,16 +1440,12 @@
       "options": [
         "Sie sichert alle Änderungen seit der letzten Vollsicherung",
         "Sie wächst bis zur nächsten Vollsicherung an",
-        "Zum Zurückspielen genügen Vollsicherung und die jüngste differenzielle",
-        "Sie ist beim Zurückspielen schneller als inkrementell",
         "Sie sichert nur Änderungen seit der letzten Sicherung",
         "Sie bleibt über die gesamte Woche hinweg konstant groß"
       ],
       "answer": [
         "Sie sichert alle Änderungen seit der letzten Vollsicherung",
-        "Sie wächst bis zur nächsten Vollsicherung an",
-        "Zum Zurückspielen genügen Vollsicherung und die jüngste differenzielle",
-        "Sie ist beim Zurückspielen schneller als inkrementell"
+        "Sie wächst bis zur nächsten Vollsicherung an"
       ],
       "explanation": "Differenziell liegt zwischen voll und inkrementell: mehr Platz beim Sichern, dafür nur zwei Bestandteile beim Zurückspielen.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "It backs up all changes since the last full backup",
             "It grows until the next full backup",
-            "Restoring needs the full backup and the latest differential",
-            "It restores faster than incremental",
             "It backs up only changes since the last backup",
             "It stays constant in size across the entire week"
           ],
           "answer": [
             "It backs up all changes since the last full backup",
-            "It grows until the next full backup",
-            "Restoring needs the full backup and the latest differential",
-            "It restores faster than incremental"
+            "It grows until the next full backup"
           ],
           "explanation": "Differential sits between full and incremental: more space when backing up, but only two components when restoring.",
           "category": "Storage & Backup"
@@ -1577,15 +1517,13 @@
         "Der RPO beschreibt den zulässigen Datenverlust",
         "Der RTO beschreibt die zulässige Ausfallzeit",
         "Beide werden je System festgelegt",
-        "Beide leiten sich aus dem Geschäftsbedarf ab",
         "Beide beschreiben denselben Sachverhalt",
         "Beide werden von der Hardware vorgegeben"
       ],
       "answer": [
         "Der RPO beschreibt den zulässigen Datenverlust",
         "Der RTO beschreibt die zulässige Ausfallzeit",
-        "Beide werden je System festgelegt",
-        "Beide leiten sich aus dem Geschäftsbedarf ab"
+        "Beide werden je System festgelegt"
       ],
       "explanation": "RPO und RTO beantworten zwei verschiedene Fragen: wie viel darf verloren gehen und wie lange darf es dauern. Beide bemessen sich am Schaden für das Geschäft.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "The RPO describes permissible data loss",
             "The RTO describes permissible downtime",
             "Both are defined per system",
-            "Both derive from business needs",
             "Both describe the same thing",
             "Both are dictated by the hardware"
           ],
           "answer": [
             "The RPO describes permissible data loss",
             "The RTO describes permissible downtime",
-            "Both are defined per system",
-            "Both derive from business needs"
+            "Both are defined per system"
           ],
           "explanation": "RPO and RTO answer two different questions: how much may be lost and how long may it take. Both are measured by the damage to the business.",
           "category": "Storage & Backup"
@@ -1618,16 +1554,12 @@
       "options": [
         "Sie stellen Dateifreigaben im Netz bereit",
         "Sie nutzen Protokolle wie SMB oder NFS",
-        "Sie lassen sich zentral verwalten",
-        "Sie sind für viele Clients gleichzeitig gedacht",
         "Sie liefern rohen Blockspeicher genau wie ein SAN",
         "Sie brauchen zwingend eine Fibre-Channel-Anbindung"
       ],
       "answer": [
         "Sie stellen Dateifreigaben im Netz bereit",
-        "Sie nutzen Protokolle wie SMB oder NFS",
-        "Sie lassen sich zentral verwalten",
-        "Sie sind für viele Clients gleichzeitig gedacht"
+        "Sie nutzen Protokolle wie SMB oder NFS"
       ],
       "explanation": "Ein NAS liefert fertige Dateisysteme über das normale Netz, ein SAN dagegen Blöcke über ein eigenes. Fibre Channel gehört zur SAN-Welt.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "They provide file shares on the network",
             "They use protocols such as SMB or NFS",
-            "They can be managed centrally",
-            "They are intended for many clients at once",
             "They deliver raw block storage exactly like a SAN",
             "They strictly require a fibre channel connection"
           ],
           "answer": [
             "They provide file shares on the network",
-            "They use protocols such as SMB or NFS",
-            "They can be managed centrally",
-            "They are intended for many clients at once"
+            "They use protocols such as SMB or NFS"
           ],
           "explanation": "A NAS delivers ready file systems over the normal network, while a SAN delivers blocks over its own. Fibre channel belongs to the SAN world.",
           "category": "Storage & Backup"
@@ -1703,15 +1631,13 @@
         "Sie schützt ausgelagerte Medien vor Auslesen",
         "Der Schlüssel muss getrennt sicher verwahrt werden",
         "Ein verlorener Schlüssel bedeutet Datenverlust",
-        "Sie ist bei Transport außer Haus besonders wichtig",
         "Sie ersetzt eine Zugriffsbeschränkung am Sicherungssystem",
         "Der Schlüssel gehört zusammen mit der Sicherung auf dasselbe Medium"
       ],
       "answer": [
         "Sie schützt ausgelagerte Medien vor Auslesen",
         "Der Schlüssel muss getrennt sicher verwahrt werden",
-        "Ein verlorener Schlüssel bedeutet Datenverlust",
-        "Sie ist bei Transport außer Haus besonders wichtig"
+        "Ein verlorener Schlüssel bedeutet Datenverlust"
       ],
       "explanation": "Verschlüsselung ist erst mit durchdachter Schlüsselverwaltung wirksam. Den Schlüssel neben die Sicherung zu legen hebt den Schutz vollständig auf.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "It protects off-site media from being read",
             "The key must be kept safely and separately",
             "A lost key means data loss",
-            "It matters especially for transport off site",
             "It replaces access restrictions on the backup system",
             "The key belongs on the same medium as the backup"
           ],
           "answer": [
             "It protects off-site media from being read",
             "The key must be kept safely and separately",
-            "A lost key means data loss",
-            "It matters especially for transport off site"
+            "A lost key means data loss"
           ],
           "explanation": "Encryption is only effective with well-considered key management. Putting the key next to the backup cancels the protection entirely.",
           "category": "Storage & Backup"
@@ -1744,16 +1668,12 @@
       "options": [
         "Es kombiniert Spiegelung und Aufteilung",
         "Es bietet hohe Leistung bei Schreibzugriffen",
-        "Die Nettokapazität beträgt die Hälfte der Rohkapazität",
-        "Es benötigt mindestens vier Platten",
         "Es speichert Paritätsinformationen verteilt",
         "Es bietet dieselbe Nettokapazität wie RAID 5"
       ],
       "answer": [
         "Es kombiniert Spiegelung und Aufteilung",
-        "Es bietet hohe Leistung bei Schreibzugriffen",
-        "Die Nettokapazität beträgt die Hälfte der Rohkapazität",
-        "Es benötigt mindestens vier Platten"
+        "Es bietet hohe Leistung bei Schreibzugriffen"
       ],
       "explanation": "RAID 10 verzichtet auf Paritätsberechnung und ist deshalb beim Schreiben schnell - erkauft mit dem Verlust der halben Kapazität.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "It combines mirroring and striping",
             "It offers high performance on writes",
-            "Net capacity is half the raw capacity",
-            "It requires at least four disks",
             "It stores parity information distributed",
             "It offers the same net capacity as RAID 5"
           ],
           "answer": [
             "It combines mirroring and striping",
-            "It offers high performance on writes",
-            "Net capacity is half the raw capacity",
-            "It requires at least four disks"
+            "It offers high performance on writes"
           ],
           "explanation": "RAID 10 does without parity calculation and is therefore fast on writes - paid for with the loss of half the capacity.",
           "category": "Storage & Backup"
@@ -1829,15 +1745,13 @@
         "Das erwartete Wachstum wird einbezogen",
         "Die geplante Nutzungsdauer bestimmt die Reserve",
         "Die Auslastung wird laufend überwacht",
-        "Schwellwerte lösen rechtzeitig eine Erweiterung aus",
         "Es wird genau die aktuelle Belegung beschafft",
         "Volle Datenträger sind betrieblich unproblematisch"
       ],
       "answer": [
         "Das erwartete Wachstum wird einbezogen",
         "Die geplante Nutzungsdauer bestimmt die Reserve",
-        "Die Auslastung wird laufend überwacht",
-        "Schwellwerte lösen rechtzeitig eine Erweiterung aus"
+        "Die Auslastung wird laufend überwacht"
       ],
       "explanation": "Speicher wird für die Zukunft beschafft und laufend beobachtet. Ein vollgelaufener Datenträger legt Dienste zuverlässig lahm und gehört zu den häufigsten Ausfallursachen.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Expected growth is factored in",
             "The planned service life determines the reserve",
             "Utilisation is monitored continuously",
-            "Thresholds trigger expansion in good time",
             "Exactly the current usage is procured",
             "Full disks are operationally harmless"
           ],
           "answer": [
             "Expected growth is factored in",
             "The planned service life determines the reserve",
-            "Utilisation is monitored continuously",
-            "Thresholds trigger expansion in good time"
+            "Utilisation is monitored continuously"
           ],
           "explanation": "Storage is procured for the future and continuously observed. A full disk reliably takes services down and is among the most frequent causes of outages.",
           "category": "Storage & Backup"
@@ -1870,16 +1782,12 @@
       "options": [
         "Hochverfügbarkeit federt Hardwareausfälle ab",
         "Die Sicherung schützt vor gelöschten oder verschlüsselten Daten",
-        "Beide Konzepte ergänzen einander",
-        "Ein Cluster repliziert auch Fehler sofort auf alle Knoten",
         "Hochverfügbarkeit macht regelmäßige Sicherungen vollständig entbehrlich",
         "Eine Sicherung ersetzt jede Form von Redundanz im Betrieb"
       ],
       "answer": [
         "Hochverfügbarkeit federt Hardwareausfälle ab",
-        "Die Sicherung schützt vor gelöschten oder verschlüsselten Daten",
-        "Beide Konzepte ergänzen einander",
-        "Ein Cluster repliziert auch Fehler sofort auf alle Knoten"
+        "Die Sicherung schützt vor gelöschten oder verschlüsselten Daten"
       ],
       "explanation": "Redundanz hilft gegen Ausfall, Sicherung gegen Fehler und Angriffe. Wer nur eines von beidem hat, ist gegen die jeweils andere Ursache schutzlos.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "High availability cushions hardware failures",
             "Backup protects against deleted or encrypted data",
-            "The two concepts complement each other",
-            "A cluster replicates errors instantly to all nodes",
             "High availability makes regular backups entirely dispensable",
             "A backup replaces any form of redundancy in operation"
           ],
           "answer": [
             "High availability cushions hardware failures",
-            "Backup protects against deleted or encrypted data",
-            "The two concepts complement each other",
-            "A cluster replicates errors instantly to all nodes"
+            "Backup protects against deleted or encrypted data"
           ],
           "explanation": "Redundancy helps against outages, backup against mistakes and attacks. Having only one of the two leaves you defenceless against the other cause.",
           "category": "Storage & Backup"
@@ -1955,15 +1859,13 @@
         "Es transportiert SCSI-Kommandos über IP",
         "Es stellt dem Server Blockspeicher bereit",
         "Es nutzt vorhandene Netzwerkinfrastruktur",
-        "Ein getrenntes Speichernetz verbessert die Leistung",
         "Es stellt fertige Dateifreigaben bereit",
         "Es benötigt zwingend Fibre-Channel-Hardware"
       ],
       "answer": [
         "Es transportiert SCSI-Kommandos über IP",
         "Es stellt dem Server Blockspeicher bereit",
-        "Es nutzt vorhandene Netzwerkinfrastruktur",
-        "Ein getrenntes Speichernetz verbessert die Leistung"
+        "Es nutzt vorhandene Netzwerkinfrastruktur"
       ],
       "explanation": "iSCSI ist die günstige Alternative zu Fibre Channel, weil es auf vorhandenem Ethernet läuft. Für ernsthafte Last sollte der Speicherverkehr dennoch ein eigenes Netz bekommen.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "It carries SCSI commands over IP",
             "It provides block storage to the server",
             "It uses existing network infrastructure",
-            "A separate storage network improves performance",
             "It provides ready-made file shares",
             "It strictly requires fibre channel hardware"
           ],
           "answer": [
             "It carries SCSI commands over IP",
             "It provides block storage to the server",
-            "It uses existing network infrastructure",
-            "A separate storage network improves performance"
+            "It uses existing network infrastructure"
           ],
           "explanation": "iSCSI is the affordable alternative to fibre channel because it runs on existing Ethernet. For serious load the storage traffic should still get its own network.",
           "category": "Storage & Backup"
@@ -1996,16 +1896,12 @@
       "options": [
         "Hardwaredefekt eines Datenträgers",
         "Versehentliches Löschen durch Nutzer",
-        "Verschlüsselung durch Schadsoftware",
-        "Fehlerhafte Änderungen an Anwendungen",
         "Eine zu große Bildschirmauflösung",
         "Eine zu lange Netzwerkkabellänge"
       ],
       "answer": [
         "Hardwaredefekt eines Datenträgers",
-        "Versehentliches Löschen durch Nutzer",
-        "Verschlüsselung durch Schadsoftware",
-        "Fehlerhafte Änderungen an Anwendungen"
+        "Versehentliches Löschen durch Nutzer"
       ],
       "explanation": "Technik, Mensch, Angriff und Fehler sind die vier klassischen Ursachen - gegen jede einzelne hilft nur eine geprüfte Sicherung. Anzeige und Verkabelung spielen keine Rolle.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "Hardware defect of a storage device",
             "Accidental deletion by users",
-            "Encryption by malicious software",
-            "Faulty changes to applications",
             "Too high a screen resolution",
             "Too long a network cable"
           ],
           "answer": [
             "Hardware defect of a storage device",
-            "Accidental deletion by users",
-            "Encryption by malicious software",
-            "Faulty changes to applications"
+            "Accidental deletion by users"
           ],
           "explanation": "Technology, people, attacks and mistakes are the four classic causes - and only a verified backup helps against each. Display and cabling play no role.",
           "category": "Storage & Backup"
@@ -2081,15 +1973,13 @@
         "Die Daten werden über mehrere Platten verteilt",
         "Der Durchsatz steigt gegenüber einer Einzelplatte",
         "Die volle Rohkapazität bleibt nutzbar",
-        "Der Ausfall einer Platte zerstört den gesamten Verbund",
         "Es bietet Ausfallsicherheit durch verteilte Paritätsdaten",
         "Es eignet sich besonders gut für unersetzliche Datenbestände"
       ],
       "answer": [
         "Die Daten werden über mehrere Platten verteilt",
         "Der Durchsatz steigt gegenüber einer Einzelplatte",
-        "Die volle Rohkapazität bleibt nutzbar",
-        "Der Ausfall einer Platte zerstört den gesamten Verbund"
+        "Die volle Rohkapazität bleibt nutzbar"
       ],
       "explanation": "RAID 0 tauscht Sicherheit gegen Tempo und Kapazität. Mit jeder zusätzlichen Platte steigt sogar die Wahrscheinlichkeit eines Totalverlusts.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "The data is striped across several disks",
             "Throughput rises compared with a single disk",
             "The full raw capacity stays usable",
-            "The failure of one disk destroys the whole array",
             "It offers fault tolerance through distributed parity data",
             "It suits irreplaceable datasets particularly well"
           ],
           "answer": [
             "The data is striped across several disks",
             "Throughput rises compared with a single disk",
-            "The full raw capacity stays usable",
-            "The failure of one disk destroys the whole array"
+            "The full raw capacity stays usable"
           ],
           "explanation": "RAID 0 trades safety for speed and capacity. With every additional disk the probability of total loss actually rises.",
           "category": "Storage & Backup"
@@ -2122,16 +2010,12 @@
       "options": [
         "Freier Platz wird gegen Schwellwerte geprüft",
         "Zustandswerte der Datenträger werden ausgewertet",
-        "Ausfälle im RAID lösen eine Meldung aus",
-        "Erfolg und Dauer der Sicherungen werden überwacht",
         "Eine Meldung genügt, wenn niemand sie liest",
         "Überwachung ersetzt die Wiederherstellungstests"
       ],
       "answer": [
         "Freier Platz wird gegen Schwellwerte geprüft",
-        "Zustandswerte der Datenträger werden ausgewertet",
-        "Ausfälle im RAID lösen eine Meldung aus",
-        "Erfolg und Dauer der Sicherungen werden überwacht"
+        "Zustandswerte der Datenträger werden ausgewertet"
       ],
       "explanation": "Platz, Plattenzustand, RAID-Status und Sicherungsergebnis sind die vier Werte, die zählen - vorausgesetzt, die Meldungen erreichen jemanden, der handelt.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "Free space is checked against thresholds",
             "Health values of the drives are evaluated",
-            "RAID failures trigger an alert",
-            "Success and duration of backups are monitored",
             "An alert suffices even if nobody reads it",
             "Monitoring replaces recovery testing"
           ],
           "answer": [
             "Free space is checked against thresholds",
-            "Health values of the drives are evaluated",
-            "RAID failures trigger an alert",
-            "Success and duration of backups are monitored"
+            "Health values of the drives are evaluated"
           ],
           "explanation": "Space, drive health, RAID status and backup outcome are the four values that count - provided the alerts reach someone who acts.",
           "category": "Storage & Backup"
@@ -2207,15 +2087,13 @@
         "SMB und NFS liefern Dateifreigaben",
         "iSCSI und Fibre Channel liefern Blockspeicher",
         "Blockspeicher wird vom Server selbst formatiert",
-        "Dateifreigaben bringen ihr Dateisystem bereits mit",
         "SMB liefert Blockspeicher an Datenbankserver",
         "Fibre Channel stellt Dateifreigaben für Clients bereit"
       ],
       "answer": [
         "SMB und NFS liefern Dateifreigaben",
         "iSCSI und Fibre Channel liefern Blockspeicher",
-        "Blockspeicher wird vom Server selbst formatiert",
-        "Dateifreigaben bringen ihr Dateisystem bereits mit"
+        "Blockspeicher wird vom Server selbst formatiert"
       ],
       "explanation": "Die entscheidende Trennlinie verläuft zwischen Block und Datei: Blockspeicher bekommt sein Dateisystem vom Server, eine Freigabe bringt es mit.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "SMB and NFS deliver file shares",
             "iSCSI and fibre channel deliver block storage",
             "Block storage is formatted by the server itself",
-            "File shares already bring their own file system",
             "SMB delivers block storage to database servers",
             "Fibre channel provides file shares for clients"
           ],
           "answer": [
             "SMB and NFS deliver file shares",
             "iSCSI and fibre channel deliver block storage",
-            "Block storage is formatted by the server itself",
-            "File shares already bring their own file system"
+            "Block storage is formatted by the server itself"
           ],
           "explanation": "The decisive dividing line runs between block and file: block storage gets its file system from the server, a share brings its own.",
           "category": "Storage & Backup"

@@ -947,15 +947,13 @@
         "Infrastructure as a Service",
         "Platform as a Service",
         "Software as a Service",
-        "Die abgestufte Verantwortung je Modell",
         "Hardware as a Personal Service",
         "Network as a Building Service"
       ],
       "answer": [
         "Infrastructure as a Service",
         "Platform as a Service",
-        "Software as a Service",
-        "Die abgestufte Verantwortung je Modell"
+        "Software as a Service"
       ],
       "explanation": "IaaS, PaaS und SaaS unterscheiden sich darin, wie viel der Anbieter übernimmt und wie viel beim Kunden bleibt. Die beiden letzten Begriffe gibt es nicht.",
       "translations": {
@@ -965,15 +963,13 @@
             "Infrastructure as a service",
             "Platform as a service",
             "Software as a service",
-            "The graded responsibility per model",
             "Hardware as a personal service",
             "Network as a building service"
           ],
           "answer": [
             "Infrastructure as a service",
             "Platform as a service",
-            "Software as a service",
-            "The graded responsibility per model"
+            "Software as a service"
           ],
           "explanation": "IaaS, PaaS and SaaS differ in how much the provider takes on and how much stays with the customer. The last two terms do not exist.",
           "category": "Server Services & Virtualisation"
@@ -988,16 +984,12 @@
       "options": [
         "Sie teilen sich den Kernel des Wirtssystems",
         "Sie starten deutlich schneller als virtuelle Maschinen",
-        "Sie werden aus unveränderlichen Abbildern erzeugt",
-        "Sie brauchen weniger Ressourcen als vollständige VMs",
         "Sie bieten dieselbe Isolation wie eine eigene VM",
         "Sie enthalten stets einen eigenen Betriebssystemkern"
       ],
       "answer": [
         "Sie teilen sich den Kernel des Wirtssystems",
-        "Sie starten deutlich schneller als virtuelle Maschinen",
-        "Sie werden aus unveränderlichen Abbildern erzeugt",
-        "Sie brauchen weniger Ressourcen als vollständige VMs"
+        "Sie starten deutlich schneller als virtuelle Maschinen"
       ],
       "explanation": "Der gemeinsame Kernel ist Stärke und Grenze zugleich: er macht Container schlank und schnell, bietet aber schwächere Isolation als eine echte VM.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "They share the host system's kernel",
             "They start much faster than virtual machines",
-            "They are created from immutable images",
-            "They need fewer resources than full VMs",
             "They offer the same isolation as a dedicated VM",
             "They always contain their own operating system kernel"
           ],
           "answer": [
             "They share the host system's kernel",
-            "They start much faster than virtual machines",
-            "They are created from immutable images",
-            "They need fewer resources than full VMs"
+            "They start much faster than virtual machines"
           ],
           "explanation": "The shared kernel is both strength and limit: it makes containers lean and fast but offers weaker isolation than a real VM.",
           "category": "Server Services & Virtualisation"
@@ -1073,15 +1061,13 @@
         "Zweck und betriebene Dienste",
         "Zugewiesene Ressourcen und Adressen",
         "Abhängigkeiten zu anderen Systemen",
-        "Ansprechpartner und Wartungsfenster",
         "Die Lieblingsfarbe des Administrators",
         "Der Kaufpreis des Serverschranks"
       ],
       "answer": [
         "Zweck und betriebene Dienste",
         "Zugewiesene Ressourcen und Adressen",
-        "Abhängigkeiten zu anderen Systemen",
-        "Ansprechpartner und Wartungsfenster"
+        "Abhängigkeiten zu anderen Systemen"
       ],
       "explanation": "Zweck, Ressourcen, Abhängigkeiten und Zuständigkeiten entscheiden im Störungsfall über die Reaktionszeit. Abhängigkeiten werden dabei am häufigsten vergessen.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "Purpose and services operated",
             "Assigned resources and addresses",
             "Dependencies on other systems",
-            "Contacts and maintenance windows",
             "The administrator's favourite colour",
             "The purchase price of the rack"
           ],
           "answer": [
             "Purpose and services operated",
             "Assigned resources and addresses",
-            "Dependencies on other systems",
-            "Contacts and maintenance windows"
+            "Dependencies on other systems"
           ],
           "explanation": "Purpose, resources, dependencies and ownership decide response time during an incident. Dependencies are the item most often forgotten.",
           "category": "Server Services & Virtualisation"
@@ -1114,16 +1098,12 @@
       "options": [
         "Sie halten einen Zustand für kurze Zeit fest",
         "Sie eignen sich als Rückweg vor einem Update",
-        "Lange bestehende Snapshots bremsen die VM aus",
-        "Der belegte Speicher wächst mit der Laufzeit",
         "Sie ersetzen eine ordentliche Datensicherung",
         "Sie liegen sicher auf einem getrennten System"
       ],
       "answer": [
         "Sie halten einen Zustand für kurze Zeit fest",
-        "Sie eignen sich als Rückweg vor einem Update",
-        "Lange bestehende Snapshots bremsen die VM aus",
-        "Der belegte Speicher wächst mit der Laufzeit"
+        "Sie eignen sich als Rückweg vor einem Update"
       ],
       "explanation": "Ein Snapshot ist ein Rückweg für Minuten bis Stunden, keine Sicherung: er liegt auf demselben Speicher und teilt dessen Risiko.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "They capture a state for a short time",
             "They serve as a rollback path before an update",
-            "Long-lived snapshots slow the VM down",
-            "The occupied storage grows over their lifetime",
             "They replace a proper data backup",
             "They reside safely on a separate system"
           ],
           "answer": [
             "They capture a state for a short time",
-            "They serve as a rollback path before an update",
-            "Long-lived snapshots slow the VM down",
-            "The occupied storage grows over their lifetime"
+            "They serve as a rollback path before an update"
           ],
           "explanation": "A snapshot is a rollback path for minutes to hours, not a backup: it sits on the same storage and shares its risk.",
           "category": "Server Services & Virtualisation"
@@ -1199,15 +1175,13 @@
         "Verfügbarer Arbeitsspeicher",
         "Anzahl und Leistung der CPU-Kerne",
         "Ein- und Ausgabeleistung des Speichersystems",
-        "Netzwerkbandbreite des Hosts",
         "Die Farbe des Servergehäuses",
         "Die Anzahl der Bildschirme am Host"
       ],
       "answer": [
         "Verfügbarer Arbeitsspeicher",
         "Anzahl und Leistung der CPU-Kerne",
-        "Ein- und Ausgabeleistung des Speichersystems",
-        "Netzwerkbandbreite des Hosts"
+        "Ein- und Ausgabeleistung des Speichersystems"
       ],
       "explanation": "Speicher, Rechenleistung, Datenträgerdurchsatz und Netzanbindung sind die realen Grenzen. Meist wird zuerst der Arbeitsspeicher knapp.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "Available main memory",
             "Number and performance of CPU cores",
             "I/O performance of the storage system",
-            "Network bandwidth of the host",
             "The colour of the server chassis",
             "The number of monitors on the host"
           ],
           "answer": [
             "Available main memory",
             "Number and performance of CPU cores",
-            "I/O performance of the storage system",
-            "Network bandwidth of the host"
+            "I/O performance of the storage system"
           ],
           "explanation": "Memory, compute power, storage throughput and network attachment are the real limits. Memory usually runs short first.",
           "category": "Server Services & Virtualisation"
@@ -1240,16 +1212,12 @@
       "options": [
         "Sie setzen Einstellungen zentral durch",
         "Sie wirken auf Organisationseinheiten",
-        "Sie werden bei der Anmeldung angewendet",
-        "Sie lassen sich für Gruppen gezielt filtern",
         "Sie ersetzen die Vergabe von Dateiberechtigungen",
         "Sie gelten ausschließlich für Serverbetriebssysteme"
       ],
       "answer": [
         "Sie setzen Einstellungen zentral durch",
-        "Sie wirken auf Organisationseinheiten",
-        "Sie werden bei der Anmeldung angewendet",
-        "Sie lassen sich für Gruppen gezielt filtern"
+        "Sie wirken auf Organisationseinheiten"
       ],
       "explanation": "Richtlinien setzen Konfiguration durch, Berechtigungen bleiben davon getrennt. Angewendet werden sie auf Computer wie auf Benutzer.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "They enforce settings centrally",
             "They apply to organisational units",
-            "They are applied at logon",
-            "They can be filtered for specific groups",
             "They replace the assignment of file permissions",
             "They apply exclusively to server operating systems"
           ],
           "answer": [
             "They enforce settings centrally",
-            "They apply to organisational units",
-            "They are applied at logon",
-            "They can be filtered for specific groups"
+            "They apply to organisational units"
           ],
           "explanation": "Policies enforce configuration while permissions stay separate. They apply to computers as well as users.",
           "category": "Server Services & Virtualisation"
@@ -1325,15 +1289,13 @@
         "Die Knoten überwachen sich gegenseitig",
         "Bei Ausfall übernimmt ein anderer Knoten den Dienst",
         "Gemeinsamer Speicher ist häufig Voraussetzung",
-        "Die Übernahme sollte regelmäßig getestet werden",
         "Ein Cluster schützt vor versehentlich gelöschten Daten",
         "Ein Cluster macht Sicherungen entbehrlich"
       ],
       "answer": [
         "Die Knoten überwachen sich gegenseitig",
         "Bei Ausfall übernimmt ein anderer Knoten den Dienst",
-        "Gemeinsamer Speicher ist häufig Voraussetzung",
-        "Die Übernahme sollte regelmäßig getestet werden"
+        "Gemeinsamer Speicher ist häufig Voraussetzung"
       ],
       "explanation": "Ein Cluster fängt Hardware- und Dienstausfälle ab, repliziert aber auch Fehler wie gelöschte Daten sofort auf alle Knoten. Sicherungen bleiben deshalb Pflicht.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "The nodes monitor each other",
             "On failure another node takes over the service",
             "Shared storage is often a prerequisite",
-            "The failover should be tested regularly",
             "A cluster protects against accidentally deleted data",
             "A cluster makes backups dispensable"
           ],
           "answer": [
             "The nodes monitor each other",
             "On failure another node takes over the service",
-            "Shared storage is often a prerequisite",
-            "The failover should be tested regularly"
+            "Shared storage is often a prerequisite"
           ],
           "explanation": "A cluster catches hardware and service failures but also replicates mistakes such as deleted data instantly to all nodes. Backups therefore remain mandatory.",
           "category": "Server Services & Virtualisation"
@@ -1366,16 +1326,12 @@
       "options": [
         "Es wird mehr zugewiesen als physisch vorhanden ist",
         "Es nutzt aus, dass selten alle VMs gleichzeitig Vollast fahren",
-        "Es erfordert sorgfältige Überwachung der Auslastung",
-        "Bei Engpässen leidet die Leistung aller Maschinen",
         "Es erhöht die physisch vorhandenen Ressourcen",
         "Es ist bei Arbeitsspeicher völlig risikolos"
       ],
       "answer": [
         "Es wird mehr zugewiesen als physisch vorhanden ist",
-        "Es nutzt aus, dass selten alle VMs gleichzeitig Vollast fahren",
-        "Es erfordert sorgfältige Überwachung der Auslastung",
-        "Bei Engpässen leidet die Leistung aller Maschinen"
+        "Es nutzt aus, dass selten alle VMs gleichzeitig Vollast fahren"
       ],
       "explanation": "Overcommitment ist eine Wette auf ungleichzeitige Lastspitzen. Geht sie nicht auf, beginnt der Host auszulagern und alle VMs werden gleichzeitig langsam.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "More is assigned than physically exists",
             "It exploits that VMs rarely peak simultaneously",
-            "It requires careful monitoring of utilisation",
-            "During shortages all machines suffer in performance",
             "It increases the physically available resources",
             "With memory it is completely risk-free"
           ],
           "answer": [
             "More is assigned than physically exists",
-            "It exploits that VMs rarely peak simultaneously",
-            "It requires careful monitoring of utilisation",
-            "During shortages all machines suffer in performance"
+            "It exploits that VMs rarely peak simultaneously"
           ],
           "explanation": "Overcommitment is a bet on non-simultaneous load peaks. If it does not pay off, the host starts paging and all VMs slow down at once.",
           "category": "Server Services & Virtualisation"
@@ -1451,15 +1403,13 @@
         "Die Sicherung erfolgt sinnvollerweise auf Hypervisorebene",
         "Die Konfiguration der VM gehört mitgesichert",
         "Anwendungskonsistenz erfordert Abstimmung mit dem Gastsystem",
-        "Die Wiederherstellung sollte regelmäßig geprobt werden",
         "Snapshots auf demselben Host genügen als Sicherung",
         "Virtuelle Maschinen sind grundsätzlich selbstsichernd"
       ],
       "answer": [
         "Die Sicherung erfolgt sinnvollerweise auf Hypervisorebene",
         "Die Konfiguration der VM gehört mitgesichert",
-        "Anwendungskonsistenz erfordert Abstimmung mit dem Gastsystem",
-        "Die Wiederherstellung sollte regelmäßig geprobt werden"
+        "Anwendungskonsistenz erfordert Abstimmung mit dem Gastsystem"
       ],
       "explanation": "Erst Hypervisorsicherung plus Konfiguration plus anwendungskonsistente Auslösung ergibt ein wiederherstellbares Ergebnis - überprüft durch Proben.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "Backup is sensibly done at hypervisor level",
             "The VM configuration must be backed up too",
             "Application consistency needs coordination with the guest",
-            "Recovery should be rehearsed regularly",
             "Snapshots on the same host suffice as a backup",
             "Virtual machines are inherently self-backing"
           ],
           "answer": [
             "Backup is sensibly done at hypervisor level",
             "The VM configuration must be backed up too",
-            "Application consistency needs coordination with the guest",
-            "Recovery should be rehearsed regularly"
+            "Application consistency needs coordination with the guest"
           ],
           "explanation": "Only hypervisor backup plus configuration plus application-consistent triggering yields a restorable result - verified by rehearsals.",
           "category": "Server Services & Virtualisation"
@@ -1492,16 +1440,12 @@
       "options": [
         "Die Public Cloud teilt Ressourcen zwischen vielen Kunden",
         "Die Private Cloud steht einer Organisation exklusiv zur Verfügung",
-        "Hybride Ansätze kombinieren beide Welten",
-        "Datenschutzfragen beeinflussen die Auswahl",
         "Die Public Cloud ist immer die günstigere Lösung",
         "Die Private Cloud kann nicht virtualisiert werden"
       ],
       "answer": [
         "Die Public Cloud teilt Ressourcen zwischen vielen Kunden",
-        "Die Private Cloud steht einer Organisation exklusiv zur Verfügung",
-        "Hybride Ansätze kombinieren beide Welten",
-        "Datenschutzfragen beeinflussen die Auswahl"
+        "Die Private Cloud steht einer Organisation exklusiv zur Verfügung"
       ],
       "explanation": "Die Wahl hängt an Schutzbedarf, Lastprofil und Kosten - eine pauschale Antwort gibt es nicht. Virtualisierung ist in beiden Fällen die Grundlage.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "The public cloud shares resources between many customers",
             "The private cloud is exclusively available to one organisation",
-            "Hybrid approaches combine both worlds",
-            "Data protection questions influence the choice",
             "The public cloud is always the cheaper solution",
             "The private cloud cannot be virtualised"
           ],
           "answer": [
             "The public cloud shares resources between many customers",
-            "The private cloud is exclusively available to one organisation",
-            "Hybrid approaches combine both worlds",
-            "Data protection questions influence the choice"
+            "The private cloud is exclusively available to one organisation"
           ],
           "explanation": "The choice depends on protection needs, load profile and cost - there is no blanket answer. Virtualisation is the basis in both cases.",
           "category": "Server Services & Virtualisation"
@@ -1577,15 +1517,13 @@
         "Updates werden in einem Wartungsfenster eingespielt",
         "Ein Test vorab senkt das Risiko von Ausfällen",
         "Ein Rückweg für fehlgeschlagene Updates ist eingeplant",
-        "Der Patchstand wird dokumentiert",
         "Server werden aus Stabilitätsgründen gar nicht gepatcht",
         "Neustarts lassen sich grundsätzlich immer vermeiden"
       ],
       "answer": [
         "Updates werden in einem Wartungsfenster eingespielt",
         "Ein Test vorab senkt das Risiko von Ausfällen",
-        "Ein Rückweg für fehlgeschlagene Updates ist eingeplant",
-        "Der Patchstand wird dokumentiert"
+        "Ein Rückweg für fehlgeschlagene Updates ist eingeplant"
       ],
       "explanation": "Fenster, Test, Rückweg und Dokumentation machen Patchen beherrschbar. Ungepatchte Server sind kein Stabilitäts-, sondern ein Sicherheitsproblem.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "Updates are applied in a maintenance window",
             "Prior testing lowers the risk of outages",
             "A rollback path for failed updates is planned",
-            "The patch level is documented",
             "Servers are not patched at all for stability reasons",
             "Reboots can fundamentally always be avoided"
           ],
           "answer": [
             "Updates are applied in a maintenance window",
             "Prior testing lowers the risk of outages",
-            "A rollback path for failed updates is planned",
-            "The patch level is documented"
+            "A rollback path for failed updates is planned"
           ],
           "explanation": "Windows, testing, rollback and documentation make patching manageable. Unpatched servers are not a stability question but a security problem.",
           "category": "Server Services & Virtualisation"
@@ -1618,16 +1554,12 @@
       "options": [
         "Er ist aus dem Internet erreichbar",
         "Er ist vom internen Netz durch eine Firewall getrennt",
-        "Zugriffe auf interne Systeme werden eng geregelt",
-        "Er wird besonders sorgfältig gehärtet und überwacht",
         "Er darf uneingeschränkt auf alle internen Server zugreifen",
         "Er braucht keine Sicherheitsupdates, da er isoliert steht"
       ],
       "answer": [
         "Er ist aus dem Internet erreichbar",
-        "Er ist vom internen Netz durch eine Firewall getrennt",
-        "Zugriffe auf interne Systeme werden eng geregelt",
-        "Er wird besonders sorgfältig gehärtet und überwacht"
+        "Er ist vom internen Netz durch eine Firewall getrennt"
       ],
       "explanation": "Der Sinn der DMZ liegt gerade in der engen Regelung des Wegs nach innen. Ein exponierter Server braucht deshalb besonders konsequentes Patchen.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "It is reachable from the internet",
             "It is separated from the internal network by a firewall",
-            "Access to internal systems is tightly regulated",
-            "It is hardened and monitored particularly carefully",
             "It may access all internal servers without restriction",
             "It needs no security updates because it stands isolated"
           ],
           "answer": [
             "It is reachable from the internet",
-            "It is separated from the internal network by a firewall",
-            "Access to internal systems is tightly regulated",
-            "It is hardened and monitored particularly carefully"
+            "It is separated from the internal network by a firewall"
           ],
           "explanation": "The whole point of a DMZ is tight regulation of the path inward. An exposed server therefore needs especially consistent patching.",
           "category": "Server Services & Virtualisation"
@@ -1703,15 +1631,13 @@
         "Überbuchter Arbeitsspeicher auf dem Host",
         "Zu wenig Ein- und Ausgabeleistung des Speichersystems",
         "Zu viele aktive Snapshots der Maschine",
-        "Konkurrenz durch andere VMs auf demselben Host",
         "Ein zu langer Name der virtuellen Maschine",
         "Eine zu hohe Bildschirmauflösung der Konsole"
       ],
       "answer": [
         "Überbuchter Arbeitsspeicher auf dem Host",
         "Zu wenig Ein- und Ausgabeleistung des Speichersystems",
-        "Zu viele aktive Snapshots der Maschine",
-        "Konkurrenz durch andere VMs auf demselben Host"
+        "Zu viele aktive Snapshots der Maschine"
       ],
       "explanation": "Auf einem geteilten Host wirkt jede Knappheit sofort auf alle Gäste. Alte Snapshots sind dabei eine häufig übersehene Bremse.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Overcommitted memory on the host",
             "Insufficient I/O performance of the storage system",
             "Too many active snapshots of the machine",
-            "Competition from other VMs on the same host",
             "Too long a name for the virtual machine",
             "Too high a console screen resolution"
           ],
           "answer": [
             "Overcommitted memory on the host",
             "Insufficient I/O performance of the storage system",
-            "Too many active snapshots of the machine",
-            "Competition from other VMs on the same host"
+            "Too many active snapshots of the machine"
           ],
           "explanation": "On a shared host every shortage immediately affects all guests. Old snapshots are a frequently overlooked brake among them.",
           "category": "Server Services & Virtualisation"
@@ -1744,16 +1668,12 @@
       "options": [
         "99,9 Prozent entsprechen rund 9 Stunden Ausfall im Jahr",
         "Jede weitere Neun verringert die zulässige Ausfallzeit stark",
-        "Höhere Klassen erfordern deutlich mehr Aufwand",
-        "Die Zielklasse richtet sich am Geschäftsbedarf aus",
         "100 Prozent Verfügbarkeit ist praktisch erreichbar",
         "Die Klasse sagt nichts über den Aufwand aus"
       ],
       "answer": [
         "99,9 Prozent entsprechen rund 9 Stunden Ausfall im Jahr",
-        "Jede weitere Neun verringert die zulässige Ausfallzeit stark",
-        "Höhere Klassen erfordern deutlich mehr Aufwand",
-        "Die Zielklasse richtet sich am Geschäftsbedarf aus"
+        "Jede weitere Neun verringert die zulässige Ausfallzeit stark"
       ],
       "explanation": "Verfügbarkeit ist eine Kostenfrage: jede Neun kostet ein Vielfaches. Deshalb wird sie am tatsächlichen Bedarf des Geschäfts bemessen, nicht am technisch Machbaren.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "99.9 percent equals about 9 hours of downtime per year",
             "Each additional nine sharply reduces permitted downtime",
-            "Higher classes require considerably more effort",
-            "The target class follows the business need",
             "100 percent availability is practically achievable",
             "The class says nothing about the effort involved"
           ],
           "answer": [
             "99.9 percent equals about 9 hours of downtime per year",
-            "Each additional nine sharply reduces permitted downtime",
-            "Higher classes require considerably more effort",
-            "The target class follows the business need"
+            "Each additional nine sharply reduces permitted downtime"
           ],
           "explanation": "Availability is a cost question: every nine costs a multiple. That is why it is measured against actual business need, not technical possibility.",
           "category": "Server Services & Virtualisation"
@@ -1829,15 +1745,13 @@
         "Rechte werden über Gruppen vergeben",
         "Die Struktur folgt der Organisation",
         "Vergebene Rechte werden regelmäßig überprüft",
-        "Vererbung wird bewusst geplant",
         "Jeder Nutzer erhält einzeln zugewiesene Rechte",
         "Vollzugriff für alle vereinfacht die Verwaltung"
       ],
       "answer": [
         "Rechte werden über Gruppen vergeben",
         "Die Struktur folgt der Organisation",
-        "Vergebene Rechte werden regelmäßig überprüft",
-        "Vererbung wird bewusst geplant"
+        "Vergebene Rechte werden regelmäßig überprüft"
       ],
       "explanation": "Gruppenbasierte, an der Organisation orientierte Rechte bleiben nachvollziehbar und pflegbar. Einzelvergabe und Vollzugriff führen binnen Jahren ins Chaos.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Rights are granted via groups",
             "The structure follows the organisation",
             "Granted rights are reviewed regularly",
-            "Inheritance is planned deliberately",
             "Every user receives individually assigned rights",
             "Full access for everyone simplifies administration"
           ],
           "answer": [
             "Rights are granted via groups",
             "The structure follows the organisation",
-            "Granted rights are reviewed regularly",
-            "Inheritance is planned deliberately"
+            "Granted rights are reviewed regularly"
           ],
           "explanation": "Group-based rights aligned with the organisation stay traceable and maintainable. Individual assignment and full access lead into chaos within years.",
           "category": "Server Services & Virtualisation"
@@ -1870,16 +1782,12 @@
       "options": [
         "Lizenzmodelle können sich nach Kernen richten",
         "Auch Zugriffslizenzen für Nutzer können nötig sein",
-        "Die Lizenzlage wird dokumentiert",
-        "Virtualisierung ändert die Lizenzpflicht nicht",
         "Testsysteme sind grundsätzlich lizenzfrei",
         "Lizenzen gelten unbegrenzt für beliebig viele Systeme"
       ],
       "answer": [
         "Lizenzmodelle können sich nach Kernen richten",
-        "Auch Zugriffslizenzen für Nutzer können nötig sein",
-        "Die Lizenzlage wird dokumentiert",
-        "Virtualisierung ändert die Lizenzpflicht nicht"
+        "Auch Zugriffslizenzen für Nutzer können nötig sein"
       ],
       "explanation": "Lizenzen richten sich je nach Hersteller nach Kernen, Prozessoren oder Nutzern - dokumentiert werden muss es in jedem Fall. Auch Testsysteme brauchen in der Regel eine Lizenz.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "Licence models can be based on cores",
             "Client access licences for users may also be needed",
-            "The licensing situation is documented",
-            "Virtualisation does not remove the licensing obligation",
             "Test systems are fundamentally licence-free",
             "Licences apply indefinitely to any number of systems"
           ],
           "answer": [
             "Licence models can be based on cores",
-            "Client access licences for users may also be needed",
-            "The licensing situation is documented",
-            "Virtualisation does not remove the licensing obligation"
+            "Client access licences for users may also be needed"
           ],
           "explanation": "Depending on the vendor, licences follow cores, processors or users - and must be documented in any case. Test systems usually need a licence too.",
           "category": "Server Services & Virtualisation"
@@ -1955,15 +1859,13 @@
         "Interne Namen werden lokal aufgelöst",
         "Externe Anfragen gehen an Weiterleitungsserver",
         "Die TTL steuert die Zwischenspeicherung",
-        "Reverse-Zonen ordnen Adressen Namen zu",
         "Ein DNS-Server vergibt zusätzlich Adressen",
         "Interne Namen gehören ins öffentliche Internet"
       ],
       "answer": [
         "Interne Namen werden lokal aufgelöst",
         "Externe Anfragen gehen an Weiterleitungsserver",
-        "Die TTL steuert die Zwischenspeicherung",
-        "Reverse-Zonen ordnen Adressen Namen zu"
+        "Die TTL steuert die Zwischenspeicherung"
       ],
       "explanation": "Interne Auflösung, Weiterleitung, TTL-Steuerung und Reverse-Zonen sind der Alltag. Adressvergabe macht DHCP, und interne Namen bleiben besser intern.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "Internal names are resolved locally",
             "External queries go to forwarders",
             "The TTL controls caching",
-            "Reverse zones map addresses to names",
             "A DNS server additionally assigns addresses",
             "Internal names belong on the public internet"
           ],
           "answer": [
             "Internal names are resolved locally",
             "External queries go to forwarders",
-            "The TTL controls caching",
-            "Reverse zones map addresses to names"
+            "The TTL controls caching"
           ],
           "explanation": "Internal resolution, forwarding, TTL control and reverse zones are the daily business. Address assignment is DHCP's job, and internal names are better kept internal.",
           "category": "Server Services & Virtualisation"
@@ -1996,16 +1896,12 @@
       "options": [
         "Anwendungen werden zentral gepflegt",
         "Daten bleiben im Rechenzentrum",
-        "Auch schwache Endgeräte genügen",
-        "Der Zugriff funktioniert standortunabhängig",
         "Der Ausfall des Servers bleibt folgenlos",
         "Netzwerkqualität spielt keine Rolle mehr"
       ],
       "answer": [
         "Anwendungen werden zentral gepflegt",
-        "Daten bleiben im Rechenzentrum",
-        "Auch schwache Endgeräte genügen",
-        "Der Zugriff funktioniert standortunabhängig"
+        "Daten bleiben im Rechenzentrum"
       ],
       "explanation": "Zentrale Pflege, Datenhaltung im Rechenzentrum und schlanke Endgeräte sind die Gewinne. Der Preis ist die vollständige Abhängigkeit von Server und Netzqualität.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "Applications are maintained centrally",
             "Data stays in the data centre",
-            "Even weak end devices suffice",
-            "Access works independently of location",
             "A server outage remains without consequence",
             "Network quality no longer matters"
           ],
           "answer": [
             "Applications are maintained centrally",
-            "Data stays in the data centre",
-            "Even weak end devices suffice",
-            "Access works independently of location"
+            "Data stays in the data centre"
           ],
           "explanation": "Central maintenance, data kept in the data centre and lean end devices are the gains. The price is complete dependency on server and network quality.",
           "category": "Server Services & Virtualisation"
@@ -2081,15 +1973,13 @@
         "Die Auslastung der Hardware steigt",
         "Strom- und Platzbedarf sinken",
         "Die Abhängigkeit von den verbliebenen Hosts steigt",
-        "Redundanz der Hosts wird dadurch wichtiger",
         "Die Zahl der zu pflegenden Betriebssysteme sinkt automatisch",
         "Ein Ausfall betrifft danach weniger Systeme"
       ],
       "answer": [
         "Die Auslastung der Hardware steigt",
         "Strom- und Platzbedarf sinken",
-        "Die Abhängigkeit von den verbliebenen Hosts steigt",
-        "Redundanz der Hosts wird dadurch wichtiger"
+        "Die Abhängigkeit von den verbliebenen Hosts steigt"
       ],
       "explanation": "Konsolidierung spart Ressourcen, verdichtet aber das Risiko: ein Hostausfall trifft nun viele Dienste gleichzeitig. Die Zahl der Betriebssysteme bleibt unverändert.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Hardware utilisation rises",
             "Power and space requirements fall",
             "Dependency on the remaining hosts increases",
-            "Host redundancy becomes more important",
             "The number of operating systems to maintain automatically falls",
             "An outage subsequently affects fewer systems"
           ],
           "answer": [
             "Hardware utilisation rises",
             "Power and space requirements fall",
-            "Dependency on the remaining hosts increases",
-            "Host redundancy becomes more important"
+            "Dependency on the remaining hosts increases"
           ],
           "explanation": "Consolidation saves resources but concentrates risk: a host failure now hits many services at once. The number of operating systems stays the same.",
           "category": "Server Services & Virtualisation"
@@ -2122,16 +2010,12 @@
       "options": [
         "Sie ermöglichen verschlüsselte Verbindungen",
         "Ihre Gültigkeit muss überwacht werden",
-        "Eine interne CA kann sie ausstellen",
-        "Der Name im Zertifikat muss zum Aufruf passen",
         "Abgelaufene Zertifikate stören den Betrieb nicht",
         "Selbstsignierte Zertifikate sind immer unbedenklich"
       ],
       "answer": [
         "Sie ermöglichen verschlüsselte Verbindungen",
-        "Ihre Gültigkeit muss überwacht werden",
-        "Eine interne CA kann sie ausstellen",
-        "Der Name im Zertifikat muss zum Aufruf passen"
+        "Ihre Gültigkeit muss überwacht werden"
       ],
       "explanation": "Abgelaufene oder nicht passende Zertifikate legen Dienste zuverlässig lahm, deshalb gehört die Laufzeit ins Monitoring. Selbstsignierte Zertifikate erzwingen Ausnahmen, die Nutzer sich abgewöhnen sollen.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "They enable encrypted connections",
             "Their validity has to be monitored",
-            "An internal CA can issue them",
-            "The name in the certificate must match the request",
             "Expired certificates do not disturb operation",
             "Self-signed certificates are always harmless"
           ],
           "answer": [
             "They enable encrypted connections",
-            "Their validity has to be monitored",
-            "An internal CA can issue them",
-            "The name in the certificate must match the request"
+            "Their validity has to be monitored"
           ],
           "explanation": "Expired or mismatched certificates reliably take services down, so expiry belongs in monitoring. Self-signed certificates force exceptions that users should be unlearning.",
           "category": "Server Services & Virtualisation"
@@ -2207,15 +2087,13 @@
         "Der Versand läuft über SMTP",
         "Der Abruf erfolgt über IMAP oder POP3",
         "Verbindungen sollten mit TLS geschützt werden",
-        "Absenderprüfung per SPF und DKIM ist üblich",
         "Ein offenes Relay erleichtert den Betrieb",
         "Postfachgrößen müssen nicht begrenzt werden"
       ],
       "answer": [
         "Der Versand läuft über SMTP",
         "Der Abruf erfolgt über IMAP oder POP3",
-        "Verbindungen sollten mit TLS geschützt werden",
-        "Absenderprüfung per SPF und DKIM ist üblich"
+        "Verbindungen sollten mit TLS geschützt werden"
       ],
       "explanation": "SMTP für den Versand, IMAP oder POP3 für den Abruf, TLS und Absenderprüfung als Absicherung. Ein offenes Relay macht den Server binnen Stunden zur Spamschleuder.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "Sending runs over SMTP",
             "Retrieval happens via IMAP or POP3",
             "Connections should be protected with TLS",
-            "Sender verification via SPF and DKIM is common",
             "An open relay makes operation easier",
             "Mailbox sizes do not need any limits"
           ],
           "answer": [
             "Sending runs over SMTP",
             "Retrieval happens via IMAP or POP3",
-            "Connections should be protected with TLS",
-            "Sender verification via SPF and DKIM is common"
+            "Connections should be protected with TLS"
           ],
           "explanation": "SMTP for sending, IMAP or POP3 for retrieval, TLS and sender verification as safeguards. An open relay turns the server into a spam source within hours.",
           "category": "Server Services & Virtualisation"

@@ -947,15 +947,13 @@
         "Erzeugter Zeitdruck und Drohung mit Sperrung",
         "Absenderadresse weicht bei genauem Hinsehen ab",
         "Der Link zeigt beim Überfahren ein fremdes Ziel",
-        "Unpersönliche Anrede trotz bestehendem Konto",
         "Die Mail enthält eine korrekte Signatur der Firma",
         "Die Mail kommt während der üblichen Bürozeiten an"
       ],
       "answer": [
         "Erzeugter Zeitdruck und Drohung mit Sperrung",
         "Absenderadresse weicht bei genauem Hinsehen ab",
-        "Der Link zeigt beim Überfahren ein fremdes Ziel",
-        "Unpersönliche Anrede trotz bestehendem Konto"
+        "Der Link zeigt beim Überfahren ein fremdes Ziel"
       ],
       "explanation": "Druck, gefälschte Absender, abweichende Linkziele und unpersönliche Anreden sind die typischen Merkmale. Eine plausible Signatur und der Empfangszeitpunkt sagen dagegen nichts über die Echtheit aus.",
       "translations": {
@@ -965,15 +963,13 @@
             "Manufactured time pressure and threats of lockout",
             "The sender address differs on closer inspection",
             "Hovering the link reveals a foreign destination",
-            "Impersonal salutation despite an existing account",
             "The mail contains a correct company signature",
             "The mail arrives during normal office hours"
           ],
           "answer": [
             "Manufactured time pressure and threats of lockout",
             "The sender address differs on closer inspection",
-            "Hovering the link reveals a foreign destination",
-            "Impersonal salutation despite an existing account"
+            "Hovering the link reveals a foreign destination"
           ],
           "explanation": "Pressure, forged senders, mismatched link targets and impersonal salutations are the typical signs. A plausible signature and the time of arrival say nothing about authenticity.",
           "category": "IT Security & Data Protection"
@@ -988,16 +984,12 @@
       "options": [
         "Ausreichende Länge von mindestens zwölf Zeichen",
         "Keine Wiederverwendung bei anderen Diensten",
-        "Keine Bezüge zu Namen oder Geburtsdaten",
-        "Verwaltung in einem Passwortmanager",
         "Regelmäßiger Wechsel im festen Monatsrhythmus",
         "Ersetzen von Buchstaben durch ähnliche Zeichen"
       ],
       "answer": [
         "Ausreichende Länge von mindestens zwölf Zeichen",
-        "Keine Wiederverwendung bei anderen Diensten",
-        "Keine Bezüge zu Namen oder Geburtsdaten",
-        "Verwaltung in einem Passwortmanager"
+        "Keine Wiederverwendung bei anderen Diensten"
       ],
       "explanation": "Länge, Einzigartigkeit und fehlender Personenbezug tragen wirklich, ein Manager macht das praktikabel. Erzwungene Wechselintervalle und Zeichentricks wie a zu at gelten heute als überholt.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "Sufficient length of at least twelve characters",
             "No reuse across other services",
-            "No reference to names or dates of birth",
-            "Management in a password manager",
             "Regular rotation on a fixed monthly cycle",
             "Replacing letters with lookalike characters"
           ],
           "answer": [
             "Sufficient length of at least twelve characters",
-            "No reuse across other services",
-            "No reference to names or dates of birth",
-            "Management in a password manager"
+            "No reuse across other services"
           ],
           "explanation": "Length, uniqueness and no personal reference genuinely help, and a manager makes that practical. Forced rotation intervals and character tricks such as a to at are now considered outdated.",
           "category": "IT Security & Data Protection"
@@ -1073,15 +1061,13 @@
         "Verschlüsselung gespeicherter Daten",
         "Rollenbasierte Vergabe von Berechtigungen",
         "Protokollierung von Zugriffen",
-        "Schulung der Beschäftigten",
         "Erhöhung des Werbebudgets",
         "Verkürzung der Lieferzeiten"
       ],
       "answer": [
         "Verschlüsselung gespeicherter Daten",
         "Rollenbasierte Vergabe von Berechtigungen",
-        "Protokollierung von Zugriffen",
-        "Schulung der Beschäftigten"
+        "Protokollierung von Zugriffen"
       ],
       "explanation": "Verschlüsselung und Berechtigungen sind technisch, Protokollierung und Schulung eher organisatorisch - zusammen bilden sie die geforderten Maßnahmen. Budget und Lieferzeit sind betriebswirtschaftliche Größen.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "Encryption of stored data",
             "Role-based assignment of permissions",
             "Logging of access events",
-            "Training of the employees",
             "Increasing the advertising budget",
             "Shortening the delivery times"
           ],
           "answer": [
             "Encryption of stored data",
             "Role-based assignment of permissions",
-            "Logging of access events",
-            "Training of the employees"
+            "Logging of access events"
           ],
           "explanation": "Encryption and permissions are technical, logging and training more organisational - together they form the required measures. Budget and delivery time are commercial figures.",
           "category": "IT Security & Data Protection"
@@ -1114,16 +1098,12 @@
       "options": [
         "Anhänge in E-Mails",
         "Präparierte Webseiten im Browser",
-        "Ungepatchte Schwachstellen in Diensten",
-        "Infizierte Wechseldatenträger",
         "Der eingebaute Lüfter des Gehäuses",
         "Die Anzahl der Bildschirme am Arbeitsplatz"
       ],
       "answer": [
         "Anhänge in E-Mails",
-        "Präparierte Webseiten im Browser",
-        "Ungepatchte Schwachstellen in Diensten",
-        "Infizierte Wechseldatenträger"
+        "Präparierte Webseiten im Browser"
       ],
       "explanation": "Mailanhänge, manipulierte Webseiten, offene Lücken und Wechselmedien sind die verbreiteten Eintrittspunkte. Hardwaremerkmale wie Lüfter oder Monitore spielen dabei keine Rolle.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "Attachments in emails",
             "Prepared web pages in the browser",
-            "Unpatched vulnerabilities in services",
-            "Infected removable media",
             "The built-in fan of the case",
             "The number of screens at the workstation"
           ],
           "answer": [
             "Attachments in emails",
-            "Prepared web pages in the browser",
-            "Unpatched vulnerabilities in services",
-            "Infected removable media"
+            "Prepared web pages in the browser"
           ],
           "explanation": "Mail attachments, manipulated web pages, open vulnerabilities and removable media are the common entry points. Hardware features such as fans or monitors play no role.",
           "category": "IT Security & Data Protection"
@@ -1199,15 +1175,13 @@
         "Art der Verletzung und betroffene Datenkategorien",
         "Ungefähre Zahl der betroffenen Personen",
         "Wahrscheinliche Folgen der Verletzung",
-        "Ergriffene und geplante Gegenmaßnahmen",
         "Der Umsatz des laufenden Geschäftsjahres",
         "Die private Anschrift des Geschäftsführers"
       ],
       "answer": [
         "Art der Verletzung und betroffene Datenkategorien",
         "Ungefähre Zahl der betroffenen Personen",
-        "Wahrscheinliche Folgen der Verletzung",
-        "Ergriffene und geplante Gegenmaßnahmen"
+        "Wahrscheinliche Folgen der Verletzung"
       ],
       "explanation": "Die Aufsichtsbehörde braucht Art, Umfang, Folgen und Maßnahmen, um das Risiko zu bewerten. Umsatzzahlen und Privatanschriften sind dafür ohne Bedeutung.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "Nature of the breach and categories of data affected",
             "Approximate number of individuals affected",
             "Likely consequences of the breach",
-            "Countermeasures taken and planned",
             "The revenue of the current financial year",
             "The private address of the managing director"
           ],
           "answer": [
             "Nature of the breach and categories of data affected",
             "Approximate number of individuals affected",
-            "Likely consequences of the breach",
-            "Countermeasures taken and planned"
+            "Likely consequences of the breach"
           ],
           "explanation": "The supervisory authority needs nature, scope, consequences and measures in order to assess the risk. Revenue figures and private addresses are irrelevant for that.",
           "category": "IT Security & Data Protection"
@@ -1240,16 +1212,12 @@
       "options": [
         "Etwas, das man weiß, etwa ein Kennwort",
         "Etwas, das man besitzt, etwa ein Token",
-        "Etwas, das man ist, etwa ein Fingerabdruck",
-        "Ein Einmalcode aus einer Authenticator-App",
         "Zwei verschiedene Kennwörter nacheinander",
         "Der Benutzername zusätzlich zum Kennwort"
       ],
       "answer": [
         "Etwas, das man weiß, etwa ein Kennwort",
-        "Etwas, das man besitzt, etwa ein Token",
-        "Etwas, das man ist, etwa ein Fingerabdruck",
-        "Ein Einmalcode aus einer Authenticator-App"
+        "Etwas, das man besitzt, etwa ein Token"
       ],
       "explanation": "Echte Mehr-Faktor-Verfahren kombinieren verschiedene Kategorien: Wissen, Besitz und Biometrie. Zwei Kennwörter bleiben beides Wissen, und der Benutzername ist kein Geheimnis.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "Something you know, such as a password",
             "Something you have, such as a token",
-            "Something you are, such as a fingerprint",
-            "A one-time code from an authenticator app",
             "Two different passwords entered in sequence",
             "The username in addition to the password"
           ],
           "answer": [
             "Something you know, such as a password",
-            "Something you have, such as a token",
-            "Something you are, such as a fingerprint",
-            "A one-time code from an authenticator app"
+            "Something you have, such as a token"
           ],
           "explanation": "Genuine multi-factor schemes combine different categories: knowledge, possession and biometrics. Two passwords are both knowledge, and the username is not a secret.",
           "category": "IT Security & Data Protection"
@@ -1325,15 +1289,13 @@
         "Ein angeblicher Techniker bittet um Zutritt zum Serverraum",
         "Ein Anrufer fragt unter Zeitdruck nach Zugangsdaten",
         "Jemand schaut beim Eintippen des Kennworts zu",
-        "Ein Fremder folgt dicht hinter einem durch die Schleuse",
         "Ein Dienst wird durch massenhafte Anfragen lahmgelegt",
         "Eine Festplatte fällt nach fünf Jahren Betrieb aus"
       ],
       "answer": [
         "Ein angeblicher Techniker bittet um Zutritt zum Serverraum",
         "Ein Anrufer fragt unter Zeitdruck nach Zugangsdaten",
-        "Jemand schaut beim Eintippen des Kennworts zu",
-        "Ein Fremder folgt dicht hinter einem durch die Schleuse"
+        "Jemand schaut beim Eintippen des Kennworts zu"
       ],
       "explanation": "Social Engineering zielt auf den Menschen: vorgetäuschte Rollen, Zeitdruck, Beobachten der Eingabe und Mitgehen durch die Tür. Überlastangriffe und Hardwaredefekte sind rein technische Ereignisse.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "A supposed technician asks for access to the server room",
             "A caller demands credentials under time pressure",
             "Someone watches while a password is typed in",
-            "A stranger follows closely through the access gate",
             "A service is paralysed by masses of requests",
             "A hard disk fails after five years of operation"
           ],
           "answer": [
             "A supposed technician asks for access to the server room",
             "A caller demands credentials under time pressure",
-            "Someone watches while a password is typed in",
-            "A stranger follows closely through the access gate"
+            "Someone watches while a password is typed in"
           ],
           "explanation": "Social engineering targets people: faked roles, time pressure, watching the keyboard and following through the door. Overload attacks and hardware defects are purely technical events.",
           "category": "IT Security & Data Protection"
@@ -1366,16 +1326,12 @@
       "options": [
         "Die Vollsicherung kopiert alle ausgewählten Daten",
         "Die differenzielle Sicherung bezieht sich auf die letzte Vollsicherung",
-        "Die inkrementelle Sicherung sichert Änderungen seit der letzten Sicherung",
-        "Inkrementelle Sicherungen brauchen beim Rückspielen die ganze Kette",
         "Die Vollsicherung ist die schnellste Sicherungsart",
         "Differenzielle Sicherungen werden mit der Zeit immer kleiner"
       ],
       "answer": [
         "Die Vollsicherung kopiert alle ausgewählten Daten",
-        "Die differenzielle Sicherung bezieht sich auf die letzte Vollsicherung",
-        "Die inkrementelle Sicherung sichert Änderungen seit der letzten Sicherung",
-        "Inkrementelle Sicherungen brauchen beim Rückspielen die ganze Kette"
+        "Die differenzielle Sicherung bezieht sich auf die letzte Vollsicherung"
       ],
       "explanation": "Voll, differenziell und inkrementell unterscheiden sich im Bezugspunkt und damit im Aufwand beim Sichern und Zurückspielen. Die Vollsicherung dauert am längsten, und differenzielle Sicherungen wachsen bis zur nächsten Vollsicherung an.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "A full backup copies all selected data",
             "A differential backup refers to the last full backup",
-            "An incremental backup saves changes since the last backup",
-            "Incremental backups need the whole chain to restore",
             "The full backup is the fastest backup type",
             "Differential backups get smaller over time"
           ],
           "answer": [
             "A full backup copies all selected data",
-            "A differential backup refers to the last full backup",
-            "An incremental backup saves changes since the last backup",
-            "Incremental backups need the whole chain to restore"
+            "A differential backup refers to the last full backup"
           ],
           "explanation": "Full, differential and incremental differ in their reference point and therefore in effort when backing up and restoring. The full backup takes longest, and differential backups grow until the next full backup.",
           "category": "IT Security & Data Protection"
@@ -1451,15 +1403,13 @@
         "Sie binden einen öffentlichen Schlüssel an eine Identität",
         "Sie werden von einer Zertifizierungsstelle ausgestellt",
         "Sie besitzen eine begrenzte Gültigkeitsdauer",
-        "Sie können vor Ablauf zurückgezogen werden",
         "Sie enthalten den privaten Schlüssel des Inhabers",
         "Sie ersetzen die Notwendigkeit einer Verschlüsselung"
       ],
       "answer": [
         "Sie binden einen öffentlichen Schlüssel an eine Identität",
         "Sie werden von einer Zertifizierungsstelle ausgestellt",
-        "Sie besitzen eine begrenzte Gültigkeitsdauer",
-        "Sie können vor Ablauf zurückgezogen werden"
+        "Sie besitzen eine begrenzte Gültigkeitsdauer"
       ],
       "explanation": "Ein Zertifikat bestätigt, wem ein öffentlicher Schlüssel gehört, ist befristet und kann gesperrt werden. Der private Schlüssel bleibt immer beim Inhaber und steht nie im Zertifikat.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "They bind a public key to an identity",
             "They are issued by a certification authority",
             "They have a limited period of validity",
-            "They can be revoked before they expire",
             "They contain the holder's private key",
             "They remove the need for encryption"
           ],
           "answer": [
             "They bind a public key to an identity",
             "They are issued by a certification authority",
-            "They have a limited period of validity",
-            "They can be revoked before they expire"
+            "They have a limited period of validity"
           ],
           "explanation": "A certificate confirms who owns a public key, is time-limited and can be revoked. The private key always stays with the holder and never appears in the certificate.",
           "category": "IT Security & Data Protection"
@@ -1492,16 +1440,12 @@
       "options": [
         "Zweckbindung der Erhebung",
         "Datenminimierung auf das Erforderliche",
-        "Richtigkeit der gespeicherten Daten",
-        "Speicherbegrenzung auf die nötige Dauer",
         "Maximierung der gesammelten Datenmenge",
         "Weitergabe an Dritte ohne Einschränkung"
       ],
       "answer": [
         "Zweckbindung der Erhebung",
-        "Datenminimierung auf das Erforderliche",
-        "Richtigkeit der gespeicherten Daten",
-        "Speicherbegrenzung auf die nötige Dauer"
+        "Datenminimierung auf das Erforderliche"
       ],
       "explanation": "Zweckbindung, Datenminimierung, Richtigkeit und Speicherbegrenzung stehen in Artikel 5, ergänzt um Rechtmäßigkeit, Integrität und Rechenschaftspflicht. Datensammeln auf Vorrat ist ausdrücklich unerwünscht.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "Purpose limitation of the collection",
             "Data minimisation to what is necessary",
-            "Accuracy of the stored data",
-            "Storage limitation to the necessary period",
             "Maximisation of the volume of data collected",
             "Unrestricted disclosure to third parties"
           ],
           "answer": [
             "Purpose limitation of the collection",
-            "Data minimisation to what is necessary",
-            "Accuracy of the stored data",
-            "Storage limitation to the necessary period"
+            "Data minimisation to what is necessary"
           ],
           "explanation": "Purpose limitation, data minimisation, accuracy and storage limitation appear in Article 5, complemented by lawfulness, integrity and accountability. Collecting data as a precaution is expressly unwanted.",
           "category": "IT Security & Data Protection"
@@ -1577,15 +1517,13 @@
         "Er tarnt sich als nützliches Programm",
         "Er wird vom Nutzer selbst gestartet",
         "Er bringt versteckte Schadfunktionen mit",
-        "Er kann eine Hintertür für Angreifer öffnen",
         "Er verbreitet sich selbstständig über das Netz",
         "Er wirkt ausschließlich auf Serverbetriebssystemen"
       ],
       "answer": [
         "Er tarnt sich als nützliches Programm",
         "Er wird vom Nutzer selbst gestartet",
-        "Er bringt versteckte Schadfunktionen mit",
-        "Er kann eine Hintertür für Angreifer öffnen"
+        "Er bringt versteckte Schadfunktionen mit"
       ],
       "explanation": "Der Trojaner lebt von der Täuschung: außen nützlich, innen schädlich, und der Nutzer startet ihn selbst. Selbstständige Verbreitung ist das Merkmal des Wurms.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "It disguises itself as a useful program",
             "It is started by the user themselves",
             "It carries hidden malicious functions",
-            "It can open a backdoor for attackers",
             "It spreads by itself across the network",
             "It only affects server operating systems"
           ],
           "answer": [
             "It disguises itself as a useful program",
             "It is started by the user themselves",
-            "It carries hidden malicious functions",
-            "It can open a backdoor for attackers"
+            "It carries hidden malicious functions"
           ],
           "explanation": "A trojan lives on deception: useful on the outside, harmful inside, and the user starts it themselves. Spreading autonomously is the hallmark of a worm.",
           "category": "IT Security & Data Protection"
@@ -1618,16 +1554,12 @@
       "options": [
         "Rauchmelder und Brandfrüherkennung",
         "Klimatisierung mit Temperaturüberwachung",
-        "Unterbrechungsfreie Stromversorgung",
-        "Wassermelder im Bodenbereich",
         "Ein Getränkeautomat für kurze Wege",
         "Ein Kartonlager für Verpackungsmaterial"
       ],
       "answer": [
         "Rauchmelder und Brandfrüherkennung",
-        "Klimatisierung mit Temperaturüberwachung",
-        "Unterbrechungsfreie Stromversorgung",
-        "Wassermelder im Bodenbereich"
+        "Klimatisierung mit Temperaturüberwachung"
       ],
       "explanation": "Feuer, Hitze, Stromausfall und Wasser sind die klassischen physischen Risiken und brauchen je eigene Melder und Vorkehrungen. Getränke und brennbares Lagergut haben im Serverraum nichts verloren.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "Smoke detectors and early fire detection",
             "Air conditioning with temperature monitoring",
-            "Uninterruptible power supply",
-            "Water detectors at floor level",
             "A drinks machine to save walking",
             "A cardboard store for packaging material"
           ],
           "answer": [
             "Smoke detectors and early fire detection",
-            "Air conditioning with temperature monitoring",
-            "Uninterruptible power supply",
-            "Water detectors at floor level"
+            "Air conditioning with temperature monitoring"
           ],
           "explanation": "Fire, heat, power loss and water are the classic physical risks and each needs its own detector and provision. Drinks and flammable storage have no place in a server room.",
           "category": "IT Security & Data Protection"
@@ -1703,15 +1631,13 @@
         "Zweck der Verarbeitung",
         "Kategorien betroffener Personen",
         "Kategorien der verarbeiteten Daten",
-        "Vorgesehene Löschfristen",
         "Die Marktanteile der Wettbewerber",
         "Die Farbgestaltung der Firmenwebseite"
       ],
       "answer": [
         "Zweck der Verarbeitung",
         "Kategorien betroffener Personen",
-        "Kategorien der verarbeiteten Daten",
-        "Vorgesehene Löschfristen"
+        "Kategorien der verarbeiteten Daten"
       ],
       "explanation": "Das Verzeichnis nach Artikel 30 hält fest, warum welche Daten über wen wie lange verarbeitet werden, ergänzt um Empfänger und Schutzmaßnahmen. Marktdaten und Gestaltungsfragen gehören nicht hinein.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "Purpose of the processing",
             "Categories of data subjects",
             "Categories of data being processed",
-            "Intended erasure periods",
             "The market shares of competitors",
             "The colour scheme of the company website"
           ],
           "answer": [
             "Purpose of the processing",
             "Categories of data subjects",
-            "Categories of data being processed",
-            "Intended erasure periods"
+            "Categories of data being processed"
           ],
           "explanation": "The record under Article 30 documents why which data about whom is processed for how long, plus recipients and safeguards. Market data and design questions do not belong in it.",
           "category": "IT Security & Data Protection"
@@ -1744,16 +1668,12 @@
       "options": [
         "Er erkennt Schadcode anhand bekannter Signaturen",
         "Er nutzt zusätzlich verhaltensbasierte Erkennung",
-        "Er benötigt regelmäßige Aktualisierungen",
-        "Er bietet keinen vollständigen Schutz vor neuen Angriffen",
         "Er ersetzt das Einspielen von Sicherheitsupdates",
         "Er macht eine Datensicherung entbehrlich"
       ],
       "answer": [
         "Er erkennt Schadcode anhand bekannter Signaturen",
-        "Er nutzt zusätzlich verhaltensbasierte Erkennung",
-        "Er benötigt regelmäßige Aktualisierungen",
-        "Er bietet keinen vollständigen Schutz vor neuen Angriffen"
+        "Er nutzt zusätzlich verhaltensbasierte Erkennung"
       ],
       "explanation": "Signaturen und Verhaltensanalyse ergänzen sich, brauchen aber Aktualität und versagen bei ganz neuen Varianten. Patches und Sicherungen bleiben trotzdem Pflicht - der Scanner ist nur eine Schicht von mehreren.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "It detects malicious code from known signatures",
             "It additionally uses behaviour-based detection",
-            "It requires regular updates to stay effective",
-            "It offers no complete protection against new attacks",
             "It replaces the installation of security updates",
             "It makes data backups unnecessary"
           ],
           "answer": [
             "It detects malicious code from known signatures",
-            "It additionally uses behaviour-based detection",
-            "It requires regular updates to stay effective",
-            "It offers no complete protection against new attacks"
+            "It additionally uses behaviour-based detection"
           ],
           "explanation": "Signatures and behavioural analysis complement each other but need to stay current and fail against brand new variants. Patches and backups remain mandatory - the scanner is only one layer among several.",
           "category": "IT Security & Data Protection"
@@ -1829,15 +1745,13 @@
         "Den Vorfall erkennen und einordnen",
         "Die Ausbreitung eindämmen",
         "Die Ursache beseitigen",
-        "Den Regelbetrieb wiederherstellen",
         "Den Vorfall aus den Unterlagen entfernen",
         "Die Zuständigkeit dauerhaft offenlassen"
       ],
       "answer": [
         "Den Vorfall erkennen und einordnen",
         "Die Ausbreitung eindämmen",
-        "Die Ursache beseitigen",
-        "Den Regelbetrieb wiederherstellen"
+        "Die Ursache beseitigen"
       ],
       "explanation": "Erkennen, Eindämmen, Beseitigen und Wiederherstellen sind die üblichen Phasen, abgeschlossen durch eine Nachbetrachtung. Vertuschen und ungeklärte Zuständigkeiten verhindern genau diese Lerneffekte.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "Detect and classify the incident",
             "Contain the spread",
             "Eradicate the root cause",
-            "Restore normal operation",
             "Remove the incident from the records",
             "Leave responsibility permanently unassigned"
           ],
           "answer": [
             "Detect and classify the incident",
             "Contain the spread",
-            "Eradicate the root cause",
-            "Restore normal operation"
+            "Eradicate the root cause"
           ],
           "explanation": "Detection, containment, eradication and recovery are the usual phases, closed off by a review. Covering up and unclear responsibilities prevent exactly those lessons.",
           "category": "IT Security & Data Protection"
@@ -1870,16 +1782,12 @@
       "options": [
         "Aus dem Hash lässt sich die Eingabe nicht ableiten",
         "Gleiche Eingabe ergibt stets denselben Hashwert",
-        "Kleine Änderungen ändern den Hash stark",
-        "Kollisionen sollen praktisch nicht auffindbar sein",
         "Der Hash lässt sich mit einem Schlüssel entschlüsseln",
         "Die Länge des Hashs wächst mit der Eingabegröße"
       ],
       "answer": [
         "Aus dem Hash lässt sich die Eingabe nicht ableiten",
-        "Gleiche Eingabe ergibt stets denselben Hashwert",
-        "Kleine Änderungen ändern den Hash stark",
-        "Kollisionen sollen praktisch nicht auffindbar sein"
+        "Gleiche Eingabe ergibt stets denselben Hashwert"
       ],
       "explanation": "Einwegcharakter, Determinismus, Lawineneffekt und Kollisionsresistenz sind die geforderten Eigenschaften. Ein Hash lässt sich nicht entschlüsseln, und seine Länge ist unabhängig von der Eingabe fest.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "The input cannot be derived from the hash",
             "The same input always yields the same hash",
-            "Small changes alter the hash drastically",
-            "Collisions should be practically unfindable",
             "The hash can be decrypted with a key",
             "The hash length grows with the input size"
           ],
           "answer": [
             "The input cannot be derived from the hash",
-            "The same input always yields the same hash",
-            "Small changes alter the hash drastically",
-            "Collisions should be practically unfindable"
+            "The same input always yields the same hash"
           ],
           "explanation": "One-way behaviour, determinism, the avalanche effect and collision resistance are the required properties. A hash cannot be decrypted, and its length is fixed regardless of the input.",
           "category": "IT Security & Data Protection"
@@ -1955,15 +1859,13 @@
         "Sperren des Kontos nach mehreren Fehlversuchen",
         "Verzögerung zwischen den Anmeldeversuchen",
         "Erzwingen ausreichend langer Passwörter",
-        "Ein zusätzlicher zweiter Faktor",
         "Ein Hinweis auf der Seite, es nicht zu versuchen",
         "Verkürzung der erlaubten Passwortlänge"
       ],
       "answer": [
         "Sperren des Kontos nach mehreren Fehlversuchen",
         "Verzögerung zwischen den Anmeldeversuchen",
-        "Erzwingen ausreichend langer Passwörter",
-        "Ein zusätzlicher zweiter Faktor"
+        "Erzwingen ausreichend langer Passwörter"
       ],
       "explanation": "Sperren und Verzögerungen senken die Versuchsrate, Länge und zweiter Faktor vergrößern den Suchraum. Appelle wirken auf Angreifer nicht, und kürzere Passwörter erleichtern den Angriff.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "Locking the account after several failed attempts",
             "Delay between successive login attempts",
             "Enforcing sufficiently long passwords",
-            "An additional second factor",
             "A note on the page asking not to try",
             "Shortening the permitted password length"
           ],
           "answer": [
             "Locking the account after several failed attempts",
             "Delay between successive login attempts",
-            "Enforcing sufficiently long passwords",
-            "An additional second factor"
+            "Enforcing sufficiently long passwords"
           ],
           "explanation": "Lockouts and delays cut the attempt rate, while length and a second factor enlarge the search space. Appeals do not affect attackers, and shorter passwords make the attack easier.",
           "category": "IT Security & Data Protection"
@@ -1996,16 +1896,12 @@
       "options": [
         "Es baut einen verschlüsselten Tunnel auf",
         "Es ermöglicht den Zugriff auf interne Ressourcen",
-        "Es schützt Daten in fremden Netzen vor Mitlesen",
-        "Es authentisiert die Gegenstelle vor dem Aufbau",
         "Es beschleunigt die Internetverbindung spürbar",
         "Es macht einen Virenschutz auf dem Gerät überflüssig"
       ],
       "answer": [
         "Es baut einen verschlüsselten Tunnel auf",
-        "Es ermöglicht den Zugriff auf interne Ressourcen",
-        "Es schützt Daten in fremden Netzen vor Mitlesen",
-        "Es authentisiert die Gegenstelle vor dem Aufbau"
+        "Es ermöglicht den Zugriff auf interne Ressourcen"
       ],
       "explanation": "Der Tunnel verschlüsselt und authentisiert und macht interne Dienste erreichbar - besonders wertvoll in fremden WLANs. Schneller wird die Leitung dadurch nicht, und Schadsoftware auf dem Gerät hält das VPN nicht auf.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "It establishes an encrypted tunnel",
             "It enables access to internal resources",
-            "It protects data in foreign networks from eavesdropping",
-            "It authenticates the remote end before connecting",
             "It noticeably speeds up the internet connection",
             "It makes antivirus on the device unnecessary"
           ],
           "answer": [
             "It establishes an encrypted tunnel",
-            "It enables access to internal resources",
-            "It protects data in foreign networks from eavesdropping",
-            "It authenticates the remote end before connecting"
+            "It enables access to internal resources"
           ],
           "explanation": "The tunnel encrypts and authenticates and makes internal services reachable - especially valuable on foreign Wi-Fi. The line does not get faster, and a VPN does not stop malware on the device.",
           "category": "IT Security & Data Protection"
@@ -2081,15 +1973,13 @@
         "Der Zugriff wird auf die Personalabteilung begrenzt",
         "Die Erhebung bleibt auf das Erforderliche beschränkt",
         "Unterlagen werden nach Fristablauf gelöscht",
-        "Der Betriebsrat ist bei Überwachungsfragen zu beteiligen",
         "Die Daten stehen allen Führungskräften offen",
         "Bewerbungen werden dauerhaft zur Auswahl aufbewahrt"
       ],
       "answer": [
         "Der Zugriff wird auf die Personalabteilung begrenzt",
         "Die Erhebung bleibt auf das Erforderliche beschränkt",
-        "Unterlagen werden nach Fristablauf gelöscht",
-        "Der Betriebsrat ist bei Überwachungsfragen zu beteiligen"
+        "Unterlagen werden nach Fristablauf gelöscht"
       ],
       "explanation": "Enge Zugriffskreise, Datenminimierung, Löschfristen und Mitbestimmung sind die Leitplanken. Offener Zugriff für alle Führungskräfte und unbefristete Aufbewahrung von Bewerbungen verstoßen dagegen.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "Access is limited to the HR department",
             "Collection stays limited to what is necessary",
             "Records are deleted once retention periods expire",
-            "The works council is involved in monitoring questions",
             "The data is open to all managers",
             "Applications are kept indefinitely for future selection"
           ],
           "answer": [
             "Access is limited to the HR department",
             "Collection stays limited to what is necessary",
-            "Records are deleted once retention periods expire",
-            "The works council is involved in monitoring questions"
+            "Records are deleted once retention periods expire"
           ],
           "explanation": "Narrow access circles, data minimisation, retention periods and codetermination are the guardrails. Open access for all managers and indefinite retention of applications violate them.",
           "category": "IT Security & Data Protection"
@@ -2122,16 +2010,12 @@
       "options": [
         "Erkennen von Phishing-Mails",
         "Sicherer Umgang mit Passwörtern",
-        "Meldewege bei einem Verdacht",
-        "Umgang mit Daten außerhalb des Büros",
         "Bedienung der Telefonanlage im Detail",
         "Grundlagen der doppelten Buchführung"
       ],
       "answer": [
         "Erkennen von Phishing-Mails",
-        "Sicherer Umgang mit Passwörtern",
-        "Meldewege bei einem Verdacht",
-        "Umgang mit Daten außerhalb des Büros"
+        "Sicherer Umgang mit Passwörtern"
       ],
       "explanation": "Schulungen müssen die alltäglichen Entscheidungssituationen abdecken, in denen Beschäftigte selbst zur letzten Schutzschicht werden. Telefonanlage und Buchführung sind fachlich wichtig, aber kein Sicherheitsthema.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "Recognising phishing emails",
             "Safe handling of passwords",
-            "Reporting paths when something looks suspicious",
-            "Handling data outside the office",
             "Detailed operation of the phone system",
             "Fundamentals of double-entry bookkeeping"
           ],
           "answer": [
             "Recognising phishing emails",
-            "Safe handling of passwords",
-            "Reporting paths when something looks suspicious",
-            "Handling data outside the office"
+            "Safe handling of passwords"
           ],
           "explanation": "Training must cover the everyday decision situations in which employees themselves become the last layer of protection. Phone systems and bookkeeping matter professionally but are not security topics.",
           "category": "IT Security & Data Protection"
@@ -2207,15 +2087,13 @@
         "Gesetzliche Aufbewahrungsfristen sind einzuhalten",
         "Nach Fristablauf sind Daten zu löschen",
         "Löschkonzepte legen Fristen je Datenart fest",
-        "Auch Sicherungen müssen in das Konzept einbezogen werden",
         "Daten werden sicherheitshalber unbegrenzt aufbewahrt",
         "Löschungen dürfen nicht dokumentiert werden"
       ],
       "answer": [
         "Gesetzliche Aufbewahrungsfristen sind einzuhalten",
         "Nach Fristablauf sind Daten zu löschen",
-        "Löschkonzepte legen Fristen je Datenart fest",
-        "Auch Sicherungen müssen in das Konzept einbezogen werden"
+        "Löschkonzepte legen Fristen je Datenart fest"
       ],
       "explanation": "Aufbewahren und Löschen sind zwei Seiten derselben Pflicht: erst so lange wie nötig, dann konsequent weg - inklusive der Sicherungen. Unbegrenztes Aufbewahren widerspricht der Speicherbegrenzung.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "Statutory retention periods must be observed",
             "Data must be deleted once the period expires",
             "Deletion concepts set periods per data type",
-            "Backups must be included in the concept",
             "Data is kept indefinitely just to be safe",
             "Deletions must not be documented"
           ],
           "answer": [
             "Statutory retention periods must be observed",
             "Data must be deleted once the period expires",
-            "Deletion concepts set periods per data type",
-            "Backups must be included in the concept"
+            "Deletion concepts set periods per data type"
           ],
           "explanation": "Retention and deletion are two sides of the same duty: keep only as long as needed, then remove consistently - backups included. Indefinite retention contradicts storage limitation.",
           "category": "IT Security & Data Protection"

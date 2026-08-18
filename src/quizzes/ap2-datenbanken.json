@@ -947,15 +947,13 @@
         "Atomarität einer Transaktion",
         "Konsistenz der Daten danach",
         "Isolation paralleler Transaktionen",
-        "Dauerhaftigkeit bestätigter Änderungen",
         "Automatische Indizierung aller Spalten",
         "Anonymisierung personenbezogener Daten"
       ],
       "answer": [
         "Atomarität einer Transaktion",
         "Konsistenz der Daten danach",
-        "Isolation paralleler Transaktionen",
-        "Dauerhaftigkeit bestätigter Änderungen"
+        "Isolation paralleler Transaktionen"
       ],
       "explanation": "ACID steht für Atomicity, Consistency, Isolation und Durability - vier Zusagen, die eine Transaktion verlässlich machen. Indizes und Datenschutz sind eigene Themen.",
       "translations": {
@@ -965,15 +963,13 @@
             "Atomicity of a transaction",
             "Consistency of the data afterwards",
             "Isolation of parallel transactions",
-            "Durability of committed changes",
             "Automatic indexing of all columns",
             "Anonymisation of personal data"
           ],
           "answer": [
             "Atomicity of a transaction",
             "Consistency of the data afterwards",
-            "Isolation of parallel transactions",
-            "Durability of committed changes"
+            "Isolation of parallel transactions"
           ],
           "explanation": "ACID stands for atomicity, consistency, isolation and durability - four guarantees that make a transaction reliable. Indexes and data protection are separate topics.",
           "category": "Databases"
@@ -988,16 +984,12 @@
       "options": [
         "Er verweist auf den Primärschlüssel einer anderen Tabelle",
         "Er sichert die referenzielle Integrität",
-        "Er verhindert verwaiste Datensätze",
-        "Er kann mehrfach in der Tabelle vorkommen",
         "Er muss innerhalb seiner Tabelle eindeutig sein",
         "Er ersetzt den Primärschlüssel der eigenen Tabelle"
       ],
       "answer": [
         "Er verweist auf den Primärschlüssel einer anderen Tabelle",
-        "Er sichert die referenzielle Integrität",
-        "Er verhindert verwaiste Datensätze",
-        "Er kann mehrfach in der Tabelle vorkommen"
+        "Er sichert die referenzielle Integrität"
       ],
       "explanation": "Der Fremdschlüssel bildet die Beziehung ab und darf sich wiederholen - viele Bestellungen gehören zu einem Kunden. Eindeutigkeit fordert nur der Primärschlüssel.",
       "translations": {
@@ -1006,16 +998,12 @@
           "options": [
             "It references the primary key of another table",
             "It secures referential integrity",
-            "It prevents orphaned records",
-            "It may appear multiple times in the table",
             "It must be unique within its own table",
             "It replaces the primary key of its own table"
           ],
           "answer": [
             "It references the primary key of another table",
-            "It secures referential integrity",
-            "It prevents orphaned records",
-            "It may appear multiple times in the table"
+            "It secures referential integrity"
           ],
           "explanation": "The foreign key models the relationship and may repeat - many orders belong to one customer. Only the primary key demands uniqueness.",
           "category": "Databases"
@@ -1073,15 +1061,13 @@
         "Alle Attributwerte sind atomar",
         "Jede Zelle enthält genau einen Wert",
         "Wiederholungsgruppen werden ausgelagert",
-        "Die Tabelle besitzt einen Primärschlüssel",
         "Alle Nichtschlüsselattribute hängen vom Gesamtschlüssel ab",
         "Es gibt keine transitiven Abhängigkeiten mehr"
       ],
       "answer": [
         "Alle Attributwerte sind atomar",
         "Jede Zelle enthält genau einen Wert",
-        "Wiederholungsgruppen werden ausgelagert",
-        "Die Tabelle besitzt einen Primärschlüssel"
+        "Wiederholungsgruppen werden ausgelagert"
       ],
       "explanation": "Die erste Normalform verlangt Atomarität und identifizierbare Zeilen. Volle Abhängigkeit vom Schlüssel fordert die zweite, Transitivfreiheit die dritte Normalform.",
       "translations": {
@@ -1091,15 +1077,13 @@
             "All attribute values are atomic",
             "Each cell contains exactly one value",
             "Repeating groups are moved out",
-            "The table has a primary key",
             "All non-key attributes depend on the whole key",
             "There are no transitive dependencies left"
           ],
           "answer": [
             "All attribute values are atomic",
             "Each cell contains exactly one value",
-            "Repeating groups are moved out",
-            "The table has a primary key"
+            "Repeating groups are moved out"
           ],
           "explanation": "The first normal form requires atomicity and identifiable rows. Full dependency on the key is the second normal form, freedom from transitivity the third.",
           "category": "Databases"
@@ -1114,16 +1098,12 @@
       "options": [
         "INNER JOIN",
         "LEFT OUTER JOIN",
-        "RIGHT OUTER JOIN",
-        "FULL OUTER JOIN",
         "UPPER JOIN",
         "GROUP JOIN"
       ],
       "answer": [
         "INNER JOIN",
-        "LEFT OUTER JOIN",
-        "RIGHT OUTER JOIN",
-        "FULL OUTER JOIN"
+        "LEFT OUTER JOIN"
       ],
       "explanation": "Inner und die drei Outer-Varianten decken die üblichen Fälle ab, ergänzt um CROSS JOIN. UPPER und GROUP JOIN gibt es nicht.",
       "translations": {
@@ -1132,16 +1112,12 @@
           "options": [
             "INNER JOIN",
             "LEFT OUTER JOIN",
-            "RIGHT OUTER JOIN",
-            "FULL OUTER JOIN",
             "UPPER JOIN",
             "GROUP JOIN"
           ],
           "answer": [
             "INNER JOIN",
-            "LEFT OUTER JOIN",
-            "RIGHT OUTER JOIN",
-            "FULL OUTER JOIN"
+            "LEFT OUTER JOIN"
           ],
           "explanation": "Inner and the three outer variants cover the usual cases, plus CROSS JOIN. UPPER and GROUP JOIN do not exist.",
           "category": "Databases"
@@ -1199,15 +1175,13 @@
         "COUNT",
         "SUM",
         "AVG",
-        "MAX",
         "SORT",
         "FILTER"
       ],
       "answer": [
         "COUNT",
         "SUM",
-        "AVG",
-        "MAX"
+        "AVG"
       ],
       "explanation": "COUNT, SUM, AVG, MIN und MAX fassen mehrere Zeilen zu einem Wert zusammen. SORT und FILTER sind keine SQL-Funktionen - dafür stehen ORDER BY und WHERE.",
       "translations": {
@@ -1217,15 +1191,13 @@
             "COUNT",
             "SUM",
             "AVG",
-            "MAX",
             "SORT",
             "FILTER"
           ],
           "answer": [
             "COUNT",
             "SUM",
-            "AVG",
-            "MAX"
+            "AVG"
           ],
           "explanation": "COUNT, SUM, AVG, MIN and MAX condense several rows into one value. SORT and FILTER are not SQL functions - ORDER BY and WHERE serve those purposes.",
           "category": "Databases"
@@ -1240,16 +1212,12 @@
       "options": [
         "Redundanz wird verringert",
         "Änderungsanomalien werden vermieden",
-        "Die Datenkonsistenz steigt",
-        "Der Speicherbedarf sinkt tendenziell",
         "Jede Abfrage wird dadurch schneller",
         "Die Anzahl der Tabellen sinkt"
       ],
       "answer": [
         "Redundanz wird verringert",
-        "Änderungsanomalien werden vermieden",
-        "Die Datenkonsistenz steigt",
-        "Der Speicherbedarf sinkt tendenziell"
+        "Änderungsanomalien werden vermieden"
       ],
       "explanation": "Weniger Redundanz bedeutet weniger Widersprüche und weniger Speicher. Der Preis sind mehr Tabellen und damit mehr Joins, die Abfragen eher verlangsamen.",
       "translations": {
@@ -1258,16 +1226,12 @@
           "options": [
             "Redundancy is reduced",
             "Update anomalies are avoided",
-            "Data consistency increases",
-            "Storage requirements tend to fall",
             "Every query becomes faster as a result",
             "The number of tables decreases"
           ],
           "answer": [
             "Redundancy is reduced",
-            "Update anomalies are avoided",
-            "Data consistency increases",
-            "Storage requirements tend to fall"
+            "Update anomalies are avoided"
           ],
           "explanation": "Less redundancy means fewer contradictions and less storage. The price is more tables and therefore more joins, which tend to slow queries down.",
           "category": "Databases"
@@ -1325,15 +1289,13 @@
         "Sie fassen mehrere Anweisungen zu einer Einheit zusammen",
         "COMMIT schreibt sie endgültig fest",
         "ROLLBACK verwirft alle Änderungen",
-        "Sie sichern die Konsistenz bei Fehlern",
         "Sie beschleunigen die Ausführung der Anweisungen",
         "Sie ersetzen die Datensicherung der Datenbank"
       ],
       "answer": [
         "Sie fassen mehrere Anweisungen zu einer Einheit zusammen",
         "COMMIT schreibt sie endgültig fest",
-        "ROLLBACK verwirft alle Änderungen",
-        "Sie sichern die Konsistenz bei Fehlern"
+        "ROLLBACK verwirft alle Änderungen"
       ],
       "explanation": "Transaktionen bündeln Anweisungen und machen sie gemeinsam gültig oder ungültig. Auf Geschwindigkeit wirken sie nicht, und eine Sicherung ersetzen sie erst recht nicht.",
       "translations": {
@@ -1343,15 +1305,13 @@
             "They group several statements into one unit",
             "COMMIT makes them permanent",
             "ROLLBACK discards all changes",
-            "They preserve consistency when errors occur",
             "They speed up execution of the statements",
             "They replace the database backup"
           ],
           "answer": [
             "They group several statements into one unit",
             "COMMIT makes them permanent",
-            "ROLLBACK discards all changes",
-            "They preserve consistency when errors occur"
+            "ROLLBACK discards all changes"
           ],
           "explanation": "Transactions bundle statements and make them jointly valid or invalid. They do not affect speed, and they certainly do not replace a backup.",
           "category": "Databases"
@@ -1366,16 +1326,12 @@
       "options": [
         "MySQL",
         "PostgreSQL",
-        "MariaDB",
-        "Microsoft SQL Server",
         "Redis",
         "MongoDB"
       ],
       "answer": [
         "MySQL",
-        "PostgreSQL",
-        "MariaDB",
-        "Microsoft SQL Server"
+        "PostgreSQL"
       ],
       "explanation": "Die ersten vier speichern in Tabellen und sprechen SQL. Redis ist ein Key-Value-Store und MongoDB eine Dokumentendatenbank.",
       "translations": {
@@ -1384,16 +1340,12 @@
           "options": [
             "MySQL",
             "PostgreSQL",
-            "MariaDB",
-            "Microsoft SQL Server",
             "Redis",
             "MongoDB"
           ],
           "answer": [
             "MySQL",
-            "PostgreSQL",
-            "MariaDB",
-            "Microsoft SQL Server"
+            "PostgreSQL"
           ],
           "explanation": "The first four store data in tables and speak SQL. Redis is a key-value store and MongoDB a document database.",
           "category": "Databases"
@@ -1451,15 +1403,13 @@
         "NULL bedeutet unbekannt, nicht null",
         "Ein Vergleich mit dem Gleichheitszeichen schlägt fehl",
         "Geprüft wird mit IS NULL",
-        "Aggregatfunktionen überspringen NULL-Werte meist",
         "NULL entspricht der Zahl null",
         "NULL entspricht einer leeren Zeichenkette"
       ],
       "answer": [
         "NULL bedeutet unbekannt, nicht null",
         "Ein Vergleich mit dem Gleichheitszeichen schlägt fehl",
-        "Geprüft wird mit IS NULL",
-        "Aggregatfunktionen überspringen NULL-Werte meist"
+        "Geprüft wird mit IS NULL"
       ],
       "explanation": "NULL steht für einen fehlenden Wert und ist weder null noch Leerstring. Deshalb braucht es IS NULL statt eines Gleichheitsvergleichs.",
       "translations": {
@@ -1469,15 +1419,13 @@
             "NULL means unknown, not zero",
             "A comparison with the equals sign fails",
             "It is tested with IS NULL",
-            "Aggregate functions usually skip NULL values",
             "NULL equals the number zero",
             "NULL equals an empty string"
           ],
           "answer": [
             "NULL means unknown, not zero",
             "A comparison with the equals sign fails",
-            "It is tested with IS NULL",
-            "Aggregate functions usually skip NULL values"
+            "It is tested with IS NULL"
           ],
           "explanation": "NULL stands for a missing value and is neither zero nor an empty string. That is why IS NULL is needed instead of an equality comparison.",
           "category": "Databases"
@@ -1492,16 +1440,12 @@
       "options": [
         "Sie speichern eine Abfrage unter einem Namen",
         "Sie liefern beim Zugriff aktuelle Daten",
-        "Sie vereinfachen komplexe Abfragen",
-        "Sie können Spalten gezielt ausblenden",
         "Sie halten eine eigene Kopie der Daten",
         "Sie machen Indizes grundsätzlich überflüssig"
       ],
       "answer": [
         "Sie speichern eine Abfrage unter einem Namen",
-        "Sie liefern beim Zugriff aktuelle Daten",
-        "Sie vereinfachen komplexe Abfragen",
-        "Sie können Spalten gezielt ausblenden"
+        "Sie liefern beim Zugriff aktuelle Daten"
       ],
       "explanation": "Eine View ist im Kern eine benannte Abfrage - deshalb sieht sie immer die aktuellen Daten und eignet sich zur gezielten Einschränkung des Zugriffs. Eigene Daten hält sie nicht.",
       "translations": {
@@ -1510,16 +1454,12 @@
           "options": [
             "They store a query under a name",
             "They deliver current data on access",
-            "They simplify complex queries",
-            "They can deliberately hide columns",
             "They keep their own copy of the data",
             "They fundamentally make indexes unnecessary"
           ],
           "answer": [
             "They store a query under a name",
-            "They deliver current data on access",
-            "They simplify complex queries",
-            "They can deliberately hide columns"
+            "They deliver current data on access"
           ],
           "explanation": "A view is essentially a named query - which is why it always sees current data and suits restricting access. It holds no data of its own.",
           "category": "Databases"
@@ -1577,15 +1517,13 @@
         "Es entsteht eine zusätzliche Zwischentabelle",
         "Sie enthält die Fremdschlüssel beider Seiten",
         "Aus einer n:m werden zwei 1:n-Beziehungen",
-        "Die Zwischentabelle kann eigene Attribute haben",
         "Eine der Ursprungstabellen entfällt dabei",
         "Die Beziehung lässt sich ohne Zwischentabelle abbilden"
       ],
       "answer": [
         "Es entsteht eine zusätzliche Zwischentabelle",
         "Sie enthält die Fremdschlüssel beider Seiten",
-        "Aus einer n:m werden zwei 1:n-Beziehungen",
-        "Die Zwischentabelle kann eigene Attribute haben"
+        "Aus einer n:m werden zwei 1:n-Beziehungen"
       ],
       "explanation": "Die Zwischentabelle trägt beide Fremdschlüssel und oft eigene Angaben wie Menge oder Datum. Beide Ursprungstabellen bleiben erhalten.",
       "translations": {
@@ -1595,15 +1533,13 @@
             "An additional junction table is created",
             "It holds the foreign keys of both sides",
             "One n:m becomes two 1:n relationships",
-            "The junction table can have own attributes",
             "One of the original tables disappears",
             "The relationship can be modelled without a junction table"
           ],
           "answer": [
             "An additional junction table is created",
             "It holds the foreign keys of both sides",
-            "One n:m becomes two 1:n relationships",
-            "The junction table can have own attributes"
+            "One n:m becomes two 1:n relationships"
           ],
           "explanation": "The junction table carries both foreign keys and often its own details such as quantity or date. Both original tables remain.",
           "category": "Databases"
@@ -1618,16 +1554,12 @@
       "options": [
         "FROM bestimmt die Datenquelle",
         "WHERE filtert einzelne Zeilen",
-        "GROUP BY fasst Zeilen zu Gruppen zusammen",
-        "HAVING filtert die gebildeten Gruppen",
         "ORDER BY wirkt vor der Gruppierung",
         "WHERE darf Aggregatfunktionen enthalten"
       ],
       "answer": [
         "FROM bestimmt die Datenquelle",
-        "WHERE filtert einzelne Zeilen",
-        "GROUP BY fasst Zeilen zu Gruppen zusammen",
-        "HAVING filtert die gebildeten Gruppen"
+        "WHERE filtert einzelne Zeilen"
       ],
       "explanation": "Die logische Reihenfolge lautet FROM, WHERE, GROUP BY, HAVING und zuletzt ORDER BY. Aggregate stehen deshalb in HAVING, nicht in WHERE.",
       "translations": {
@@ -1636,16 +1568,12 @@
           "options": [
             "FROM determines the data source",
             "WHERE filters individual rows",
-            "GROUP BY consolidates rows into groups",
-            "HAVING filters the resulting groups",
             "ORDER BY acts before the grouping",
             "WHERE may contain aggregate functions"
           ],
           "answer": [
             "FROM determines the data source",
-            "WHERE filters individual rows",
-            "GROUP BY consolidates rows into groups",
-            "HAVING filters the resulting groups"
+            "WHERE filters individual rows"
           ],
           "explanation": "The logical order is FROM, WHERE, GROUP BY, HAVING and finally ORDER BY. Aggregates therefore belong in HAVING, not in WHERE.",
           "category": "Databases"
@@ -1703,15 +1631,13 @@
         "Ein Kandidatenschlüssel identifiziert eindeutig",
         "Der Primärschlüssel wird aus den Kandidaten gewählt",
         "Ein zusammengesetzter Schlüssel umfasst mehrere Spalten",
-        "Ein Fremdschlüssel verweist auf eine andere Tabelle",
         "Eine Tabelle darf mehrere Primärschlüssel haben",
         "Ein Primärschlüssel darf NULL-Werte enthalten"
       ],
       "answer": [
         "Ein Kandidatenschlüssel identifiziert eindeutig",
         "Der Primärschlüssel wird aus den Kandidaten gewählt",
-        "Ein zusammengesetzter Schlüssel umfasst mehrere Spalten",
-        "Ein Fremdschlüssel verweist auf eine andere Tabelle"
+        "Ein zusammengesetzter Schlüssel umfasst mehrere Spalten"
       ],
       "explanation": "Aus den Kandidatenschlüsseln wird genau einer zum Primärschlüssel bestimmt, notfalls über mehrere Spalten. Mehrere Primärschlüssel oder NULL sind ausgeschlossen.",
       "translations": {
@@ -1721,15 +1647,13 @@
             "A candidate key identifies uniquely",
             "The primary key is chosen from the candidates",
             "A composite key spans several columns",
-            "A foreign key references another table",
             "A table may have several primary keys",
             "A primary key may contain NULL values"
           ],
           "answer": [
             "A candidate key identifies uniquely",
             "The primary key is chosen from the candidates",
-            "A composite key spans several columns",
-            "A foreign key references another table"
+            "A composite key spans several columns"
           ],
           "explanation": "Exactly one of the candidate keys becomes the primary key, if necessary spanning several columns. Several primary keys or NULL are ruled out.",
           "category": "Databases"
@@ -1744,16 +1668,12 @@
       "options": [
         "Die erste Normalform ist Voraussetzung",
         "Nichtschlüsselattribute hängen vom gesamten Schlüssel ab",
-        "Teilabhängigkeiten werden aufgelöst",
-        "Sie ist besonders bei zusammengesetzten Schlüsseln relevant",
         "Sie verlangt den Verzicht auf Fremdschlüssel",
         "Sie beseitigt transitive Abhängigkeiten"
       ],
       "answer": [
         "Die erste Normalform ist Voraussetzung",
-        "Nichtschlüsselattribute hängen vom gesamten Schlüssel ab",
-        "Teilabhängigkeiten werden aufgelöst",
-        "Sie ist besonders bei zusammengesetzten Schlüsseln relevant"
+        "Nichtschlüsselattribute hängen vom gesamten Schlüssel ab"
       ],
       "explanation": "Die zweite Normalform beseitigt Abhängigkeiten von nur einem Teil des Schlüssels und ist deshalb nur bei zusammengesetzten Schlüsseln ein Thema. Transitivität behandelt erst die dritte.",
       "translations": {
@@ -1762,16 +1682,12 @@
           "options": [
             "The first normal form is a prerequisite",
             "Non-key attributes depend on the whole key",
-            "Partial dependencies are resolved",
-            "It matters especially with composite keys",
             "It requires doing without foreign keys",
             "It removes transitive dependencies"
           ],
           "answer": [
             "The first normal form is a prerequisite",
-            "Non-key attributes depend on the whole key",
-            "Partial dependencies are resolved",
-            "It matters especially with composite keys"
+            "Non-key attributes depend on the whole key"
           ],
           "explanation": "The second normal form removes dependencies on only part of the key and therefore only matters with composite keys. Transitivity is handled by the third.",
           "category": "Databases"
@@ -1829,15 +1745,13 @@
         "Er liefert nur Zeilen mit Treffern in beiden Tabellen",
         "Zeilen ohne Partner entfallen im Ergebnis",
         "Die Verknüpfungsbedingung steht in der ON-Klausel",
-        "Er ist der am häufigsten genutzte JOIN-Typ",
         "Er ergänzt fehlende Partner mit NULL",
         "Er liefert immer das kartesische Produkt"
       ],
       "answer": [
         "Er liefert nur Zeilen mit Treffern in beiden Tabellen",
         "Zeilen ohne Partner entfallen im Ergebnis",
-        "Die Verknüpfungsbedingung steht in der ON-Klausel",
-        "Er ist der am häufigsten genutzte JOIN-Typ"
+        "Die Verknüpfungsbedingung steht in der ON-Klausel"
       ],
       "explanation": "Der INNER JOIN behält nur Paare, die die Bedingung erfüllen. NULL-Auffüllung leisten die OUTER-Varianten, das kartesische Produkt der CROSS JOIN.",
       "translations": {
@@ -1847,15 +1761,13 @@
             "It returns only rows with matches in both tables",
             "Rows without a partner drop out of the result",
             "The join condition sits in the ON clause",
-            "It is the most frequently used join type",
             "It fills missing partners with NULL",
             "It always returns the cartesian product"
           ],
           "answer": [
             "It returns only rows with matches in both tables",
             "Rows without a partner drop out of the result",
-            "The join condition sits in the ON clause",
-            "It is the most frequently used join type"
+            "The join condition sits in the ON clause"
           ],
           "explanation": "The INNER JOIN keeps only pairs satisfying the condition. NULL padding is done by the outer variants, the cartesian product by the CROSS JOIN.",
           "category": "Databases"
@@ -1870,16 +1782,12 @@
       "options": [
         "Den Namen der Tabelle",
         "Die Namen der Spalten",
-        "Die Datentypen der Spalten",
-        "Sinnvollerweise einen Primärschlüssel",
         "Die Anzahl der später erwarteten Zeilen",
         "Den Namen des zuständigen Entwicklers"
       ],
       "answer": [
         "Den Namen der Tabelle",
-        "Die Namen der Spalten",
-        "Die Datentypen der Spalten",
-        "Sinnvollerweise einen Primärschlüssel"
+        "Die Namen der Spalten"
       ],
       "explanation": "Tabellenname, Spalten und Datentypen sind zwingend, ein Primärschlüssel ist praktisch immer sinnvoll. Zeilenzahl und Zuständigkeit gehören nicht in die Definition.",
       "translations": {
@@ -1888,16 +1796,12 @@
           "options": [
             "The name of the table",
             "The names of the columns",
-            "The data types of the columns",
-            "Sensibly a primary key",
             "The number of rows expected later",
             "The name of the responsible developer"
           ],
           "answer": [
             "The name of the table",
-            "The names of the columns",
-            "The data types of the columns",
-            "Sensibly a primary key"
+            "The names of the columns"
           ],
           "explanation": "Table name, columns and data types are mandatory, and a primary key is practically always sensible. Row counts and ownership do not belong in the definition.",
           "category": "Databases"
@@ -1955,15 +1859,13 @@
         "CREATE TABLE",
         "ALTER TABLE",
         "DROP TABLE",
-        "CREATE INDEX",
         "SELECT",
         "COMMIT"
       ],
       "answer": [
         "CREATE TABLE",
         "ALTER TABLE",
-        "DROP TABLE",
-        "CREATE INDEX"
+        "DROP TABLE"
       ],
       "explanation": "Die Data Definition Language beschreibt die Struktur der Datenbank. SELECT gehört zur DML und COMMIT zur Transaktionssteuerung.",
       "translations": {
@@ -1973,15 +1875,13 @@
             "CREATE TABLE",
             "ALTER TABLE",
             "DROP TABLE",
-            "CREATE INDEX",
             "SELECT",
             "COMMIT"
           ],
           "answer": [
             "CREATE TABLE",
             "ALTER TABLE",
-            "DROP TABLE",
-            "CREATE INDEX"
+            "DROP TABLE"
           ],
           "explanation": "The data definition language describes the structure of the database. SELECT belongs to DML and COMMIT to transaction control.",
           "category": "Databases"
@@ -1996,16 +1896,12 @@
       "options": [
         "VARCHAR speichert Text variabler Länge",
         "INTEGER speichert Ganzzahlen",
-        "DECIMAL rechnet mit fester Nachkommastellenzahl",
-        "DATE speichert ein Kalenderdatum",
         "FLOAT eignet sich am besten für Geldbeträge",
         "VARCHAR eignet sich am besten für Rechenoperationen"
       ],
       "answer": [
         "VARCHAR speichert Text variabler Länge",
-        "INTEGER speichert Ganzzahlen",
-        "DECIMAL rechnet mit fester Nachkommastellenzahl",
-        "DATE speichert ein Kalenderdatum"
+        "INTEGER speichert Ganzzahlen"
       ],
       "explanation": "Der passende Typ sichert Speicherplatz und Rechengenauigkeit. Für Geld ist DECIMAL Pflicht, weil FLOAT binär rundet, und mit Text lässt sich nicht rechnen.",
       "translations": {
@@ -2014,16 +1910,12 @@
           "options": [
             "VARCHAR stores text of variable length",
             "INTEGER stores whole numbers",
-            "DECIMAL computes with a fixed number of decimals",
-            "DATE stores a calendar date",
             "FLOAT is best suited to monetary amounts",
             "VARCHAR is best suited to arithmetic operations"
           ],
           "answer": [
             "VARCHAR stores text of variable length",
-            "INTEGER stores whole numbers",
-            "DECIMAL computes with a fixed number of decimals",
-            "DATE stores a calendar date"
+            "INTEGER stores whole numbers"
           ],
           "explanation": "The right type secures storage and computational accuracy. For money DECIMAL is mandatory because FLOAT rounds in binary, and text cannot be used for arithmetic.",
           "category": "Databases"
@@ -2081,15 +1973,13 @@
         "Sie verhindern widersprüchliche gleichzeitige Änderungen",
         "Lesesperren und Schreibsperren werden unterschieden",
         "Zu lange gehaltene Sperren bremsen andere Transaktionen",
-        "Gegenseitiges Warten kann zu einem Deadlock führen",
         "Sperren beschleunigen die Ausführung von Abfragen",
         "Sperren ersetzen die Rechteverwaltung der Datenbank"
       ],
       "answer": [
         "Sie verhindern widersprüchliche gleichzeitige Änderungen",
         "Lesesperren und Schreibsperren werden unterschieden",
-        "Zu lange gehaltene Sperren bremsen andere Transaktionen",
-        "Gegenseitiges Warten kann zu einem Deadlock führen"
+        "Zu lange gehaltene Sperren bremsen andere Transaktionen"
       ],
       "explanation": "Sperren sichern die Isolation, kosten aber Parallelität - deshalb sollen Transaktionen kurz sein. Mit Rechteverwaltung haben sie nichts zu tun.",
       "translations": {
@@ -2099,15 +1989,13 @@
             "They prevent contradictory simultaneous changes",
             "Read locks and write locks are distinguished",
             "Locks held too long slow other transactions",
-            "Mutual waiting can lead to a deadlock",
             "Locks speed up the execution of queries",
             "Locks replace the database privilege system"
           ],
           "answer": [
             "They prevent contradictory simultaneous changes",
             "Read locks and write locks are distinguished",
-            "Locks held too long slow other transactions",
-            "Mutual waiting can lead to a deadlock"
+            "Locks held too long slow other transactions"
           ],
           "explanation": "Locks secure isolation but cost concurrency - which is why transactions should be short. They have nothing to do with privilege management.",
           "category": "Databases"
@@ -2122,16 +2010,12 @@
       "options": [
         "Eine Vollsicherung erfasst den gesamten Bestand",
         "Transaktionsprotokolle erlauben zeitpunktgenaue Wiederherstellung",
-        "Die Wiederherstellung sollte geprüft werden",
-        "Sicherungen gehören an einen getrennten Ort",
         "Ein Export der Struktur allein genügt als Sicherung",
         "Sicherungen im laufenden Betrieb sind grundsätzlich unmöglich"
       ],
       "answer": [
         "Eine Vollsicherung erfasst den gesamten Bestand",
-        "Transaktionsprotokolle erlauben zeitpunktgenaue Wiederherstellung",
-        "Die Wiederherstellung sollte geprüft werden",
-        "Sicherungen gehören an einen getrennten Ort"
+        "Transaktionsprotokolle erlauben zeitpunktgenaue Wiederherstellung"
       ],
       "explanation": "Voll plus Protokolle, getrennt gelagert und regelmäßig getestet ergibt ein belastbares Konzept. Die Struktur allein enthält keine Daten, und Online-Sicherungen sind längst Standard.",
       "translations": {
@@ -2140,16 +2024,12 @@
           "options": [
             "A full backup captures the entire dataset",
             "Transaction logs allow point-in-time recovery",
-            "The restore should be verified",
-            "Backups belong at a separate location",
             "Exporting the structure alone suffices as a backup",
             "Backups during operation are fundamentally impossible"
           ],
           "answer": [
             "A full backup captures the entire dataset",
-            "Transaction logs allow point-in-time recovery",
-            "The restore should be verified",
-            "Backups belong at a separate location"
+            "Transaction logs allow point-in-time recovery"
           ],
           "explanation": "Full plus logs, stored separately and tested regularly gives a sound concept. The structure alone contains no data, and online backups have long been standard.",
           "category": "Databases"
@@ -2207,15 +2087,13 @@
         "Tabellen mit ihren Spalten und Datentypen",
         "Schlüssel und Beziehungen zwischen Tabellen",
         "Bedeutung fachlich unklarer Spalten",
-        "Bekannte Einschränkungen und Besonderheiten",
         "Die Passwörter der Datenbankbenutzer",
         "Die Uhrzeit der letzten Kaffeepause"
       ],
       "answer": [
         "Tabellen mit ihren Spalten und Datentypen",
         "Schlüssel und Beziehungen zwischen Tabellen",
-        "Bedeutung fachlich unklarer Spalten",
-        "Bekannte Einschränkungen und Besonderheiten"
+        "Bedeutung fachlich unklarer Spalten"
       ],
       "explanation": "Struktur, Beziehungen, fachliche Bedeutung und Besonderheiten machen ein Schema für andere nutzbar. Zugangsdaten gehören niemals in eine Dokumentation.",
       "translations": {
@@ -2225,15 +2103,13 @@
             "Tables with their columns and data types",
             "Keys and relationships between tables",
             "Meaning of columns that are unclear in business terms",
-            "Known limitations and peculiarities",
             "The passwords of the database users",
             "The time of the last coffee break"
           ],
           "answer": [
             "Tables with their columns and data types",
             "Keys and relationships between tables",
-            "Meaning of columns that are unclear in business terms",
-            "Known limitations and peculiarities"
+            "Meaning of columns that are unclear in business terms"
           ],
           "explanation": "Structure, relationships, business meaning and peculiarities make a schema usable by others. Credentials never belong in documentation.",
           "category": "Databases"

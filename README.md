@@ -112,13 +112,20 @@ layer instead, pointing at wherever `server/index.js` runs.
 - **Default quizzes** — built-in FISI exam-prep quizzes shipped with the app
   (`src/quizzes/*.json`, registered in `src/defaultQuizzes.ts`). Ten subject
   quizzes (titles are the subject area, e.g. "Netzwerktechnik", "Datenbanken"),
-  tagged `ap1`/`ap2` via their `modes`, 12 questions each with an even
-  single/multiple/text split, mixed difficulty, fully translated DE/EN.
+  tagged `ap1`/`ap2` via their `modes`, **100 questions each** split
+  32 single / 32 multiple / 36 text, mixed difficulty, fully translated DE/EN.
   They always appear in the library, can't be edited or deleted from the UI,
   and live in the repo instead of the database — question ids are stable strings
   so per-question stats survive app updates. To change them, edit the JSON
   files; to add one, drop a new JSON file in `src/quizzes/` and register it
   in `DEFAULT_QUIZZES`.
+
+  The questions are written to be **unguessable without knowing the answer**:
+  correct and incorrect options are held to the same average length (a longer,
+  more detailed option must not be a hint), and the number of correct answers
+  in multiple-choice questions is spread evenly over 2, 3 and 4 so that "always
+  tick four" is not a strategy. `.quiz-rebuild/qlib.py` enforces both as hard
+  checks and refuses to write a file that violates them.
 - **Modes/Categories** — built-in modes (`src/modes.ts`, currently AP1/AP2)
   filter the visible quiz library. Users can also create their own **private**
   custom modes (marked with a lock icon), only visible to themselves, to tag
