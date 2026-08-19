@@ -15,6 +15,7 @@ import { exec } from 'child_process';
 import { buildGradingMessages, buildExplainMessages, buildHelpMessages, buildExamGradingMessages } from './prompts.js';
 import { authRouter, sessionMiddleware, authentikConfigured, legacyMigrationEnabled } from './auth.js';
 import { dataRouter } from './data.js';
+import { duelRouter } from './duels.js';
 import { settingsRouter } from './settings.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -113,6 +114,10 @@ app.use(authRouter);
 
 // The data API — replaces the client's direct Firestore access.
 app.use(dataRouter);
+
+// 1v1 duels. Separate from the data API because it is the one place where
+// the server owns the questions and does the grading (see server/duels.js).
+app.use(duelRouter);
 
 // Self-describing settings, readable by a central account portal.
 app.use(settingsRouter);

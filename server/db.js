@@ -98,7 +98,7 @@ CREATE INDEX IF NOT EXISTS idx_attempts_uid_ts ON attempts(uid, timestamp);
 CREATE TABLE IF NOT EXISTS activity_log (
   id               INTEGER PRIMARY KEY AUTOINCREMENT,
   uid              TEXT NOT NULL REFERENCES users(uid) ON DELETE CASCADE,
-  kind             TEXT NOT NULL,   -- quiz_start | quiz_finish | exam_start | exam_finish
+  kind             TEXT NOT NULL,   -- quiz_start | quiz_finish | exam_start | exam_finish | duel_start | duel_finish
   title            TEXT NOT NULL DEFAULT '',
   quiz_id          TEXT,
   question_count   INTEGER,
@@ -162,6 +162,63 @@ CREATE TABLE IF NOT EXISTS leaderboard_entries (
   PRIMARY KEY (quiz_id, uid)
 );
 CREATE INDEX IF NOT EXISTS idx_lb_entries_uid ON leaderboard_entries(uid);
+
+-- --- 1v1 duels ----------------------------------------------------------
+--
+-- A duel is a race through one shared question list where every correct
+-- answer takes HP off the *opponent*. Unlike every other quiz in this app,
+-- the questions live server-side (duels.questions) and are handed to the
+-- clients with the answer field stripped: in singleplayer a client that
+-- knows the answer only cheats itself, in a duel it would beat somebody else.
+-- Grading therefore happens in server/duels.js, never in the browser.
+CREATE TABLE IF NOT EXISTS duels (
+  id          TEXT PRIMARY KEY,
+  code        TEXT NOT NULL UNIQUE,       -- short join code, shown in the lobby
+  status      TEXT NOT NULL,              -- waiting | active | finished | cancelled
+  title       TEXT NOT NULL,
+  quiz_id     TEXT,                       -- source quiz, so answers still count towards its stats
+  questions   TEXT NOT NULL,              -- JSON array, single/multiple choice only
+  max_hp      INTEGER NOT NULL,
+  host_uid    TEXT NOT NULL REFERENCES users(uid) ON DELETE CASCADE,
+  guest_uid   TEXT REFERENCES users(uid) ON DELETE CASCADE,
+  winner_uid  TEXT,                       -- NULL on a draw (or while unfinished)
+  end_reason  TEXT,                       -- ko | exhausted | forfeit | disconnect | timeout
+  created_at  TEXT NOT NULL,
+  started_at  TEXT,
+  finished_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_duels_status ON duels(status, created_at);
+CREATE INDEX IF NOT EXISTS idx_duels_host ON duels(host_uid);
+CREATE INDEX IF NOT EXISTS idx_duels_guest ON duels(guest_uid);
+
+-- One row per fighter. question_index is that player's own position in the
+-- shared list — both race the same questions, but each at their own pace.
+CREATE TABLE IF NOT EXISTS duel_players (
+  duel_id        TEXT NOT NULL REFERENCES duels(id) ON DELETE CASCADE,
+  uid            TEXT NOT NULL REFERENCES users(uid) ON DELETE CASCADE,
+  username       TEXT NOT NULL,
+  hp             INTEGER NOT NULL,
+  question_index INTEGER NOT NULL DEFAULT 0,
+  correct        INTEGER NOT NULL DEFAULT 0,
+  wrong          INTEGER NOT NULL DEFAULT 0,
+  streak         INTEGER NOT NULL DEFAULT 0,   -- consecutive correct answers, drives the combo bonus
+  damage_dealt   INTEGER NOT NULL DEFAULT 0,
+  last_seen      TEXT NOT NULL,                -- refreshed by the state poll; used to spot a closed tab
+  PRIMARY KEY (duel_id, uid)
+);
+
+-- The battle log both clients render ("X hit you for 12"). Also the record of
+-- what actually happened, since the HP columns above only keep the total.
+CREATE TABLE IF NOT EXISTS duel_events (
+  id             INTEGER PRIMARY KEY AUTOINCREMENT,
+  duel_id        TEXT NOT NULL REFERENCES duels(id) ON DELETE CASCADE,
+  uid            TEXT,                    -- who caused it (NULL for match-level events)
+  kind           TEXT NOT NULL,           -- join | hit | miss | end
+  damage         INTEGER,
+  question_index INTEGER,
+  timestamp      TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_duel_events ON duel_events(duel_id, id);
 `);
 
 // --- Migrations ----------------------------------------------------------

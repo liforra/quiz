@@ -209,7 +209,7 @@ export const recordAnswer = (a: {
 // the time and silently drops the event when the user has logging off, so
 // callers here can fire and forget.
 
-export type ActivityKind = 'quiz_start' | 'quiz_finish' | 'exam_start' | 'exam_finish';
+export type ActivityKind = 'quiz_start' | 'quiz_finish' | 'exam_start' | 'exam_finish' | 'duel_start' | 'duel_finish';
 
 export interface ActivityEntry {
   id: number;

@@ -1,3 +1,165 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --- Duel animations ------------------------------------------------------
+ *
+ * Hand-written keyframes rather than utility classes: this project does not
+ * have `tailwindcss-animate` installed, so `animate-in` & friends are inert
+ * here. Everything below is driven by CSS custom properties the component
+ * sets inline (--dx/--dy for the flight vector, --angle for the trail, --dur
+ * for the timing), which keeps per-projectile geometry out of the stylesheet
+ * and off React's render path — the browser compositor owns the motion.
+ */
+
+/* Flight: the outer element covers the straight line from attacker to target… */
+@keyframes duel-fly {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(var(--dx), var(--dy)); }
+}
+
+/* …while the inner one adds a lift that peaks halfway. Composed, the two
+ * produce a parabola without anyone having to compute one. */
+@keyframes duel-arc {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(calc(var(--arc) * -1)); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes duel-spin {
+  to { transform: rotate(720deg); }
+}
+
+@keyframes duel-flicker {
+  0%, 100% { transform: scale(1);    filter: brightness(1); }
+  50%      { transform: scale(1.18); filter: brightness(1.4); }
+}
+
+@keyframes duel-jitter {
+  0%, 100% { transform: translateY(0); }
+  25%      { transform: translateY(-3px); }
+  75%      { transform: translateY(3px); }
+}
+
+/* A miss fades out instead of landing. */
+@keyframes duel-dud {
+  0%   { opacity: 0.9; transform: scale(1); }
+  70%  { opacity: 0.45; }
+  100% { opacity: 0; transform: scale(0.35); }
+}
+
+/* Impact */
+@keyframes duel-burst {
+  0%   { transform: scale(0.15); opacity: 1; }
+  100% { transform: scale(3.4); opacity: 0; }
+}
+
+/* A second, slower ring behind the first one — one ring reads as a blip, two
+ * read as an explosion. */
+@keyframes duel-burst-slow {
+  0%   { transform: scale(0.3); opacity: 0.75; }
+  100% { transform: scale(5); opacity: 0; }
+}
+
+/* Muzzle flash where the shot leaves. */
+@keyframes duel-muzzle {
+  0%   { transform: scale(0.3); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* The whole screen takes the hit for a moment. */
+@keyframes duel-hit-flash {
+  0%   { opacity: 0; }
+  12%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* The bar itself flares as it drains. */
+@keyframes duel-bar-hit {
+  0%   { box-shadow: 0 0 0 0 rgba(244,63,94,0.9); transform: scale(1); }
+  25%  { box-shadow: 0 0 22px 5px rgba(244,63,94,0.95); transform: scale(1.06); }
+  100% { box-shadow: 0 0 0 0 rgba(244,63,94,0); transform: scale(1); }
+}
+
+@keyframes duel-shard {
+  0%   { transform: rotate(var(--shard-angle)) translateX(0) scale(1); opacity: 1; }
+  100% { transform: rotate(var(--shard-angle)) translateX(var(--shard-dist)) scale(0.2); opacity: 0; }
+}
+
+@keyframes duel-damage-float {
+  0%   { transform: translate(-50%, 0) scale(0.5); opacity: 0; }
+  18%  { transform: translate(-50%, -20px) scale(1.45); opacity: 1; }
+  35%  { transform: translate(-50%, -34px) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -96px) scale(1); opacity: 0; }
+}
+
+/* The hit itself: a short, sharp shake — long enough to read as damage,
+ * short enough not to slow down someone answering the next question. */
+@keyframes duel-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  10%      { transform: translate(-15px, 4px) rotate(-9deg) scale(1.08); }
+  22%      { transform: translate(13px, -3px) rotate(7deg) scale(1.06); }
+  36%      { transform: translate(-11px, 3px) rotate(-6deg) scale(1.04); }
+  50%      { transform: translate(9px, -2px) rotate(4deg) scale(1.03); }
+  66%      { transform: translate(-6px, 1px) rotate(-3deg); }
+  82%      { transform: translate(3px, 0) rotate(1deg); }
+}
+
+@keyframes duel-recoil {
+  0%, 100% { transform: scale(1); }
+  30%      { transform: scale(1.24) rotate(-4deg); }
+  55%      { transform: scale(0.94) rotate(2deg); }
+}
+
+/* Taking damage darkens the edges of the screen for a moment. */
+@keyframes duel-vignette {
+  0%   { opacity: 0; }
+  12%  { opacity: 1; }
+  55%  { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+/* Losing: the avatar goes grey and tips over, and stays that way. */
+@keyframes duel-knockout {
+  0%   { transform: rotate(0deg) translateY(0) scale(1); filter: grayscale(0); }
+  35%  { transform: rotate(6deg) translateY(-10px) scale(1.05); filter: grayscale(0.4); }
+  100% { transform: rotate(-22deg) translateY(10px) scale(0.92); filter: grayscale(1) brightness(0.7); }
+}
+
+.duel-projectile      { position: fixed; z-index: 60; pointer-events: none; will-change: transform;
+                        animation: duel-fly var(--dur) linear forwards; }
+.duel-projectile-arc  { animation: duel-arc var(--dur) ease-in-out forwards; }
+.duel-projectile-body { transform: rotate(var(--angle)); }
+
+.duel-spin    { animation: duel-spin var(--dur) linear forwards; }
+.duel-dud     { animation: duel-dud var(--dur) ease-out forwards; }
+.duel-flicker { animation: duel-flicker 220ms ease-in-out infinite; }
+.duel-jitter  { animation: duel-jitter 120ms ease-in-out infinite; }
+
+.duel-impact  { position: fixed; z-index: 61; pointer-events: none; }
+.duel-burst      { animation: duel-burst 620ms cubic-bezier(0.15, 0.7, 0.3, 1) forwards; }
+.duel-burst-slow { animation: duel-burst-slow 760ms cubic-bezier(0.15, 0.7, 0.3, 1) forwards; }
+.duel-muzzle     { animation: duel-muzzle 340ms ease-out forwards; }
+.duel-shard      { animation: duel-shard 700ms cubic-bezier(0.1, 0.6, 0.3, 1) forwards; }
+.duel-damage     { animation: duel-damage-float 1500ms cubic-bezier(0.1, 0.7, 0.3, 1) forwards; }
+.duel-hit-flash  { animation: duel-hit-flash 420ms ease-out forwards; }
+.duel-bar-hit    { animation: duel-bar-hit 620ms ease-out; }
+
+.duel-shake      { animation: duel-shake 620ms cubic-bezier(0.36, 0.07, 0.19, 0.97); }
+.duel-recoil     { animation: duel-recoil 380ms ease-out; }
+.duel-vignette   { animation: duel-vignette 900ms ease-out forwards; }
+.duel-knockout   { animation: duel-knockout 900ms cubic-bezier(0.3, 1.4, 0.5, 1) forwards; }
+
+/* Anyone who asked the OS for less motion gets the information without the
+ * theatre: hits still flash and count down, they just don't fly or shake. */
+@media (prefers-reduced-motion: reduce) {
+  .duel-projectile,
+  .duel-projectile-arc,
+  .duel-spin { animation-duration: 1ms !important; }
+  .duel-flicker,
+  .duel-jitter { animation: none !important; }
+  .duel-shake,
+  .duel-recoil,
+  .duel-bar-hit { animation: none !important; }
+  .duel-knockout { animation-duration: 1ms !important; }
+}

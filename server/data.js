@@ -118,7 +118,7 @@ dataRouter.post('/api/data/answer', requireAuth, (req, res) => {
 // client could backdate would prove nothing. The client only supplies what it
 // alone knows (which quiz, how many questions, the score).
 
-const ACTIVITY_KINDS = new Set(['quiz_start', 'quiz_finish', 'exam_start', 'exam_finish']);
+const ACTIVITY_KINDS = new Set(['quiz_start', 'quiz_finish', 'exam_start', 'exam_finish', 'duel_start', 'duel_finish']);
 const MAX_ACTIVITY_LIMIT = 1000;
 
 // Clamps a client-supplied number into a sane range, or null if absent.

@@ -37,7 +37,8 @@ import {
   Settings,
   Languages,
   Trophy,
-  FileEdit
+  FileEdit,
+  Swords
 } from 'lucide-react';
 import ModeSwitcher from './ModeSwitcher';
 import { t, Lang } from '../i18n';
@@ -131,6 +132,7 @@ export default function Sidebar({
     }},
     { id: 'exams', label: t(uiLang, 'apExams'), icon: FileEdit },
     { id: 'stats', label: t(uiLang, 'statistics'), icon: BarChart2 },
+    { id: 'duels', label: t(uiLang, 'duel'), icon: Swords },
     { id: 'leaderboards', label: t(uiLang, 'leaderboards'), icon: Trophy },
     { id: 'logs', label: t(uiLang, 'logs'), icon: History },
     { id: 'results', label: t(uiLang, 'lastResults'), icon: Award, condition: view === 'results' },
@@ -194,7 +196,9 @@ export default function Sidebar({
             <div className="space-y-1">
               {mainNav.map((item) => {
                 if (item.condition === false) return null;
-                const isActive = view === item.id;
+                // The arena ('duel') is a page *inside* the duel section, so
+                // the entry stays lit while a match is running.
+                const isActive = view === item.id || (item.id === 'duels' && view === 'duel');
                 const Icon = item.icon;
                 return (
                   <button

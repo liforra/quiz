@@ -6,7 +6,7 @@ import {
   Globe, Shield, X, Download, Menu, GraduationCap,
   Edit2, Trash2, Cpu, Cloud, Code, Database, Terminal, Server, Wifi, Smartphone, Monitor,
   HardDrive, Layout, Box, Layers, FileText, BookOpen, Zap, HelpCircle, MessageCircle, Loader2, Trophy,
-  Maximize2, Minimize2
+  Maximize2, Minimize2, Swords
 } from 'lucide-react';
 import { BUILT_IN_MODES } from './modes';
 import { DEFAULT_QUIZZES } from './defaultQuizzes';
@@ -23,6 +23,9 @@ import ExamTaking, { ExamAnswers } from './components/ExamTaking';
 import ExamResults, { ExamGrading } from './components/ExamResults';
 import AdminExamSources from './components/AdminExamSources';
 import ActivityLog from './components/ActivityLog';
+import DuelHub from './components/DuelHub';
+import DuelArena from './components/DuelArena';
+import * as duelApi from './duels';
 import { exportExamToPdf, downloadPdfBlob } from './examPdfExport';
 import { computeCategoryBreakdown, pickBestCategory } from './stats';
 
@@ -179,6 +182,41 @@ export default function App() {
     const blob = await exportExamToPdf(activeExam, examAnswers, grading, t(uiLang, 'skipped'), t(uiLang, 'points'));
     downloadPdfBlob(blob, `${activeExam.id}.pdf`);
   };
+
+  // 1v1 Duels — like exams, a self-contained session rather than part of the
+  // quiz gameplay state above: the questions, the score and the health bars
+  // all live server-side (server/duels.js), so the only thing App holds is
+  // which duel is open. DuelArena owns everything inside it.
+  const [activeDuel, setActiveDuel] = useState<duelApi.DuelState | null>(null);
+  const enterDuel = (duel: duelApi.DuelState) => {
+    setActiveDuel(duel);
+    setView('duel');
+  };
+  const exitDuel = () => {
+    setActiveDuel(null);
+    setView('duels');
+  };
+  // A duel answer is practice like any other, so it feeds the same per-question
+  // stats — the optimistic bump mirrors submitAnswer()'s so the numbers don't
+  // wait on the round trip.
+  const recordDuelAnswer = useCallback((info: {
+    questionId: string; category: string; quizId: string | null; correct: boolean; skipped: boolean;
+  }) => {
+    if (!appUser) return;
+    const bump = (prev: Record<string, api.QuestionStat>) => {
+      const cur = prev[info.questionId] || { correct: 0, wrong: 0 };
+      return {
+        ...prev,
+        [info.questionId]: {
+          correct: cur.correct + (info.correct ? 1 : 0),
+          wrong: cur.wrong + (info.correct ? 0 : 1),
+          lastPlayed: new Date().toISOString()
+        }
+      };
+    };
+    setGlobalStats(bump);
+    api.recordAnswer(info).catch(e => console.error('Failed to save duel stats', e));
+  }, [appUser]);
 
   // Leaderboard Data
   const [leaderboardQuizId, setLeaderboardQuizId] = useState<string | null>(null);
@@ -1844,8 +1882,8 @@ export default function App() {
           {view === 'dashboard' && (
             <div className="p-4 md:p-8 max-w-6xl mx-auto w-full">
 
-              {/* ACTIONS: QUICK TEST + CUSTOM QUIZ */}
-              <div className="grid sm:grid-cols-2 gap-4 mb-10">
+              {/* ACTIONS: QUICK TEST + CUSTOM QUIZ + DUEL */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
                 <button
                   onClick={handleQuickTest}
                   className="py-6 px-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-2xl shadow-lg shadow-purple-200 dark:shadow-none flex items-center justify-center gap-4 transition-all group"
@@ -1869,6 +1907,19 @@ export default function App() {
                   <div className="text-left">
                     <h2 className="text-2xl font-bold text-zinc-800 dark:text-white">Custom Quiz</h2>
                     <p className="text-zinc-400 text-sm">Pick quizzes, question count &amp; a timer</p>
+                  </div>
+                </button>
+
+                <button
+                  onClick={() => setView('duels')}
+                  className="py-6 px-4 bg-gradient-to-r from-red-500 to-purple-600 hover:from-red-600 hover:to-purple-700 text-white rounded-2xl shadow-lg shadow-red-200 dark:shadow-none flex items-center justify-center gap-4 transition-all group"
+                >
+                  <div className="p-3 bg-white/20 rounded-xl group-hover:scale-110 transition-transform">
+                    <Swords size={32} />
+                  </div>
+                  <div className="text-left">
+                    <h2 className="text-2xl font-bold">{t(uiLang, 'duel')}</h2>
+                    <p className="text-red-50 opacity-90 text-sm">{t(uiLang, 'duelDesc')}</p>
                   </div>
                 </button>
               </div>
@@ -2323,6 +2374,46 @@ export default function App() {
           )}
 
           {/* --- VIEW: LEADERBOARD HUB --- */}
+          {view === 'duels' && (
+            <DuelHub
+              uiLang={uiLang}
+              quizzes={allQuizzesFlat}
+              onBack={() => setView('dashboard')}
+              onEnterDuel={enterDuel}
+            />
+          )}
+
+          {view === 'duel' && activeDuel && (
+            <DuelArena
+              // Remounting per duel resets every ref inside the arena (the
+              // "already logged" guards, the HP the damage flash compares
+              // against), so a rematch can't inherit the last fight's state.
+              key={activeDuel.id}
+              uiLang={uiLang}
+              initialDuel={activeDuel}
+              onExit={exitDuel}
+              onAnswered={recordDuelAnswer}
+              onDuelStart={(d) => logSession({
+                kind: 'duel_start',
+                title: `${t(uiLang, 'duel')}: ${d.title}`,
+                quizId: d.quizId,
+                questionCount: d.questionCount
+              })}
+              onDuelFinish={(d) => logSession({
+                kind: 'duel_finish',
+                title: `${t(uiLang, 'duel')}: ${d.title}`,
+                quizId: d.quizId,
+                questionCount: d.questionCount,
+                score: d.me?.correct ?? null,
+                total: (d.me?.correct ?? 0) + (d.me?.wrong ?? 0),
+                durationSeconds: d.startedAt && d.finishedAt
+                  ? Math.round((Date.parse(d.finishedAt) - Date.parse(d.startedAt)) / 1000)
+                  : null,
+                startedAt: d.startedAt
+              })}
+            />
+          )}
+
           {view === 'leaderboards' && (
             <LeaderboardHub
               uiLang={uiLang}

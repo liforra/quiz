@@ -8,7 +8,7 @@
 // file late-evening sessions under the wrong date for anyone east of UTC.
 
 import { useEffect, useMemo, useState } from 'react';
-import { History, Download, Trash2, Play, CheckCircle, FileEdit, Clock, CalendarDays } from 'lucide-react';
+import { History, Download, Trash2, Play, CheckCircle, FileEdit, Clock, CalendarDays, Swords } from 'lucide-react';
 import * as api from '../data';
 import { t, Lang } from '../i18n';
 
@@ -92,6 +92,8 @@ export default function ActivityLog({ uiLang, onBack, logActivity, setLogActivit
       case 'quiz_start': return `${e.title} — ${t(uiLang, 'logsStarted')}`;
       case 'quiz_finish': return `${e.title} — ${t(uiLang, 'logsFinished')}`;
       case 'exam_start': return `${e.title} — ${t(uiLang, 'logsExamStarted')}`;
+      case 'duel_start': return `${e.title} — ${t(uiLang, 'logsDuelStarted')}`;
+      case 'duel_finish': return `${e.title} — ${t(uiLang, 'logsDuelFinished')}`;
       default: return `${e.title} — ${t(uiLang, 'logsExamFinished')}`;
     }
   };
@@ -99,7 +101,8 @@ export default function ActivityLog({ uiLang, onBack, logActivity, setLogActivit
   const KindIcon = ({ kind }: { kind: api.ActivityKind }) =>
     kind === 'quiz_start' ? <Play size={14} />
       : kind === 'quiz_finish' ? <CheckCircle size={14} />
-        : <FileEdit size={14} />;
+        : kind.startsWith('duel') ? <Swords size={14} />
+          : <FileEdit size={14} />;
 
   const handleClear = async () => {
     if (!window.confirm(t(uiLang, 'logsClearConfirm'))) return;

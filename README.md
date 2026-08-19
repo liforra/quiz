@@ -154,6 +154,32 @@ layer instead, pointing at wherever `server/index.js` runs.
   separate from the per-question `attempts` data, so deleting it costs no
   statistics. Exportable as CSV (semicolon-separated, BOM, opens in German
   Excel) and included in the GDPR JSON export.
+- **1v1 Duell** — sidebar → "Duell". Two players race through the *same*
+  question list with a health bar each: every question you get right takes HP
+  off your opponent (10 damage, rising to 12/14/16 on a streak of consecutive
+  correct answers), and the first one down to 0 loses. There are no turns —
+  answering faster means landing damage sooner. A match also ends when both
+  players run out of questions (higher HP wins), when someone forfeits, or
+  when an opponent stops responding.
+
+  Matchmaking is a 4-character join code plus a list of open lobbies
+  (`/api/duels/open`); one open lobby per person, expiring after 20 minutes.
+  Duels are choice questions only — free-text answers would need an AI round
+  trip per answer, which is too slow for a race and burns shared Groq quota.
+
+  This is the one place where **the server owns the questions**
+  (`server/duels.js`, `duels`/`duel_players`/`duel_events` tables): everywhere
+  else a client that peeks at the answers only cheats itself, but in a duel it
+  would beat somebody else. The state endpoint hands out one question at a
+  time with `answer` stripped (in every translation too), the client submits
+  *option indices* rather than answer text — so DE/EN and the locally shuffled
+  option order stay irrelevant to grading — and the server decides what was
+  correct and how much damage it did. There is no WebSocket: clients poll once
+  a second, and every state transition (KO, questions exhausted, opponent
+  gone, time limit) is computed lazily on read, so no match can hang because a
+  timer died with a server restart. Answers still count towards the normal
+  per-question statistics, and the logbook records duels like any other session.
+
 - **AI features** (optional, needs `GROQ_API_KEY`) — AI-graded free-text
   answers, a per-answer "explain why" popover, and a "Help?" chat that
   clarifies the question without ever revealing the answer (enforced by a
